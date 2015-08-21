@@ -1,19 +1,19 @@
 //
-//  TimeTests.m
-//  TimeTests
+//  StopWatchTests.m
+//  StopWatchTests
 //
-//  Created by Michael Kavouras on 8/20/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
+//  Created by MacMan on 8/20/15.
+//  Copyright (c) 2015 MacManApp. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface TimeTests : XCTestCase
+@interface StopWatchTests : XCTestCase
 
 @end
 
-@implementation TimeTests
+@implementation StopWatchTests
 
 - (void)setUp {
     [super setUp];
