@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuk-RT-9px">
-                                <rect key="frame" x="66" y="274" width="84" height="30"/>
+                                <rect key="frame" x="56" y="281" width="84" height="30"/>
                                 <state key="normal" title="Start Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-Jy-X20">
-                                <rect key="frame" x="474" y="281" width="90" height="30"/>
+                                <rect key="frame" x="454" y="281" width="90" height="30"/>
                                 <state key="normal" title="Reset Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -75,16 +75,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="UK3-Jy-X20" secondAttribute="trailing" constant="20" id="2Q3-yk-jXD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UK3-Jy-X20" secondAttribute="trailing" constant="40" id="2Q3-yk-jXD"/>
                             <constraint firstItem="2go-1O-yYQ" firstAttribute="top" secondItem="FLE-u1-Osv" secondAttribute="bottom" constant="120" id="7mv-8m-hbQ"/>
-                            <constraint firstItem="wuk-RT-9px" firstAttribute="top" secondItem="2go-1O-yYQ" secondAttribute="bottom" constant="113" id="QXW-Pq-BEM"/>
-                            <constraint firstItem="wuk-RT-9px" firstAttribute="leading" secondItem="a9R-tZ-DmQ" secondAttribute="leadingMargin" constant="50" id="UGU-Xp-eeT"/>
+                            <constraint firstItem="wuk-RT-9px" firstAttribute="top" secondItem="2go-1O-yYQ" secondAttribute="bottom" constant="120" id="QXW-Pq-BEM"/>
+                            <constraint firstItem="wuk-RT-9px" firstAttribute="leading" secondItem="a9R-tZ-DmQ" secondAttribute="leadingMargin" constant="40" id="UGU-Xp-eeT"/>
                             <constraint firstAttribute="centerX" secondItem="2go-1O-yYQ" secondAttribute="centerX" id="YlA-Gb-HBV"/>
                             <constraint firstItem="UK3-Jy-X20" firstAttribute="top" secondItem="2go-1O-yYQ" secondAttribute="bottom" constant="120" id="qtj-oU-4tK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="gNk-FC-fJm" userLabel="Stopwatch"/>
                     <connections>
+                        <outlet property="resetButton" destination="UK3-Jy-X20" id="bOA-mY-Hxm"/>
+                        <outlet property="startButton" destination="wuk-RT-9px" id="s46-jH-VbX"/>
                         <outlet property="stopwatchLabel" destination="2go-1O-yYQ" id="58V-WP-eaq"/>
                     </connections>
                 </viewController>

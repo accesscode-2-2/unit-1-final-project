@@ -9,17 +9,23 @@
 #import "StopwatchViewController.h"
 
 @interface StopwatchViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
+
 
 @end
 
 @implementation StopwatchViewController
 @synthesize stopwatchLabel;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     stopwatchLabel.text = @"00.00.00.000";
     running = FALSE;
     startDate = [NSDate date];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,10 +34,11 @@
 
 
 - (IBAction)startButton:(id)sender {
+   
     
     if(!running){
-        running = TRUE;
-        [sender setTitle:@"Stop" forState:UIControlStateNormal];
+       running = TRUE;
+        [sender setTitle:@"Pause" forState:UIControlStateNormal];
         if (stopTimer == nil) {
             stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                          target:self
@@ -44,6 +51,7 @@
         [sender setTitle:@"Start" forState:UIControlStateNormal];
         [stopTimer invalidate];
         stopTimer = nil;
+        
     }
 
 }
@@ -60,12 +68,17 @@
 }
 
 
+
 - (IBAction)stopButton:(id)sender {
-  
+    [_startButton setTitle:@"Start" forState:UIControlStateNormal];
     [stopTimer invalidate];
     stopTimer = nil;
     startDate = [NSDate date];
     stopwatchLabel.text = @"00.00.00.000";
     running = FALSE;
+    
 }
+
+
+
 @end
