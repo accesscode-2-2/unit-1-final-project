@@ -84,8 +84,8 @@
     [self.tableView reloadData];
     
     
-//    NSIndexPath* ipath = [NSIndexPath indexPathForRow:[self.laps count]-1 inSection:0];
-//    [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    NSIndexPath* ipath = [NSIndexPath indexPathForRow:[self.laps count]-1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
 }
 
 
@@ -96,32 +96,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.laps.count;
-    return 1;
+    return self.laps.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-  // NSString *cellIdentifier = @"TimeLap";
     
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap" forIndexPath:indexPath];
     
-//   if (!cell) {
-//   cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
-//            
-//   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap" forIndexPath:indexPath];
-//    
-//    NSString *key = [self.laps objectAtIndex:indexPath.row];
-//
-//    
-//    cell.textLabel.text = key;
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap"];
+   if (!cell) {
+   cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TimeLap"];
+    }
    
-    //NSString *key = [self.laps objectAtIndex:indexPath.row];
+    NSString *key = [self.laps objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = @"please work";
+    cell.textLabel.text = key;
+    
     return cell;
 }
 

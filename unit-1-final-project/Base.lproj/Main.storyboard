@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bd9-cG-Tgt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9k2-VO-Nkm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <scenes>
-        <!--Stopwatch View Controller-->
+        <!--Item-->
         <scene sceneID="nhe-Hg-T4C">
             <objects>
                 <viewController id="bd9-cG-Tgt" customClass="GOStopwatchViewController" sceneMemberID="viewController">
@@ -23,56 +23,51 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOS-FX-Day">
-                                <rect key="frame" x="150" y="489" width="34" height="30"/>
+                                <rect key="frame" x="150" y="440" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="vE8-KE-94G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOk-h1-0mW">
-                                <rect key="frame" x="416" y="489" width="30" height="30"/>
+                                <rect key="frame" x="416" y="440" width="30" height="30"/>
                                 <state key="normal" title="Lap"/>
                                 <connections>
                                     <action selector="lapStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="P7A-b6-DeB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-eS-7bp">
-                                <rect key="frame" x="284" y="489" width="32" height="30"/>
+                                <rect key="frame" x="284" y="440" width="32" height="30"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="B8K-OP-fD8"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uV5-xV-8Jy">
-                                <rect key="frame" x="-16" y="163" width="632" height="272"/>
+                                <rect key="frame" x="-16" y="163" width="632" height="223"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JSN-CG-Nr5">
-                                    <rect key="frame" x="0.0" y="0.0" width="632" height="272"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <prototypes>
-                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeLap" textLabel="uuW-NE-A7d" style="IBUITableViewCellStyleDefault" id="ucK-DC-cpI" customClass="LapTimerTableViewCell">
-                                            <rect key="frame" x="0.0" y="28" width="632" height="44"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeLap" textLabel="uuW-NE-A7d" style="IBUITableViewCellStyleDefault" id="ucK-DC-cpI" customClass="LapTimerTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="632" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucK-DC-cpI" id="gIt-30-1NN">
+                                            <rect key="frame" x="0.0" y="0.0" width="632" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucK-DC-cpI" id="gIt-30-1NN">
-                                                <rect key="frame" x="0.0" y="0.0" width="632" height="43"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <subviews>
-                                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uuW-NE-A7d">
-                                                        <rect key="frame" x="15" y="0.0" width="602" height="43"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </tableViewCellContentView>
-                                            <connections>
-                                                <outlet property="lapTimeLabel" destination="uuW-NE-A7d" id="QvN-fD-n7E"/>
-                                            </connections>
-                                        </tableViewCell>
-                                    </prototypes>
-                                </tableView>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uuW-NE-A7d">
+                                                    <rect key="frame" x="15" y="0.0" width="602" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lapTimeLabel" destination="uuW-NE-A7d" id="QvN-fD-n7E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,6 +86,7 @@
                             <constraint firstItem="mOk-h1-0mW" firstAttribute="centerY" secondItem="WZi-eS-7bp" secondAttribute="centerY" id="zs7-9m-DDG"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HCM-zN-osx"/>
                     <connections>
                         <outlet property="stopwatchTimerLabel" destination="OX2-1j-IfV" id="cox-X7-qCQ"/>
                         <outlet property="tableView" destination="uV5-xV-8Jy" id="yoa-I5-GMQ"/>
@@ -131,6 +127,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="CsU-Il-LcC" kind="relationship" relationship="viewControllers" id="kyF-qi-efb"/>
+                        <segue destination="bd9-cG-Tgt" kind="relationship" relationship="viewControllers" id="EB0-rs-BzZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgB-3g-mUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
