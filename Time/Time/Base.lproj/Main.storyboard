@@ -1,25 +1,103 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Timer-->
+        <scene sceneID="SDh-IR-03p">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="0iZ-nY-PBZ" userLabel="Timer" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="NdG-TC-js2"/>
+                        <viewControllerLayoutGuide type="bottom" id="7zd-dY-kGG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="lJd-bZ-xXd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="To3-0y-HK6" userLabel="Timer"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-I5-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1127" y="558"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="bbN-sF-Umi">
+            <objects>
+                <viewController id="Ta7-D5-KhY" userLabel="Stopwatch" customClass="StopwatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FLE-u1-Osv"/>
+                        <viewControllerLayoutGuide type="bottom" id="tRd-3v-lL5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a9R-tZ-DmQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuk-RT-9px">
+                                <rect key="frame" x="66" y="274" width="84" height="30"/>
+                                <state key="normal" title="Start Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="Ta7-D5-KhY" eventType="touchUpInside" id="mAS-sk-yFG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2go-1O-yYQ">
+                                <rect key="frame" x="258" y="140" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-Jy-X20">
+                                <rect key="frame" x="474" y="281" width="90" height="30"/>
+                                <state key="normal" title="Reset Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="Ta7-D5-KhY" eventType="touchUpInside" id="Sm2-hz-ArC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UK3-Jy-X20" secondAttribute="trailing" constant="20" id="2Q3-yk-jXD"/>
+                            <constraint firstItem="2go-1O-yYQ" firstAttribute="top" secondItem="FLE-u1-Osv" secondAttribute="bottom" constant="120" id="7mv-8m-hbQ"/>
+                            <constraint firstItem="wuk-RT-9px" firstAttribute="top" secondItem="2go-1O-yYQ" secondAttribute="bottom" constant="113" id="QXW-Pq-BEM"/>
+                            <constraint firstItem="wuk-RT-9px" firstAttribute="leading" secondItem="a9R-tZ-DmQ" secondAttribute="leadingMargin" constant="50" id="UGU-Xp-eeT"/>
+                            <constraint firstAttribute="centerX" secondItem="2go-1O-yYQ" secondAttribute="centerX" id="YlA-Gb-HBV"/>
+                            <constraint firstItem="UK3-Jy-X20" firstAttribute="top" secondItem="2go-1O-yYQ" secondAttribute="bottom" constant="120" id="qtj-oU-4tK"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="gNk-FC-fJm" userLabel="Stopwatch"/>
+                    <connections>
+                        <outlet property="stopwatchLabel" destination="2go-1O-yYQ" id="58V-WP-eaq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWb-3Q-36Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="-104"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="A4N-hw-Tnh">
+            <objects>
+                <tabBarController id="Eyd-n1-0fg" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Vbt-fM-6GP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ta7-D5-KhY" kind="relationship" relationship="viewControllers" id="Vhh-gA-f1Z"/>
+                        <segue destination="0iZ-nY-PBZ" kind="relationship" relationship="viewControllers" id="5e9-4x-EAm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfH-o4-nSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307" y="227"/>
         </scene>
     </scenes>
 </document>
