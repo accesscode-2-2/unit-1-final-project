@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StopwatchViewController : UIViewController
+@interface StopwatchViewController : UIViewController {
 
+    __weak IBOutlet UILabel *stopwatchLabel;
+    NSTimer *stopTimer;
+    NSDate *startDate;
+    BOOL running;
+    
+
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
+
+- (IBAction)startButton:(id)sender;
+- (IBAction)stopButton:(id)sender;
+
+- (void)updatetimer;
 @end
