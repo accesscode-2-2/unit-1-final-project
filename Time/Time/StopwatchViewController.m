@@ -28,6 +28,7 @@
 
 
 - (IBAction)startButton:(id)sender {
+    
     if(!running){
         running = TRUE;
         [sender setTitle:@"Stop" forState:UIControlStateNormal];
@@ -60,6 +61,7 @@
 
 
 - (IBAction)stopButton:(id)sender {
+  
     [stopTimer invalidate];
     stopTimer = nil;
     startDate = [NSDate date];
