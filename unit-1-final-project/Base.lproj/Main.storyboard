@@ -69,15 +69,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3A-CU-7gV">
+                                <rect key="frame" x="264" y="33" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="d3A-CU-7gV" firstAttribute="centerY" secondItem="jqx-II-c1I" secondAttribute="centerY" id="0wx-01-9z1"/>
                             <constraint firstItem="DOS-FX-Day" firstAttribute="centerY" secondItem="WZi-eS-7bp" secondAttribute="centerY" id="1br-we-6CB"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="top" secondItem="OX2-1j-IfV" secondAttribute="bottom" constant="48" id="BFC-xG-LaI"/>
                             <constraint firstItem="mOk-h1-0mW" firstAttribute="leading" secondItem="WZi-eS-7bp" secondAttribute="trailing" constant="100" id="D3M-dp-H9I"/>
+                            <constraint firstItem="d3A-CU-7gV" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="DKh-Jg-jpO"/>
                             <constraint firstItem="WZi-eS-7bp" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="Nwd-1p-WSo"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="leading" secondItem="jqx-II-c1I" secondAttribute="leading" constant="37" id="Q1x-3k-2qX"/>
                             <constraint firstAttribute="trailing" secondItem="uV5-xV-8Jy" secondAttribute="trailing" constant="35" id="ZCE-4x-4so"/>
+                            <constraint firstItem="d3A-CU-7gV" firstAttribute="top" secondItem="Lwu-y0-Tes" secondAttribute="bottom" constant="13" id="ZGL-SW-VRR"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="top" secondItem="Lwu-y0-Tes" secondAttribute="bottom" constant="143" id="axd-Cs-us8"/>
                             <constraint firstItem="OX2-1j-IfV" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="hwI-ie-zl5"/>
                             <constraint firstItem="WdN-AG-a2x" firstAttribute="top" secondItem="WZi-eS-7bp" secondAttribute="bottom" constant="81" id="ker-9m-ivI"/>
@@ -85,9 +94,15 @@
                             <constraint firstItem="WZi-eS-7bp" firstAttribute="leading" secondItem="DOS-FX-Day" secondAttribute="trailing" constant="100" id="q5e-60-gBG"/>
                             <constraint firstItem="mOk-h1-0mW" firstAttribute="centerY" secondItem="WZi-eS-7bp" secondAttribute="centerY" id="zs7-9m-DDG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0wx-01-9z1"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="HCM-zN-osx"/>
                     <connections>
+                        <outlet property="mainStopwatchLabel" destination="d3A-CU-7gV" id="Xyh-Io-Kao"/>
                         <outlet property="stopwatchTimerLabel" destination="OX2-1j-IfV" id="cox-X7-qCQ"/>
                         <outlet property="tableView" destination="uV5-xV-8Jy" id="yoa-I5-GMQ"/>
                     </connections>

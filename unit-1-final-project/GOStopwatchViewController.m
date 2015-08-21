@@ -13,12 +13,14 @@
 
 @property (nonatomic) NSMutableArray *laps;
 @property (nonatomic, retain) NSDate* start;
-@property (nonatomic) NSDate *stop;
+@property (nonatomic) NSDate *mainDate;
 @property (nonatomic) NSTimer *stopwatch;
 @property (nonatomic) BOOL isRunning;
 @property (nonatomic) BOOL isPause;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchTimerLabel;
+@property (nonatomic) NSTimer *mainStopwatch;
+@property (weak, nonatomic) IBOutlet UILabel *mainStopwatchLabel;
 @property (nonatomic, assign) NSTimeInterval pauseTime;
 @property (nonatomic) LapTimerTableViewCell * model;
 
@@ -27,16 +29,19 @@
 @implementation GOStopwatchViewController
 
 - (void)viewDidLoad {
-    self.start = [[NSDate alloc]init];
-
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     
     self.model = [[LapTimerTableViewCell alloc] init];
     
     [super viewDidLoad];
     
     self.laps = [[NSMutableArray alloc]init];
+    
+    self.start = [[NSDate alloc]init];
+    
+    self.mainDate = [[NSDate alloc]init];
     
 }
 
@@ -49,41 +54,57 @@
 - (IBAction)startStopwatchButton:(UIButton *)sender {
     
     
+    
     self.stopwatch = [NSTimer scheduledTimerWithTimeInterval:1.0/100.0
                                                       target:self
                                                     selector:@selector(updateStopwatchTimer)
                                                     userInfo:nil repeats:YES];
     
+    self.mainStopwatch = [NSTimer scheduledTimerWithTimeInterval:1.0/100.0
+                                                          target:self
+                                                        selector:@selector(updateMainStopwatchTimer)
+                                                        userInfo:nil repeats:YES];
 }
 
-
+-(void) updateMainStopwatchTimer {
+    NSDate *currentdate = [NSDate date];
+    NSTimeInterval timerInterval = [currentdate timeIntervalSinceDate:self.mainDate];
+    NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:timerInterval];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"mm : ss : SS"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString = [dateFormatter stringFromDate:timeDate];
+    self.mainStopwatchLabel.text = timeString;
+}
 
 - (void) updateStopwatchTimer {
-    
     NSDate *currentdate = [NSDate date];
     NSTimeInterval timerInterval = [currentdate timeIntervalSinceDate:self.start];
     NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:timerInterval];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"m s SS"];
+    [dateFormatter setDateFormat:@"mm : ss : SS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString = [dateFormatter stringFromDate:timeDate];
     self.stopwatchTimerLabel.text = timeString;
-    
-    
-    
 }
 
 - (IBAction)stopStopwatchButton:(UIButton *)sender {
-    self.pauseTime = [self.start timeIntervalSinceNow];
+    self.pauseTime = [self.mainDate timeIntervalSinceNow];
     
-    self.start = [NSDate dateWithTimeIntervalSinceNow:self.pauseTime];
+    self.mainDate = [NSDate dateWithTimeIntervalSinceNow:self.pauseTime];
     
     NSLog(@"%f", self.pauseTime);
+    
+    [self.mainStopwatch invalidate];
     [self.stopwatch invalidate];
 }
 
 - (IBAction)lapStopwatchButton:(UIButton *)sender {
+    
+    self.start = [[NSDate alloc]init];
+    
     [self.laps addObject:self.stopwatchTimerLabel.text];
     NSLog(@"%@", self.laps);
     
