@@ -12,6 +12,8 @@
 @interface GOStopwatchViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSMutableArray *laps;
+@property (nonatomic) NSMutableArray *numberOfLaps;
+@property (nonatomic) NSInteger lapNumber;
 @property (nonatomic, retain) NSDate* start;
 @property (nonatomic) NSDate *mainDate;
 @property (nonatomic) NSTimer *stopwatch;
@@ -42,6 +44,8 @@
     self.start = [[NSDate alloc]init];
     
     self.mainDate = [[NSDate alloc]init];
+    
+    self.numberOfLaps = [[NSMutableArray alloc]init];
     
 }
 
@@ -113,6 +117,10 @@
     
     NSIndexPath* ipath = [NSIndexPath indexPathForRow:[self.laps count]-1 inSection:0];
     [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    
+    self.lapNumber = ipath.row + 1;
+    
+    [self.numberOfLaps addObject: [NSNumber numberWithInteger:self.lapNumber]];
 }
 
 
@@ -136,8 +144,10 @@
     }
    
     NSString *key = [self.laps objectAtIndex:indexPath.row];
+    NSString *lap = [self.numberOfLaps objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = key;
+    cell.detailTextLabel.text = key;
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %@",lap];
     
     return cell;
 }
