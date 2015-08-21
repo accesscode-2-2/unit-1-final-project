@@ -1,19 +1,18 @@
 //
-//  TimeTests.m
-//  TimeTests
+//  unit_1_final_projectTests.m
+//  unit-1-final-projectTests
 //
-//  Created by Michael Kavouras on 8/20/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
+//  Created by Fatima Zenine Villanueva on 8/20/15.
+//  Copyright © 2015 apps. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface TimeTests : XCTestCase
+@interface unit_1_final_projectTests : XCTestCase
 
 @end
 
-@implementation TimeTests
+@implementation unit_1_final_projectTests
 
 - (void)setUp {
     [super setUp];
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {
