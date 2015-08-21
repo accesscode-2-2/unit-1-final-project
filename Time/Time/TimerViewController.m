@@ -14,6 +14,21 @@
 
 @implementation TimerViewController
 
+- (IBAction)Start {
+    
+    mainFloat = 10.00;
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
+}
+
+- (void)countDown {
+    
+    mainFloat -= 0.01;
+    seconds.text = [NSString stringWithFormat:@"%f", mainFloat];
+    
+    if (mainFloat == 0) {
+        [timer invalidate];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

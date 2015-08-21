@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController
+@interface TimerViewController : UIViewController {
+    
+    float mainFloat;
+    IBOutlet UILabel *seconds;
+    NSTimer *timer;
+}
+
+- (IBAction)Start;
 
 @end
