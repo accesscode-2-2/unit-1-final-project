@@ -12,16 +12,14 @@
 @interface GOStopwatchViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSMutableArray *laps;
-@property (nonatomic) NSDate *start;
+@property (nonatomic, retain) NSDate* start;
 @property (nonatomic) NSDate *stop;
 @property (nonatomic) NSTimer *stopwatch;
 @property (nonatomic) BOOL isRunning;
 @property (nonatomic) BOOL isPause;
-@property (nonatomic) NSInteger milliseconds;
-@property (nonatomic) NSInteger seconds;
-@property (nonatomic) NSInteger minutes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchTimerLabel;
+@property (nonatomic, assign) NSTimeInterval pauseTime;
 @property (nonatomic) LapTimerTableViewCell * model;
 
 @end
@@ -29,9 +27,10 @@
 @implementation GOStopwatchViewController
 
 - (void)viewDidLoad {
-    
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    self.start = [[NSDate alloc]init];
+
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     self.model = [[LapTimerTableViewCell alloc] init];
     
@@ -49,7 +48,6 @@
 // Press start to begin timer
 - (IBAction)startStopwatchButton:(UIButton *)sender {
     
-    self.start = [[NSDate alloc]init];
     
     self.stopwatch = [NSTimer scheduledTimerWithTimeInterval:1.0/100.0
                                                       target:self
@@ -72,9 +70,17 @@
     NSString *timeString = [dateFormatter stringFromDate:timeDate];
     self.stopwatchTimerLabel.text = timeString;
     
+    
+    
 }
 
 - (IBAction)stopStopwatchButton:(UIButton *)sender {
+    self.pauseTime = [self.start timeIntervalSinceNow];
+    
+    self.start = [NSDate dateWithTimeIntervalSinceNow:self.pauseTime];
+    
+    NSLog(@"%f", self.pauseTime);
+    [self.stopwatch invalidate];
 }
 
 - (IBAction)lapStopwatchButton:(UIButton *)sender {
