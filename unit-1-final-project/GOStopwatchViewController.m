@@ -1,14 +1,16 @@
 //
-//  GOTimerController.m
+//  GOStopwatchViewController.m
 //  unit-1-final-project
 //
-//  Created by Fatima Zenine Villanueva on 8/21/15.
+//  Created by Jamaal Sedayao on 8/21/15.
 //  Copyright © 2015 apps. All rights reserved.
 //
 
-#import "GOTimerController.h"
+#import "GOStopwatchViewController.h"
+#import "LapTimerTableViewCell.h"
 
-@interface GOTimerController ()
+@interface GOStopwatchViewController () <UITableViewDelegate, UITableViewDataSource>
+
 @property (nonatomic) NSMutableArray *laps;
 @property (nonatomic) NSDate *start;
 @property (nonatomic) NSDate *stop;
@@ -18,19 +20,25 @@
 @property (nonatomic) NSInteger milliseconds;
 @property (nonatomic) NSInteger seconds;
 @property (nonatomic) NSInteger minutes;
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchTimerLabel;
+@property (nonatomic) LapTimerTableViewCell * model;
 
 @end
 
-@implementation GOTimerController
+@implementation GOStopwatchViewController
 
 - (void)viewDidLoad {
+    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    self.model = [[LapTimerTableViewCell alloc] init];
     
     [super viewDidLoad];
     
     self.laps = [[NSMutableArray alloc]init];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +61,7 @@
 
 
 - (void) updateStopwatchTimer {
-
+    
     NSDate *currentdate = [NSDate date];
     NSTimeInterval timerInterval = [currentdate timeIntervalSinceDate:self.start];
     NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:timerInterval];
@@ -71,12 +79,13 @@
 
 - (IBAction)lapStopwatchButton:(UIButton *)sender {
     [self.laps addObject:self.stopwatchTimerLabel.text];
-     NSLog(@"%@", self.laps);
+    NSLog(@"%@", self.laps);
     
     [self.tableView reloadData];
     
-    NSIndexPath* ipath = [NSIndexPath indexPathForRow:[self.laps count]-1 inSection:0];
-    [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    
+//    NSIndexPath* ipath = [NSIndexPath indexPathForRow:[self.laps count]-1 inSection:0];
+//    [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
 }
 
 
@@ -87,13 +96,32 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.laps.count;
+//    return self.laps.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap" forIndexPath:indexPath];
-    NSString *key = [self.laps objectAtIndex:indexPath.row];
-    cell.textLabel.text = key;
+    
+  // NSString *cellIdentifier = @"TimeLap";
+    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+//   if (!cell) {
+//   cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//    }
+//            
+//   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap" forIndexPath:indexPath];
+//    
+//    NSString *key = [self.laps objectAtIndex:indexPath.row];
+//
+//    
+//    cell.textLabel.text = key;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap"];
+   
+    //NSString *key = [self.laps objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = @"please work";
     return cell;
 }
 
