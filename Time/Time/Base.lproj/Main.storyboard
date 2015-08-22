@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Stopwatch-->
         <scene sceneID="RIi-JI-uHc">
             <objects>
                 <viewController id="dfO-4W-KWV" customClass="StopWatchViewController" sceneMemberID="viewController">
@@ -24,14 +24,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-Vj-5NK" userLabel="Stopwatch Timer View">
                                         <rect key="frame" x="100" y="60" width="400" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-nY-S8U">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-nY-S8U">
                                                 <rect key="frame" x="20" y="20" width="360" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="fpP-nY-S8U" secondAttribute="bottom" constant="20" id="3dg-B8-4dI"/>
                                             <constraint firstAttribute="trailing" secondItem="fpP-nY-S8U" secondAttribute="trailing" constant="20" id="Cun-pR-Llu"/>
@@ -41,22 +41,56 @@
                                             <constraint firstAttribute="width" constant="400" id="bda-kK-Acy"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-sf-n8g">
-                                        <rect key="frame" x="146" y="190" width="46" height="30"/>
-                                        <state key="normal" title="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-sf-n8g">
+                                        <rect key="frame" x="50" y="170" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FPk-pg-riH"/>
+                                            <constraint firstAttribute="height" constant="50" id="NAj-Ab-qnI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startStopButtonTapped:" destination="dfO-4W-KWV" eventType="touchUpInside" id="wUc-da-AGM"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qan-dl-Ps7">
-                                        <rect key="frame" x="417" y="190" width="46" height="30"/>
-                                        <state key="normal" title="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qan-dl-Ps7">
+                                        <rect key="frame" x="450" y="170" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7LP-mv-qO2"/>
+                                            <constraint firstAttribute="width" constant="100" id="TZY-nZ-nVh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetLapButtonTapped:" destination="dfO-4W-KWV" eventType="touchUpInside" id="MbW-VJ-K87"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRD-40-Wpm" userLabel="LapTime">
+                                        <rect key="frame" x="505" y="20" width="90" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="HdG-ar-e8a"/>
+                                            <constraint firstAttribute="height" constant="35" id="gZx-8A-3L9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.73909296700000005" green="0.76212079109999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="qan-dl-Ps7" firstAttribute="top" secondItem="Ohr-Vj-5NK" secondAttribute="bottom" constant="30" id="1dC-93-xoe"/>
+                                    <constraint firstAttribute="trailing" secondItem="qan-dl-Ps7" secondAttribute="trailing" constant="50" id="AdP-D2-RCv"/>
+                                    <constraint firstAttribute="trailing" secondItem="wRD-40-Wpm" secondAttribute="trailing" constant="5" id="Bxj-Fm-OvX"/>
+                                    <constraint firstItem="x8d-sf-n8g" firstAttribute="top" secondItem="Ohr-Vj-5NK" secondAttribute="bottom" constant="30" id="FOl-a6-XsN"/>
                                     <constraint firstAttribute="height" constant="240" id="Xil-az-oJj"/>
+                                    <constraint firstItem="Ohr-Vj-5NK" firstAttribute="top" secondItem="wRD-40-Wpm" secondAttribute="bottom" constant="5" id="hEQ-8Z-tXW"/>
+                                    <constraint firstItem="x8d-sf-n8g" firstAttribute="leading" secondItem="1oM-hc-lTS" secondAttribute="leading" constant="50" id="iUb-tU-die"/>
                                     <constraint firstItem="Ohr-Vj-5NK" firstAttribute="top" secondItem="1oM-hc-lTS" secondAttribute="top" constant="60" id="wkD-Th-NAC"/>
                                     <constraint firstAttribute="centerX" secondItem="Ohr-Vj-5NK" secondAttribute="centerX" id="ynL-M5-P2e"/>
                                 </constraints>
@@ -64,6 +98,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u9K-3M-whf">
                                 <rect key="frame" x="16" y="240" width="568" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="siV-xn-2W7">
                                         <rect key="frame" x="0.0" y="22" width="568" height="44"/>
@@ -92,9 +127,13 @@
                             <constraint firstAttribute="trailing" secondItem="1oM-hc-lTS" secondAttribute="trailing" id="zHE-57-Evr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="w51-A3-d2N"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" id="w51-A3-d2N"/>
                     <connections>
+                        <outlet property="LapTableView" destination="u9K-3M-whf" id="mbK-pd-tX4"/>
                         <outlet property="StopwatchRunningLabel" destination="fpP-nY-S8U" id="yYn-q5-Dup"/>
+                        <outlet property="recentLapRunning" destination="wRD-40-Wpm" id="G7J-PK-Gts"/>
+                        <outlet property="resetLapButton" destination="qan-dl-Ps7" id="bev-ev-AH3"/>
+                        <outlet property="startStopButton" destination="x8d-sf-n8g" id="t0j-IF-4Pw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHu-E8-gTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
