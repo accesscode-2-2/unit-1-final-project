@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL running;
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
+@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
 @property (strong, nonatomic) IBOutlet UITableView *LapTableView;
 @property (nonatomic) NSTimer *runningStopWatch;
 @property (nonatomic) void *callTheTimer;
@@ -96,6 +97,7 @@
     NSString *resetLapActualLabel =  self.resetLapButton.titleLabel.text;
     if ([resetLapActualLabel isEqualToString:@"Reset"]) {
         self.StopwatchRunningLabel.text = @"0:00.0";
+        self.recentLapRunning.text = @"0:00.0";
         [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.resetLapButton.enabled = YES;
 
@@ -137,7 +139,7 @@
     elapsed -=  secs;
     int fraction = elapsed * 10.0;
     
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
+    self.recentLapRunning.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
     }
     
     
