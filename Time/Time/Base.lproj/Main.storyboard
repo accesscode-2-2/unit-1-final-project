@@ -199,12 +199,28 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iio-Lt-iJ8">
                                 <rect key="frame" x="32" y="219" width="536" height="162"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pah-Du-ieJ">
+                                <rect key="frame" x="36" y="491" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-Ih-xLb">
+                                <rect key="frame" x="518" y="491" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pah-Du-ieJ" firstAttribute="leading" secondItem="gEn-en-CSI" secondAttribute="leadingMargin" constant="20" id="LcV-KF-p9V"/>
+                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="pah-Du-ieJ" secondAttribute="bottom" constant="30" id="MHA-4n-4J1"/>
                             <constraint firstAttribute="centerX" secondItem="iio-Lt-iJ8" secondAttribute="centerX" id="Odq-mh-faJ"/>
                             <constraint firstAttribute="centerY" secondItem="iio-Lt-iJ8" secondAttribute="centerY" id="Ow6-jq-KEd"/>
+                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="d5i-Ih-xLb" secondAttribute="bottom" constant="30" id="U7R-Bo-kBd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iio-Lt-iJ8" secondAttribute="trailing" constant="16" id="YF7-xN-91I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d5i-Ih-xLb" secondAttribute="trailing" constant="20" id="pGQ-OT-LXI"/>
                             <constraint firstItem="iio-Lt-iJ8" firstAttribute="leading" secondItem="gEn-en-CSI" secondAttribute="leadingMargin" constant="16" id="vtD-ja-Agw"/>
                         </constraints>
                     </view>
