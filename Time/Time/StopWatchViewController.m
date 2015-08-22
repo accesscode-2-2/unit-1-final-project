@@ -22,6 +22,14 @@
 @property (nonatomic) NSTimeInterval currentTimeOnLabel;
 
 @property (strong, nonatomic) IBOutlet UITableView *LapTableView;
+@property (nonatomic) NSTimer *runningStopWatch;
+@property (nonatomic) void *callTheTimer;
+
+
+@property (nonatomic) NSTimeInterval previousTime;
+@property (nonatomic) NSTimeInterval totalTime;
+
+
 
 @end
 
@@ -30,6 +38,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[self runningStopWatch] invalidate];
+//    [[self callTheTimer] invalidate];
+
     
     self.arr = @[
                  @"one",
@@ -64,6 +76,8 @@
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
     if ([startStopActualLabel isEqualToString:@"Start"]) {
         
+        self.previousTime = [NSDate timeIntervalSinceReferenceDate];
+        
         self.currentTimeOnLabel = [NSDate timeIntervalSinceReferenceDate];
         
         
@@ -76,9 +90,10 @@
         
         self.running = YES;
         //start timer
-        self.startStopwatchTimer = [NSTimer timerWithTimeInterval:0 target:self selector:@selector(callTheTimer:) userInfo:nil repeats:NO];
+        [self callTheTimer];
+//        self.startStopwatchTimer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(callTheTimer:) userInfo:nil repeats:NO];
         
-        [[NSRunLoop currentRunLoop] addTimer:self.startStopwatchTimer forMode:NSRunLoopCommonModes];
+//        [[NSRunLoop currentRunLoop] addTimer:self.startStopwatchTimer forMode:NSRunLoopCommonModes];
     }
     else if ([startStopActualLabel isEqualToString:@"Stop"] ) {
         self.running = NO;
@@ -98,20 +113,23 @@
         self.resetLapButton.enabled = YES;
 
         
+        
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
 
-    }
+        
+             [[self runningStopWatch] invalidate];
+        
 }
 
- 
+}
 
 
 
-- (void)callTheTimer: (NSTimer *)timer{
+- (void)callTheTimer {
     
     //call the second timer
-    self.runStopwatchTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(runningStopWatch:) userInfo:nil repeats:YES];
+    self.runStopwatchTimer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(runningStopWatch:) userInfo:nil repeats:YES];
     
     [[NSRunLoop currentRunLoop] addTimer:self.runStopwatchTimer forMode:NSRunLoopCommonModes];
 }
@@ -120,22 +138,26 @@
 - (void)runningStopWatch: (NSTimer *)timer{
     
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - + 0.1;
-//
+    NSTimeInterval elapsed = currentTime - self.previousTime;
+    
+   // self.totalTime = self.totalTime + elapsed;
+  
+    elapsed += self.totalTime;
+ //
     
 //    NSTimeInterval currentTime = [self.StopwatchRunningLabel.text floatValue];
 //    NSTimeInterval elapsed = currentTime + 0.1;
 
     
-    int mins = (int) (elapsed / 60.0);
+    int mins = (int) (elapsed) / 60.0;
     elapsed -= mins * 60;
     int secs = (int) (elapsed);
-    elapsed -= secs;
+    elapsed -=  secs;
     int fraction = elapsed * 10.0;
     
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%u:%02u:%u", mins, secs, fraction];
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
     
-    
+  ///  self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%f", self.totalTime];
     
     
     
@@ -154,6 +176,19 @@
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {
