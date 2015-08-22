@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
@@ -40,7 +40,17 @@ class ViewController: UIViewController {
     }
     
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        cell.textLabel!.text = "Test"
+        cell.detailTextLabel!.text = "Detail Test"
+        
+        return cell
+    }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
     
 }
