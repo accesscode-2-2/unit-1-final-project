@@ -7,7 +7,7 @@
 //
 
 #import "StopwatchViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface StopwatchViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
@@ -25,7 +25,10 @@
     stopwatchLabel.text = @"00.00.000";
     running = FALSE;
     startDate = [NSDate date];
-    
+    self.startButton.layer.cornerRadius = 37.5;
+    self.startButton.clipsToBounds = YES;
+    self.resetButton.layer.cornerRadius = 37.5;
+    self.resetButton.clipsToBounds = YES; 
 }
 
 - (void)didReceiveMemoryWarning {

@@ -84,17 +84,17 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2go-1O-yYQ">
                                         <rect key="frame" x="100" y="50" width="400" height="90"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="27"/>
                                         <color key="textColor" red="1" green="0.090645954008278351" blue="0.11139939707770485" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60G-nq-zQF" userLabel="Log Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60G-nq-zQF" userLabel="Log Label">
                                         <rect key="frame" x="527" y="5" width="68" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fkY-LH-hpN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -108,18 +108,22 @@
                                     <constraint firstAttribute="height" constant="140" id="e1n-17-8PU"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fuW-lC-uOz">
+                                <rect key="frame" x="0.0" y="335" width="590" height="265"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpA-Xr-1cM" userLabel="Buttons View">
-                                <rect key="frame" x="0.0" y="160" width="600" height="150"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="175"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obF-gb-Rt5" userLabel="Button Box View">
-                                        <rect key="frame" x="200" y="50" width="200" height="50"/>
+                                        <rect key="frame" x="175" y="50" width="250" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-Jy-X20" userLabel="Reset Button">
-                                                <rect key="frame" x="150" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="175" y="0.0" width="75" height="75"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="dAS-DD-eaj"/>
-                                                    <constraint firstAttribute="height" constant="50" id="jES-w5-D7x"/>
+                                                    <constraint firstAttribute="width" constant="75" id="dAS-DD-eaj"/>
+                                                    <constraint firstAttribute="height" constant="75" id="jES-w5-D7x"/>
                                                 </constraints>
                                                 <state key="normal" title="Reset">
                                                     <color key="titleColor" red="1" green="0.034271526734913071" blue="0.12320967556456497" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,11 +134,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuk-RT-9px" userLabel="Start Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="M4L-yG-uP3"/>
-                                                    <constraint firstAttribute="height" constant="50" id="sye-aL-W2i"/>
+                                                    <constraint firstAttribute="width" constant="75" id="M4L-yG-uP3"/>
+                                                    <constraint firstAttribute="height" constant="75" id="sye-aL-W2i"/>
                                                 </constraints>
                                                 <state key="normal" title="Start ">
                                                     <color key="titleColor" red="0.2359406949985442" green="1" blue="0.16103645601879035" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,13 +149,13 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="60P-h0-4Cw"/>
+                                            <constraint firstAttribute="height" constant="75" id="60P-h0-4Cw"/>
                                             <constraint firstItem="wuk-RT-9px" firstAttribute="leading" secondItem="obF-gb-Rt5" secondAttribute="leading" id="7Q3-zi-XlL"/>
                                             <constraint firstAttribute="trailing" secondItem="UK3-Jy-X20" secondAttribute="trailing" id="EIZ-dF-w0z"/>
                                             <constraint firstItem="UK3-Jy-X20" firstAttribute="top" secondItem="obF-gb-Rt5" secondAttribute="top" id="eWH-sc-Zop"/>
-                                            <constraint firstAttribute="width" constant="200" id="efL-4I-G6w"/>
+                                            <constraint firstAttribute="width" constant="250" id="efL-4I-G6w"/>
                                             <constraint firstItem="wuk-RT-9px" firstAttribute="top" secondItem="obF-gb-Rt5" secondAttribute="top" id="nm3-qH-KQO"/>
                                         </constraints>
                                     </view>
@@ -179,10 +183,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fuW-lC-uOz">
-                                <rect key="frame" x="0.0" y="310" width="590" height="290"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -208,7 +208,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" id="OY2-JH-m9a"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="StopWatch-256" id="OY2-JH-m9a"/>
                     <connections>
                         <outlet property="logLabel" destination="60G-nq-zQF" id="QwH-hz-iUp"/>
                         <outlet property="resetButton" destination="UK3-Jy-X20" id="v5h-0l-JT3"/>
@@ -240,4 +240,7 @@
             <point key="canvasLocation" x="307" y="227"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="StopWatch-256" width="29" height="29"/>
+    </resources>
 </document>
