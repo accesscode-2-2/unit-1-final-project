@@ -80,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: UIControlState.Normal)
             
             
-            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method on line 129)
+            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method on line 167)
             addLap = true
             
         }
@@ -169,7 +169,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if addLap == true {
             
-            //Adds the current time, which is stored in lapString (refer to the updateStopWatch method on line 95)
+            //Adds the current time, which is stored in lapString (refer to the updateStopWatch method on line 110)
             laps.insert(lapString, atIndex: 0)
             
             //Resets the lap counter
