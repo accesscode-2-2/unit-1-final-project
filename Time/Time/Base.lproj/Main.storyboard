@@ -54,9 +54,49 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAx-bG-ah8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="325"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJf-ge-U82">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrF-Mp-wQR" userLabel="timerLabel">
+                                                <rect key="frame" x="100" y="52" width="400" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="KKO-U2-LZP"/>
+                                                    <constraint firstAttribute="height" constant="60" id="bUR-ko-aW7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="65"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.9960784912109375" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="GrF-Mp-wQR" secondAttribute="centerX" id="0qK-Xd-t8g"/>
+                                            <constraint firstAttribute="centerY" secondItem="GrF-Mp-wQR" secondAttribute="centerY" id="7Gk-pX-2B3"/>
+                                            <constraint firstAttribute="height" constant="162.5" id="XmE-Cg-q3D"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-L1-8SY">
+                                        <rect key="frame" x="70" y="233" width="30" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" red="0.0" green="0.84705889225006104" blue="0.27843138575553894" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="start:" destination="eeN-hb-HVz" eventType="touchUpInside" id="chM-IV-dSj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="325" id="9TP-70-vfj"/>
+                                    <constraint firstItem="QgE-L1-8SY" firstAttribute="leading" secondItem="eAx-bG-ah8" secondAttribute="leading" constant="70" id="F4g-dp-bMz"/>
+                                    <constraint firstItem="kJf-ge-U82" firstAttribute="leading" secondItem="eAx-bG-ah8" secondAttribute="leading" id="HOw-3k-XvA"/>
+                                    <constraint firstAttribute="trailing" secondItem="kJf-ge-U82" secondAttribute="trailing" id="K73-BF-Pew"/>
+                                    <constraint firstItem="QgE-L1-8SY" firstAttribute="top" secondItem="kJf-ge-U82" secondAttribute="bottom" constant="70" id="WCE-MF-xNP"/>
+                                    <constraint firstItem="kJf-ge-U82" firstAttribute="top" secondItem="eAx-bG-ah8" secondAttribute="top" id="dr8-Jf-Srz"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -73,7 +113,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="w04-aE-1e7"/>
                     <connections>
+                        <outlet property="start" destination="QgE-L1-8SY" id="oey-LU-mcc"/>
                         <outlet property="tableView" destination="Cch-if-onc" id="0HO-W2-WLG"/>
+                        <outlet property="timerLabel" destination="GrF-Mp-wQR" id="RPi-l1-mRL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzu-Fx-TZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

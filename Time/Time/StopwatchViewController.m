@@ -7,16 +7,29 @@
 //
 
 #import "StopwatchViewController.h"
+//@import QuartzCore.CADisplayLink;
+@import QuartzCore;
 
 @interface StopwatchViewController ()
 
 @property (nonatomic) NSArray *arr;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic) CADisplayLink *displayLink;
+
+@property(readonly, nonatomic) CFTimeInterval duration;
+@property(nonatomic) NSInteger frameInterval;
+
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *start;
+
+
 @end
 
 @implementation StopwatchViewController
 
+BOOL running;
+NSTimeInterval startTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,9 +39,73 @@
                  @"two",
                  @"three"
                  ];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    
+    self.timerLabel.text = @"00:00:00";
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
 }
+
+- (IBAction)start:(UIButton *)sender {
+
+//    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(timerFired:)];
+//    
+//    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop]
+//                       forMode:NSDefaultRunLoopMode];
+    
+    if (running == false) {
+        // start timer
+        running = true;
+        startTime = [NSDate timeIntervalSinceReferenceDate];
+        [sender setTitle:@"STOP" forState:UIControlStateNormal];
+        [self updateTime];
+    } else {
+        // stop timer
+        [sender setTitle:@"START" forState:UIControlStateNormal];
+        running = false;
+    }
+    
+}
+
+- (void)updateTime {
+    if (running == false) return;
+    
+    // calculate elapsed time
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    NSTimeInterval elapsed = currentTime - startTime;
+    
+    // extract out the minutes, seconds, and fraction of seconds from elapsed time:
+    int mins = (int) (elapsed / 60.0);
+    elapsed -= mins * 60;
+    int secs = (int) (elapsed);
+    elapsed -= secs;
+    int fraction = elapsed * 100.0;
+    
+    // update our label using a format of 0:00.0
+    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
+    
+    // call updateTime again after 0.1 seconds
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
+}
+
+    
+//    NSTimer *startTimer = [NSTimer timerWithTimeInterval:0.001 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+//    
+//    [[NSRunLoop currentRunLoop] addTimer:startTimer forMode:NSRunLoopCommonModes];
+    
+
+
+//- (void) addTime {
+//    
+//}
+
+//- (void) timerFired: (CADisplayLink *)display {
+//    float currentNumber = [self.timerLabel.text floatValue];
+//    float nextNumber = currentNumber + 0.001;
+//    
+//    self.timerLabel.text = [NSString stringWithFormat:@"%.3f", nextNumber];
+//}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
