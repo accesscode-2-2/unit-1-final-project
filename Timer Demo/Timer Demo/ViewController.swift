@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     }
     
     func updateTimer(timer:Timer){
-        timer.remainingTime = popcornTimer.remainingTime - displayLink.duration
-        print("Remaining popcorn time: \(popcornTimer.remainingTime)")
+        timer.remainingTime = timer.remainingTime - displayLink.duration
+        print("Remaining time: \(timer.remainingTime)")
     }
     
     func update(){
