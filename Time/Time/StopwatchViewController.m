@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    stopwatchLabel.text = @"00.00.00.000";
+    stopwatchLabel.text = @"00.00.000";
     running = FALSE;
     startDate = [NSDate date];
     
@@ -63,7 +63,7 @@
     
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
+    [dateFormatter setDateFormat:@"mm:ss.SSS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     stopwatchLabel.text = timeString;
@@ -71,12 +71,12 @@
 
 
 
-- (IBAction)stopButton:(id)sender {
+- (IBAction)resetButton:(id)sender {
     [_startButton setTitle:@"Start" forState:UIControlStateNormal];
     [stopTimer invalidate];
     stopTimer = nil;
     startDate = [NSDate date];
-    stopwatchLabel.text = @"00.00.00.000";
+    stopwatchLabel.text = @"00.00.000";
     running = FALSE;
     
 }
