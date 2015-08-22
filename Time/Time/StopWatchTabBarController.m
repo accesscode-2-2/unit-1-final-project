@@ -52,15 +52,15 @@
 - (IBAction)buttonTapped:(id)sender {
         //IBAction *tapped =
         NSLog(@"button tapped"); // test it!
-        
-        if (self.timerIsRunning) {
-            self.timerIsRunning = NO;
-            [self stopTimer];
-        } else {
-            self.timerIsRunning = YES;
-            [self startTimer];
-        }
-        
+//        
+//        if (self.timerIsRunning) {
+//            self.timerIsRunning = NO;
+//            [self stopTimer];
+//        } else {
+//            self.timerIsRunning = YES;
+//            [self startTimer];
+//        }
+    
 }
 }
 
