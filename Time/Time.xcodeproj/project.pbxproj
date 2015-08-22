@@ -14,6 +14,18 @@
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
 		DC7C33FF1B88C2B40051C061 /* StopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */; };
+		DC7C34051B8904670051C061 /* Orbitron-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34011B89044D0051C061 /* Orbitron-Black.ttf */; };
+		DC7C34061B8904670051C061 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34021B89044D0051C061 /* Orbitron-Bold.ttf */; };
+		DC7C34071B8904670051C061 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34031B89044D0051C061 /* Orbitron-Medium.ttf */; };
+		DC7C34081B8904670051C061 /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34041B89044D0051C061 /* Orbitron-Regular.ttf */; };
+		DC7C34111B8905950051C061 /* Digir___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34091B8905950051C061 /* Digir___.ttf */; };
+		DC7C34121B8905950051C061 /* Digirc__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340A1B8905950051C061 /* Digirc__.ttf */; };
+		DC7C34131B8905950051C061 /* Digircu_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340B1B8905950051C061 /* Digircu_.ttf */; };
+		DC7C34141B8905950051C061 /* Digire__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340C1B8905950051C061 /* Digire__.ttf */; };
+		DC7C34151B8905950051C061 /* Digireu_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340D1B8905950051C061 /* Digireu_.ttf */; };
+		DC7C34161B8905950051C061 /* DIGIRT__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340E1B8905950051C061 /* DIGIRT__.TTF */; };
+		DC7C34171B8905950051C061 /* Digirtu_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340F1B8905950051C061 /* Digirtu_.ttf */; };
+		DC7C34181B8905950051C061 /* DIGIRU__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34101B8905950051C061 /* DIGIRU__.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +52,18 @@
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
 		DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchViewController.h; sourceTree = "<group>"; };
 		DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchViewController.m; sourceTree = "<group>"; };
+		DC7C34011B89044D0051C061 /* Orbitron-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Black.ttf"; path = "../../../../../../../Downloads/Orbitron/Orbitron-Black.ttf"; sourceTree = "<group>"; };
+		DC7C34021B89044D0051C061 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Bold.ttf"; path = "../../../../../../../Downloads/Orbitron/Orbitron-Bold.ttf"; sourceTree = "<group>"; };
+		DC7C34031B89044D0051C061 /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Medium.ttf"; path = "../../../../../../../Downloads/Orbitron/Orbitron-Medium.ttf"; sourceTree = "<group>"; };
+		DC7C34041B89044D0051C061 /* Orbitron-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Regular.ttf"; path = "../../../../../../../Downloads/Orbitron/Orbitron-Regular.ttf"; sourceTree = "<group>"; };
+		DC7C34091B8905950051C061 /* Digir___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Digir___.ttf"; path = "../../../../../../../Downloads/digreadout/Digir___.ttf"; sourceTree = "<group>"; };
+		DC7C340A1B8905950051C061 /* Digirc__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Digirc__.ttf; path = ../../../../../../../Downloads/digreadout/Digirc__.ttf; sourceTree = "<group>"; };
+		DC7C340B1B8905950051C061 /* Digircu_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Digircu_.ttf; path = ../../../../../../../Downloads/digreadout/Digircu_.ttf; sourceTree = "<group>"; };
+		DC7C340C1B8905950051C061 /* Digire__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Digire__.ttf; path = ../../../../../../../Downloads/digreadout/Digire__.ttf; sourceTree = "<group>"; };
+		DC7C340D1B8905950051C061 /* Digireu_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Digireu_.ttf; path = ../../../../../../../Downloads/digreadout/Digireu_.ttf; sourceTree = "<group>"; };
+		DC7C340E1B8905950051C061 /* DIGIRT__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = DIGIRT__.TTF; path = ../../../../../../../Downloads/digreadout/DIGIRT__.TTF; sourceTree = "<group>"; };
+		DC7C340F1B8905950051C061 /* Digirtu_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Digirtu_.ttf; path = ../../../../../../../Downloads/digreadout/Digirtu_.ttf; sourceTree = "<group>"; };
+		DC7C34101B8905950051C061 /* DIGIRU__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = DIGIRU__.TTF; path = ../../../../../../../Downloads/digreadout/DIGIRU__.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,7 @@
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */,
 				DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */,
+				DC7C34001B8904400051C061 /* Fonts */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -117,6 +142,25 @@
 				8D0537761B86687C00588318 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC7C34001B8904400051C061 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DC7C34091B8905950051C061 /* Digir___.ttf */,
+				DC7C340A1B8905950051C061 /* Digirc__.ttf */,
+				DC7C340B1B8905950051C061 /* Digircu_.ttf */,
+				DC7C340C1B8905950051C061 /* Digire__.ttf */,
+				DC7C340D1B8905950051C061 /* Digireu_.ttf */,
+				DC7C340E1B8905950051C061 /* DIGIRT__.TTF */,
+				DC7C340F1B8905950051C061 /* Digirtu_.ttf */,
+				DC7C34101B8905950051C061 /* DIGIRU__.TTF */,
+				DC7C34011B89044D0051C061 /* Orbitron-Black.ttf */,
+				DC7C34021B89044D0051C061 /* Orbitron-Bold.ttf */,
+				DC7C34031B89044D0051C061 /* Orbitron-Medium.ttf */,
+				DC7C34041B89044D0051C061 /* Orbitron-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +243,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7C34151B8905950051C061 /* Digireu_.ttf in Resources */,
+				DC7C34051B8904670051C061 /* Orbitron-Black.ttf in Resources */,
+				DC7C34141B8905950051C061 /* Digire__.ttf in Resources */,
+				DC7C34171B8905950051C061 /* Digirtu_.ttf in Resources */,
+				DC7C34061B8904670051C061 /* Orbitron-Bold.ttf in Resources */,
+				DC7C34161B8905950051C061 /* DIGIRT__.TTF in Resources */,
+				DC7C34071B8904670051C061 /* Orbitron-Medium.ttf in Resources */,
+				DC7C34121B8905950051C061 /* Digirc__.ttf in Resources */,
+				DC7C34081B8904670051C061 /* Orbitron-Regular.ttf in Resources */,
+				DC7C34111B8905950051C061 /* Digir___.ttf in Resources */,
+				DC7C34131B8905950051C061 /* Digircu_.ttf in Resources */,
 				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
+				DC7C34181B8905950051C061 /* DIGIRU__.TTF in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				8D0537691B86687C00588318 /* Images.xcassets in Resources */,
 			);
