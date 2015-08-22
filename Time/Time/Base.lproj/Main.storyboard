@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kjg-7m-elt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kjg-7m-elt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -26,7 +26,7 @@
         <!--Timer-->
         <scene sceneID="umU-Tv-SJa">
             <objects>
-                <viewController id="pDV-t1-AJp" sceneMemberID="viewController">
+                <viewController id="pDV-t1-AJp" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SQg-PA-jAr"/>
                         <viewControllerLayoutGuide type="bottom" id="pAg-wp-56O"/>
@@ -44,22 +44,22 @@
                                             <!--2015-08-21 20:57:36 +0000-->
                                         </date>
                                     </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When Timer Ends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu5-fP-ugV">
-                                        <rect key="frame" x="0.0" y="246" width="600" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKf-BL-zau">
+                                        <rect key="frame" x="8" y="22" width="584" height="251"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="79"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="yu5-fP-ugV" firstAttribute="top" secondItem="8YG-XG-nte" secondAttribute="bottom" id="0G5-Sc-Ru5"/>
-                                    <constraint firstItem="yu5-fP-ugV" firstAttribute="leading" secondItem="6TH-fn-VTe" secondAttribute="leading" id="ALe-VC-mS8"/>
+                                    <constraint firstItem="kKf-BL-zau" firstAttribute="leading" secondItem="6TH-fn-VTe" secondAttribute="leading" constant="8" id="Bes-LT-Nga"/>
+                                    <constraint firstItem="kKf-BL-zau" firstAttribute="top" secondItem="6TH-fn-VTe" secondAttribute="top" constant="22" id="GoK-s3-GND"/>
                                     <constraint firstItem="8YG-XG-nte" firstAttribute="top" secondItem="6TH-fn-VTe" secondAttribute="top" id="HBv-UE-jr3"/>
-                                    <constraint firstAttribute="bottom" secondItem="yu5-fP-ugV" secondAttribute="bottom" id="Rf7-xi-mUN"/>
-                                    <constraint firstAttribute="trailing" secondItem="yu5-fP-ugV" secondAttribute="trailing" id="ZGg-eu-MOT"/>
+                                    <constraint firstAttribute="trailing" secondItem="kKf-BL-zau" secondAttribute="trailing" constant="8" id="Y1W-v4-s3k"/>
                                     <constraint firstAttribute="bottom" secondItem="8YG-XG-nte" secondAttribute="bottom" constant="50" id="kUT-sA-6kb"/>
                                     <constraint firstItem="8YG-XG-nte" firstAttribute="leading" secondItem="6TH-fn-VTe" secondAttribute="leading" id="n7C-Cj-fsa"/>
+                                    <constraint firstAttribute="bottom" secondItem="kKf-BL-zau" secondAttribute="bottom" constant="23" id="vok-Ja-poW"/>
                                     <constraint firstAttribute="trailing" secondItem="8YG-XG-nte" secondAttribute="trailing" id="zZx-qq-PbH"/>
                                 </constraints>
                             </view>
@@ -83,6 +83,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="yFJ-Yp-LFq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw4-kH-cwT">
                                         <rect key="frame" x="480" y="40" width="70" height="70"/>
@@ -153,6 +156,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="Wlr-ql-Isd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pickerView" destination="8YG-XG-nte" id="XeU-wB-7Y7"/>
+                        <outlet property="startButton" destination="PYR-56-ik8" id="ZZ3-T3-iV0"/>
+                        <outlet property="stopButton" destination="aIi-wg-VDm" id="tgd-zT-tU1"/>
+                        <outlet property="timer" destination="kKf-BL-zau" id="qxF-Q3-l5q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5k-Vs-mX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,7 +188,7 @@
                                             <constraint firstAttribute="height" constant="100" id="Gsv-tP-fp4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="64"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZn-gq-riW">
@@ -188,7 +197,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Twm-ka-xOn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="34"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -337,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sco-W5-Bdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="-1693"/>
+            <point key="canvasLocation" x="1031" y="-1613"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="uoY-Sj-K7G">

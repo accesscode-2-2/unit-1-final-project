@@ -9,14 +9,33 @@
 #import "TimerViewController.h"
 
 @interface TimerViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIDatePicker *pickerView;
+@property (nonatomic) NSTimeInterval countDownDuration;
+@property (weak, nonatomic) IBOutlet UILabel *timer;
+@property (nonatomic) NSTimer *countdownTimer;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+
 
 @end
 
-@implementation TimerViewController 
+@implementation TimerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.stopButton setHidden:YES];
+    
+    
+    [self.timer setHidden:YES];
+    // Create a new date with the current time
+    // Split up the date components
+    
+    NSInteger seconds = 60;
+    
+    [self.pickerView setDatePickerMode:UIDatePickerModeCountDownTimer];
+    [self.pickerView setCountDownDuration:seconds];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,17 +43,63 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pressButton:(id)sender {
+    [self.startButton setHidden:YES];
+    [self.stopButton setHidden:NO];
+    
+    if(sender == self.startButton){
+        [self.timer setHidden:NO];
+        [self.pickerView setHidden:YES];
+        
+        
+        NSTimer *countdownTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:countdownTimer forMode:NSRunLoopCommonModes];
+        
+        self.countDownDuration = self.pickerView.countDownDuration;
+        
+        NSLog(@"%f",self.pickerView.countDownDuration);
+    }
+}
 
+
+- (void)countDown:(NSTimer *) countdownTimer {
+    self.countDownDuration = self.countDownDuration - 1;
+    int secondsCount = self.countDownDuration;
+    int minutes = secondsCount / 60;
+    int seconds = secondsCount - (minutes * 60);
+    
+    
+    NSString *outputTimer = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
+    self.timer.text = outputTimer;
+    
+    
+    
+    
+    //    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    //    NSTimeInterval elapsed = currentTime - self.countDownDuration;
+    //    self.countDownDuration = [NSDate timeIntervalSinceReferenceDate];
+    //
+    //    int mins = (int) (elapsed / 60.0);
+    //    elapsed -= mins * 60;
+    //    int secs = (int) (elapsed);
+    //    elapsed -= secs;
+    //    int fraction = elapsed * 100.0;
+    //
+    //    self.timer.text = [NSString stringWithFormat:@"%02u:%02u.%02u", mins, secs, fraction];
+    
+    
+    
+}
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
