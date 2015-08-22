@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9k2-VO-Nkm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9k2-VO-Nkm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Stopwatch-->
         <scene sceneID="nhe-Hg-T4C">
             <objects>
-                <viewController id="bd9-cG-Tgt" customClass="GOStopwatchViewController" sceneMemberID="viewController">
+                <viewController title="Stopwatch" id="bd9-cG-Tgt" customClass="GOStopwatchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lwu-y0-Tes"/>
                         <viewControllerLayoutGuide type="bottom" id="WdN-AG-a2x"/>
@@ -131,8 +131,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="h4J-mN-E8r"/>
                                         <exclude reference="H6U-OO-ZNc"/>
+                                        <exclude reference="h4J-mN-E8r"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="996" y="120"/>
         </scene>
-        <!--Timer-->
+        <!--Workout Timer-->
         <scene sceneID="fQ9-dU-4CZ">
             <objects>
-                <viewController title="Timer" id="CsU-Il-LcC" sceneMemberID="viewController">
+                <viewController title="Workout Timer" id="CsU-Il-LcC" customClass="GOWorkoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wN6-rZ-vUn"/>
                         <viewControllerLayoutGuide type="bottom" id="K5y-gB-JGS"/>
@@ -191,9 +191,34 @@
                     <view key="view" contentMode="scaleToFill" id="EHh-nE-8mH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SjX-o5-nJC">
+                                <rect key="frame" x="0.0" y="40" width="600" height="511"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutIdentifier" id="3uY-wy-fFj">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3uY-wy-fFj" id="MdX-dw-NbC">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SjX-o5-nJC" secondAttribute="trailing" id="1aR-wK-KRH"/>
+                            <constraint firstItem="SjX-o5-nJC" firstAttribute="leading" secondItem="EHh-nE-8mH" secondAttribute="leading" id="IsK-hb-hVC"/>
+                            <constraint firstItem="SjX-o5-nJC" firstAttribute="top" secondItem="wN6-rZ-vUn" secondAttribute="bottom" constant="20" id="c6f-5k-j3P"/>
+                            <constraint firstItem="K5y-gB-JGS" firstAttribute="top" secondItem="SjX-o5-nJC" secondAttribute="bottom" id="zYt-Bv-QJb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="XaT-7u-88I"/>
+                    <connections>
+                        <outlet property="tableView" destination="SjX-o5-nJC" id="nuU-nF-K5x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NE-1S-t4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
