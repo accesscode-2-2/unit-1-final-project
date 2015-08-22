@@ -13,18 +13,23 @@
 
     __weak IBOutlet UILabel *stopwatchLabel;
     NSTimer *stopTimer;
+    NSTimer *lapTimer;
     NSDate *startDate;
+    NSDate *restartDate;
     BOOL running;
     
 
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
-@property (weak, nonatomic) IBOutlet UILabel *logLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lapLabel;
+@property (weak, nonatomic) IBOutlet UITableView *lapTableView;
 
 - (IBAction)startButton:(id)sender;
 - (IBAction)resetButton:(id)sender;
 
+
 - (void)updateTimer;
+
 
 @end
