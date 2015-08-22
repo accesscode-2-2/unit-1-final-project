@@ -12,19 +12,35 @@ import QuartzCore
 class ViewController: UIViewController {
     
     var displayLink : CADisplayLink!
-    var timers = [];
+    var timers: [Timer] = [];
     let popcornTimer = Timer.init(startTime: 30.000)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        displayLink = CADisplayLink(target: self, selector: Selector("updateTimer"))
+        displayLink = CADisplayLink(target: self, selector: Selector("update"))
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
     }
     
-    func updateTimer(){
-        popcornTimer.remainingTime = popcornTimer.remainingTime - displayLink.duration
+    func addTimer(timer:Timer){
+        timers.append(timer)
+    }
+    
+    func updateTimer(timer:Timer){
+        timer.remainingTime = popcornTimer.remainingTime - displayLink.duration
         print("Remaining popcorn time: \(popcornTimer.remainingTime)")
     }
+    
+    func update(){
+        for timer in timers{
+            if timer.isPaused = false{
+                updateTimer(timer)
+            }
+        }
+    }
+    
+    
+    
+    
+    
 }
-
