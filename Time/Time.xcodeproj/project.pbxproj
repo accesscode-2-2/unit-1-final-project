@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DD086011B88C8C5007B8704 /* StopWatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD086001B88C8C5007B8704 /* StopWatchModel.m */; };
+		4DD086041B88C8F2007B8704 /* TimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD086031B88C8F2007B8704 /* TimerModel.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DD085FF1B88C8C5007B8704 /* StopWatchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchModel.h; sourceTree = "<group>"; };
+		4DD086001B88C8C5007B8704 /* StopWatchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchModel.m; sourceTree = "<group>"; };
+		4DD086021B88C8F2007B8704 /* TimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerModel.h; sourceTree = "<group>"; };
+		4DD086031B88C8F2007B8704 /* TimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerModel.m; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,8 +94,12 @@
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				D9F01CF61B88C4C3000B02E1 /* StopWatchTabBarController.h */,
 				D9F01CF71B88C4C3000B02E1 /* StopWatchTabBarController.m */,
+				4DD085FF1B88C8C5007B8704 /* StopWatchModel.h */,
+				4DD086001B88C8C5007B8704 /* StopWatchModel.m */,
 				D9F01CF91B88C4DD000B02E1 /* TimerTabBarController.h */,
 				D9F01CFA1B88C4DD000B02E1 /* TimerTabBarController.m */,
+				4DD086021B88C8F2007B8704 /* TimerModel.h */,
+				4DD086031B88C8F2007B8704 /* TimerModel.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -225,7 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
+				4DD086011B88C8C5007B8704 /* StopWatchModel.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
+				4DD086041B88C8F2007B8704 /* TimerModel.m in Sources */,
 				D9F01CF81B88C4C3000B02E1 /* StopWatchTabBarController.m in Sources */,
 				D9F01CFB1B88C4DD000B02E1 /* TimerTabBarController.m in Sources */,
 			);
