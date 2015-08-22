@@ -8,20 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController {
+@interface TimerViewController : UIViewController 
     
-    
-    
-    __weak IBOutlet UILabel *timerLabel;
-    NSTimer *timer;
-    NSDate *startTime;
-    BOOL countDown;
-}
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+- (IBAction)startCountdown:(id)sender;
 
-- (IBAction)timerStartButton:(id)sender;
-- (IBAction)timerStopButton:(id)sender;
--(void)beginTimer; 
+
+
 
 @end

@@ -13,47 +13,11 @@
 @end
 
 @implementation TimerViewController
-@synthesize timerLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    timerLabel.text = @"10.00.00.000";
-    countDown = FALSE;
-    
 }
-- (IBAction)timerStartButton:(id)sender {
-    countDown = TRUE; 
-    timer = [NSTimer scheduledTimerWithTimeInterval:-1.0/10.0
-                                                 target:self
-                                               selector:@selector(beginTimer)
-                                               userInfo:nil
-                                                repeats:YES];
-
-    
-    }
-
-- (IBAction)timerStopButton:(id)sender {
-    countDown = FALSE;
-    [timer invalidate];
-    timer = nil;
-    
-}
-
-- (void)beginTimer {
-    NSDate *currentTime = [NSDate date];
-    
-    NSTimeInterval timeInterval = [currentTime timeIntervalSinceDate:startTime];
-    
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-    NSString *timerString=[dateFormatter stringFromDate:timerDate];
-    timerLabel.text = timerString;
-    }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -62,4 +26,26 @@
 
 
 
+- (IBAction)startCountdown:(id)sender {
+    
+    NSTimer *timer;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(updateTime)
+                                           userInfo:nil
+                                            repeats:YES];
+}
+
+-(void)updateTime
+{
+    //Get the time left until the specified date
+    NSInteger ti = ((NSInteger)[self.datePicker.date timeIntervalSinceNow]);
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600) % 24;
+    //NSInteger days = (ti / 86400);
+    
+    //Update the label with the remaining time
+    self.countdownLabel.text = [NSString stringWithFormat:@"%02li hrs %02li min %02li sec", (long)hours, (long)minutes, (long)seconds];
+}
 @end

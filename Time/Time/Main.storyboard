@@ -17,54 +17,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-gu-VGZ">
-                                <rect key="frame" x="200" y="15" width="200" height="200"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-DT-5rv">
+                                <rect key="frame" x="0.0" y="35" width="600" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="YS3-Qw-Gls"/>
-                                    <constraint firstAttribute="width" constant="200" id="wrD-Yl-UTB"/>
+                                    <constraint firstAttribute="width" constant="600" id="93F-GN-0qW"/>
+                                    <constraint firstAttribute="height" constant="200" id="qZi-QG-vL9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <date key="date" timeIntervalSinceReferenceDate="459272353.992302">
+                                    <!--2015-07-22 15:39:13 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 hours 00 mins 00 secs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSZ-kC-X4H">
+                                <rect key="frame" x="100" y="255" width="400" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="4Mm-kA-Th7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZP-oT-7Vc">
-                                <rect key="frame" x="279" y="265" width="43" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvr-0N-gtQ">
+                                <rect key="frame" x="228" y="309" width="144" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Start Countdown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="timerStartButton:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="pBO-BM-mgj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-tE-JUU">
-                                <rect key="frame" x="279" y="309" width="42" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="timerStopButton:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="ahE-6G-tMH"/>
+                                    <action selector="startCountdown:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="PZ5-ed-hxP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IYn-gu-VGZ" firstAttribute="top" secondItem="lJd-bZ-xXd" secondAttribute="top" constant="15" id="2DP-lr-rWd"/>
-                            <constraint firstItem="gZP-oT-7Vc" firstAttribute="top" secondItem="IYn-gu-VGZ" secondAttribute="bottom" constant="50" id="Czr-z2-4OH"/>
-                            <constraint firstAttribute="centerX" secondItem="gZP-oT-7Vc" secondAttribute="centerX" id="hAQ-Xg-dBi"/>
-                            <constraint firstAttribute="centerX" secondItem="IYn-gu-VGZ" secondAttribute="centerX" id="jt6-Pp-ORK"/>
+                            <constraint firstAttribute="centerX" secondItem="CSZ-kC-X4H" secondAttribute="centerX" id="0SL-LM-q2o"/>
+                            <constraint firstItem="Kvr-0N-gtQ" firstAttribute="top" secondItem="CSZ-kC-X4H" secondAttribute="bottom" constant="30" id="FQy-Dx-MeE"/>
+                            <constraint firstAttribute="centerX" secondItem="OVH-DT-5rv" secondAttribute="centerX" id="JT1-rD-HKS"/>
+                            <constraint firstItem="OVH-DT-5rv" firstAttribute="top" secondItem="lJd-bZ-xXd" secondAttribute="top" constant="25" id="Rlh-fy-e8g"/>
+                            <constraint firstAttribute="centerX" secondItem="Kvr-0N-gtQ" secondAttribute="centerX" id="Tum-DY-MZ5"/>
+                            <constraint firstItem="CSZ-kC-X4H" firstAttribute="top" secondItem="OVH-DT-5rv" secondAttribute="bottom" constant="30" id="UQi-IY-ZE4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="To3-0y-HK6" userLabel="Timer"/>
                     <connections>
-                        <outlet property="timerLabel" destination="IYn-gu-VGZ" id="I0j-An-2pu"/>
-                        <outlet property="timerStopButton" destination="n3W-tE-JUU" id="FzD-P8-N85"/>
+                        <outlet property="countdownLabel" destination="CSZ-kC-X4H" id="r0e-ZI-kIN"/>
+                        <outlet property="datePicker" destination="OVH-DT-5rv" id="Fue-ZP-2w3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-I5-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="517"/>
+            <point key="canvasLocation" x="1127" y="552"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="bbN-sF-Umi">
