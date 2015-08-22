@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9k2-VO-Nkm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -22,27 +23,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOS-FX-Day">
-                                <rect key="frame" x="145" y="440" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="vE8-KE-94G"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOk-h1-0mW">
-                                <rect key="frame" x="421" y="440" width="30" height="30"/>
-                                <state key="normal" title="Lap"/>
-                                <connections>
-                                    <action selector="lapStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="P7A-b6-DeB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-eS-7bp">
-                                <rect key="frame" x="279" y="440" width="42" height="30"/>
-                                <state key="normal" title="Pause"/>
-                                <connections>
-                                    <action selector="stopStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="B8K-OP-fD8"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uV5-xV-8Jy">
                                 <rect key="frame" x="37" y="163" width="528" height="223"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,33 +62,102 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-vj-kOx">
-                                <rect key="frame" x="281" y="483" width="39" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="BZz-hv-7OF"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOs-VA-zws">
+                                <rect key="frame" x="36" y="402" width="264" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkM-Tg-aee">
+                                        <rect key="frame" x="115" y="52" width="34" height="30"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="qo8-YE-wHg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2w-3d-sTU">
+                                        <rect key="frame" x="116" y="52" width="32" height="30"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" red="1" green="0.12323552140000001" blue="0.040272688170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="31R-3x-34Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="N2w-3d-sTU" firstAttribute="centerY" secondItem="aOs-VA-zws" secondAttribute="centerY" id="2M3-Y4-kU0"/>
+                                    <constraint firstItem="lkM-Tg-aee" firstAttribute="centerY" secondItem="aOs-VA-zws" secondAttribute="centerY" id="C3r-Cn-FK9"/>
+                                    <constraint firstItem="N2w-3d-sTU" firstAttribute="centerX" secondItem="aOs-VA-zws" secondAttribute="centerX" id="J8f-87-Hey"/>
+                                    <constraint firstItem="lkM-Tg-aee" firstAttribute="centerX" secondItem="aOs-VA-zws" secondAttribute="centerX" id="dW3-ii-JwC"/>
+                                    <constraint firstItem="lkM-Tg-aee" firstAttribute="centerX" secondItem="N2w-3d-sTU" secondAttribute="centerX" id="lXr-fm-yxz"/>
+                                    <constraint firstItem="N2w-3d-sTU" firstAttribute="top" secondItem="lkM-Tg-aee" secondAttribute="bottom" constant="-6" id="tbQ-Iw-4Cb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lXr-fm-yxz"/>
+                                        <exclude reference="tbQ-Iw-4Cb"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l6-Oj-yUb">
+                                <rect key="frame" x="300" y="402" width="264" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHU-7h-G3a">
+                                        <rect key="frame" x="117" y="52" width="30" height="30"/>
+                                        <state key="normal" title="Lap">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lapStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="no7-MB-7N4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckc-os-eQh">
+                                        <rect key="frame" x="113" y="52" width="39" height="30"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="CWo-rg-zDS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ckc-os-eQh" firstAttribute="top" secondItem="lHU-7h-G3a" secondAttribute="bottom" constant="-6" id="H6U-OO-ZNc"/>
+                                    <constraint firstItem="lHU-7h-G3a" firstAttribute="centerX" secondItem="7l6-Oj-yUb" secondAttribute="centerX" id="Ron-ke-3fW"/>
+                                    <constraint firstItem="lHU-7h-G3a" firstAttribute="centerX" secondItem="Ckc-os-eQh" secondAttribute="centerX" id="h4J-mN-E8r"/>
+                                    <constraint firstItem="Ckc-os-eQh" firstAttribute="centerY" secondItem="7l6-Oj-yUb" secondAttribute="centerY" id="oib-BH-hdb"/>
+                                    <constraint firstItem="lHU-7h-G3a" firstAttribute="centerY" secondItem="7l6-Oj-yUb" secondAttribute="centerY" id="ueS-qd-kp3"/>
+                                    <constraint firstItem="Ckc-os-eQh" firstAttribute="centerX" secondItem="7l6-Oj-yUb" secondAttribute="centerX" id="wQv-RZ-2Zq"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="h4J-mN-E8r"/>
+                                        <exclude reference="H6U-OO-ZNc"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d3A-CU-7gV" firstAttribute="centerY" secondItem="jqx-II-c1I" secondAttribute="centerY" id="0wx-01-9z1"/>
-                            <constraint firstItem="DOS-FX-Day" firstAttribute="centerY" secondItem="WZi-eS-7bp" secondAttribute="centerY" id="1br-we-6CB"/>
-                            <constraint firstItem="Iea-vj-kOx" firstAttribute="centerX" secondItem="WZi-eS-7bp" secondAttribute="centerX" id="5fv-e7-Jfe"/>
+                            <constraint firstItem="WdN-AG-a2x" firstAttribute="top" secondItem="aOs-VA-zws" secondAttribute="bottom" constant="16" id="3Tm-6X-FAS"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="top" secondItem="OX2-1j-IfV" secondAttribute="bottom" constant="48" id="BFC-xG-LaI"/>
-                            <constraint firstItem="mOk-h1-0mW" firstAttribute="leading" secondItem="WZi-eS-7bp" secondAttribute="trailing" constant="100" id="D3M-dp-H9I"/>
                             <constraint firstItem="d3A-CU-7gV" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="DKh-Jg-jpO"/>
-                            <constraint firstItem="WZi-eS-7bp" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="Nwd-1p-WSo"/>
+                            <constraint firstItem="aOs-VA-zws" firstAttribute="width" secondItem="7l6-Oj-yUb" secondAttribute="width" id="NRt-Lm-3gq"/>
+                            <constraint firstItem="aOs-VA-zws" firstAttribute="height" secondItem="7l6-Oj-yUb" secondAttribute="height" id="PMW-Wg-pDz"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="leading" secondItem="jqx-II-c1I" secondAttribute="leading" constant="37" id="Q1x-3k-2qX"/>
-                            <constraint firstItem="Iea-vj-kOx" firstAttribute="top" secondItem="WZi-eS-7bp" secondAttribute="bottom" constant="13" id="QNQ-v0-Zal"/>
+                            <constraint firstItem="7l6-Oj-yUb" firstAttribute="top" secondItem="uV5-xV-8Jy" secondAttribute="bottom" constant="16" id="Qa1-sH-ffi"/>
+                            <constraint firstItem="7l6-Oj-yUb" firstAttribute="leading" secondItem="aOs-VA-zws" secondAttribute="trailing" id="Qam-Wc-TO3"/>
+                            <constraint firstItem="7l6-Oj-yUb" firstAttribute="leading" secondItem="aOs-VA-zws" secondAttribute="trailing" id="QzG-Fx-b1d"/>
+                            <constraint firstItem="WdN-AG-a2x" firstAttribute="top" secondItem="7l6-Oj-yUb" secondAttribute="bottom" constant="16" id="RvG-Pv-ihi"/>
                             <constraint firstAttribute="trailing" secondItem="uV5-xV-8Jy" secondAttribute="trailing" constant="35" id="ZCE-4x-4so"/>
                             <constraint firstItem="d3A-CU-7gV" firstAttribute="top" secondItem="Lwu-y0-Tes" secondAttribute="bottom" constant="13" id="ZGL-SW-VRR"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="top" secondItem="Lwu-y0-Tes" secondAttribute="bottom" constant="143" id="axd-Cs-us8"/>
+                            <constraint firstItem="aOs-VA-zws" firstAttribute="top" secondItem="uV5-xV-8Jy" secondAttribute="bottom" constant="16" id="ffo-pA-JQU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7l6-Oj-yUb" secondAttribute="trailing" constant="16" id="h8D-JE-XQp"/>
                             <constraint firstItem="OX2-1j-IfV" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="hwI-ie-zl5"/>
-                            <constraint firstItem="WdN-AG-a2x" firstAttribute="top" secondItem="WZi-eS-7bp" secondAttribute="bottom" constant="81" id="ker-9m-ivI"/>
                             <constraint firstItem="WdN-AG-a2x" firstAttribute="top" secondItem="uV5-xV-8Jy" secondAttribute="bottom" constant="165" id="pwT-1w-jw5"/>
-                            <constraint firstItem="WZi-eS-7bp" firstAttribute="leading" secondItem="DOS-FX-Day" secondAttribute="trailing" constant="100" id="q5e-60-gBG"/>
-                            <constraint firstItem="mOk-h1-0mW" firstAttribute="centerY" secondItem="WZi-eS-7bp" secondAttribute="centerY" id="zs7-9m-DDG"/>
+                            <constraint firstItem="aOs-VA-zws" firstAttribute="leading" secondItem="jqx-II-c1I" secondAttribute="leadingMargin" constant="16" id="wHH-ff-cts"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -118,8 +167,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="HCM-zN-osx"/>
                     <connections>
+                        <outlet property="lapButton" destination="lHU-7h-G3a" id="roA-ow-m2x"/>
                         <outlet property="mainStopwatchLabel" destination="d3A-CU-7gV" id="Xyh-Io-Kao"/>
-                        <outlet property="startButton" destination="DOS-FX-Day" id="Fpr-8q-qFQ"/>
+                        <outlet property="resetButton" destination="Ckc-os-eQh" id="96M-CS-Vhf"/>
+                        <outlet property="startButton" destination="lkM-Tg-aee" id="tDa-Gy-AfM"/>
+                        <outlet property="stopButton" destination="N2w-3d-sTU" id="3Wf-Xd-cte"/>
                         <outlet property="stopwatchTimerLabel" destination="OX2-1j-IfV" id="cox-X7-qCQ"/>
                         <outlet property="tableView" destination="uV5-xV-8Jy" id="yoa-I5-GMQ"/>
                     </connections>

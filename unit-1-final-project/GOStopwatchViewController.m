@@ -29,7 +29,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *mainStopwatchLabel;
 @property (nonatomic, assign) NSTimeInterval pauseTime;
 @property (nonatomic) LapTimerTableViewCell * model;
+
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *lapButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
+
 @property (nonatomic) float mainTotalTime;
 @property (nonatomic) float lapTotalTime;
 @property (nonatomic) NSDate *mainPreviousTime;
@@ -56,10 +62,19 @@
     
     self.numberOfLaps = [[NSMutableArray alloc]init];
     
+    self.resetButton.hidden = YES;
+    self.stopButton.hidden = YES;
+    
+        
 }
 
 
 - (IBAction)startStopwatchButton:(UIButton *)sender {
+    
+    self.startButton.hidden = YES;
+    self.stopButton.hidden = NO;
+    self.resetButton.hidden = YES;
+    self.lapButton.hidden = NO;
     
     self.stopwatch = [NSTimer scheduledTimerWithTimeInterval:1.0/100.0
                                                       target:self
@@ -117,6 +132,11 @@
 
 - (IBAction)stopStopwatchButton:(UIButton *)sender {
     
+    self.stopButton.hidden = YES;
+    self.lapButton.hidden = YES;
+    self.startButton.hidden = NO;
+    self.resetButton.hidden = NO;
+    
     [self.mainStopwatch invalidate];
     [self.stopwatch invalidate];
 //    self.mainStopwatch = nil;
@@ -141,6 +161,11 @@
     [self.numberOfLaps addObject: [NSNumber numberWithInteger:self.lapNumber]];
 }
 - (IBAction)resetStopwatchButton:(UIButton *)sender {
+    
+    self.resetButton.hidden = YES;
+    self.lapButton.hidden = NO;
+    self.startButton.hidden = NO;
+    self.stopButton.hidden = YES;
    
     [self.mainStopwatch invalidate];
     [self.stopwatch invalidate];
