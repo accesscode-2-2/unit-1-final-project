@@ -36,6 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //When the app is first launched, the stopwatchLabel is set to 0
         stopwatchLabel.text = "00.00.0"
     }
 
@@ -123,6 +125,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func lapsReset(sender: AnyObject) {
     
+        if addLap == true {
+            
+            
+            
+        }
+        else {
+            addLap == false
+            lapsResetButton.setImage(UIImage(named: "lap.png"), forState: .Normal)
+            fractions = 0
+            seconds = 0
+            minutes = 0
+            
+            stopwatchString = "00:00.00"
+            stopwatchLabel.text = stopwatchString
+        }
+        
+        
+        
     }
     
     //TableView Methods
