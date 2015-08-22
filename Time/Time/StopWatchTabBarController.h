@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StopWatchTabBarController : UIViewController
+@interface StopWatchTabBarController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UILabel *timerDisplay;
+@property (strong, nonatomic) IBOutlet UIButton *startButton;
+@property (strong, nonatomic) IBOutlet UIButton *lapButton;
 @property (nonatomic) BOOL timerIsRunning; // this will start/stop timer
 - (IBAction)startPauseButton:(id)sender;
+- (IBAction)lapButton:(id)sender;
 
 
 @end
