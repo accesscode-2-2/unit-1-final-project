@@ -15,22 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var timer = NSTimer()
     var lapTimer = NSTimer()
     
-    var minutes: Int = 0
-    var seconds: Int = 0
-    var fractions: Int = 0
-    
-    var lapMinutes: Int = 0
-    var lapSeconds: Int = 0
-    var lapFractions: Int = 0
-    
-    var minutesString: String = ""
-    var secondsString: String = ""
-    var fractionsString: String = ""
+    var startTime : CFAbsoluteTime = 0
+    var elapsedTime : NSTimeInterval = 0
     var stopwatchString: String = ""
     
-    var lapMinutesString: String = ""
-    var lapSecondsString: String = ""
-    var lapFractionsString: String = ""
+    var lapStartTime : CFAbsoluteTime = 0
+    var lapElapsedTime : NSTimeInterval = 0
     var lapString: String = ""
     
     var laps: [String] = []
@@ -57,6 +47,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func startStop(sender: AnyObject) {
         
         if isStopped == true { //start stopwatch
+            
+            //record start time
+            startTime = CFAbsoluteTimeGetCurrent()
+            lapStartTime = CFAbsoluteTimeGetCurrent()
             
             //isStopped is false when the stopwatch is started
             isStopped = false
@@ -96,17 +90,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if canAddLaps == true { //add lap
             
+            lapStartTime = CFAbsoluteTimeGetCurrent()
             //add the time since the last lap to the laps array (refer to the updateStopWatch method)
             laps.insert(lapString, atIndex: 0)
             
             //Reset the lap counter
-            lapMinutes = 0
-            lapSeconds = 0
-            lapFractions = 0
+            lapElapsedTime = 0
             
             lapString = "00:00.00"
             
-            //Refreshes the table view that contains the lap times
+            //Refreshes the table view that contains the lap tim
             lapsTableView.reloadData()
         }
             
@@ -122,75 +115,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: .Normal)
             
             // Reverts all time variables to 0
-            fractions = 0
-            seconds = 0
-            minutes = 0
-            
-            lapFractions = 0
-            lapSeconds = 0
-            lapMinutes = 0
+            elapsedTime = 0
+            lapElapsedTime = 0
             
             lapString = "00:00.00"
             
             //reset the stopwatchString (just the string) back to 0.
             stopwatchString = "00:00.00"
             stopwatchLabel.text = stopwatchString
-            
         }
-        
     }
     
     //MARK: Update method
     func updateStopwatch() {
         
-        // Increments the fractions of a second by 1
-        fractions += 1
-        lapFractions += 1
+        elapsedTime = CFAbsoluteTimeGetCurrent() - startTime
+        print("elapsed time: \(elapsedTime)")
         
-        // If the fractions of a second reaches 100, seconds is incremented by 1
-        if fractions == 100{
-
-            seconds += 1
-            fractions = 0
-        }
+        lapElapsedTime = CFAbsoluteTimeGetCurrent() - lapStartTime
         
-        // If the second reaches 60, minute is incremented by 1 and sets seconds to 0
-        if seconds == 60 {
-            
-            minutes += 1
-            seconds = 0
-        }
+        print("lap time: \(lapElapsedTime)")
         
-        // If the lapFractions of the a second reaches 100, seconds is incremented by 1
-        if lapFractions == 100{
-            
-            lapSeconds += 1
-            lapFractions = 0
-        }
-        
-        // If the lapSeconds reaches 60, minute is incremented by 1 and sets seconds to 0
-        if lapSeconds == 60 {
-            
-            lapMinutes += 1
-            lapSeconds = 0
-        }
-        
-        // Sets the strings for fractions, seconds, and minutes. If any number is greater than 9, display a 0 before it.
-        // The ternary operations are a shorthand form of writing if/else statements. Condition ? Result if true : Result if false
-        fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
-        secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        
-        lapFractionsString = lapFractions > 9 ? "\(lapFractions)" : "0\(lapFractions)"
-        lapSecondsString = lapSeconds > 9 ? "\(lapSeconds)" : "0\(lapSeconds)"
-        lapMinutesString = lapMinutes > 9 ? "\(lapMinutes)" : "0\(lapMinutes)"
-        
-        //Stopwatch value is stored in stopwatchString formatted with the string for each number (fractions, seconds, minutes) and then set to the stopwatchLabel
-        stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
+        stopwatchString = stringFromTimeInterval(elapsedTime)
         stopwatchLabel.text = stopwatchString
         
-        lapString = "\(lapMinutesString):\(lapSecondsString).\(lapFractionsString)"
+        lapString = stringFromTimeInterval(lapElapsedTime)
         
+    }
+    
+    func stringFromTimeInterval(interval: CFTimeInterval) -> String {
+        let intInterval = Int(interval)
+        let minutes = (intInterval / 60) % 60
+        let seconds = intInterval % 60
+        let milliseconds = interval - floor(interval)
+        if floor(milliseconds * 100) <= 9{
+            print(String(format: "%02d:%02d:0%d", minutes, seconds, floor(milliseconds * 100)))
+            return String(format: "%02d:%02d:00", minutes, seconds, milliseconds)
+        }
+        print(String(format: "%02d:%02d:%.f", minutes, seconds, milliseconds * 100))
+        return String(format: "%02d:%02d:%.f", minutes, seconds, milliseconds * 100)
     }
     
     // MARK: TableView methods
@@ -211,10 +174,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return laps.count
-        
     }
-    
-    
 }
 
 

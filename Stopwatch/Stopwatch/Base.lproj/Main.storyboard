@@ -33,18 +33,18 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="65"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-hZ-dda">
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="H8p-M9-kZL"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HSR-69-vpP"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-Xe-ahD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-Xe-ahD" userLabel="fat view">
                                 <rect key="frame" x="0.0" y="140" width="600" height="162"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVe-Jm-1j6">
@@ -58,7 +58,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="N5z-bR-KDD" firstAttribute="centerY" secondItem="hVe-Jm-1j6" secondAttribute="centerY" id="Ent-EX-7Ow"/>
                                             <constraint firstItem="N5z-bR-KDD" firstAttribute="leading" secondItem="hVe-Jm-1j6" secondAttribute="leading" constant="40" id="yEa-Ar-B2V"/>
@@ -75,7 +75,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="y1w-k4-rep" firstAttribute="centerY" secondItem="gYg-IU-Oeb" secondAttribute="centerY" id="N15-U9-Kw0"/>
                                             <constraint firstAttribute="trailing" secondItem="y1w-k4-rep" secondAttribute="trailing" constant="40" id="dmE-At-XDq"/>
@@ -97,7 +97,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eEf-Xe-ahD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.27" id="2PP-az-fbm"/>
                             <constraint firstItem="Fdy-hZ-dda" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Im-rn-SOl"/>
@@ -122,6 +122,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Ard-gl-uxc"/>
                                 <exclude reference="Qgd-Gy-Jsg"/>
                                 <exclude reference="YQ9-Zp-57M"/>
                                 <exclude reference="fnT-d5-2o8"/>
