@@ -59,7 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     
-    // Actions
+    // Actions for interface
     
     @IBAction func startStop(sender: AnyObject) {
         
