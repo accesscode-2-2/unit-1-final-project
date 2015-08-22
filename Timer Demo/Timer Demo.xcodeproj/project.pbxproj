@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016E10B1B89209300C5EFFD /* TableViewCell.swift */; };
 		6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737B1B88EFF0000D38F2 /* AppDelegate.swift */; };
 		6981737E1B88EFF0000D38F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737D1B88EFF0000D38F2 /* ViewController.swift */; };
 		698173811B88EFF0000D38F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981737F1B88EFF0000D38F2 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5016E10B1B89209300C5EFFD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		698173781B88EFF0000D38F2 /* Timer Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timer Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981737B1B88EFF0000D38F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6981737D1B88EFF0000D38F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				698173A91B88F28C000D38F2 /* Timer.swift */,
 				6981737D1B88EFF0000D38F2 /* ViewController.swift */,
 				6981737F1B88EFF0000D38F2 /* Main.storyboard */,
+				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				698173821B88EFF0000D38F2 /* Assets.xcassets */,
 				698173841B88EFF0000D38F2 /* LaunchScreen.storyboard */,
 				698173871B88EFF0000D38F2 /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698173AA1B88F28C000D38F2 /* Timer.swift in Sources */,
+				5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */,
 				6981737E1B88EFF0000D38F2 /* ViewController.swift in Sources */,
 				6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */,
 			);
@@ -487,6 +491,7 @@
 				698173A21B88EFF0000D38F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698173A31B88EFF0000D38F2 /* Build configuration list for PBXNativeTarget "Timer DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				698173A51B88EFF0000D38F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698173A61B88EFF0000D38F2 /* Build configuration list for PBXNativeTarget "Timer DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				698173A81B88EFF0000D38F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

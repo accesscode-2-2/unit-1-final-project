@@ -11,6 +11,10 @@ import QuartzCore
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var startPauseButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
     let popcornTimer = Timer.init(startTime: 30.000)
@@ -20,6 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         displayLink = CADisplayLink(target: self, selector: Selector("update"))
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        
+        addTimer(popcornTimer)
+        
     }
     
     func addTimer(timer:Timer){
@@ -29,6 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func updateTimer(timer:Timer){
         timer.remainingTime = timer.remainingTime - displayLink.duration
         print("Remaining time: \(timer.remainingTime)")
+
     }
     
     func update(){
@@ -37,19 +45,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 updateTimer(timer)
             }
         }
+        
+        tableView.reloadData()
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel!.text = "Test"
-        cell.detailTextLabel!.text = "Detail Test"
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
+        
+        cell.timerLabel.text = String(timers[indexPath.row].remainingTime)
+        
+        cell.startPauseButton.tag = indexPath.row
+        
+        //ADD TARGET. VIDEO @ 9:00
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return timers.count
     }
     
     
