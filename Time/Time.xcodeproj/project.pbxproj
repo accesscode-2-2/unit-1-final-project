@@ -86,9 +86,9 @@
 			children = (
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
-				8D0537651B86687C00588318 /* Main.storyboard */,
 				8496CC3D1B88BE3600FB2AAA /* TimerViewController.h */,
 				8496CC3E1B88BE3600FB2AAA /* TimerViewController.m */,
+				8D0537651B86687C00588318 /* Main.storyboard */,
 				8496CC3A1B86C30900FB2AAA /* StopWatchViewController.h */,
 				8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */,
 				8D0537681B86687C00588318 /* Images.xcassets */,

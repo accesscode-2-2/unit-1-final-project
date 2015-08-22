@@ -25,12 +25,12 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-nY-S8U">
                                                 <rect key="frame" x="20" y="20" width="360" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="fpP-nY-S8U" secondAttribute="bottom" constant="20" id="3dg-B8-4dI"/>
                                             <constraint firstAttribute="trailing" secondItem="fpP-nY-S8U" secondAttribute="trailing" constant="20" id="Cun-pR-Llu"/>
@@ -40,22 +40,44 @@
                                             <constraint firstAttribute="width" constant="400" id="bda-kK-Acy"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-sf-n8g">
-                                        <rect key="frame" x="146" y="190" width="46" height="30"/>
-                                        <state key="normal" title="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-sf-n8g">
+                                        <rect key="frame" x="50" y="170" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FPk-pg-riH"/>
+                                            <constraint firstAttribute="height" constant="50" id="NAj-Ab-qnI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startResetButtonAction:" destination="dfO-4W-KWV" eventType="touchUpInside" id="mlv-Ql-389"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qan-dl-Ps7">
-                                        <rect key="frame" x="417" y="190" width="46" height="30"/>
-                                        <state key="normal" title="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qan-dl-Ps7">
+                                        <rect key="frame" x="450" y="170" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7LP-mv-qO2"/>
+                                            <constraint firstAttribute="width" constant="100" id="TZY-nZ-nVh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="stopLapButtonAction:" destination="dfO-4W-KWV" eventType="touchUpInside" id="o5e-aA-fYD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.73909296700000005" green="0.76212079109999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="qan-dl-Ps7" firstAttribute="top" secondItem="Ohr-Vj-5NK" secondAttribute="bottom" constant="30" id="1dC-93-xoe"/>
+                                    <constraint firstAttribute="trailing" secondItem="qan-dl-Ps7" secondAttribute="trailing" constant="50" id="AdP-D2-RCv"/>
+                                    <constraint firstItem="x8d-sf-n8g" firstAttribute="top" secondItem="Ohr-Vj-5NK" secondAttribute="bottom" constant="30" id="FOl-a6-XsN"/>
                                     <constraint firstAttribute="height" constant="240" id="Xil-az-oJj"/>
+                                    <constraint firstItem="x8d-sf-n8g" firstAttribute="leading" secondItem="1oM-hc-lTS" secondAttribute="leading" constant="50" id="iUb-tU-die"/>
                                     <constraint firstItem="Ohr-Vj-5NK" firstAttribute="top" secondItem="1oM-hc-lTS" secondAttribute="top" constant="60" id="wkD-Th-NAC"/>
                                     <constraint firstAttribute="centerX" secondItem="Ohr-Vj-5NK" secondAttribute="centerX" id="ynL-M5-P2e"/>
                                 </constraints>
@@ -93,6 +115,8 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="w51-A3-d2N"/>
                     <connections>
                         <outlet property="StopwatchRunningLabel" destination="fpP-nY-S8U" id="yYn-q5-Dup"/>
+                        <outlet property="startResetButton" destination="x8d-sf-n8g" id="EDy-hY-ChN"/>
+                        <outlet property="stopLapButton" destination="qan-dl-Ps7" id="r0w-yB-hI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHu-E8-gTa" userLabel="First Responder" sceneMemberID="firstResponder"/>

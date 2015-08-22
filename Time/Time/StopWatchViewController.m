@@ -7,6 +7,8 @@
 //
 
 #import "StopWatchViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface StopWatchViewController () <UITableViewDataSource, UITabBarDelegate>
 
@@ -15,6 +17,8 @@
 @property (nonatomic) NSTimer *startStopwatchTimer;
 @property (nonatomic) NSTimer *runStopwatchTimer;
 @property (nonatomic) BOOL running;
+@property (strong, nonatomic) IBOutlet UIButton *startResetButton;
+@property (strong, nonatomic) IBOutlet UIButton *stopLapButton;
 
 
 @end
@@ -32,10 +36,40 @@
                  ];
     self.running = false;
     
-    self.startStopwatchTimer = [NSTimer timerWithTimeInterval:0 target:self selector:@selector(callTheTimer:) userInfo:nil repeats:NO];
     
-    [[NSRunLoop currentRunLoop] addTimer:self.startStopwatchTimer forMode:NSRunLoopCommonModes];
+    self.startResetButton.layer.cornerRadius = 10; // this value vary as per your desire
+    self.startResetButton.clipsToBounds = YES;
+    self.startResetButton.backgroundColor = [UIColor greenColor];
+    
+    
+    self.stopLapButton.layer.cornerRadius = 10;
+    self.stopLapButton.clipsToBounds = YES;
+    self.stopLapButton.backgroundColor = [UIColor grayColor];
+    self.stopLapButton.enabled = NO;
+    
+    
+    
 }
+
+- (IBAction)startResetButtonAction:(UIButton *)sender {
+    
+    self.running = YES;
+         //start timer
+        self.startStopwatchTimer = [NSTimer timerWithTimeInterval:0 target:self selector:@selector(callTheTimer:) userInfo:nil repeats:NO];
+        
+        [[NSRunLoop currentRunLoop] addTimer:self.startStopwatchTimer forMode:NSRunLoopCommonModes];
+        
+        
+        
+    
+}
+
+
+- (IBAction)stopLapButtonAction:(UIButton *)sender {
+    self.running = NO;
+}
+
+
 
 
 - (void)callTheTimer: (NSTimer *)timer{
@@ -43,18 +77,24 @@
     
     
     //call the second timer
-    self.runStopwatchTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(stopWatch:) userInfo:nil repeats:YES];
+    self.runStopwatchTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(runningStopWatch:) userInfo:nil repeats:YES];
     
     [[NSRunLoop currentRunLoop] addTimer:self.runStopwatchTimer forMode:NSRunLoopCommonModes];
 }
 
 
-- (void)stopWatch: (NSTimer *)timer{
+- (void)runningStopWatch: (NSTimer *)timer{
     
     CGFloat currentNumber = [self.StopwatchRunningLabel.text floatValue];
     CGFloat nextNumber = currentNumber + 0.000001;
     
     self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%f", nextNumber];
+    
+    
+    if (self.running == NO) {
+        [timer invalidate];
+    }
+    
 
 }
 
