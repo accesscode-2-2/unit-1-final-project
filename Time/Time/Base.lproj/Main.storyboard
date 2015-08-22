@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UGa-y9-V07">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -186,7 +187,7 @@
         <!--Timer-->
         <scene sceneID="eR4-Kz-mFT">
             <objects>
-                <viewController id="itK-ui-6Sm" userLabel="Timer" sceneMemberID="viewController">
+                <viewController id="itK-ui-6Sm" userLabel="Timer" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nU7-yT-epB"/>
                         <viewControllerLayoutGuide type="bottom" id="ONy-8e-2bi"/>
@@ -194,9 +195,23 @@
                     <view key="view" contentMode="scaleToFill" id="gEn-en-CSI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iio-Lt-iJ8">
+                                <rect key="frame" x="32" y="219" width="536" height="162"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iio-Lt-iJ8" secondAttribute="centerX" id="Odq-mh-faJ"/>
+                            <constraint firstAttribute="centerY" secondItem="iio-Lt-iJ8" secondAttribute="centerY" id="Ow6-jq-KEd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iio-Lt-iJ8" secondAttribute="trailing" constant="16" id="YF7-xN-91I"/>
+                            <constraint firstItem="iio-Lt-iJ8" firstAttribute="leading" secondItem="gEn-en-CSI" secondAttribute="leadingMargin" constant="16" id="vtD-ja-Agw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Tuj-kJ-qKb"/>
+                    <connections>
+                        <outlet property="timerPickerView" destination="iio-Lt-iJ8" id="yw8-hE-0pq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COh-nj-RFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
