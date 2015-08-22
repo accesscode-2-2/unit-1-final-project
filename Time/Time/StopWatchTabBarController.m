@@ -22,6 +22,7 @@ NSTimer *timer;
     [super viewDidLoad];
     
     self.timerDisplay.text = [[NSString alloc] initWithFormat:@"%.2f",timeTick];
+    self.lapTimerLabel.text = @"0.00";
     [self.startButton setTitle:@"START" forState:UIControlStateNormal];
     [self.lapButton setTitle:@"RESET" forState:UIControlStateNormal];
 }
@@ -54,17 +55,10 @@ NSTimer *timer;
 }
 
 - (IBAction)lapButton:(id)sender {
-    if (self.timerIsRunning) {
-        self.timerIsRunning = NO;
-        NSLog(@"HELLO1");
-        
-    } else {
+
         self.timerIsRunning = YES; // reset paused timer to 0
         self.timerDisplay.text = @"0.00";
-        NSLog(@"HELLO2");
 
-
-    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
