@@ -46,6 +46,8 @@
 - (IBAction)startButtonTapped:(UIButton *)sender {
     [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     self.initialTime = CACurrentMediaTime();
+    
+    
 }
 
 - (IBAction)stopButtonTapped:(UIButton *)sender {
