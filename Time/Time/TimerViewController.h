@@ -10,11 +10,18 @@
 
 @interface TimerViewController : UIViewController {
     
-    float mainFloat;
-    IBOutlet UILabel *seconds;
+    
+    
+    __weak IBOutlet UILabel *timerLabel;
     NSTimer *timer;
+    NSDate *startTime;
+    BOOL countDown;
 }
 
-- (IBAction)Start;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+
+- (IBAction)timerStartButton:(id)sender;
+- (IBAction)timerStopButton:(id)sender;
+
 
 @end

@@ -13,26 +13,32 @@
 @end
 
 @implementation TimerViewController
+@synthesize timerLabel;
 
-- (IBAction)Start {
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    mainFloat = 10.00;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
+    timerLabel.text = @"10.00.00.000";
+    countDown = FALSE;
+    
+}
+- (IBAction)timerStartButton:(id)sender {
+    
+    
+    }
+
+- (IBAction)timerStopButton:(id)sender {
 }
 
 - (void)countDown {
     
-    mainFloat -= 0.01;
-    seconds.text = [NSString stringWithFormat:@"%f", mainFloat];
     
-    if (mainFloat == 0) {
+    
+    if (timerLabel == 0) {
         [timer invalidate];
     }
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

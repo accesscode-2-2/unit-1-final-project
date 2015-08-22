@@ -34,7 +34,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Start" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="Bt7-JS-qNK"/>
+                                    <action selector="timerStartButton:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="pBO-BM-mgj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-tE-JUU">
+                                <rect key="frame" x="279" y="309" width="42" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerStopButton:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="ahE-6G-tMH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,7 +58,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="To3-0y-HK6" userLabel="Timer"/>
                     <connections>
-                        <outlet property="seconds" destination="IYn-gu-VGZ" id="pRb-OA-LdI"/>
+                        <outlet property="timerLabel" destination="IYn-gu-VGZ" id="I0j-An-2pu"/>
+                        <outlet property="timerStopButton" destination="n3W-tE-JUU" id="FzD-P8-N85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-I5-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
