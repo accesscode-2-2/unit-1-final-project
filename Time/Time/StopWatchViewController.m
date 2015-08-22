@@ -17,8 +17,8 @@
 @property (nonatomic) NSTimer *startStopwatchTimer;
 @property (nonatomic) NSTimer *runStopwatchTimer;
 @property (nonatomic) BOOL running;
-@property (strong, nonatomic) IBOutlet UIButton *startResetButton;
-@property (strong, nonatomic) IBOutlet UIButton *stopLapButton;
+@property (strong, nonatomic) IBOutlet UIButton *startStopButton;
+@property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
 
 
 @end
@@ -36,39 +36,65 @@
                  ];
     self.running = false;
     
+    [self.startStopButton.titleLabel  isEqual: @"Start"];
+    self.startStopButton.layer.cornerRadius = 10; // this value vary as per your desire
+    self.startStopButton.clipsToBounds = YES;
+    self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
     
-    self.startResetButton.layer.cornerRadius = 10; // this value vary as per your desire
-    self.startResetButton.clipsToBounds = YES;
-    self.startResetButton.backgroundColor = [UIColor greenColor];
     
-    
-    self.stopLapButton.layer.cornerRadius = 10;
-    self.stopLapButton.clipsToBounds = YES;
-    self.stopLapButton.backgroundColor = [UIColor grayColor];
-    self.stopLapButton.enabled = NO;
+    [self.resetLapButton.titleLabel  isEqual: @"Reset"];
+    self.resetLapButton.layer.cornerRadius = 10;
+    self.resetLapButton.clipsToBounds = YES;
+    self.resetLapButton.backgroundColor = [UIColor grayColor];
+    self.resetLapButton.enabled = NO;
     
     
     
 }
 
-- (IBAction)startResetButtonAction:(UIButton *)sender {
+
+
+- (IBAction)startStopButtonTapped:(UIButton *)sender {
     
-    self.running = YES;
-         //start timer
+    //check Label's text
+    NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
+    if ([startStopActualLabel isEqualToString:@"Start"]) {
+        
+        self.resetLapButton.enabled = YES;
+    
+        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
+                self.startStopButton.backgroundColor = [UIColor redColor];
+        
+        self.running = YES;
+        //start timer
         self.startStopwatchTimer = [NSTimer timerWithTimeInterval:0 target:self selector:@selector(callTheTimer:) userInfo:nil repeats:NO];
         
         [[NSRunLoop currentRunLoop] addTimer:self.startStopwatchTimer forMode:NSRunLoopCommonModes];
-        
-        
-        
-    
+    }
+    else if ([startStopActualLabel isEqualToString:@"Stop"] ) {
+        self.running = NO;
+        [self.resetLapButton setTitle:@"Reset" forState:UIControlStateNormal];
+
+    }
 }
 
 
-- (IBAction)stopLapButtonAction:(UIButton *)sender {
-    self.running = NO;
+- (IBAction)resetLapButtonTapped:(UIButton *)sender {
+    NSString *resetLapActualLabel =  self.resetLapButton.titleLabel.text;
+    if ([resetLapActualLabel isEqualToString:@"Reset"]) {
+        self.StopwatchRunningLabel.text = @"00:00:00";
+        [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
+        self.resetLapButton.enabled = YES;
+
+        
+        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+        self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
+
+    }
 }
 
+ 
 
 
 
@@ -85,9 +111,20 @@
 
 - (void)runningStopWatch: (NSTimer *)timer{
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //this one works
     CGFloat currentNumber = [self.StopwatchRunningLabel.text floatValue];
     CGFloat nextNumber = currentNumber + 0.000001;
-    
     self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%f", nextNumber];
     
     

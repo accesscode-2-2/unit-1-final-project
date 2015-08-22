@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Stopwatch-->
         <scene sceneID="RIi-JI-uHc">
             <objects>
                 <viewController id="dfO-4W-KWV" customClass="StopWatchViewController" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="startResetButtonAction:" destination="dfO-4W-KWV" eventType="touchUpInside" id="mlv-Ql-389"/>
+                                            <action selector="startStopButtonTapped:" destination="dfO-4W-KWV" eventType="touchUpInside" id="wUc-da-AGM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qan-dl-Ps7">
@@ -62,12 +62,12 @@
                                             <constraint firstAttribute="width" constant="100" id="TZY-nZ-nVh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                        <state key="normal" title="Stop">
+                                        <state key="normal" title="Reset">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="stopLapButtonAction:" destination="dfO-4W-KWV" eventType="touchUpInside" id="o5e-aA-fYD"/>
+                                            <action selector="resetLapButtonTapped:" destination="dfO-4W-KWV" eventType="touchUpInside" id="MbW-VJ-K87"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -112,11 +112,11 @@
                             <constraint firstAttribute="trailing" secondItem="1oM-hc-lTS" secondAttribute="trailing" id="zHE-57-Evr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="w51-A3-d2N"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" id="w51-A3-d2N"/>
                     <connections>
                         <outlet property="StopwatchRunningLabel" destination="fpP-nY-S8U" id="yYn-q5-Dup"/>
-                        <outlet property="startResetButton" destination="x8d-sf-n8g" id="EDy-hY-ChN"/>
-                        <outlet property="stopLapButton" destination="qan-dl-Ps7" id="r0w-yB-hI2"/>
+                        <outlet property="resetLapButton" destination="qan-dl-Ps7" id="bev-ev-AH3"/>
+                        <outlet property="startStopButton" destination="x8d-sf-n8g" id="t0j-IF-4Pw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHu-E8-gTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
