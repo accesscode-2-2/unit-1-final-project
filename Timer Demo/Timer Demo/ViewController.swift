@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     func update(){
         for timer in timers{
-            if timer.isPaused = false{
+            if timer.isPaused == false{
                 updateTimer(timer)
             }
         }
