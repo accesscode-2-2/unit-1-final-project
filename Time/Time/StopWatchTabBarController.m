@@ -7,61 +7,42 @@
 //
 
 #import "StopWatchTabBarController.h"
-#import "TimerModel.h"
-#import "StopTimer.h"
 
 @interface StopWatchTabBarController ()
-@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+
 
 @end
 
 @implementation StopWatchTabBarController
 
+float timeTick = 0.00; // the timer always begins at this number
+NSTimer *timer;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.timerIsRunning = NO; // timer is inactive when view loads
-    self.timerLabel.text = @"0"; // set timer to start at 0
-    
-
-//    TimerModel *timerModel= [[TimerModel alloc] init];
-//    StopTimer *newTimer = [timerModel startTimer:0.01];
-    
+    self.timerDisplay.text = [[NSString alloc] initWithFormat:@"%.2f",timeTick];
+   
 }
 
-- (void) timerFired:(NSTimer *)timer { // start timer
+- (void)tick { // the timer loop will run this method each time it is initiated, it advances the number
     
-    float currentNumber = [self.timerLabel.text floatValue]; // get integer value of string each time timer is fired
-    float nextNumber = currentNumber +.01; // add to present time
-    self.timerLabel.text = [NSString stringWithFormat:@"%.2f", nextNumber]; // set time to label text
-    
-    if (nextNumber)
-        NSLog(@"timer fired"); // display each time a number is generated
-    
+    float currentNumber = [self.timerDisplay.text floatValue]; // get float value of string each time timer is fired
+    float nextNumber = currentNumber +.01; // add 0.01 to present time
+    self.timerDisplay.text = [NSString stringWithFormat:@"%.2f", nextNumber]; // set time to label text
 }
 
-- (void)stopTimer { // stop timer
-    [self.timer invalidate];
-
-}
-
-- (void)startTimer {
-    self.timer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];   // this lets you access your current timer run loop
+- (IBAction)startPauseButton:(id)sender {
+    [timer invalidate]; // timer doesn't double time each time button is pressed.
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     
-- (IBAction)buttonTapped:(id)sender {
-        //IBAction *tapped =
-        NSLog(@"button tapped"); // test it!
-//        
-//        if (self.timerIsRunning) {
-//            self.timerIsRunning = NO;
-//            [self stopTimer];
-//        } else {
-//            self.timerIsRunning = YES;
-//            [self startTimer];
-//        }
-    
+    if (self.timerIsRunning) {
+        self.timerIsRunning = NO;
+        [timer invalidate];
+        
+        
+    } else {
+        self.timerIsRunning = YES;
+    }
 }
-}
-
 @end

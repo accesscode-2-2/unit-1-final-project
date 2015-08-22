@@ -10,9 +10,9 @@
 
 @interface StopWatchTabBarController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel; // drag in label to create property
-@property (nonatomic) BOOL timerIsRunning;
-@property (nonatomic) NSTimer *timer;
-@property (nonatomic) float *savedTime;
+@property (strong, nonatomic) IBOutlet UILabel *timerDisplay;
+@property (nonatomic) BOOL timerIsRunning; // this will start/stop timer
+- (IBAction)startPauseButton:(id)sender;
+
 
 @end
