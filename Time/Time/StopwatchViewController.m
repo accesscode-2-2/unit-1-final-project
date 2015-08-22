@@ -7,12 +7,14 @@
 //
 
 #import "StopwatchViewController.h"
+//@import QuartzCore;
 
 @interface StopwatchViewController ()
 @property (weak, nonatomic) IBOutlet UIView *timerView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (nonatomic) CFTimeInterval initialTime;
 
 @property (nonatomic) CADisplayLink *stopwatchTimer;
 
@@ -23,18 +25,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.stopwatchTimer  = [CADisplayLink displayLinkWithTarget:self selector:@selector(refreshTimerLabel)];
-    NSDate *initialDate = [NSDate new];
+    self.stopwatchTimer  = [CADisplayLink displayLinkWithTarget:self
+                                                       selector:@selector(refreshTimerLabel)];
 }
 
 -(void)refreshTimerLabel{
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    CFTimeInterval difference = currentTime - self.initialTime;
+
+    NSString *string = [NSString stringWithFormat:@"%02li:%02li:%02li.%03li",
+                        lround(floor(difference / 3600.)) % 100,
+                        lround(floor(difference / 60.)) % 60,
+                        lround(floor(difference)) % 60,
+                        lround(floor(difference * 1000)) % 1000];
     
-    
-    
-    NSDate *currentDate = [NSDate new];
+    self.timerLabel.text = string;
     
 }
+
 - (IBAction)startButtonTapped:(UIButton *)sender {
+    [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    self.initialTime = CACurrentMediaTime();
+}
+
+- (IBAction)stopButtonTapped:(UIButton *)sender {
     
 }
 
