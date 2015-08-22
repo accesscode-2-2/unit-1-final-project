@@ -14,15 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lapLabel;
 @property (nonatomic) CFTimeInterval initialTime;
 @property (nonatomic) CFTimeInterval lapInitialTime;
-
-
 @property (nonatomic) CADisplayLink *stopwatchTimer;
-
-@property (weak, nonatomic) IBOutlet UILabel *lapLabel;
-
 @property (nonatomic) NSMutableArray *lapTimes;
+@property (weak, nonatomic) IBOutlet UITableView *lapTableView;
 
 @end
 
@@ -32,16 +29,17 @@
     [super viewDidLoad];
     
     self.lapTimes = [NSMutableArray new];
-    
     self.stopwatchTimer  = [CADisplayLink displayLinkWithTarget:self
                                                        selector:@selector(refreshTimerLabel)];
     [self.stopwatchTimer setPaused:YES];
-
     [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    self.lapTableView.dataSource = self;
+    self.lapTableView.delegate = self;
     
 }
 
--(NSString *)formatTimeString:(CFTimeInterval)timeInterval{
+- (NSString *)formatTimeString:(CFTimeInterval)timeInterval{
     CFTimeInterval currentTime = CACurrentMediaTime();
     CFTimeInterval difference = currentTime - timeInterval;
     
@@ -59,7 +57,6 @@
     self.lapLabel.text = [self formatTimeString:self.lapInitialTime];
 }
 
-
 - (IBAction)startButtonTapped:(UIButton *)sender {
     if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
         [self.stopwatchTimer setPaused:NO];
@@ -69,9 +66,6 @@
         }
         [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
         [self.lapButton setTitle:@"Lap" forState:UIControlStateNormal];
-
-
-        NSLog(@"%@", self.startButton.titleLabel.text);
     } else {
         [self.stopwatchTimer setPaused:YES];
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -79,21 +73,35 @@
     }
     
 }
+
 - (IBAction)lapButtonTapped:(UIButton *)sender {
     if([self.lapButton.titleLabel.text isEqualToString:@"Lap"]){
         self.lapInitialTime = CACurrentMediaTime();
         [self.lapTimes addObject:self.lapLabel.text];
-    }
-    if([self.lapButton.titleLabel.text isEqualToString:@"Reset"]){
+        [self.lapTableView reloadData];
+        NSLog(@"%@", self.lapTimes);
+    } else {
         [self.lapTimes removeAllObjects];
+        [self.lapTableView reloadData];
         self.lapLabel.text = @"00:00.000";
         self.timerLabel.text = @"00:00.000";
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.lapTimes count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",indexPath.row+1];
+    cell.detailTextLabel.text = self.lapTimes[indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:@"Digitial Readout ExpUpright" size:15];
+    return cell;
 }
 
 /*

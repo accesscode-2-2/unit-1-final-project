@@ -26,15 +26,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhC-0p-7Z6" userLabel="TimerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-Nl-aKD">
-                                        <rect key="frame" x="199" y="102" width="204" height="36"/>
-                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-Nl-aKD">
+                                        <rect key="frame" x="190" y="101" width="221" height="38"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="38"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHr-rR-NAK">
-                                        <rect key="frame" x="251" y="77" width="99" height="17"/>
-                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="17"/>
+                                        <rect key="frame" x="242" y="73" width="117" height="20"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -126,6 +126,28 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.14393862839999999" blue="0.1343245096" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.27367268150000001" blue="0.26236381809999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lapIdentifier" textLabel="HK4-g1-XK4" detailTextLabel="0Er-oI-5Lu" style="IBUITableViewCellStyleValue1" id="cac-vR-8gZ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cac-vR-8gZ" id="k3A-hJ-hTd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HK4-g1-XK4">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Er-oI-5Lu">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,6 +173,7 @@
                     <connections>
                         <outlet property="lapButton" destination="X9t-kZ-G2c" id="Myu-Bu-os2"/>
                         <outlet property="lapLabel" destination="hHr-rR-NAK" id="SGg-hO-A7F"/>
+                        <outlet property="lapTableView" destination="gq0-By-Ax3" id="u1t-bl-Eoh"/>
                         <outlet property="startButton" destination="Wq3-RH-QzV" id="dEr-6t-u4s"/>
                         <outlet property="timerLabel" destination="bjK-Nl-aKD" id="D5k-XY-yv0"/>
                         <outlet property="timerView" destination="YhC-0p-7Z6" id="PWg-OK-Vre"/>
