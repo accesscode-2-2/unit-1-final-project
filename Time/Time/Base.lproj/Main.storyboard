@@ -178,7 +178,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Gsv-tP-fp4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="64"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -187,7 +187,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Twm-ka-xOn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="34"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -259,14 +259,43 @@
                                             <action selector="labResetButtonAction:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="tt1-hL-mqC"/>
                                         </connections>
                                     </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aNf-dT-1oL">
+                                        <rect key="frame" x="0.0" y="118" width="600" height="157"/>
+                                        <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="E9J-IN-zgc"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="E9J-IN-zgc"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2jZ-NM-XSr" id="Buh-eD-eFJ"/>
+                                            <outlet property="delegate" destination="2jZ-NM-XSr" id="LkZ-tV-mMX"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ms7-QF-qVt" firstAttribute="leading" secondItem="W2m-A7-GPJ" secondAttribute="leading" constant="50" id="509-Pn-W8J"/>
+                                    <constraint firstAttribute="trailing" secondItem="aNf-dT-1oL" secondAttribute="trailing" id="AlQ-nl-2Mu"/>
                                     <constraint firstItem="19F-jv-nJH" firstAttribute="top" secondItem="W2m-A7-GPJ" secondAttribute="top" constant="40" id="CKQ-G8-0ML"/>
+                                    <constraint firstAttribute="bottom" secondItem="aNf-dT-1oL" secondAttribute="bottom" id="Oun-h9-bbB"/>
+                                    <constraint firstAttribute="trailing" secondItem="aNf-dT-1oL" secondAttribute="trailing" id="Sdd-QY-rbI"/>
+                                    <constraint firstItem="aNf-dT-1oL" firstAttribute="leading" secondItem="W2m-A7-GPJ" secondAttribute="leading" id="Sgt-lA-lF7"/>
+                                    <constraint firstItem="aNf-dT-1oL" firstAttribute="leading" secondItem="W2m-A7-GPJ" secondAttribute="leading" id="TcP-1h-wrT"/>
                                     <constraint firstItem="ms7-QF-qVt" firstAttribute="top" secondItem="W2m-A7-GPJ" secondAttribute="top" constant="40" id="eX2-2i-lUa"/>
+                                    <constraint firstItem="aNf-dT-1oL" firstAttribute="top" secondItem="19F-jv-nJH" secondAttribute="bottom" constant="8" id="lre-Fe-H67"/>
                                     <constraint firstAttribute="trailing" secondItem="19F-jv-nJH" secondAttribute="trailing" constant="50" id="pfC-Th-S8e"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Sdd-QY-rbI"/>
+                                        <exclude reference="TcP-1h-wrT"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
