@@ -23,21 +23,36 @@
     
 }
 - (IBAction)timerStartButton:(id)sender {
-    
+    countDown = TRUE; 
+    timer = [NSTimer scheduledTimerWithTimeInterval:-1.0/10.0
+                                                 target:self
+                                               selector:@selector(beginTimer)
+                                               userInfo:nil
+                                                repeats:YES];
+
     
     }
 
 - (IBAction)timerStopButton:(id)sender {
+    countDown = FALSE;
+    [timer invalidate];
+    timer = nil;
+    
 }
 
-- (void)countDown {
+- (void)beginTimer {
+    NSDate *currentTime = [NSDate date];
     
+    NSTimeInterval timeInterval = [currentTime timeIntervalSinceDate:startTime];
     
-    
-    if (timerLabel == 0) {
-        [timer invalidate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timerString=[dateFormatter stringFromDate:timerDate];
+    timerLabel.text = timerString;
     }
-}
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -45,14 +60,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

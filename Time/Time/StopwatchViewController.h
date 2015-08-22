@@ -18,7 +18,6 @@
     
 
 }
-@property (weak, nonatomic) IBOutlet UILabel *logLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
 

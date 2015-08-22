@@ -58,7 +58,9 @@
 
 -(void)updateTimer{
     NSDate *currentDate = [NSDate date];
+    
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:startDate];
+    
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
