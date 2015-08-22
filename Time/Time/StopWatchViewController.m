@@ -25,7 +25,7 @@
 @property (nonatomic) void *callTheTimer;
 
 @property (nonatomic) NSTimeInterval previousTime;
-//@property (nonatomic) NSTimeInterval totalTime;
+@property (nonatomic) NSTimeInterval totalTime;
 
 
 
@@ -85,9 +85,13 @@
     
     
     else if ([startStopActualLabel isEqualToString:@"Start"] && ![self.StopwatchRunningLabel.text   isEqualToString : @"0:00.0"]) {
+        
+
         self.running = YES;
         self.previousTime = [NSDate timeIntervalSinceReferenceDate];
              NSLog (@"BOOM ");
+        [self callTheTimer];
+
         [[self runningStopWatch] fire];
 
      }
@@ -155,23 +159,35 @@
 
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     NSTimeInterval elapsed = currentTime - self.previousTime;
+        self.totalTime += elapsed;
+        
+        self.previousTime = currentTime;
 //        NSLog (@"%f currentTime now",currentTime);
 //        NSLog (@"%f elapsed now",elapsed);
 
    // elapsed += self.totalTime;
   
-    int mins = (int) (elapsed) / 60.0;
-    elapsed -= mins * 60;
-    int secs = (int) (elapsed);
-    elapsed -=  secs;
-    int fraction = elapsed * 10.0;
+//    int mins = (int) (elapsed) / 60.0;
+//    elapsed -= mins * 60;
+//    int secs = (int) (elapsed);
+//    elapsed -=  secs;
+//    int fraction = elapsed * 10.0;
+        
+        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
+        NSTimeInterval minutes = floor(self.totalTime / 60.0);
+        NSTimeInterval fraction = floor(self.totalTime / 10.0);
     
 //        
 //        NSLog (@"%f currentTime then",currentTime);
 //        NSLog (@"%f elapsed then",elapsed);
 
-    self.recentLapRunning.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
+        NSLog(@"%f: %f. %f", minutes, seconds, fraction);
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%01f:%02f.%01f", minutes, seconds, fraction];
+
+        
+        
+//    self.recentLapRunning.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
+//    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
 
     }
     
