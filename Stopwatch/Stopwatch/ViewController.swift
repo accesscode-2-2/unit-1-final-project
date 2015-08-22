@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
+    //MARK: Properties
+    
     var timer = NSTimer()
     var lapTimer = NSTimer()
     
@@ -31,34 +33,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var lapFractionsString: String = ""
     var lapString: String = ""
     
-    
     var laps: [String] = []
     var startStopWatch: Bool = true
     var addLap: Bool = false
     
-
     @IBOutlet weak var stopwatchLabel: UILabel!
-    
     @IBOutlet weak var lapsTableView: UITableView!
     
     @IBOutlet weak var startStopButton: UIButton!
-    
     @IBOutlet weak var lapsResetButton: UIButton!
+    
+    //MARK: Lifecycle methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //When the app is first launched, the stopwatchLabel is set to 0
-        stopwatchLabel.text = "00.00.00"
+        //When the app is first launched, the stopwatchLabel is set to 00:00.00
+        stopwatchLabel.text = "00:00.00"
     }
     
-    // Actions
+    //MARK: Actions
     
     @IBAction func startStop(sender: AnyObject) {
         
         if startStopWatch == true {
             
-            //Timer is incremented every 0.01 of a second while the startStopWatch is set to true and calls the updateStopwatch method
+            //Timer is incremented every 0.01 seconds while the startStopWatch is set to true and calls the updateStopwatch method
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateStopwatch"), userInfo: nil, repeats: true)
             lapTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: ("updateStopwatch"), userInfo: nil, repeats: true)
             
@@ -98,63 +98,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func updateStopwatch() {
-        
-        // Increments the fraction of a second by 1
-        fractions += 1
-        lapFractions += 1
-        
-        // If the fractions of the a second reaches 100, seconds is incremented by 1
-        if fractions == 100{
-            
-            seconds += 1
-            fractions = 0
-        }
-        
-        // If the second reaches 60, minute is incremented by 1 and sets seconds to 0
-        if seconds == 60 {
-            
-            minutes += 1
-            seconds = 0
-            
-        }
-        
-        // If the lapFractions of the a second reaches 100, seconds is incremented by 1        
-        if lapFractions == 100{
-            
-            lapSeconds += 1
-            lapFractions = 0
-            
-        }
-        
-        // If the lapSeconds reaches 60, minute is incremented by 1 and sets seconds to 0
-        if lapSeconds == 60 {
-            
-            lapMinutes += 1
-            lapSeconds = 0
-            
-        }
-       
-        
-        // Sets the strings for fractions, seconds, and minutes. If any number is greater than 9, display a 0 before it.
-        // The values are a shorthand form of writing if/else statements. Condition ? Result if true : Result if false
-        fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
-        secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        
-        lapFractionsString = lapFractions > 9 ? "\(lapFractions)" : "0\(lapFractions)"
-        lapSecondsString = lapSeconds > 9 ? "\(lapSeconds)" : "0\(lapSeconds)"
-        lapMinutesString = lapMinutes > 9 ? "\(lapMinutes)" : "0\(lapMinutes)"
-        
-        //Stopwatch value is stored in stopwatchString formatted with the string for each number (fractions, seconds, minutes) and then set to the stopwatchLabel
-        stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
-        stopwatchLabel.text = stopwatchString
-        
-
-        lapString = "\(lapMinutesString):\(lapSecondsString).\(lapFractionsString)"
-        
-    }
-
     @IBAction func lapsReset(sender: AnyObject) {
         
         if addLap == true {
@@ -202,14 +145,71 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    //TableView Methods
+    //MARK: Update method
+    func updateStopwatch() {
+        
+        // Increments the fraction of a second by 1
+        fractions += 1
+        lapFractions += 1
+        
+        // If the fractions of the a second reaches 100, seconds is incremented by 1
+        if fractions == 100{
+            
+            seconds += 1
+            fractions = 0
+        }
+        
+        // If the second reaches 60, minute is incremented by 1 and sets seconds to 0
+        if seconds == 60 {
+            
+            minutes += 1
+            seconds = 0
+            
+        }
+        
+        // If the lapFractions of the a second reaches 100, seconds is incremented by 1
+        if lapFractions == 100{
+            
+            lapSeconds += 1
+            lapFractions = 0
+            
+        }
+        
+        // If the lapSeconds reaches 60, minute is incremented by 1 and sets seconds to 0
+        if lapSeconds == 60 {
+            
+            lapMinutes += 1
+            lapSeconds = 0
+            
+        }
+        
+        
+        // Sets the strings for fractions, seconds, and minutes. If any number is greater than 9, display a 0 before it.
+        // The values are a shorthand form of writing if/else statements. Condition ? Result if true : Result if false
+        fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
+        secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+        minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+        
+        lapFractionsString = lapFractions > 9 ? "\(lapFractions)" : "0\(lapFractions)"
+        lapSecondsString = lapSeconds > 9 ? "\(lapSeconds)" : "0\(lapSeconds)"
+        lapMinutesString = lapMinutes > 9 ? "\(lapMinutes)" : "0\(lapMinutes)"
+        
+        //Stopwatch value is stored in stopwatchString formatted with the string for each number (fractions, seconds, minutes) and then set to the stopwatchLabel
+        stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
+        stopwatchLabel.text = stopwatchString
+        
+        
+        lapString = "\(lapMinutesString):\(lapSecondsString).\(lapFractionsString)"
+        
+    }
+    
+    // MARK: TableView methods
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
         
         cell.backgroundColor = self.view.backgroundColor
-        
         
         cell.textLabel!.text = "Lap \(laps.count - indexPath.row)"
         
