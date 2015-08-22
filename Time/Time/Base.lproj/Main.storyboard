@@ -97,12 +97,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHu-E8-gTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="565"/>
+            <point key="canvasLocation" x="645" y="568"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="dg4-of-HQh">
             <objects>
-                <viewController id="zEu-mR-zpR" sceneMemberID="viewController">
+                <viewController id="zEu-mR-zpR" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gew-Jz-6Rh"/>
                         <viewControllerLayoutGuide type="bottom" id="2qp-fB-oBB"/>
