@@ -17,9 +17,15 @@
 
 @property (nonatomic) BOOL running;
 
+@property (nonatomic) BOOL resetLab;
+
 @property (nonatomic) NSTimeInterval startTime;
 
+@property (nonatomic) NSTimeInterval labInitTime;
+
 @property (nonatomic) NSMutableArray *labsTimes;
+
+@property (weak, nonatomic) IBOutlet UILabel *labTimeLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -30,18 +36,22 @@
     [super viewDidLoad];
     self.labResetButton.enabled = NO;
     self.timerLabel.text = @"00:00.00";
+    self.labTimeLabel.text = @"00:00.00";
     self.running = NO;
     self.labsTimes = [[NSMutableArray alloc] init];
+
 }
 
 - (IBAction)startButtonAction:(UIButton *)sender {
     if (self.running == NO) {
         self.running = YES;
         self.startTime = [NSDate timeIntervalSinceReferenceDate];
+        self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
-        [self.labResetButton setTitle:@"Lab" forState:UIControlStateNormal];
+        [self.labResetButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.labResetButton.enabled = YES;
         [self timeIncrement];
+        [self labtimeIncrement];
     } else {
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
@@ -52,19 +62,51 @@
 
 - (IBAction)labResetButtonAction:(UIButton *)sender {
     if (self.running == YES) {
-        [self.labsTimes addObject:self.timerLabel.text];
+        // lab button clicked
+        [self.labsTimes addObject:self.labTimeLabel.text];
+        
+        self.labTimeLabel.text = @"00:00.00";
+        self.resetLab = YES;
+        [self labtimeIncrement];
         [self.tableView reloadData];
+        
     } else {
         //reset action here
         [self.labsTimes removeAllObjects];
         [self.tableView reloadData];
         self.timerLabel.text = @"00:00.00";
+        self.labTimeLabel.text = @"00:00.00";
     }
+}
+
+
+
+- (void)labtimeIncrement {
+    if (self.running == NO)
+        return;
+        
+    int labmins;
+    int labsecs;
+    int labfraction;
     
+    if (self.resetLab == YES){
+        self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
+        self.resetLab = NO;
+    }
+
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    NSTimeInterval elapsed = currentTime - self.labInitTime;
     
 
+    labmins = (int) (elapsed / 60.0);
+    elapsed -= labmins * 60;
+    labsecs = (int) (elapsed);
+    elapsed -= labsecs;
+    labfraction = elapsed * 100.0;
     
+    self.labTimeLabel.text = [NSString stringWithFormat:@"%02u:%02u.%02u", labmins, labsecs, labfraction];
     
+    [self performSelector:@selector(labtimeIncrement) withObject:self afterDelay:0.01];
 }
 
 - (void)timeIncrement {
@@ -84,6 +126,8 @@
     
     [self performSelector:@selector(timeIncrement) withObject:self afterDelay:0.01];
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.labsTimes.count;

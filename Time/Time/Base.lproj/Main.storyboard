@@ -303,6 +303,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="labResetButton" destination="19F-jv-nJH" id="jac-yG-bgA"/>
+                        <outlet property="labTimeLabel" destination="LZn-gq-riW" id="hMn-0E-OUD"/>
                         <outlet property="startStopButton" destination="ms7-QF-qVt" id="ETP-mF-8zT"/>
                         <outlet property="tableView" destination="el0-SB-FiT" id="VId-Fs-m4V"/>
                         <outlet property="timerLabel" destination="hde-Pu-daR" id="qzz-EJ-2Hy"/>
