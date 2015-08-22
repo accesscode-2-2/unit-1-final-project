@@ -21,6 +21,8 @@
 
 @property (nonatomic) NSMutableArray *labsTimes;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation StopWatchViewController
@@ -37,21 +39,31 @@
         self.running = YES;
         self.startTime = [NSDate timeIntervalSinceReferenceDate];
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.labResetButton setTitle:@"Lab" forState:UIControlStateNormal];
         self.labResetButton.enabled = YES;
         [self timeIncrement];
     } else {
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-//        [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
         self.running = NO;
     }
     
 }
 
 - (IBAction)labResetButtonAction:(UIButton *)sender {
-    //    NSString *labTime = self.timerLabel.text;
-    [self.labsTimes addObject:self.timerLabel.text];
+    if (self.running == YES) {
+        [self.labsTimes addObject:self.timerLabel.text];
+        [self.tableView reloadData];
+    } else {
+        //reset action here
+        [self.labsTimes removeAllObjects];
+        [self.tableView reloadData];
+        self.timerLabel.text = @"00:00.00";
+    }
     
-    NSLog(@"%@",self.labsTimes);
+    
+
+    
     
 }
 
@@ -73,7 +85,20 @@
     [self performSelector:@selector(timeIncrement) withObject:self afterDelay:0.01];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.labsTimes.count;
+    
+    
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    NSString *time = self.labsTimes[indexPath.row];
+    cell.textLabel.text = time;
+    
+    return cell;
+    
+}
 
 /*
  #pragma mark - Navigation
