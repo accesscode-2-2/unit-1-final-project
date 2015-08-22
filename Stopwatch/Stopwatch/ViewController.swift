@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: UIControlState.Normal)
             
             
-            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method on line 167)
+            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method)
             addLap = true
         }
         
@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // When the button reads Stop and is clicked, it will change the Reset button into a Lap button while the timer is invalidated.
             lapsResetButton.setImage(UIImage(named: "reset.png"), forState: .Normal)
             
-            // When the buttons reads Stop and is clicked, it allows for the stopwatch and laps to be reset (refer to the lapsReset method on line 129)
+            // When the buttons reads Stop and is clicked, it allows for the stopwatch and laps to be reset (refer to the lapsReset method)
             addLap = false
             
         }
@@ -159,7 +159,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if addLap == true {
             
-            //Adds the current time, which is stored in lapString (refer to the updateStopWatch method on line 110)
+            //Adds the current time, which is stored in lapString (refer to the updateStopWatch method)
             laps.insert(lapString, atIndex: 0)
             
             //Resets the lap counter
