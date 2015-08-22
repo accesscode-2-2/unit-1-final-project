@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9k2-VO-Nkm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9k2-VO-Nkm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -82,16 +82,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-vj-kOx">
+                                <rect key="frame" x="281" y="483" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetStopwatchButton:" destination="bd9-cG-Tgt" eventType="touchUpInside" id="BZz-hv-7OF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d3A-CU-7gV" firstAttribute="centerY" secondItem="jqx-II-c1I" secondAttribute="centerY" id="0wx-01-9z1"/>
                             <constraint firstItem="DOS-FX-Day" firstAttribute="centerY" secondItem="WZi-eS-7bp" secondAttribute="centerY" id="1br-we-6CB"/>
+                            <constraint firstItem="Iea-vj-kOx" firstAttribute="centerX" secondItem="WZi-eS-7bp" secondAttribute="centerX" id="5fv-e7-Jfe"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="top" secondItem="OX2-1j-IfV" secondAttribute="bottom" constant="48" id="BFC-xG-LaI"/>
                             <constraint firstItem="mOk-h1-0mW" firstAttribute="leading" secondItem="WZi-eS-7bp" secondAttribute="trailing" constant="100" id="D3M-dp-H9I"/>
                             <constraint firstItem="d3A-CU-7gV" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="DKh-Jg-jpO"/>
                             <constraint firstItem="WZi-eS-7bp" firstAttribute="centerX" secondItem="jqx-II-c1I" secondAttribute="centerX" id="Nwd-1p-WSo"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="leading" secondItem="jqx-II-c1I" secondAttribute="leading" constant="37" id="Q1x-3k-2qX"/>
+                            <constraint firstItem="Iea-vj-kOx" firstAttribute="top" secondItem="WZi-eS-7bp" secondAttribute="bottom" constant="13" id="QNQ-v0-Zal"/>
                             <constraint firstAttribute="trailing" secondItem="uV5-xV-8Jy" secondAttribute="trailing" constant="35" id="ZCE-4x-4so"/>
                             <constraint firstItem="d3A-CU-7gV" firstAttribute="top" secondItem="Lwu-y0-Tes" secondAttribute="bottom" constant="13" id="ZGL-SW-VRR"/>
                             <constraint firstItem="uV5-xV-8Jy" firstAttribute="top" secondItem="Lwu-y0-Tes" secondAttribute="bottom" constant="143" id="axd-Cs-us8"/>
