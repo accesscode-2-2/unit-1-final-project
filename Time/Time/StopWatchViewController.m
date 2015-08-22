@@ -42,7 +42,7 @@
         [self timeIncrement];
     } else {
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-        [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+//        [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
         self.running = NO;
     }
     
