@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
+@property (nonatomic) NSTimeInterval currentLapTime;
+
 
 
 @end
@@ -101,7 +103,7 @@
 }
 
 - (IBAction)resetButton:(id)sender {
-    
+    [self.lapTableView reloadData];
     if (running ) {
         [lapTimer invalidate];
         lapTimer = nil;
@@ -114,18 +116,19 @@
                                                    repeats:YES];
         
     }else{
-    
-    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
-    [stopTimer invalidate];
-    stopTimer = nil;
-    [lapTimer invalidate];
-    lapTimer = nil;
-    startDate = [NSDate date];
-    stopwatchLabel.text = @"00.00.00";
-    lapLabel.text = @"00.00.00";
-    
+        
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+        [stopTimer invalidate];
+        stopTimer = nil;
+        [lapTimer invalidate];
+        lapTimer = nil;
+        startDate = [NSDate date];
+        stopwatchLabel.text = @"00.00.00";
+        lapLabel.text = @"00.00.00";
+        
     }
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
@@ -142,9 +145,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LapLabelCellIdentifier" forIndexPath:indexPath];
-    self.lapLabel.text = cell.textLabel.text; 
+
     cell.textLabel.text =
-    [NSString stringWithFormat:@"Row: %li", (long)indexPath.row];
+    [NSString stringWithFormat:@"Row: %li %@", (long)indexPath.row, self.lapLabel.text];
     
     return cell;
 }
