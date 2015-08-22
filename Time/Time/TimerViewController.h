@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (nonatomic) NSArray *pickerCategory;
+@property (nonatomic) NSString *timerCount;
+
 
 
 @end
