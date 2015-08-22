@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TimerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+
 
 @end
