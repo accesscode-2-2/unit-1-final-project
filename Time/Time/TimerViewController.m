@@ -17,7 +17,9 @@
 @property (nonatomic) NSTimeInterval countDownDuration;
 @property (weak, nonatomic) IBOutlet UILabel *timer;
 @property (nonatomic) NSTimer *countdownTimer;
-@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 
 
 @end
@@ -31,11 +33,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     NSURL *soundURL = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:@"Radar" ofType:@"m4r"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, self.timeUpSound);
     
-    [self.stopButton setHidden:YES];
+    [self.startButton setHidden:YES];
     
+
+    [self.cancelButton setHidden:YES];
+    [self.resumeButton setHidden:YES];
+
     
     [self.timer setHidden:YES];
     // Create a new date with the current time
@@ -55,7 +62,7 @@
 
 - (IBAction)pressButton:(id)sender {
     [self.startButton setHidden:YES];
-    [self.stopButton setHidden:NO];
+    [self.cancelButton setHidden:NO];
     
     if(sender == self.startButton){
         [self.timer setHidden:NO];
@@ -71,6 +78,21 @@
     }
 }
 
+- (IBAction)cancelButton:(id)sender {
+    [self.startButton setHidden:NO];
+    [self.cancelButton setHidden:YES];
+    
+}
+- (IBAction)pauseButton:(id)sender {
+    
+    [self.pauseButton setHidden:YES];
+    [self.resumeButton setHidden:NO];
+    
+//    self.
+}
+- (IBAction)resumeButton:(id)sender {
+    [self.resumeButton setHidden:NO];
+}
 
 - (void)countDown:(NSTimer *) countdownTimer {
     self.countDownDuration = self.countDownDuration - 1;
@@ -81,23 +103,7 @@
     
     NSString *outputTimer = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
     self.timer.text = outputTimer;
-    
-    
-    
-    
-    //    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    //    NSTimeInterval elapsed = currentTime - self.countDownDuration;
-    //    self.countDownDuration = [NSDate timeIntervalSinceReferenceDate];
-    //
-    //    int mins = (int) (elapsed / 60.0);
-    //    elapsed -= mins * 60;
-    //    int secs = (int) (elapsed);
-    //    elapsed -= secs;
-    //    int fraction = elapsed * 100.0;
-    //
-    //    self.timer.text = [NSString stringWithFormat:@"%02u:%02u.%02u", mins, secs, fraction];
-    
-    
+ 
     
 }
 

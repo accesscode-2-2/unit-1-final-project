@@ -104,6 +104,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pauseButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="NE2-YA-H29"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIi-wg-VDm">
                                         <rect key="frame" x="146" y="40" width="70" height="70"/>
@@ -114,8 +117,8 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="k3P-aM-dDE"/>
                                             <constraint firstAttribute="height" constant="70" id="kLb-4Z-5Ud"/>
                                         </constraints>
-                                        <state key="normal" title="Stop">
-                                            <color key="titleColor" red="0.32210720599999998" green="0.8019846907" blue="0.24722053860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="0.098378783550000001" blue="0.1037581509" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -129,15 +132,43 @@
                                                 <exclude reference="k3P-aM-dDE"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="qfC-jK-Gcv"/>
+                                            <action selector="resetButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="9Ce-Zr-mW9"/>
+                                            <action selector="stopButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="CVn-Ma-zdq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-3M-jnI">
+                                        <rect key="frame" x="393" y="40" width="70" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Fz3-8N-Az4"/>
+                                            <constraint firstAttribute="width" constant="70" id="apj-pl-KLh"/>
+                                        </constraints>
+                                        <state key="normal" title="Resume">
+                                            <color key="titleColor" red="0.0080008718669999992" green="0.020004734850000001" blue="0.0063172846889999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="35"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resumeButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="AMo-oZ-048"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80198469065656552" green="0.80198469065656552" blue="0.80198469065656552" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="PYR-56-ik8" firstAttribute="leading" secondItem="Ulj-sf-ID8" secondAttribute="leading" constant="50" id="1ce-pG-Pjy"/>
                                     <constraint firstItem="PYR-56-ik8" firstAttribute="top" secondItem="Ulj-sf-ID8" secondAttribute="top" constant="40" id="DMf-SO-qdv"/>
+                                    <constraint firstItem="o5y-3M-jnI" firstAttribute="top" secondItem="Ulj-sf-ID8" secondAttribute="top" constant="40" id="HR6-sw-jjy"/>
                                     <constraint firstItem="aIi-wg-VDm" firstAttribute="top" secondItem="Ulj-sf-ID8" secondAttribute="top" constant="40" id="NcQ-Iw-FZj"/>
                                     <constraint firstItem="aIi-wg-VDm" firstAttribute="leading" secondItem="Ulj-sf-ID8" secondAttribute="leading" constant="50" id="PUf-PZ-wre"/>
                                     <constraint firstItem="Kw4-kH-cwT" firstAttribute="top" secondItem="Ulj-sf-ID8" secondAttribute="top" constant="40" id="Zrp-dc-Dii"/>
+                                    <constraint firstAttribute="trailing" secondItem="o5y-3M-jnI" secondAttribute="trailing" constant="50" id="bQ6-8P-Hag"/>
                                     <constraint firstAttribute="trailing" secondItem="Kw4-kH-cwT" secondAttribute="trailing" constant="50" id="sPN-wM-4bC"/>
                                 </constraints>
                             </view>
@@ -157,9 +188,11 @@
                     <tabBarItem key="tabBarItem" title="Timer" id="Wlr-ql-Isd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="aIi-wg-VDm" id="SPH-fn-qY0"/>
+                        <outlet property="pauseButton" destination="Kw4-kH-cwT" id="Xir-zr-xen"/>
                         <outlet property="pickerView" destination="8YG-XG-nte" id="XeU-wB-7Y7"/>
+                        <outlet property="resumeButton" destination="o5y-3M-jnI" id="8Wf-Yh-n4f"/>
                         <outlet property="startButton" destination="PYR-56-ik8" id="ZZ3-T3-iV0"/>
-                        <outlet property="stopButton" destination="aIi-wg-VDm" id="tgd-zT-tU1"/>
                         <outlet property="timer" destination="kKf-BL-zau" id="qxF-Q3-l5q"/>
                     </connections>
                 </viewController>
