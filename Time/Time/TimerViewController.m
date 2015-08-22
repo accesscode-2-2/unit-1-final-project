@@ -10,42 +10,44 @@
 
 @interface TimerViewController ()
 
+@property (nonatomic) NSInteger afterRemainder;
+@property (nonatomic)  NSInteger Remainder;
+@property (nonatomic) NSTimeInterval countDownInterval;
+
+@property (nonatomic) BOOL running;
 @end
 
 @implementation TimerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.running = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
-
-
+-(void)updateTime {
+    self.afterRemainder --;
+    
+    NSInteger hours = (NSInteger)(self.afterRemainder/(60*60));
+    NSInteger minutes = (((NSInteger)self.afterRemainder/60) - (hours *60));
+    NSInteger seconds = (((NSInteger)self.afterRemainder - (60 * minutes) - (60 * hours *60)));
+    NSString *displayText = [[NSString alloc] initWithFormat: @"%02ld : %02ld : %02ld", (long)hours, (long)minutes, (long)seconds];
+    
+    self.countdownLabel.text = displayText;
+}
 
 - (IBAction)startCountdown:(id)sender {
-    
-    NSTimer *timer;
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                             target:self
-                                           selector:@selector(updateTime)
-                                           userInfo:nil
-                                            repeats:YES];
-}
-
--(void)updateTime
-{
-    //Get the time left until the specified date
-    NSInteger ti = ((NSInteger)[self.datePicker.date timeIntervalSinceNow]);
-    NSInteger seconds = ti % 60;
-    NSInteger minutes = (ti / 60) % 60;
-    NSInteger hours = (ti / 3600) % 24;
-    //NSInteger days = (ti / 86400);
-    
-    //Update the label with the remaining time
-    self.countdownLabel.text = [NSString stringWithFormat:@"%02li hrs %02li min %02li sec", (long)hours, (long)minutes, (long)seconds];
+    if (!self.running) {
+        self.running = YES;
+        
+        self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
+        self.Remainder = self.countDownInterval;
+        self.afterRemainder = self.countDownInterval - self.Remainder%60;
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+    }
 }
 @end
+

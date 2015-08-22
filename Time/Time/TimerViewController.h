@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController 
+@interface TimerViewController : UIViewController
     
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
