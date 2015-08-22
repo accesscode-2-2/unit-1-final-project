@@ -63,7 +63,8 @@
 - (IBAction)labResetButtonAction:(UIButton *)sender {
     if (self.running == YES) {
         // lab button clicked
-        [self.labsTimes addObject:self.labTimeLabel.text];
+        
+        [self.labsTimes insertObject:self.labTimeLabel.text atIndex:0];
         
         self.labTimeLabel.text = @"00:00.00";
         self.resetLab = YES;
