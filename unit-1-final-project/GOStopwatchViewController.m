@@ -65,7 +65,8 @@
     self.resetButton.hidden = YES;
     self.stopButton.hidden = YES;
     
-        
+    self.lapButton.userInteractionEnabled = NO;
+    
 }
 
 
@@ -88,6 +89,8 @@
     
     self.mainPreviousTime = [[NSDate alloc] init];
     self.lapPreviousTime = [[NSDate alloc] init];
+    
+    self.lapButton.userInteractionEnabled = YES;
     
 }
 
@@ -166,6 +169,8 @@
     self.lapButton.hidden = NO;
     self.startButton.hidden = NO;
     self.stopButton.hidden = YES;
+    
+    self.lapButton.userInteractionEnabled = NO;
    
     [self.mainStopwatch invalidate];
     [self.stopwatch invalidate];
@@ -175,6 +180,11 @@
     
     self.mainStopwatchLabel.text = @"00 : 00 : 00";
     self.stopwatchTimerLabel.text = @"00 : 00 : 00";
+    
+    [self.laps removeAllObjects];
+    [self.numberOfLaps removeAllObjects];
+    
+    [self.tableView reloadData];
 
     //[self stopStopwatchButton:sender];
 }
