@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var fractionsString: String = ""
     var stopwatchString: String = ""
     
+    var laps: [String] = []
     var startStopWatch: Bool = true
     var addLap: Bool = false
     
@@ -66,6 +67,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // When the button reads Start and is clicked, it will change the Lap button into a Reset button while the timer is firing.
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: UIControlState.Normal)
             
+            
+            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method on line 129)
             addLap = true
             
         }
@@ -84,6 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // When the button reads Stop and is clicked, it will change the Reset button into a Lap button while the timer is invalidated.
             lapsResetButton.setImage(UIImage(named: "reset.png"), forState: .Normal)
             
+            // When the buttons reads Stop and is clicked, it allows for the stopwatch and laps to be reset (refer to the lapsReset method on line 129)
             addLap = false
             
         }
@@ -125,14 +129,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func lapsReset(sender: AnyObject) {
     
+        
         if addLap == true {
             
+            //Adds the current time, which is stored in stopwatchString (refer to the updateStopWatch method on line 95)
+            laps.insert(stopwatchString, atIndex: 0)
             
+            //Refreshes the table view that contains the lap times
+            lapsTableView.reloadData()
             
         }
         else {
+            
+            
             addLap == false
+            
+            // When the button reads Reset and is clicked, it will change into a Lap button and reset the stopwatchString (just the string) back to 0.
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: .Normal)
+            
+            // When the button reads Reset and is clicked, it will remove all elements in the laps array and then reload the table view
+            laps.removeAll(keepCapacity: false)
+            lapsTableView.reloadData()
+            
+            // Reverts the time back to 0
             fractions = 0
             seconds = 0
             minutes = 0
@@ -154,9 +173,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.backgroundColor = self.view.backgroundColor
         
         
-        cell.textLabel!.text = "Lap"
+        cell.textLabel!.text = "Lap \(laps.count - indexPath.row)"
         
-        cell.detailTextLabel?.text = "00:00:00"
+        cell.detailTextLabel?.text = laps[indexPath.row]
         
         return cell
         
@@ -164,7 +183,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return laps.count
     }
     
     
