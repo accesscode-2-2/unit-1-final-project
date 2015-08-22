@@ -20,9 +20,10 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
+@property (weak, nonatomic) IBOutlet UILabel *logLabel;
 
 - (IBAction)startButton:(id)sender;
-- (IBAction)stopButton:(id)sender;
+- (IBAction)resetButton:(id)sender;
 
 - (void)updateTimer;
 

@@ -10,6 +10,7 @@
 		003B48381B88CEC8004C430A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003B48371B88CEC8004C430A /* Main.storyboard */; };
 		45855BAE1B86A2A3008B61B8 /* StopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45855BAD1B86A2A3008B61B8 /* StopwatchViewController.m */; };
 		45855BB11B86A2BB008B61B8 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45855BB01B86A2BB008B61B8 /* TimerViewController.m */; };
+		45855BB31B88FB48008B61B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45855BB21B88FB48008B61B8 /* QuartzCore.framework */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
@@ -33,6 +34,7 @@
 		45855BAD1B86A2A3008B61B8 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchViewController.m; sourceTree = "<group>"; };
 		45855BAF1B86A2BB008B61B8 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		45855BB01B86A2BB008B61B8 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		45855BB21B88FB48008B61B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45855BB31B88FB48008B61B8 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
+				45855BB21B88FB48008B61B8 /* QuartzCore.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,

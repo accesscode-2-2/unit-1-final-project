@@ -7,7 +7,7 @@
 //
 
 #import "StopwatchViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface StopwatchViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
@@ -22,10 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    stopwatchLabel.text = @"00.00.00.000";
+    stopwatchLabel.text = @"00.00.000";
     running = FALSE;
     startDate = [NSDate date];
-    
+    self.startButton.layer.cornerRadius = 37.5;
+    self.startButton.clipsToBounds = YES;
+    self.resetButton.layer.cornerRadius = 37.5;
+    self.resetButton.clipsToBounds = YES; 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +66,7 @@
     
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
+    [dateFormatter setDateFormat:@"mm:ss.SSS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     stopwatchLabel.text = timeString;
@@ -71,12 +74,12 @@
 
 
 
-- (IBAction)stopButton:(id)sender {
+- (IBAction)resetButton:(id)sender {
     [_startButton setTitle:@"Start" forState:UIControlStateNormal];
     [stopTimer invalidate];
     stopTimer = nil;
     startDate = [NSDate date];
-    stopwatchLabel.text = @"00.00.00.000";
+    stopwatchLabel.text = @"00.00.000";
     running = FALSE;
     
 }
