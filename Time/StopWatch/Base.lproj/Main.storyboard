@@ -90,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fm2-dP-9WW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1164" y="-847"/>
+            <point key="canvasLocation" x="-1210" y="-847"/>
         </scene>
         <!--Timer-->
         <scene sceneID="afe-lt-dMp">
@@ -205,7 +205,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLu-uf-7AD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="-410"/>
+            <point key="canvasLocation" x="-142" y="-400"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="gfK-pM-lfq">
@@ -398,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOV-2w-yRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1118" y="29"/>
+            <point key="canvasLocation" x="-1210" y="61"/>
         </scene>
         <!--Add Special Event-->
         <scene sceneID="wSf-ZS-6Tf">
@@ -408,13 +408,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="nQh-vX-QRr">
-                            <rect key="frame" x="-160" y="-81" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <date key="date" timeIntervalSinceReferenceDate="461961654.06545597">
-                                <!--2015-08-22 18:40:54 +0000-->
-                            </date>
-                        </datePicker>
                         <sections>
                             <tableViewSection id="cG2-Ax-Kdc">
                                 <cells>
@@ -428,6 +421,24 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="ORs-ri-4BV">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kvP-EJ-x49">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kvP-EJ-x49" id="D5W-gz-ed0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lMv-u4-okn">
+                                                    <rect key="frame" x="0.0" y="-59" width="414" height="162"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="461967466.63442802">
+                                                        <!--2015-08-22 20:17:46 +0000-->
+                                                    </date>
+                                                </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -447,7 +458,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU2-Tx-bNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="911"/>
+            <point key="canvasLocation" x="-682" y="437"/>
         </scene>
         <!--Edit Special Event-->
         <scene sceneID="c6d-ZV-a0f">
@@ -457,13 +468,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="4Qs-OO-se7">
-                            <rect key="frame" x="-160" y="-81" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <date key="date" timeIntervalSinceReferenceDate="461961608.95614201">
-                                <!--2015-08-22 18:40:08 +0000-->
-                            </date>
-                        </datePicker>
                         <sections>
                             <tableViewSection id="D5n-xe-Dta">
                                 <cells>
@@ -482,6 +486,24 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="eZv-Oq-C8k">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kpy-cr-w9W">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpy-cr-w9W" id="ly7-Yg-rBK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="l9q-9q-pKQ">
+                                                    <rect key="frame" x="0.0" y="-59" width="414" height="162"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="461967641.36468399">
+                                                        <!--2015-08-22 20:20:41 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="QBA-xy-dEE" id="71t-XR-iEe"/>
@@ -493,7 +515,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dc-jp-xEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1628" y="911"/>
+            <point key="canvasLocation" x="-1708" y="945"/>
         </scene>
         <!--Timer-->
         <scene sceneID="W7O-i9-sXs">
@@ -513,7 +535,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJK-BY-zEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="-410"/>
+            <point key="canvasLocation" x="-682" y="-400"/>
         </scene>
         <!--Stop Watch-->
         <scene sceneID="zcr-0B-2jh">
@@ -551,7 +573,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eag-JA-6vb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1708" y="29"/>
+            <point key="canvasLocation" x="-1708" y="61"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5MY-gN-Nak">
@@ -569,7 +591,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIS-1J-xzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1118" y="911"/>
+            <point key="canvasLocation" x="-1210" y="945"/>
         </scene>
     </scenes>
 </document>
