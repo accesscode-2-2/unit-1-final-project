@@ -27,9 +27,8 @@
 @property (nonatomic) LapTimerTableViewCell * model;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
-
+@property (nonatomic) float totalTime;
 @property (nonatomic) NSDate *previousTime;
-@property (nonatomic) NSTimeInterval totalTime;
 
 @end
 
@@ -52,15 +51,8 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    // if button is hit then fire this otherwise no
-    
-    if (self.startButton){
+- (IBAction)startStopwatchButton:(UIButton *)sender {
     
     self.stopwatch = [NSTimer scheduledTimerWithTimeInterval:1.0/100.0
                                                       target:self
@@ -71,25 +63,18 @@
                                                           target:self
                                                         selector:@selector(updateMainStopwatchTimer)
                                                         userInfo:nil repeats:YES];
-        
-    }
-}
-
-// Press start to begin timer
-- (IBAction)startStopwatchButton:(UIButton *)sender {
-    [self viewDidAppear:YES];
     
+    self.previousTime = [[NSDate alloc] init];
     
 }
 
 -(void) updateMainStopwatchTimer {
-
-    self.previousTime = [[NSDate alloc] init];
     
     NSDate *currentTime = [[NSDate alloc] init];
     
-    NSTimeInterval ellapsedTime = [currentTime timeIntervalSinceDate:self.previousTime];
-    
+    NSTimeInterval ellapsedTime = [currentTime timeIntervalSinceDate: self.previousTime];
+    self.previousTime = currentTime;
+
     self.totalTime += ellapsedTime;
     
     NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:self.totalTime];
@@ -101,7 +86,7 @@
     self.mainStopwatchLabel.text = timeString;
     
     
-    NSLog(@"%f", self.totalTime/ 100);
+    NSLog(@"%f", self.totalTime);
 }
 
 - (void) updateStopwatchTimer {
