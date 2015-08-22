@@ -27,6 +27,7 @@
     
     self.stopwatchTimer  = [CADisplayLink displayLinkWithTarget:self
                                                        selector:@selector(refreshTimerLabel)];
+    [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 -(void)refreshTimerLabel{
@@ -44,8 +45,17 @@
 }
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
-    [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    self.initialTime = CACurrentMediaTime();
+    
+    if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
+        [self.stopwatchTimer setPaused:NO];
+        self.initialTime = CACurrentMediaTime();
+        [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
+        NSLog(@"%@", self.startButton.titleLabel.text);
+    } else {
+        [self.stopwatchTimer setPaused:YES];
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
+    
 }
 
 - (IBAction)stopButtonTapped:(UIButton *)sender {
