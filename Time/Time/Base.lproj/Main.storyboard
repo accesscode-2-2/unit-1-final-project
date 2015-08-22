@@ -27,14 +27,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-Nl-aKD">
-                                        <rect key="frame" x="190" y="101" width="221" height="38"/>
-                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="38"/>
+                                        <rect key="frame" x="166" y="97" width="268" height="46"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="46"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHr-rR-NAK">
-                                        <rect key="frame" x="242" y="73" width="117" height="20"/>
-                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="20"/>
+                                        <rect key="frame" x="233" y="66" width="134" height="23"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="23"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
