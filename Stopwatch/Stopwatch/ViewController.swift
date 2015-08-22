@@ -11,15 +11,26 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     var timer = NSTimer()
+    var lapTimer = NSTimer()
     
     var minutes: Int = 0
     var seconds: Int = 0
     var fractions: Int = 0
     
+    var lapMinutes: Int = 0
+    var lapSeconds: Int = 0
+    var lapFractions: Int = 0
+    
     var minutesString: String = ""
     var secondsString: String = ""
     var fractionsString: String = ""
     var stopwatchString: String = ""
+    
+    var lapMinutesString: String = ""
+    var lapSecondsString: String = ""
+    var lapFractionsString: String = ""
+    var lapString: String = ""
+    
     
     var laps: [String] = []
     var startStopWatch: Bool = true
@@ -38,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         //When the app is first launched, the stopwatchLabel is set to 0
-        stopwatchLabel.text = "00.00.0"
+        stopwatchLabel.text = "00.00.00"
     }
     
     // Actions
@@ -49,6 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             //Timer is incremented every 0.01 of a second while the startStopWatch is set to true and calls the updateStopwatch method
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateStopwatch"), userInfo: nil, repeats: true)
+            lapTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: ("updateStopwatch"), userInfo: nil, repeats: true)
             
             //The startStopWatch will turn false when the Start button is clicked (so that it can turn true when the Stop button is clicked)
             startStopWatch = false
@@ -59,7 +71,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // When the button reads Start and is clicked, it will change the Lap button into a Reset button while the timer is firing.
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: UIControlState.Normal)
             
-            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method on line 129)
+            
+            // When the button reads Start, it allows for laps to be added. (refer to the lapsReset method on line 167)
             addLap = true
         }
         
@@ -67,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             // When the Stop button is clicked, it invalidates the timer
             timer.invalidate()
+            lapTimer.invalidate()
             
             // The startStopWatch will turn true when the Stop button is clicked (so that it can turn false when the Start button is clicked)
             startStopWatch = true
@@ -81,15 +95,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             addLap = false
             
         }
+        
     }
     
     func updateStopwatch() {
         
         // Increments the fraction of a second by 1
         fractions += 1
+        lapFractions += 1
         
         // If the fractions of the a second reaches 100, seconds is incremented by 1
-        if fractions == 100 {
+        if fractions == 100{
             
             seconds += 1
             fractions = 0
@@ -100,8 +116,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             minutes += 1
             seconds = 0
+            
         }
         
+        // If the lapFractions of the a second reaches 100, seconds is incremented by 1        
+        if lapFractions == 100{
+            
+            lapSeconds += 1
+            lapFractions = 0
+            
+        }
+        
+        // If the lapSeconds reaches 60, minute is incremented by 1 and sets seconds to 0
+        if lapSeconds == 60 {
+            
+            lapMinutes += 1
+            lapSeconds = 0
+            
+        }
+       
         
         // Sets the strings for fractions, seconds, and minutes. If any number is greater than 9, display a 0 before it.
         // The values are a shorthand form of writing if/else statements. Condition ? Result if true : Result if false
@@ -109,10 +142,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
         minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
         
+        lapFractionsString = lapFractions > 9 ? "\(lapFractions)" : "0\(lapFractions)"
+        lapSecondsString = lapSeconds > 9 ? "\(lapSeconds)" : "0\(lapSeconds)"
+        lapMinutesString = lapMinutes > 9 ? "\(lapMinutes)" : "0\(lapMinutes)"
         
         //Stopwatch value is stored in stopwatchString formatted with the string for each number (fractions, seconds, minutes) and then set to the stopwatchLabel
         stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
         stopwatchLabel.text = stopwatchString
+        
+
+        lapString = "\(lapMinutesString):\(lapSecondsString).\(lapFractionsString)"
         
     }
 
@@ -120,8 +159,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if addLap == true {
             
-            //Adds the current time, which is stored in stopwatchString (refer to the updateStopWatch method on line 95)
-            laps.insert(stopwatchString, atIndex: 0)
+            //Adds the current time, which is stored in lapString (refer to the updateStopWatch method on line 110)
+            laps.insert(lapString, atIndex: 0)
+            
+            //Resets the lap counter
+            lapFractions = 0
+            lapSeconds = 0
+            lapMinutes = 0
+            
+            lapString = "00:00.00"
             
             //Refreshes the table view that contains the lap times
             lapsTableView.reloadData()
@@ -143,8 +189,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             seconds = 0
             minutes = 0
             
+            lapFractions = 0
+            lapSeconds = 0
+            lapMinutes = 0
+            
+            lapString = "00:00.00"
+            
             stopwatchString = "00:00.00"
             stopwatchLabel.text = stopwatchString
+            
         }
         
     }
@@ -166,7 +219,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return laps.count
+        
     }
     
     
