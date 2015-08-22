@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL running;
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
+@property (nonatomic) NSTimer *currentTimeOnLabel;
 
 
 @end
@@ -55,6 +56,8 @@
 
 
 - (IBAction)startStopButtonTapped:(UIButton *)sender {
+    //self.currentTimeOnLabel = [NSDate timeIntervalSinceReferenceDate];
+    
     
     //check Label's text
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
@@ -75,6 +78,8 @@
     else if ([startStopActualLabel isEqualToString:@"Stop"] ) {
         self.running = NO;
         [self.resetLapButton setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+        self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
 
     }
 }
@@ -110,11 +115,18 @@
 
 
 - (void)runningStopWatch: (NSTimer *)timer{
-    
-    
-    
-    
-    
+//    
+//    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+//    NSTimeInterval elapsed = currentTime - + 0.1;
+//    
+//    int mins = (int) (elapsed / 60.0);
+//    elapsed -= mins * 60;
+//    int secs = (int) (elapsed);
+//    elapsed -= secs;
+//    int fraction = elapsed * 10.0;
+//    
+//    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%u:%02u.%u", mins, secs, fraction];
+//    
     
     
     
