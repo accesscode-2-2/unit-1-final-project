@@ -22,6 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *start;
+//new addition
+@property (nonatomic) NSTimeInterval totalTime;
 
 
 @end
@@ -72,6 +74,11 @@ NSTimeInterval startTime;
     // calculate elapsed time
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     NSTimeInterval elapsed = currentTime - startTime;
+    self.totalTime += elapsed;
+    
+    startTime = currentTime;
+
+    NSLog(@"%f", self.totalTime);
     
     // extract out the minutes, seconds, and fraction of seconds from elapsed time:
     int mins = (int) (elapsed / 60.0);
@@ -80,8 +87,10 @@ NSTimeInterval startTime;
     elapsed -= secs;
     int fraction = elapsed * 100.0;
     
+    self.timerLabel.text = [NSString stringWithFormat:@"%02d:%g",secs, self.totalTime];
+    
     // update our label using a format of 0:00.0
-    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
+    //self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
     
     // call updateTime again after 0.1 seconds
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
