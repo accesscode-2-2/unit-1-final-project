@@ -41,12 +41,22 @@
 
 - (IBAction)startCountdown:(id)sender {
     if (!self.running) {
-        self.running = YES;
+        self.running = TRUE;
         
         self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
         self.Remainder = self.countDownInterval;
         self.afterRemainder = self.countDownInterval - self.Remainder%60;
-        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+        [sender setTitle:@"Pause" forState: UIControlStateNormal];
+        if (countdownTimer == nil) {
+            countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                              target:self
+                                                selector:@selector(updateTime) userInfo:nil repeats:YES];
+        } else {
+            self.running = FALSE;
+            [sender setTitle:@"Start" forState: UIControlStateNormal];
+            [countdownTimer invalidate];
+            countdownTimer = nil;
+        }
     }
 }
 @end
