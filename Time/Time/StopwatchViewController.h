@@ -7,20 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface StopwatchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface StopwatchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
-    __weak IBOutlet UILabel *stopwatchLabel;
-    NSTimer *stopTimer;
-    NSTimer *lapTimer;
-    NSDate *startDate;
-    NSDate *restartDate;
-    BOOL running;
+@property (nonatomic) NSTimer *stopTimer;
+@property (nonatomic) NSTimer *lapTimer;
+@property (nonatomic) NSDate *startDate;
+@property (nonatomic) NSDate *restartDate;
+@property (nonatomic) BOOL running;
     
-
-}
-
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lapLabel;
 @property (weak, nonatomic) IBOutlet UITableView *lapTableView;
@@ -31,6 +28,7 @@
 
 
 - (void)updateTimer;
+- (void)rememberTimer; 
 
 
 @end
