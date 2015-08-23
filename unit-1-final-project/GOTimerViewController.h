@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Exercises.h"
+#import "Workout.h"
+#import "GOWorkoutViewController.h"
 
 @interface GOTimerViewController : UIViewController
+
+@property (nonatomic) NSArray *currentWorkout;
+@property (nonatomic) NSString * currentExerciseName;
+@property (nonatomic) NSTimeInterval * currentExerciseTime;
+@property (nonatomic) NSString *currentExerciseImage;
+
+//Properties of ViewController
+@property (weak, nonatomic) IBOutlet UIImageView *exerciseImageView;
+@property (weak, nonatomic) IBOutlet UILabel *exerciseTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
+
 
 @end
