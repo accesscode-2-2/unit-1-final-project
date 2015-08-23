@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Timer-->
+        <!--Timer View Controller-->
         <scene sceneID="vWc-GO-Rkh">
             <objects>
                 <viewController id="pzV-SG-jHg" customClass="TimerViewController" sceneMemberID="viewController">
@@ -26,13 +26,13 @@
                                     <action selector="pause:" destination="pzV-SG-jHg" eventType="touchUpInside" id="TiG-WM-lCA"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
                                 <rect key="frame" x="0.0" y="389" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="461964873.77909702">
                                     <!--2015-08-22 19:34:33 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
                                 <rect key="frame" x="12" y="152" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start">
@@ -43,7 +43,7 @@
                                     <action selector="startButton:" destination="pzV-SG-jHg" eventType="touchUpInside" id="RnU-06-uCl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gis-ba-krU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gis-ba-krU">
                                 <rect key="frame" x="16" y="70" width="568" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="51"/>
                                 <color key="textColor" red="0.52421992978849841" green="0.76330989899932145" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,7 +105,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timer" image="clock-alarm-7" id="4Si-j5-Udu"/>
+                    <navigationItem key="navigationItem" id="h0S-AO-PcT"/>
                     <connections>
                         <outlet property="countDownTimer" destination="nQ5-9V-n3s" id="ID9-n1-Qj6"/>
                         <outlet property="displayTime" destination="gis-ba-krU" id="HAu-JR-svh"/>
@@ -114,9 +114,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGs-mL-eZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="248"/>
+            <point key="canvasLocation" x="1312" y="332"/>
         </scene>
-        <!--Stopwatch-->
+        <!--View Controller-->
         <scene sceneID="TpN-gz-kDw">
             <objects>
                 <viewController id="GaP-br-qKn" sceneMemberID="viewController">
@@ -129,11 +129,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" image="clock-stopwatch-7" id="T7a-4V-y6H"/>
+                    <navigationItem key="navigationItem" id="IJZ-Nv-7zp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AqM-ug-ddX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="-406"/>
+            <point key="canvasLocation" x="1312" y="-448"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cZ8-m7-ETG">
@@ -146,13 +146,51 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GaP-br-qKn" kind="relationship" relationship="viewControllers" id="efu-Zn-g1l"/>
-                        <segue destination="pzV-SG-jHg" kind="relationship" relationship="viewControllers" id="xCC-6K-vUp"/>
+                        <segue destination="qMo-wi-d5n" kind="show" id="pZL-JG-wWT"/>
+                        <segue destination="OyP-x7-tdW" kind="show" id="nT7-3M-R8f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56q-Qy-t5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="-74"/>
+            <point key="canvasLocation" x="-480" y="-294"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="oXN-Mu-Be5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qMo-wi-d5n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="clock-stopwatch-7" id="T7a-4V-y6H"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="67h-7V-dQw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GaP-br-qKn" kind="relationship" relationship="rootViewController" id="y1g-wc-4CP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGC-kW-mqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="-448"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="S9s-Vz-Dq2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OyP-x7-tdW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timer" image="clock-alarm-7" id="4Si-j5-Udu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bjb-hW-wt6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pzV-SG-jHg" kind="relationship" relationship="rootViewController" id="rZe-Hl-xc9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qx3-pA-vMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="332"/>
         </scene>
     </scenes>
     <resources>
