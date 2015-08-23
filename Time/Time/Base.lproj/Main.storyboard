@@ -215,7 +215,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9AT-PO-o7q" kind="presentation" id="0yh-ep-ACE"/>
+                                    <segue destination="Pah-cA-LNs" kind="presentation" id="aDN-Ga-Jrj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -244,16 +244,32 @@
             </objects>
             <point key="canvasLocation" x="-441" y="1056"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="NfA-jj-mLc">
+            <objects>
+                <navigationController id="Pah-cA-LNs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZOs-8p-Jce">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9AT-PO-o7q" kind="relationship" relationship="rootViewController" id="8y2-Oh-tJ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOp-z5-LsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="1748"/>
+        </scene>
+        <!--Presets Table View Controller-->
         <scene sceneID="rOG-9j-9g0">
             <objects>
-                <tableViewController id="9AT-PO-o7q" sceneMemberID="viewController">
+                <tableViewController id="9AT-PO-o7q" customClass="PresetsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qk4-6t-cI2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="son-VZ-yhx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="presetIdentifier" id="son-VZ-yhx">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="son-VZ-yhx" id="ny8-Wr-Rov">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -265,10 +281,13 @@
                             <outlet property="delegate" destination="9AT-PO-o7q" id="70o-Mt-6Te"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ht6-6u-JlO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sGD-C3-eX4"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7d-Fb-aR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441" y="1756"/>
+            <point key="canvasLocation" x="-441" y="2463"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YdS-nW-kDx">

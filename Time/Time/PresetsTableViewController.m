@@ -7,51 +7,50 @@
 //
 
 #import "PresetsTableViewController.h"
+#import "OrderedDictionary.h"
 
 @interface PresetsTableViewController ()
-
+@property (nonatomic) OrderedDictionary *presets;
 @end
 
 @implementation PresetsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setupDefaultPresets];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupDefaultPresets {
+    self.presets = [[OrderedDictionary alloc] init];
+    
+    NSArray *keys = @[@"Commercials", @"Dryer",  @"Morning Meditation", @"Popcorn", @"Quick Jog", @"Washing Machine"];
+    NSArray *values = @[@60.0, @2700.0, @300.0, @210.0, @1500.0, @2100.0];
+    
+    for (int i = 0; i < [keys count]; i++) {
+        [self.presets setObject:values[i] forKey:keys[i]];
+    }
+    
+    NSLog(@"%@", self.presets);
+    
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.presets count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"presetIdentifier" forIndexPath:indexPath];
     
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.presets keyAtIndex:indexPath.row]];
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
