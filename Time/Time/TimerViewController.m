@@ -18,14 +18,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 //For use with UIPickerView
-//@property (nonatomic) CADisplayLink *timer;
-//@property (nonatomic) CFTimeInterval initialTime;
-//@property (nonatomic) CFTimeInterval lapInitialTime;
+@property (nonatomic) CADisplayLink *timer;
+@property (nonatomic) CFTimeInterval initialTime;
+@property (nonatomic) CFTimeInterval lapInitialTime;
+@property (nonatomic) CGFloat countdownTime;
 
-@property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSInteger component;
 @property (nonatomic) NSInteger row;
-
 
 @end
 
@@ -104,6 +103,15 @@
     
 }
 
+- (IBAction)presetButtonTapped:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *presetsNC = [storyboard instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
+    NSArray *viewControllers = [presetsNC viewControllers];
+    [viewControllers[0] setDelegate:self];
+    
+    [self presentViewController:presetsNC animated:YES completion:nil];
+}
+
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     self.component = component;
     self.row = row;
@@ -166,6 +174,12 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return self.pickerViewNumbers[component][row];
+}
+
+#pragma mark - PresetsTableViewControllerDelegate implementation
+-(void)presetTime:(CGFloat)presetTime {
+    self.countdownTime = presetTime;
+    NSLog(@"%f", self.countdownTime);
 }
 
 /*
