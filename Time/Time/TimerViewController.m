@@ -60,9 +60,6 @@
     
     self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
-    
-   //[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
-    
 }
 
 
