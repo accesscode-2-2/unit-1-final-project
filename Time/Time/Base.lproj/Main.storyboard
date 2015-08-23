@@ -40,9 +40,6 @@
                                 <gestureRecognizers/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="BXn-v7-RZX" appends="YES" id="DMq-qD-98f"/>
-                                </connections>
                             </pageControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Gw-aHZ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="162"/>
@@ -85,15 +82,118 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="X4C-j0-ord" appends="YES" id="5aY-9G-oBd"/>
+                            <outletCollection property="gestureRecognizers" destination="es0-rd-qxE" appends="YES" id="7br-on-AVO"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="EhG-Qa-Wpq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMz-dl-OW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="BXn-v7-RZX"/>
-                <swipeGestureRecognizer direction="left" id="X4C-j0-ord"/>
+                <swipeGestureRecognizer direction="left" id="X4C-j0-ord">
+                    <connections>
+                        <segue destination="Q4G-ba-Gni" kind="push" id="AGY-m8-kFv"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="es0-rd-qxE">
+                    <connections>
+                        <segue destination="wBv-Vs-8ek" kind="push" id="gur-N6-bWj"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="753" y="863"/>
+        </scene>
+        <!--Preset Timer View Controller-->
+        <scene sceneID="JlJ-ZL-7Fy">
+            <objects>
+                <viewController id="wBv-Vs-8ek" customClass="PresetTimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HE8-e7-Und"/>
+                        <viewControllerLayoutGuide type="bottom" id="MIe-sL-Vbi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OZ4-4W-Sej">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preset Timers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGF-uO-1Bb">
+                                <rect key="frame" x="247.5" y="289.5" width="105.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="35P-Qi-vHz">
+                                <rect key="frame" x="281" y="553" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="yGF-uO-1Bb" secondAttribute="centerX" id="8dG-Wp-koq"/>
+                            <constraint firstItem="MIe-sL-Vbi" firstAttribute="top" secondItem="35P-Qi-vHz" secondAttribute="bottom" constant="10" id="9TY-Kr-bvo"/>
+                            <constraint firstAttribute="centerX" secondItem="35P-Qi-vHz" secondAttribute="centerX" id="ZF8-J7-qle"/>
+                            <constraint firstAttribute="centerY" secondItem="yGF-uO-1Bb" secondAttribute="centerY" id="zUz-F4-N5Y"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gK0-Ea-yva" appends="YES" id="1Xy-a0-UEi"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="sDK-KI-0AF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsT-iI-5UY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="gK0-Ea-yva">
+                    <connections>
+                        <action selector="swipeBack:" destination="wBv-Vs-8ek" id="sLM-sH-ryp"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="438" y="1584"/>
+        </scene>
+        <!--Preset Event Countdown View Controller-->
+        <scene sceneID="ELN-n5-wOV">
+            <objects>
+                <viewController id="Q4G-ba-Gni" customClass="PresetEventCountdownViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MWw-3F-hP2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Fc-aB-em7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0zb-YG-yqU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preset Event Countdown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6k-w1-jnG">
+                                <rect key="frame" x="205" y="289.5" width="191" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="p8J-hP-opU">
+                                <rect key="frame" x="281" y="553" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="G6k-w1-jnG" secondAttribute="centerX" id="2qK-Gs-WiP"/>
+                            <constraint firstAttribute="centerX" secondItem="p8J-hP-opU" secondAttribute="centerX" id="6zf-FS-blT"/>
+                            <constraint firstItem="8Fc-aB-em7" firstAttribute="top" secondItem="p8J-hP-opU" secondAttribute="bottom" constant="10" id="fTD-Je-UuM"/>
+                            <constraint firstAttribute="centerY" secondItem="G6k-w1-jnG" secondAttribute="centerY" id="zfZ-MR-owW"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FfZ-V8-Qdn" appends="YES" id="waA-By-WpZ"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="2UY-Fk-F6U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DwQ-0p-DYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="FfZ-V8-Qdn">
+                    <connections>
+                        <action selector="swipeBack:" destination="Q4G-ba-Gni" id="WTg-8Y-bre"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1102" y="1584"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="Th8-gk-uJ6">

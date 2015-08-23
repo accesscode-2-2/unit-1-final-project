@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DD581521B8A3038006FE339 /* PresetEventCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD581511B8A3038006FE339 /* PresetEventCountdownViewController.m */; };
+		4DD581551B8A316E006FE339 /* PresetTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD581541B8A316E006FE339 /* PresetTimerViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DD581501B8A3038006FE339 /* PresetEventCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetEventCountdownViewController.h; sourceTree = "<group>"; };
+		4DD581511B8A3038006FE339 /* PresetEventCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetEventCountdownViewController.m; sourceTree = "<group>"; };
+		4DD581531B8A316E006FE339 /* PresetTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimerViewController.h; sourceTree = "<group>"; };
+		4DD581541B8A316E006FE339 /* PresetTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimerViewController.m; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 				D9F01CF71B88C4C3000B02E1 /* StopWatchTabBarController.m */,
 				D9F01CF91B88C4DD000B02E1 /* TimerTabBarController.h */,
 				D9F01CFA1B88C4DD000B02E1 /* TimerTabBarController.m */,
+				4DD581531B8A316E006FE339 /* PresetTimerViewController.h */,
+				4DD581541B8A316E006FE339 /* PresetTimerViewController.m */,
+				4DD581501B8A3038006FE339 /* PresetEventCountdownViewController.h */,
+				4DD581511B8A3038006FE339 /* PresetEventCountdownViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -224,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD581521B8A3038006FE339 /* PresetEventCountdownViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
+				4DD581551B8A316E006FE339 /* PresetTimerViewController.m in Sources */,
 				D9F01CF81B88C4C3000B02E1 /* StopWatchTabBarController.m in Sources */,
 				D9F01CFB1B88C4DD000B02E1 /* TimerTabBarController.m in Sources */,
 			);
