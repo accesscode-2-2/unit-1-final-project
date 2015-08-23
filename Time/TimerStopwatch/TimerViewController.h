@@ -14,17 +14,14 @@
 @interface TimerViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *countDownTimer;
-@property (strong, nonatomic) IBOutlet UILabel *displayTime;
+@property (strong, nonatomic) IBOutlet UILabel *displayTimer;
+
 @property (strong, nonatomic) IBOutlet UIButton *timerReset;
 
-@property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSDate *startime;
 @property (nonatomic) NSTimeInterval totalTime;
 
-- (IBAction)startButton:(id)sender;
 
-- (void) pauseLayer:(CALayer *) layer;
-- (void) resumeLayer:(CALayer *) layer;
 
 @end
 

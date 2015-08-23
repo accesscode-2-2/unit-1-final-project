@@ -9,13 +9,13 @@
 #import "TimerViewController.h"
 #import "AppDelegate.h"
 
-@interface TimerViewController () {
-    
-    int afterRemainder;
-    int remainder;
-    
-    NSTimeInterval countDownInterval;
-}
+@interface TimerViewController ()
+
+@property (nonatomic) NSTimer *timer;
+@property (nonatomic) NSTimeInterval countDownInterval;
+@property (nonatomic) int countDownDuration;
+@property (nonatomic) int afterRemainder;
+@property (nonatomic) int remainder;
 
 @end
 
@@ -23,46 +23,45 @@
 
 - (void) updateCountDown {
     //countdowntime = countdowntime - 1
-    afterRemainder --;
+    self.afterRemainder --;
     
-    int hours = (int)(afterRemainder/(60*60));
-    int mins = (int)(((int)afterRemainder/60) - (hours * 60));
-    int secs = (int)(((int)afterRemainder - (60 * mins) - (60 * hours * 60)));
-    NSString *displayTime = [[NSString alloc] initWithFormat:@"%02u: %02u: %02u", hours, mins, secs];
-    [self.timer invalidate];
+    int hours = (int)(self.afterRemainder/(60*60));
+    int mins = (int)(((int)self.afterRemainder/60) - (hours * 60));
+    int secs = (int)(((int)self.afterRemainder - (60 * mins) - (60 * hours * 60)));
+    NSString *displayTime = [NSString stringWithFormat:@"%02d: %02d: %02d", hours, mins, secs];
+   
     
-    self.displayTime.text = displayTime;
+    self.displayTimer.text = displayTime ;
 }
 
 - (IBAction)startButton:(id)sender {
-    countDownInterval = (NSTimeInterval)_countDownTimer.countDownDuration;
-    remainder = countDownInterval;
-    afterRemainder = countDownInterval - remainder%60;
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateCountDown) userInfo:nil repeats:YES];
     
+    if(!self.timer){
+    self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(updateCountDown) userInfo:nil repeats:YES];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes] ;
+    }//self.countDownInterval = self.countDownTimer - self.countDownDuration;
+    //self.remainder = self.countDownInterval;
+    //self.afterRemainder = self.countDownInterval - self.remainder%60;
+    self.afterRemainder = 600;
+    //NSLog(@"%lf", tota);
     self.startime = [[NSDate alloc] init];
+    
+}
+
+- (IBAction)pauseButton:(id)sender {
     [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (IBAction)pause:(id)sender {
-    [self pauseLayer:self.view.layer];
-}
-
 - (IBAction)timerReset:(id)sender {
     if (sender == self.timerReset) {
         [self.timer invalidate];
     }
-}
-
-- (void) pauseLayer:(CALayer *)layer {
-    CFTimeInterval pausedTimer = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-    layer.speed = 1.0;
-    layer.timeOffset = pausedTimer;
-    [self.timer invalidate];
 }
 
 @end
