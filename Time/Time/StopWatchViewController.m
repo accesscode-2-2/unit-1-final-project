@@ -25,7 +25,11 @@
 
 @property (nonatomic) NSTimeInterval labInitTime;
 
+@property (nonatomic) NSTimeInterval secondsAlreadyRun;
+
 @property (nonatomic) NSMutableArray *labsTimes;
+
+@property (nonatomic) NSDate *startDate;
 
 @property (weak, nonatomic) IBOutlet UILabel *labTimeLabel;
 
@@ -47,17 +51,22 @@
 - (IBAction)startButtonAction:(UIButton *)sender {
     if (self.running == NO) {
         self.running = YES;
+        self.startDate = [[NSDate alloc] init];
         self.startTime = [NSDate timeIntervalSinceReferenceDate];
         self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
-        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [sender setTitle:@"Stop" forState:UIControlStateNormal];
         [self.labResetButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.labResetButton.enabled = YES;
         [self timeIncrement];
         [self labtimeIncrement];
     } else {
+        self.secondsAlreadyRun += [[NSDate date]timeIntervalSinceDate: self.startDate];
+        self.startDate = [[NSDate alloc] init];
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
         self.running = NO;
+        [self labtimeIncrement];
+
     }
     
 }
@@ -96,7 +105,7 @@
         self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
         self.resetLab = NO;
     }
-
+    
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     NSTimeInterval elapsed = currentTime - self.labInitTime;
     
@@ -113,11 +122,10 @@
 }
 
 - (void)timeIncrement {
-    if (self.running == NO)
-        return;
+    if (self.running == NO) return;
     
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - self.startTime;
+    NSTimeInterval elapsed = self.secondsAlreadyRun + currentTime - self.startTime;
     
     int mins = (int) (elapsed / 60.0);
     elapsed -= mins * 60;
