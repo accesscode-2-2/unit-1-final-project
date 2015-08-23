@@ -14,8 +14,6 @@
     int afterRemainder;
     int remainder;
     
-    // why won't it read whatever is in the .h file?
-    NSTimer *timer;
     
     NSTimeInterval countDownInterval;
 }
@@ -34,7 +32,7 @@
     int mins = (int)(((int)afterRemainder/60) - (hours * 60));
     int secs = (int)(((int)afterRemainder - (60 * mins) - (60 * hours * 60)));
     NSString *displayTime = [[NSString alloc] initWithFormat:@"%02u: %02u: %02u", hours, mins, secs];
-    [timer invalidate];
+    [self.timer invalidate];
     
     self.displayTime.text = displayTime;
 }
@@ -46,7 +44,7 @@
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateCountDown) userInfo:nil repeats:YES];
     
     self.startime = [[NSDate alloc] init];
-    [timer invalidate];
+    [self.timer invalidate];
 }
 
 - (void)viewDidLoad {
@@ -59,7 +57,7 @@
 
 - (IBAction)timerReset:(id)sender {
     if (sender == self.timerReset) {
-        [timer invalidate];
+        [self.timer invalidate];
     }
 }
 
@@ -67,7 +65,7 @@
     CFTimeInterval pausedTimer = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
     layer.speed = 1.0;
     layer.timeOffset = pausedTimer;
-    [timer invalidate];
+    [self.timer invalidate];
 }
 
 @end
