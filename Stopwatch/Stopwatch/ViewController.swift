@@ -7,25 +7,28 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     //MARK: Properties
     
-    var timer = NSTimer()
-    var lapTimer = NSTimer()
+    var timer: CADisplayLink!
+    var lapTimer: CADisplayLink!
     
     var startTime : CFAbsoluteTime = 0
-    var elapsedTime : NSTimeInterval = 0
+    var elapsedTime : CFAbsoluteTime = 0
     var stopwatchString: String = ""
     
     var lapStartTime : CFAbsoluteTime = 0
-    var lapElapsedTime : NSTimeInterval = 0
+    var lapElapsedTime : CFAbsoluteTime = 0
     var lapString: String = ""
     
     var laps: [String] = []
     var isStopped: Bool = true
     var canAddLaps: Bool = false
+    
+    var totalTime : CFAbsoluteTime = 0
     
     @IBOutlet weak var stopwatchLabel: UILabel!
     @IBOutlet weak var lapsTableView: UITableView!
@@ -58,9 +61,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //Allow for laps to be added to the tableView (refer to the lapsReset method)
             canAddLaps = true
             
-            //updateStopwatch method is called every 0.01 seconds
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: ("updateStopwatch"), userInfo: nil, repeats: true)
-            lapTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: ("updateStopwatch"), userInfo: nil, repeats: true)
+            //updateStopwatch method
+            timer = CADisplayLink(target: self, selector: "updateStopwatch")
+            lapTimer = CADisplayLink(target: self, selector: "updateLap")
+            
+            //Add to run loop
+            timer.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+            lapTimer.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
             
             //Update buttons
             startStopButton.setImage(UIImage(named: "stop.png"), forState: UIControlState.Normal)
@@ -79,6 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             timer.invalidate()
             lapTimer.invalidate()
             
+            print("total time: \(totalTime)")
             //update buttons
             startStopButton.setImage(UIImage(named: "start.png"), forState: .Normal)
             lapsResetButton.setImage(UIImage(named: "reset.png"), forState: .Normal)
@@ -113,11 +121,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //change reset button to lap button
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: .Normal)
             
-            // Reverts all time variables to 0
-            elapsedTime = 0
-            lapElapsedTime = 0
-            
             lapString = "00:00.00"
+            
+            totalTime = 0
             
             //reset the stopwatchString (just the string) back to 0.
             stopwatchString = "00:00.00"
@@ -125,19 +131,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    //MARK: Update method
+    //MARK: Update methods
     func updateStopwatch() {
+        totalTime += timer.duration
+        stopwatchString = stringFromTimeInterval(totalTime)
         
-        elapsedTime = CFAbsoluteTimeGetCurrent() - startTime
-        print("elapsed time: \(elapsedTime)")
-        
-        lapElapsedTime = CFAbsoluteTimeGetCurrent() - lapStartTime
-        
-        print("lap time: \(lapElapsedTime)")
-        
-        stopwatchString = stringFromTimeInterval(elapsedTime)
         stopwatchLabel.text = stopwatchString
         
+    }
+    
+    func updateLap(){
+        lapElapsedTime += lapTimer.duration
         lapString = stringFromTimeInterval(lapElapsedTime)
     }
     
