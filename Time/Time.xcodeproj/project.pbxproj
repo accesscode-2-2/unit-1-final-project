@@ -15,9 +15,9 @@
 		3B6AD09A1B8A1CC40091587F /* PresetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AD0991B8A1CC40091587F /* PresetsTableViewController.m */; };
 		3B6AD0A01B8A22CB0091587F /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AD09F1B8A22CB0091587F /* OrderedDictionary.m */; };
 		3B6AD0A71B8A5A970091587F /* NewPresetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */; };
+		3B6AD0AB1B8A73FF0091587F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AD0A91B8A73FF0091587F /* Main.storyboard */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
-		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
@@ -56,12 +56,13 @@
 		3B6AD0A11B8A43900091587F /* PresetsTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetsTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		3B6AD0A51B8A5A970091587F /* NewPresetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPresetViewController.h; sourceTree = "<group>"; };
 		3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPresetViewController.m; sourceTree = "<group>"; };
+		3B6AD0A81B8A69670091587F /* NewPresetViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPresetViewControllerDelegate.h; sourceTree = "<group>"; };
+		3B6AD0AA1B8A73FF0091587F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D05375F1B86687C00588318 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D0537601B86687C00588318 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8D0537661B86687C00588318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D0537681B86687C00588318 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8D05376B1B86687C00588318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,8 +132,9 @@
 				3B6AD0A11B8A43900091587F /* PresetsTableViewControllerDelegate.h */,
 				3B6AD0A51B8A5A970091587F /* NewPresetViewController.h */,
 				3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */,
+				3B6AD0A81B8A69670091587F /* NewPresetViewControllerDelegate.h */,
 				DC7C34001B8904400051C061 /* Fonts */,
-				8D0537651B86687C00588318 /* Main.storyboard */,
+				3B6AD0A91B8A73FF0091587F /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
@@ -271,9 +273,9 @@
 				3B6AD0911B8916510091587F /* Orbitron-Black.ttf in Resources */,
 				DC7C34161B8905950051C061 /* DIGIRT__.TTF in Resources */,
 				DC7C34121B8905950051C061 /* Digirc__.ttf in Resources */,
+				3B6AD0AB1B8A73FF0091587F /* Main.storyboard in Resources */,
 				DC7C34111B8905950051C061 /* Digir___.ttf in Resources */,
 				DC7C34131B8905950051C061 /* Digircu_.ttf in Resources */,
-				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
 				DC7C34181B8905950051C061 /* DIGIRU__.TTF in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				3B6AD0921B8916510091587F /* Orbitron-Bold.ttf in Resources */,
@@ -326,10 +328,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8D0537651B86687C00588318 /* Main.storyboard */ = {
+		3B6AD0A91B8A73FF0091587F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D0537661B86687C00588318 /* Base */,
+				3B6AD0AA1B8A73FF0091587F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

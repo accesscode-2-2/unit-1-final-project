@@ -322,27 +322,37 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-ii-7pq">
                                 <rect key="frame" x="32" y="140" width="536" height="162"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N46-J1-P1t">
-                                <rect key="frame" x="277" y="477" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N46-J1-P1t">
+                                <rect key="frame" x="282" y="444" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="2CR-iz-Wp5" eventType="touchUpInside" id="Ukr-sm-abv"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-uJ-V5m">
-                                <rect key="frame" x="252" y="363" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-uJ-V5m">
+                                <rect key="frame" x="66" y="382" width="468" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DSe-uJ-V5m" firstAttribute="leading" secondItem="nOP-aP-GfW" secondAttribute="leadingMargin" constant="50" id="8hs-RY-6c3"/>
                             <constraint firstAttribute="centerX" secondItem="zp1-ii-7pq" secondAttribute="centerX" id="L4N-0V-Ekv"/>
+                            <constraint firstItem="DSe-uJ-V5m" firstAttribute="top" secondItem="zp1-ii-7pq" secondAttribute="bottom" constant="80" id="ZjT-Ap-Xjo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DSe-uJ-V5m" secondAttribute="trailing" constant="50" id="ooI-XV-8Qy"/>
+                            <constraint firstAttribute="centerX" secondItem="N46-J1-P1t" secondAttribute="centerX" id="p5j-Dk-V35"/>
+                            <constraint firstAttribute="centerX" secondItem="DSe-uJ-V5m" secondAttribute="centerX" id="r1a-n1-I7b"/>
+                            <constraint firstItem="N46-J1-P1t" firstAttribute="top" secondItem="DSe-uJ-V5m" secondAttribute="bottom" constant="32" id="svH-Wu-xgk"/>
                             <constraint firstItem="zp1-ii-7pq" firstAttribute="top" secondItem="J2K-sx-K15" secondAttribute="bottom" constant="120" id="sy0-w4-ata"/>
                             <constraint firstItem="zp1-ii-7pq" firstAttribute="leading" secondItem="nOP-aP-GfW" secondAttribute="leadingMargin" constant="16" id="ybB-KZ-6Q3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zp1-ii-7pq" secondAttribute="trailing" constant="16" id="ygZ-lB-iqB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="timerNameTextField" destination="DSe-uJ-V5m" id="UEA-F1-HMZ"/>
                         <outlet property="timerPickerView" destination="zp1-ii-7pq" id="fPv-ZO-JEh"/>
                     </connections>
                 </viewController>
