@@ -13,6 +13,7 @@
 		186A1C6E1B86D19500668F10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186A1C6D1B86D19500668F10 /* Images.xcassets */; };
 		186A1C711B86D19500668F10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186A1C6F1B86D19500668F10 /* LaunchScreen.xib */; };
 		186A1C7D1B86D19500668F10 /* StopWatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C7C1B86D19500668F10 /* StopWatchTests.m */; };
+		511D2C5D1B8981DE000FB312 /* StopwatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 511D2C5C1B8981DE000FB312 /* StopwatchVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 		186A1C761B86D19500668F10 /* StopWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		186A1C7B1B86D19500668F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186A1C7C1B86D19500668F10 /* StopWatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopWatchTests.m; sourceTree = "<group>"; };
+		511D2C5B1B8981DE000FB312 /* StopwatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchVC.h; sourceTree = "<group>"; };
+		511D2C5C1B8981DE000FB312 /* StopwatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 			children = (
 				186A1C641B86D19500668F10 /* AppDelegate.h */,
 				186A1C651B86D19500668F10 /* AppDelegate.m */,
+				511D2C5B1B8981DE000FB312 /* StopwatchVC.h */,
+				511D2C5C1B8981DE000FB312 /* StopwatchVC.m */,
 				186A1C6A1B86D19500668F10 /* Main.storyboard */,
 				186A1C6D1B86D19500668F10 /* Images.xcassets */,
 				186A1C6F1B86D19500668F10 /* LaunchScreen.xib */,
@@ -214,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511D2C5D1B8981DE000FB312 /* StopwatchVC.m in Sources */,
 				186A1C661B86D19500668F10 /* AppDelegate.m in Sources */,
 				186A1C631B86D19500668F10 /* main.m in Sources */,
 			);
@@ -412,6 +418,7 @@
 				186A1C821B86D19500668F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		186A1C831B86D19500668F10 /* Build configuration list for PBXNativeTarget "StopWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				186A1C851B86D19500668F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
