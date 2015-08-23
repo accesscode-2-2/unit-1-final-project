@@ -12,22 +12,25 @@
 
 @interface StopWatchViewController () <UITableViewDataSource, UITabBarDelegate>
 
-@property (nonatomic) NSArray *arr;
-@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel;
-@property (nonatomic) NSTimer *startStopwatchTimer;
-@property (nonatomic) NSTimer *runStopwatchTimer;
+@property (strong, nonatomic) IBOutlet UITableView *LapTableView;
 @property (nonatomic) BOOL running;
+@property (nonatomic) BOOL firstTimeRunning;
+
+@property (nonatomic) NSMutableArray *LapArray;
+@property (nonatomic) void *callTheTimer;
+
+@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel;
+@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
+
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
-@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
-@property (strong, nonatomic) IBOutlet UITableView *LapTableView;
+
 @property (nonatomic) NSTimer *runningStopWatch;
-@property (nonatomic) void *callTheTimer;
+@property (nonatomic) NSTimer *startStopwatchTimer;
+@property (nonatomic) NSTimer *runStopwatchTimer;
 
 @property (nonatomic) NSTimeInterval previousTime;
 @property (nonatomic) NSTimeInterval totalTime;
-
-
 
 @end
 
@@ -38,13 +41,18 @@
     
     [[self runningStopWatch] invalidate];
  
+    self.LapArray = [[NSMutableArray alloc]init];
+    [self.LapArray addObject:@"90"];
+    [self.LapArray addObject:@"40"];
+//    self.LapArray = @[
+//                 @"one",
+//                 @"two",
+//                 @"three"
+//                 ];
     
-    self.arr = @[
-                 @"one",
-                 @"two",
-                 @"three"
-                 ];
+    //self.firstTimeRunning = YES;
     self.running = false;
+    
     /******  Interface layout *****/
     [self.startStopButton.titleLabel  isEqual: @"Start"];
     self.startStopButton.layer.cornerRadius = 10;
@@ -93,6 +101,14 @@
         [self callTheTimer];
 
         [[self runningStopWatch] fire];
+        
+        
+        
+        /******  Interface layout *****/
+        self.resetLapButton.enabled = YES;
+        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
+        self.startStopButton.backgroundColor = [UIColor redColor];
 
      }
     
@@ -173,16 +189,23 @@
 //    elapsed -=  secs;
 //    int fraction = elapsed * 10.0;
         
-        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
+//        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
+//        NSTimeInterval minutes = floor(self.totalTime / 60.0);
+//        NSTimeInterval fraction = floor(self.totalTime / 10.0);
+
         NSTimeInterval minutes = floor(self.totalTime / 60.0);
-        NSTimeInterval fraction = floor(self.totalTime / 10.0);
-    
-//        
+        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
+       // NSTimeInterval fraction = floor(self.totalTime/10 );
+        
+        
+        
 //        NSLog (@"%f currentTime then",currentTime);
 //        NSLog (@"%f elapsed then",elapsed);
 
-        NSLog(@"%f: %f. %f", minutes, seconds, fraction);
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%01f:%02f.%01f", minutes, seconds, fraction];
+        NSLog(@"%f: %f",  minutes,  seconds);
+        //this works
+//    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%2f%2f%2f", minutes,  seconds,  fraction];
+        self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%02g:%02g", minutes,  seconds];
 
         
         
@@ -213,12 +236,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
-    return self.arr.count;
+    return self.LapArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
-    cell.textLabel.text = self.arr[indexPath.row];
+    cell.textLabel.text = self.LapArray[indexPath.row];
     return cell;
 }
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StopWatchViewController : UIViewController
+@interface StopWatchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 
 @end
