@@ -9,6 +9,9 @@
 #import "TimerViewController.h"
 
 @interface TimerViewController ()
+
+@property (nonatomic) SystemSoundID *timeUpSound;
+
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIDatePicker *pickerView;
 @property (nonatomic) NSTimeInterval countDownDuration;
@@ -25,11 +28,23 @@
 
 @implementation TimerViewController
 
+- (void)playSound {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    NSURL *soundURL = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:@"Radar" ofType:@"m4r"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef) soundURL, self.timeUpSound);
+    
+    [self.startButton setHidden:YES];
+    
+
     [self.cancelButton setHidden:YES];
     [self.resumeButton setHidden:YES];
+
     
     [self.timer setHidden:YES];
     
@@ -84,6 +99,8 @@
     [self.pauseButton setHidden:YES];
     [self.resumeButton setHidden:NO];
     
+
+//    self.
 }
 - (IBAction)resumeButton:(id)sender {
     [self.pauseButton setHidden:NO];

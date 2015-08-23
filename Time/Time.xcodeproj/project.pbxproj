@@ -14,6 +14,9 @@
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
+		D419E2FE1B892213004E1BD4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D419E2FD1B892213004E1BD4 /* AudioToolbox.framework */; };
+		D419E3011B89228D004E1BD4 /* Alerts in Resources */ = {isa = PBXBuildFile; fileRef = D419E2FF1B89228D004E1BD4 /* Alerts */; };
+		D419E3021B89228D004E1BD4 /* Ringtones in Resources */ = {isa = PBXBuildFile; fileRef = D419E3001B89228D004E1BD4 /* Ringtones */; };
 		D47FF9281B87EFA10068E9FA /* StopWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9271B87EFA10068E9FA /* StopWatchViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
+		D419E2FD1B892213004E1BD4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D419E2FF1B89228D004E1BD4 /* Alerts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Alerts; sourceTree = "<group>"; };
+		D419E3001B89228D004E1BD4 /* Ringtones */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ringtones; sourceTree = "<group>"; };
 		D47FF9261B87EFA10068E9FA /* StopWatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewController.h; sourceTree = "<group>"; };
 		D47FF9271B87EFA10068E9FA /* StopWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D419E2FE1B892213004E1BD4 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +73,7 @@
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
+				D419E2FD1B892213004E1BD4 /* AudioToolbox.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,
@@ -101,6 +109,8 @@
 		8D05375B1B86687B00588318 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D419E2FF1B89228D004E1BD4 /* Alerts */,
+				D419E3001B89228D004E1BD4 /* Ringtones */,
 				8D05375C1B86687B00588318 /* Info.plist */,
 				8D05375D1B86687C00588318 /* main.m */,
 			);
@@ -205,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
+				D419E3021B89228D004E1BD4 /* Ringtones in Resources */,
+				D419E3011B89228D004E1BD4 /* Alerts in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				8D0537691B86687C00588318 /* Images.xcassets in Resources */,
 			);

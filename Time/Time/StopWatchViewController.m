@@ -8,7 +8,9 @@
 
 #import "StopWatchViewController.h"
 
-@interface StopWatchViewController () 
+
+@interface StopWatchViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
