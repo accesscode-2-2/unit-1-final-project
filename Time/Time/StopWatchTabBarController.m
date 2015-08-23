@@ -56,7 +56,7 @@ NSTimer *timer;
 
 - (IBAction)lapButton:(id)sender {
 
-        self.timerIsRunning = YES; // reset paused timer to 0
+        self.timerIsRunning = YES; // reset paused timer to 0!
         self.timerDisplay.text = @"0.00";
 
 }
