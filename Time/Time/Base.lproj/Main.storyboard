@@ -39,11 +39,25 @@
                                 <rect key="frame" x="0.0" y="325" width="600" height="226"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="HTM-vd-GVB">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" textLabel="qSt-dC-axw" detailTextLabel="0Zb-FS-1KX" style="IBUITableViewCellStyleValue1" id="HTM-vd-GVB">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTM-vd-GVB" id="Oha-0g-eJ3">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qSt-dC-axw">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Zb-FS-1KX">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,8 +102,8 @@
                                             <action selector="start:" destination="eeN-hb-HVz" eventType="touchUpInside" id="chM-IV-dSj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbR-g4-YXb">
-                                        <rect key="frame" x="471" y="231" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbR-g4-YXb">
+                                        <rect key="frame" x="520" y="233" width="30" height="30"/>
                                         <state key="normal" title="Lap">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -104,8 +118,10 @@
                                     <constraint firstItem="QgE-L1-8SY" firstAttribute="leading" secondItem="eAx-bG-ah8" secondAttribute="leading" constant="70" id="F4g-dp-bMz"/>
                                     <constraint firstItem="kJf-ge-U82" firstAttribute="leading" secondItem="eAx-bG-ah8" secondAttribute="leading" id="HOw-3k-XvA"/>
                                     <constraint firstAttribute="trailing" secondItem="kJf-ge-U82" secondAttribute="trailing" id="K73-BF-Pew"/>
+                                    <constraint firstItem="kbR-g4-YXb" firstAttribute="top" secondItem="kJf-ge-U82" secondAttribute="bottom" constant="70" id="TPp-7a-8mf"/>
                                     <constraint firstItem="QgE-L1-8SY" firstAttribute="top" secondItem="kJf-ge-U82" secondAttribute="bottom" constant="70" id="WCE-MF-xNP"/>
                                     <constraint firstItem="kJf-ge-U82" firstAttribute="top" secondItem="eAx-bG-ah8" secondAttribute="top" id="dr8-Jf-Srz"/>
+                                    <constraint firstAttribute="trailing" secondItem="kbR-g4-YXb" secondAttribute="trailing" constant="50" id="nL6-5J-pza"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -122,6 +138,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="w04-aE-1e7"/>
                     <connections>
+                        <outlet property="lapButton" destination="kbR-g4-YXb" id="eep-Nb-PGc"/>
                         <outlet property="start" destination="QgE-L1-8SY" id="oey-LU-mcc"/>
                         <outlet property="tableView" destination="Cch-if-onc" id="0HO-W2-WLG"/>
                         <outlet property="timerLabel" destination="GrF-Mp-wQR" id="RPi-l1-mRL"/>

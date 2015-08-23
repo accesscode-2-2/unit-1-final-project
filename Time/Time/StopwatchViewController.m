@@ -12,7 +12,8 @@
 
 @interface StopwatchViewController ()
 
-@property (nonatomic) NSMutableArray *arr;
+@property (nonatomic) NSMutableArray *laps;
+@property (weak, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) CADisplayLink *displayLink;
@@ -31,31 +32,38 @@
 @implementation StopwatchViewController
 
 
-//- (IBAction)lapButton:(id)sender {
-//    
-//    if (startTime != nil) {
-//        
-//        
-//        
-//    }
-//    
-//    
-//    
-//    
-//}
+- (IBAction)lapButton:(id)sender {
+    
+    NSString *currentLapTime = self.timerLabel.text;
+    
+    [self.laps addObject:currentLapTime];
+    
+    [self.tableView reloadData];
+        
+        
+        
+    
+    
+    
+    
+    
+}
 
 BOOL running;
 NSTimeInterval startTime;
-NSTimeInterval startTimeNow;
+//NSTimeInterval startTimeNow;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.arr = @[
-                 @"one",
-                 @"two",
-                 @"three"
-                 ];
+    self.laps = [[NSMutableArray alloc] init];
+    
+    
+//    self.laps = @[
+//                 @"one",
+//                 @"two",
+//                 @"three"
+//                 ];
     
     self.timerLabel.text = @"00:00:00";
 //    self.tableView.delegate = self;
@@ -75,6 +83,7 @@ NSTimeInterval startTimeNow;
         startTime = [NSDate timeIntervalSinceReferenceDate];
         [sender setTitle:@"STOP" forState:UIControlStateNormal];
         [self updateTime];
+//        [self new]; r
     } else {
         // stop timer
         [sender setTitle:@"START" forState:UIControlStateNormal];
@@ -108,9 +117,51 @@ NSTimeInterval startTimeNow;
     // update our label using a format of 0:00.0
     //self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
     
-//     call updateTime again after 0.1 seconds
+    // call updateTime again after 0.1 seconds
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
 }
+
+//- (IBAction)secondStart:(UIButton *)sender {
+//    [self new];
+//    [self.secondStart setHidden:YES];
+//}
+//
+//- (void)new {
+////    if (running == false) return;
+//    
+//    running = true;
+//    startTime = [NSDate timeIntervalSinceReferenceDate];
+//    // calculate elapsed time
+//    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+//    NSTimeInterval elapsed = currentTime - startTime;
+//    
+////    self.totalTime += elapsed;
+////    startTimeNow = currentTime;
+//    //
+//    //    NSLog(@"%f", self.totalTime);
+//    
+//    // extract out the minutes, seconds, and fraction of seconds from elapsed time:
+//    int mins = (int) (elapsed / 60.0);
+//    elapsed -= mins * 60;
+//    int secs = (int) (elapsed);
+//    elapsed -= secs;
+//    int fraction = elapsed * 100.0;
+//    
+//    // update our label using a format of 0:00.0
+//    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
+//    
+//    // call updateTime again after 0.1 seconds
+//    [self performSelector:@selector(new) withObject:self afterDelay:0.01];
+//}
+
+
+//- (void) timerFired: (CADisplayLink *)display {
+//    float currentNumber = [self.timerLabel.text floatValue];
+//    float nextNumber = currentNumber + 0.001;
+//    
+//    self.timerLabel.text = [NSString stringWithFormat:@"%.3f", nextNumber];
+//}
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -123,12 +174,20 @@ NSTimeInterval startTimeNow;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
-    return self.arr.count;
+    return self.laps.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
-    cell.textLabel.text = self.arr[indexPath.row];
+    
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.laps.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", (long)indexPath.row];
+    cell.detailTextLabel.text = self.laps[indexPath.row];
+    
+    
+    
+    
     return cell;
 }
 
