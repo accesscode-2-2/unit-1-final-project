@@ -14,13 +14,10 @@
     int afterRemainder;
     int remainder;
     
-    
     NSTimeInterval countDownInterval;
 }
 
 @end
-
-// WHY DOES IT KEEP GOING FASTER AND FASTER?! I ADDED [TIMER INVALIDATE]; !!!!
 
 @implementation TimerViewController
 
