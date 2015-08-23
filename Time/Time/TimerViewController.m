@@ -15,13 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIDatePicker *pickerView;
 @property (nonatomic) NSTimeInterval countDownDuration;
-@property (nonatomic) NSTimeInterval totalTime;
 @property (weak, nonatomic) IBOutlet UILabel *timer;
 @property (nonatomic) NSTimer *countdownTimer;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
-@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (nonatomic) NSDate *startTime;
 
 
 @end
@@ -47,7 +45,8 @@
 
     
     [self.timer setHidden:YES];
-    
+    // Create a new date with the current time
+    // Split up the date components
     
     NSInteger seconds = 60;
     
@@ -65,61 +64,49 @@
     [self.startButton setHidden:YES];
     [self.cancelButton setHidden:NO];
     
-    self.startTime = [[NSDate alloc] init];
-    
     if(sender == self.startButton){
         [self.timer setHidden:NO];
         [self.pickerView setHidden:YES];
         
         
-        self.countdownTimer = [NSTimer timerWithTimeInterval:60/60 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:self.countdownTimer forMode:NSRunLoopCommonModes];
+        NSTimer *countdownTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:countdownTimer forMode:NSRunLoopCommonModes];
         
         self.countDownDuration = self.pickerView.countDownDuration;
         
+        NSLog(@"%f",self.pickerView.countDownDuration);
     }
 }
 
-
-
 - (IBAction)cancelButton:(id)sender {
-    
     [self.startButton setHidden:NO];
     [self.cancelButton setHidden:YES];
-    [self.pickerView setHidden:NO];
-    [self.timer setHidden:YES];
-    [self.countdownTimer invalidate];
+    
 }
-
 - (IBAction)pauseButton:(id)sender {
     
-    
-    [self.countdownTimer invalidate];
-
     [self.pauseButton setHidden:YES];
     [self.resumeButton setHidden:NO];
     
+<<<<<<< HEAD
 
+=======
+    self.
+>>>>>>> parent of 4539333... timer update
 }
 - (IBAction)resumeButton:(id)sender {
-    [self.pauseButton setHidden:NO];
-    [self.resumeButton setHidden:YES];
-    
-    self.totalTime = self.totalTime - self.countDownDuration;
-    
-    self.resumeButton = self.startButton;
+    [self.resumeButton setHidden:NO];
 }
 
 - (void)countDown:(NSTimer *) countdownTimer {
-//    NSDate *now = [[NSDate alloc] init];
-//    self.countDownDuration = [now timeIntervalSinceDate:self.startTime];
-    
     self.countDownDuration = self.countDownDuration - 1;
     int secondsCount = self.countDownDuration;
     int minutes = secondsCount / 60;
     int seconds = secondsCount - (minutes * 60);
     
-    self.timer.text = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
+    
+    NSString *outputTimer = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
+    self.timer.text = outputTimer;
  
     
 }
