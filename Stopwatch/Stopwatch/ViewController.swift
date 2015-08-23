@@ -139,20 +139,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         stopwatchLabel.text = stopwatchString
         
         lapString = stringFromTimeInterval(lapElapsedTime)
-        
     }
     
     func stringFromTimeInterval(interval: CFTimeInterval) -> String {
         let intInterval = Int(interval)
         let minutes = (intInterval / 60) % 60
         let seconds = intInterval % 60
-        let milliseconds = interval - floor(interval)
-        if floor(milliseconds * 100) <= 9{
-            print(String(format: "%02d:%02d:0%d", minutes, seconds, floor(milliseconds * 100)))
-            return String(format: "%02d:%02d:00", minutes, seconds, milliseconds)
-        }
-        print(String(format: "%02d:%02d:%.f", minutes, seconds, milliseconds * 100))
-        return String(format: "%02d:%02d:%.f", minutes, seconds, milliseconds * 100)
+        let milliseconds = Int(floor(((interval - floor(interval)) * 100)))
+        
+        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+        let millisecondsString = milliseconds > 9 ? "\(milliseconds)" : "0\(milliseconds)"
+        
+        let timeString = minutesString + ":" + secondsString + "." + millisecondsString
+        
+        return timeString
     }
     
     // MARK: TableView methods
