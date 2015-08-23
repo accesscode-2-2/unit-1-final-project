@@ -90,8 +90,8 @@
     self.secondsCount--;
     
     self.hours = self.secondsCount/3600;
-    self.minutes = self.secondsCount/60;
-    self.seconds = self.secondsCount - (self.minutes * 60);
+    self.minutes = (self.secondsCount % 3600)/60;
+    self.seconds = self.secondsCount - (self.hours * 3600) - (self.minutes * 60);
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     
