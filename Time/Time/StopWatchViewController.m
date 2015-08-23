@@ -141,7 +141,8 @@
     if ([resetLapActualLabel isEqualToString:@"Reset"]) {
         
         [[self runningStopWatch] invalidate];
-
+        self.totalSessionTime = 0;
+        self.totalTime = 0;
         
         /******  Interface layout *****/
         self.StopwatchRunningLabel.text = @"0:00.0";
@@ -158,7 +159,7 @@
       // self.totalSessionTime = [NSDate timeIntervalSinceReferenceDate];
 
       // set self.startTime to now
-      self.startTime = [[NSDate alloc] init];
+      //self.startTime = [[NSDate alloc] init];
       
       
   }
