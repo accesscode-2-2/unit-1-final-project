@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
-@property (weak, nonatomic) IBOutlet UIButton *resetButton;
-@property (weak, nonatomic) IBOutlet UIButton *stopButton;
-@property (nonatomic) NSArray *pickerCategory;
-@property (nonatomic) NSString *timerCount;
+@interface TimerViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UIPickerView *picker;
+
 
 
 
