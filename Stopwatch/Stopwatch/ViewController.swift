@@ -122,6 +122,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: .Normal)
             
             lapString = "00:00.00"
+            lapElapsedTime = 0
             
             totalTime = 0
             
