@@ -100,7 +100,6 @@
     [self.resumeButton setHidden:NO];
     
 
-//    self.
 }
 - (IBAction)resumeButton:(id)sender {
     [self.pauseButton setHidden:NO];
