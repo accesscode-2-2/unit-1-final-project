@@ -18,10 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 //For use with UIPickerView
-@property (nonatomic) NSTimer *timer;
-//@property (nonatomic) CFTimeInterval initialTime;
-//@property (nonatomic) CFTimeInterval lapInitialTime;
-@property (nonatomic) CGFloat countdownTime;
+@property (nonatomic) CADisplayLink *timer;
+@property (nonatomic) CFTimeInterval initialTime;
+@property (nonatomic) CFTimeInterval lapInitialTime;
+@property (nonatomic) NSArray *presetTime;
 
 @property (nonatomic) NSInteger component;
 @property (nonatomic) NSInteger row;
@@ -184,10 +184,6 @@
 //    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - data source and delegate for PickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return [self.pickerViewNumbers count];
@@ -202,19 +198,9 @@
 }
 
 #pragma mark - PresetsTableViewControllerDelegate implementation
--(void)presetTime:(CGFloat)presetTime {
-    self.countdownTime = presetTime;
-    NSLog(@"%f", self.countdownTime);
+-(void)presetTime:(NSArray *)presetTime {
+    self.presetTime = presetTime;
+    NSLog(@"%@", self.presetTime);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

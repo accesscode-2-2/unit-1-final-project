@@ -296,12 +296,59 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ht6-6u-JlO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sGD-C3-eX4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sGD-C3-eX4">
+                            <connections>
+                                <segue destination="2CR-iz-Wp5" kind="presentation" id="OhF-By-vnZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7d-Fb-aR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-441" y="2463"/>
+        </scene>
+        <!--New Preset View Controller-->
+        <scene sceneID="PYS-qs-wuo">
+            <objects>
+                <viewController id="2CR-iz-Wp5" customClass="NewPresetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J2K-sx-K15"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ou6-YY-Ja3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nOP-aP-GfW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zp1-ii-7pq">
+                                <rect key="frame" x="32" y="140" width="536" height="162"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N46-J1-P1t">
+                                <rect key="frame" x="277" y="477" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-uJ-V5m">
+                                <rect key="frame" x="252" y="363" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="zp1-ii-7pq" secondAttribute="centerX" id="L4N-0V-Ekv"/>
+                            <constraint firstItem="zp1-ii-7pq" firstAttribute="top" secondItem="J2K-sx-K15" secondAttribute="bottom" constant="120" id="sy0-w4-ata"/>
+                            <constraint firstItem="zp1-ii-7pq" firstAttribute="leading" secondItem="nOP-aP-GfW" secondAttribute="leadingMargin" constant="16" id="ybB-KZ-6Q3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zp1-ii-7pq" secondAttribute="trailing" constant="16" id="ygZ-lB-iqB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timerPickerView" destination="zp1-ii-7pq" id="fPv-ZO-JEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJf-hd-eWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="2463"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YdS-nW-kDx">

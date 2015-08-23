@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol PresetsTableViewControllerDelegate <NSObject>
-- (void)presetTime:(CGFloat)presetTime;
+- (void)presetTime:(NSArray *)presetTime;
 @end
