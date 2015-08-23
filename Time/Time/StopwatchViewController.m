@@ -36,6 +36,7 @@
     
     self.lapTableView.dataSource = self;
     self.lapTableView.delegate = self;
+    //self.lapTableView.backgroundColor = [UIColor blackColor];
     
 }
 
@@ -96,10 +97,15 @@
     return [self.lapTimes count];
 }
 
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    cell.backgroundColor = [UIColor blackColor];
+//    cell.textLabel.textColor = [UIColor whiteColor];
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",indexPath.row+1];
-    cell.detailTextLabel.text = self.lapTimes[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
+    cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"Digitial Readout ExpUpright" size:15];
     return cell;
 }
