@@ -19,18 +19,20 @@
 @property (nonatomic) NSMutableArray *LapArray;
 @property (nonatomic) void *callTheTimer;
 
-@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel;
+@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel; //timerLabel
 @property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
 
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
 
-@property (nonatomic) NSTimer *runningStopWatch;
-@property (nonatomic) NSTimer *startStopwatchTimer;
+@property (nonatomic) NSTimer *runningStopWatch;  //timer
+@property (nonatomic) NSTimer *LapTimer;
 @property (nonatomic) NSTimer *runStopwatchTimer;
+@property (nonatomic) NSDate *startTime;  //
 
-@property (nonatomic) NSTimeInterval previousTime;
-@property (nonatomic) NSTimeInterval totalTime;
+
+@property (nonatomic) NSTimeInterval totalSessionTime;  //
+@property (nonatomic) NSTimeInterval totalTime;    //
 
 @end
 
@@ -44,13 +46,7 @@
     self.LapArray = [[NSMutableArray alloc]init];
     [self.LapArray addObject:@"90"];
     [self.LapArray addObject:@"40"];
-//    self.LapArray = @[
-//                 @"one",
-//                 @"two",
-//                 @"three"
-//                 ];
-    
-    //self.firstTimeRunning = YES;
+     //self.firstTimeRunning = YES;
     self.running = false;
     
     /******  Interface layout *****/
@@ -69,54 +65,64 @@
     
 }
 
+- (void)timerFired:(NSTimer *)runningStopWatch {
+    
+    // get the current time
+    NSDate *now = [[NSDate alloc] init];
+    
+    self.totalSessionTime = [now timeIntervalSinceDate:self.startTime];
+    NSTimeInterval distance =  self.totalTime + self.totalSessionTime;
+    
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
+    NSLog(@"%f", distance);
+    self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.totalSessionTime];
 
+    
+}
+
+
+
+
+#pragma mark - Buttons
 
 - (IBAction)startStopButtonTapped:(UIButton *)sender {
     
   
     //check Label's text
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
-    if ([startStopActualLabel isEqualToString:@"Start"] && [self.StopwatchRunningLabel.text  isEqualToString : @"0:00.0"]) {
+    if ([startStopActualLabel isEqualToString:@"Start"] ) {
+      
+        // set self.startTime to now
+        self.startTime = [[NSDate alloc] init];
         
-        //start timer
-        [self callTheTimer];
-        self.previousTime = [NSDate timeIntervalSinceReferenceDate];
-        self.running = YES;
+        // setup timer
+        self.runningStopWatch = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        
+        // add timer to the run loop
+        [[NSRunLoop currentRunLoop] addTimer:self.runningStopWatch forMode:NSRunLoopCommonModes];
         
         
-        /******  Interface layout *****/
-        self.resetLapButton.enabled = YES;
-        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
-        [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
-        self.startStopButton.backgroundColor = [UIColor redColor];
-    }
-    
-    
-    else if ([startStopActualLabel isEqualToString:@"Start"] && ![self.StopwatchRunningLabel.text   isEqualToString : @"0:00.0"]) {
+        
         
 
-        self.running = YES;
-        self.previousTime = [NSDate timeIntervalSinceReferenceDate];
-             NSLog (@"BOOM ");
-        [self callTheTimer];
-
-        [[self runningStopWatch] fire];
-        
-        
         
         /******  Interface layout *****/
         self.resetLapButton.enabled = YES;
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor redColor];
+   
 
      }
     
     
     else if ([startStopActualLabel isEqualToString:@"Stop"] ) {
-         self.running = NO;
-       [[self runningStopWatch] invalidate];
-
+        
+        // keep track of the total amount of time that this stopwatch has been running
+        self.totalTime = self.totalTime + self.totalSessionTime;
+        
+        // stop the timer
+        [self.runningStopWatch invalidate];
         
         /******  Interface layout *****/
         [self.resetLapButton setTitle:@"Reset" forState:UIControlStateNormal];
@@ -146,81 +152,16 @@
         self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
 
         
-        //self.running = NO;
         
 }
   else if ([resetLapActualLabel isEqualToString:@"Lap"]) {
-      self.running = YES;
-      self.previousTime = [NSDate timeIntervalSinceReferenceDate];
+      // self.totalSessionTime = [NSDate timeIntervalSinceReferenceDate];
 
-      [self callTheTimer];
-
+      // set self.startTime to now
+      self.startTime = [[NSDate alloc] init];
+      
+      
   }
-}
-
-
-
-- (void) callTheTimer {
-    
-    //call the second timer
-    self.runStopwatchTimer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(runningStopWatch:) userInfo:nil repeats:YES];
-    
-    [[NSRunLoop currentRunLoop] addTimer:self.runStopwatchTimer forMode:NSRunLoopCommonModes];
-}
-
-
-
-- (void)runningStopWatch: (NSTimer *)timer{
-    if (self.running == YES) {
-
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - self.previousTime;
-        self.totalTime += elapsed;
-        
-        self.previousTime = currentTime;
-//        NSLog (@"%f currentTime now",currentTime);
-//        NSLog (@"%f elapsed now",elapsed);
-
-   // elapsed += self.totalTime;
-  
-//    int mins = (int) (elapsed) / 60.0;
-//    elapsed -= mins * 60;
-//    int secs = (int) (elapsed);
-//    elapsed -=  secs;
-//    int fraction = elapsed * 10.0;
-        
-//        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
-//        NSTimeInterval minutes = floor(self.totalTime / 60.0);
-//        NSTimeInterval fraction = floor(self.totalTime / 10.0);
-
-        NSTimeInterval minutes = floor(self.totalTime / 60.0);
-        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
-       // NSTimeInterval fraction = floor(self.totalTime/10 );
-        
-        
-        
-//        NSLog (@"%f currentTime then",currentTime);
-//        NSLog (@"%f elapsed then",elapsed);
-
-        NSLog(@"%f: %f",  minutes,  seconds);
-        //this works
-//    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%2f%2f%2f", minutes,  seconds,  fraction];
-        self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%02g:%02g", minutes,  seconds];
-
-        
-        
-//    self.recentLapRunning.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
-//    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
-
-    }
-    
-    
-    else if (self.running == NO) {
-        [timer invalidate];
-        
-    }
-    
-
 }
 
 
@@ -244,15 +185,71 @@
     cell.textLabel.text = self.LapArray[indexPath.row];
     return cell;
 }
+//
+//
+//- (void) callTheTimer {
+//    
+//    //call the second timer
+//    self.runStopwatchTimer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(runningStopWatch:) userInfo:nil repeats:YES];
+//    
+//    [[NSRunLoop currentRunLoop] addTimer:self.runStopwatchTimer forMode:NSRunLoopCommonModes];
+//}
+//
+//
+//
+//- (void)runningStopWatch: (NSTimer *)timer{
+//    if (self.running == YES) {
+//
+//    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+//    NSTimeInterval elapsed = currentTime - self.totalSessionTime;
+//        self.totalTime += elapsed;
+//        
+//        self.totalSessionTime = currentTime;
+////        NSLog (@"%f currentTime now",currentTime);
+////        NSLog (@"%f elapsed now",elapsed);
+//
+//   // elapsed += self.totalTime;
+//  
+////    int mins = (int) (elapsed) / 60.0;
+////    elapsed -= mins * 60;
+////    int secs = (int) (elapsed);
+////    elapsed -=  secs;
+////    int fraction = elapsed * 10.0;
+//        
+////        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
+////        NSTimeInterval minutes = floor(self.totalTime / 60.0);
+////        NSTimeInterval fraction = floor(self.totalTime / 10.0);
+//
+//        NSTimeInterval minutes = floor(self.totalTime / 60.0);
+//        NSTimeInterval seconds = fmod(self.totalTime, 60.0);
+//       // NSTimeInterval fraction = floor(self.totalTime/10 );
+//        
+//        
+//        
+////        NSLog (@"%f currentTime then",currentTime);
+////        NSLog (@"%f elapsed then",elapsed);
+//
+//        NSLog(@"%f: %f",  minutes,  seconds);
+//        //this works
+////    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%2f%2f%2f", minutes,  seconds,  fraction];
+//        self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%02g:%02g", minutes,  seconds];
+//
+//        
+//        
+////    self.recentLapRunning.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
+////    self.StopwatchRunningLabel.text = [NSString stringWithFormat: @"%d:%02d.%d", mins, secs, fraction];
+//
+//    }
+//    
+//    
+//    else if (self.running == NO) {
+//        [timer invalidate];
+//        
+//    }
+//    
+//
+//}
+//
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
