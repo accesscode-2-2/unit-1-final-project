@@ -18,8 +18,8 @@
 @property (nonatomic) BOOL timerIsRunning; // this will start/stop timer
 @property (nonatomic) NSMutableArray *saveLapTime; // used later for storing values
 
-- (IBAction)startPauseButton:(id)sender;
-- (IBAction)lapButton:(id)sender;
+//- (IBAction)startPauseButton:(id)sender;
+//- (IBAction)lapButton:(id)sender;
 
 @end
 
@@ -45,8 +45,6 @@ NSTimer *timer;
     
     float nextNumber = currentNumber +.01; // add 0.01 to present time
     float nextLap = currentLap +.01;
-    
-    // convert and then display as hours:minutes:seconds
     
     self.timerDisplay.text = [NSString stringWithFormat:@"%.2f", nextNumber]; // set time to label text
     self.lapTimerLabel.text = [NSString stringWithFormat:@"%.2f", nextLap];
