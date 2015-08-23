@@ -146,6 +146,12 @@
                                     <action selector="titleTextFiled2:" destination="bdU-YF-UVS" eventType="editingDidEnd" id="olG-CP-VWQ"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNp-6G-lNB">
+                                <rect key="frame" x="279" y="138" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -157,6 +163,7 @@
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="L5e-3y-fbg" secondAttribute="bottom" id="Ese-L4-B3P"/>
                             <constraint firstItem="1kf-hQ-dgC" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="279" id="GDc-ef-7AO"/>
                             <constraint firstItem="L5e-3y-fbg" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" id="Is6-LU-KNu"/>
+                            <constraint firstItem="pNp-6G-lNB" firstAttribute="top" secondItem="8QS-tF-mcY" secondAttribute="bottom" constant="15" id="KT5-6v-g2s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L5e-3y-fbg" secondAttribute="trailing" id="N7p-1r-Y5k"/>
                             <constraint firstItem="fdQ-Dh-lZE" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="15" id="NiG-Sz-Pe4"/>
                             <constraint firstItem="8QS-tF-mcY" firstAttribute="top" secondItem="2zA-ai-5x5" secondAttribute="bottom" constant="75" id="PHE-9Z-Ccb"/>
@@ -179,6 +186,7 @@
                             <constraint firstItem="L5e-3y-fbg" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leadingMargin" constant="30" id="rNQ-z3-uNn"/>
                             <constraint firstAttribute="trailing" secondItem="1kf-hQ-dgC" secondAttribute="trailing" constant="279" id="thE-1g-Qpp"/>
                             <constraint firstItem="KqH-9v-db9" firstAttribute="top" secondItem="2zA-ai-5x5" secondAttribute="bottom" constant="30" id="x3u-dh-YX2"/>
+                            <constraint firstAttribute="centerX" secondItem="pNp-6G-lNB" secondAttribute="centerX" id="xiE-rg-nFR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KqH-9v-db9" secondAttribute="trailing" constant="51" id="xnW-Cj-Eha"/>
                         </constraints>
                         <variation key="default">
@@ -209,6 +217,7 @@
                     <connections>
                         <outlet property="countdownLabel" destination="1kf-hQ-dgC" id="l3s-65-Uhc"/>
                         <outlet property="datePicker" destination="L5e-3y-fbg" id="z6z-cK-Xlz"/>
+                        <outlet property="titleLabel" destination="1kf-hQ-dgC" id="7Y8-D2-3g5"/>
                         <outlet property="titleTextField" destination="8QS-tF-mcY" id="DmR-w2-wDu"/>
                     </connections>
                 </viewController>
