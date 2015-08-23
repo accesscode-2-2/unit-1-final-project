@@ -94,9 +94,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //add the time since the last lap to the laps array (refer to the updateStopWatch method)
             laps.insert(lapString, atIndex: 0)
             
-            //Reset the lap counter
+            //Reset the lap counter and lap string
             lapElapsedTime = 0
-            
             lapString = "00:00.00"
             
             //Refreshes the table view that contains the lap tim

@@ -187,6 +187,7 @@
 		5028B5221B87DC1F00CB0B34 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jovanny Espinal";
 				TargetAttributes = {
@@ -484,6 +485,7 @@
 				5028B5541B87DC2000CB0B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5028B5551B87DC2000CB0B34 /* Build configuration list for PBXNativeTarget "StopwatchTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +494,7 @@
 				5028B5571B87DC2000CB0B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5028B5581B87DC2000CB0B34 /* Build configuration list for PBXNativeTarget "StopwatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +503,7 @@
 				5028B55A1B87DC2000CB0B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
