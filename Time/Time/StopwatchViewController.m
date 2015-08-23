@@ -180,10 +180,13 @@ NSTimeInterval startTime;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
     
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.laps.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.laps.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", (long)indexPath.row];
-    cell.detailTextLabel.text = self.laps[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", [self.laps count] - (long)indexPath.row];
+    cell.detailTextLabel.text = self.laps[[self.laps count] - 1 - indexPath.row];
+    
+//    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", (long)indexPath.row];
+//    cell.detailTextLabel.text = self.laps[indexPath.row];
     
     
     
