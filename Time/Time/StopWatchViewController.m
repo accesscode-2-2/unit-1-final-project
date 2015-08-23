@@ -13,7 +13,7 @@
 @interface StopWatchViewController () <UITableViewDataSource, UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *LapTableView;
-@property (nonatomic) BOOL running;
+@property (nonatomic) BOOL LapTapped;
 @property (nonatomic) BOOL firstTimeRunning;
 
 @property (nonatomic) NSMutableArray *LapArray;
@@ -26,13 +26,16 @@
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
 
 @property (nonatomic) NSTimer *runningStopWatch;  //timer
-@property (nonatomic) NSTimer *LapTimer;
+@property (nonatomic) NSTimer *LapTimer;   //
 @property (nonatomic) NSTimer *runStopwatchTimer;
 @property (nonatomic) NSDate *startTime;  //
+@property (nonatomic) NSDate *lapStartTime;  //
+
 
 
 @property (nonatomic) NSTimeInterval totalSessionTime;  //
 @property (nonatomic) NSTimeInterval totalTime;    //
+@property (nonatomic) NSTimeInterval distance;
 
 @end
 
@@ -44,10 +47,16 @@
     [[self runningStopWatch] invalidate];
  
     self.LapArray = [[NSMutableArray alloc]init];
+    
+    self.LapTableView.dataSource = self;
+    self.LapTableView.delegate = self;
+    
+    
+    
+    
+    
     [self.LapArray addObject:@"90"];
     [self.LapArray addObject:@"40"];
-     //self.firstTimeRunning = YES;
-    self.running = false;
     
     /******  Interface layout *****/
     [self.startStopButton.titleLabel  isEqual: @"Start"];
@@ -62,7 +71,7 @@
     self.resetLapButton.enabled = NO;
     
    // self.LapTableView.backgroundColor = [UIColor grayColor];
-    
+    self.LapTapped = NO;
 }
 
 - (void)timerFired:(NSTimer *)runningStopWatch {
@@ -71,23 +80,36 @@
     NSDate *now = [[NSDate alloc] init];
     
     self.totalSessionTime = [now timeIntervalSinceDate:self.startTime];
-    NSTimeInterval distance =  self.totalTime + self.totalSessionTime;
+    self.distance =  self.totalTime + self.totalSessionTime;
     
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
-    NSLog(@"%f", distance);
-    self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.totalSessionTime];
-
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%0.2f", self.distance];
+    NSLog(@"%f", self.distance);
     
 }
 
-
+- (void)timerLapFired:(NSTimer *)LapTimer {
+    
+    // get the current time
+    NSDate *now = [[NSDate alloc] init];
+    
+    self.totalSessionTime = [now timeIntervalSinceDate:self.lapStartTime];
+    self.distance =  self.totalTime + self.totalSessionTime;
+    
+ 
+    if (self.LapTapped == NO)
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.distance];
+    else if (self.LapTapped == YES)
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.totalSessionTime];
+ 
+}
 
 
 #pragma mark - Buttons
 
 - (IBAction)startStopButtonTapped:(UIButton *)sender {
     
-  
+    self.lapStartTime = [[NSDate alloc] init];
+
     //check Label's text
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
     if ([startStopActualLabel isEqualToString:@"Start"] ) {
@@ -101,6 +123,16 @@
         // add timer to the run loop
         [[NSRunLoop currentRunLoop] addTimer:self.runningStopWatch forMode:NSRunLoopCommonModes];
         
+        
+        
+        
+        
+ 
+        // setup timer
+        self.LapTimer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerLapFired:) userInfo:nil repeats:YES];
+        
+        // add timer to the run loop
+        [[NSRunLoop currentRunLoop] addTimer:self.LapTimer forMode:NSRunLoopCommonModes];
         
         
         
@@ -123,7 +155,7 @@
         
         // stop the timer
         [self.runningStopWatch invalidate];
-        
+        [self.LapTimer invalidate];
         /******  Interface layout *****/
         [self.resetLapButton setTitle:@"Reset" forState:UIControlStateNormal];
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -156,12 +188,19 @@
         
 }
   else if ([resetLapActualLabel isEqualToString:@"Lap"]) {
-      // self.totalSessionTime = [NSDate timeIntervalSinceReferenceDate];
+      self.lapStartTime = [[NSDate alloc] init];
 
-      // set self.startTime to now
-      //self.startTime = [[NSDate alloc] init];
+      self.LapTapped = YES;
+     [[self LapTimer] invalidate];
       
+      // setup timer
+      self.LapTimer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerLapFired:) userInfo:nil repeats:YES];
       
+      // add timer to the run loop
+      [[NSRunLoop currentRunLoop] addTimer:self.LapTimer forMode:NSRunLoopCommonModes];
+      
+      self.LapTapped = NO;
+
   }
 }
 
