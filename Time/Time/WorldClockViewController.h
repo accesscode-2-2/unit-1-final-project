@@ -11,5 +11,9 @@
 @interface WorldClockViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *worldClockLabel;
+@property (nonatomic) BOOL running;
+@property (nonatomic) NSDate *startDate;
+
+-(void)worldClockTimer: (NSTimer *) timer;
 
 @end

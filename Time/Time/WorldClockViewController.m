@@ -9,20 +9,35 @@
 #import "WorldClockViewController.h"
 
 @interface WorldClockViewController ()
-
+@property (nonatomic) NSTimer *timer;
 @end
 
 @implementation WorldClockViewController
-@synthesize worldClockLabel;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+ self.worldClockLabel.text = @"00.00.00";
+ self.running = FALSE;
+ self.startDate = [NSDate date];
+self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(worldClockTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+-(void)worldClockTimer: (NSTimer *) timer{
+    
+        NSDate *now = [NSDate date];
+        
+        static NSDateFormatter *dateFormatter;
+        if (!dateFormatter) {
+            dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.dateFormat = @"h:mm:ss a";
+        }
+        self.worldClockLabel.text = [dateFormatter stringFromDate:now];
+   
 }
 
 /*
