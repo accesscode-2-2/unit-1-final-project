@@ -7,6 +7,7 @@
 //
 
 #import "GOTimerViewController.h"
+#import "Exercises.h"
 
 @interface GOTimerViewController ()
 
@@ -14,9 +15,38 @@
 
 @implementation GOTimerViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSLog(@"%@", self.currentWorkout);
+    NSLog(@"%@", self.currentWorkout.workoutName);
+    NSLog(@"%@", [self.currentWorkout.exercises objectAtIndex:0]);
+    
+    
+    NSUInteger count = [self.currentWorkout.exercises count];
+    for (NSUInteger i = 0; i < count; i++) {
+        Exercises *thisExercise = [self.currentWorkout.exercises objectAtIndex: i];
+        
+        //self.currentExerciseTime = thisExercise.exerciseTime;
+        self.currentExerciseName = thisExercise.nameOfExercise;
+        self.currentExerciseTime = thisExercise.exerciseTime;
+        
+        NSTimer *exerciseTime = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                          target:self
+                                                        selector:@selector(updateExerciseTimer)
+                                                        userInfo:nil repeats:YES];
+
+        NSLog(@"%@", self.currentExerciseName);
+        NSLog(@"%f", self.currentExerciseTime);
+        
+    }
+
+}
+
+- (void) updateExerciseTimer {
+    NSLog(@"%f", self.currentExerciseTime);
 }
 
 - (void)didReceiveMemoryWarning {

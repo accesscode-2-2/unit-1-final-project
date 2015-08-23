@@ -13,9 +13,10 @@
 
 @interface GOTimerViewController : UIViewController
 
-@property (nonatomic) NSArray *currentWorkout;
+@property (nonatomic) Workout *currentWorkout;
+@property (nonatomic) Exercises *exercise;
 @property (nonatomic) NSString * currentExerciseName;
-@property (nonatomic) NSTimeInterval * currentExerciseTime;
+@property (nonatomic) NSTimeInterval currentExerciseTime;
 @property (nonatomic) NSString *currentExerciseImage;
 
 //Properties of ViewController
