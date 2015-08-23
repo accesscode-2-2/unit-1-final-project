@@ -28,7 +28,7 @@
 
 -(void)updateTime
 {
-    //Get the time left until the specified date
+
     NSInteger ti = ((NSInteger)[self.datePicker.date timeIntervalSinceNow]);
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;

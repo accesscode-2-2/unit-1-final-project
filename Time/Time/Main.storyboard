@@ -206,6 +206,7 @@
                     <connections>
                         <outlet property="countdownLabel" destination="1kf-hQ-dgC" id="l3s-65-Uhc"/>
                         <outlet property="datePicker" destination="L5e-3y-fbg" id="z6z-cK-Xlz"/>
+                        <outlet property="titleTextField" destination="8QS-tF-mcY" id="DmR-w2-wDu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptL-Ti-gle" userLabel="First Responder" sceneMemberID="firstResponder"/>

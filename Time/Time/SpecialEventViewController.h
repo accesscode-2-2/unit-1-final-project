@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
 - (IBAction)startButton:(id)sender;
 - (IBAction)resetButton:(id)sender;
