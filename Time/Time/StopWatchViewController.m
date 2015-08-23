@@ -169,9 +169,7 @@
         [self.resetLapButton setTitle:@"Reset" forState:UIControlStateNormal];
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
-
     }
-
 }
 
 
