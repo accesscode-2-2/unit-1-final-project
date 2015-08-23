@@ -28,9 +28,7 @@
 }
 
 - (void)preLoadedWorkouts {
-    Workout *workout1 = [[Workout alloc] init];
-    workout1.exercises = [[NSMutableArray alloc] init];
-    workout1.workoutName = @"Go Lean!";
+//Exercise List
     
     Exercises *exercise1 = [[Exercises alloc] init];
     exercise1.nameOfExercise = @"Push-ups";
@@ -38,6 +36,18 @@
     
     Exercises *exercise2 = [[Exercises alloc] init];
     exercise2.nameOfExercise = @"Pull-ups";
+    exercise2.exerciseTime = 120.0;
+    
+    
+    
+//Workout List - (Array of Exercises)
+    
+    // 1st Workout
+    
+    Workout *workout1 = [[Workout alloc] init];
+    workout1.exercises = [[NSMutableArray alloc] init];
+    workout1.workoutName = @"Go Lean!";
+    
     
     [workout1.exercises addObject:exercise1];
     [workout1.exercises addObject:exercise2];
@@ -53,6 +63,7 @@
     [workout2.exercises addObject:exercise2];
     
     
+// Adding Workouts to GOWorkoutViewController Array
     
     [self.workouts addObject:workout1];
     [self.workouts addObject:workout2];
