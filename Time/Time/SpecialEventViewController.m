@@ -17,6 +17,7 @@
     
     self.datePicker.date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.datePicker.date]];
     
+    self.datePicker.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
                                            selector:@selector(updateTime)
@@ -39,5 +40,6 @@
 - (IBAction)resetButton:(id)sender {
     [timer invalidate];
     self.countdownLabel.text = @"00 days 00 hrs 00 min 00 sec";
+    self.datePicker.hidden = NO;
 }
 @end
