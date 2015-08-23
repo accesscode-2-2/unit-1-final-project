@@ -251,7 +251,7 @@
         <scene sceneID="jck-tK-RkW">
             <objects>
                 <navigationController id="43W-3d-NiI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="World Clock" image="World" id="bb0-MQ-vaL"/>
+                    <tabBarItem key="tabBarItem" title="World Clock" image="world" id="bb0-MQ-vaL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ENk-9o-8eY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -468,6 +468,6 @@
         <image name="StopWatch" width="29" height="29"/>
         <image name="Timer" width="29" height="29"/>
         <image name="Timer-25" width="25" height="25"/>
-        <image name="World" width="29" height="29"/>
+        <image name="world" width="29" height="29"/>
     </resources>
 </document>
