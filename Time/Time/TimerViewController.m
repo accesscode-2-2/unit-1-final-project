@@ -21,7 +21,7 @@
 @property (nonatomic) CADisplayLink *timer;
 @property (nonatomic) CFTimeInterval initialTime;
 @property (nonatomic) CFTimeInterval lapInitialTime;
-@property (nonatomic) CGFloat countdownTime;
+@property (nonatomic) NSArray *presetTime;
 
 @property (nonatomic) NSInteger component;
 @property (nonatomic) NSInteger row;
@@ -177,9 +177,9 @@
 }
 
 #pragma mark - PresetsTableViewControllerDelegate implementation
--(void)presetTime:(CGFloat)presetTime {
-    self.countdownTime = presetTime;
-    NSLog(@"%f", self.countdownTime);
+-(void)presetTime:(NSArray *)presetTime {
+    self.presetTime = presetTime;
+    NSLog(@"%@", self.presetTime);
 }
 
 /*
