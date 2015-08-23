@@ -160,9 +160,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:labelID];
     }
-    cell.detailTextLabel.text = [self.dataArray objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.dataArray objectAtIndex: [self.dataArray count] - indexPath.row - 1];
     
-    NSString *rowCounter = [NSString stringWithFormat:@"Lap %ld", (long)indexPath.row];
+    NSString *rowCounter = [NSString stringWithFormat:@"Lap %ld",[self.dataArray count] -(long)indexPath.row];
     cell.textLabel.text = rowCounter;
     
     return cell;
