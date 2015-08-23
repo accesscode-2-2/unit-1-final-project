@@ -298,7 +298,7 @@
                     <navigationItem key="navigationItem" id="ht6-6u-JlO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sGD-C3-eX4">
                             <connections>
-                                <segue destination="2CR-iz-Wp5" kind="presentation" id="OhF-By-vnZ"/>
+                                <action selector="newPresetButtonPressed:" destination="9AT-PO-o7q" id="5IM-bd-e5H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -310,7 +310,7 @@
         <!--New Preset View Controller-->
         <scene sceneID="PYS-qs-wuo">
             <objects>
-                <viewController id="2CR-iz-Wp5" customClass="NewPresetViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newPresetVC" id="2CR-iz-Wp5" customClass="NewPresetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J2K-sx-K15"/>
                         <viewControllerLayoutGuide type="bottom" id="Ou6-YY-Ja3"/>

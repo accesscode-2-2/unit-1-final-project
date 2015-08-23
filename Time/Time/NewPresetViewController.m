@@ -16,7 +16,6 @@
 @property (nonatomic) NSMutableArray *pickerViewNumbers;
 @property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *timerNameTextField;
-@property (nonatomic) id<NewPresetViewControllerDelegate> delegate;
 @end
 
 @implementation NewPresetViewController
@@ -82,14 +81,18 @@
 - (IBAction)doneButtonTapped:(id)sender {
     
     NSArray *countdownTime = @[
-                               [self.pickerViewNumbers[0] title],
-                               [self.pickerViewNumbers[1] title],
-                               [self.pickerViewNumbers[2] title]
+                               self.pickerViewNumbers[0][[self.timerPickerView selectedRowInComponent:0]],
+                               self.pickerViewNumbers[1][[self.timerPickerView selectedRowInComponent:1]],
+                               self.pickerViewNumbers[2][[self.timerPickerView selectedRowInComponent:2]]
                                ];
+    NSLog(@"%@", countdownTime);
     
     NSString *timerName = self.timerNameTextField.text;
+    NSLog(@"%@", timerName);
     
     [self.delegate presetCreated:countdownTime withName:timerName];
+    [self dismissViewControllerAnimated:YES completion:^{}];
+
 }
 
 
