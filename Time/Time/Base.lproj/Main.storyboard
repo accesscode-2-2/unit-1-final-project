@@ -209,9 +209,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
                                         <state key="normal" title="PAUSE"/>
-                                        <connections>
-                                            <action selector="pauseResumeButton:" destination="zEu-mR-zpR" eventType="touchUpInside" id="onm-I7-W8G"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2E-8P-ifX">
                                         <rect key="frame" x="89" y="35" width="80" height="71"/>
@@ -221,9 +218,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
                                         <state key="normal" title="STOP"/>
-                                        <connections>
-                                            <action selector="startStopButton:" destination="zEu-mR-zpR" eventType="touchUpInside" id="fsm-0Q-b4R"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.73909296700000005" green="0.76212079109999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,14 +267,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="TimerIcon" id="Cl9-3q-4Vu"/>
-                    <connections>
-                        <outlet property="pauseResume" destination="QFu-Vj-PZX" id="Kam-ee-OM1"/>
-                        <outlet property="picker" destination="taj-TO-4Ig" id="UoI-yH-zRL"/>
-                        <outlet property="pickerView" destination="taj-TO-4Ig" id="72w-8e-hX0"/>
-                        <outlet property="startButton" destination="QFu-Vj-PZX" id="y0r-Le-GOK"/>
-                        <outlet property="startStopButton" destination="W2E-8P-ifX" id="3cr-cC-W2t"/>
-                        <outlet property="stopButton" destination="W2E-8P-ifX" id="Fro-Aa-bDk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0E-M3-VCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
