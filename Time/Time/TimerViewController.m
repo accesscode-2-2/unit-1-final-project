@@ -14,6 +14,18 @@
 @property (nonatomic) NSMutableArray *minutes;
 @property (nonatomic) NSMutableArray *seconds;
 @property (nonatomic) NSMutableArray *pickerViewNumbers;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
+//For use with UIPickerView
+@property (nonatomic) CADisplayLink *timer;
+@property (nonatomic) CFTimeInterval initialTime;
+@property (nonatomic) CFTimeInterval lapInitialTime;
+
+
+@property (nonatomic) NSInteger component;
+@property (nonatomic) NSInteger row;
+
 
 @end
 
@@ -30,19 +42,56 @@
 
 - (void)setupMinutes {
     self.minutes = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 60; i++) {
+    int j = 0;
+    int i = 0;
+    while(true){
+        if(i == 60){
+            i=0;
+        }
+        if(j==3600){
+            break;
+        }
         NSString *s = [NSString stringWithFormat:@"%02d", i];
         [self.minutes addObject:s];
+        i++;
+        j++;
     }
+}
+- (IBAction)startButtonTapped:(UIButton *)sender {
+   [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reloadComponent:) userInfo:nil repeats:NO];
+    
+}
+
+- (void)reloadComponent:(NSInteger)component{
+    
+}
+
+
+- (IBAction)resetButtonTapped:(UIButton *)sender {
+    
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    self.component = component;
+    self.row = row;
 }
 
 - (void)setupSeconds {
     self.seconds = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < 60; i++) {
+    int j = 0;
+    int i = 0;
+    while(true){
+        if(i == 60){
+            i=0;
+        }
+        if(j==3600){
+            break;
+        }
         NSString *s = [NSString stringWithFormat:@"%02d", i];
         [self.seconds addObject:s];
+        i++;
+        j++;
     }
 }
 
@@ -61,11 +110,15 @@
     
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
+    
+    self.timer  = [CADisplayLink displayLinkWithTarget:self
+                                                       selector:@selector(refreshTimerLabel)];
+    [self.timer setPaused:YES];
+    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - data source and delegate for PickerView

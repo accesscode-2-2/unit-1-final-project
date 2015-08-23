@@ -200,16 +200,22 @@
                                 <rect key="frame" x="32" y="219" width="536" height="162"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pah-Du-ieJ">
-                                <rect key="frame" x="36" y="491" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="36" y="491" width="33" height="30"/>
+                                <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="itK-ui-6Sm" eventType="touchUpInside" id="fRX-eg-LYi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-Ih-xLb">
-                                <rect key="frame" x="518" y="491" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="524" y="491" width="40" height="30"/>
+                                <state key="normal" title="Reset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="itK-ui-6Sm" eventType="touchUpInside" id="bi0-Ig-kG5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,6 +232,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Tuj-kJ-qKb"/>
                     <connections>
+                        <outlet property="resetButton" destination="d5i-Ih-xLb" id="UmW-LH-ffg"/>
+                        <outlet property="startButton" destination="pah-Du-ieJ" id="Ni7-OJ-0MW"/>
                         <outlet property="timerPickerView" destination="iio-Lt-iJ8" id="yw8-hE-0pq"/>
                     </connections>
                 </viewController>
