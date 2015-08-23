@@ -12,11 +12,12 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
-    var timerString : String!
+    var timer : Timer!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.timerLabel.text = timerString
+        
+//        self.timerLabel.text = String(timer.remainingTime)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

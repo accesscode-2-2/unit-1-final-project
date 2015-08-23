@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
     let popcornTimer = Timer.init(startTime: 30.000)
+    let poopTimer = Timer.init(startTime: 45.000)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         
         addTimer(popcornTimer)
-        
+        addTimer(poopTimer)
     }
     
     func addTimer(timer:Timer){
@@ -51,19 +52,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
-        cell.timerLabel.text = String(timers[indexPath.row].remainingTime)
+        cell.timer = timers[indexPath.row]
+        
+        cell.timerLabel.text = String(cell.timer.remainingTime)
         
         cell.startPauseButton.tag = indexPath.row
         
-        //ADD TARGET. VIDEO @ 9:00
+        cell.startPauseButton.addTarget(self, action: "startPause:", forControlEvents: UIControlEvents.TouchUpInside)
+
         
         return cell
     }
     
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return timers.count
+    }
+    
+    @IBAction func startPause(sender: UIButton){
+        
+        for path in tableView.indexPathsForVisibleRows! {
+            let cell = tableView.cellForRowAtIndexPath(path) as! TableViewCell
+            
+            if sender.tag == path.row{
+                cell.timer.isPaused = true
+            }
+            
+        }
+    
     }
     
     

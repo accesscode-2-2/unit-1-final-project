@@ -103,9 +103,9 @@
 			children = (
 				6981737B1B88EFF0000D38F2 /* AppDelegate.swift */,
 				698173A91B88F28C000D38F2 /* Timer.swift */,
+				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				6981737D1B88EFF0000D38F2 /* ViewController.swift */,
 				6981737F1B88EFF0000D38F2 /* Main.storyboard */,
-				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				698173821B88EFF0000D38F2 /* Assets.xcassets */,
 				698173841B88EFF0000D38F2 /* LaunchScreen.storyboard */,
 				698173871B88EFF0000D38F2 /* Info.plist */,
