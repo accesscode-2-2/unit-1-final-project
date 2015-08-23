@@ -59,12 +59,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrF-Mp-wQR" userLabel="timerLabel">
-                                                <rect key="frame" x="100" y="52" width="400" height="60"/>
+                                                <rect key="frame" x="50" y="52" width="500" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="400" id="KKO-U2-LZP"/>
+                                                    <constraint firstAttribute="width" constant="500" id="KKO-U2-LZP"/>
                                                     <constraint firstAttribute="height" constant="60" id="bUR-ko-aW7"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="65"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="58"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" red="0.9960784912109375" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>

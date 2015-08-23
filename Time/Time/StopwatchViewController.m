@@ -103,33 +103,14 @@ NSTimeInterval startTimeNow;
     int fraction = elapsed * 100.0;
     
     
-    self.timerLabel.text = [NSString stringWithFormat:@"%02d:%g",secs, self.totalTime];
+    self.timerLabel.text = [NSString stringWithFormat:@"%02d:%f",secs, self.totalTime];
     
     // update our label using a format of 0:00.0
     //self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
     
-    // call updateTime again after 0.1 seconds
+//     call updateTime again after 0.1 seconds
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
 }
-
-    
-//    NSTimer *startTimer = [NSTimer timerWithTimeInterval:0.001 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:startTimer forMode:NSRunLoopCommonModes];
-    
-
-
-//- (void) addTime {
-//    
-//}
-
-//- (void) timerFired: (CADisplayLink *)display {
-//    float currentNumber = [self.timerLabel.text floatValue];
-//    float nextNumber = currentNumber + 0.001;
-//    
-//    self.timerLabel.text = [NSString stringWithFormat:@"%.3f", nextNumber];
-//}
-
 
 
 - (void)didReceiveMemoryWarning {
