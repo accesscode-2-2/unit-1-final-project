@@ -12,7 +12,7 @@
 
 @interface StopwatchViewController ()
 
-@property (nonatomic) NSArray *arr;
+@property (nonatomic) NSMutableArray *arr;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) CADisplayLink *displayLink;
@@ -30,12 +30,27 @@
 
 @implementation StopwatchViewController
 
+
+//- (IBAction)lapButton:(id)sender {
+//    
+//    if (startTime != nil) {
+//        
+//        
+//        
+//    }
+//    
+//    
+//    
+//    
+//}
+
 BOOL running;
 NSTimeInterval startTime;
+NSTimeInterval startTimeNow;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.arr = @[
                  @"one",
                  @"two",
@@ -74,8 +89,8 @@ NSTimeInterval startTime;
     // calculate elapsed time
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     NSTimeInterval elapsed = currentTime - startTime;
-    self.totalTime += elapsed;
     
+    self.totalTime += elapsed;
     startTime = currentTime;
 
     NSLog(@"%f", self.totalTime);
@@ -86,6 +101,7 @@ NSTimeInterval startTime;
     int secs = (int) (elapsed);
     elapsed -= secs;
     int fraction = elapsed * 100.0;
+    
     
     self.timerLabel.text = [NSString stringWithFormat:@"%02d:%g",secs, self.totalTime];
     

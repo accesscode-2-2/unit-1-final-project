@@ -64,7 +64,7 @@
                                                     <constraint firstAttribute="width" constant="400" id="KKO-U2-LZP"/>
                                                     <constraint firstAttribute="height" constant="60" id="bUR-ko-aW7"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="65"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" red="0.9960784912109375" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
@@ -86,6 +86,15 @@
                                         </state>
                                         <connections>
                                             <action selector="start:" destination="eeN-hb-HVz" eventType="touchUpInside" id="chM-IV-dSj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbR-g4-YXb">
+                                        <rect key="frame" x="471" y="231" width="46" height="30"/>
+                                        <state key="normal" title="Lap">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lapButton:" destination="eeN-hb-HVz" eventType="touchUpInside" id="iYq-dp-hHg"/>
                                         </connections>
                                     </button>
                                 </subviews>
