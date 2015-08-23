@@ -57,7 +57,7 @@
                             <constraint firstItem="CSZ-kC-X4H" firstAttribute="top" secondItem="OVH-DT-5rv" secondAttribute="bottom" constant="30" id="UQi-IY-ZE4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="To3-0y-HK6" userLabel="Timer"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Timer" id="To3-0y-HK6" userLabel="Timer"/>
                     <connections>
                         <outlet property="countdownLabel" destination="CSZ-kC-X4H" id="r0e-ZI-kIN"/>
                         <outlet property="datePicker" destination="OVH-DT-5rv" id="Fue-ZP-2w3"/>
@@ -233,7 +233,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" image="StopWatch-256" id="OY2-JH-m9a"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="StopWatch" id="OY2-JH-m9a"/>
                     <connections>
                         <outlet property="lapLabel" destination="60G-nq-zQF" id="58U-c2-LrZ"/>
                         <outlet property="lapTableView" destination="fuW-lC-uOz" id="G5K-0t-tTr"/>
@@ -267,6 +267,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StopWatch-256" width="29" height="29"/>
+        <image name="StopWatch" width="29" height="29"/>
+        <image name="Timer" width="29" height="29"/>
     </resources>
 </document>
