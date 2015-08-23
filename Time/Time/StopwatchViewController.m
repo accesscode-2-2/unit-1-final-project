@@ -36,7 +36,7 @@
     
     self.lapTableView.dataSource = self;
     self.lapTableView.delegate = self;
-    self.lapTableView.backgroundColor = [UIColor blackColor];
+    //self.lapTableView.backgroundColor = [UIColor blackColor];
     
 }
 
@@ -97,10 +97,10 @@
     return [self.lapTimes count];
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
-}
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    cell.backgroundColor = [UIColor blackColor];
+//    cell.textLabel.textColor = [UIColor whiteColor];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
