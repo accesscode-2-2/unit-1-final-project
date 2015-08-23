@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PresetsTableViewControllerDelegate.h"
+#import "NewPresetViewControllerDelegate.h"
 
-@interface PresetsTableViewController : UITableViewController
+@interface PresetsTableViewController : UITableViewController <NewPresetViewControllerDelegate>
 @property (nonatomic) id<PresetsTableViewControllerDelegate> delegate;
 @end

@@ -77,4 +77,10 @@
     return cell;
 }
 
+#pragma mark - NewPresetViewControllerDelegate implementation
+-(void)presetCreated:(NSArray *)countdownTime withName:(NSString *)timerName {
+    [self.presets setObject:countdownTime forKey:timerName];
+    [self.tableView reloadData];
+}
+
 @end

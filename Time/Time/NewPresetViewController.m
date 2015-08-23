@@ -7,6 +7,7 @@
 //
 
 #import "NewPresetViewController.h"
+#import "NewPresetViewControllerDelegate.h"
 
 @interface NewPresetViewController ()
 @property (nonatomic) NSMutableArray *hours;
@@ -14,10 +15,13 @@
 @property (nonatomic) NSMutableArray *seconds;
 @property (nonatomic) NSMutableArray *pickerViewNumbers;
 @property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
+@property (weak, nonatomic) IBOutlet UITextField *timerNameTextField;
+@property (nonatomic) id<NewPresetViewControllerDelegate> delegate;
 @end
 
 @implementation NewPresetViewController
 
+#pragma mark - Initial Setup
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupPickerViewNumbers];
@@ -73,5 +77,20 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return self.pickerViewNumbers[component][row];
 }
+
+#pragma mark - New Data
+- (IBAction)doneButtonTapped:(id)sender {
+    
+    NSArray *countdownTime = @[
+                               [self.pickerViewNumbers[0] title],
+                               [self.pickerViewNumbers[1] title],
+                               [self.pickerViewNumbers[2] title]
+                               ];
+    
+    NSString *timerName = self.timerNameTextField.text;
+    
+    [self.delegate presetCreated:countdownTime withName:timerName];
+}
+
 
 @end
