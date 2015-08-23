@@ -18,6 +18,7 @@
 @property (nonatomic) NSString * currentExerciseName;
 @property (nonatomic) NSTimeInterval currentExerciseTime;
 @property (nonatomic) NSString *currentExerciseImage;
+@property (nonatomic) NSTimeInterval totalTime;
 
 //Properties of ViewController
 @property (weak, nonatomic) IBOutlet UIImageView *exerciseImageView;

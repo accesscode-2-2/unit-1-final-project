@@ -11,7 +11,6 @@
 //
 
 #import "GOStopwatchViewController.h"
-#import "LapTimerTableViewCell.h"
 
 @interface GOStopwatchViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -28,7 +27,6 @@
 @property (nonatomic) NSTimer *mainStopwatch;
 @property (weak, nonatomic) IBOutlet UILabel *mainStopwatchLabel;
 @property (nonatomic, assign) NSTimeInterval pauseTime;
-@property (nonatomic) LapTimerTableViewCell * model;
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
@@ -51,9 +49,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    self.model = [[LapTimerTableViewCell alloc] init];
-    
+        
     [super viewDidLoad];
     
     self.laps = [[NSMutableArray alloc]init];

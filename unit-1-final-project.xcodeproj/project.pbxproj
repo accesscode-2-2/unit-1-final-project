@@ -19,7 +19,6 @@
 		3DDB60C41B893413008194DB /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C31B893413008194DB /* Workout.m */; };
 		3DDB60C71B893477008194DB /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C61B893477008194DB /* Exercises.m */; };
 		9A8CD52B1B87900000A194D9 /* GOStopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */; };
-		9A8CD52E1B879F5A00A194D9 /* LapTimerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CD52D1B879F5A00A194D9 /* LapTimerTableViewCell.m */; };
 		9AD5F5781B8A27B3004F25D6 /* GOTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +64,6 @@
 		3DDB60C61B893477008194DB /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		9A8CD5291B87900000A194D9 /* GOStopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOStopwatchViewController.h; sourceTree = "<group>"; };
 		9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOStopwatchViewController.m; sourceTree = "<group>"; };
-		9A8CD52C1B879F5A00A194D9 /* LapTimerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapTimerTableViewCell.h; sourceTree = "<group>"; };
-		9A8CD52D1B879F5A00A194D9 /* LapTimerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapTimerTableViewCell.m; sourceTree = "<group>"; };
 		9AD5F5761B8A27B3004F25D6 /* GOTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTimerViewController.h; sourceTree = "<group>"; };
 		9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +131,6 @@
 				3D2D2F081B86B5A300E210BA /* Main.storyboard */,
 				9AD5F5761B8A27B3004F25D6 /* GOTimerViewController.h */,
 				9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */,
-				9A8CD52C1B879F5A00A194D9 /* LapTimerTableViewCell.h */,
-				9A8CD52D1B879F5A00A194D9 /* LapTimerTableViewCell.m */,
 				3D2D2F0B1B86B5A300E210BA /* Assets.xcassets */,
 				3D2D2F0D1B86B5A300E210BA /* LaunchScreen.storyboard */,
 				3D2D2F101B86B5A300E210BA /* Info.plist */,
@@ -309,7 +304,6 @@
 				3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */,
 				3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */,
 				3D2D2F011B86B5A300E210BA /* main.m in Sources */,
-				9A8CD52E1B879F5A00A194D9 /* LapTimerTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

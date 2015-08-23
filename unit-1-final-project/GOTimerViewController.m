@@ -19,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
 
     NSLog(@"%@", self.currentWorkout);
     NSLog(@"%@", self.currentWorkout.workoutName);
