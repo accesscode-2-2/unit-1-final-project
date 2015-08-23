@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -93,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="538" placeholderIntrinsicHeight="180" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5e-3y-fbg">
+                            <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="538" placeholderIntrinsicHeight="180" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5e-3y-fbg">
                                 <rect key="frame" x="46" y="371" width="538" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="cpb-h4-24P"/>
@@ -117,7 +117,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdQ-Dh-lZE" userLabel="Start Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdQ-Dh-lZE" userLabel="Start Button">
                                 <rect key="frame" x="15" y="30" width="33" height="30"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,7 +163,7 @@
                             <constraint firstAttribute="centerY" secondItem="1kf-hQ-dgC" secondAttribute="centerY" id="QtO-vc-CSY"/>
                             <constraint firstItem="1kf-hQ-dgC" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="279" id="U1k-GB-7RF"/>
                             <constraint firstAttribute="trailing" secondItem="KqH-9v-db9" secondAttribute="trailing" constant="15" id="YH9-RI-Ur9"/>
-                            <constraint firstItem="fdQ-Dh-lZE" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="123" id="cJM-iT-4iW"/>
+                            <constraint firstItem="fdQ-Dh-lZE" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="15" id="cJM-iT-4iW"/>
                             <constraint firstItem="fdQ-Dh-lZE" firstAttribute="top" secondItem="3q6-z8-Zvv" secondAttribute="top" constant="30" id="d5w-mo-lH3"/>
                             <constraint firstItem="1kf-hQ-dgC" firstAttribute="top" secondItem="R3w-gy-bLi" secondAttribute="bottom" constant="8" symbolic="YES" id="dcC-5w-ZEZ"/>
                             <constraint firstAttribute="trailing" secondItem="R3w-gy-bLi" secondAttribute="trailing" constant="150" id="dvQ-CN-SZ8"/>
@@ -185,6 +185,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="NiG-Sz-Pe4"/>
                                 <exclude reference="o27-R4-bsA"/>
                                 <exclude reference="61T-wZ-Jjl"/>
                                 <exclude reference="CjG-tO-i3p"/>
@@ -456,6 +457,7 @@
                     <connections>
                         <segue destination="YIE-n8-cpU" kind="relationship" relationship="viewControllers" id="QD2-YM-YHM"/>
                         <segue destination="0iZ-nY-PBZ" kind="relationship" relationship="viewControllers" id="5e9-4x-EAm"/>
+                        <segue destination="bdU-YF-UVS" kind="relationship" relationship="viewControllers" id="hnK-yh-R4C"/>
                         <segue destination="43W-3d-NiI" kind="relationship" relationship="viewControllers" id="eCH-mm-jKA"/>
                     </connections>
                 </tabBarController>
