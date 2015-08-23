@@ -153,12 +153,14 @@
 {
     static NSString *labelID = @"LapLabelCellIdentifier";
     
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:labelID];
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:labelID];
     }
     cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = @"Lap";
     
     return cell;
 }
