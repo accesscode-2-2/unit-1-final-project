@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PresetsTableViewControllerDelegate.h"
 
-@interface TimerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
-
+@interface TimerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PresetsTableViewControllerDelegate>
 @end

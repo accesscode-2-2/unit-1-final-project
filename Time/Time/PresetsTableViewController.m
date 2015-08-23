@@ -41,6 +41,10 @@
     return string;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat time = [[self.presets objectForKey:[self.presets keyAtIndex:indexPath.row]] floatValue];
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
