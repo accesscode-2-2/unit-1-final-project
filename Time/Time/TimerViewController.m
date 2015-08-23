@@ -15,6 +15,9 @@
 @property (nonatomic) NSTimeInterval countDownInterval;
 
 @property (nonatomic) BOOL running;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @end
 
 @implementation TimerViewController
@@ -64,6 +67,16 @@
         [countdownTimer invalidate];
         countdownTimer = nil;
     }
+    
+}
+
+- (IBAction)restartButton:(id)sender {
+    self.running = FALSE; 
+    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    [countdownTimer invalidate];
+    countdownTimer = nil;
+    self.countdownLabel.text = @"00.00.00";
+    
 }
 @end
 

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
 - (IBAction)startCountdown:(id)sender;
+- (IBAction)restartButton:(id)sender;
 
 
 

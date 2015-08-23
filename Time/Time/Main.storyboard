@@ -27,7 +27,7 @@
                                     <!--2015-07-22 15:39:13 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSZ-kC-X4H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSZ-kC-X4H" userLabel="Count Down Label">
                                 <rect key="frame" x="100" y="255" width="400" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="4Mm-kA-Th7"/>
@@ -36,7 +36,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvr-0N-gtQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvr-0N-gtQ" userLabel="Start Button">
                                 <rect key="frame" x="228" y="309" width="144" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Start Countdown">
@@ -46,21 +46,35 @@
                                     <action selector="startCountdown:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="PZ5-ed-hxP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHm-g1-0tt" userLabel="Restart Button">
+                                <rect key="frame" x="275" y="359" width="50" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="0.090645954010000002" blue="0.11139939710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButton:" destination="0iZ-nY-PBZ" eventType="touchUpInside" id="Zhs-dB-ScV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="CSZ-kC-X4H" secondAttribute="centerX" id="0SL-LM-q2o"/>
                             <constraint firstItem="Kvr-0N-gtQ" firstAttribute="top" secondItem="CSZ-kC-X4H" secondAttribute="bottom" constant="30" id="FQy-Dx-MeE"/>
                             <constraint firstAttribute="centerX" secondItem="OVH-DT-5rv" secondAttribute="centerX" id="JT1-rD-HKS"/>
+                            <constraint firstAttribute="centerX" secondItem="xHm-g1-0tt" secondAttribute="centerX" id="QSj-LL-LF1"/>
                             <constraint firstItem="OVH-DT-5rv" firstAttribute="top" secondItem="lJd-bZ-xXd" secondAttribute="top" constant="25" id="Rlh-fy-e8g"/>
                             <constraint firstAttribute="centerX" secondItem="Kvr-0N-gtQ" secondAttribute="centerX" id="Tum-DY-MZ5"/>
                             <constraint firstItem="CSZ-kC-X4H" firstAttribute="top" secondItem="OVH-DT-5rv" secondAttribute="bottom" constant="30" id="UQi-IY-ZE4"/>
+                            <constraint firstItem="xHm-g1-0tt" firstAttribute="top" secondItem="Kvr-0N-gtQ" secondAttribute="bottom" constant="15" id="rhT-gU-rtB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="Timer" id="To3-0y-HK6" userLabel="Timer"/>
                     <connections>
                         <outlet property="countdownLabel" destination="CSZ-kC-X4H" id="r0e-ZI-kIN"/>
                         <outlet property="datePicker" destination="OVH-DT-5rv" id="Fue-ZP-2w3"/>
+                        <outlet property="restartButton" destination="xHm-g1-0tt" id="tom-bQ-aD1"/>
+                        <outlet property="startButton" destination="Kvr-0N-gtQ" id="k5e-65-oGU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-I5-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
