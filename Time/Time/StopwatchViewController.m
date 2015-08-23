@@ -37,6 +37,8 @@
     self.lapTableView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.lapTableView.layer.borderWidth = 2.0;
     [self configureView];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:205 green:255 blue:255 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
     
 
 }
@@ -44,6 +46,8 @@
 {
     self.dataArray = [[NSMutableArray alloc] init];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
