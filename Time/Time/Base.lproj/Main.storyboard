@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1o2-Nr-lZC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GbH-Mt-gtK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,16 +29,25 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-46-M0q">
-                                <rect key="frame" x="267" y="385" width="67" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-46-M0q">
+                                <rect key="frame" x="-8" y="64" width="600" height="162"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0ID-km-RMk">
+                                <rect key="frame" x="281" y="504" width="39" height="37"/>
+                                <gestureRecognizers/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BXn-v7-RZX" appends="YES" id="DMq-qD-98f"/>
+                                </connections>
+                            </pageControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Gw-aHZ">
-                                <rect key="frame" x="0.0" y="6.5" width="600" height="162"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="162"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="3We-eJ-Oic"/>
+                                    <constraint firstAttribute="height" constant="162" id="3We-eJ-Oic"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="462037736.35243899">
                                     <!--2015-08-23 15:48:56 +0000-->
@@ -46,21 +55,43 @@
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="leading" secondItem="MlK-BN-md6" secondAttribute="leadingMargin" constant="-16" id="0GA-6B-tfE"/>
                             <constraint firstItem="4UM-Gw-aHZ" firstAttribute="leading" secondItem="MlK-BN-md6" secondAttribute="leadingMargin" constant="-16" id="1BM-ob-0fp"/>
-                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="top" secondItem="MlK-BN-md6" secondAttribute="topMargin" id="KYF-o9-n8I"/>
-                            <constraint firstAttribute="centerX" secondItem="8ku-46-M0q" secondAttribute="centerX" id="S45-d2-noI"/>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="top" secondItem="NCP-93-XWZ" secondAttribute="bottom" id="4GL-Rk-Pcl"/>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="leading" secondItem="8ku-46-M0q" secondAttribute="trailing" constant="-592" id="8te-lg-fKf"/>
+                            <constraint firstItem="8ku-46-M0q" firstAttribute="height" secondItem="4UM-Gw-aHZ" secondAttribute="height" id="HRZ-Kp-3sU"/>
+                            <constraint firstAttribute="centerX" secondItem="0ID-km-RMk" secondAttribute="centerX" id="IXA-hl-353"/>
+                            <constraint firstItem="8ku-46-M0q" firstAttribute="width" secondItem="4UM-Gw-aHZ" secondAttribute="width" id="J8y-z4-9dJ"/>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="top" secondItem="MlK-BN-md6" secondAttribute="topMargin" constant="64" id="KYF-o9-n8I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4UM-Gw-aHZ" secondAttribute="trailing" constant="-16" id="LbZ-Ke-HBj"/>
+                            <constraint firstItem="8ku-46-M0q" firstAttribute="top" secondItem="4UM-Gw-aHZ" secondAttribute="bottom" constant="-162" id="O0G-py-EhJ"/>
                             <constraint firstAttribute="centerX" secondItem="Z9p-gh-gdV" secondAttribute="centerX" id="ZCL-jQ-w9a"/>
+                            <constraint firstItem="8ku-46-M0q" firstAttribute="height" secondItem="4UM-Gw-aHZ" secondAttribute="height" id="ar8-gT-Dbl"/>
+                            <constraint firstItem="Kmf-rY-zva" firstAttribute="top" secondItem="0ID-km-RMk" secondAttribute="bottom" constant="10" id="j9k-cq-wpo"/>
                             <constraint firstItem="Z9p-gh-gdV" firstAttribute="top" secondItem="ZRT-W9-I8T" secondAttribute="bottom" constant="20" id="qsz-cJ-PCM"/>
                             <constraint firstAttribute="centerX" secondItem="ZRT-W9-I8T" secondAttribute="centerX" id="so5-6i-ct4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4UM-Gw-aHZ" secondAttribute="trailing" constant="-16" id="tm4-2r-Irm"/>
                             <constraint firstAttribute="centerY" secondItem="ZRT-W9-I8T" secondAttribute="centerY" id="v14-Kq-2zE"/>
-                            <constraint firstItem="8ku-46-M0q" firstAttribute="top" secondItem="Z9p-gh-gdV" secondAttribute="bottom" constant="20" id="xY3-3W-GYl"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1BM-ob-0fp"/>
+                                <exclude reference="KYF-o9-n8I"/>
+                                <exclude reference="tm4-2r-Irm"/>
+                                <exclude reference="ar8-gT-Dbl"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="X4C-j0-ord" appends="YES" id="5aY-9G-oBd"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="EhG-Qa-Wpq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMz-dl-OW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="BXn-v7-RZX"/>
+                <swipeGestureRecognizer direction="left" id="X4C-j0-ord"/>
             </objects>
             <point key="canvasLocation" x="753" y="863"/>
         </scene>
@@ -187,10 +218,27 @@
             </objects>
             <point key="canvasLocation" x="754" y="200"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zcS-o4-eLo">
+            <objects>
+                <navigationController id="GbH-Mt-gtK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qeH-6r-1Ce">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1o2-Nr-lZC" kind="relationship" relationship="rootViewController" id="A54-J6-mbe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAN-zc-rRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218" y="-206"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8W8-GA-CJB">
             <objects>
                 <tabBarController id="1o2-Nr-lZC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QNn-Pg-9i2"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Wcl-Z5-tHF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
