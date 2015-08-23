@@ -7,10 +7,13 @@
 //
 
 #import "GOWorkoutViewController.h"
+#import "WorkoutManager.h"
+#import "Workout.h"
 
 @interface GOWorkoutViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) Workout *model;
 
 @end
 
@@ -21,6 +24,24 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+//    self.model = [[Workout alloc]init];
+//    
+//    [self.model initializeData];
+    
+//    
+    WorkoutManager *sharedManager = [WorkoutManager sharedManager];
+//    
+//    sharedManager = [[WorkoutManager alloc]init];
+//    
+//    [sharedManager preLoadedWorkouts];
+//    
+    [sharedManager.workouts addObject:@"what"];
+//    
+//    NSLog(@"%@", sharedManager.workouts);
+
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -39,7 +60,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [WorkoutManager sharedManager].workouts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -47,7 +68,10 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"workoutIdentifier" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Working MUTHHHAAFUCKAA!";
+    NSMutableArray *keys = [WorkoutManager sharedManager].workouts;
+    NSString *key = keys[indexPath.row];
+    
+    cell.textLabel.text = key;;
     
     return cell;
 }

@@ -15,6 +15,9 @@
 		3D2D2F1A1B86B5A400E210BA /* unit_1_final_projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F191B86B5A400E210BA /* unit_1_final_projectTests.m */; };
 		3D2D2F251B86B5A400E210BA /* unit_1_final_projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */; };
 		3DD589AC1B8924E500B74EB3 /* GOWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD589AB1B8924E500B74EB3 /* GOWorkoutViewController.m */; };
+		3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C01B893332008194DB /* WorkoutManager.m */; };
+		3DDB60C41B893413008194DB /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C31B893413008194DB /* Workout.m */; };
+		3DDB60C71B893477008194DB /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C61B893477008194DB /* Exercises.m */; };
 		9A8CD52B1B87900000A194D9 /* GOStopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */; };
 		9A8CD52E1B879F5A00A194D9 /* LapTimerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CD52D1B879F5A00A194D9 /* LapTimerTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,12 @@
 		3D2D2F261B86B5A400E210BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DD589AA1B8924E500B74EB3 /* GOWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWorkoutViewController.h; sourceTree = "<group>"; };
 		3DD589AB1B8924E500B74EB3 /* GOWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWorkoutViewController.m; sourceTree = "<group>"; };
+		3DDB60BF1B893332008194DB /* WorkoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutManager.h; sourceTree = "<group>"; };
+		3DDB60C01B893332008194DB /* WorkoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutManager.m; sourceTree = "<group>"; };
+		3DDB60C21B893413008194DB /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		3DDB60C31B893413008194DB /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		3DDB60C51B893477008194DB /* Exercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercises.h; sourceTree = "<group>"; };
+		3DDB60C61B893477008194DB /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		9A8CD5291B87900000A194D9 /* GOStopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOStopwatchViewController.h; sourceTree = "<group>"; };
 		9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOStopwatchViewController.m; sourceTree = "<group>"; };
 		9A8CD52C1B879F5A00A194D9 /* LapTimerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapTimerTableViewCell.h; sourceTree = "<group>"; };
@@ -109,6 +118,12 @@
 			children = (
 				3D2D2F021B86B5A300E210BA /* AppDelegate.h */,
 				3D2D2F031B86B5A300E210BA /* AppDelegate.m */,
+				3DDB60BF1B893332008194DB /* WorkoutManager.h */,
+				3DDB60C01B893332008194DB /* WorkoutManager.m */,
+				3DDB60C21B893413008194DB /* Workout.h */,
+				3DDB60C31B893413008194DB /* Workout.m */,
+				3DDB60C51B893477008194DB /* Exercises.h */,
+				3DDB60C61B893477008194DB /* Exercises.m */,
 				9A8CD5291B87900000A194D9 /* GOStopwatchViewController.h */,
 				9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */,
 				3DD589AA1B8924E500B74EB3 /* GOWorkoutViewController.h */,
@@ -282,8 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8CD52B1B87900000A194D9 /* GOStopwatchViewController.m in Sources */,
+				3DDB60C71B893477008194DB /* Exercises.m in Sources */,
 				3DD589AC1B8924E500B74EB3 /* GOWorkoutViewController.m in Sources */,
+				3DDB60C41B893413008194DB /* Workout.m in Sources */,
 				3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */,
+				3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */,
 				3D2D2F011B86B5A300E210BA /* main.m in Sources */,
 				9A8CD52E1B879F5A00A194D9 /* LapTimerTableViewCell.m in Sources */,
 			);
