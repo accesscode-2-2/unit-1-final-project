@@ -10,6 +10,9 @@
 
 @implementation SpecialEventViewController
 
+- (IBAction)titleTextFiled2:(id)sender {
+}
+
 - (IBAction)startButton:(id)sender {
     
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
