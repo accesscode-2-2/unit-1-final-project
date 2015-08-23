@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Timer-->
+        <scene sceneID="vWc-GO-Rkh">
+            <objects>
+                <viewController id="pzV-SG-jHg" customClass="TimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vcR-yP-NJR"/>
+                        <viewControllerLayoutGuide type="bottom" id="5RO-6d-Mia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uKv-Yz-fVz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-4D-LIh">
+                                <rect key="frame" x="12" y="207" width="577" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Pause Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pause:" destination="pzV-SG-jHg" eventType="touchUpInside" id="TiG-WM-lCA"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
+                                <rect key="frame" x="0.0" y="389" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="461964873.77909702">
+                                    <!--2015-08-22 19:34:33 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
+                                <rect key="frame" x="12" y="152" width="577" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pause:" destination="pzV-SG-jHg" eventType="touchUpInside" id="8vg-H8-l9S"/>
+                                    <action selector="startButton:" destination="pzV-SG-jHg" eventType="touchUpInside" id="RnU-06-uCl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gis-ba-krU">
+                                <rect key="frame" x="16" y="70" width="568" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <color key="textColor" red="0.52421992978849841" green="0.76330989899932145" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.98883551431362504" green="0.70222294690605858" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
+                                <rect key="frame" x="12" y="263" width="577" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Reset Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerReset:" destination="pzV-SG-jHg" eventType="touchUpInside" id="whE-uV-F0s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IRl-cz-v6d" firstAttribute="top" secondItem="ZlD-4D-LIh" secondAttribute="bottom" constant="20" id="0db-Vs-QSw"/>
+                            <constraint firstItem="ZlD-4D-LIh" firstAttribute="top" secondItem="t6j-xf-S9n" secondAttribute="bottom" constant="19" id="0vQ-LY-vfo"/>
+                            <constraint firstAttribute="trailing" secondItem="t6j-xf-S9n" secondAttribute="trailing" constant="11" id="28d-R5-6QK"/>
+                            <constraint firstItem="ZlD-4D-LIh" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="2SN-zb-XO1"/>
+                            <constraint firstItem="gis-ba-krU" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="16" id="2jJ-ow-O3s"/>
+                            <constraint firstItem="nQ5-9V-n3s" firstAttribute="top" secondItem="IRl-cz-v6d" secondAttribute="bottom" constant="36" id="C75-z2-xKJ"/>
+                            <constraint firstItem="IRl-cz-v6d" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="CWP-5Y-ORO"/>
+                            <constraint firstAttribute="trailing" secondItem="IRl-cz-v6d" secondAttribute="trailing" constant="11" id="Dbn-Zq-ipK"/>
+                            <constraint firstItem="ZlD-4D-LIh" firstAttribute="top" secondItem="t6j-xf-S9n" secondAttribute="bottom" constant="10" id="FNY-5G-7NJ"/>
+                            <constraint firstItem="t6j-xf-S9n" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="Gyk-9j-bPG"/>
+                            <constraint firstItem="ZlD-4D-LIh" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="JeG-1U-49X"/>
+                            <constraint firstAttribute="trailing" secondItem="t6j-xf-S9n" secondAttribute="trailing" constant="11" id="Nhd-x0-UcQ"/>
+                            <constraint firstItem="t6j-xf-S9n" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="O7P-co-Yg6"/>
+                            <constraint firstAttribute="trailing" secondItem="nQ5-9V-n3s" secondAttribute="trailing" id="UeO-i6-Uu2"/>
+                            <constraint firstItem="IRl-cz-v6d" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="V3w-X0-GIR"/>
+                            <constraint firstAttribute="trailing" secondItem="ZlD-4D-LIh" secondAttribute="trailing" constant="11" id="Ynk-uS-p4b"/>
+                            <constraint firstItem="gis-ba-krU" firstAttribute="top" secondItem="vcR-yP-NJR" secondAttribute="bottom" constant="50" id="Z3B-tf-YYC"/>
+                            <constraint firstAttribute="trailing" secondItem="IRl-cz-v6d" secondAttribute="trailing" constant="11" id="d6D-8H-f3X"/>
+                            <constraint firstItem="5RO-6d-Mia" firstAttribute="top" secondItem="nQ5-9V-n3s" secondAttribute="bottom" id="ddz-cC-Bhw"/>
+                            <constraint firstItem="IRl-cz-v6d" firstAttribute="top" secondItem="ZlD-4D-LIh" secondAttribute="bottom" constant="8" id="gFi-FN-bAS"/>
+                            <constraint firstAttribute="trailing" secondItem="ZlD-4D-LIh" secondAttribute="trailing" constant="11" id="kVL-z7-lP7"/>
+                            <constraint firstItem="t6j-xf-S9n" firstAttribute="top" secondItem="gis-ba-krU" secondAttribute="bottom" constant="42" id="oEX-I9-Gtd"/>
+                            <constraint firstAttribute="trailing" secondItem="gis-ba-krU" secondAttribute="trailing" constant="16" id="oUe-Wy-wGn"/>
+                            <constraint firstItem="nQ5-9V-n3s" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" id="sKu-lQ-qTY"/>
+                            <constraint firstItem="nQ5-9V-n3s" firstAttribute="top" secondItem="IRl-cz-v6d" secondAttribute="bottom" constant="36" id="ua5-cE-tCz"/>
+                            <constraint firstItem="t6j-xf-S9n" firstAttribute="top" secondItem="gis-ba-krU" secondAttribute="bottom" constant="21" id="vRw-AI-pj4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="28d-R5-6QK"/>
+                                <exclude reference="O7P-co-Yg6"/>
+                                <exclude reference="oEX-I9-Gtd"/>
+                                <exclude reference="0vQ-LY-vfo"/>
+                                <exclude reference="2SN-zb-XO1"/>
+                                <exclude reference="FNY-5G-7NJ"/>
+                                <exclude reference="Ynk-uS-p4b"/>
+                                <exclude reference="CWP-5Y-ORO"/>
+                                <exclude reference="d6D-8H-f3X"/>
+                                <exclude reference="gFi-FN-bAS"/>
+                                <exclude reference="C75-z2-xKJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timer" image="clock-alarm-7" id="4Si-j5-Udu"/>
+                    <connections>
+                        <outlet property="countDownTimer" destination="nQ5-9V-n3s" id="ID9-n1-Qj6"/>
+                        <outlet property="displayTime" destination="gis-ba-krU" id="HAu-JR-svh"/>
+                        <outlet property="timerReset" destination="IRl-cz-v6d" id="z1z-nS-NNe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGs-mL-eZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="248"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="TpN-gz-kDw">
+            <objects>
+                <viewController id="GaP-br-qKn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a3a-hs-aPj"/>
+                        <viewControllerLayoutGuide type="bottom" id="9yc-jr-OQf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tjt-iP-Aoy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="clock-stopwatch-7" id="T7a-4V-y6H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AqM-ug-ddX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="-406"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cZ8-m7-ETG">
+            <objects>
+                <tabBarController id="Naf-OP-4Rq" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="YbX-7i-2bi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GaP-br-qKn" kind="relationship" relationship="viewControllers" id="efu-Zn-g1l"/>
+                        <segue destination="pzV-SG-jHg" kind="relationship" relationship="viewControllers" id="xCC-6K-vUp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56q-Qy-t5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="-74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock-alarm-7" width="30" height="30"/>
+        <image name="clock-stopwatch-7" width="29" height="30"/>
+    </resources>
+</document>
