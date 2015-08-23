@@ -13,9 +13,7 @@
 @interface Workout : NSObject
 
 @property (nonatomic) NSMutableArray *exercises;
-@property (nonatomic) Exercises *exercise1;
-@property (nonatomic) Exercises *exercise2;
-@property (nonatomic) Exercises *exercise3;
+@property (nonatomic) NSString *workoutName;
 - (void) initializeData;
 
 @end

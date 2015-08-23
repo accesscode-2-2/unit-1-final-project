@@ -10,8 +10,8 @@
 
 @interface WorkoutManager : NSObject
 
-@property (nonatomic,retain) NSMutableArray *workouts;
-@property (nonatomic, retain) NSArray *workout1;
+@property (nonatomic,strong) NSMutableArray *workouts;
+//@property (nonatomic, retain) NSString *workoutName;
 
 + (WorkoutManager *) sharedManager;
 

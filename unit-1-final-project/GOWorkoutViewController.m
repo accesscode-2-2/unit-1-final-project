@@ -13,7 +13,7 @@
 @interface GOWorkoutViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property (strong, nonatomic) Workout *model;
+@property (strong, nonatomic) Workout *model;
 
 @end
 
@@ -25,24 +25,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-//    self.model = [[Workout alloc]init];
-//    
-//    [self.model initializeData];
-    
-//    
-    WorkoutManager *sharedManager = [WorkoutManager sharedManager];
-//    
-//    sharedManager = [[WorkoutManager alloc]init];
-//    
-//    [sharedManager preLoadedWorkouts];
-//    
-    [sharedManager.workouts addObject:@"what"];
-//    
-//    NSLog(@"%@", sharedManager.workouts);
 
     
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,15 +48,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"workoutIdentifier" forIndexPath:indexPath];
     
-    NSMutableArray *keys = [WorkoutManager sharedManager].workouts;
-    NSString *key = keys[indexPath.row];
-    
-    cell.textLabel.text = key;;
-    
+    NSMutableArray *workouts = [WorkoutManager sharedManager].workouts;
+    Workout *workout = workouts[indexPath.row];
+    //Exercises *exercise = [workout.exercises lastObject];
+    cell.textLabel.text = workout.workoutName;
     return cell;
 }
 

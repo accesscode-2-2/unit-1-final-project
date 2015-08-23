@@ -22,7 +22,7 @@
     dispatch_once(&onceToken, ^{
         sharedMyManager = [[self alloc] init];
         sharedMyManager.workouts = [[NSMutableArray alloc] init];
-       // [sharedMyManager preLoadedWorkouts];
+        [sharedMyManager preLoadedWorkouts];
     });
     return sharedMyManager;
 }
@@ -30,21 +30,32 @@
 - (void)preLoadedWorkouts {
     Workout *workout1 = [[Workout alloc] init];
     workout1.exercises = [[NSMutableArray alloc] init];
+    workout1.workoutName = @"Go Lean!";
     
     Exercises *exercise1 = [[Exercises alloc] init];
-    exercise1.nameOfExercise = @"pushups";
+    exercise1.nameOfExercise = @"Push-ups";
     exercise1.exerciseTime = 120.0;
     
     Exercises *exercise2 = [[Exercises alloc] init];
-    exercise2.nameOfExercise = @"pullups";
+    exercise2.nameOfExercise = @"Pull-ups";
     
     [workout1.exercises addObject:exercise1];
     [workout1.exercises addObject:exercise2];
     
-    // // //    // create more workouts
+    
+    // 2nd Workout
+    
+    Workout *workout2 = [[Workout alloc] init];
+    workout2.exercises = [[NSMutableArray alloc] init];
+    workout2.workoutName = @"Go Hard!";
+    
+    [workout2.exercises addObject:exercise1];
+    [workout2.exercises addObject:exercise2];
     
     
-    [[WorkoutManager sharedManager].workouts addObject:workout1];
+    
+    [self.workouts addObject:workout1];
+    [self.workouts addObject:workout2];
 }
 
 
