@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		003B48381B88CEC8004C430A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003B48371B88CEC8004C430A /* Main.storyboard */; };
+		003B48411B8A322E004C430A /* SpecialEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B48401B8A322E004C430A /* SpecialEventViewController.m */; };
 		45855BAE1B86A2A3008B61B8 /* StopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45855BAD1B86A2A3008B61B8 /* StopwatchViewController.m */; };
 		45855BB11B86A2BB008B61B8 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45855BB01B86A2BB008B61B8 /* TimerViewController.m */; };
 		45855BB31B88FB48008B61B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45855BB21B88FB48008B61B8 /* QuartzCore.framework */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		003B48371B88CEC8004C430A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		003B483F1B8A322E004C430A /* SpecialEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialEventViewController.h; sourceTree = "<group>"; };
+		003B48401B8A322E004C430A /* SpecialEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialEventViewController.m; sourceTree = "<group>"; };
 		45855BAC1B86A2A3008B61B8 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchViewController.h; sourceTree = "<group>"; };
 		45855BAD1B86A2A3008B61B8 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchViewController.m; sourceTree = "<group>"; };
 		45855BAF1B86A2BB008B61B8 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				45855BAD1B86A2A3008B61B8 /* StopwatchViewController.m */,
 				45855BAF1B86A2BB008B61B8 /* TimerViewController.h */,
 				45855BB01B86A2BB008B61B8 /* TimerViewController.m */,
+				003B483F1B8A322E004C430A /* SpecialEventViewController.h */,
+				003B48401B8A322E004C430A /* SpecialEventViewController.m */,
 				003B48371B88CEC8004C430A /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -230,6 +235,7 @@
 			files = (
 				45855BB11B86A2BB008B61B8 /* TimerViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
+				003B48411B8A322E004C430A /* SpecialEventViewController.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				45855BAE1B86A2A3008B61B8 /* StopwatchViewController.m in Sources */,
 			);
