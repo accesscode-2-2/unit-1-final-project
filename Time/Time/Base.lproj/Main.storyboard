@@ -18,16 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRT-W9-I8T">
-                                <rect key="frame" x="281" y="285" width="39" height="30"/>
-                                <state key="normal" title="Timer">
+                                <rect key="frame" x="257" y="285" width="86" height="30"/>
+                                <state key="normal" title="Start/Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-gh-gdV">
+                                <rect key="frame" x="248" y="335" width="104" height="30"/>
+                                <state key="normal" title="Pause/Resume">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-46-M0q">
+                                <rect key="frame" x="267" y="385" width="67" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Gw-aHZ">
+                                <rect key="frame" x="0.0" y="6.5" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="3We-eJ-Oic"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="462037736.35243899">
+                                    <!--2015-08-23 15:48:56 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="leading" secondItem="MlK-BN-md6" secondAttribute="leadingMargin" constant="-16" id="1BM-ob-0fp"/>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="top" secondItem="MlK-BN-md6" secondAttribute="topMargin" id="KYF-o9-n8I"/>
+                            <constraint firstAttribute="centerX" secondItem="8ku-46-M0q" secondAttribute="centerX" id="S45-d2-noI"/>
+                            <constraint firstAttribute="centerX" secondItem="Z9p-gh-gdV" secondAttribute="centerX" id="ZCL-jQ-w9a"/>
+                            <constraint firstItem="Z9p-gh-gdV" firstAttribute="top" secondItem="ZRT-W9-I8T" secondAttribute="bottom" constant="20" id="qsz-cJ-PCM"/>
                             <constraint firstAttribute="centerX" secondItem="ZRT-W9-I8T" secondAttribute="centerX" id="so5-6i-ct4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4UM-Gw-aHZ" secondAttribute="trailing" constant="-16" id="tm4-2r-Irm"/>
                             <constraint firstAttribute="centerY" secondItem="ZRT-W9-I8T" secondAttribute="centerY" id="v14-Kq-2zE"/>
+                            <constraint firstItem="8ku-46-M0q" firstAttribute="top" secondItem="Z9p-gh-gdV" secondAttribute="bottom" constant="20" id="xY3-3W-GYl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="EhG-Qa-Wpq"/>
