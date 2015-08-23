@@ -21,20 +21,15 @@
 @end
 
 @implementation StopwatchViewController
-@synthesize stopwatchLabel;
-@synthesize lapLabel;
-@synthesize lapTableView;
-@synthesize dataArray;
-
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    stopwatchLabel.text = @"00.00.00";
-    lapLabel.text =@"00.00.00";
-    running = FALSE;
-    startDate = [NSDate date];
-    restartDate =[NSDate date];
+    self.stopwatchLabel.text = @"00.00.00";
+    self.lapLabel.text =@"00.00.00";
+    self.running = FALSE;
+    self.startDate = [NSDate date];
+    self.restartDate =[NSDate date];
     self.startButton.layer.cornerRadius = 37.5;
     self.startButton.clipsToBounds = YES;
     self.resetButton.layer.cornerRadius = 37.5;
@@ -56,33 +51,33 @@
 
 - (IBAction)startButton:(id)sender {
     
-    if(!running){
-       running = TRUE;
+    if(!self.running){
+       self.running = TRUE;
         [sender setTitle:@"Pause" forState:UIControlStateNormal];
         [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
         
-        if (stopTimer == nil && lapTimer == nil) {
-            stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+        if (self.stopTimer == nil && self.lapTimer == nil) {
+            self.stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                          target:self
                                                        selector:@selector(updateTimer)
                                                        userInfo:nil
                                                         repeats:YES];
-            lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+            self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                          target:self
-                                                       selector:@selector(lapTimer)
+                                                       selector:@selector(rememberTimer)
                                                        userInfo:nil
                                                         repeats:YES];
            
             
         }
     }else{
-        running = FALSE;
+        self.running = FALSE;
         [sender setTitle:@"Start" forState:UIControlStateNormal];
          [self.resetButton setTitle:@"Reset" forState:UIControlStateNormal];
-        [stopTimer invalidate];
-        stopTimer = nil;
-        [lapTimer invalidate];
-        lapTimer = nil;
+        [self.stopTimer invalidate];
+        self.stopTimer = nil;
+        [self.lapTimer invalidate];
+        self.lapTimer = nil;
         
     }
 
@@ -91,41 +86,41 @@
 -(void)updateTimer{
     NSDate *currentDate = [NSDate date];
     
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:startDate];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"mm:ss.SS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
-    stopwatchLabel.text = timeString;
+    self.stopwatchLabel.text = timeString;
 }
 
-- (void)lapTimer {
+-(void)rememberTimer{
     NSDate *currentDate = [NSDate date];
     
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:restartDate];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.restartDate];
     
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"mm:ss.SS"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
-    lapLabel.text = timeString;
+    self.lapLabel.text = timeString;
 }
 
 - (IBAction)resetButton:(id)sender {
     [self.lapTableView reloadData];
-    if (running ) {
+    if (self.running ) {
         [self.dataArray addObject:self.lapLabel.text];
         [self.lapTableView reloadData];
-        [lapTimer invalidate];
-        lapTimer = nil;
-        restartDate = [NSDate date];
+        [self.lapTimer invalidate];
+        self.lapTimer = nil;
+        self.restartDate = [NSDate date];
         [self lapTimer];
-        lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+        self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                     target:self
-                                                  selector:@selector(lapTimer)
+                                                  selector:@selector(rememberTimer)
                                                   userInfo:nil
                                                    repeats:YES];
       
@@ -133,14 +128,14 @@
     }else{
         
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
-        [stopTimer invalidate];
-        stopTimer = nil;
-        [lapTimer invalidate];
-        lapTimer = nil;
-        restartDate = [NSDate date];
-        startDate = [NSDate date];
-        stopwatchLabel.text = @"00.00.00";
-        lapLabel.text = @"00.00.00";
+        [self.stopTimer invalidate];
+        self.stopTimer = nil;
+        [self.lapTimer invalidate];
+        self.lapTimer = nil;
+        self.restartDate = [NSDate date];
+        self.startDate = [NSDate date];
+        self.stopwatchLabel.text = @"00.00.00";
+        self.lapLabel.text = @"00.00.00";
         [self.dataArray removeAllObjects];
         [self.lapTableView reloadData];
         

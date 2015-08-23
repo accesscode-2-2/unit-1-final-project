@@ -81,6 +81,40 @@
             </objects>
             <point key="canvasLocation" x="1127" y="552"/>
         </scene>
+        <!--World Clock-->
+        <scene sceneID="CHQ-i2-S0y">
+            <objects>
+                <viewController id="1AU-RR-Zii" customClass="WorldClockViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nat-lT-koY"/>
+                        <viewControllerLayoutGuide type="bottom" id="xG2-us-lRw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c39-ZV-XCI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3u-Kr-Di6">
+                                <rect key="frame" x="279" y="290" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Z3u-Kr-Di6" secondAttribute="centerY" id="NVa-yu-v40"/>
+                            <constraint firstAttribute="centerX" secondItem="Z3u-Kr-Di6" secondAttribute="centerX" id="k5o-W4-A4s"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="World Clock" image="World" id="GR4-I3-aUa"/>
+                    <connections>
+                        <outlet property="worldClockLabel" destination="Z3u-Kr-Di6" id="2nS-Uj-Piz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoX-V0-bBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="1305"/>
+        </scene>
         <!--Stopwatch-->
         <scene sceneID="Dx3-Aq-zCy">
             <objects>
@@ -273,6 +307,7 @@
                     <connections>
                         <segue destination="YIE-n8-cpU" kind="relationship" relationship="viewControllers" id="QD2-YM-YHM"/>
                         <segue destination="0iZ-nY-PBZ" kind="relationship" relationship="viewControllers" id="5e9-4x-EAm"/>
+                        <segue destination="1AU-RR-Zii" kind="relationship" relationship="viewControllers" id="USz-3k-6yT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfH-o4-nSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,5 +318,6 @@
     <resources>
         <image name="StopWatch" width="29" height="29"/>
         <image name="Timer" width="29" height="29"/>
+        <image name="World" width="29" height="29"/>
     </resources>
 </document>
