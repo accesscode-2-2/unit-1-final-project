@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 //For use with UIPickerView
-@property (nonatomic) CADisplayLink *timer;
+@property (nonatomic) NSTimer *timer;
 @property (nonatomic) CFTimeInterval initialTime;
 @property (nonatomic) CFTimeInterval lapInitialTime;
 @property (nonatomic) NSArray *presetTime;
