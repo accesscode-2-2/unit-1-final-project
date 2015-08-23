@@ -38,6 +38,16 @@
     self.lapTableView.delegate = self;
     //self.lapTableView.backgroundColor = [UIColor blackColor];
     
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+    
 }
 
 - (NSString *)formatTimeString:(CFTimeInterval)timeInterval{
@@ -97,16 +107,18 @@
     return [self.lapTimes count];
 }
 
-//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 //    cell.backgroundColor = [UIColor blackColor];
 //    cell.textLabel.textColor = [UIColor whiteColor];
-//}
+    cell.textLabel.font = [UIFont fontWithName:@"Orbitron-Regular" size:15];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"DigitalReadoutExpUpright" size:19];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
     cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:@"Digitial Readout ExpUpright" size:15];
     return cell;
 }
 
