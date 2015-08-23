@@ -4,6 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="digital-7.ttf">
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Stopwatch-->
         <scene sceneID="RIi-JI-uHc">
@@ -24,17 +34,17 @@
                                         <rect key="frame" x="100" y="60" width="400" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-nY-S8U">
-                                                <rect key="frame" x="20" y="20" width="360" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <rect key="frame" x="20" y="15" width="360" height="50"/>
+                                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="59"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="fpP-nY-S8U" secondAttribute="bottom" constant="20" id="3dg-B8-4dI"/>
+                                            <constraint firstAttribute="bottom" secondItem="fpP-nY-S8U" secondAttribute="bottom" constant="15" id="3dg-B8-4dI"/>
                                             <constraint firstAttribute="trailing" secondItem="fpP-nY-S8U" secondAttribute="trailing" constant="20" id="Cun-pR-Llu"/>
-                                            <constraint firstItem="fpP-nY-S8U" firstAttribute="top" secondItem="Ohr-Vj-5NK" secondAttribute="top" constant="20" id="K4o-vW-6CP"/>
+                                            <constraint firstItem="fpP-nY-S8U" firstAttribute="top" secondItem="Ohr-Vj-5NK" secondAttribute="top" constant="15" id="K4o-vW-6CP"/>
                                             <constraint firstAttribute="height" constant="80" id="Mzi-VP-Us0"/>
                                             <constraint firstItem="fpP-nY-S8U" firstAttribute="leading" secondItem="Ohr-Vj-5NK" secondAttribute="leading" constant="20" id="UUL-5p-4Hu"/>
                                             <constraint firstAttribute="width" constant="400" id="bda-kK-Acy"/>
@@ -46,7 +56,7 @@
                                             <constraint firstAttribute="width" constant="100" id="FPk-pg-riH"/>
                                             <constraint firstAttribute="height" constant="50" id="NAj-Ab-qnI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="36"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +71,7 @@
                                             <constraint firstAttribute="height" constant="50" id="7LP-mv-qO2"/>
                                             <constraint firstAttribute="width" constant="100" id="TZY-nZ-nVh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="36"/>
                                         <state key="normal" title="Reset">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +86,7 @@
                                             <constraint firstAttribute="width" constant="90" id="HdG-ar-e8a"/>
                                             <constraint firstAttribute="height" constant="35" id="gZx-8A-3L9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -108,13 +118,13 @@
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zVQ-oq-ZqO">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="21"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iXZ-KE-R1N">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="21"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

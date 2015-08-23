@@ -8,10 +8,14 @@
 
 #import "StopWatchViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#define Digital(s) [UIFont fontWithName:@"digital-7.ttf" size:s]
+#import <AVFoundation/AVFoundation.h> // this allows us to include sounds!
 
 
 @interface StopWatchViewController () <UITableViewDataSource, UITabBarDelegate>
-
+{
+    AVAudioPlayer *_clock;
+}
 @property (strong, nonatomic) IBOutlet UITableView *LapTableView;
 @property (nonatomic) BOOL LapTapped;
 @property (nonatomic) BOOL SaveLappedTime;
@@ -33,7 +37,7 @@
 @property (nonatomic) NSDate *lapStartTime;  //
 
 
-
+@property (nonatomic) NSTimeInterval LapTotalSessionTime;  //
 @property (nonatomic) NSTimeInterval totalSessionTime;  //
 @property (nonatomic) NSTimeInterval totalTime;    //
 @property (nonatomic) NSTimeInterval distance;
@@ -46,8 +50,17 @@
     [super viewDidLoad];
     
     [[self runningStopWatch] invalidate];
- 
-    self.LapArray = [[NSMutableArray alloc]init];
+    
+#pragma mark - Ringtones
+    
+    // this adds ringtone sound
+    NSString *path = [NSString stringWithFormat:@"%@/clock-ticking-5.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    // Create audio player object and initialize with URL to sound
+    _clock = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    
+     self.LapArray = [[NSMutableArray alloc]init];
     
     self.LapTableView.dataSource = self;
     self.LapTableView.delegate = self;
@@ -84,16 +97,16 @@
 - (void)timerLapFired:(NSTimer *)LapTimer {
     
     // get the current time
-    NSDate *now = [[NSDate alloc] init];
+    NSDate *now2 = [[NSDate alloc] init];
     
-    self.totalSessionTime = [now timeIntervalSinceDate:self.lapStartTime];
-    self.distance =  self.totalTime + self.totalSessionTime;
+    self.LapTotalSessionTime = [now2 timeIntervalSinceDate:self.lapStartTime];
+    self.distance =  self.totalTime + self.LapTotalSessionTime;
     
  
     if (self.LapTapped == NO)
         self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.distance];
     else if (self.LapTapped == YES)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.totalSessionTime];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.LapTotalSessionTime];
  
 }
 
@@ -106,12 +119,12 @@
 
 - (IBAction)startStopButtonTapped:(UIButton *)sender {
     
-    self.lapStartTime = [[NSDate alloc] init];
+     self.lapStartTime = [[NSDate alloc] init];
 
     //check Label's text
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
     if ([startStopActualLabel isEqualToString:@"Start"] ) {
-      
+        [_clock play];
         // set self.startTime to now
         self.startTime = [[NSDate alloc] init];
         
@@ -144,7 +157,8 @@
     
     
     else if ([startStopActualLabel isEqualToString:@"Stop"] ) {
-        
+        [_clock stop];
+
         // keep track of the total amount of time that this stopwatch has been running
         self.totalTime = self.totalTime + self.totalSessionTime;
         
@@ -166,10 +180,12 @@
 - (IBAction)resetLapButtonTapped:(UIButton *)sender {
     NSString *resetLapActualLabel =  self.resetLapButton.titleLabel.text;
     if ([resetLapActualLabel isEqualToString:@"Reset"]) {
-        
+        [_clock stop];
+
         [[self runningStopWatch] invalidate];
         self.totalSessionTime = 0;
         self.totalTime = 0;
+        self.LapTotalSessionTime = 0;
         
         [self.LapArray removeAllObjects];
         [self.reversedLaps removeAllObjects];
@@ -241,7 +257,7 @@
     
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.reversedLaps count] - indexPath.row];
-    cell.detailTextLabel.text = self.reversedLaps[[self.reversedLaps count]  - 1 - indexPath.row];
+    cell.detailTextLabel.text = self.reversedLaps[indexPath.row];
 
     
     
