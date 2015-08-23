@@ -159,7 +159,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let milliseconds = interval - floor(interval)
         if floor(milliseconds * 100) <= 9{
 //            print(String(format: "%02d:%02d:0%d", minutes, seconds, floor(milliseconds * 100)))
-            return String(format: "%02d:%02d:0%f", minutes, seconds, milliseconds)
+            return String(format: "%02d:%02d:00", minutes, seconds, milliseconds)
         }
 //        print(String(format: "%02d:%02d:%.f", minutes, seconds, milliseconds * 100))
         return String(format: "%02d:%02d:%.f", minutes, seconds, milliseconds * 100)
