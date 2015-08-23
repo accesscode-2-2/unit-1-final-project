@@ -61,7 +61,7 @@
         [sender setTitle:@"Pause" forState:UIControlStateNormal];
         [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
         
-        if (stopTimer == nil) {
+        if (stopTimer == nil && lapTimer == nil) {
             stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                          target:self
                                                        selector:@selector(updateTimer)
@@ -137,6 +137,7 @@
         stopTimer = nil;
         [lapTimer invalidate];
         lapTimer = nil;
+        restartDate = [NSDate date];
         startDate = [NSDate date];
         stopwatchLabel.text = @"00.00.00";
         lapLabel.text = @"00.00.00";
@@ -166,6 +167,7 @@
     
     return cell;
 }
+
 
 
 
