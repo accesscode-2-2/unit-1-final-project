@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 //For use with UIPickerView
-@property (nonatomic) CADisplayLink *timer;
-@property (nonatomic) CFTimeInterval initialTime;
-@property (nonatomic) CFTimeInterval lapInitialTime;
+@property (nonatomic) NSTimer *timer;
+//@property (nonatomic) CFTimeInterval initialTime;
+//@property (nonatomic) CFTimeInterval lapInitialTime;
 @property (nonatomic) CGFloat countdownTime;
 
 @property (nonatomic) NSInteger component;
@@ -79,7 +79,7 @@
         }
         else if([self.timerPickerView selectedRowInComponent:2] % 60 == 00){
             
-            self.row = [self.timerPickerView selectedRowInComponent:2] +59;
+            self.row = [self.timerPickerView selectedRowInComponent:2] +60;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
             
             if([self.timerPickerView selectedRowInComponent:1] != 00){
@@ -88,9 +88,34 @@
                 [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 
             }
+            if([self.timerPickerView selectedRowInComponent:0] != 00){
+                //hour
+                if([self.timerPickerView selectedRowInComponent:1]%60 == 0){
+                    self.row = [self.timerPickerView selectedRowInComponent:0] - 1;
+                    [self.timerPickerView selectRow:self.row inComponent:0 animated:YES];
+                }
+                //minute
+                if([self.timerPickerView selectedRowInComponent:1]%60 == 00){
+                    self.row = [self.timerPickerView selectedRowInComponent:1]+59;
+                    [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
+                }else{
+                  //  self.row = [self.timerPickerView selectedRowInComponent:1]-1;
+                  //  [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
+                }
+                //second
+                if([self.timerPickerView selectedRowInComponent:2]%60 == 00){
+                    self.row = [self.timerPickerView selectedRowInComponent:2] +59;
+                    [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
+                }else{
+                    self.row = [self.timerPickerView selectedRowInComponent:2]-1;
+                    [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
+                }
+            }
         }
-        self.row = [self.timerPickerView selectedRowInComponent:2] - 1;
-        [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
+        else{
+            self.row = [self.timerPickerView selectedRowInComponent:2] - 1;
+            [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
+        }
     }
 }
 
