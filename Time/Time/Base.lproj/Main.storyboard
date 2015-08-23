@@ -9,6 +9,11 @@
         <mutableArray key="Digireu_.ttf">
             <string>DigitalReadoutExpUpright</string>
             <string>DigitalReadoutExpUpright</string>
+            <string>DigitalReadoutExpUpright</string>
+        </mutableArray>
+        <mutableArray key="Orbitron-Regular.ttf">
+            <string>Orbitron-Regular</string>
+            <string>Orbitron-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -27,27 +32,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhC-0p-7Z6" userLabel="TimerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-Nl-aKD">
-                                        <rect key="frame" x="166" y="97" width="268" height="46"/>
-                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="46"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpC-Td-v1e" userLabel="shadow big">
+                                        <rect key="frame" x="158" y="131" width="285" height="49"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="49"/>
+                                        <color key="textColor" red="0.0" green="0.39782072368421051" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHr-rR-NAK">
-                                        <rect key="frame" x="233" y="66" width="134" height="23"/>
-                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="23"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-Nl-aKD" userLabel="time big">
+                                        <rect key="frame" x="158" y="131" width="285" height="49"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="49"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.000" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHr-rR-NAK" userLabel="time small">
+                                        <rect key="frame" x="224" y="97" width="152" height="26"/>
+                                        <fontDescription key="fontDescription" name="DigitalReadoutExpUpright" family="Digital Readout ExpUpright" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="0.14393862839999999" blue="0.1343245096" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="bjK-Nl-aKD" secondAttribute="centerX" id="Lms-p7-5v0"/>
-                                    <constraint firstAttribute="centerY" secondItem="bjK-Nl-aKD" secondAttribute="centerY" id="US3-W4-HDk"/>
+                                    <constraint firstAttribute="bottom" secondItem="bjK-Nl-aKD" secondAttribute="bottom" constant="60" id="TZ0-xb-4jz"/>
                                     <constraint firstAttribute="centerX" secondItem="hHr-rR-NAK" secondAttribute="centerX" id="aJE-sn-ax4"/>
                                     <constraint firstItem="bjK-Nl-aKD" firstAttribute="top" secondItem="hHr-rR-NAK" secondAttribute="bottom" constant="8" id="gXe-fp-teF"/>
+                                    <constraint firstAttribute="centerX" secondItem="BpC-Td-v1e" secondAttribute="centerX" id="kUS-Os-iEM"/>
                                     <constraint firstAttribute="height" constant="222" id="q1a-xp-BCC"/>
+                                    <constraint firstAttribute="bottom" secondItem="BpC-Td-v1e" secondAttribute="bottom" constant="60" id="yO3-2c-wNA"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -59,8 +72,10 @@
                                 <rect key="frame" x="0.0" y="240" width="300" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wq3-RH-QzV" userLabel="startButton">
-                                        <rect key="frame" x="134" y="45" width="33" height="30"/>
+                                        <rect key="frame" x="119" y="43" width="63" height="34"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="22"/>
                                         <state key="normal" title="Start">
+                                            <color key="titleColor" red="0.0" green="0.83943256578947367" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -71,7 +86,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Wq3-RH-QzV" secondAttribute="centerX" id="0d1-90-ePa"/>
                                     <constraint firstAttribute="centerY" secondItem="Wq3-RH-QzV" secondAttribute="centerY" id="59m-XG-7rp"/>
@@ -82,12 +97,6 @@
                                     <constraint firstAttribute="centerY" secondItem="Wq3-RH-QzV" secondAttribute="centerY" id="fvf-8I-boW"/>
                                     <constraint firstAttribute="centerX" secondItem="Wq3-RH-QzV" secondAttribute="centerX" id="jTC-Lv-PSd"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="60"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="59m-XG-7rp"/>
@@ -100,8 +109,10 @@
                                 <rect key="frame" x="300" y="240" width="300" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9t-kZ-G2c" userLabel="lapButton">
-                                        <rect key="frame" x="135" y="45" width="30" height="30"/>
+                                        <rect key="frame" x="126" y="43" width="48" height="34"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="22"/>
                                         <state key="normal" title="Lap">
+                                            <color key="titleColor" red="0.0" green="0.83943256580000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -109,21 +120,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="acs-RG-Ppc"/>
                                     <constraint firstAttribute="centerX" secondItem="X9t-kZ-G2c" secondAttribute="centerX" id="ait-9d-dsu"/>
                                     <constraint firstAttribute="centerY" secondItem="X9t-kZ-G2c" secondAttribute="centerY" id="nF4-La-Prs"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="60"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gq0-By-Ax3">
-                                <rect key="frame" x="0.0" y="360" width="600" height="191"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gq0-By-Ax3">
+                                <rect key="frame" x="20" y="360" width="560" height="191"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.14393862839999999" blue="0.1343245096" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.27367268150000001" blue="0.26236381809999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,13 +156,13 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gq0-By-Ax3" secondAttribute="trailing" id="0mz-lj-lFn"/>
+                            <constraint firstAttribute="trailing" secondItem="gq0-By-Ax3" secondAttribute="trailing" constant="20" id="0mz-lj-lFn"/>
                             <constraint firstItem="9Yd-Ks-9f1" firstAttribute="width" secondItem="NFi-HH-fq8" secondAttribute="width" multiplier="0.5" id="3px-PE-met"/>
                             <constraint firstItem="YhC-0p-7Z6" firstAttribute="top" secondItem="NFi-HH-fq8" secondAttribute="top" id="5ta-dc-yFF"/>
                             <constraint firstItem="9Yd-Ks-9f1" firstAttribute="leading" secondItem="NFi-HH-fq8" secondAttribute="leading" id="9aG-rw-OSb"/>
-                            <constraint firstItem="gq0-By-Ax3" firstAttribute="leading" secondItem="NFi-HH-fq8" secondAttribute="leading" id="GGD-mc-uMs"/>
+                            <constraint firstItem="gq0-By-Ax3" firstAttribute="leading" secondItem="NFi-HH-fq8" secondAttribute="leading" constant="20" id="GGD-mc-uMs"/>
                             <constraint firstAttribute="centerY" secondItem="Lz0-d2-SUd" secondAttribute="centerY" id="Hda-9J-n05"/>
                             <constraint firstItem="xvc-3a-Q2D" firstAttribute="top" secondItem="gq0-By-Ax3" secondAttribute="bottom" id="Itr-h1-oaS"/>
                             <constraint firstAttribute="centerY" secondItem="9Yd-Ks-9f1" secondAttribute="centerY" id="IvU-xy-d1C"/>

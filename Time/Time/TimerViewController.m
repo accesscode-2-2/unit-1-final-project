@@ -51,7 +51,8 @@
     [self setupMinutes];
     [self setupSeconds];
     
-    self.pickerViewNumbers = [[NSMutableArray alloc] initWithObjects:self.hours, self.minutes, self.seconds, nil];
+    self.pickerViewNumbers = [[NSMutableArray alloc] initWithObjects:self.hours,
+                              self.minutes, self.seconds, nil];
 }
 
 - (void)viewDidLoad {
