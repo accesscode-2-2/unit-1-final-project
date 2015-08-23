@@ -159,10 +159,6 @@
 //    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - data source and delegate for PickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return [self.pickerViewNumbers count];
@@ -181,15 +177,5 @@
     self.presetTime = presetTime;
     NSLog(@"%@", self.presetTime);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
