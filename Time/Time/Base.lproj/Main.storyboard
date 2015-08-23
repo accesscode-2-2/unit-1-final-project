@@ -133,9 +133,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="cancelButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="qfC-jK-Gcv"/>
-                                            <action selector="resetButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="9Ce-Zr-mW9"/>
-                                            <action selector="stopButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="CVn-Ma-zdq"/>
+                                            <action selector="cancelButton:" destination="pDV-t1-AJp" eventType="touchUpInside" id="NGE-hd-gJz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-3M-jnI">
@@ -188,7 +186,7 @@
                     <tabBarItem key="tabBarItem" title="Timer" id="Wlr-ql-Isd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="cancelButton" destination="aIi-wg-VDm" id="SPH-fn-qY0"/>
+                        <outlet property="cancelButton" destination="aIi-wg-VDm" id="FV5-Zd-POf"/>
                         <outlet property="pauseButton" destination="Kw4-kH-cwT" id="Xir-zr-xen"/>
                         <outlet property="pickerView" destination="8YG-XG-nte" id="XeU-wB-7Y7"/>
                         <outlet property="resumeButton" destination="o5y-3M-jnI" id="8Wf-Yh-n4f"/>
