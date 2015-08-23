@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupDefaultPresets];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                             initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didSelectTimer)];
+    [self.navigationItem.leftBarButtonItem setEnabled:NO];
 }
 
 - (void)setupDefaultPresets {
@@ -29,8 +32,6 @@
     for (int i = 0; i < [keys count]; i++) {
         [self.presets setObject:values[i] forKey:keys[i]];
     }
-    
-    NSLog(@"%@", self.presets);
 }
 
 - (NSString *)formatSeconds:(CGFloat)seconds {
@@ -42,7 +43,13 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.navigationItem.leftBarButtonItem setEnabled:YES];
     CGFloat time = [[self.presets objectForKey:[self.presets keyAtIndex:indexPath.row]] floatValue];
+    [self.delegate presetTime:time];
+}
+
+- (void)didSelectTimer {
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 #pragma mark - Table view data source

@@ -215,7 +215,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Pah-cA-LNs" kind="presentation" id="aDN-Ga-Jrj"/>
+                                    <action selector="presetButtonTapped:" destination="itK-ui-6Sm" eventType="touchUpInside" id="cmA-l5-bQe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -247,7 +247,7 @@
         <!--Navigation Controller-->
         <scene sceneID="NfA-jj-mLc">
             <objects>
-                <navigationController id="Pah-cA-LNs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="presetsNavigationController" id="Pah-cA-LNs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZOs-8p-Jce">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

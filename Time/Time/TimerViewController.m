@@ -7,6 +7,7 @@
 //
 
 #import "TimerViewController.h"
+#import "PresetsTableViewController.h"
 
 @interface TimerViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
@@ -25,7 +26,6 @@
 
 @property (nonatomic) NSInteger component;
 @property (nonatomic) NSInteger row;
-
 
 @end
 
@@ -69,6 +69,15 @@
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
     
+}
+
+- (IBAction)presetButtonTapped:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *presetsNC = [storyboard instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
+    NSArray *viewControllers = [presetsNC viewControllers];
+    [viewControllers[0] setDelegate:self];
+    
+    [self presentViewController:presetsNC animated:YES completion:nil];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
@@ -138,6 +147,7 @@
 #pragma mark - PresetsTableViewControllerDelegate implementation
 -(void)presetTime:(CGFloat)presetTime {
     self.countdownTime = presetTime;
+    NSLog(@"%f", self.countdownTime);
 }
 
 /*
