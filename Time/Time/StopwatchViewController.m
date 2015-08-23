@@ -9,11 +9,12 @@
 #import "StopwatchViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface StopwatchViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface StopwatchViewController ()
+- (void)configureView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
-@property (nonatomic) NSTimeInterval currentLapTime;
+
 
 
 
@@ -23,6 +24,8 @@
 @synthesize stopwatchLabel;
 @synthesize lapLabel;
 @synthesize lapTableView;
+@synthesize dataArray;
+
 
 
 - (void)viewDidLoad {
@@ -38,6 +41,13 @@
     self.resetButton.clipsToBounds = YES;
     self.lapTableView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.lapTableView.layer.borderWidth = 2.0;
+    [self configureView];
+    
+
+}
+- (void)configureView
+{
+    self.dataArray = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +59,7 @@
     if(!running){
        running = TRUE;
         [sender setTitle:@"Pause" forState:UIControlStateNormal];
-        [self.resetButton setTitle:@"Log" forState:UIControlStateNormal];
+        [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
         
         if (stopTimer == nil) {
             stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
@@ -62,6 +72,8 @@
                                                        selector:@selector(lapTimer)
                                                        userInfo:nil
                                                         repeats:YES];
+           
+            
         }
     }else{
         running = FALSE;
@@ -105,6 +117,8 @@
 - (IBAction)resetButton:(id)sender {
     [self.lapTableView reloadData];
     if (running ) {
+        [self.dataArray addObject:self.lapLabel.text];
+        [self.lapTableView reloadData];
         [lapTimer invalidate];
         lapTimer = nil;
         restartDate = [NSDate date];
@@ -114,7 +128,8 @@
                                                   selector:@selector(lapTimer)
                                                   userInfo:nil
                                                    repeats:YES];
-        
+      
+ 
     }else{
         
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -125,32 +140,30 @@
         startDate = [NSDate date];
         stopwatchLabel.text = @"00.00.00";
         lapLabel.text = @"00.00.00";
+        [self.dataArray removeAllObjects];
+        [self.lapTableView reloadData];
         
     }
 }
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    // Return the number of sections.
-    return 1;
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.dataArray count];
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    // Return the number of rows in the section.
-    return 10;
-}
-
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LapLabelCellIdentifier" forIndexPath:indexPath];
-
-    cell.textLabel.text =
-    [NSString stringWithFormat:@"Row: %li %@", (long)indexPath.row, self.lapLabel.text];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *labelID = @"LapLabelCellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:labelID];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:labelID];
+    }
+    cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
     
     return cell;
 }
+
+
 
 
 

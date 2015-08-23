@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StopwatchViewController : UIViewController {
+@interface StopwatchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
 
 
     __weak IBOutlet UILabel *stopwatchLabel;
@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lapLabel;
 @property (weak, nonatomic) IBOutlet UITableView *lapTableView;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 - (IBAction)startButton:(id)sender;
 - (IBAction)resetButton:(id)sender;
