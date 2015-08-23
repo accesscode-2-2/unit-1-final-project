@@ -18,11 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 //For use with UIPickerView
-@property (nonatomic) CADisplayLink *timer;
-@property (nonatomic) CFTimeInterval initialTime;
-@property (nonatomic) CFTimeInterval lapInitialTime;
+//@property (nonatomic) CADisplayLink *timer;
+//@property (nonatomic) CFTimeInterval initialTime;
+//@property (nonatomic) CFTimeInterval lapInitialTime;
 
-
+@property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSInteger component;
 @property (nonatomic) NSInteger row;
 
@@ -58,12 +58,45 @@
     }
 }
 - (IBAction)startButtonTapped:(UIButton *)sender {
-   [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reloadComponent:) userInfo:nil repeats:NO];
+    
+    self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+   //[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
     
 }
 
+
+
+-(void)animate{
+    if( ([self.timerPickerView selectedRowInComponent:0]  == 00) && ([self.timerPickerView selectedRowInComponent:1] % 60 == 00) && ([self.timerPickerView selectedRowInComponent:2] %60 == 00) ){
+        
+        [self.timer invalidate];
+    }
+    else{
+        if( ([self.timerPickerView selectedRowInComponent:0] == 00) && ([self.timerPickerView selectedRowInComponent:1] == 00) && ([self.timerPickerView selectedRowInComponent:2] == 00) ){
+            
+            [self.timer invalidate];
+        }
+        else if([self.timerPickerView selectedRowInComponent:2] % 60 == 00){
+            
+            self.row = [self.timerPickerView selectedRowInComponent:2] +59;
+            [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
+            
+            if([self.timerPickerView selectedRowInComponent:1] != 00){
+                
+                self.row = [self.timerPickerView selectedRowInComponent:1] -1;
+                [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
+                
+            }
+        }
+        self.row = [self.timerPickerView selectedRowInComponent:2] - 1;
+        [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
+    }
+}
+
 - (void)reloadComponent:(NSInteger)component{
-    
+    [self.timerPickerView selectRow:self.row inComponent:self.component animated:YES];
 }
 
 
@@ -112,10 +145,10 @@
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
     
-    self.timer  = [CADisplayLink displayLinkWithTarget:self
-                                                       selector:@selector(refreshTimerLabel)];
-    [self.timer setPaused:YES];
-    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+//    self.timer  = [CADisplayLink displayLinkWithTarget:self
+//                                                       selector:@selector(refreshTimerLabel)];
+//    [self.timer setPaused:YES];
+//    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 - (void)didReceiveMemoryWarning {
