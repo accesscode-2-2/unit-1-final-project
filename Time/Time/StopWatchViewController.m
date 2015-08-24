@@ -95,10 +95,9 @@
     self.distance =  self.totalTime + self.totalSessionTime;
     
     NSTimeInterval minutes = floor(self.distance / 60.0);
-    NSLog(@"%f", minutes);
-
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"0:%0.2f", self.distance];
-    NSLog(@"%f", self.distance);
+    self.distance -= (minutes * 60);
+ 
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%.f:%0.2f", minutes, self.distance];
     
 }
 
@@ -110,11 +109,13 @@
     self.LapTotalSessionTime = [now2 timeIntervalSinceDate:self.lapStartTime];
     self.distance =  self.totalTime + self.LapTotalSessionTime;
     
- 
+    NSTimeInterval minutes = floor(self.distance / 60.0);
+     self.distance -= (minutes * 60);
+    
     if (self.LapTapped == NO)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"0:%0.2f", self.distance];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%.f:%0.2f", minutes,self.distance];
     else if (self.LapTapped == YES)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"0:%0.2f", self.LapTotalSessionTime];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%.f:%0.2f", minutes, self.LapTotalSessionTime];
  
 }
 
