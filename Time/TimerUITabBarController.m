@@ -1,27 +1,29 @@
 //
-//  ViewController.m
+//  TimerUITabBarController.m
 //  Time
 //
-//  Created by Michael Kavouras on 8/20/15.
+//  Created by Lauren Caponong on 8/20/15.
 //  Copyright (c) 2015 Mike Kavouras. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TimerUITabBarController.h"
 
-@interface ViewController ()
+@interface TimerUITabBarController ()
 
 @end
 
-@implementation ViewController
+@implementation TimerUITabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end
