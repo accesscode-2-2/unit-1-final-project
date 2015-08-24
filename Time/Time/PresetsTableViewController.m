@@ -7,6 +7,7 @@
 //
 
 #import "PresetsTableViewController.h"
+#import "NewPresetViewController.h"
 #import "OrderedDictionary.h"
 
 @interface PresetsTableViewController ()
@@ -54,6 +55,14 @@
 - (void)didSelectTimer {
     [self.delegate presetTime:self.selectedPreset];
     [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (IBAction)newPresetButtonPressed:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NewPresetViewController *newPresetVC = [storyboard instantiateViewControllerWithIdentifier:@"newPresetVC"];
+    newPresetVC.delegate = self;
+    
+    [self presentViewController:newPresetVC animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
