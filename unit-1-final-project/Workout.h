@@ -14,7 +14,7 @@
 
 @property (nonatomic) NSMutableArray *exercises;
 @property (nonatomic) NSString *workoutName;
-- (void) initializeData;
+//- (void) initializeData;
 
 @end
 

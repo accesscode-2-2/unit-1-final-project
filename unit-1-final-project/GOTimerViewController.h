@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Exercises.h"
 #import "Workout.h"
-#import "GOWorkoutViewController.h"
 
 @interface GOTimerViewController : UIViewController
 

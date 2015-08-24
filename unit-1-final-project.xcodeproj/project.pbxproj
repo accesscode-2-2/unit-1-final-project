@@ -17,11 +17,11 @@
 		3D2D2F0F1B86B5A300E210BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2D2F0D1B86B5A300E210BA /* LaunchScreen.storyboard */; };
 		3D2D2F1A1B86B5A400E210BA /* unit_1_final_projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F191B86B5A400E210BA /* unit_1_final_projectTests.m */; };
 		3D2D2F251B86B5A400E210BA /* unit_1_final_projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */; };
-		3DD589AC1B8924E500B74EB3 /* GOWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD589AB1B8924E500B74EB3 /* GOWorkoutViewController.m */; };
 		3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C01B893332008194DB /* WorkoutManager.m */; };
 		3DDB60C41B893413008194DB /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C31B893413008194DB /* Workout.m */; };
 		3DDB60C71B893477008194DB /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C61B893477008194DB /* Exercises.m */; };
 		9A8CD52B1B87900000A194D9 /* GOStopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */; };
+		9ACCFF3D1B8B991000F1693C /* GOWorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCFF3C1B8B991000F1693C /* GOWorkoutsTableViewController.m */; };
 		9AD5F5781B8A27B3004F25D6 /* GOTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,6 @@
 		3D2D2F201B86B5A400E210BA /* unit-1-final-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit-1-final-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unit_1_final_projectUITests.m; sourceTree = "<group>"; };
 		3D2D2F261B86B5A400E210BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DD589AA1B8924E500B74EB3 /* GOWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWorkoutViewController.h; sourceTree = "<group>"; };
-		3DD589AB1B8924E500B74EB3 /* GOWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWorkoutViewController.m; sourceTree = "<group>"; };
 		3DDB60BF1B893332008194DB /* WorkoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutManager.h; sourceTree = "<group>"; };
 		3DDB60C01B893332008194DB /* WorkoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutManager.m; sourceTree = "<group>"; };
 		3DDB60C21B893413008194DB /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		3DDB60C61B893477008194DB /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		9A8CD5291B87900000A194D9 /* GOStopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOStopwatchViewController.h; sourceTree = "<group>"; };
 		9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOStopwatchViewController.m; sourceTree = "<group>"; };
+		9ACCFF3B1B8B991000F1693C /* GOWorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWorkoutsTableViewController.h; sourceTree = "<group>"; };
+		9ACCFF3C1B8B991000F1693C /* GOWorkoutsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWorkoutsTableViewController.m; sourceTree = "<group>"; };
 		9AD5F5761B8A27B3004F25D6 /* GOTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTimerViewController.h; sourceTree = "<group>"; };
 		9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,16 +135,16 @@
 				3DDB60C61B893477008194DB /* Exercises.m */,
 				9A8CD5291B87900000A194D9 /* GOStopwatchViewController.h */,
 				9A8CD52A1B87900000A194D9 /* GOStopwatchViewController.m */,
-				3D2883371B8A716800DE02B8 /* LapTimerTableViewCell.h */,
-				3D2883381B8A716800DE02B8 /* LapTimerTableViewCell.m */,
-				3DD589AA1B8924E500B74EB3 /* GOWorkoutViewController.h */,
-				3DD589AB1B8924E500B74EB3 /* GOWorkoutViewController.m */,
+				9ACCFF3B1B8B991000F1693C /* GOWorkoutsTableViewController.h */,
+				9ACCFF3C1B8B991000F1693C /* GOWorkoutsTableViewController.m */,
 				9AD5F5761B8A27B3004F25D6 /* GOTimerViewController.h */,
 				9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */,
 				3D28833D1B8B4DC700DE02B8 /* GOCalendarTableViewController.h */,
 				3D28833E1B8B4DC700DE02B8 /* GOCalendarTableViewController.m */,
 				3D28833A1B8B49F100DE02B8 /* GOCalendarViewController.h */,
 				3D28833B1B8B49F100DE02B8 /* GOCalendarViewController.m */,
+				3D2883371B8A716800DE02B8 /* LapTimerTableViewCell.h */,
+				3D2883381B8A716800DE02B8 /* LapTimerTableViewCell.m */,
 				3D2D2F081B86B5A300E210BA /* Main.storyboard */,
 				3D2D2F0B1B86B5A300E210BA /* Assets.xcassets */,
 				3D2D2F0D1B86B5A300E210BA /* LaunchScreen.storyboard */,
@@ -312,11 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8CD52B1B87900000A194D9 /* GOStopwatchViewController.m in Sources */,
+				9ACCFF3D1B8B991000F1693C /* GOWorkoutsTableViewController.m in Sources */,
 				3DDB60C71B893477008194DB /* Exercises.m in Sources */,
 				9AD5F5781B8A27B3004F25D6 /* GOTimerViewController.m in Sources */,
 				3D28833F1B8B4DC700DE02B8 /* GOCalendarTableViewController.m in Sources */,
 				3D2883391B8A716800DE02B8 /* LapTimerTableViewCell.m in Sources */,
-				3DD589AC1B8924E500B74EB3 /* GOWorkoutViewController.m in Sources */,
 				3DDB60C41B893413008194DB /* Workout.m in Sources */,
 				3D28833C1B8B49F100DE02B8 /* GOCalendarViewController.m in Sources */,
 				3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */,
@@ -463,6 +463,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,6 +478,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
