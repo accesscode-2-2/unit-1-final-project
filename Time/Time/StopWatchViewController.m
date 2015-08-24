@@ -91,6 +91,7 @@
     // get the current time
     NSDate *now = [[NSDate alloc] init];
     
+    
     self.totalSessionTime = [now timeIntervalSinceDate:self.startTime];
     self.distance =  self.totalTime + self.totalSessionTime;
     
@@ -125,13 +126,14 @@
 //    if ([self.recentLapRunning.text isEqualToString:@"0:00.0"]) {
     
     self.lapStartTime = [[NSDate alloc] init];
-    
+    self.startTime = [[NSDate alloc] init];
+
     //check Label's text
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
     if ([startStopActualLabel isEqualToString:@"Start"] ) {
         [_clock play];
         // set self.startTime to now
-        self.startTime = [[NSDate alloc] init];
+        
         
         // setup timer
         self.runningStopWatchTimer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
@@ -186,9 +188,10 @@
         self.StopwatchRunningLabel.text = @"0:00.0";
         self.recentLapRunning.text = @"0:00.0";
         [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
-        self.resetLapButton.enabled = YES;
+        self.resetLapButton.enabled = NO;
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
+        
 }
   else if ([resetLapActualLabel isEqualToString:@"Lap"]) {
       [_LapSound stop];
