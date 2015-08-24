@@ -123,16 +123,12 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
-//    self.row =[self.timerPickerView selectedRowInComponent:2];
-//    self.row = 00;
-//    
-//    self.component =[self.timerPickerView selectedRowInComponent:1]
-//    self.component = 00;
     
-    for(int i=0; i<=self.component;i++){
-        self.row = 00;
-        self.row =[self.timerPickerView selectedRowInComponent:i];
+    [self.timerPickerView reloadAllComponents];
+    for(int i=0;i<3 ;i++){
+        [self.timerPickerView selectRow:0 inComponent:i animated:YES];
     }
+    
     [self.timer invalidate];
 }
 
