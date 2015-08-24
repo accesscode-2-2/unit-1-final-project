@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Go";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     

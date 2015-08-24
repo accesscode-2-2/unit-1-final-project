@@ -48,6 +48,8 @@
 
 - (void)viewDidLoad {
     
+    self.title = @"Go Stopwatch";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
         
