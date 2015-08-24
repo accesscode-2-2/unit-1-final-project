@@ -32,11 +32,11 @@
     
     Exercises *exercise1 = [[Exercises alloc] init];
     exercise1.nameOfExercise = @"Push-ups";
-    exercise1.exerciseTime = 120.0;
+    exercise1.exerciseTime = 5.0;
     
     Exercises *exercise2 = [[Exercises alloc] init];
     exercise2.nameOfExercise = @"Pull-ups";
-    exercise2.exerciseTime = 120.0;
+    exercise2.exerciseTime = 7.0;
     
     
     

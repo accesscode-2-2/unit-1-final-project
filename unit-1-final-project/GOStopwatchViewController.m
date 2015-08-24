@@ -11,6 +11,7 @@
 //
 
 #import "GOStopwatchViewController.h"
+#import "LapTimerTableViewCell.h"
 
 @interface GOStopwatchViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -213,6 +214,8 @@
     
     return cell;
 }
+
+
 
 
 @end

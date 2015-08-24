@@ -14,6 +14,7 @@
 @interface GOTimerViewController : UIViewController
 
 @property (nonatomic) Workout *currentWorkout;
+@property (nonatomic) NSInteger currentExerciseIndex;
 @property (nonatomic) Exercises *exercise;
 @property (nonatomic) NSString * currentExerciseName;
 @property (nonatomic) NSTimeInterval currentExerciseTime;
@@ -22,8 +23,11 @@
 
 //Properties of ViewController
 @property (weak, nonatomic) IBOutlet UIImageView *exerciseImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *totalTimeExerciseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exerciseTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
+
 
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2883391B8A716800DE02B8 /* LapTimerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2883381B8A716800DE02B8 /* LapTimerTableViewCell.m */; };
 		3D2D2F011B86B5A300E210BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F001B86B5A300E210BA /* main.m */; };
 		3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F031B86B5A300E210BA /* AppDelegate.m */; };
 		3D2D2F0A1B86B5A300E210BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2D2F081B86B5A300E210BA /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D2883371B8A716800DE02B8 /* LapTimerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapTimerTableViewCell.h; sourceTree = "<group>"; };
+		3D2883381B8A716800DE02B8 /* LapTimerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapTimerTableViewCell.m; sourceTree = "<group>"; };
 		3D2D2EFC1B86B5A300E210BA /* unit-1-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-1-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F001B86B5A300E210BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D2D2F021B86B5A300E210BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				3D2D2F081B86B5A300E210BA /* Main.storyboard */,
 				9AD5F5761B8A27B3004F25D6 /* GOTimerViewController.h */,
 				9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */,
+				3D2883371B8A716800DE02B8 /* LapTimerTableViewCell.h */,
+				3D2883381B8A716800DE02B8 /* LapTimerTableViewCell.m */,
 				3D2D2F0B1B86B5A300E210BA /* Assets.xcassets */,
 				3D2D2F0D1B86B5A300E210BA /* LaunchScreen.storyboard */,
 				3D2D2F101B86B5A300E210BA /* Info.plist */,
@@ -299,6 +304,7 @@
 				9A8CD52B1B87900000A194D9 /* GOStopwatchViewController.m in Sources */,
 				3DDB60C71B893477008194DB /* Exercises.m in Sources */,
 				9AD5F5781B8A27B3004F25D6 /* GOTimerViewController.m in Sources */,
+				3D2883391B8A716800DE02B8 /* LapTimerTableViewCell.m in Sources */,
 				3DD589AC1B8924E500B74EB3 /* GOWorkoutViewController.m in Sources */,
 				3DDB60C41B893413008194DB /* Workout.m in Sources */,
 				3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */,
