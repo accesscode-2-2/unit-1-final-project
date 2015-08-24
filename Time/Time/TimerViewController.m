@@ -65,52 +65,53 @@
 
 
 -(void)animate{
-    if( ([self.timerPickerView selectedRowInComponent:0]  == 00) && ([self.timerPickerView selectedRowInComponent:1] % 60 == 00) && ([self.timerPickerView selectedRowInComponent:2] %60 == 00) ){
-        
+    
+    NSInteger hourIndex = [self.timerPickerView selectedRowInComponent:0];
+    NSInteger minuteIndex = [self.timerPickerView selectedRowInComponent:1];
+    NSInteger secondIndex = [self.timerPickerView selectedRowInComponent:2];
+    
+    if( (hourIndex  == 00) && (minuteIndex % 60 == 00) && (secondIndex %60 == 00) ){
         [self.timer invalidate];
     }
     else{
-        if( ([self.timerPickerView selectedRowInComponent:0] == 00) && ([self.timerPickerView selectedRowInComponent:1] == 00) && ([self.timerPickerView selectedRowInComponent:2] == 00) ){
-            
+        if( (hourIndex == 00) && (minuteIndex == 00) && (secondIndex == 00) ){
             [self.timer invalidate];
         }
-        else if([self.timerPickerView selectedRowInComponent:2] % 60 == 00){
+        else if(secondIndex % 60 == 00){
             
-            self.row = [self.timerPickerView selectedRowInComponent:2] +60;
+            self.row = secondIndex + 59;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
             
-            if([self.timerPickerView selectedRowInComponent:1] != 00){
+            if(minuteIndex != 00){
                 
-                self.row = [self.timerPickerView selectedRowInComponent:1] -1;
+                self.row = minuteIndex -1;
                 [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 
             }
-            if([self.timerPickerView selectedRowInComponent:0] != 00){
+            else if(hourIndex != 00){
                 //hour
-                if([self.timerPickerView selectedRowInComponent:1]%60 == 0){
-                    self.row = [self.timerPickerView selectedRowInComponent:0] - 1;
+                    self.row = hourIndex - 1;
                     [self.timerPickerView selectRow:self.row inComponent:0 animated:YES];
-                }
                 //minute
-                if([self.timerPickerView selectedRowInComponent:1]%60 == 00){
-                    self.row = [self.timerPickerView selectedRowInComponent:1]+59;
+                if(minuteIndex%60 == 00){
+                    self.row = minuteIndex+59;
                     [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 }else{
-                  //  self.row = [self.timerPickerView selectedRowInComponent:1]-1;
-                  //  [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
+                    self.row = minuteIndex-1;
+                    [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 }
                 //second
-                if([self.timerPickerView selectedRowInComponent:2]%60 == 00){
-                    self.row = [self.timerPickerView selectedRowInComponent:2] +59;
+                if(secondIndex%60 == 00){
+                    self.row = secondIndex +59;
                     [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
                 }else{
-                    self.row = [self.timerPickerView selectedRowInComponent:2]-1;
+                    self.row = secondIndex-1;
                     [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
                 }
             }
         }
         else{
-            self.row = [self.timerPickerView selectedRowInComponent:2] - 1;
+            self.row = secondIndex - 1;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
         }
     }
@@ -122,7 +123,17 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
+//    self.row =[self.timerPickerView selectedRowInComponent:2];
+//    self.row = 00;
+//    
+//    self.component =[self.timerPickerView selectedRowInComponent:1]
+//    self.component = 00;
     
+    for(int i=0; i<=self.component;i++){
+        self.row = 00;
+        self.row =[self.timerPickerView selectedRowInComponent:i];
+    }
+    [self.timer invalidate];
 }
 
 - (IBAction)presetButtonTapped:(id)sender {
