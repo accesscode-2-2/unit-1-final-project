@@ -26,15 +26,17 @@
 @property (nonatomic) NSMutableArray *reversedLaps;
 
 @property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel;
-@property (strong, nonatomic) IBOutlet UILabel *recentLapRunningLabel;
+@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
 
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
 
 @property (nonatomic) NSTimer *runningStopWatchTimer;
 @property (nonatomic) NSTimer *LapTimer;
+@property (nonatomic) NSTimer *runStopwatchTimer;
 @property (nonatomic) NSDate *startTime;
 @property (nonatomic) NSDate *lapStartTime;
+
 
 @property (nonatomic) NSTimeInterval LapTotalSessionTime;
 @property (nonatomic) NSTimeInterval totalSessionTime;
@@ -107,16 +109,11 @@
     
  
     if (self.LapTapped == NO)
-        self.recentLapRunningLabel.text = [NSString stringWithFormat:@"%0.2f", self.distance];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.distance];
     else if (self.LapTapped == YES)
-        self.recentLapRunningLabel.text = [NSString stringWithFormat:@"%0.2f", self.LapTotalSessionTime];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.LapTotalSessionTime];
  
 }
-
-
-
-
-
 
 #pragma mark - Buttons
 
@@ -136,8 +133,6 @@
         
         // add timer to the run loop
         [[NSRunLoop currentRunLoop] addTimer:self.runningStopWatchTimer forMode:NSRunLoopCommonModes];
-        
-        
  
         // setup timer
         self.LapTimer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerLapFired:) userInfo:nil repeats:YES];
@@ -145,19 +140,12 @@
         // add timer to the run loop
         [[NSRunLoop currentRunLoop] addTimer:self.LapTimer forMode:NSRunLoopCommonModes];
         
-        
-        
-
-        
         /******  Interface layout *****/
         self.resetLapButton.enabled = YES;
         [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor redColor];
-   
-
      }
-    
     
     else if ([startStopActualLabel isEqualToString:@"Stop"] ) {
         [_clock stop];
@@ -175,9 +163,6 @@
     }
 }
 
-
-
-
 - (IBAction)resetLapButtonTapped:(UIButton *)sender {
     NSString *resetLapActualLabel =  self.resetLapButton.titleLabel.text;
     if ([resetLapActualLabel isEqualToString:@"Reset"]) {
@@ -192,17 +177,13 @@
         [self.reversedLaps removeAllObjects];
         [self.LapTableView reloadData];
         
-        
         /******  Interface layout *****/
         self.StopwatchRunningLabel.text = @"0:00.0";
-        self.recentLapRunningLabel.text = @"0:00.0";
+        self.recentLapRunning.text = @"0:00.0";
         [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.resetLapButton.enabled = YES;
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
-
-        
-        
 }
   else if ([resetLapActualLabel isEqualToString:@"Lap"]) {
       [_LapSound stop];
@@ -211,7 +192,7 @@
       self.lapStartTime = [[NSDate alloc] init];
       self.SaveLappedTime = YES;
       
-      [self.LapArray addObject:self.recentLapRunningLabel.text];
+      [self.LapArray addObject:self.recentLapRunning.text];
       
       [self.LapTableView reloadData];
     
@@ -224,10 +205,8 @@
       [[NSRunLoop currentRunLoop] addTimer:self.LapTimer forMode:NSRunLoopCommonModes];
       
       self.LapTapped = NO;
-
   }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -244,13 +223,8 @@
     return self.LapArray.count;
 }
 
-
-
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
-    
     
     self.reversedLaps = [NSMutableArray arrayWithCapacity:[self.LapArray count]];
     NSEnumerator*   reverseEnumerator = [self.LapArray reverseObjectEnumerator];
@@ -259,17 +233,10 @@
         [self.reversedLaps addObject:object];
     }
     
-    
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.reversedLaps count] - indexPath.row];
     cell.detailTextLabel.text = self.reversedLaps[indexPath.row];
 
-    
-    
-    
-//    
-//    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.LapArray count] - indexPath.row];
-//    cell.detailTextLabel.text = self.LapArray[[self.LapArray count] - 1 - indexPath.row];
-//    
+ 
     return cell;
 }
 
