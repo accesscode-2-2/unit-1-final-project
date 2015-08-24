@@ -15,6 +15,8 @@
 @interface StopWatchViewController () <UITableViewDataSource, UITabBarDelegate>
 {
     AVAudioPlayer *_clock;
+    AVAudioPlayer *_LapSound;
+
 }
 @property (strong, nonatomic) IBOutlet UITableView *LapTableView;
 @property (nonatomic) BOOL LapTapped;
@@ -22,24 +24,21 @@
 
 @property (nonatomic) NSMutableArray *LapArray;
 @property (nonatomic) NSMutableArray *reversedLaps;
-@property (nonatomic) void *callTheTimer;
 
-@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel; //timerLabel
-@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
+@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel;
+@property (strong, nonatomic) IBOutlet UILabel *recentLapRunningLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
 
-@property (nonatomic) NSTimer *runningStopWatch;  //timer
-@property (nonatomic) NSTimer *LapTimer;   //
-@property (nonatomic) NSTimer *runStopwatchTimer;
-@property (nonatomic) NSDate *startTime;  //
-@property (nonatomic) NSDate *lapStartTime;  //
+@property (nonatomic) NSTimer *runningStopWatchTimer;
+@property (nonatomic) NSTimer *LapTimer;
+@property (nonatomic) NSDate *startTime;
+@property (nonatomic) NSDate *lapStartTime;
 
-
-@property (nonatomic) NSTimeInterval LapTotalSessionTime;  //
-@property (nonatomic) NSTimeInterval totalSessionTime;  //
-@property (nonatomic) NSTimeInterval totalTime;    //
+@property (nonatomic) NSTimeInterval LapTotalSessionTime;
+@property (nonatomic) NSTimeInterval totalSessionTime;
+@property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic) NSTimeInterval distance;
 
 @end
@@ -49,18 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[self runningStopWatch] invalidate];
-    
-#pragma mark - Ringtones
-    
-    // this adds ringtone sound
-    NSString *path = [NSString stringWithFormat:@"%@/clock-ticking-5.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    // Create audio player object and initialize with URL to sound
-    _clock = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    
-    
-     self.LapArray = [[NSMutableArray alloc]init];
+    self.LapArray = [[NSMutableArray alloc]init];
     
     self.LapTableView.dataSource = self;
     self.LapTableView.delegate = self;
@@ -79,9 +67,24 @@
     self.resetLapButton.enabled = NO;
     
     self.LapTapped = NO;
+    
+#pragma mark - Ringtones
+    
+    // this adds ringtone sound
+    NSString *path = [NSString stringWithFormat:@"%@/clock-ticking-5.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    // Create audio player object and initialize with URL to sound
+    _clock = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    
+    NSString *path2 = [NSString stringWithFormat:@"%@/ding.wav", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl2 = [NSURL fileURLWithPath:path2];
+    // Create audio player object and initialize with URL to sound
+    _LapSound = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl2 error:nil];
+    
 }
 
-- (void)timerFired:(NSTimer *)runningStopWatch {
+- (void)timerFired:(NSTimer *)runningStopWatchTimer {
     
     // get the current time
     NSDate *now = [[NSDate alloc] init];
@@ -104,9 +107,9 @@
     
  
     if (self.LapTapped == NO)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.distance];
+        self.recentLapRunningLabel.text = [NSString stringWithFormat:@"%0.2f", self.distance];
     else if (self.LapTapped == YES)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.LapTotalSessionTime];
+        self.recentLapRunningLabel.text = [NSString stringWithFormat:@"%0.2f", self.LapTotalSessionTime];
  
 }
 
@@ -129,10 +132,10 @@
         self.startTime = [[NSDate alloc] init];
         
         // setup timer
-        self.runningStopWatch = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        self.runningStopWatchTimer = [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
         
         // add timer to the run loop
-        [[NSRunLoop currentRunLoop] addTimer:self.runningStopWatch forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] addTimer:self.runningStopWatchTimer forMode:NSRunLoopCommonModes];
         
         
  
@@ -163,7 +166,7 @@
         self.totalTime = self.totalTime + self.totalSessionTime;
         
         // stop the timer
-        [self.runningStopWatch invalidate];
+        [self.runningStopWatchTimer invalidate];
         [self.LapTimer invalidate];
         /******  Interface layout *****/
         [self.resetLapButton setTitle:@"Reset" forState:UIControlStateNormal];
@@ -180,7 +183,7 @@
     if ([resetLapActualLabel isEqualToString:@"Reset"]) {
         [_clock stop];
 
-        [[self runningStopWatch] invalidate];
+        [[self runningStopWatchTimer] invalidate];
         self.totalSessionTime = 0;
         self.totalTime = 0;
         self.LapTotalSessionTime = 0;
@@ -192,7 +195,7 @@
         
         /******  Interface layout *****/
         self.StopwatchRunningLabel.text = @"0:00.0";
-        self.recentLapRunning.text = @"0:00.0";
+        self.recentLapRunningLabel.text = @"0:00.0";
         [self.resetLapButton setTitle:@"Lap" forState:UIControlStateNormal];
         self.resetLapButton.enabled = YES;
         [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -202,10 +205,13 @@
         
 }
   else if ([resetLapActualLabel isEqualToString:@"Lap"]) {
+      [_LapSound stop];
+      [_LapSound play];
+      
       self.lapStartTime = [[NSDate alloc] init];
       self.SaveLappedTime = YES;
       
-      [self.LapArray addObject:self.recentLapRunning.text];
+      [self.LapArray addObject:self.recentLapRunningLabel.text];
       
       [self.LapTableView reloadData];
     

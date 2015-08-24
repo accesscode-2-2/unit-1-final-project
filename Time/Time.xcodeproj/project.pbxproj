@@ -14,6 +14,7 @@
 		8496CC9A1B8A5FC200FB2AAA /* digitalFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8496CC991B8A5FC200FB2AAA /* digitalFont.ttf */; };
 		8496CC9C1B8A660000FB2AAA /* clock-ticking-5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8496CC9B1B8A660000FB2AAA /* clock-ticking-5.mp3 */; };
 		8496CC9F1B8A768700FB2AAA /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8496CC9E1B8A768700FB2AAA /* TimerViewController.m */; };
+		8496CCA11B8ABA1F00FB2AAA /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8496CCA01B8ABA1F00FB2AAA /* ding.wav */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		8496CC9B1B8A660000FB2AAA /* clock-ticking-5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "clock-ticking-5.mp3"; sourceTree = "<group>"; };
 		8496CC9D1B8A768700FB2AAA /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		8496CC9E1B8A768700FB2AAA /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		8496CCA01B8ABA1F00FB2AAA /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8496CC9B1B8A660000FB2AAA /* clock-ticking-5.mp3 */,
+				8496CCA01B8ABA1F00FB2AAA /* ding.wav */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
 			);
 			path = Time;
@@ -233,6 +236,7 @@
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				8D0537691B86687C00588318 /* Images.xcassets in Resources */,
 				8496CC9C1B8A660000FB2AAA /* clock-ticking-5.mp3 in Resources */,
+				8496CCA11B8ABA1F00FB2AAA /* ding.wav in Resources */,
 				8496CC961B8A56F600FB2AAA /* digital-7 (italic).ttf in Resources */,
 				8496CC971B8A56F600FB2AAA /* digital-7 (mono).ttf in Resources */,
 			);
