@@ -16,7 +16,6 @@
 {
     AVAudioPlayer *_clock;
     AVAudioPlayer *_LapSound;
-
 }
 @property (strong, nonatomic) IBOutlet UITableView *LapTableView;
 @property (nonatomic) BOOL LapTapped;
@@ -36,7 +35,6 @@
 @property (nonatomic) NSTimer *runStopwatchTimer;
 @property (nonatomic) NSDate *startTime;
 @property (nonatomic) NSDate *lapStartTime;
-
 
 @property (nonatomic) NSTimeInterval LapTotalSessionTime;
 @property (nonatomic) NSTimeInterval totalSessionTime;
@@ -86,6 +84,8 @@
     
 }
 
+#pragma mark - Timers
+
 - (void)timerFired:(NSTimer *)runningStopWatchTimer {
     
     // get the current time
@@ -94,7 +94,10 @@
     self.totalSessionTime = [now timeIntervalSinceDate:self.startTime];
     self.distance =  self.totalTime + self.totalSessionTime;
     
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%0.2f", self.distance];
+    NSTimeInterval minutes = floor(self.distance / 60.0);
+    NSLog(@"%f", minutes);
+
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"0:%0.2f", self.distance];
     NSLog(@"%f", self.distance);
     
 }
@@ -109,18 +112,19 @@
     
  
     if (self.LapTapped == NO)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.distance];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"0:%0.2f", self.distance];
     else if (self.LapTapped == YES)
-        self.recentLapRunning.text = [NSString stringWithFormat:@"%0.2f", self.LapTotalSessionTime];
+        self.recentLapRunning.text = [NSString stringWithFormat:@"0:%0.2f", self.LapTotalSessionTime];
  
 }
 
 #pragma mark - Buttons
 
 - (IBAction)startStopButtonTapped:(UIButton *)sender {
+//    if ([self.recentLapRunning.text isEqualToString:@"0:00.0"]) {
     
-     self.lapStartTime = [[NSDate alloc] init];
-
+    self.lapStartTime = [[NSDate alloc] init];
+    
     //check Label's text
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
     if ([startStopActualLabel isEqualToString:@"Start"] ) {
