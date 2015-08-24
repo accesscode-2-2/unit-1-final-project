@@ -508,10 +508,10 @@
             </objects>
             <point key="canvasLocation" x="2207" y="153"/>
         </scene>
-        <!--Timer View Controller-->
+        <!--View Controller-->
         <scene sceneID="THo-Li-bpS">
             <objects>
-                <viewController id="FfB-pb-U4u" customClass="GOTimerViewController" sceneMemberID="viewController">
+                <viewController id="FfB-pb-U4u" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VQ8-IJ-goC"/>
                         <viewControllerLayoutGuide type="bottom" id="9aW-wb-oBv"/>
@@ -520,8 +520,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Hard Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkA-Xb-Ebu">
-                                <rect key="frame" x="244" y="290" width="112" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO FIGHT Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkA-Xb-Ebu">
+                                <rect key="frame" x="237" y="290" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -34,10 +34,15 @@
     self.thisExercise = [self.currentWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];
     self.currentExerciseName = self.thisExercise.nameOfExercise;
     self.currentExerciseTime = self.thisExercise.exerciseTime;
-    
+   
+  // Updates based on exercise
     self.exerciseTimeLabel.text = [NSString stringWithFormat:@"%f",self.currentExerciseTime];
     
-
+    self.exerciseNameLabel.text = self.thisExercise.nameOfExercise;
+    
+    NSString *imageName = self.thisExercise.exerciseImageString;
+    UIImageView *view = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
+    self.exerciseImageView.image = view.image;
     
     if (self.currentExerciseIndex == (NSInteger)nil){
         self.currentExerciseIndex = 0;
