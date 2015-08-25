@@ -245,10 +245,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-yQ-JHb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-yQ-JHb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FLr-WG-bHI">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FLr-WG-bHI">
                                 <rect key="frame" x="20" y="64" width="560" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="VL8-a7-svU"/>
@@ -257,19 +257,41 @@
                                     <!--2015-08-24 12:30:44 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kth-Dt-9zY">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goCalendarButton:" destination="vb6-o2-5rS" eventType="touchUpInside" id="tMr-GC-lew"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-Qp-yBv">
+                                <rect key="frame" x="277" y="369" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QeZ-Qp-yBv" firstAttribute="top" secondItem="Kth-Dt-9zY" secondAttribute="bottom" constant="54" id="1B5-yf-IN2"/>
                             <constraint firstItem="JiZ-yQ-JHb" firstAttribute="leading" secondItem="MiB-12-uSE" secondAttribute="leading" id="56q-vk-LgQ"/>
                             <constraint firstItem="FLr-WG-bHI" firstAttribute="top" secondItem="nZz-es-CQ5" secondAttribute="bottom" id="6VT-Yj-PRs"/>
                             <constraint firstAttribute="trailing" secondItem="FLr-WG-bHI" secondAttribute="trailing" constant="20" id="ClC-mG-CVG"/>
+                            <constraint firstItem="Kth-Dt-9zY" firstAttribute="centerX" secondItem="MiB-12-uSE" secondAttribute="centerX" id="FGF-gO-Pab"/>
                             <constraint firstItem="JiZ-yQ-JHb" firstAttribute="top" secondItem="nZz-es-CQ5" secondAttribute="bottom" id="TaK-iv-r3V"/>
                             <constraint firstItem="FLr-WG-bHI" firstAttribute="leading" secondItem="MiB-12-uSE" secondAttribute="leading" constant="20" id="kho-zt-gCG"/>
+                            <constraint firstItem="QeZ-Qp-yBv" firstAttribute="trailing" secondItem="Kth-Dt-9zY" secondAttribute="trailing" id="oNa-oK-9y5"/>
+                            <constraint firstItem="Kth-Dt-9zY" firstAttribute="centerY" secondItem="MiB-12-uSE" secondAttribute="centerY" id="oXv-Pn-j42"/>
                             <constraint firstItem="QzT-IB-fIA" firstAttribute="top" secondItem="JiZ-yQ-JHb" secondAttribute="bottom" id="qfm-0w-EnE"/>
                             <constraint firstAttribute="trailing" secondItem="JiZ-yQ-JHb" secondAttribute="trailing" id="srA-0c-7HB"/>
+                            <constraint firstItem="QeZ-Qp-yBv" firstAttribute="centerX" secondItem="Kth-Dt-9zY" secondAttribute="centerX" id="zyN-3P-Nwz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D0h-s6-ZVz"/>
+                    <connections>
+                        <outlet property="calendarTimeLabel" destination="QeZ-Qp-yBv" id="6LL-c0-MUv"/>
+                        <outlet property="goCalendarDatePicker" destination="FLr-WG-bHI" id="qmO-MG-Aza"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCs-2Z-Khd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,11 +323,11 @@
                     <navigationItem key="navigationItem" id="qx5-jd-f27">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kkT-fM-ni8">
                             <color key="tintColor" red="0.46340962081550613" green="0.78927951388888884" blue="0.46053691201102304" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="vb6-o2-5rS" kind="show" id="uH8-Nu-0Rk"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="vb6-o2-5rS" kind="presentation" id="NDo-46-wAL"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLX-sd-UMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
