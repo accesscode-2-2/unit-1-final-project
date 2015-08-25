@@ -27,184 +27,102 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="due-Xd-3Tc" userLabel="buttons container">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="135"/>
+                                        <rect key="frame" x="0.0" y="93" width="600" height="100"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ayw-Qf-KrU" userLabel="reset view">
-                                                <rect key="frame" x="449" y="6" width="150" height="80"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-08-6Nh" userLabel="reset text">
-                                                        <rect key="frame" x="56" y="23" width="38" height="33"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="33" id="Yo3-ky-kvL"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                        <state key="normal" title="Reset">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="Yo3-ky-kvL"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="startButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="a5L-E3-o9Z"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.31016995614035081" blue="0.48227991854636587" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODn-oL-C4t" userLabel="pause text">
+                                                <rect key="frame" x="150" y="10" width="150" height="80"/>
+                                                <color key="backgroundColor" red="0.38823529410000002" green="0.79607843140000001" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="UoW-P6-vVI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-1X-WjE" userLabel="lap text">
+                                                <rect key="frame" x="300" y="10" width="150" height="80"/>
+                                                <color key="backgroundColor" red="0.27450980390000002" green="0.64705882349999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <state key="normal" title="Lap">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lapButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="Cu0-gS-9Zf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB6-dZ-OUo" userLabel="start">
+                                                <rect key="frame" x="0.0" y="10" width="150" height="80"/>
+                                                <color key="backgroundColor" red="1" green="0.50611489659999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="0GX-08-6Nh" firstAttribute="top" secondItem="Ayw-Qf-KrU" secondAttribute="top" constant="23" id="ppU-Rw-qIH"/>
+                                                    <constraint firstAttribute="width" constant="33" id="3Eo-2x-U4c"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="ppU-Rw-qIH"/>
+                                                        <exclude reference="3Eo-2x-U4c"/>
                                                     </mask>
                                                 </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vrn-cj-rKB" userLabel="lap view">
-                                                <rect key="frame" x="299" y="6" width="150" height="80"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-1X-WjE" userLabel="lap text">
-                                                        <rect key="frame" x="59" y="23" width="33" height="33"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="33" id="gXz-H9-JSP"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                        <state key="normal" title="Lap">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="gXz-H9-JSP"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="lapButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="Cu0-gS-9Zf"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="hlG-1X-WjE" firstAttribute="top" secondItem="Vrn-cj-rKB" secondAttribute="top" constant="23" id="HBE-j6-Vxt"/>
-                                                    <constraint firstItem="hlG-1X-WjE" firstAttribute="leading" secondItem="Vrn-cj-rKB" secondAttribute="leading" constant="59" id="xbT-OA-tIb"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="HBE-j6-Vxt"/>
-                                                        <exclude reference="xbT-OA-tIb"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7s-f7-e1b" userLabel="pause view">
-                                                <rect key="frame" x="149" y="6" width="150" height="80"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODn-oL-C4t" userLabel="pause text">
-                                                        <rect key="frame" x="40" y="23" width="70" height="34"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="33" id="a8w-eb-uwz"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                        <state key="normal" title="Pause">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="a8w-eb-uwz"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="pauseButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="UoW-P6-vVI"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.38823529411764707" green="0.79607843137254897" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="ODn-oL-C4t" firstAttribute="centerX" secondItem="k7s-f7-e1b" secondAttribute="centerX" id="BpT-74-buz"/>
-                                                    <constraint firstItem="ODn-oL-C4t" firstAttribute="top" secondItem="k7s-f7-e1b" secondAttribute="top" constant="23" id="GFl-WP-hC6"/>
-                                                    <constraint firstItem="ODn-oL-C4t" firstAttribute="centerY" secondItem="k7s-f7-e1b" secondAttribute="centerY" id="igx-bq-2YZ"/>
-                                                    <constraint firstItem="ODn-oL-C4t" firstAttribute="leading" secondItem="k7s-f7-e1b" secondAttribute="leading" constant="40" id="l29-Ai-vCt"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="BpT-74-buz"/>
-                                                        <exclude reference="GFl-WP-hC6"/>
-                                                        <exclude reference="igx-bq-2YZ"/>
-                                                        <exclude reference="l29-Ai-vCt"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glM-Tu-MSb" userLabel="start view">
-                                                <rect key="frame" x="0.0" y="6" width="150" height="80"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB6-dZ-OUo" userLabel="start">
-                                                        <rect key="frame" x="59" y="23" width="32" height="33"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="33" id="3Eo-2x-U4c"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                        <state key="normal" title="Start">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="3Eo-2x-U4c"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="startButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="7Mv-pE-6ef"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="oB6-dZ-OUo" firstAttribute="leading" secondItem="glM-Tu-MSb" secondAttribute="leading" constant="59" id="0FN-Q5-KNg"/>
-                                                    <constraint firstItem="oB6-dZ-OUo" firstAttribute="top" secondItem="glM-Tu-MSb" secondAttribute="top" constant="23" id="Nla-Xs-w8a"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="0FN-Q5-KNg"/>
-                                                        <exclude reference="Nla-Xs-w8a"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="7Mv-pE-6ef"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-08-6Nh" userLabel="reset text">
+                                                <rect key="frame" x="450" y="10" width="150" height="80"/>
+                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="DZY-HL-0vH" eventType="touchUpInside" id="a5L-E3-o9Z"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.3955732079" green="0.93948176159999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.98818936951640435" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="Ayw-Qf-KrU" firstAttribute="centerY" secondItem="Vrn-cj-rKB" secondAttribute="centerY" id="AeW-hg-O78"/>
-                                            <constraint firstItem="k7s-f7-e1b" firstAttribute="height" secondItem="Ayw-Qf-KrU" secondAttribute="height" id="LCx-bW-nx2"/>
-                                            <constraint firstItem="k7s-f7-e1b" firstAttribute="width" secondItem="Ayw-Qf-KrU" secondAttribute="width" id="SEW-AT-Anv"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="height" secondItem="hlG-1X-WjE" secondAttribute="height" id="0vI-qU-5dN"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="height" secondItem="0GX-08-6Nh" secondAttribute="height" id="ADw-tk-7yY"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="leading" secondItem="oB6-dZ-OUo" secondAttribute="trailing" id="BSI-ET-BgE"/>
+                                            <constraint firstAttribute="trailing" secondItem="0GX-08-6Nh" secondAttribute="trailing" id="D50-S7-0zt"/>
+                                            <constraint firstItem="oB6-dZ-OUo" firstAttribute="centerY" secondItem="ODn-oL-C4t" secondAttribute="centerY" id="FM9-Wu-oBc"/>
+                                            <constraint firstItem="oB6-dZ-OUo" firstAttribute="top" secondItem="due-Xd-3Tc" secondAttribute="top" id="GUL-nc-G3w"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="centerY" secondItem="hlG-1X-WjE" secondAttribute="centerY" id="LnA-9m-NTe"/>
+                                            <constraint firstItem="0GX-08-6Nh" firstAttribute="leading" secondItem="hlG-1X-WjE" secondAttribute="trailing" id="TGg-2o-sPy"/>
+                                            <constraint firstItem="hlG-1X-WjE" firstAttribute="top" secondItem="due-Xd-3Tc" secondAttribute="top" id="XIi-Ja-Fjp"/>
+                                            <constraint firstAttribute="bottom" secondItem="oB6-dZ-OUo" secondAttribute="bottom" id="XLK-cf-ReT"/>
+                                            <constraint firstItem="0GX-08-6Nh" firstAttribute="centerY" secondItem="hlG-1X-WjE" secondAttribute="centerY" id="YFE-CB-6qC"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="width" secondItem="hlG-1X-WjE" secondAttribute="width" id="asA-EU-hvh"/>
+                                            <constraint firstAttribute="bottom" secondItem="hlG-1X-WjE" secondAttribute="bottom" id="dj9-6W-ZCM"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="width" secondItem="oB6-dZ-OUo" secondAttribute="width" id="kFe-Eu-vDh"/>
+                                            <constraint firstItem="hlG-1X-WjE" firstAttribute="leading" secondItem="ODn-oL-C4t" secondAttribute="trailing" id="lro-GZ-xbb"/>
+                                            <constraint firstItem="oB6-dZ-OUo" firstAttribute="leading" secondItem="due-Xd-3Tc" secondAttribute="leading" id="rZl-y4-lfw"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="height" secondItem="oB6-dZ-OUo" secondAttribute="height" id="xgM-J2-Us6"/>
+                                            <constraint firstItem="ODn-oL-C4t" firstAttribute="width" secondItem="0GX-08-6Nh" secondAttribute="width" id="zhy-ED-kN5"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="LCx-bW-nx2"/>
-                                                <exclude reference="SEW-AT-Anv"/>
-                                                <exclude reference="AeW-hg-O78"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="0jI-hA-2LK"/>
-                                    <constraint firstAttribute="trailing" secondItem="due-Xd-3Tc" secondAttribute="trailing" id="3A6-Zo-ZYB"/>
-                                    <constraint firstAttribute="centerX" secondItem="m9J-mE-pKz" secondAttribute="centerX" id="7dU-IW-OXV"/>
-                                    <constraint firstAttribute="centerY" secondItem="m9J-mE-pKz" secondAttribute="centerY" id="8Ny-OS-Ech"/>
-                                    <constraint firstItem="due-Xd-3Tc" firstAttribute="leading" secondItem="oys-jp-uSF" secondAttribute="leading" id="M5S-Hd-kTN"/>
-                                    <constraint firstAttribute="bottom" secondItem="due-Xd-3Tc" secondAttribute="bottom" id="Ru8-VW-Sk2"/>
-                                    <constraint firstItem="m9J-mE-pKz" firstAttribute="top" secondItem="oys-jp-uSF" secondAttribute="top" constant="50" id="Uku-xz-nac"/>
-                                    <constraint firstItem="due-Xd-3Tc" firstAttribute="leading" secondItem="m9J-mE-pKz" secondAttribute="leading" id="YVy-7R-Z68"/>
-                                    <constraint firstItem="due-Xd-3Tc" firstAttribute="top" secondItem="m9J-mE-pKz" secondAttribute="bottom" constant="5" id="p3e-vj-OGe"/>
-                                    <constraint firstAttribute="bottom" secondItem="due-Xd-3Tc" secondAttribute="bottom" id="whP-Dx-yhF"/>
+                                    <constraint firstItem="due-Xd-3Tc" firstAttribute="top" secondItem="m9J-mE-pKz" secondAttribute="bottom" constant="2" id="5Y3-Az-qAy"/>
+                                    <constraint firstItem="m9J-mE-pKz" firstAttribute="top" secondItem="oys-jp-uSF" secondAttribute="top" constant="50" id="J2g-It-1Kg"/>
+                                    <constraint firstAttribute="bottom" secondItem="due-Xd-3Tc" secondAttribute="bottom" id="PB8-TY-hTM"/>
+                                    <constraint firstAttribute="bottom" secondItem="due-Xd-3Tc" secondAttribute="bottom" constant="50" id="d6G-IA-UI8"/>
+                                    <constraint firstItem="m9J-mE-pKz" firstAttribute="leading" secondItem="oys-jp-uSF" secondAttribute="leading" id="gGj-dy-bEV"/>
+                                    <constraint firstAttribute="trailing" secondItem="due-Xd-3Tc" secondAttribute="trailing" id="khf-vi-vje"/>
+                                    <constraint firstItem="due-Xd-3Tc" firstAttribute="leading" secondItem="oys-jp-uSF" secondAttribute="leading" id="mui-c5-8VA"/>
+                                    <constraint firstAttribute="centerX" secondItem="m9J-mE-pKz" secondAttribute="centerX" id="r5T-AQ-rKD"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="0jI-hA-2LK"/>
-                                        <exclude reference="8Ny-OS-Ech"/>
-                                        <exclude reference="Ru8-VW-Sk2"/>
+                                        <exclude reference="PB8-TY-hTM"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -237,21 +155,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UuJ-Ol-ydb" firstAttribute="top" secondItem="oys-jp-uSF" secondAttribute="bottom" id="Dab-ha-gou"/>
-                            <constraint firstItem="oys-jp-uSF" firstAttribute="leading" secondItem="SXD-HW-Jmz" secondAttribute="leading" id="N54-s0-Wvw"/>
-                            <constraint firstItem="4EZ-3Z-ToJ" firstAttribute="top" secondItem="UuJ-Ol-ydb" secondAttribute="bottom" constant="24" id="Rqd-fO-b74"/>
-                            <constraint firstItem="UuJ-Ol-ydb" firstAttribute="top" secondItem="oys-jp-uSF" secondAttribute="bottom" id="dS8-m0-EWx"/>
-                            <constraint firstAttribute="trailing" secondItem="oys-jp-uSF" secondAttribute="trailing" id="jHb-d0-e3y"/>
-                            <constraint firstAttribute="bottom" secondItem="oys-jp-uSF" secondAttribute="bottom" constant="373" id="oT3-xi-Uf5"/>
-                            <constraint firstAttribute="trailing" secondItem="UuJ-Ol-ydb" secondAttribute="trailing" id="pCy-du-k8W"/>
-                            <constraint firstItem="oys-jp-uSF" firstAttribute="top" secondItem="SXD-HW-Jmz" secondAttribute="top" id="wbD-Uo-ZRh"/>
-                            <constraint firstItem="UuJ-Ol-ydb" firstAttribute="leading" secondItem="SXD-HW-Jmz" secondAttribute="leading" id="xad-iE-plb"/>
+                            <constraint firstItem="oys-jp-uSF" firstAttribute="leading" secondItem="SXD-HW-Jmz" secondAttribute="leading" id="3IU-ad-cXz"/>
+                            <constraint firstAttribute="trailing" secondItem="UuJ-Ol-ydb" secondAttribute="trailing" id="6Jm-py-zcj"/>
+                            <constraint firstItem="4EZ-3Z-ToJ" firstAttribute="top" secondItem="UuJ-Ol-ydb" secondAttribute="bottom" constant="24" id="Ago-Yu-qjj"/>
+                            <constraint firstItem="oys-jp-uSF" firstAttribute="trailing" secondItem="UuJ-Ol-ydb" secondAttribute="trailing" id="Qf9-GL-egv"/>
+                            <constraint firstItem="UuJ-Ol-ydb" firstAttribute="leading" secondItem="SXD-HW-Jmz" secondAttribute="leading" id="TrK-Jf-gUt"/>
+                            <constraint firstItem="oys-jp-uSF" firstAttribute="top" secondItem="SXD-HW-Jmz" secondAttribute="top" id="YfV-u9-YyB"/>
+                            <constraint firstItem="UuJ-Ol-ydb" firstAttribute="top" secondItem="oys-jp-uSF" secondAttribute="bottom" id="euX-Pl-LaO"/>
+                            <constraint firstItem="oys-jp-uSF" firstAttribute="leading" secondItem="UuJ-Ol-ydb" secondAttribute="leading" id="oSx-gg-b6v"/>
+                            <constraint firstItem="UuJ-Ol-ydb" firstAttribute="top" secondItem="oys-jp-uSF" secondAttribute="bottom" id="otg-23-OMf"/>
+                            <constraint firstAttribute="bottom" secondItem="oys-jp-uSF" secondAttribute="bottom" constant="373" id="sso-q7-DfA"/>
+                            <constraint firstAttribute="trailing" secondItem="UuJ-Ol-ydb" secondAttribute="trailing" id="vSf-hS-QyY"/>
+                            <constraint firstItem="4EZ-3Z-ToJ" firstAttribute="top" secondItem="UuJ-Ol-ydb" secondAttribute="bottom" constant="24" id="zze-Vb-dCK"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="dS8-m0-EWx"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stopwatch" id="rlS-YF-b4x"/>
                     <connections>
