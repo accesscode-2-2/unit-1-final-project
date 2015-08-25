@@ -10,7 +10,7 @@
 #import "GOTimerViewController.h"
 #import "WorkoutManager.h"
 #import "Workout.h"
-
+#import "GOFightViewController.h"
 
 @interface GOWorkoutsTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -106,6 +106,22 @@
         
         NSLog(@"%@", sublistVC.currentWorkout);
         NSLog(@"%@", workout.workoutName);
+    }
+    if([segue.identifier isEqualToString:@"timerSegueThree"])
+    {
+        NSLog(@"GoFight!");
+        
+        GOFightViewController *sublistVC = segue.destinationViewController;
+        
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSMutableArray *workouts = [WorkoutManager sharedManager].workouts;
+//        Workout *workout = workouts[indexPath.row];
+//        
+//        GOTimerViewController *sublistVC = segue.destinationViewController;
+//        sublistVC.currentWorkout = [workouts objectAtIndex:1];
+//        
+//        NSLog(@"%@", sublistVC.currentWorkout);
+//        NSLog(@"%@", workout.workoutName);
     }
 
 }
