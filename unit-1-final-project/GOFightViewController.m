@@ -121,7 +121,6 @@
     
     self.numberOfRounds ++;
     self.roundNumberLabel.text = [NSString stringWithFormat:@"%d", self.numberOfRounds];
-    [self updateRestTime];
     [self updateRoundTime];
 }
 
@@ -144,6 +143,8 @@
         [self updateNumberOfRounds];
         [self initializeRestTimer];
         [self playBellAtRoundStart];
+        [self updateRestTime];
+
     }
 }
 - (void) updateRestTimer {

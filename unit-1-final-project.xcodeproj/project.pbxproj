@@ -188,10 +188,9 @@
 				3D2883551B8C02B400DE02B8 /* GOWorkout */,
 				3D2883541B8C02AE00DE02B8 /* GOStopwatch */,
 				3D2883531B8C02A500DE02B8 /* GOCalendar */,
+				9A553E361B8D125800A0230B /* GOFight */,
 				3DDB60BF1B893332008194DB /* WorkoutManager.h */,
 				3DDB60C01B893332008194DB /* WorkoutManager.m */,
-				9A553E251B8CFC0700A0230B /* GOFightViewController.h */,
-				9A553E261B8CFC0700A0230B /* GOFightViewController.m */,
 				3DDB60C21B893413008194DB /* Workout.h */,
 				3DDB60C31B893413008194DB /* Workout.m */,
 				3DDB60C51B893477008194DB /* Exercises.h */,
@@ -232,6 +231,15 @@
 				3D2D2F261B86B5A400E210BA /* Info.plist */,
 			);
 			path = "unit-1-final-projectUITests";
+			sourceTree = "<group>";
+		};
+		9A553E361B8D125800A0230B /* GOFight */ = {
+			isa = PBXGroup;
+			children = (
+				9A553E251B8CFC0700A0230B /* GOFightViewController.h */,
+				9A553E261B8CFC0700A0230B /* GOFightViewController.m */,
+			);
+			name = GOFight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
