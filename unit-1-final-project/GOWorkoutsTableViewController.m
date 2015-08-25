@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *goLeanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goHardLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goFightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goDeepLabel;
 
 @end
 
@@ -25,8 +27,12 @@
     
     [super viewDidLoad];
     
-    self.goHardLabel.font = [UIFont fontWithName:@"NikeTotal90" size:70.0];
-    self.goLeanLabel.font = [UIFont fontWithName:@"NikeTotal90" size:70.0];
+    self.goHardLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
+    self.goLeanLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
+    
+    self.goFightLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
+    
+    self.goDeepLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
     
     self.title = @"Go";
     
