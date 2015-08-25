@@ -9,17 +9,26 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-//this is just for a commit!
-
 @interface TimerViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIDatePicker *countDownTimer;
-@property (strong, nonatomic) IBOutlet UILabel *displayTimer;
+@property (nonatomic) NSTimer *timer;
 
-@property (strong, nonatomic) IBOutlet UIButton *timerReset;
+@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+
+@property (strong, nonatomic) IBOutlet UIButton *startButton;
+@property (strong, nonatomic) IBOutlet UIButton *pauseButton;
+@property (strong, nonatomic) IBOutlet UIButton *resetButton;
+
+@property (strong, nonatomic) IBOutlet UIDatePicker *countDownTimer;
 
 @property (nonatomic) NSDate *startime;
 @property (nonatomic) NSTimeInterval totalTime;
+@property (nonatomic) NSInteger *secondsLeft;
+
+- (IBAction)startTimer:(id)sender;
+- (IBAction)pauseTimer:(id)sender;
+- (IBAction)resetTimer:(id)sender;
+
 
 
 

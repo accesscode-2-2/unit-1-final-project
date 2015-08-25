@@ -87,8 +87,7 @@
 			children = (
 				BF5A03741B88C0AD00FDF71D /* AppDelegate.h */,
 				BF5A03751B88C0AD00FDF71D /* AppDelegate.m */,
-				BF5A039C1B88CCD600FDF71D /* TimerViewController.h */,
-				BF5A039D1B88CCD600FDF71D /* TimerViewController.m */,
+				BFAF42A81B8CF51700772E20 /* Timer */,
 				BF5A037A1B88C0AD00FDF71D /* Main.storyboard */,
 				BF5A037D1B88C0AD00FDF71D /* Images.xcassets */,
 				BF5A037F1B88C0AD00FDF71D /* LaunchScreen.xib */,
@@ -121,6 +120,15 @@
 				BF5A038B1B88C0AD00FDF71D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFAF42A81B8CF51700772E20 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A039C1B88CCD600FDF71D /* TimerViewController.h */,
+				BF5A039D1B88CCD600FDF71D /* TimerViewController.m */,
+			);
+			name = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

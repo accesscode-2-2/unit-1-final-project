@@ -25,7 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseButton:" destination="pzV-SG-jHg" eventType="touchUpInside" id="WbH-u4-Qr1"/>
+                                    <action selector="pauseTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="7FJ-dO-qWX"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
@@ -34,16 +34,6 @@
                                     <!--2015-08-22 19:34:33 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
-                                <rect key="frame" x="12" y="196" width="577" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButton:" destination="pzV-SG-jHg" eventType="touchUpInside" id="G2w-X2-Hnz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
                                 <rect key="frame" x="12" y="317" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -51,7 +41,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="timerReset:" destination="pzV-SG-jHg" eventType="touchUpInside" id="whE-uV-F0s"/>
+                                    <action selector="resetTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="S5A-3j-wKA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gis-ba-krU">
@@ -60,6 +50,16 @@
                                 <color key="textColor" red="0.52421992978849841" green="0.76330989899932145" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.98883551431362504" green="0.70222294690605858" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
+                                <rect key="frame" x="12" y="191" width="577" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="0Eg-WE-GPz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -109,8 +109,10 @@
                     <navigationItem key="navigationItem" id="h0S-AO-PcT"/>
                     <connections>
                         <outlet property="countDownTimer" destination="nQ5-9V-n3s" id="ID9-n1-Qj6"/>
-                        <outlet property="displayTimer" destination="gis-ba-krU" id="0Oi-bW-0ca"/>
-                        <outlet property="timerReset" destination="IRl-cz-v6d" id="z1z-nS-NNe"/>
+                        <outlet property="pauseButton" destination="ZlD-4D-LIh" id="3DT-cd-v0E"/>
+                        <outlet property="resetButton" destination="IRl-cz-v6d" id="G8d-4w-cJh"/>
+                        <outlet property="startButton" destination="t6j-xf-S9n" id="bPH-RK-Wfd"/>
+                        <outlet property="timerLabel" destination="gis-ba-krU" id="CGf-5i-715"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGs-mL-eZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
