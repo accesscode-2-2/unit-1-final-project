@@ -56,9 +56,9 @@
         j++;
     }
 }
-
 - (IBAction)startButtonTapped:(UIButton *)sender {
-    
+    self.startButton.enabled = NO;
+    [self.timerPickerView setUserInteractionEnabled:NO];
     self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
@@ -71,10 +71,12 @@
     
     if ( (hourIndex  == 00) && (minuteIndex % 60 == 00) && (secondIndex % 60 == 00) ) {
         [self.timer invalidate];
-    } else {
-        if ( (hourIndex == 00) && (minuteIndex == 00) && (secondIndex == 00) ) {
-            [self.timer invalidate];
-        } else if (secondIndex % 60 == 00) {
+    }
+    else{
+//        if( (hourIndex == 00) && (minuteIndex == 00) && (secondIndex == 00) ){
+//            [self.timer invalidate];
+//        }
+         if(secondIndex % 60 == 00){
             
             self.row = secondIndex + 59;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
@@ -121,7 +123,8 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
-    
+    [self.timerPickerView setUserInteractionEnabled:YES];
+    self.startButton.enabled = YES;
     [self.timerPickerView reloadAllComponents];
     for(int i=0;i<3 ;i++){
         [self.timerPickerView selectRow:0 inComponent:i animated:YES];
