@@ -11,6 +11,7 @@
 		3D28833C1B8B49F100DE02B8 /* GOCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D28833B1B8B49F100DE02B8 /* GOCalendarViewController.m */; };
 		3D28833F1B8B4DC700DE02B8 /* GOCalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D28833E1B8B4DC700DE02B8 /* GOCalendarTableViewController.m */; };
 		3D2883581B8C031400DE02B8 /* NikeTotal90.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D2883571B8C031400DE02B8 /* NikeTotal90.ttf */; };
+		3D28835B1B8CBFC200DE02B8 /* GOCalendarResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D28835A1B8CBFC200DE02B8 /* GOCalendarResults.m */; };
 		3D2D2F011B86B5A300E210BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F001B86B5A300E210BA /* main.m */; };
 		3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F031B86B5A300E210BA /* AppDelegate.m */; };
 		3D2D2F0A1B86B5A300E210BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2D2F081B86B5A300E210BA /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 		3D28833D1B8B4DC700DE02B8 /* GOCalendarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCalendarTableViewController.h; sourceTree = "<group>"; };
 		3D28833E1B8B4DC700DE02B8 /* GOCalendarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCalendarTableViewController.m; sourceTree = "<group>"; };
 		3D2883571B8C031400DE02B8 /* NikeTotal90.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NikeTotal90.ttf; path = ../../../Downloads/NikeTotal90.ttf; sourceTree = "<group>"; };
+		3D2883591B8CBFC200DE02B8 /* GOCalendarResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCalendarResults.h; sourceTree = "<group>"; };
+		3D28835A1B8CBFC200DE02B8 /* GOCalendarResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCalendarResults.m; sourceTree = "<group>"; };
 		3D2D2EFC1B86B5A300E210BA /* unit-1-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-1-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F001B86B5A300E210BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D2D2F021B86B5A300E210BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				3D28833E1B8B4DC700DE02B8 /* GOCalendarTableViewController.m */,
 				3D28833A1B8B49F100DE02B8 /* GOCalendarViewController.h */,
 				3D28833B1B8B49F100DE02B8 /* GOCalendarViewController.m */,
+				3D2883591B8CBFC200DE02B8 /* GOCalendarResults.h */,
+				3D28835A1B8CBFC200DE02B8 /* GOCalendarResults.m */,
 			);
 			name = GOCalendar;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				3D2883391B8A716800DE02B8 /* LapTimerTableViewCell.m in Sources */,
 				3DDB60C41B893413008194DB /* Workout.m in Sources */,
 				3D28833C1B8B49F100DE02B8 /* GOCalendarViewController.m in Sources */,
+				3D28835B1B8CBFC200DE02B8 /* GOCalendarResults.m in Sources */,
 				3D2D2F041B86B5A300E210BA /* AppDelegate.m in Sources */,
 				3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */,
 				3D2D2F011B86B5A300E210BA /* main.m in Sources */,

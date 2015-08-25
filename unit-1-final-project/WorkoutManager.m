@@ -15,6 +15,7 @@
 #pragma mark Singleton Methods
 
 @synthesize workouts;
+@synthesize calendarDates;
 
 + (WorkoutManager *) sharedManager{
     static WorkoutManager *sharedMyManager = nil;
@@ -25,6 +26,16 @@
         [sharedMyManager preLoadedWorkouts];
     });
     return sharedMyManager;
+}
+
++ (WorkoutManager *) calendarManager{
+    static WorkoutManager *calendarMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        calendarMyManager = [[self alloc] init];
+        calendarMyManager.calendarDates = [[NSMutableArray alloc] init];
+    });
+    return calendarMyManager;
 }
 
 - (void)preLoadedWorkouts {
@@ -70,6 +81,8 @@
     [self.workouts addObject:workout1];
     [self.workouts addObject:workout2];
 }
+
+
 
 
 @end
