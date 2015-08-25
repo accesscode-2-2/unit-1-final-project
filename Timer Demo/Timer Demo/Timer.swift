@@ -12,7 +12,7 @@ class Timer: NSObject {
 
     var startTime: CFTimeInterval!
     var remainingTime: CFTimeInterval!
-    var isPaused = false
+    var isPaused = true
     
     init(startTime:CFTimeInterval){
         self.startTime = startTime

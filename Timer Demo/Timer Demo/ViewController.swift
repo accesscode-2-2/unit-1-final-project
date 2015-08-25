@@ -11,8 +11,8 @@ import QuartzCore
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var startPauseButton: UIButton!
+//    @IBOutlet weak var timerLabel: UILabel!
+//    @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var displayLink : CADisplayLink!
@@ -45,6 +45,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if timer.isPaused == false{
                 updateTimer(timer)
             }
+            
+            else {
+                timer.remainingTime = timer.startTime
+                
+            }
         }
         
         tableView.reloadData()
@@ -73,15 +78,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return timers.count
     }
     
-    @IBAction func startPause(sender: UIButton){
+    @IBAction func startPause(startPauseButton: UIButton){
         
         for path in tableView.indexPathsForVisibleRows! {
             let cell = tableView.cellForRowAtIndexPath(path) as! TableViewCell
             
-            if sender.tag == path.row{
-                cell.timer.isPaused = true
+            if startPauseButton.tag == path.row{
+                cell.timer.isPaused = !cell.timer.isPaused
+                
+                if cell.timer.isPaused == false {
+                    startPauseButton.setImage(UIImage(named: "Cancel-50.png"), forState: .Normal)
+                }
+                    
+                else {
+                    startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
+                }
             }
-            
+
         }
     
     }
