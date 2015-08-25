@@ -92,12 +92,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMz-dl-OW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="X4C-j0-ord">
                     <connections>
-                        <segue destination="Q4G-ba-Gni" kind="push" id="AGY-m8-kFv"/>
+                        <segue destination="Q4G-ba-Gni" kind="show" id="VfV-XY-p2P"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="es0-rd-qxE">
                     <connections>
-                        <segue destination="wBv-Vs-8ek" kind="push" id="gur-N6-bWj"/>
+                        <segue destination="wBv-Vs-8ek" kind="show" id="xDM-Of-5z9"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -236,7 +236,7 @@
                                     <constraint firstAttribute="height" constant="150" id="WtQ-d7-RfU"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z1f-jV-fgX">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedLapTimeIdentifier" id="Z1f-jV-fgX">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z1f-jV-fgX" id="NoD-tP-ebO">
@@ -244,6 +244,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="N6a-sw-Gqi" id="PUH-P3-fzP"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAQ-B0-3VA">
                                 <rect key="frame" x="0.0" y="301" width="300" height="100"/>
@@ -264,14 +267,14 @@
                                     <constraint firstAttribute="centerY" secondItem="Mds-qm-mlG" secondAttribute="centerY" id="hkk-4q-jmb"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXj-Lc-aEq">
-                                <rect key="frame" x="334" y="217" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXj-Lc-aEq">
+                                <rect key="frame" x="334" y="260.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hY4-G5-KCi">
-                                <rect key="frame" x="224" y="232" width="152" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hY4-G5-KCi">
+                                <rect key="frame" x="224" y="276" width="152" height="5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -312,6 +315,7 @@
                     <connections>
                         <outlet property="lapButton" destination="ELg-dg-4Ie" id="VDE-K7-QeK"/>
                         <outlet property="lapTimerLabel" destination="KXj-Lc-aEq" id="rF8-1W-mco"/>
+                        <outlet property="lapsTableView" destination="Puy-8O-oGY" id="etx-l8-xFQ"/>
                         <outlet property="startButton" destination="Mds-qm-mlG" id="grg-wA-5ib"/>
                         <outlet property="timerDisplay" destination="hY4-G5-KCi" id="gOa-ks-Toh"/>
                     </connections>

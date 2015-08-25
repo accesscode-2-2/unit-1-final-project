@@ -8,15 +8,16 @@
 
 #import "StopWatchTabBarController.h"
 
-@interface StopWatchTabBarController ()
+@interface StopWatchTabBarController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UILabel *timerDisplay;
 @property (strong, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) IBOutlet UIButton *lapButton;
+@property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
 
 @property (nonatomic) BOOL timerIsRunning; // this will start/stop timer
-@property (nonatomic) NSMutableArray *saveLapTime; // used later for storing values
+@property (nonatomic) NSMutableArray *savedLapTimes; // used later for storing values
 
 //- (IBAction)startPauseButton:(id)sender;
 //- (IBAction)lapButton:(id)sender;
@@ -31,11 +32,14 @@ NSTimer *timer;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.timerIsRunning = NO;
     self.timerDisplay.text = [[NSString alloc] initWithFormat:@"%.2f",timeTick];
     self.lapTimerLabel.text = [[NSString alloc] initWithFormat:@"%.2f", timeTick];
     
-    [self.startButton setTitle:@"START" forState:UIControlStateNormal];
+    [self.startButton setTitle:@"START" forState:UIControlStateNormal]; // set default text
     [self.lapButton setTitle:@"LAP" forState:UIControlStateNormal];
+    
+    self.savedLapTimes = [NSMutableArray arrayWithObjects:@"hello", @"hi", nil]; // create array to store lap times
 }
 
 - (void)tick { // the timer loop will run this method each time it is initiated, it advances the number
@@ -50,7 +54,7 @@ NSTimer *timer;
     self.lapTimerLabel.text = [NSString stringWithFormat:@"%.2f", nextLap];
    }
 
-- (IBAction)startPauseButton:(id)sender {
+- (IBAction)startPauseButton:(id)sender { // start button tapped
     
     [timer invalidate];
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(tick) userInfo:nil repeats:YES];
@@ -67,28 +71,43 @@ NSTimer *timer;
     }
 }
 
-- (IBAction)lapButton:(id)sender {
+- (IBAction)lapButton:(id)sender { // lap button tapped
     
     if (self.timerIsRunning) { // timer state: running
-        [self.saveLapTime addObject:self.lapTimerLabel.text]; // this will save lap to an array
+        
+       // [self.savedLapTimes addObject:self.lapTimerLabel.text]; // this is slightly different
+         [self.savedLapTimes insertObject:self.lapTimerLabel.text atIndex:0]; // add new item to the top of the list
+        
+        NSLog(@"saved time = %@", self.lapTimerLabel.text); // test it
+        NSLog(@"%@", self.savedLapTimes);
+        
+        [self.lapsTableView reloadData]; // reload and refresh with new values added
+        
         self.lapTimerLabel.text = @"0.00";
         
     } else {
         self.timerDisplay.text = @"0.00"; // main label keep going
         self.lapTimerLabel.text = @"0.00"; // lap label set to 0 (should also record time!!)
+        
+        // reload and clear the tableview to reset
     }
 }
 
 // Set up tableView here:
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.savedLapTimes.count;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 0;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"savedLapTimeIdentifier" forIndexPath:indexPath];
+    
+    cell.textLabel.text = self.savedLapTimes[indexPath.row];
+    return cell;
+    
 }
 
 
