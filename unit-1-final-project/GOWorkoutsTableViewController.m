@@ -14,6 +14,8 @@
 
 @interface GOWorkoutsTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *goLeanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goHardLabel;
 
 @end
 
@@ -22,6 +24,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    self.goHardLabel.font = [UIFont fontWithName:@"NikeTotal90" size:70.0];
+    self.goLeanLabel.font = [UIFont fontWithName:@"NikeTotal90" size:70.0];
     
     self.title = @"Go";
     
