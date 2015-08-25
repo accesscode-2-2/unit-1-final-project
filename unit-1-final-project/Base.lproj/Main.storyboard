@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm3-8s-Zgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="-335"/>
+            <point key="canvasLocation" x="1214" y="-455"/>
         </scene>
         <!--Nav. Controller - Go Stopwatch-->
         <scene sceneID="Odt-Ju-QOv">
@@ -197,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na3-nd-dd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-343"/>
+            <point key="canvasLocation" x="446" y="-463"/>
         </scene>
         <!--Nav. Controller - Go Workout-->
         <scene sceneID="v1j-qk-QNl">
@@ -231,7 +231,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOl-0E-YZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491" y="1674"/>
+            <point key="canvasLocation" x="410" y="1842"/>
         </scene>
         <!--Go Calendar-->
         <scene sceneID="TLq-Me-jEe">
@@ -246,10 +246,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-yQ-JHb">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FLr-WG-bHI">
-                                <rect key="frame" x="20" y="20" width="560" height="170"/>
+                                <rect key="frame" x="20" y="64" width="560" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="VL8-a7-svU"/>
                                 </constraints>
@@ -296,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCs-2Z-Khd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="1674"/>
+            <point key="canvasLocation" x="2020" y="1842"/>
         </scene>
         <!--Go Calendar - List-->
         <scene sceneID="hTM-zu-PO9">
@@ -307,13 +307,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MzY-qt-Zk3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarList" id="MzY-qt-Zk3">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MzY-qt-Zk3" id="2tp-Fe-Iz8">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="t8P-Jt-a2V" kind="show" id="8dN-8q-zL5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -325,14 +328,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kkT-fM-ni8">
                             <color key="tintColor" red="0.46340962081550613" green="0.78927951388888884" blue="0.46053691201102304" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="vb6-o2-5rS" kind="presentation" id="PS4-JS-OjK"/>
+                                <segue destination="vb6-o2-5rS" kind="show" id="bcd-ik-hm0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLX-sd-UMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="1674"/>
+            <point key="canvasLocation" x="1219" y="1842"/>
         </scene>
         <!--Go Workouts Preset-->
         <scene sceneID="gdC-sO-YZi">
@@ -439,7 +442,11 @@
                             <outlet property="delegate" destination="5J1-8V-oF5" id="XXm-NI-fhV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="8G8-4o-yDe"/>
+                    <navigationItem key="navigationItem" id="8G8-4o-yDe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jEf-SA-bZR">
+                            <color key="tintColor" red="0.46340962079999998" green="0.78927951389999995" blue="0.46053691200000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="600" height="600"/>
                     <connections>
                         <outlet property="goDeepLabel" destination="2c6-tG-yYC" id="5dO-Gg-YGZ"/>
@@ -559,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrh-Np-jrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2179" y="49"/>
+            <point key="canvasLocation" x="1963" y="-71"/>
         </scene>
         <!--Go Custom Workout-->
         <scene sceneID="EsA-xu-HVW">
@@ -656,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Job-2V-s8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907" y="1674"/>
+            <point key="canvasLocation" x="2808" y="1842"/>
         </scene>
         <!--Main UITab Controller-->
         <scene sceneID="hYw-OO-fT6">
@@ -676,13 +683,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgB-3g-mUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="475"/>
+            <point key="canvasLocation" x="-659" y="515"/>
         </scene>
     </scenes>
     <resources>
         <image name="whitebg" width="2000" height="1343"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qup-B3-gTY"/>
         <segue reference="kO5-CA-LuI"/>
     </inferredMetricsTieBreakers>
 </document>
