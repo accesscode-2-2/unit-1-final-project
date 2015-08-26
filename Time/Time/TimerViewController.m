@@ -91,6 +91,7 @@
     }
 }
 
+<<<<<<< HEAD
 - (void)setupPickerViewNumbers {
     [self setupHours];
     [self setupMinutes];
@@ -130,12 +131,15 @@
 }
 
 -(void)animate{
+=======
+- (void)animate {
+>>>>>>> 7fc25c18b71757a1b6d4d465d99ce05ddfffdf9c
     
     NSInteger hourIndex = [self.timerPickerView selectedRowInComponent:0];
     NSInteger minuteIndex = [self.timerPickerView selectedRowInComponent:1];
     NSInteger secondIndex = [self.timerPickerView selectedRowInComponent:2];
     
-    if( (hourIndex  == 00) && (minuteIndex % 60 == 00) && (secondIndex %60 == 00) ){
+    if ( (hourIndex  == 00) && (minuteIndex % 60 == 00) && (secondIndex % 60 == 00) ) {
         [self.timer invalidate];
     }
     else{
@@ -147,35 +151,36 @@
             self.row = secondIndex + 59;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
             
-            if(minuteIndex != 00){
-                
+            if (minuteIndex != 00) {
                 self.row = minuteIndex -1;
                 [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 
-            }
-            else if(hourIndex != 00){
+            } else if (hourIndex != 00) {
+                
                 //hour
-                    self.row = hourIndex - 1;
-                    [self.timerPickerView selectRow:self.row inComponent:0 animated:YES];
+                self.row = hourIndex - 1;
+                [self.timerPickerView selectRow:self.row inComponent:0 animated:YES];
+                
                 //minute
-                if(minuteIndex%60 == 00){
-                    self.row = minuteIndex+59;
+                if (minuteIndex % 60 == 00) {
+                    self.row = minuteIndex + 59;
                     [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
-                }else{
-                    self.row = minuteIndex-1;
+                
+                } else {
+                    self.row = minuteIndex - 1;
                     [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 }
+                
                 //second
-                if(secondIndex%60 == 00){
+                if (secondIndex % 60 == 00) {
                     self.row = secondIndex +59;
                     [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
-                }else{
-                    self.row = secondIndex-1;
+                } else {
+                    self.row = secondIndex - 1;
                     [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
                 }
             }
-        }
-        else{
+        } else {
             self.row = secondIndex - 1;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
         }
@@ -207,11 +212,56 @@
     [self presentViewController:presetsNC animated:YES completion:nil];
 }
 
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.component = component;
     self.row = row;
 }
 
+<<<<<<< HEAD
+=======
+- (void)setupSeconds {
+    self.seconds = [[NSMutableArray alloc] init];
+    
+    int j = 0;
+    int i = 0;
+    while (true) {
+        if (i == 60) {
+            i = 0;
+        }
+        if (j == 3600) {
+            break;
+        }
+        NSString *s = [NSString stringWithFormat:@"%02d", i];
+        [self.seconds addObject:s];
+        i++;
+        j++;
+    }
+}
+
+- (void)setupPickerViewNumbers {
+    [self setupHours];
+    [self setupMinutes];
+    [self setupSeconds];
+    
+    self.pickerViewNumbers = [[NSMutableArray alloc] initWithObjects:self.hours,
+                              self.minutes, self.seconds, nil];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupPickerViewNumbers];
+    
+    self.timerPickerView.delegate = self;
+    self.timerPickerView.dataSource = self;
+    
+//    self.timer  = [CADisplayLink displayLinkWithTarget:self
+//                                                       selector:@selector(refreshTimerLabel)];
+//    [self.timer setPaused:YES];
+//    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+>>>>>>> 7fc25c18b71757a1b6d4d465d99ce05ddfffdf9c
 #pragma mark - data source and delegate for PickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return [self.pickerViewNumbers count];
@@ -226,7 +276,7 @@
 }
 
 #pragma mark - PresetsTableViewControllerDelegate implementation
--(void)presetTime:(NSArray *)presetTime {
+- (void)presetTime:(NSArray *)presetTime {
     self.presetTime = presetTime;
     NSLog(@"%@", self.presetTime);
 }
