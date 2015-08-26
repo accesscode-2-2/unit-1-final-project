@@ -91,7 +91,7 @@
     }
 }
 
-<<<<<<< HEAD
+
 - (void)setupPickerViewNumbers {
     [self setupHours];
     [self setupMinutes];
@@ -130,10 +130,7 @@
     self.timer = nil;
 }
 
--(void)animate{
-=======
 - (void)animate {
->>>>>>> 7fc25c18b71757a1b6d4d465d99ce05ddfffdf9c
     
     NSInteger hourIndex = [self.timerPickerView selectedRowInComponent:0];
     NSInteger minuteIndex = [self.timerPickerView selectedRowInComponent:1];
@@ -217,51 +214,7 @@
     self.row = row;
 }
 
-<<<<<<< HEAD
-=======
-- (void)setupSeconds {
-    self.seconds = [[NSMutableArray alloc] init];
-    
-    int j = 0;
-    int i = 0;
-    while (true) {
-        if (i == 60) {
-            i = 0;
-        }
-        if (j == 3600) {
-            break;
-        }
-        NSString *s = [NSString stringWithFormat:@"%02d", i];
-        [self.seconds addObject:s];
-        i++;
-        j++;
-    }
-}
 
-- (void)setupPickerViewNumbers {
-    [self setupHours];
-    [self setupMinutes];
-    [self setupSeconds];
-    
-    self.pickerViewNumbers = [[NSMutableArray alloc] initWithObjects:self.hours,
-                              self.minutes, self.seconds, nil];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupPickerViewNumbers];
-    
-    self.timerPickerView.delegate = self;
-    self.timerPickerView.dataSource = self;
-    
-//    self.timer  = [CADisplayLink displayLinkWithTarget:self
-//                                                       selector:@selector(refreshTimerLabel)];
-//    [self.timer setPaused:YES];
-//    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-}
-
->>>>>>> 7fc25c18b71757a1b6d4d465d99ce05ddfffdf9c
 #pragma mark - data source and delegate for PickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return [self.pickerViewNumbers count];
