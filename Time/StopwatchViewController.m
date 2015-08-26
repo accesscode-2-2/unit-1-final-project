@@ -13,21 +13,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchTimerLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *startButtonTapped;
-
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
-
 @property (weak, nonatomic) IBOutlet UIButton *lapButtonTapped;
 
 @property (nonatomic) float nextNumber;
-
 @property (nonatomic) float currentNumber;
 
 @property (nonatomic) NSTimer *timer1;
 
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
-
 @property (nonatomic) NSMutableArray *laps;
-
 @property (nonatomic) float currentLapTime;
 
 @end
