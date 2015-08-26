@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hnP-F8-9Vf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hnP-F8-9Vf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="digitalFont.ttf">
+        <mutableArray key="digital-7.ttf">
+            <string>Digital-7</string>
             <string>Digital-7</string>
             <string>Digital-7</string>
             <string>Digital-7</string>
@@ -35,12 +36,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-Vj-5NK" userLabel="Stopwatch Timer View">
                                         <rect key="frame" x="100" y="60" width="400" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-nY-S8U">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-nY-S8U">
                                                 <rect key="frame" x="110" y="15" width="180" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="Um4-oj-M49"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="59"/>
+                                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="53"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -92,10 +93,10 @@
                                             <action selector="resetLapButtonTapped:" destination="dfO-4W-KWV" eventType="touchUpInside" id="MbW-VJ-K87"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRD-40-Wpm" userLabel="LapTime">
-                                        <rect key="frame" x="505" y="20" width="90" height="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRD-40-Wpm" userLabel="LapTime">
+                                        <rect key="frame" x="455" y="20" width="140" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="HdG-ar-e8a"/>
+                                            <constraint firstAttribute="width" constant="140" id="HdG-ar-e8a"/>
                                             <constraint firstAttribute="height" constant="35" id="gZx-8A-3L9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
@@ -121,7 +122,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" textLabel="zVQ-oq-ZqO" detailTextLabel="iXZ-KE-R1N" style="IBUITableViewCellStyleValue1" id="siV-xn-2W7">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopwatchIdentifier" textLabel="zVQ-oq-ZqO" detailTextLabel="iXZ-KE-R1N" style="IBUITableViewCellStyleValue1" id="siV-xn-2W7">
                                         <rect key="frame" x="0.0" y="22" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="siV-xn-2W7" id="PNH-r7-0WC">
@@ -135,7 +136,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iXZ-KE-R1N">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iXZ-KE-R1N">
                                                     <rect key="frame" x="500" y="12" width="53" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="21"/>
@@ -189,100 +190,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvu-BH-v7C">
-                                <rect key="frame" x="0.0" y="20" width="600" height="179"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99:99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-Dq-Llq">
-                                        <rect key="frame" x="30" y="10" width="540" height="139"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="96"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV9-p5-h4B">
+                                <rect key="frame" x="189" y="80" width="222" height="76"/>
                                 <constraints>
-                                    <constraint firstItem="7ZE-Dq-Llq" firstAttribute="top" secondItem="vvu-BH-v7C" secondAttribute="top" constant="10" id="29K-TZ-BCk"/>
-                                    <constraint firstAttribute="bottom" secondItem="7ZE-Dq-Llq" secondAttribute="bottom" constant="30" id="UIW-pA-OLf"/>
-                                    <constraint firstItem="7ZE-Dq-Llq" firstAttribute="leading" secondItem="vvu-BH-v7C" secondAttribute="leading" constant="30" id="V5s-Yv-qtq"/>
-                                    <constraint firstAttribute="trailing" secondItem="7ZE-Dq-Llq" secondAttribute="trailing" constant="30" id="aOI-Xl-VxB"/>
-                                    <constraint firstAttribute="bottom" secondItem="7ZE-Dq-Llq" secondAttribute="bottom" constant="30" id="qev-fv-NnQ"/>
+                                    <constraint firstAttribute="width" constant="222" id="Kcy-RS-yWp"/>
+                                    <constraint firstAttribute="height" constant="76" id="jNl-Lr-VIZ"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK5-Pf-cyu">
-                                <rect key="frame" x="0.0" y="199" width="600" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFu-Vj-PZX">
-                                        <rect key="frame" x="431" y="37" width="80" height="71"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="Lwx-KE-fLP"/>
-                                            <constraint firstAttribute="height" constant="71" id="t7q-fb-Fsu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
-                                        <state key="normal" title="PAUSE"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2E-8P-ifX">
-                                        <rect key="frame" x="89" y="35" width="80" height="71"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="48e-KL-yzp"/>
-                                            <constraint firstAttribute="height" constant="71" id="mFD-OK-uYl"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
-                                        <state key="normal" title="STOP"/>
-                                        <connections>
-                                            <action selector="startStopButtonTapped:" destination="zEu-mR-zpR" eventType="touchUpInside" id="Pf1-wG-d9k"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.73909296700000005" green="0.76212079109999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="66"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqE-Ab-HXJ">
+                                <rect key="frame" x="46" y="296" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="Cgw-j6-fDx"/>
-                                    <constraint firstAttribute="trailing" secondItem="QFu-Vj-PZX" secondAttribute="trailing" constant="89" id="GV7-B9-b0U"/>
-                                    <constraint firstItem="W2E-8P-ifX" firstAttribute="top" secondItem="sK5-Pf-cyu" secondAttribute="top" constant="20" id="NQb-2m-iGV"/>
-                                    <constraint firstItem="W2E-8P-ifX" firstAttribute="leading" secondItem="sK5-Pf-cyu" secondAttribute="leading" constant="20" id="Qeo-zy-7Ty"/>
-                                    <constraint firstAttribute="bottom" secondItem="W2E-8P-ifX" secondAttribute="bottom" constant="20" id="SOV-UY-WqW"/>
-                                    <constraint firstAttribute="bottom" secondItem="QFu-Vj-PZX" secondAttribute="bottom" constant="36" id="Tne-dX-hlO"/>
-                                    <constraint firstAttribute="height" constant="128" id="VGA-Qj-KCc"/>
-                                    <constraint firstItem="QFu-Vj-PZX" firstAttribute="top" secondItem="sK5-Pf-cyu" secondAttribute="top" constant="35" id="YYM-G5-BTd"/>
-                                    <constraint firstItem="QFu-Vj-PZX" firstAttribute="leading" secondItem="sK5-Pf-cyu" secondAttribute="leading" constant="125" id="mDZ-Kh-BT8"/>
-                                    <constraint firstAttribute="bottom" secondItem="W2E-8P-ifX" secondAttribute="bottom" constant="22" id="w67-be-qaJ"/>
-                                    <constraint firstItem="W2E-8P-ifX" firstAttribute="leading" secondItem="sK5-Pf-cyu" secondAttribute="leading" constant="89" id="wzj-4c-dOT"/>
-                                    <constraint firstAttribute="bottom" secondItem="QFu-Vj-PZX" secondAttribute="bottom" constant="20" id="xVN-cr-OJL"/>
+                                    <constraint firstAttribute="height" constant="120" id="CaG-iK-alR"/>
+                                    <constraint firstAttribute="width" constant="120" id="l7W-a2-O7g"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="NQb-2m-iGV"/>
-                                        <exclude reference="Qeo-zy-7Ty"/>
-                                        <exclude reference="SOV-UY-WqW"/>
-                                        <exclude reference="Tne-dX-hlO"/>
-                                        <exclude reference="YYM-G5-BTd"/>
-                                        <exclude reference="mDZ-Kh-BT8"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taj-TO-4Ig">
-                                <rect key="frame" x="16" y="355" width="568" height="216"/>
-                            </pickerView>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="40"/>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopButton:" destination="zEu-mR-zpR" eventType="touchUpInside" id="jmc-HO-rbp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqr-kA-nXV">
+                                <rect key="frame" x="434" y="296" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="fnB-pe-rlD"/>
+                                    <constraint firstAttribute="width" constant="120" id="hRe-14-86F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="40"/>
+                                <state key="normal" title="PAUSE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-Py-tiL">
+                                <rect key="frame" x="36" y="36" width="528" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="iJd-BE-ER6"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="462242531.05124497">
+                                    <!--2015-08-26 00:42:11 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="taj-TO-4Ig" secondAttribute="bottom" id="5x3-wb-mae"/>
-                            <constraint firstItem="sK5-Pf-cyu" firstAttribute="leading" secondItem="QiR-xc-fEK" secondAttribute="leading" id="FP2-z4-Qry"/>
-                            <constraint firstItem="taj-TO-4Ig" firstAttribute="leading" secondItem="QiR-xc-fEK" secondAttribute="leadingMargin" id="Fo6-eR-W6A"/>
-                            <constraint firstItem="vvu-BH-v7C" firstAttribute="top" secondItem="gew-Jz-6Rh" secondAttribute="bottom" id="JCY-rO-Yjg"/>
-                            <constraint firstItem="2qp-fB-oBB" firstAttribute="top" secondItem="vvu-BH-v7C" secondAttribute="bottom" constant="352" id="Omd-PD-ezw"/>
-                            <constraint firstItem="sK5-Pf-cyu" firstAttribute="top" secondItem="vvu-BH-v7C" secondAttribute="bottom" id="TKy-yk-0Mt"/>
-                            <constraint firstAttribute="trailing" secondItem="vvu-BH-v7C" secondAttribute="trailing" id="V4D-zg-9Qd"/>
-                            <constraint firstItem="vvu-BH-v7C" firstAttribute="leading" secondItem="QiR-xc-fEK" secondAttribute="leading" id="nc9-KT-8Ty"/>
-                            <constraint firstItem="taj-TO-4Ig" firstAttribute="top" secondItem="sK5-Pf-cyu" secondAttribute="bottom" id="tKN-WT-YOQ"/>
-                            <constraint firstAttribute="trailing" secondItem="sK5-Pf-cyu" secondAttribute="trailing" id="vg4-n8-mQU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="taj-TO-4Ig" secondAttribute="trailing" id="xIs-QU-Gaj"/>
+                            <constraint firstItem="iqE-Ab-HXJ" firstAttribute="leading" secondItem="QiR-xc-fEK" secondAttribute="leadingMargin" constant="30" id="1GS-Aj-t4Y"/>
+                            <constraint firstItem="xcn-Py-tiL" firstAttribute="leading" secondItem="QiR-xc-fEK" secondAttribute="leadingMargin" constant="20" id="DDp-L0-Umz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xcn-Py-tiL" secondAttribute="trailing" constant="20" id="H1A-y6-543"/>
+                            <constraint firstItem="xcn-Py-tiL" firstAttribute="top" secondItem="gew-Jz-6Rh" secondAttribute="bottom" constant="10" id="PWK-uL-qtl"/>
+                            <constraint firstItem="jV9-p5-h4B" firstAttribute="top" secondItem="gew-Jz-6Rh" secondAttribute="bottom" constant="60" id="UpM-Rx-8er"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vqr-kA-nXV" secondAttribute="trailing" constant="30" id="beh-8A-i0J"/>
+                            <constraint firstItem="vqr-kA-nXV" firstAttribute="top" secondItem="jV9-p5-h4B" secondAttribute="bottom" constant="140" id="wVw-ou-Vxc"/>
+                            <constraint firstAttribute="centerX" secondItem="jV9-p5-h4B" secondAttribute="centerX" id="xOq-Ng-FpZ"/>
+                            <constraint firstItem="iqE-Ab-HXJ" firstAttribute="top" secondItem="jV9-p5-h4B" secondAttribute="bottom" constant="140" id="y8V-Gh-O9Q"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="TimerIcon" id="Cl9-3q-4Vu"/>
                     <connections>
-                        <outlet property="remainingTimeLabel" destination="7ZE-Dq-Llq" id="Lmu-2u-reL"/>
-                        <outlet property="startStopButton" destination="W2E-8P-ifX" id="E6Z-E8-5E1"/>
+                        <outlet property="pauseResumeButton" destination="vqr-kA-nXV" id="OIO-dp-JzO"/>
+                        <outlet property="picker" destination="xcn-Py-tiL" id="olR-ot-1J7"/>
+                        <outlet property="startStopButton" destination="iqE-Ab-HXJ" id="d8h-sS-h30"/>
+                        <outlet property="timeLabel" destination="jV9-p5-h4B" id="Tld-az-bKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0E-M3-VCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,15 +274,44 @@
                     <connections>
                         <segue destination="zEu-mR-zpR" kind="relationship" relationship="viewControllers" id="0ro-Wo-fwG"/>
                         <segue destination="dfO-4W-KWV" kind="relationship" relationship="viewControllers" id="Lyf-B0-l25"/>
+                        <segue destination="Nkh-f4-7Wq" kind="relationship" relationship="viewControllers" id="k5I-we-jJe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3d-iT-bSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-175" y="238"/>
         </scene>
+        <!--World Clock-->
+        <scene sceneID="i5K-Zu-ubX">
+            <objects>
+                <tableViewController id="Nkh-f4-7Wq" customClass="WorldClockTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wR9-qN-2it">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="worldClockIdentifier" id="kf1-5y-s4W">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kf1-5y-s4W" id="vdT-L8-K16">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nkh-f4-7Wq" id="QiO-Bx-2FL"/>
+                            <outlet property="delegate" destination="Nkh-f4-7Wq" id="Uec-2N-vtU"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="World Clock" image="WorldClock" id="xE3-CY-zYj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90l-qr-tLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="1046"/>
+        </scene>
     </scenes>
     <resources>
         <image name="StopwatchIcon" width="40" height="40"/>
         <image name="TimerIcon" width="40" height="40"/>
+        <image name="WorldClock" width="40" height="40"/>
     </resources>
 </document>

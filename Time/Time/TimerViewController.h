@@ -9,11 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TimerViewController : UIViewController
-@property (nonatomic) NSTimer *timer;
-@property (strong, nonatomic) IBOutlet UIButton *startStopButton;
-@property (nonatomic) NSInteger duration;
-@property (nonatomic) NSInteger remainingTime;
-
-@property (weak, nonatomic) IBOutlet UILabel *remainingTimeLabel;
 
 @end

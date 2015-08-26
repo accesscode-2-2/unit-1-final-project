@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8478CE8E1B8E1D6E0045BDD7 /* WorldClockTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */; };
 		8496CC3C1B86C30900FB2AAA /* StopWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */; };
 		8496CC961B8A56F600FB2AAA /* digital-7 (italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8496CC931B8A56F600FB2AAA /* digital-7 (italic).ttf */; };
 		8496CC971B8A56F600FB2AAA /* digital-7 (mono).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8496CC941B8A56F600FB2AAA /* digital-7 (mono).ttf */; };
@@ -34,8 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8478CE8C1B8E1D6E0045BDD7 /* WorldClockTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClockTableViewController.h; sourceTree = "<group>"; };
+		8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldClockTableViewController.m; sourceTree = "<group>"; };
 		8496CC3A1B86C30900FB2AAA /* StopWatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewController.h; sourceTree = "<group>"; };
-		8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; };
+		8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; tabWidth = 4; };
 		8496CC931B8A56F600FB2AAA /* digital-7 (italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (italic).ttf"; sourceTree = "<group>"; };
 		8496CC941B8A56F600FB2AAA /* digital-7 (mono).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono).ttf"; sourceTree = "<group>"; };
 		8496CC951B8A56F600FB2AAA /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				8496CC991B8A5FC200FB2AAA /* digitalFont.ttf */,
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
+				8478CE8C1B8E1D6E0045BDD7 /* WorldClockTableViewController.h */,
+				8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */,
 				8496CC9D1B8A768700FB2AAA /* TimerViewController.h */,
 				8496CC9E1B8A768700FB2AAA /* TimerViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
@@ -256,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8478CE8E1B8E1D6E0045BDD7 /* WorldClockTableViewController.m in Sources */,
 				8496CC9F1B8A768700FB2AAA /* TimerViewController.m in Sources */,
 				8496CC3C1B86C30900FB2AAA /* StopWatchViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
