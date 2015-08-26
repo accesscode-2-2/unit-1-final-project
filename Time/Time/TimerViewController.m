@@ -43,15 +43,16 @@
     [super viewWillAppear:animated];
     
     if(self.presetTime.count !=0){
+        [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
         [self.timerPickerView selectRow:[self.presetTime[0] intValue] inComponent:0 animated:YES];
         [self.timerPickerView selectRow:[self.presetTime[1] intValue] inComponent:1 animated:YES];
         [self.timerPickerView selectRow:[self.presetTime[2] intValue] inComponent:2 animated:YES];
     }
     // [self.timerPickerView reloadAllComponents];
-        
+    if(![self.timer isValid]){
         self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
-    
+    }
 }
 
 //-(void)viewDidAppear:(BOOL)animated{
