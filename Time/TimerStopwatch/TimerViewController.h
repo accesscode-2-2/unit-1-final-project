@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface TimerViewController : UIViewController
+@interface TimerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PresetsTableViewControllerDelegate>
 
 @property (nonatomic) NSTimer *timer;
 

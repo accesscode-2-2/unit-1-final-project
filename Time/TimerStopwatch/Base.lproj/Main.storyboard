@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1196" y="332"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Presets Table View Controller-->
         <scene sceneID="byW-kf-Slv">
             <objects>
-                <tableViewController id="TXq-jn-FjF" sceneMemberID="viewController">
+                <tableViewController id="TXq-jn-FjF" customClass="PresetsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YjU-8R-JS6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jX5-8A-wH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104" y="332"/>
+            <point key="canvasLocation" x="1926" y="332"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TpN-gz-kDw">
