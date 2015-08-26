@@ -16,11 +16,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
 
-@property (nonatomic) BOOL timerIsRunning; // this will start/stop timer
-@property (nonatomic) NSMutableArray *savedLapTimes; // used later for storing values
-
-//- (IBAction)startPauseButton:(id)sender;
-//- (IBAction)lapButton:(id)sender;
+@property (nonatomic) BOOL timerIsRunning;
+@property (nonatomic) NSMutableArray *savedLapTimes;
 
 @end
 
@@ -30,6 +27,7 @@ float timeTick = 0.00; // the timer always begins at this number
 NSTimer *timer;
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.timerIsRunning = NO;
@@ -39,10 +37,10 @@ NSTimer *timer;
     [self.startButton setTitle:@"START" forState:UIControlStateNormal]; // set default text
     [self.lapButton setTitle:@"LAP" forState:UIControlStateNormal];
     
-    self.savedLapTimes = [NSMutableArray arrayWithObjects:@"hello", @"hi", nil]; // create array to store lap times
+    self.savedLapTimes = [NSMutableArray arrayWithObjects:@"", nil]; // store lap times
 }
 
-- (void)tick { // the timer loop will run this method each time it is initiated, it advances the number
+- (void)tick {
     
     float currentNumber = [self.timerDisplay.text floatValue]; // get float value of string each time timer is fired
     float currentLap = [self.lapTimerLabel.text floatValue];
@@ -60,11 +58,14 @@ NSTimer *timer;
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     
     if (self.timerIsRunning) {
+        
         self.timerIsRunning = NO; // timer state: stopped
         [timer invalidate];
         [self.startButton setTitle:@"START" forState:UIControlStateNormal];
         [self.lapButton setTitle:@"RESET" forState:UIControlStateNormal];
+        
     } else {
+        
         self.timerIsRunning = YES; // timer state: running
         [self.startButton setTitle:@"PAUSE" forState:UIControlStateNormal];
         [self.lapButton setTitle:@"LAP" forState:UIControlStateNormal];
@@ -75,21 +76,18 @@ NSTimer *timer;
     
     if (self.timerIsRunning) { // timer state: running
         
-       // [self.savedLapTimes addObject:self.lapTimerLabel.text]; // this is slightly different
-         [self.savedLapTimes insertObject:self.lapTimerLabel.text atIndex:0]; // add new item to the top of the list
-        
-        NSLog(@"saved time = %@", self.lapTimerLabel.text); // test it
-        NSLog(@"%@", self.savedLapTimes);
-        
-        [self.lapsTableView reloadData]; // reload and refresh with new values added
+        [self.savedLapTimes insertObject:self.lapTimerLabel.text atIndex:0]; // add new item to the top of the list
+        [self.lapsTableView reloadData]; // reload view with new values added
         
         self.lapTimerLabel.text = @"0.00";
         
     } else {
+        
         self.timerDisplay.text = @"0.00"; // main label keep going
         self.lapTimerLabel.text = @"0.00"; // lap label set to 0 (should also record time!!)
-        
-        // reload and clear the tableview to reset
+
+        [self.savedLapTimes removeAllObjects]; // reset lap array
+        [self.lapsTableView reloadData]; // reload table view
     }
 }
 
@@ -107,8 +105,6 @@ NSTimer *timer;
     
     cell.textLabel.text = self.savedLapTimes[indexPath.row];
     return cell;
-    
 }
-
 
 @end
