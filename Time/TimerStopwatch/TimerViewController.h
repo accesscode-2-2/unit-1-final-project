@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *countDownTimer;
 
-@property (nonatomic) NSDate *startime;
 @property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic) NSInteger *secondsLeft;
 
