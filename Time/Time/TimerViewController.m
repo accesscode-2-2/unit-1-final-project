@@ -37,13 +37,27 @@
     
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
-    
-    // self.timer2 = [CADisplayLink displayLinkWithTarget:self
-    //                                           selector:@selector(refreshTimerLabel)];
-    // [self.timer2 setPaused:YES];
-    // [self.timer2 addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if(self.presetTime.count !=0){
+        [self.timerPickerView selectRow:[self.presetTime[0] intValue] inComponent:0 animated:YES];
+        [self.timerPickerView selectRow:[self.presetTime[1] intValue] inComponent:1 animated:YES];
+        [self.timerPickerView selectRow:[self.presetTime[2] intValue] inComponent:2 animated:YES];
+    }
+    // [self.timerPickerView reloadAllComponents];
+        
+        self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+}
+
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    
+//}
 
 - (void)setupHours {
     self.hours = [[NSMutableArray alloc] init];
@@ -102,12 +116,8 @@
 }
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
-    //self.startButton.enabled = NO;
     
     if([self.startButton.titleLabel.text isEqualToString:@"Start"]){
-        
-        
-        
         for(int i=0;i<3;i++){
             if([self.timerPickerView selectedRowInComponent:i] != 00){
                 [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
@@ -117,8 +127,6 @@
                 break;
             }
         }
-        
-        
     }else{
         [self freeze];
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -152,7 +160,7 @@
                 self.row = minuteIndex -1;
                 [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 
-            } else if (hourIndex != 00) {
+            }else if (hourIndex != 00) {
                 
                 //hour
                 self.row = hourIndex - 1;
@@ -190,14 +198,16 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
+    if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
     [self.timerPickerView setUserInteractionEnabled:YES];
     self.startButton.enabled = YES;
-    [self.timerPickerView reloadAllComponents];
     for(int i=0;i<3 ;i++){
         [self.timerPickerView selectRow:0 inComponent:i animated:YES];
     }
-    
     [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (IBAction)presetButtonTapped:(id)sender {
