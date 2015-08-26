@@ -16,6 +16,7 @@
 		3B6AD0A01B8A22CB0091587F /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AD09F1B8A22CB0091587F /* OrderedDictionary.m */; };
 		3B6AD0A71B8A5A970091587F /* NewPresetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */; };
 		3B6AD0AB1B8A73FF0091587F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AD0A91B8A73FF0091587F /* Main.storyboard */; };
+		3B6AD18B1B8D2F9F0091587F /* LapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AD18A1B8D2F9F0091587F /* LapTableViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
@@ -58,6 +59,8 @@
 		3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPresetViewController.m; sourceTree = "<group>"; };
 		3B6AD0A81B8A69670091587F /* NewPresetViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPresetViewControllerDelegate.h; sourceTree = "<group>"; };
 		3B6AD0AA1B8A73FF0091587F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B6AD1891B8D2F9F0091587F /* LapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapTableViewController.h; sourceTree = "<group>"; };
+		3B6AD18A1B8D2F9F0091587F /* LapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapTableViewController.m; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +101,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B6AD1BC1B8D47A80091587F /* StopWatch */ = {
+			isa = PBXGroup;
+			children = (
+				DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */,
+				DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */,
+				3B6AD1891B8D2F9F0091587F /* LapTableViewController.h */,
+				3B6AD18A1B8D2F9F0091587F /* LapTableViewController.m */,
+			);
+			name = StopWatch;
+			sourceTree = "<group>";
+		};
+		3B6AD1BE1B8D47ED0091587F /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				3B6AD0951B891F7A0091587F /* TimerViewController.h */,
+				3B6AD0961B891F7A0091587F /* TimerViewController.m */,
+				3B6AD0981B8A1CC40091587F /* PresetsTableViewController.h */,
+				3B6AD0991B8A1CC40091587F /* PresetsTableViewController.m */,
+				3B6AD0A11B8A43900091587F /* PresetsTableViewControllerDelegate.h */,
+				3B6AD0A51B8A5A970091587F /* NewPresetViewController.h */,
+				3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */,
+				3B6AD0A81B8A69670091587F /* NewPresetViewControllerDelegate.h */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		3B6AD1BF1B8D52BC0091587F /* DateCountdown */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DateCountdown;
+			sourceTree = "<group>";
+		};
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
@@ -123,16 +159,9 @@
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				3B6AD09E1B8A22CB0091587F /* OrderedDictionary.h */,
 				3B6AD09F1B8A22CB0091587F /* OrderedDictionary.m */,
-				DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */,
-				DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */,
-				3B6AD0951B891F7A0091587F /* TimerViewController.h */,
-				3B6AD0961B891F7A0091587F /* TimerViewController.m */,
-				3B6AD0981B8A1CC40091587F /* PresetsTableViewController.h */,
-				3B6AD0991B8A1CC40091587F /* PresetsTableViewController.m */,
-				3B6AD0A11B8A43900091587F /* PresetsTableViewControllerDelegate.h */,
-				3B6AD0A51B8A5A970091587F /* NewPresetViewController.h */,
-				3B6AD0A61B8A5A970091587F /* NewPresetViewController.m */,
-				3B6AD0A81B8A69670091587F /* NewPresetViewControllerDelegate.h */,
+				3B6AD1BF1B8D52BC0091587F /* DateCountdown */,
+				3B6AD1BC1B8D47A80091587F /* StopWatch */,
+				3B6AD1BE1B8D47ED0091587F /* Timer */,
 				DC7C34001B8904400051C061 /* Fonts */,
 				3B6AD0A91B8A73FF0091587F /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
@@ -306,6 +335,7 @@
 				DC7C33FF1B88C2B40051C061 /* StopwatchViewController.m in Sources */,
 				3B6AD0A71B8A5A970091587F /* NewPresetViewController.m in Sources */,
 				3B6AD09A1B8A1CC40091587F /* PresetsTableViewController.m in Sources */,
+				3B6AD18B1B8D2F9F0091587F /* LapTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
