@@ -22,7 +22,6 @@
 
 //Properties of ViewController
 @property (weak, nonatomic) IBOutlet UIImageView *exerciseImageView;
-
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeExerciseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exerciseTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
