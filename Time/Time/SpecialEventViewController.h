@@ -21,5 +21,6 @@
 - (IBAction)startButton:(id)sender;
 - (IBAction)resetButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
 
 @end

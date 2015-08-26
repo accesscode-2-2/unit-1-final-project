@@ -10,7 +10,12 @@
 
 @implementation SpecialEventViewController
 
+
+
 - (IBAction)titleTextFiled2:(id)sender {
+    
+    self.titleLabel.text = [self.titleTextField text];
+
 }
 
 - (IBAction)startButton:(id)sender {
@@ -18,14 +23,21 @@
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay);
     
+    self.datePicker.hidden = YES;
+    self.titleLabel.hidden = NO;
+    self.titleTextField.hidden = YES;
+    self.countdownLabel.hidden = NO;
+    
     self.datePicker.date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.datePicker.date]];
     
     self.datePicker.hidden = YES;
+    self.titleTextField.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
                                            selector:@selector(updateTime)
                                            userInfo:nil
                                             repeats:YES];
+    
 
 }
 
@@ -44,5 +56,8 @@
     [timer invalidate];
     self.countdownLabel.text = @"00 days 00 hrs 00 min 00 sec";
     self.datePicker.hidden = NO;
+    self.titleLabel.hidden = YES;
+    self.titleTextField.hidden = NO;
+    self.countdownLabel.hidden = YES;
 }
 @end
