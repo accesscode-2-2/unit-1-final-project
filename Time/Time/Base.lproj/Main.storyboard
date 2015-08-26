@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hnP-F8-9Vf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hnP-F8-9Vf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="digital-7.ttf">
+        <mutableArray key="digitalFont.ttf">
             <string>Digital-7</string>
             <string>Digital-7</string>
             <string>Digital-7</string>
@@ -228,6 +228,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="33"/>
                                         <state key="normal" title="STOP"/>
+                                        <connections>
+                                            <action selector="startStopButtonTapped:" destination="zEu-mR-zpR" eventType="touchUpInside" id="Pf1-wG-d9k"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.73909296700000005" green="0.76212079109999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,6 +280,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="TimerIcon" id="Cl9-3q-4Vu"/>
+                    <connections>
+                        <outlet property="remainingTimeLabel" destination="7ZE-Dq-Llq" id="Lmu-2u-reL"/>
+                        <outlet property="startStopButton" destination="W2E-8P-ifX" id="E6Z-E8-5E1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0E-M3-VCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
