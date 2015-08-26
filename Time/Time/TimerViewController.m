@@ -35,6 +35,11 @@
 -(void)updateTime {
     self.afterRemainder --;
     
+    if (self.afterRemainder <=0) {
+        [self invalidateTimer];
+        
+    }
+    
     NSInteger hours = (NSInteger)(self.afterRemainder/(60*60));
     NSInteger minutes = (((NSInteger)self.afterRemainder/60) - (hours *60));
     NSInteger seconds = (((NSInteger)self.afterRemainder - (60 * minutes) - (60 * hours *60)));
@@ -61,15 +66,21 @@
                                                         selector:@selector(updateTime)
                                                         userInfo:nil
                                                          repeats:YES];
+ 
     } else {
         self.running = FALSE;
         [sender setTitle:@"Start" forState: UIControlStateNormal];
-        [countdownTimer invalidate];
-        countdownTimer = nil;
+        [self invalidateTimer];
     }
     
 }
 
+- (void) invalidateTimer{
+    if (countdownTimer != nil) {
+        [countdownTimer invalidate];
+        countdownTimer = nil;
+    }
+}
 - (IBAction)restartButton:(id)sender {
     self.running = FALSE; 
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
