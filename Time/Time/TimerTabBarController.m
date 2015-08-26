@@ -100,6 +100,10 @@
         [self.timer invalidate];
         self.timer = nil;
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done!" message:[NSString stringWithFormat:@""] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
+        
+        [alert show];
+        
         self.timeLabel.alpha = 0;
         [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = NO;
