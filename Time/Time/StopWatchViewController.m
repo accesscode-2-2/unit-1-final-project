@@ -23,6 +23,8 @@
 
 @property (nonatomic) NSTimeInterval startTime;
 
+@property (nonatomic) NSTimeInterval currentTime;
+
 @property (nonatomic) NSTimeInterval labInitTime;
 
 @property (nonatomic) NSTimeInterval secondsAlreadyRun;
@@ -86,6 +88,9 @@
         //reset action here
         [self.labsTimes removeAllObjects];
         [self.tableView reloadData];
+        self.secondsAlreadyRun = 0.0;
+        self.self.currentTime = 0.0;
+        self.startTime = 0.0;
         self.timerLabel.text = @"00:00.00";
         self.labTimeLabel.text = @"00:00.00";
     }
@@ -97,26 +102,26 @@
     if (self.running == NO)
         return;
         
-    int labmins;
-    int labsecs;
-    int labfraction;
+    int labMins;
+    int labSecs;
+    int labFraction;
     
     if (self.resetLab == YES){
         self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
         self.resetLab = NO;
     }
     
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - self.labInitTime;
+    NSTimeInterval lapCurrentTime = [NSDate timeIntervalSinceReferenceDate];
+    NSTimeInterval lapElapsed = lapCurrentTime - self.labInitTime;
     
 
-    labmins = (int) (elapsed / 60.0);
-    elapsed -= labmins * 60;
-    labsecs = (int) (elapsed);
-    elapsed -= labsecs;
-    labfraction = elapsed * 100.0;
+    labMins = (int) (lapElapsed / 60.0);
+    lapElapsed -= labMins * 60;
+    labSecs = (int) (lapElapsed);
+    lapElapsed -= labSecs;
+    labFraction = lapElapsed * 100.0;
     
-    self.labTimeLabel.text = [NSString stringWithFormat:@"%02u:%02u.%02u", labmins, labsecs, labfraction];
+    self.labTimeLabel.text = [NSString stringWithFormat:@"%02u:%02u.%02u", labMins, labSecs, labFraction];
     
     [self performSelector:@selector(labtimeIncrement) withObject:self afterDelay:0.01];
 }
@@ -124,8 +129,8 @@
 - (void)timeIncrement {
     if (self.running == NO) return;
     
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = self.secondsAlreadyRun + currentTime - self.startTime;
+    self.currentTime = [NSDate timeIntervalSinceReferenceDate];
+    NSTimeInterval elapsed = self.secondsAlreadyRun + self.currentTime - self.startTime;
     
     int mins = (int) (elapsed / 60.0);
     elapsed -= mins * 60;
