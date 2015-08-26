@@ -245,53 +245,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-yQ-JHb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-yQ-JHb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FLr-WG-bHI">
                                 <rect key="frame" x="20" y="64" width="560" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="VL8-a7-svU"/>
+                                    <constraint firstAttribute="height" constant="170" id="Bwd-qz-RI1"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="462112244.50435299">
                                     <!--2015-08-24 12:30:44 +0000-->
                                 </date>
                             </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFD-HI-hek">
+                                <rect key="frame" x="147" y="285" width="306" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="306" id="caX-So-cSS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kth-Dt-9zY">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="285" y="364" width="30" height="30"/>
+                                <state key="normal" title="G O"/>
                                 <connections>
                                     <action selector="goCalendarButton:" destination="vb6-o2-5rS" eventType="touchUpInside" id="tMr-GC-lew"/>
                                     <segue destination="t8P-Jt-a2V" kind="show" id="qup-B3-gTY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-Qp-yBv">
-                                <rect key="frame" x="277" y="369" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QeZ-Qp-yBv" firstAttribute="top" secondItem="Kth-Dt-9zY" secondAttribute="bottom" constant="54" id="1B5-yf-IN2"/>
-                            <constraint firstItem="JiZ-yQ-JHb" firstAttribute="leading" secondItem="MiB-12-uSE" secondAttribute="leading" id="56q-vk-LgQ"/>
-                            <constraint firstItem="FLr-WG-bHI" firstAttribute="top" secondItem="nZz-es-CQ5" secondAttribute="bottom" id="6VT-Yj-PRs"/>
-                            <constraint firstAttribute="trailing" secondItem="FLr-WG-bHI" secondAttribute="trailing" constant="20" id="ClC-mG-CVG"/>
-                            <constraint firstItem="Kth-Dt-9zY" firstAttribute="centerX" secondItem="MiB-12-uSE" secondAttribute="centerX" id="FGF-gO-Pab"/>
-                            <constraint firstItem="JiZ-yQ-JHb" firstAttribute="top" secondItem="nZz-es-CQ5" secondAttribute="bottom" id="TaK-iv-r3V"/>
-                            <constraint firstItem="FLr-WG-bHI" firstAttribute="leading" secondItem="MiB-12-uSE" secondAttribute="leading" constant="20" id="kho-zt-gCG"/>
-                            <constraint firstItem="QeZ-Qp-yBv" firstAttribute="trailing" secondItem="Kth-Dt-9zY" secondAttribute="trailing" id="oNa-oK-9y5"/>
-                            <constraint firstItem="Kth-Dt-9zY" firstAttribute="centerY" secondItem="MiB-12-uSE" secondAttribute="centerY" id="oXv-Pn-j42"/>
-                            <constraint firstItem="QzT-IB-fIA" firstAttribute="top" secondItem="JiZ-yQ-JHb" secondAttribute="bottom" id="qfm-0w-EnE"/>
-                            <constraint firstAttribute="trailing" secondItem="JiZ-yQ-JHb" secondAttribute="trailing" id="srA-0c-7HB"/>
-                            <constraint firstItem="QeZ-Qp-yBv" firstAttribute="centerX" secondItem="Kth-Dt-9zY" secondAttribute="centerX" id="zyN-3P-Nwz"/>
+                            <constraint firstItem="FLr-WG-bHI" firstAttribute="leading" secondItem="MiB-12-uSE" secondAttribute="leading" constant="20" id="BID-0g-fRv"/>
+                            <constraint firstAttribute="trailing" secondItem="FLr-WG-bHI" secondAttribute="trailing" constant="20" id="JeE-oB-QjX"/>
+                            <constraint firstItem="vFD-HI-hek" firstAttribute="centerX" secondItem="MiB-12-uSE" secondAttribute="centerX" id="UJf-pd-x9z"/>
+                            <constraint firstItem="Kth-Dt-9zY" firstAttribute="top" secondItem="vFD-HI-hek" secondAttribute="bottom" constant="49" id="XQH-4a-rrx"/>
+                            <constraint firstItem="FLr-WG-bHI" firstAttribute="top" secondItem="nZz-es-CQ5" secondAttribute="bottom" id="knf-fe-eD1"/>
+                            <constraint firstItem="Kth-Dt-9zY" firstAttribute="centerX" secondItem="vFD-HI-hek" secondAttribute="centerX" id="t0H-ze-eRp"/>
+                            <constraint firstItem="vFD-HI-hek" firstAttribute="centerY" secondItem="MiB-12-uSE" secondAttribute="centerY" id="zWz-rn-1BU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D0h-s6-ZVz"/>
                     <connections>
-                        <outlet property="calendarTimeLabel" destination="QeZ-Qp-yBv" id="6LL-c0-MUv"/>
                         <outlet property="goCalendarDatePicker" destination="FLr-WG-bHI" id="qmO-MG-Aza"/>
+                        <outlet property="goCalendarTextField" destination="vFD-HI-hek" id="Awm-Oo-WI5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCs-2Z-Khd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -445,6 +442,9 @@
                     <navigationItem key="navigationItem" id="8G8-4o-yDe">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jEf-SA-bZR">
                             <color key="tintColor" red="0.46340962079999998" green="0.78927951389999995" blue="0.46053691200000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="hYp-Td-old" kind="show" id="iBO-vS-VKh"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="600" height="600"/>
@@ -566,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrh-Np-jrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="-71"/>
+            <point key="canvasLocation" x="2020" y="209"/>
         </scene>
         <!--Go Custom Workout-->
         <scene sceneID="EsA-xu-HVW">
@@ -579,12 +579,25 @@
                     <view key="view" contentMode="scaleToFill" id="l4C-7H-8d5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-CG-kaf">
+                                <rect key="frame" x="227" y="285" width="147" height="30"/>
+                                <state key="normal" title="Add Custom Workout"/>
+                                <connections>
+                                    <segue destination="rGJ-iy-QSv" kind="show" id="TuP-TG-OG5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uq8-CG-kaf" firstAttribute="centerY" secondItem="l4C-7H-8d5" secondAttribute="centerY" id="1kU-A2-M8k"/>
+                            <constraint firstItem="Uq8-CG-kaf" firstAttribute="centerX" secondItem="l4C-7H-8d5" secondAttribute="centerX" id="wYo-EC-iah"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3y-KL-M9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2179" y="852"/>
+            <point key="canvasLocation" x="2020" y="972"/>
         </scene>
         <!--Go Custom Workout List-->
         <scene sceneID="eh8-z1-B2f">
@@ -595,13 +608,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nph-2S-Gwv">
-                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomWorkoutIdentifier" id="nph-2S-Gwv">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nph-2S-Gwv" id="SVh-Dn-ciy">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="WzA-UU-xjp" kind="show" id="Lh6-Yh-ei8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -612,7 +628,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGH-5g-Ub9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2907" y="852"/>
+            <point key="canvasLocation" x="2748" y="972"/>
         </scene>
         <!--Go Custom Workout Timer-->
         <scene sceneID="Okn-t9-P0Y">
@@ -630,7 +646,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQy-jU-9CD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3643" y="852"/>
+            <point key="canvasLocation" x="3484" y="972"/>
         </scene>
         <!--Go Calendar Results-->
         <scene sceneID="utY-Dc-kb8">

@@ -11,8 +11,7 @@
 @interface WorkoutManager : NSObject
 
 @property (nonatomic,strong) NSMutableArray *workouts;
-@property (nonatomic,strong) NSMutableArray *calendarDates;
-//@property (nonatomic, retain) NSString *workoutName;
+@property (nonatomic,strong) NSMutableDictionary *calendarDates;
 
 + (WorkoutManager *) sharedManager;
 

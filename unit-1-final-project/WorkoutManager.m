@@ -33,7 +33,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         calendarMyManager = [[self alloc] init];
-        calendarMyManager.calendarDates = [[NSMutableArray alloc] init];
+        calendarMyManager.calendarDates = [[NSMutableDictionary alloc] init];
     });
     return calendarMyManager;
 }
