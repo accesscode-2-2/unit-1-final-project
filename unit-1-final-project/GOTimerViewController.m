@@ -13,6 +13,12 @@
 
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) Exercises *thisExercise;
+
+@property (weak, nonatomic) IBOutlet UIButton *endButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+
+
 @end
 
 @implementation GOTimerViewController
@@ -21,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.continueButton.hidden = YES;
 
     NSLog(@"Exercise Index: %lu", self.currentExerciseIndex);
 
@@ -31,6 +39,15 @@
                                                 userInfo:nil
                                                  repeats:YES];
     
+//timer starts when viewLoads
+    [self initializeTimer];
+    
+//setting fonts
+    
+    self.totalTimeExerciseLabel.font = [UIFont fontWithName:@"NikeTotal90" size:15.0];
+    self.exerciseNameLabel.font = [UIFont fontWithName:@"NikeTotal90" size:15.0];
+    self.exerciseTimeLabel.font = [UIFont fontWithName:@"NikeTotal90" size:15.0];
+
     
     self.thisExercise = [self.currentWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];
     self.currentExerciseName = self.thisExercise.nameOfExercise;
@@ -44,6 +61,7 @@
     NSString *imageName = self.thisExercise.exerciseImageString;
     UIImageView *view = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
     self.exerciseImageView.image = view.image;
+   
     
     if (self.currentExerciseIndex == (NSInteger)nil){
         self.currentExerciseIndex = 0;
@@ -53,6 +71,27 @@
     NSLog(@"This workout has %lu exercises", count);
     
 }
+- (void) initializeTimer {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                  target:self
+                                                selector:@selector(updateExerciseTimer)
+                                                userInfo:nil
+                                                 repeats:YES];
+    
+    
+}
+
+//method pushes to next exercise in array
+- (void) initializeNextExerciseScreen {
+    
+    GOTimerViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WorkoutController"];
+    nextViewController.currentWorkout = self.currentWorkout;
+    nextViewController.currentExerciseIndex = self.currentExerciseIndex+1;
+    [self.timer invalidate];
+    [self.navigationController pushViewController:nextViewController animated:YES];
+    
+}
+
 
 - (void) updateExerciseTimer {
     NSLog(@"%@", self.exerciseTimeLabel.text);
@@ -63,27 +102,42 @@
     self.exerciseTimeLabel.text = [NSString stringWithFormat:@"%lu", nextNumber];
     if (nextNumber == 0 && self.currentExerciseIndex < count - 1) {
         NSLog(@"Next exercise");
-        GOTimerViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WorkoutController"];
-        nextViewController.currentWorkout = self.currentWorkout;
-        nextViewController.currentExerciseIndex = self.currentExerciseIndex+1;
-        [self.timer invalidate];
-        [self.navigationController pushViewController:nextViewController animated:YES];
-    }
-    
-    else if (nextNumber == 0 && self.currentExerciseIndex == count - 1) {
-        //        if (self.currentExerciseIndex == count){
-        //            [self.timer invalidate];
+        
+        [self initializeNextExerciseScreen];
+        
+    } else if (nextNumber == 0 && self.currentExerciseIndex == count - 1) {
+        
         [self.timer invalidate];
         [self.navigationController popToRootViewControllerAnimated:YES];
-        //        }
     }
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)pausePressed:(UIButton *)sender {
+    
+    [self.timer invalidate];
+    
+    self.pauseButton.hidden = YES;
+    self.continueButton.hidden = NO;
+    
 }
+- (IBAction)continuePressed:(UIButton *)sender {
+    [self initializeTimer];
+    
+    self.pauseButton.hidden = NO;
+    self.continueButton.hidden = YES;
+    
+}
+
+- (IBAction)end:(UIButton *)sender {
+    [self.timer invalidate];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
+
+
 
 /*
  #pragma mark - Navigation
