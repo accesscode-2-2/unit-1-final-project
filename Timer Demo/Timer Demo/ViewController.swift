@@ -48,7 +48,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             else {
                 timer.remainingTime = timer.startTime
-                
             }
         }
         
@@ -62,11 +61,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.timer = timers[indexPath.row]
         
-        cell.timerLabel.text = String(cell.timer.remainingTime)
+        cell.timerLabel.text = String(cell.timer.stringFromTimeInterval(cell.timer.remainingTime))
         
         cell.startPauseButton.tag = indexPath.row
         
         cell.startPauseButton.addTarget(self, action: "startPause:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+            cell.progressBar.progress = Float((cell.timer.remainingTime/cell.timer.startTime))
+
 
         
         return cell
