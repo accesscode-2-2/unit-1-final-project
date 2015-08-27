@@ -30,6 +30,36 @@
 
 @implementation TimerViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupPickerViewNumbers];
+    
+    self.timerPickerView.delegate = self;
+    self.timerPickerView.dataSource = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if(self.presetTime.count !=0){
+        [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.timerPickerView selectRow:[self.presetTime[0] intValue] inComponent:0 animated:YES];
+        [self.timerPickerView selectRow:[self.presetTime[1] intValue] inComponent:1 animated:YES];
+        [self.timerPickerView selectRow:[self.presetTime[2] intValue] inComponent:2 animated:YES];
+    }
+    // [self.timerPickerView reloadAllComponents];
+    if(![self.timer isValid]){
+        self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+    }
+}
+
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    
+//}
+
 - (void)setupHours {
     self.hours = [[NSMutableArray alloc] init];
     
@@ -56,11 +86,57 @@
         j++;
     }
 }
+
+- (void)setupSeconds {
+    self.seconds = [[NSMutableArray alloc] init];
+    
+    int j = 0;
+    int i = 0;
+    while(true){
+        if(i == 60){
+            i=0;
+        }
+        if(j==3600){
+            break;
+        }
+        NSString *s = [NSString stringWithFormat:@"%02d", i];
+        [self.seconds addObject:s];
+        i++;
+        j++;
+    }
+}
+
+
+- (void)setupPickerViewNumbers {
+    [self setupHours];
+    [self setupMinutes];
+    [self setupSeconds];
+    
+    self.pickerViewNumbers = [[NSMutableArray alloc] initWithObjects:self.hours,
+                              self.minutes, self.seconds, nil];
+}
+
 - (IBAction)startButtonTapped:(UIButton *)sender {
-    self.startButton.enabled = NO;
-    [self.timerPickerView setUserInteractionEnabled:NO];
-    self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+    if([self.startButton.titleLabel.text isEqualToString:@"Start"]){
+        for(int i=0;i<3;i++){
+            if([self.timerPickerView selectedRowInComponent:i] != 00){
+                [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
+                [self.timerPickerView setUserInteractionEnabled:NO];
+                self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+                [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+                break;
+            }
+        }
+    }else{
+        [self freeze];
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
+}
+
+-(void)freeze{
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)animate {
@@ -85,7 +161,7 @@
                 self.row = minuteIndex -1;
                 [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 
-            } else if (hourIndex != 00) {
+            }else if (hourIndex != 00) {
                 
                 //hour
                 self.row = hourIndex - 1;
@@ -123,14 +199,16 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
+    if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
     [self.timerPickerView setUserInteractionEnabled:YES];
     self.startButton.enabled = YES;
-    [self.timerPickerView reloadAllComponents];
     for(int i=0;i<3 ;i++){
         [self.timerPickerView selectRow:0 inComponent:i animated:YES];
     }
-    
     [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (IBAction)presetButtonTapped:(id)sender {
@@ -147,47 +225,6 @@
     self.row = row;
 }
 
-- (void)setupSeconds {
-    self.seconds = [[NSMutableArray alloc] init];
-    
-    int j = 0;
-    int i = 0;
-    while (true) {
-        if (i == 60) {
-            i = 0;
-        }
-        if (j == 3600) {
-            break;
-        }
-        NSString *s = [NSString stringWithFormat:@"%02d", i];
-        [self.seconds addObject:s];
-        i++;
-        j++;
-    }
-}
-
-- (void)setupPickerViewNumbers {
-    [self setupHours];
-    [self setupMinutes];
-    [self setupSeconds];
-    
-    self.pickerViewNumbers = [[NSMutableArray alloc] initWithObjects:self.hours,
-                              self.minutes, self.seconds, nil];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupPickerViewNumbers];
-    
-    self.timerPickerView.delegate = self;
-    self.timerPickerView.dataSource = self;
-    
-//    self.timer  = [CADisplayLink displayLinkWithTarget:self
-//                                                       selector:@selector(refreshTimerLabel)];
-//    [self.timer setPaused:YES];
-//    [self.timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-}
 
 #pragma mark - data source and delegate for PickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
