@@ -26,6 +26,7 @@
     [super viewDidLoad];
     self.running = NO;
     self.Remainder = -1;
+    
 }
 
 - (void)didReceiveMemoryWarning {

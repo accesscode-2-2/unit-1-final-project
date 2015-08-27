@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7zd-dY-kGG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lJd-bZ-xXd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="94" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-DT-5rv">
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-I5-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="546"/>
+            <point key="canvasLocation" x="1092" y="135"/>
         </scene>
         <!--Special Occassion Timer-->
         <scene sceneID="5kK-wU-jR7">
@@ -137,7 +137,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNp-6G-lNB">
-                                <rect key="frame" x="15" y="140" width="570" height="0.0"/>
+                                <rect key="frame" x="15" y="140" width="565" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -209,6 +209,7 @@
                                 <exclude reference="Oko-by-aCc"/>
                                 <exclude reference="cJM-iT-4iW"/>
                                 <exclude reference="o27-R4-bsA"/>
+                                <exclude reference="US8-je-RRI"/>
                                 <exclude reference="Bqc-Cd-NPF"/>
                                 <exclude reference="Is6-LU-KNu"/>
                                 <exclude reference="nHW-Z3-Wtn"/>
@@ -241,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptL-Ti-gle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-225" y="687"/>
+            <point key="canvasLocation" x="-273" y="351"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="yoe-yV-vz4">
@@ -268,7 +269,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2g-f7-JcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="1300"/>
+            <point key="canvasLocation" x="375" y="1087"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="jck-tK-RkW">
@@ -285,7 +286,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tm9-SM-5aH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="695"/>
+            <point key="canvasLocation" x="375" y="351"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="Dx3-Aq-zCy">
@@ -464,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiZ-XB-aVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="-114"/>
+            <point key="canvasLocation" x="894" y="-588"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="A4N-hw-Tnh">
@@ -485,7 +486,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfH-o4-nSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344" y="-114"/>
+            <point key="canvasLocation" x="182" y="-430"/>
         </scene>
     </scenes>
     <resources>
