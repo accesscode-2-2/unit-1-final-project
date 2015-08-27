@@ -103,11 +103,23 @@
 }
 
 
+//delegate method that allows for editing when the edit button is clicked
 
-
-
-
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        
+//        [_player2 play]; // bricksmash
+        [self.arr removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        
+        //entry removed from data source now reload
+        [self.tableView reloadData];
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
