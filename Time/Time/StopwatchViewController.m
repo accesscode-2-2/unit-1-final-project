@@ -37,7 +37,7 @@
     self.stopwatchTimer  = [CADisplayLink displayLinkWithTarget:self
                                                        selector:@selector(refreshTimerLabel)];
     [self.stopwatchTimer setPaused:YES];
-    [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     
     [self embedTableView];
     
