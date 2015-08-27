@@ -61,6 +61,10 @@
     exercise2.exerciseTime = 7.0;
     exercise2.exerciseImageString = @"pullup";
     
+    Exercises *exercise3 = [[Exercises alloc] init];
+    exercise3.nameOfExercise = @"sit-ups";
+    exercise3.exerciseTime = 10.0;
+    exercise3.exerciseImageString = @"situp";
     
     
     //Workout List - (Array of Exercises)
@@ -74,6 +78,7 @@
     
     [workout1.exercises addObject:exercise1];
     [workout1.exercises addObject:exercise2];
+    [workout1.exercises addObject:exercise3];
     
     
     // 2nd Workout
