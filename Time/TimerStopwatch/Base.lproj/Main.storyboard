@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-4D-LIh">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-4D-LIh">
                                 <rect key="frame" x="12" y="235" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Pause Timer">
@@ -27,13 +27,13 @@
                                     <action selector="pauseTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="7FJ-dO-qWX"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
                                 <rect key="frame" x="0.0" y="389" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="461964873.77909702">
                                     <!--2015-08-22 19:34:33 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
                                 <rect key="frame" x="12" y="279" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Reset Timer">
@@ -59,7 +59,7 @@
                                     <action selector="startTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="0Eg-WE-GPz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6l-ri-L21">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6l-ri-L21">
                                 <rect key="frame" x="12" y="323" width="572" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Create Preset Timer">
@@ -118,7 +118,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="h0S-AO-PcT"/>
+                    <navigationItem key="navigationItem" id="h0S-AO-PcT">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="e33-ey-jAv">
+                            <color key="tintColor" red="0.65659056515606862" green="0.24719242922284668" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="kCQ-UE-49Q" kind="modal" id="ZQH-AV-E63"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countDownTimer" destination="nQ5-9V-n3s" id="ID9-n1-Qj6"/>
                         <outlet property="pauseButton" destination="ZlD-4D-LIh" id="3DT-cd-v0E"/>
@@ -129,23 +136,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGs-mL-eZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="332"/>
+            <point key="canvasLocation" x="1240" y="332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7xB-Wg-bbd">
             <objects>
                 <navigationController id="kCQ-UE-49Q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fT7-q1-s00"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G4R-S6-8h0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="jY2-va-R1F" kind="relationship" relationship="rootViewController" id="mwl-fm-CeA"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9E-ck-akF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="332"/>
+            <point key="canvasLocation" x="1979" y="332"/>
         </scene>
         <!--Presets Table View Controller-->
         <scene sceneID="d9W-UV-rLb">
@@ -157,8 +162,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LNH-1R-M8C">
+                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LNH-1R-M8C" id="gPP-TH-0LE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -169,10 +176,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0Yc-Bs-uGP"/>
+                    <connections>
+                        <segue destination="k60-O9-XqE" kind="presentation" id="Z95-fX-6xo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAd-7e-fBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="332"/>
+            <point key="canvasLocation" x="2727" y="332"/>
         </scene>
         <!--New Presets View Controller-->
         <scene sceneID="PbG-9R-YaJ">
@@ -190,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYv-Wp-LbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3337" y="332"/>
+            <point key="canvasLocation" x="3511" y="332"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TpN-gz-kDw">

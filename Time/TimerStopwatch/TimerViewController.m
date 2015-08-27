@@ -87,14 +87,15 @@
     [super viewDidLoad];
     self.countDownTimer.datePickerMode = UIDatePickerModeCountDownTimer;
     self.countDownTimer.countDownDuration = 60;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 //- (IBAction)createPresetButtonPressed:(id)sender {
-//    
+//
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    NewPresetsViewController *newPresetIdentifier = [storyboard instantiateViewControllerWithIdentifier:@"newPresetIdentifier"];
 //    newPresetIdentifier.delegate = self;
-//    
+//
 //    [self presentViewController:newPresetVC animated:YES completion:nil];
 //}
 @end
