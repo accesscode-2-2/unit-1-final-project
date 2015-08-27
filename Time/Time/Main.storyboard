@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eyd-n1-0fg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oh-I5-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="546"/>
+            <point key="canvasLocation" x="1019" y="726"/>
         </scene>
         <!--Special Occassion Timer-->
         <scene sceneID="5kK-wU-jR7">
@@ -220,14 +220,14 @@
                                 <exclude reference="pb6-ZA-dmx"/>
                                 <exclude reference="qdZ-4p-WK4"/>
                                 <exclude reference="thE-1g-Qpp"/>
-                                <exclude reference="4dn-kp-a0e"/>
-                                <exclude reference="CVl-vK-wOR"/>
-                                <exclude reference="gI6-0T-yh6"/>
-                                <exclude reference="kGp-Qh-Lox"/>
                                 <exclude reference="jhp-mi-LBR"/>
                                 <exclude reference="jzU-hK-l1y"/>
                                 <exclude reference="x3u-dh-YX2"/>
                                 <exclude reference="xnW-Cj-Eha"/>
+                                <exclude reference="4dn-kp-a0e"/>
+                                <exclude reference="CVl-vK-wOR"/>
+                                <exclude reference="gI6-0T-yh6"/>
+                                <exclude reference="kGp-Qh-Lox"/>
                             </mask>
                         </variation>
                     </view>
@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptL-Ti-gle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-225" y="687"/>
+            <point key="canvasLocation" x="-296" y="726"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="yoe-yV-vz4">
@@ -268,7 +268,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2g-f7-JcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="1300"/>
+            <point key="canvasLocation" x="344" y="1423"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="jck-tK-RkW">
@@ -285,7 +285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tm9-SM-5aH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="695"/>
+            <point key="canvasLocation" x="344" y="726"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="Dx3-Aq-zCy">
