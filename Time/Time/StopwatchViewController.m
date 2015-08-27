@@ -41,8 +41,8 @@
     
     [self embedTableView];
     
-    self.lapTableView.dataSource = self.ltvc;
-    self.lapTableView.delegate = self.ltvc;
+  //  self.lapTableView.dataSource = self.ltvc;
+  //  self.lapTableView.delegate = self.ltvc;
     
     
 
@@ -63,6 +63,7 @@
 - (void)embedTableView {
     
     self.ltvc = [[LapTableViewController alloc]init];
+    
     [self addChildViewController:self.ltvc];
     
     self.ltvc.view.frame = self.lapTableView.bounds;//  _view.bounds;
@@ -70,7 +71,6 @@
     
     [self.ltvc willMoveToParentViewController:self];
 }
-
 
 - (NSString *)formatTimeString:(CFTimeInterval)timeInterval{
     CFTimeInterval currentTime = CACurrentMediaTime();
@@ -114,13 +114,13 @@
         NSLog(@"%@",self.lapTimes);
         self.currentLapTime = self.lapLabel.text;
         NSLog(@"%@",self.currentLapTime);
-        [self.delegate currentLapTime:self.currentLapTime];
-        NSLog(@"%@ HI I am delegate",[self.ltvc currentLapTime:self.currentLapTime]);
-        [self.lapTableView reloadData];
+        [self.ltvc currentLapTime:self.currentLapTime];
+//        NSLog(@"%@ HI I am delegate",[self.ltvc currentLapTime:self.currentLapTime]);
+     //   [self.lapTableView reloadData];
         //NSLog(@"%@", self.lapTimes);
     } else {
         [self.lapTimes removeAllObjects];
-        [self.lapTableView reloadData];
+        //[self.lapTableView reloadData];
         self.lapLabel.text = @"00:00.000";
         self.timerLabel.text = @"00:00.000";
     }
