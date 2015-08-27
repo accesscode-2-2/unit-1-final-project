@@ -10,5 +10,4 @@
 #import "StopWatchViewControllerDelegate.h"
 
 @interface LapTableViewController : UITableViewController<StopWatchViewControllerDelegate>
-
 @end
