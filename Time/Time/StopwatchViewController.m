@@ -116,7 +116,7 @@
         self.currentLapTime = self.lapLabel.text;
         NSLog(@"%@",self.currentLapTime);
         [self.delegate currentLapTime:self.currentLapTime];
-        NSLog(@"%@ HI I am delegate",[self.delegate currentLapTime:self.currentLapTime]);
+        NSLog(@"%@ HI I am delegate",[self.ltvc currentLapTime:self.currentLapTime]);
         [self.lapTableView reloadData];
         //NSLog(@"%@", self.lapTimes);
     } else {
