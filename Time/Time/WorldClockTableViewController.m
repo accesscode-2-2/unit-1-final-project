@@ -9,7 +9,7 @@
 #import "WorldClockTableViewController.h"
 
 @interface WorldClockTableViewController ()
-@property (nonatomic) NSArray *arr;
+@property (nonatomic) NSMutableArray *arr;
 
 @end
 
@@ -17,19 +17,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.arr = @[
-                 @"one",
-                 @"two",
-                 @"three",
-                 @"four"
-                 ];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.navigationItem setTitle:@"World Clock"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+    
+    //it changes the color only on second click
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]}];
+
+    
+    
+    
+    //    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                [UIColor whiteColor],UITextAttributeTextColor,
+//                                [UIColor blackColor], UITextAttributeTextShadowColor,
+//                                [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil];
+    
+//    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    
+    
+    
+ 
+    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Add"
+                                  style:UIBarButtonItemStyleBordered
+                                  target:nil
+                                  action:nil];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+
+    
+    
+    
+    
+    
+    self.arr = [[NSMutableArray alloc]init];
+ 
+    [self.arr insertObject:@"one" atIndex:0 ];
+    [self.arr insertObject:@"two" atIndex:0];
+    [self.arr insertObject:@"three" atIndex:0];
+
+    NSLog(@"%@", self.arr[0]);
+    
+
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,10 +89,24 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"worldClockIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = self.arr[indexPath.row];
+   // cell.textLabel.text = self.arr[indexPath.row];
     
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.arr count] - indexPath.row];
+    
+    cell.detailTextLabel.text = self.arr[indexPath.row];
+
+    
+    
+//    
     return cell;
 }
+
+
+
+
+
+
 
 
 /*
