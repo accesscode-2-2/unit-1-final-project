@@ -84,6 +84,7 @@
         
     } else {
         //reset action here
+        
         [self.labsTimes removeAllObjects];
         [self.tableView reloadData];
         self.timerLabel.text = @"00:00.00";
