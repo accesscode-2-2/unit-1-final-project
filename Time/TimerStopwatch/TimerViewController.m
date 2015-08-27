@@ -18,6 +18,9 @@
 @property (nonatomic) int afterRemainder;
 @property (nonatomic) int remainder;
 
+//@property (nonatomic) NSArray *presetTime;
+
+
 @end
 
 @implementation TimerViewController
@@ -28,13 +31,13 @@
         self.countDownInterval = (NSTimeInterval)self.countDownTimer.countDownDuration;
         self.remainder = self.countDownInterval;
         self.afterRemainder = self.countDownInterval - self.remainder%60;
-
-
         
         NSLog(@"%f", self.countDownTimer.countDownDuration);
         
-        
         self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(updateCountDown) userInfo:nil repeats:YES];
+        
+        self.afterRemainder++;
+        [self updateCountDown];
         
         [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
         
@@ -42,12 +45,12 @@
     }
 }
 
+// pressing start after pausing will cause it to start over from the original time selected
 - (IBAction)pauseTimer:(id)sender {
     [self.timer invalidate];
     self.timer = nil;
 }
 
-// timer not starting from when reset
 - (IBAction)resetTimer:(id)sender {
     if (sender == self.resetButton) {
         self.timerLabel.text = @"00:00:00";
