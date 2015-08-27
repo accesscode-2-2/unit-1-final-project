@@ -118,14 +118,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="h0S-AO-PcT">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="e33-ey-jAv">
-                            <color key="tintColor" red="0.65659056515606862" green="0.24719242922284668" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="kCQ-UE-49Q" kind="modal" id="ZQH-AV-E63"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="h0S-AO-PcT"/>
                     <connections>
                         <outlet property="countDownTimer" destination="nQ5-9V-n3s" id="ID9-n1-Qj6"/>
                         <outlet property="pauseButton" destination="ZlD-4D-LIh" id="3DT-cd-v0E"/>
