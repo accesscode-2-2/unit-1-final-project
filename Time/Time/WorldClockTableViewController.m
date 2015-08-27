@@ -35,23 +35,22 @@
     
     
     
-    
  
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     
-    
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"Add"
-                                  style:UIBarButtonItemStyleBordered
-                                  target:nil
-                                  action:nil];
-    
-    self.navigationItem.rightBarButtonItem = addButton;
-
-    
-    
+//    
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+//                                  initWithTitle:@"Add"
+//                                  style:UIBarButtonItemStyleBordered
+//                                  target:nil
+//                                  action:nil];
+//    
+//    self.navigationItem.rightBarButtonItem = addButton;
+//
+//    
+//    
     
     
     
