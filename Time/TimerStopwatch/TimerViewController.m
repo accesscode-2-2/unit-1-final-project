@@ -24,8 +24,17 @@
 
 - (IBAction)startTimer:(id)sender {
     if(!self.timer){
+        
+        self.countDownInterval = (NSTimeInterval)self.countDownTimer.countDownDuration;
+        self.remainder = self.countDownInterval;
+        self.afterRemainder = self.countDownInterval - self.remainder%60;
+
+
+        
         NSLog(@"%f", self.countDownTimer.countDownDuration);
-        self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        
+        
+        self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(updateCountDown) userInfo:nil repeats:YES];
         
         [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
         
@@ -47,29 +56,15 @@
     }
 }
 
-- (void) updateCountDown:(NSTimer *)timer {
+- (void) updateCountDown {
     self.afterRemainder --;
     
-    NSInteger hours = self.afterRemainder /3600;
-    NSInteger mins = (self.afterRemainder%3600)/60;
-    NSInteger secs = ((self.afterRemainder%3600)%60)%60;
+    int hours = (int)(self.afterRemainder/(60*60));
+    int mins = (int)(((int)self.afterRemainder/60) - (hours * 60));
+    int secs = (int)(((int)self.afterRemainder - (60 *mins) - (60 * hours * 60)));
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02u : %02u : %02u", hours, mins, secs];
     
-    NSString *hoursToBeShown = [NSString stringWithFormat:@"%d",hours];
-    NSString *minutesToBeShown = @"";
-    NSString *secondsToBeShown = @"";
-    
-    if (mins < 10 && mins !=0)
-        minutesToBeShown = [NSString stringWithFormat:@"0%ld", (long)mins];
-    else if (mins == 0)
-        mins = @"00";
-    else (mins = [NSString stringWithFormat:@"%ld", (long)mins]);
-    
-    if (secs < 10 && secs !=0)
-        secondsToBeShown = [NSString stringWithFormat:@"0%ld", (long)secs];
-    else if (secs == 0)
-        secs = @"00";
-    else ( secs = [NSString stringWithFormat:@"%ld", (long)secs]);
-    
+    self.timerLabel.text = timeDisplay;
 }
 
 - (void)timerFired:(NSTimer *)timer {
@@ -81,8 +76,6 @@
     
     self.timerLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
     NSLog(@"%f", distance);
-    
-    
 }
 
 - (void)viewDidLoad {
@@ -90,7 +83,5 @@
     self.countDownTimer.datePickerMode = UIDatePickerModeCountDownTimer;
     self.countDownTimer.countDownDuration = 60;
 }
-
-
 
 @end

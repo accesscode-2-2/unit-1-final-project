@@ -11,9 +11,7 @@
 		BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */; };
 		BF5A03731B88C0AD00FDF71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A03721B88C0AD00FDF71D /* main.m */; };
 		BF5A03761B88C0AD00FDF71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A03751B88C0AD00FDF71D /* AppDelegate.m */; };
-		BF5A037C1B88C0AD00FDF71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5A037A1B88C0AD00FDF71D /* Main.storyboard */; };
 		BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5A037D1B88C0AD00FDF71D /* Images.xcassets */; };
-		BF5A03811B88C0AD00FDF71D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5A037F1B88C0AD00FDF71D /* LaunchScreen.xib */; };
 		BF5A038D1B88C0AD00FDF71D /* TimerStopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A038C1B88C0AD00FDF71D /* TimerStopwatchTests.m */; };
 		BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A039D1B88CCD600FDF71D /* TimerViewController.m */; };
 		BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5A039F1B88D49400FDF71D /* QuartzCore.framework */; };
@@ -69,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF3D67431B8E7EB4005D9CFA /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */,
+				AB31A5E11B8E7BC800F63EBE /* StopWatchViewController.h */,
+			);
+			name = Stopwatch;
+			sourceTree = "<group>";
+		};
 		BF5A03641B88C0AD00FDF71D = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +100,7 @@
 			children = (
 				BF5A03741B88C0AD00FDF71D /* AppDelegate.h */,
 				BF5A03751B88C0AD00FDF71D /* AppDelegate.m */,
-				AB31A5E11B8E7BC800F63EBE /* StopWatchViewController.h */,
-				AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */,
+				BF3D67431B8E7EB4005D9CFA /* Stopwatch */,
 				BFAF42A81B8CF51700772E20 /* Timer */,
 				BF5A037A1B88C0AD00FDF71D /* Main.storyboard */,
 				BF5A037D1B88C0AD00FDF71D /* Images.xcassets */,
@@ -221,8 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5A037C1B88C0AD00FDF71D /* Main.storyboard in Resources */,
-				BF5A03811B88C0AD00FDF71D /* LaunchScreen.xib in Resources */,
 				BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
