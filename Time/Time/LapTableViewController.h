@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StopWatchViewControllerDelegate.h"
 
-@interface LapTableViewController : UITableViewController
+@interface LapTableViewController : UITableViewController<StopWatchViewControllerDelegate>
 
 @end

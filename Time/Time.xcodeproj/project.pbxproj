@@ -71,6 +71,7 @@
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
+		DC256CD41B8EB50E00EC60C6 /* StopWatchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewControllerDelegate.h; sourceTree = "<group>"; };
 		DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchViewController.h; sourceTree = "<group>"; };
 		DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchViewController.m; sourceTree = "<group>"; };
 		DC7C34091B8905950051C061 /* Digir___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Digir___.ttf"; path = "../../../../../../../Downloads/digreadout/Digir___.ttf"; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 			children = (
 				DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */,
 				DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */,
+				DC256CD41B8EB50E00EC60C6 /* StopWatchViewControllerDelegate.h */,
 				3B6AD1891B8D2F9F0091587F /* LapTableViewController.h */,
 				3B6AD18A1B8D2F9F0091587F /* LapTableViewController.m */,
 			);

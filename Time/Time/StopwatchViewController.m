@@ -7,6 +7,7 @@
 //
 
 #import "StopwatchViewController.h"
+#import "LapTableViewController.h"
 //@import QuartzCore;
 
 @interface StopwatchViewController ()
@@ -21,6 +22,9 @@
 @property (nonatomic) NSMutableArray *lapTimes;
 @property (weak, nonatomic) IBOutlet UITableView *lapTableView;
 
+@property (nonatomic) LapTableViewController *ltvc;
+@property (nonatomic) NSString *currentLapTime;
+
 @end
 
 @implementation StopwatchViewController
@@ -34,8 +38,17 @@
     [self.stopwatchTimer setPaused:YES];
     [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
-    self.lapTableView.dataSource = self;
-    self.lapTableView.delegate = self;
+    [self embedTableView];
+    
+    self.lapTableView.dataSource = self.ltvc;
+    self.lapTableView.delegate = self.ltvc;
+    
+    
+
+   // self.lapTableView.delegate = self;
+    
+
+    
     //self.lapTableView.backgroundColor = [UIColor blackColor];
     
 //    for (NSString* family in [UIFont familyNames]) {
@@ -45,6 +58,20 @@
 //        }
 //    }
 }
+
+-(void) embedTableView{
+    
+    self.ltvc = [[LapTableViewController alloc]init];
+    
+        
+    [self addChildViewController:self.ltvc];
+    
+    self.ltvc.view.frame = self.lapTableView.bounds;//  _view.bounds;
+    [self.lapTableView addSubview:self.ltvc.view];
+    
+    [self.ltvc willMoveToParentViewController:self];
+}
+
 
 - (NSString *)formatTimeString:(CFTimeInterval)timeInterval{
     CFTimeInterval currentTime = CACurrentMediaTime();
@@ -83,9 +110,15 @@
 - (IBAction)lapButtonTapped:(UIButton *)sender {
     if([self.lapButton.titleLabel.text isEqualToString:@"Lap"]){
         self.lapInitialTime = CACurrentMediaTime();
+        
         [self.lapTimes addObject:self.lapLabel.text];
+        NSLog(@"%@",self.lapTimes);
+        self.currentLapTime = self.lapLabel.text;
+        NSLog(@"%@",self.currentLapTime);
+        [self.delegate currentLapTime:self.currentLapTime];
+        NSLog(@"%@ HI I am delegate",[self.delegate currentLapTime:self.currentLapTime]);
         [self.lapTableView reloadData];
-        NSLog(@"%@", self.lapTimes);
+        //NSLog(@"%@", self.lapTimes);
     } else {
         [self.lapTimes removeAllObjects];
         [self.lapTableView reloadData];
