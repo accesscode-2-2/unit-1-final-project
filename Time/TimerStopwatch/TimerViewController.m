@@ -18,6 +18,8 @@
 @property (nonatomic) int afterRemainder;
 @property (nonatomic) int remainder;
 
+- (IBAction)createPresetButtonPressed:(id)sender;
+
 //@property (nonatomic) NSArray *presetTime;
 
 
@@ -87,4 +89,12 @@
     self.countDownTimer.countDownDuration = 60;
 }
 
+//- (IBAction)createPresetButtonPressed:(id)sender {
+//    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    NewPresetsViewController *newPresetIdentifier = [storyboard instantiateViewControllerWithIdentifier:@"newPresetIdentifier"];
+//    newPresetIdentifier.delegate = self;
+//    
+//    [self presentViewController:newPresetVC animated:YES completion:nil];
+//}
 @end

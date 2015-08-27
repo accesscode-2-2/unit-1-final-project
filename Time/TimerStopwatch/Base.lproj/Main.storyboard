@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-4D-LIh">
-                                <rect key="frame" x="12" y="261" width="577" height="36"/>
+                                <rect key="frame" x="12" y="235" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Pause Timer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +34,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
-                                <rect key="frame" x="12" y="317" width="577" height="36"/>
+                                <rect key="frame" x="12" y="279" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Reset Timer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,8 +49,8 @@
                                 <color key="textColor" red="0.52421992978849841" green="0.76330989899932145" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.98883551431362504" green="0.70222294690605858" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
-                                <rect key="frame" x="12" y="191" width="577" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
+                                <rect key="frame" x="12" y="196" width="577" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,10 +59,20 @@
                                     <action selector="startTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="0Eg-WE-GPz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6l-ri-L21">
+                                <rect key="frame" x="12" y="323" width="572" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Create Preset Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createPresetButtonPressed:" destination="pzV-SG-jHg" eventType="touchUpInside" id="LkT-bQ-cNY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IRl-cz-v6d" firstAttribute="top" secondItem="ZlD-4D-LIh" secondAttribute="bottom" constant="20" id="0db-Vs-QSw"/>
+                            <constraint firstItem="IRl-cz-v6d" firstAttribute="top" secondItem="ZlD-4D-LIh" secondAttribute="bottom" constant="8" id="0db-Vs-QSw"/>
                             <constraint firstItem="ZlD-4D-LIh" firstAttribute="top" secondItem="t6j-xf-S9n" secondAttribute="bottom" constant="19" id="0vQ-LY-vfo"/>
                             <constraint firstAttribute="trailing" secondItem="t6j-xf-S9n" secondAttribute="trailing" constant="11" id="28d-R5-6QK"/>
                             <constraint firstItem="ZlD-4D-LIh" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="2SN-zb-XO1"/>
@@ -79,14 +89,17 @@
                             <constraint firstItem="IRl-cz-v6d" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="V3w-X0-GIR"/>
                             <constraint firstAttribute="trailing" secondItem="ZlD-4D-LIh" secondAttribute="trailing" constant="11" id="Ynk-uS-p4b"/>
                             <constraint firstItem="gis-ba-krU" firstAttribute="top" secondItem="vcR-yP-NJR" secondAttribute="bottom" constant="50" id="Z3B-tf-YYC"/>
+                            <constraint firstItem="u6l-ri-L21" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" constant="12" id="baX-F0-bSV"/>
                             <constraint firstAttribute="trailing" secondItem="IRl-cz-v6d" secondAttribute="trailing" constant="11" id="d6D-8H-f3X"/>
                             <constraint firstItem="5RO-6d-Mia" firstAttribute="top" secondItem="nQ5-9V-n3s" secondAttribute="bottom" id="ddz-cC-Bhw"/>
                             <constraint firstItem="IRl-cz-v6d" firstAttribute="top" secondItem="ZlD-4D-LIh" secondAttribute="bottom" constant="8" id="gFi-FN-bAS"/>
                             <constraint firstAttribute="trailing" secondItem="ZlD-4D-LIh" secondAttribute="trailing" constant="11" id="kVL-z7-lP7"/>
+                            <constraint firstAttribute="trailing" secondItem="u6l-ri-L21" secondAttribute="trailing" constant="16" id="luh-WD-cVC"/>
                             <constraint firstItem="t6j-xf-S9n" firstAttribute="top" secondItem="gis-ba-krU" secondAttribute="bottom" constant="42" id="oEX-I9-Gtd"/>
                             <constraint firstAttribute="trailing" secondItem="gis-ba-krU" secondAttribute="trailing" constant="16" id="oUe-Wy-wGn"/>
                             <constraint firstItem="nQ5-9V-n3s" firstAttribute="leading" secondItem="uKv-Yz-fVz" secondAttribute="leading" id="sKu-lQ-qTY"/>
-                            <constraint firstItem="nQ5-9V-n3s" firstAttribute="top" secondItem="IRl-cz-v6d" secondAttribute="bottom" constant="36" id="ua5-cE-tCz"/>
+                            <constraint firstItem="u6l-ri-L21" firstAttribute="top" secondItem="IRl-cz-v6d" secondAttribute="bottom" constant="8" id="tY7-zZ-THu"/>
+                            <constraint firstItem="nQ5-9V-n3s" firstAttribute="top" secondItem="IRl-cz-v6d" secondAttribute="bottom" constant="74" id="ua5-cE-tCz"/>
                             <constraint firstItem="t6j-xf-S9n" firstAttribute="top" secondItem="gis-ba-krU" secondAttribute="bottom" constant="21" id="vRw-AI-pj4"/>
                         </constraints>
                         <variation key="default">
@@ -161,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="2609" y="332"/>
         </scene>
-        <!--View Controller-->
+        <!--New Presets View Controller-->
         <scene sceneID="PbG-9R-YaJ">
             <objects>
-                <viewController id="k60-O9-XqE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newPresetIdentifier" id="k60-O9-XqE" customClass="NewPresetsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Fn-Fp-NTV"/>
                         <viewControllerLayoutGuide type="bottom" id="qtl-Np-3ua"/>
