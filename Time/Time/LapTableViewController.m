@@ -56,7 +56,16 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier"];//] forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        
+        cell =
+        [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                               reuseIdentifier:@"lapIdentifier"];
+        
+    }
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
     cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];

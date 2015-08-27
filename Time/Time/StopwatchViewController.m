@@ -20,7 +20,7 @@
 @property (nonatomic) CFTimeInterval lapInitialTime;
 @property (nonatomic) CADisplayLink *stopwatchTimer;
 @property (nonatomic) NSMutableArray *lapTimes;
-@property (weak, nonatomic) IBOutlet UITableView *lapTableView;
+@property (weak, nonatomic) IBOutlet UIView *lapTableView;
 
 @property (nonatomic) LapTableViewController *ltvc;
 @property (nonatomic) NSString *currentLapTime;
@@ -41,8 +41,8 @@
     
     [self embedTableView];
     
-    self.lapTableView.dataSource = self.ltvc;
-    self.lapTableView.delegate = self.ltvc;
+  //  self.lapTableView.dataSource = self.ltvc;
+  //  self.lapTableView.delegate = self.ltvc;
     
     
 
@@ -64,7 +64,6 @@
     
     self.ltvc = [[LapTableViewController alloc]init];
     
-        
     [self addChildViewController:self.ltvc];
     
     self.ltvc.view.frame = self.lapTableView.bounds;//  _view.bounds;
@@ -72,7 +71,6 @@
     
     [self.ltvc willMoveToParentViewController:self];
 }
-
 
 - (NSString *)formatTimeString:(CFTimeInterval)timeInterval{
     CFTimeInterval currentTime = CACurrentMediaTime();
@@ -116,40 +114,40 @@
         NSLog(@"%@",self.lapTimes);
         self.currentLapTime = self.lapLabel.text;
         NSLog(@"%@",self.currentLapTime);
-        [self.delegate currentLapTime:self.currentLapTime];
-        NSLog(@"%@ HI I am delegate",[self.ltvc currentLapTime:self.currentLapTime]);
-        [self.lapTableView reloadData];
+        [self.ltvc currentLapTime:self.currentLapTime];
+//        NSLog(@"%@ HI I am delegate",[self.ltvc currentLapTime:self.currentLapTime]);
+     //   [self.lapTableView reloadData];
         //NSLog(@"%@", self.lapTimes);
     } else {
         [self.lapTimes removeAllObjects];
-        [self.lapTableView reloadData];
+        //[self.lapTableView reloadData];
         self.lapLabel.text = @"00:00.000";
         self.timerLabel.text = @"00:00.000";
     }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.lapTimes count];
-}
-
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    cell.backgroundColor = [UIColor blackColor];
-//    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.font = [UIFont fontWithName:@"Orbitron-Regular" size:15];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"DigitalReadoutExpUpright" size:19];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
-    cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];
-    return cell;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return [self.lapTimes count];
+//}
+//
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+////    cell.backgroundColor = [UIColor blackColor];
+////    cell.textLabel.textColor = [UIColor whiteColor];
+//    cell.textLabel.font = [UIFont fontWithName:@"Orbitron-Regular" size:15];
+//    cell.detailTextLabel.font = [UIFont fontWithName:@"DigitalReadoutExpUpright" size:19];
+//    cell.detailTextLabel.textColor = [UIColor blackColor];
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier" forIndexPath:indexPath];
+//    
+//    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
+//    cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];
+//    return cell;
+//}
 
 @end
