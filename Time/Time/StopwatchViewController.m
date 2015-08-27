@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [UIView setAnimationsEnabled:NO];
     
     self.lapTimes = [NSMutableArray new];
     self.stopwatchTimer  = [CADisplayLink displayLinkWithTarget:self
