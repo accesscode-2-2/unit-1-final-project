@@ -211,7 +211,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="gQg-HN-Nfc" secondAttribute="centerX" id="5al-Sw-Gyw"/>
                                             <constraint firstAttribute="bottom" secondItem="zfm-On-SfT" secondAttribute="bottom" constant="25" id="7mj-gp-8Ws"/>
@@ -239,6 +239,7 @@
                             <constraint firstItem="8Fc-aB-em7" firstAttribute="top" secondItem="p8J-hP-opU" secondAttribute="bottom" constant="10" id="fTD-Je-UuM"/>
                             <constraint firstItem="p8J-hP-opU" firstAttribute="top" secondItem="aLf-6B-afN" secondAttribute="bottom" constant="5" id="r7B-Pf-FlA"/>
                             <constraint firstItem="aLf-6B-afN" firstAttribute="leading" secondItem="0zb-YG-yqU" secondAttribute="leadingMargin" constant="-16" id="vfQ-02-bSa"/>
+                            <constraint firstItem="K3M-5p-VNQ" firstAttribute="width" secondItem="0zb-YG-yqU" secondAttribute="width" id="z4W-J4-u86"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="FfZ-V8-Qdn" appends="YES" id="waA-By-WpZ"/>
