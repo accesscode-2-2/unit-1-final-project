@@ -24,5 +24,3 @@
 
 @end
 
-NSInteger totalSeconds;
-NSInteger countDownTimer;

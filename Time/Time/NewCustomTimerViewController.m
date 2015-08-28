@@ -21,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.customTimersDictionary setObject:@"time" forKey:@"birthday"];
+    
+    NSLog(@"%@", self.customTimersDictionary);
+    
     // Do any additional setup after loading the view.
 }
 
@@ -36,6 +41,10 @@
     NSLog(@"%@ dookie",alarmName);
     NSTimeInterval timeInterval = self.timePickerView.countDownDuration;
     NSLog(@"%f poopy", timeInterval);
+    
+    // something like [self.timerViewController doSomethingWithThisNewTimer]
+    
+//    [self.timerViewController addTimer:timeInterval];
     
     //break this down into hours and minutes because it's displayed in seconds
     //deligation to comunitcate this info back to the next view controller

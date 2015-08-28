@@ -221,7 +221,7 @@
         <!--Preset Timers-->
         <scene sceneID="dtG-cb-e8Z">
             <objects>
-                <viewController title="PresetTimers" id="5xI-rK-Qas" userLabel="Preset Timers" sceneMemberID="viewController">
+                <viewController title="PresetTimers" id="5xI-rK-Qas" userLabel="Preset Timers" customClass="PresetTimersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rJ6-eN-Goz"/>
                         <viewControllerLayoutGuide type="bottom" id="3bN-hV-JqL"/>
@@ -258,7 +258,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="XLF-W8-Wb5" kind="presentation" id="Pvc-PX-kCz"/>
+                                            <action selector="addTimerButtonTapped:" destination="5xI-rK-Qas" eventType="touchUpInside" id="Cje-ih-QAW"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time Ending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-Cb-O9a">
@@ -380,7 +380,7 @@
         <!--New Custom Timer Modal Popup-->
         <scene sceneID="75T-Oc-brr">
             <objects>
-                <viewController title="New Custom Timer Modal Popup" id="XLF-W8-Wb5" customClass="NewCustomTimerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newPresetVC" title="New Custom Timer Modal Popup" id="XLF-W8-Wb5" customClass="NewCustomTimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGV-U2-znj"/>
                         <viewControllerLayoutGuide type="bottom" id="xfK-Xd-S31"/>
