@@ -8,6 +8,7 @@
 
 #import "TimerViewController.h"
 #import "AppDelegate.h"
+#import "NewPresetsViewController.h"
 
 @interface TimerViewController ()
 
@@ -57,7 +58,6 @@
     if (sender == self.resetButton) {
         self.timerLabel.text = @"00:00:00";
         [self.timer invalidate];
-        
     }
 }
 
@@ -87,7 +87,23 @@
     [super viewDidLoad];
     self.countDownTimer.datePickerMode = UIDatePickerModeCountDownTimer;
     self.countDownTimer.countDownDuration = 60;
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"Timer";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(presetTimerButtonTapped:)];
+    
+}
+
+- (void)presetTimerButtonTapped:(UIBarButtonItem *)button {
+    NSLog(@"charles");
+
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"newPresetController"];
+//    newPresetIdentifier.delegate = self;
+    
+//    NewPresetsViewController *viewController = [[NewPresetsViewController alloc] init];
+//    UINavigationController *controller = [[UINavigationController alloc] init];
+//    controller.viewControllers = @[viewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
+    
 }
 
 //- (IBAction)createPresetButtonPressed:(id)sender {

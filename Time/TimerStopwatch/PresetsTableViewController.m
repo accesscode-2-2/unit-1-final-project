@@ -16,9 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.navigationItem.title = @"Timer";
 }
 
+    - (IBAction)addPresetTimer:(id)sender {
+        self.navigationItem.rightBarButtonItem.title = @"Add";
+        UIViewController *PresetsTableViewController = [[UIViewController alloc] init];
+        [self.navigationController pushViewController:PresetsTableViewController animated:YES];
+
+        
+    }
 
 #pragma mark - Table view data source
 

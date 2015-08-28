@@ -16,6 +16,7 @@
 		BF5A038D1B88C0AD00FDF71D /* TimerStopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A038C1B88C0AD00FDF71D /* TimerStopwatchTests.m */; };
 		BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A039D1B88CCD600FDF71D /* TimerViewController.m */; };
 		BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5A039F1B88D49400FDF71D /* QuartzCore.framework */; };
+		BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6C16E31B8FE29F00103CC2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		BF5A03721B88C0AD00FDF71D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF5A03741B88C0AD00FDF71D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF5A03751B88C0AD00FDF71D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF5A037B1B88C0AD00FDF71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF5A037D1B88C0AD00FDF71D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF5A03801B88C0AD00FDF71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BF5A03861B88C0AD00FDF71D /* TimerStopwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerStopwatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +51,7 @@
 		BF5A039C1B88CCD600FDF71D /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		BF5A039D1B88CCD600FDF71D /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		BF5A039F1B88D49400FDF71D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BF6C16E31B8FE29F00103CC2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +108,9 @@
 				BF5A03751B88C0AD00FDF71D /* AppDelegate.m */,
 				BF3D67431B8E7EB4005D9CFA /* Stopwatch */,
 				BFAF42A81B8CF51700772E20 /* Timer */,
-				BF5A037A1B88C0AD00FDF71D /* Main.storyboard */,
 				BF5A037D1B88C0AD00FDF71D /* Images.xcassets */,
 				BF5A037F1B88C0AD00FDF71D /* LaunchScreen.xib */,
+				BF6C16E31B8FE29F00103CC2 /* Main.storyboard */,
 				BF5A03701B88C0AD00FDF71D /* Supporting Files */,
 			);
 			path = TimerStopwatch;
@@ -237,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */,
+				BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,14 +284,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BF5A037A1B88C0AD00FDF71D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF5A037B1B88C0AD00FDF71D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BF5A037F1B88C0AD00FDF71D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -389,7 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TimerStopwatch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.charleshkang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TimerStopwatch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.charleshkang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
