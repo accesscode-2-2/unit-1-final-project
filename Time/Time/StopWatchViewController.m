@@ -183,6 +183,7 @@ NSInteger miliseconds;
         [self LapTimer]; //call Lap Timer
         [self.LapTableView reloadData];
         
+        
     } else {//reset tapped
         //reset stopwatch info
         self.timeInterval = 0;

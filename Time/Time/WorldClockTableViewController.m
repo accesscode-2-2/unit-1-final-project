@@ -7,9 +7,20 @@
 //
 
 #import "WorldClockTableViewController.h"
+#import "WorldClockAddTableViewController.h"
+#import "WorldClockInfo.h"
 
 @interface WorldClockTableViewController ()
-@property (nonatomic) NSMutableArray *arr;
+@property (nonatomic) NSMutableArray *selectedCitiesArray;
+
+//@property (nonatomic) NSMutableArray *selectedC;
+
+//
+//@property (nonatomic) NSMutableDictionary *citySelected;
+//@property (nonatomic) NSArray *keyCitySelected;
+//@property (nonatomic) NSArray *valueCitySelected;
+
+
 
 @end
 
@@ -18,53 +29,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"World Clock"];
-    
-    
+ 
+  //  self.tableView.backgroundColor = [UIColor grayColor ];
+
+    self.selectedCitiesArray = [[NSMutableArray alloc] init];
+   
     //it changes the color only on second click
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]}];
-
-    
-    
-    
-    //    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                [UIColor whiteColor],UITextAttributeTextColor,
-//                                [UIColor blackColor], UITextAttributeTextShadowColor,
-//                                [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil];
-    
-//    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
-    
-    
-    
  
-    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     
-//    
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-//                                  initWithTitle:@"Add"
-//                                  style:UIBarButtonItemStyleBordered
-//                                  target:nil
-//                                  action:nil];
-//    
-//    self.navigationItem.rightBarButtonItem = addButton;
-//
-//    
-//    
-    
-    
-    
-    self.arr = [[NSMutableArray alloc]init];
- 
-    [self.arr insertObject:@"one" atIndex:0 ];
-    [self.arr insertObject:@"two" atIndex:0];
-    [self.arr insertObject:@"three" atIndex:0];
-
-    NSLog(@"%@", self.arr[0]);
-    
 
  }
-
+-(void) viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -80,24 +62,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
      // Return the number of rows in the section.
-    return self.arr.count;
+    return self.selectedCitiesArray.count;
+    //return self.selectedCitiesArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"worldClockIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
-   // cell.textLabel.text = self.arr[indexPath.row];
     
+    WorldClockInfo *city = self.selectedCitiesArray[indexPath.row];
+    cell.textLabel.text = city.cityName;
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.arr count] - indexPath.row];
-    
-    cell.detailTextLabel.text = self.arr[indexPath.row];
-
-    
-    
-//    
+    cell.detailTextLabel.text = city.cityTime;
     return cell;
 }
 
@@ -109,8 +86,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         
-//        [_player2 play]; // bricksmash
-        [self.arr removeObjectAtIndex:indexPath.row];
+         [self.selectedCitiesArray removeObjectAtIndex:indexPath.row];
         
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
         
@@ -154,14 +130,27 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+
+#pragma mark - Navigation
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+    
+    WorldClockAddTableViewController *vc = segue.destinationViewController;
+    
+    //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+//    CQCategory *newCategory = [self.allCategories objectAtIndex:indexPath.row];
+    //vc.category = newCategory;
+    
+    vc.selectedCitiesArray = self.selectedCitiesArray;
+    
+ }
+
+
 
 @end
