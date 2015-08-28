@@ -26,48 +26,60 @@
 //new addition
 @property (nonatomic) NSTimeInterval totalTime;
 
+@property (weak, nonatomic) IBOutlet UILabel *lapTimeLabel;
 
+@property (nonatomic) NSTimeInterval elapsedLapTime;
+
+@property (nonatomic) NSTimeInterval previousLapTime;
 @end
 
 @implementation StopwatchViewController
-
-
-- (IBAction)lapButton:(id)sender {
-    
-    NSString *currentLapTime = self.timerLabel.text;
-    
-    [self.laps addObject:currentLapTime];
-    
-    [self.tableView reloadData];
-        
-        
-        
-    
-    
-    
-    
-    
-}
 
 BOOL running;
 NSTimeInterval startTime;
 //NSTimeInterval startTimeNow;
 
+- (IBAction)lapButton:(id)sender {
+    
+    //NSTimeInterval totalTime - ;
+    
+//    NSTimeInterval currentTimeNow = [NSDate timeIntervalSinceReferenceDate];
+//    NSTimeInterval elapsedTimeNow;
+//    NSTimeInterval lapTimeNow = currentTimeNow - elapsedTimeNow;
+//    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f",lapTimeNow];
+//
+//    NSString *lap = self.lapTimeLabel.text;
+//
+//        [self.laps addObject:lap];
+//
+    
+    
+    
+    NSString *currentLapTime = self.timerLabel.text;
+    // lap = current time - previousLapTime
+    
+    //new line added thursday 8-27
+    NSLog(@"%f", self.totalTime - self.previousLapTime);
+
+    
+    [self.laps addObject:currentLapTime];
+
+    [self.tableView reloadData];
+    
+    //new line added thursday 8-27
+    self.previousLapTime = self.totalTime;
+//    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.previousLapTime];
+
+}
+
 - (void)viewDidLoad {
+    
+    
     [super viewDidLoad];
 
     self.laps = [[NSMutableArray alloc] init];
     
-    
-//    self.laps = @[
-//                 @"one",
-//                 @"two",
-//                 @"three"
-//                 ];
-    
     self.timerLabel.text = @"00:00:00";
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
 }
 
 - (IBAction)start:(UIButton *)sender {
@@ -83,7 +95,7 @@ NSTimeInterval startTime;
         startTime = [NSDate timeIntervalSinceReferenceDate];
         [sender setTitle:@"STOP" forState:UIControlStateNormal];
         [self updateTime];
-//        [self new]; r
+//        [self new];
     } else {
         // stop timer
         [sender setTitle:@"START" forState:UIControlStateNormal];
@@ -97,12 +109,12 @@ NSTimeInterval startTime;
     
     // calculate elapsed time
     NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = currentTime - startTime;
+    NSTimeInterval elapsed = + currentTime - startTime;
     
     self.totalTime += elapsed;
     startTime = currentTime;
-
-    NSLog(@"%f", self.totalTime);
+//
+//    NSLog(@"%f", self.totalTime);
     
     // extract out the minutes, seconds, and fraction of seconds from elapsed time:
     int mins = (int) (elapsed / 60.0);
@@ -110,12 +122,15 @@ NSTimeInterval startTime;
     int secs = (int) (elapsed);
     elapsed -= secs;
     int fraction = elapsed * 100.0;
-    
-    
+    //////
+    self.elapsedLapTime = currentTime - startTime;
+    //////
     self.timerLabel.text = [NSString stringWithFormat:@"%02d:%f",secs, self.totalTime];
     
+    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.totalTime];
+    
     // update our label using a format of 0:00.0
-    //self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
+//    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
     
     // call updateTime again after 0.1 seconds
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
@@ -183,69 +198,13 @@ NSTimeInterval startTime;
 //    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.laps.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", [self.laps count] - (long)indexPath.row];
-    cell.detailTextLabel.text = self.laps[[self.laps count] - 1 - indexPath.row];
+    cell.detailTextLabel.text = self.laps[[self.laps count] -1 - indexPath.row];
     
 //    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", (long)indexPath.row];
 //    cell.detailTextLabel.text = self.laps[indexPath.row];
     
     
-    
-    
     return cell;
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

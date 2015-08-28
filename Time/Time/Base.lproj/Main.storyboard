@@ -83,12 +83,24 @@
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" red="0.9960784912109375" green="0.9960784912109375" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWN-o5-O3G">
+                                                <rect key="frame" x="463" y="23" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="e62-AA-6PB"/>
+                                                    <constraint firstAttribute="width" constant="100" id="nuf-zx-21z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="GrF-Mp-wQR" secondAttribute="centerX" id="0qK-Xd-t8g"/>
                                             <constraint firstAttribute="centerY" secondItem="GrF-Mp-wQR" secondAttribute="centerY" id="7Gk-pX-2B3"/>
+                                            <constraint firstItem="MWN-o5-O3G" firstAttribute="top" secondItem="kJf-ge-U82" secondAttribute="top" constant="23" id="TEc-3t-A62"/>
                                             <constraint firstAttribute="height" constant="162.5" id="XmE-Cg-q3D"/>
+                                            <constraint firstAttribute="trailing" secondItem="MWN-o5-O3G" secondAttribute="trailing" constant="37" id="x4S-Ia-7KQ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-L1-8SY">
@@ -139,6 +151,7 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="w04-aE-1e7"/>
                     <connections>
                         <outlet property="lapButton" destination="kbR-g4-YXb" id="eep-Nb-PGc"/>
+                        <outlet property="lapTimeLabel" destination="MWN-o5-O3G" id="7b2-lH-hlP"/>
                         <outlet property="start" destination="QgE-L1-8SY" id="oey-LU-mcc"/>
                         <outlet property="tableView" destination="Cch-if-onc" id="0HO-W2-WLG"/>
                         <outlet property="timerLabel" destination="GrF-Mp-wQR" id="RPi-l1-mRL"/>
