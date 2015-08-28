@@ -31,6 +31,9 @@
 @property (nonatomic) NSTimeInterval elapsedLapTime;
 
 @property (nonatomic) NSTimeInterval previousLapTime;
+
+@property (nonatomic) NSTimeInterval lapTime;
+
 @end
 
 @implementation StopwatchViewController
@@ -55,14 +58,19 @@ NSTimeInterval startTime;
     
     
     
-    NSString *currentLapTime = self.timerLabel.text;
+    //NSString *currentLapTime = self.timerLabel.text;
     // lap = current time - previousLapTime
     
     //new line added thursday 8-27
     NSLog(@"%f", self.totalTime - self.previousLapTime);
-
     
-    [self.laps addObject:currentLapTime];
+    self.lapTime = self.totalTime - self.previousLapTime;
+    
+    ///////
+ //   self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.lapTime];
+
+    NSString *correctLap = self.lapTimeLabel.text;
+    [self.laps addObject:correctLap];
 
     [self.tableView reloadData];
     
@@ -127,7 +135,7 @@ NSTimeInterval startTime;
     //////
     self.timerLabel.text = [NSString stringWithFormat:@"%02d:%f",secs, self.totalTime];
     
-    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.totalTime];
+  //  self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.lapTime];
     
     // update our label using a format of 0:00.0
 //    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
