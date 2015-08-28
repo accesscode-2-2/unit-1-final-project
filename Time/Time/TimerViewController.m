@@ -7,6 +7,7 @@
 //
 
 #import "TimerViewController.h"
+#import "PresetsTableViewController.h"
 
 @interface TimerViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
@@ -209,10 +210,11 @@
 
 - (IBAction)presetButtonTapped:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *presetsNC = [storyboard instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
+    UINavigationController *presetsNC = [storyboard  instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
     NSArray *viewControllers = [presetsNC viewControllers];
-    [viewControllers[0] setDelegate:self];
-    
+    PresetsTableViewController *presetsViewController = viewControllers[0];
+    [presetsViewController setDelegate:self];
+
     [self presentViewController:presetsNC animated:YES completion:nil];
 }
 

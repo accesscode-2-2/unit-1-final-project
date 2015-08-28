@@ -20,7 +20,7 @@
 @property (nonatomic) CFTimeInterval lapInitialTime;
 @property (nonatomic) CADisplayLink *stopwatchTimer;
 @property (nonatomic) NSMutableArray *lapTimes;
-@property (weak, nonatomic) IBOutlet UIView *lapTableView;
+@property (weak, nonatomic) IBOutlet UITableView *lapTableView;
 
 @property (nonatomic) LapTableViewController *ltvc;
 @property (nonatomic) NSString *currentLapTime;
@@ -60,7 +60,7 @@
 //    }
 }
 
--(void) embedTableView{
+- (void)embedTableView {
     
     self.ltvc = [[LapTableViewController alloc]init];
     

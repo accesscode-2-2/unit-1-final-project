@@ -10,7 +10,5 @@
 
 
 @protocol StopWatchViewControllerDelegate <NSObject>
-
 - (NSString *)currentLapTime:(NSString *)lapTime;
-
 @end
