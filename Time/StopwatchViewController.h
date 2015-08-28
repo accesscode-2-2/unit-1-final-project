@@ -10,4 +10,7 @@
 
 @interface StopwatchViewController : UIViewController
 
+
+    //-(IBAction)restart:(id)sender;
+
 @end

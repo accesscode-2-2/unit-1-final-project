@@ -17,6 +17,7 @@
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
+		EB9EE0951B8E803500DB27D1 /* NewCustomTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
+		EB9EE0931B8E803500DB27D1 /* NewCustomTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCustomTimerViewController.h; sourceTree = "<group>"; };
+		EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCustomTimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				89FD9A4C1B86B58900D7A645 /* SpecialEventsViewController.m */,
 				89FD9A451B86B55600D7A645 /* PresetTimersViewController.h */,
 				89FD9A461B86B55600D7A645 /* PresetTimersViewController.m */,
+				EB9EE0931B8E803500DB27D1 /* NewCustomTimerViewController.h */,
+				EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89FD9A441B86AC7500D7A645 /* TimerUITabBarController.m in Sources */,
+				EB9EE0951B8E803500DB27D1 /* NewCustomTimerViewController.m in Sources */,
 				89FD9A471B86B55600D7A645 /* PresetTimersViewController.m in Sources */,
 				89C909871B88DB5800216084 /* StopwatchViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewCustomTimerViewController.h"
+
 
 @protocol ViewControllerDelegate
 
@@ -19,4 +21,8 @@
 
 @property (nonatomic, retain) id <ViewControllerDelegate> ViewControllerDelegate;
 
+
 @end
+
+NSInteger totalSeconds;
+NSInteger countDownTimer;

@@ -8,11 +8,11 @@
 
 #import "PresetTimersViewController.h"
 
+
 @interface PresetTimersViewController () <ViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *alarmNameLabel;
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *timePickerView;
+
 
 @end
 
@@ -20,26 +20,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+
+    totalSeconds = 120;
+    countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timer) userInfo:nil repeats:YES];
+
 }
+
+//-(void)timer {
+//    totalSeconds--;
+//    timerLabel.text = [self timeFormatted:totalSeconds];
+//    if (totalSeconds == 0) {
+//        [countDownTimer invalidate];
+//    }
+//}
+
+//- (void) newCustomTimeViewController:(NewCustomViewController *)customVC didAddTimerWithHours:(NSInteger)hours minutes:(NSInteger)minutes name:(NSString *)alarmName {
+    
+//}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)doneButtonTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-- (IBAction)alarmNameLabel:(id)sender {
-    
-    //[ViewControllerDelegate updateAlarmLabel];
-    
-}
-
-- (IBAction)timePickerView:(id)sender {
 }
 
 

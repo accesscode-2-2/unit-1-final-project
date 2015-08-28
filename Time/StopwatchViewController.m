@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *lapButtonTapped;
 
+@property (weak, nonatomic) IBOutlet UIButton *resetButtonTapped;
+
+
 @property (nonatomic) float nextNumber;
 @property (nonatomic) float currentNumber;
 
@@ -87,6 +90,16 @@
     [self.lapsTableView reloadData];
     
 }
+
+
+    
+    
+- (IBAction)resetButtonTapped:(id)sender {
+    self.currentNumber = 0;
+    self.stopwatchTimerLabel.text = [NSString stringWithFormat:@"0"];
+
+}
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
