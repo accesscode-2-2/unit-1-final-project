@@ -23,12 +23,16 @@
 - (void)setupDefaultPresets {
     self.specialDates = [[OrderedDictionary alloc] init];
     
-    NSArray *keys = @[@"CD Player Day", @"International Day for Failure",  @"Push-Button Phone Day",
-                      @"International Shareware Day", @"International Programmer's Day", @"Macintosh Computer Day"];
+    NSArray *keys = @[@"CD Player Day",
+                      @"International Day for Failure",
+                      @"Push-Button Phone Day",
+                      @"International Shareware Day",
+                      @"International Programmer's Day",
+                      @"Macintosh Computer Day"];
     
-    NSArray *values = @[@[@"00", @"01", @"00"],
-                        @[@"00", @"45", @"00"],
-                        @[@"00", @"05", @"00"],
+    NSArray *values = @[@[@"10 01 2015"],
+                        @[@"10 13 2015"],
+                        @[@"11 18 2015"],
                         @[@"00", @"03", @"30"],
                         @[@"00", @"25", @"00"],
                         @[@"00", @"35", @"00"]];
