@@ -17,6 +17,7 @@
 		BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A039D1B88CCD600FDF71D /* TimerViewController.m */; };
 		BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5A039F1B88D49400FDF71D /* QuartzCore.framework */; };
 		BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6C16E31B8FE29F00103CC2 /* Main.storyboard */; };
+		BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		BF5A039D1B88CCD600FDF71D /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		BF5A039F1B88D49400FDF71D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF6C16E31B8FE29F00103CC2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BF6C16E51B8FEF2800103CC2 /* EventsCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCountdownViewController.h; sourceTree = "<group>"; };
+		BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCountdownViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 			children = (
 				BF5A039C1B88CCD600FDF71D /* TimerViewController.h */,
 				BF5A039D1B88CCD600FDF71D /* TimerViewController.m */,
+				BF6C16E51B8FEF2800103CC2 /* EventsCountdownViewController.h */,
+				BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */,
 				BF3D673F1B8E7A72005D9CFA /* PresetsTableViewController.h */,
 				BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */,
 				BF3D674B1B8E9879005D9CFA /* PresetsTableViewControllerDelegate.h */,
@@ -261,6 +266,7 @@
 				BF5A03761B88C0AD00FDF71D /* AppDelegate.m in Sources */,
 				AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */,
 				BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */,
+				BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */,
 				BF5A03731B88C0AD00FDF71D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

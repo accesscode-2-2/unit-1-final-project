@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGs-mL-eZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="332"/>
+            <point key="canvasLocation" x="1130" y="-70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7xB-Wg-bbd">
@@ -147,7 +147,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9E-ck-akF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1979" y="332"/>
+            <point key="canvasLocation" x="1869" y="-70"/>
         </scene>
         <!--Presets Table View Controller-->
         <scene sceneID="d9W-UV-rLb">
@@ -176,7 +176,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAd-7e-fBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2727" y="332"/>
+            <point key="canvasLocation" x="2601" y="-70"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TpN-gz-kDw">
@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AqM-ug-ddX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="-460"/>
+            <point key="canvasLocation" x="1130" y="-842"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cZ8-m7-ETG">
@@ -254,6 +254,7 @@
                     <connections>
                         <segue destination="qMo-wi-d5n" kind="relationship" relationship="viewControllers" id="gDB-a4-BKO"/>
                         <segue destination="OyP-x7-tdW" kind="relationship" relationship="viewControllers" id="pmz-0r-mYE"/>
+                        <segue destination="tIj-t5-ciW" kind="relationship" relationship="viewControllers" id="xet-Dm-CKz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56q-Qy-t5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,7 +278,116 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGC-kW-mqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="-460"/>
+            <point key="canvasLocation" x="364" y="-842"/>
+        </scene>
+        <!--Charles Turns 21-->
+        <scene sceneID="TMK-O5-I41">
+            <objects>
+                <navigationController id="tIj-t5-ciW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Charles Turns 21" image="crown-7" id="ZwM-pg-CL8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LyZ-iy-AzN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="p74-F3-gK7" kind="relationship" relationship="rootViewController" id="dco-Je-gvN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vx2-Jz-YiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="688"/>
+        </scene>
+        <!--Events Countdown View Controller-->
+        <scene sceneID="D7x-Dk-xer">
+            <objects>
+                <viewController id="p74-F3-gK7" customClass="EventsCountdownViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zZg-ih-0rI"/>
+                        <viewControllerLayoutGuide type="bottom" id="0mQ-mJ-WOp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lYV-lD-uAC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="801-NQ-tjD">
+                                <rect key="frame" x="0.0" y="389" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="462418370.35022497">
+                                    <!--2015-08-28 01:32:50 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles turns 21 in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDm-ug-IjK">
+                                <rect key="frame" x="17" y="79" width="566" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="koG-pO-642"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 Days 00 Hours 00 Mins 00 Secs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-B1-khb">
+                                <rect key="frame" x="17" y="130" width="567" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-4I-7P7">
+                                <rect key="frame" x="40" y="170" width="520" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="MHU-ws-CIq"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCountdown:" destination="p74-F3-gK7" eventType="touchUpInside" id="8AY-lk-Vz2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="40" id="0sS-xT-T1r"/>
+                            <constraint firstItem="DDm-ug-IjK" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="17" id="2sY-9q-BRp"/>
+                            <constraint firstItem="UJ2-B1-khb" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="17" id="3bU-Rw-J8Y"/>
+                            <constraint firstAttribute="trailing" secondItem="DDm-ug-IjK" secondAttribute="trailing" constant="17" id="7OX-fr-Kn0"/>
+                            <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="40" id="EaH-bl-KyC"/>
+                            <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="40" id="GdS-16-BAM"/>
+                            <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="97" id="RX0-ry-VTR"/>
+                            <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="40" id="VhK-yo-tue"/>
+                            <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" id="WEz-qz-7PF"/>
+                            <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="40" id="a8k-9a-GLf"/>
+                            <constraint firstItem="DDm-ug-IjK" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="17" id="aOp-hK-gaz"/>
+                            <constraint firstItem="UJ2-B1-khb" firstAttribute="top" secondItem="zZg-ih-0rI" secondAttribute="bottom" constant="66" id="d15-B7-aQu"/>
+                            <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="40" id="dVp-Pz-Xay"/>
+                            <constraint firstItem="DDm-ug-IjK" firstAttribute="top" secondItem="zZg-ih-0rI" secondAttribute="bottom" constant="15" id="kSl-vJ-ZzK"/>
+                            <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="51" id="kgw-cB-VmM"/>
+                            <constraint firstItem="0mQ-mJ-WOp" firstAttribute="top" secondItem="801-NQ-tjD" secondAttribute="bottom" id="mAN-43-8g0"/>
+                            <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="DDm-ug-IjK" secondAttribute="bottom" constant="33" id="pZW-eg-uC6"/>
+                            <constraint firstAttribute="trailing" secondItem="801-NQ-tjD" secondAttribute="trailing" id="qg3-Ud-F3K"/>
+                            <constraint firstAttribute="trailing" secondItem="UJ2-B1-khb" secondAttribute="trailing" constant="16" id="wsL-4t-hB1"/>
+                            <constraint firstAttribute="trailing" secondItem="DDm-ug-IjK" secondAttribute="trailing" constant="17" id="zvu-JS-qNU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2sY-9q-BRp"/>
+                                <exclude reference="7OX-fr-Kn0"/>
+                                <exclude reference="0sS-xT-T1r"/>
+                                <exclude reference="EaH-bl-KyC"/>
+                                <exclude reference="GdS-16-BAM"/>
+                                <exclude reference="a8k-9a-GLf"/>
+                                <exclude reference="RX0-ry-VTR"/>
+                                <exclude reference="kgw-cB-VmM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="KpR-YR-XhH"/>
+                    <connections>
+                        <outlet property="birthdayCountdownLabel" destination="UJ2-B1-khb" id="dYC-Y2-uyt"/>
+                        <outlet property="timeTillBirthday" destination="801-NQ-tjD" id="8hH-73-bNa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZJ-pa-gCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="688"/>
         </scene>
         <!--Timer-->
         <scene sceneID="S9s-Vz-Dq2">
@@ -296,11 +406,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx3-pA-vMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="332"/>
+            <point key="canvasLocation" x="364" y="-70"/>
         </scene>
     </scenes>
     <resources>
         <image name="clock-alarm-7" width="30" height="30"/>
         <image name="clock-stopwatch-7" width="29" height="30"/>
+        <image name="crown-7" width="30" height="30"/>
     </resources>
 </document>
