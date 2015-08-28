@@ -17,15 +17,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Timer";
+    
+    UIBarButtonItem *countdownTimeButton=[[UIBarButtonItem alloc] initWithTitle:@"Back"     style:UIBarButtonItemStyleBordered target:self action:@selector(btnClick)];
+    self.navigationItem.leftBarButtonItem=countdownTimeButton;
 }
 
-    - (IBAction)addPresetTimer:(id)sender {
-        self.navigationItem.rightBarButtonItem.title = @"Add";
-        UIViewController *PresetsTableViewController = [[UIViewController alloc] init];
-        [self.navigationController pushViewController:PresetsTableViewController animated:YES];
 
-        
-    }
+// this will be for you bereket, not sure if it works though
+
+//- (IBAction)addPresetTimer:(id)sender {
+//    self.navigationItem.rightBarButtonItem.title = @"Add";
+//    UIViewController *PresetsTableViewController = [[UIViewController alloc] init];
+//    [self.navigationController pushViewController:PresetsTableViewController animated:YES];
+//}
+
+//- (void)addBackButtonWithTitle:(NSString *)title
+//{
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed)];
+//    self.navigationItem.leftBarButtonItem = backButton;
+//}
+
+-(void)btnClick
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"testing");
+}
+
+//- (void)backButtonPressed
+//{
+//    // write your code to prepare popview
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
+
 
 #pragma mark - Table view data source
 

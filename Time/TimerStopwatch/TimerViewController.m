@@ -19,7 +19,9 @@
 @property (nonatomic) int afterRemainder;
 @property (nonatomic) int remainder;
 
-- (IBAction)createPresetButtonPressed:(id)sender;
+
+// FYI, pressing "create preset timer" will cause app to crash
+//- (IBAction)createPresetButtonPressed:(id)sender;
 
 //@property (nonatomic) NSArray *presetTime;
 
