@@ -11,15 +11,15 @@ import QuartzCore
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-//    @IBOutlet weak var timerLabel: UILabel!
-//    @IBOutlet weak var startPauseButton: UIButton!
+    //    @IBOutlet weak var timerLabel: UILabel!
+    //    @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
     let popcornTimer = Timer.init(startTime: 30.000)
     let poopTimer = Timer.init(startTime: 45.000)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func updateTimer(timer:Timer){
         timer.remainingTime = timer.remainingTime - displayLink.duration
         print("Remaining time: \(timer.remainingTime)")
-
+        
     }
     
     func update(){
@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if timer.isPaused == false{
                 updateTimer(timer)
             }
-            
+                
             else {
                 timer.remainingTime = timer.startTime
             }
@@ -67,9 +67,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.startPauseButton.addTarget(self, action: "startPause:", forControlEvents: UIControlEvents.TouchUpInside)
         
-            cell.progressBar.progress = Float((cell.timer.remainingTime/cell.timer.startTime))
-
-
+        cell.progressBar.progress = Float((cell.timer.remainingTime/cell.timer.startTime))
+        
+        
         
         return cell
     }
@@ -96,9 +96,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
                 }
             }
-
+            
         }
-    
+        
     }
     
     

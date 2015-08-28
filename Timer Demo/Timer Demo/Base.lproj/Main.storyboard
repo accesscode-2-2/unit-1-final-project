@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tsg-tD-bF2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tsg-tD-bF2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -40,7 +40,7 @@
                                     <navigationItem title="Title" id="c9h-4r-FbD"/>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PDn-1w-7mj">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PDn-1w-7mj">
                                 <rect key="frame" x="0.0" y="450" width="600" height="150"/>
                                 <date key="date" timeIntervalSinceReferenceDate="461962646.51289499">
                                     <!--2015-08-22 18:57:26 +0000-->
@@ -78,22 +78,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-5O-jOx">
-                                                    <rect key="frame" x="170.5" y="28" width="259" height="2.5"/>
+                                                    <rect key="frame" x="60" y="28" width="360" height="2.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="259" id="Mc6-mC-tsU"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Mc6-mC-tsU"/>
+                                                        </mask>
+                                                    </variation>
                                                 </progressView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="zgB-5O-jOx" firstAttribute="leading" secondItem="w7K-xy-XuY" secondAttribute="trailing" constant="16" id="04C-Kk-ORV"/>
                                                 <constraint firstItem="gKA-pc-jOO" firstAttribute="centerY" secondItem="n3K-8r-1fX" secondAttribute="centerY" id="05L-mn-wKq"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gKA-pc-jOO" secondAttribute="trailing" id="JVq-zy-cfq"/>
                                                 <constraint firstItem="6hG-1R-5Y3" firstAttribute="leading" secondItem="n3K-8r-1fX" secondAttribute="leadingMargin" id="MbD-Gs-8do"/>
                                                 <constraint firstItem="w7K-xy-XuY" firstAttribute="top" secondItem="6hG-1R-5Y3" secondAttribute="bottom" id="TSs-of-IZk"/>
                                                 <constraint firstItem="w7K-xy-XuY" firstAttribute="leading" secondItem="n3K-8r-1fX" secondAttribute="leadingMargin" id="Van-R0-kdI"/>
                                                 <constraint firstItem="zgB-5O-jOx" firstAttribute="centerY" secondItem="n3K-8r-1fX" secondAttribute="centerY" id="WYh-OL-7wD"/>
+                                                <constraint firstItem="zgB-5O-jOx" firstAttribute="width" secondItem="n3K-8r-1fX" secondAttribute="width" multiplier="0.6" id="cSJ-wb-TlK"/>
+                                                <constraint firstItem="zgB-5O-jOx" firstAttribute="leading" secondItem="w7K-xy-XuY" secondAttribute="leading" id="fpq-S7-ab5"/>
+                                                <constraint firstItem="zgB-5O-jOx" firstAttribute="centerY" secondItem="n3K-8r-1fX" secondAttribute="centerY" id="mmi-L9-Ov0"/>
                                                 <constraint firstItem="zgB-5O-jOx" firstAttribute="centerX" secondItem="n3K-8r-1fX" secondAttribute="centerX" id="oLw-1Y-5iA"/>
                                                 <constraint firstItem="w7K-xy-XuY" firstAttribute="centerY" secondItem="n3K-8r-1fX" secondAttribute="centerY" id="xaE-CO-2H2"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="WYh-OL-7wD"/>
+                                                    <exclude reference="fpq-S7-ab5"/>
+                                                    <exclude reference="oLw-1Y-5iA"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="progressBar" destination="zgB-5O-jOx" id="W12-ci-0RK"/>
