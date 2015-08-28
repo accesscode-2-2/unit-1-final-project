@@ -9,12 +9,7 @@
 #import "LapTableViewController.h"
 
 @interface LapTableViewController ()
-<<<<<<< HEAD
 
-
-=======
-@property (nonatomic) NSMutableArray *lapTimes;
->>>>>>> 24407623cfb7c25c48e509b59b61e7012a021526
 @end
 
 @implementation LapTableViewController
