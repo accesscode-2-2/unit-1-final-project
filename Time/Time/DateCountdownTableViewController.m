@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupDefaultPresets];
 }
 
 - (void)setupDefaultPresets {
@@ -33,13 +33,20 @@
     NSArray *values = @[@[@"10 01 2015"],
                         @[@"10 13 2015"],
                         @[@"11 18 2015"],
-                        @[@"00", @"03", @"30"],
-                        @[@"00", @"25", @"00"],
-                        @[@"00", @"35", @"00"]];
+                        @[@"12 13 2015"],
+                        @[@"01 07 2016"],
+                        @[@"01 24 2016"]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM dd yyyy"];
     
     for (int i = 0; i < [keys count]; i++) {
-        [self.specialDates setObject:values[i] forKey:keys[i]];
+        NSDate *event = [formatter dateFromString:values[i]];
+        [self.specialDates setObject:event forKey:keys[i]];
     }
+    
+    NSLog(@"%@", self.specialDates);
+    
 }
 
 #pragma mark - Table view data source
@@ -57,7 +64,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dateIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.specialDates keyAtIndex:indexPath.row]];
     return cell;
 }
 

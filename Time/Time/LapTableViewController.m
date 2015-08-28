@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - StopWatchViewControllerDelegate implementation
-- (NSString *)currentLapTime:(NSString *)lapTime{
+- (NSString *)currentLapTime:(NSString *)lapTime {
     [self.lapTimes addObject:lapTime];
     [self.tableView reloadData];
     NSLog(@"%@",self.lapTimes);
