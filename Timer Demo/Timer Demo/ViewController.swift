@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
-    let popcornTimer = Timer.init(startTime: 30.000)
+    let popcornTimer = Timer.init(startTime: 5.000)
     let poopTimer = Timer.init(startTime: 45.000)
     
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func updateTimer(timer:Timer){
+        
         timer.remainingTime = timer.remainingTime - displayLink.duration
         print("Remaining time: \(timer.remainingTime)")
         
@@ -42,16 +43,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func update(){
         for timer in timers{
+            
             if timer.isPaused == false{
                 updateTimer(timer)
+                if (timer.remainingTime < 0.0){
+                    timer.isPaused = true;
+                    timer.remainingTime = timer.startTime
+//                    startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
+                    
+                }
             }
-                
-            else {
-                timer.remainingTime = timer.startTime
-            }
+            
+            tableView.reloadData()
         }
-        
-        tableView.reloadData()
     }
     
     
@@ -59,17 +63,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
-        cell.timer = timers[indexPath.row]
+        let timer = timers[indexPath.row]
+        
+        cell.timer = timer
         
         cell.timerLabel.text = String(cell.timer.stringFromTimeInterval(cell.timer.remainingTime))
+        
+        if timer.isPaused {
+            cell.startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
+        }
+        else {
+            cell.startPauseButton.setImage(UIImage(named: "Cancel-50.png"), forState: .Normal)
+        }
         
         cell.startPauseButton.tag = indexPath.row
         
         cell.startPauseButton.addTarget(self, action: "startPause:", forControlEvents: UIControlEvents.TouchUpInside)
         
         cell.progressBar.progress = Float((cell.timer.remainingTime/cell.timer.startTime))
-        
-        
         
         return cell
     }

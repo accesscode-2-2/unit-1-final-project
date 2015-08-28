@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016E10B1B89209300C5EFFD /* TableViewCell.swift */; };
+		504DC2291B8FE3E30071A35E /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */; };
 		6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737B1B88EFF0000D38F2 /* AppDelegate.swift */; };
 		6981737E1B88EFF0000D38F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737D1B88EFF0000D38F2 /* ViewController.swift */; };
 		698173811B88EFF0000D38F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981737F1B88EFF0000D38F2 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		5016E10B1B89209300C5EFFD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		698173781B88EFF0000D38F2 /* Timer Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timer Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981737B1B88EFF0000D38F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6981737D1B88EFF0000D38F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				698173A91B88F28C000D38F2 /* Timer.swift */,
 				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				6981737D1B88EFF0000D38F2 /* ViewController.swift */,
+				504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */,
 				6981737F1B88EFF0000D38F2 /* Main.storyboard */,
 				698173821B88EFF0000D38F2 /* Assets.xcassets */,
 				698173841B88EFF0000D38F2 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				698173AA1B88F28C000D38F2 /* Timer.swift in Sources */,
 				5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */,
+				504DC2291B8FE3E30071A35E /* StopwatchViewController.swift in Sources */,
 				6981737E1B88EFF0000D38F2 /* ViewController.swift in Sources */,
 				6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */,
 			);
