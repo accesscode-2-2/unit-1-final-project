@@ -10,7 +10,6 @@
 
 @interface LapTableViewController ()
 
-@property (nonatomic) NSMutableArray *lapTimes;
 
 @end
 

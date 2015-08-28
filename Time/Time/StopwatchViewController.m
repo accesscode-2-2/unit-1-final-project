@@ -119,7 +119,9 @@
      //   [self.lapTableView reloadData];
         //NSLog(@"%@", self.lapTimes);
     } else {
-        [self.lapTimes removeAllObjects];
+        [self.ltvc.lapTimes removeAllObjects];
+        [self.ltvc.tableView reloadData];
+       // [self.lapTimes removeAllObjects];
         //[self.lapTableView reloadData];
         self.lapLabel.text = @"00:00.000";
         self.timerLabel.text = @"00:00.000";

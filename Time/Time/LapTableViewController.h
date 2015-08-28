@@ -11,4 +11,6 @@
 
 @interface LapTableViewController : UITableViewController<StopWatchViewControllerDelegate>
 
+@property (nonatomic) NSMutableArray *lapTimes;
+
 @end
