@@ -11,9 +11,19 @@
 @interface StopwatchVC : UIViewController
 
 @property (nonatomic) NSTimer *timer;
-@property (nonatomic) NSDate * startTime;
+
+@property (nonatomic) NSDate *startTime;
 @property (nonatomic) NSTimeInterval totalSessionTime;
 @property (nonatomic) NSTimeInterval totalTime;
+
+@property (nonatomic) NSTimer *lapTimer;
+@property (nonatomic) NSDate * startLapTime;
+@property (nonatomic) NSTimeInterval totalLapTime;
+
+
+
+@property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
+
 
 
 @end

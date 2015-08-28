@@ -527,6 +527,7 @@
                     <navigationItem key="navigationItem" id="LaB-Pv-DYS"/>
                     <connections>
                         <outlet property="lapResetButton" destination="xPj-OI-7cW" id="eNW-MU-cHm"/>
+                        <outlet property="lapsTableView" destination="Rlq-wE-AvX" id="2OT-jQ-p46"/>
                         <outlet property="startStopButton" destination="qsZ-n4-Qwr" id="8g6-f9-cJv"/>
                         <outlet property="timerLabel" destination="bW9-ac-k9F" id="Y2h-Mq-xbD"/>
                     </connections>
