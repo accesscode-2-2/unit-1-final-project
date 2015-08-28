@@ -47,10 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if timer.isPaused == false{
                 updateTimer(timer)
                 if (timer.remainingTime < 0.0){
-                    timer.isPaused = true;
-                    timer.remainingTime = timer.startTime
-//                    startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
-                    
+                    timer.isPaused = true
                 }
             }
             
@@ -71,6 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if timer.isPaused {
             cell.startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
+            cell.timer.remainingTime = cell.timer.startTime
         }
         else {
             cell.startPauseButton.setImage(UIImage(named: "Cancel-50.png"), forState: .Normal)
@@ -96,20 +94,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         for path in tableView.indexPathsForVisibleRows! {
             let cell = tableView.cellForRowAtIndexPath(path) as! TableViewCell
             
-            if startPauseButton.tag == path.row{
+            if startPauseButton.tag == path.row {
                 cell.timer.isPaused = !cell.timer.isPaused
-                
-                if cell.timer.isPaused == false {
-                    startPauseButton.setImage(UIImage(named: "Cancel-50.png"), forState: .Normal)
-                }
-                    
-                else {
-                    startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
-                }
             }
-            
         }
-        
     }
     
     
