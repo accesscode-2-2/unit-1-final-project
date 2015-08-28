@@ -17,8 +17,12 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
+@property (nonatomic) NSMutableArray *presets;
+
 - (IBAction)startCountdown:(id)sender;
 - (IBAction)restartButton:(id)sender;
+
+- (IBAction)presetButton:(id)sender;
 
 
 
