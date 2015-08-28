@@ -34,6 +34,7 @@
 
 @property (nonatomic) NSTimeInterval lapTime;
 
+
 @end
 
 @implementation StopwatchViewController
@@ -77,6 +78,8 @@ NSTimeInterval startTime;
     //new line added thursday 8-27
     self.previousLapTime = self.totalTime;
 //    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.previousLapTime];
+    
+    
 
 }
 
@@ -88,6 +91,7 @@ NSTimeInterval startTime;
     self.laps = [[NSMutableArray alloc] init];
     
     self.timerLabel.text = @"00:00:00";
+    
 }
 
 - (IBAction)start:(UIButton *)sender {
@@ -109,6 +113,7 @@ NSTimeInterval startTime;
         [sender setTitle:@"START" forState:UIControlStateNormal];
         running = false;
     }
+    
     
 }
 
@@ -133,9 +138,10 @@ NSTimeInterval startTime;
     //////
     self.elapsedLapTime = currentTime - startTime;
     //////
-    self.timerLabel.text = [NSString stringWithFormat:@"%02d:%f",secs, self.totalTime];
+    //Work at end of thursday class
+    self.lapTimeLabel.text = [NSString stringWithFormat:@"%02d:%f",secs, self.totalTime - self.previousLapTime];
     
-  //  self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.lapTime];
+    self.timerLabel.text = [NSString stringWithFormat:@"%f", self.totalTime];
     
     // update our label using a format of 0:00.0
 //    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
