@@ -23,7 +23,7 @@
 
 @implementation StopWatchTabBarController
 
-float timeTick = 0.00; // the timer always begins at this number
+float timeTick = 0.00; // the timer always begins at this number!
 NSTimer *timer;
 
 - (void)viewDidLoad {
