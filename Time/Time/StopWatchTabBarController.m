@@ -8,14 +8,14 @@
 
 #import "StopWatchTabBarController.h"
 
-@interface StopWatchTabBarController () <UITableViewDelegate, UITableViewDataSource>
+//@interface StopWatchTabBarController () <UITableViewDelegate, UITableViewDataSource>
+@interface StopWatchTabBarController () <UITableViewDataSource, UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *timerDisplay;
 @property (strong, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
 @property (strong, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UITableView *lapsTableView;
-
 @property (nonatomic) BOOL timerIsRunning;
 @property (nonatomic) NSMutableArray *savedLapTimes;
 
@@ -27,7 +27,6 @@ float timeTick = 0.00; // the timer always begins at this number
 NSTimer *timer;
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     
     self.timerIsRunning = NO;
@@ -37,7 +36,12 @@ NSTimer *timer;
     [self.startButton setTitle:@"START" forState:UIControlStateNormal]; // set default text
     [self.lapButton setTitle:@"LAP" forState:UIControlStateNormal];
     
-    self.savedLapTimes = [NSMutableArray arrayWithObjects:@"", nil]; // store lap times
+    // self.savedLapTimes = [NSMutableArray arrayWithObjects:@"", nil]; // store lap times
+    self.savedLapTimes = [NSMutableArray new];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 - (void)tick {
@@ -77,6 +81,11 @@ NSTimer *timer;
     if (self.timerIsRunning) { // timer state: running
         
         [self.savedLapTimes insertObject:self.lapTimerLabel.text atIndex:0]; // add new item to the top of the list
+       
+        
+        NSLog(@"savedLapTimes = %@", self.lapTimerLabel.text); // log text to test
+        NSLog(@"%@", self.savedLapTimes);
+        
         [self.lapsTableView reloadData]; // reload view with new values added
         
         self.lapTimerLabel.text = @"0.00";
@@ -88,8 +97,10 @@ NSTimer *timer;
 
         [self.savedLapTimes removeAllObjects]; // reset lap array
         [self.lapsTableView reloadData]; // reload table view
+
     }
 }
+
 
 // Set up tableView here:
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -103,8 +114,16 @@ NSTimer *timer;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"savedLapTimeIdentifier" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.savedLapTimes[indexPath.row];
+//    cell.textLabel.text = self.savedLapTimes[indexPath.row];
+    
+ //this should add lap numbers to code...
+    NSInteger index = self.savedLapTimes.count - indexPath.row;
+    NSString *cellText = [NSString stringWithFormat: @"Lap %ld \t \t", (long)index];
+    cell.textLabel.text = cellText;
+    cell.detailTextLabel.text = self.savedLapTimes[indexPath.row]; // set detail text label to time
+    
     return cell;
+
 }
 
 @end
