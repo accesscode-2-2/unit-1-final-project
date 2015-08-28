@@ -38,6 +38,12 @@ NSTimer *timer;
     
     // self.savedLapTimes = [NSMutableArray arrayWithObjects:@"", nil]; // store lap times
     self.savedLapTimes = [NSMutableArray new];
+    
+   
+   
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
