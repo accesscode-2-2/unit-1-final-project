@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D5C83D01B90EE7B0021A55C /* Bokeh.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83CE1B90EE7B0021A55C /* Bokeh.sks */; };
+		4D5C83D11B90EE7B0021A55C /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83CF1B90EE7B0021A55C /* bokeh.png */; };
+		4D5C83D41B90EF620021A55C /* BokehScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C83D31B90EF620021A55C /* BokehScene.m */; };
+		4D5C83DD1B9104930021A55C /* ticker1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83D51B9104930021A55C /* ticker1.png */; };
+		4D5C83DE1B9104930021A55C /* ticker2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83D61B9104930021A55C /* ticker2.png */; };
+		4D5C83DF1B9104930021A55C /* ticker3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83D71B9104930021A55C /* ticker3.png */; };
+		4D5C83E01B9104930021A55C /* ticker4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83D81B9104930021A55C /* ticker4.png */; };
+		4D5C83E11B9104930021A55C /* ticker5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83D91B9104930021A55C /* ticker5.png */; };
+		4D5C83E21B9104930021A55C /* ticker6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83DA1B9104930021A55C /* ticker6.png */; };
+		4D5C83E31B9104930021A55C /* ticker7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83DB1B9104930021A55C /* ticker7.png */; };
+		4D5C83E41B9104930021A55C /* ticker8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83DC1B9104930021A55C /* ticker8.png */; };
+		4D5C83E81B91117B0021A55C /* Akkurat Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83E71B91117A0021A55C /* Akkurat Regular.otf */; };
+		4D5C83EA1B9112E50021A55C /* Akkurat Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C83E91B9112E50021A55C /* Akkurat Bold.otf */; };
 		4DD581521B8A3038006FE339 /* PresetEventCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD581511B8A3038006FE339 /* PresetEventCountdownViewController.m */; };
 		4DD581551B8A316E006FE339 /* PresetTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD581541B8A316E006FE339 /* PresetTimerViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
@@ -30,6 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D5C83CE1B90EE7B0021A55C /* Bokeh.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bokeh.sks; sourceTree = "<group>"; };
+		4D5C83CF1B90EE7B0021A55C /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		4D5C83D21B90EF620021A55C /* BokehScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BokehScene.h; sourceTree = "<group>"; };
+		4D5C83D31B90EF620021A55C /* BokehScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BokehScene.m; sourceTree = "<group>"; };
+		4D5C83D51B9104930021A55C /* ticker1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker1.png; sourceTree = "<group>"; };
+		4D5C83D61B9104930021A55C /* ticker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker2.png; sourceTree = "<group>"; };
+		4D5C83D71B9104930021A55C /* ticker3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker3.png; sourceTree = "<group>"; };
+		4D5C83D81B9104930021A55C /* ticker4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker4.png; sourceTree = "<group>"; };
+		4D5C83D91B9104930021A55C /* ticker5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker5.png; sourceTree = "<group>"; };
+		4D5C83DA1B9104930021A55C /* ticker6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker6.png; sourceTree = "<group>"; };
+		4D5C83DB1B9104930021A55C /* ticker7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker7.png; sourceTree = "<group>"; };
+		4D5C83DC1B9104930021A55C /* ticker8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker8.png; sourceTree = "<group>"; };
+		4D5C83E71B91117A0021A55C /* Akkurat Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat Regular.otf"; sourceTree = "<group>"; };
+		4D5C83E91B9112E50021A55C /* Akkurat Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat Bold.otf"; sourceTree = "<group>"; };
 		4DD581501B8A3038006FE339 /* PresetEventCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetEventCountdownViewController.h; sourceTree = "<group>"; };
 		4DD581511B8A3038006FE339 /* PresetEventCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetEventCountdownViewController.m; sourceTree = "<group>"; };
 		4DD581531B8A316E006FE339 /* PresetTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimerViewController.h; sourceTree = "<group>"; };
@@ -100,6 +127,12 @@
 				4DD581541B8A316E006FE339 /* PresetTimerViewController.m */,
 				4DD581501B8A3038006FE339 /* PresetEventCountdownViewController.h */,
 				4DD581511B8A3038006FE339 /* PresetEventCountdownViewController.m */,
+				4D5C83D21B90EF620021A55C /* BokehScene.h */,
+				4D5C83D31B90EF620021A55C /* BokehScene.m */,
+				4D5C83CE1B90EE7B0021A55C /* Bokeh.sks */,
+				4D5C83CF1B90EE7B0021A55C /* bokeh.png */,
+				4D5C83E71B91117A0021A55C /* Akkurat Regular.otf */,
+				4D5C83E91B9112E50021A55C /* Akkurat Bold.otf */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -111,6 +144,14 @@
 		8D05375B1B86687B00588318 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D5C83D51B9104930021A55C /* ticker1.png */,
+				4D5C83D61B9104930021A55C /* ticker2.png */,
+				4D5C83D71B9104930021A55C /* ticker3.png */,
+				4D5C83D81B9104930021A55C /* ticker4.png */,
+				4D5C83D91B9104930021A55C /* ticker5.png */,
+				4D5C83DA1B9104930021A55C /* ticker6.png */,
+				4D5C83DB1B9104930021A55C /* ticker7.png */,
+				4D5C83DC1B9104930021A55C /* ticker8.png */,
 				8D05375C1B86687B00588318 /* Info.plist */,
 				8D05375D1B86687C00588318 /* main.m */,
 			);
@@ -214,9 +255,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5C83D11B90EE7B0021A55C /* bokeh.png in Resources */,
 				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
+				4D5C83DE1B9104930021A55C /* ticker2.png in Resources */,
+				4D5C83E31B9104930021A55C /* ticker7.png in Resources */,
+				4D5C83E01B9104930021A55C /* ticker4.png in Resources */,
+				4D5C83DF1B9104930021A55C /* ticker3.png in Resources */,
+				4D5C83E11B9104930021A55C /* ticker5.png in Resources */,
+				4D5C83EA1B9112E50021A55C /* Akkurat Bold.otf in Resources */,
+				4D5C83D01B90EE7B0021A55C /* Bokeh.sks in Resources */,
+				4D5C83DD1B9104930021A55C /* ticker1.png in Resources */,
+				4D5C83E81B91117B0021A55C /* Akkurat Regular.otf in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				8D0537691B86687C00588318 /* Images.xcassets in Resources */,
+				4D5C83E21B9104930021A55C /* ticker6.png in Resources */,
+				4D5C83E41B9104930021A55C /* ticker8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD581521B8A3038006FE339 /* PresetEventCountdownViewController.m in Sources */,
+				4D5C83D41B90EF620021A55C /* BokehScene.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				4DD581551B8A316E006FE339 /* PresetTimerViewController.m in Sources */,

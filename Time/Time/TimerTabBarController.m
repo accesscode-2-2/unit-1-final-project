@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;
 @property (nonatomic) BOOL isTimerRunning;
 @property (nonatomic) BOOL isPaused;
+@property (weak, nonatomic) IBOutlet UIImageView *animatedPicture; // added for animation
 
 @property (nonatomic) int hours;
 @property (nonatomic) int minutes;
@@ -34,7 +35,23 @@
     self.isTimerRunning = NO;
     self.isPaused = NO;
     self.pauseResumeButton.enabled = NO;
+}
+
+- (void)animationSetup { // added method so you can start/stop animation anywhere in timer state
     
+    self.animatedPicture.animationImages = [NSArray arrayWithObjects:
+                                           //[UIImage imageNamed:@"ticker1.png"],
+                                           [UIImage imageNamed:@"ticker2.png"],
+                                           [UIImage imageNamed:@"ticker3.png"],
+                                           [UIImage imageNamed:@"ticker4.png"],
+                                           // [UIImage imageNamed:@"ticker5.png"],
+                                           [UIImage imageNamed:@"ticker6.png"],
+                                           [UIImage imageNamed:@"ticker7.png"],
+                                           [UIImage imageNamed:@"ticker8.png"], nil];
+    
+    [self.animatedPicture setAnimationRepeatCount:0]; // run animation in loop
+    self.animatedPicture.animationDuration = 1.0; // run speed
+    [self.animatedPicture startAnimating]; //start animating!
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,12 +70,19 @@
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     
+    self.datePicker.hidden = YES; // hide viewpicker when timer starts (for increased ui flexibility)
+    [self animationSetup]; // start animation
+    
     if (self.isTimerRunning == YES) {
         
         self.timeLabel.alpha = 0;
         [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = NO;
+        
+        self.datePicker.hidden = NO; // bring view picker back when timer is reset
+    
+        [self.animatedPicture stopAnimating]; // stop animation
         
         [self.timer invalidate];
         self.timer = nil;
@@ -117,12 +141,15 @@
         [self.timer invalidate];
         self.timer = nil;
         
+        [self.animatedPicture stopAnimating]; // stop animation
+        
         [self.pauseResumeButton setTitle:@"Resume" forState:UIControlStateNormal];
         
     } else {
         if (self.timer) {
             [self.timer invalidate];
             self.timer = nil;
+            
         }
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                       target:self
@@ -131,6 +158,7 @@
                                                      repeats:YES];
         
         [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.animatedPicture startAnimating]; // start animation
     }
     
     self.isPaused = !self.isPaused;
