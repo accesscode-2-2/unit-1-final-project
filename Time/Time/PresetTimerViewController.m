@@ -27,6 +27,22 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+    //return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
+    
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"presetTimerIdentifier" forIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor redColor];
+    return cell;
+}
+
 /*
 #pragma mark - Navigation
 
