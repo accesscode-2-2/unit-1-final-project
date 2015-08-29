@@ -11,166 +11,177 @@
 
 @interface StopWatchViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lapTimeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *lapButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *labResetButton;
-
-@property (nonatomic) BOOL running;
-
-@property (nonatomic) BOOL resetLab;
+//Time
+@property (nonatomic) NSDate *startDate;
 
 @property (nonatomic) NSTimeInterval startTime;
 
-@property (nonatomic) NSTimeInterval currentTime;
+@property (nonatomic) NSTimeInterval elapsed;
 
-@property (nonatomic) NSTimeInterval lapCurrentTime;
+@property (nonatomic) NSTimeInterval timeAlreadyRunSecs;
 
-@property (nonatomic) NSTimeInterval labInitTime;
 
-@property (nonatomic) NSTimeInterval secondsAlreadyRun;
-
-@property (nonatomic) NSTimeInterval secondsAlreadyRunLap;
-
-@property (nonatomic) NSMutableArray *labsTimes;
-
-@property (nonatomic) NSDate *startDate;
-
+//Lap Time
 @property (nonatomic) NSDate *lapStartDate;
 
-@property (weak, nonatomic) IBOutlet UILabel *labTimeLabel;
+@property (nonatomic) NSTimeInterval lapStartTime;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSTimeInterval lapElapsed;
+
+@property (nonatomic) NSTimeInterval lapAlareadyRunSecs;
+
+
+
+@property (nonatomic) BOOL running;
+
+@property (nonatomic) NSMutableArray *lapTimeMutableArray;
 
 @end
 
+
 @implementation StopWatchViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.labResetButton.enabled = NO;
-    self.timerLabel.text = @"00:00.00";
-    self.labTimeLabel.text = @"00:00.00";
+    [self resetTimeMode];
+}
+
+#pragma mark StateView
+-(void)resetTimeMode{
+    self.lapButton.enabled = NO;
+    [self.lapButton setHidden:NO];
+    [self.stopButton setHidden:YES];
+    [self.resetButton setHidden:YES];
+    self.timeLabel.text = @"00:00.00";
+    self.lapTimeLabel.text = @"00:00.00";
+    self.timeAlreadyRunSecs = 0.0;
+    self.lapAlareadyRunSecs = 0.0;
     self.running = NO;
-    self.labsTimes = [[NSMutableArray alloc] init];
-
+    self.lapTimeMutableArray = [[NSMutableArray alloc] init];
 }
 
-- (IBAction)startButtonAction:(UIButton *)sender {
-    if (self.running == NO) {
-        self.running = YES;
-        self.startDate = [[NSDate alloc] init];
-        self.lapStartDate = [[NSDate alloc] init];
-        self.startTime = [NSDate timeIntervalSinceReferenceDate];
-        self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
-        [sender setTitle:@"Stop" forState:UIControlStateNormal];
-        [self.labResetButton setTitle:@"Lap" forState:UIControlStateNormal];
-        self.labResetButton.enabled = YES;
-        [self timeIncrement];
-        [self labtimeIncrement];
-    } else {
-        self.secondsAlreadyRun += [[NSDate date]timeIntervalSinceDate: self.startDate];
-        self.secondsAlreadyRunLap += [[NSDate date]timeIntervalSinceDate:self.lapStartDate];
-        self.startDate = [[NSDate alloc] init];
-        self.lapStartDate = [[NSDate alloc] init];
-        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-        [self.labResetButton setTitle:@"Reset" forState:UIControlStateNormal];
-        self.running = NO;
-        [self labtimeIncrement];
-
-    }
-    
+-(void)runningTimeMode{
+    [self.startButton setHidden:YES];
+    [self.stopButton setHidden:NO];
+    self.lapButton.enabled = YES;
+    [self.lapButton setHidden:NO];
+    [self.resetButton setHidden:YES];
+    self.running = YES;
 }
 
-- (IBAction)labResetButtonAction:(UIButton *)sender {
-    
-    self.secondsAlreadyRunLap = 0.0;
-    self.labInitTime = 0.0;
-    self.lapCurrentTime = 0.0;
-    
-    if (self.running == YES) {
-        // lab button clicked
-        
-        [self.labsTimes insertObject:self.labTimeLabel.text atIndex:0];
+-(void)pauseTimeMode{
+    [self.startButton setHidden:NO];
+    [self.stopButton setHidden:YES];
+    [self.lapButton setHidden:YES];
+    [self.resetButton setHidden:NO];
+    self.running = NO;
+}
 
-        
-        self.labTimeLabel.text = @"00:00.00";
-        self.resetLab = YES;
-        [self labtimeIncrement];
-        [self.tableView reloadData];
-        
-    } else {
-        //reset action here
-        
-        [self.labsTimes removeAllObjects];
-        [self.tableView reloadData];
-        self.secondsAlreadyRun = 0.0;
-        self.currentTime = 0.0;
-        self.startTime = 0.0;
-        self.timerLabel.text = @"00:00.00";
-        self.labTimeLabel.text = @"00:00.00";
-    }
+#pragma mark IBActions
+- (IBAction)startUIButton:(UIButton *)sender {
+    self.startTime = [NSDate timeIntervalSinceReferenceDate];
+    self.startDate = [[NSDate alloc] init];
+    self.lapStartTime = [NSDate timeIntervalSinceReferenceDate];
+    self.lapStartDate = [[NSDate alloc] init];
+    [self runningTimeMode];
+    [self updateTime];
+}
+
+- (IBAction)stopUIButton:(UIButton *)sender {
+    self.timeAlreadyRunSecs += [[NSDate date]timeIntervalSinceDate:self.startDate];
+    self.lapAlareadyRunSecs += [[NSDate date]timeIntervalSinceDate:self.lapStartDate];
+    [self pauseTimeMode];
+}
+
+- (IBAction)lapUIButton:(UIButton *)sender {
+    [self runningTimeMode];
+    [self.lapTimeMutableArray insertObject:self.lapTimeLabel.text atIndex:0];
+    self.lapTimeLabel.text = @"00:00.00";
+    self.lapStartTime = [NSDate timeIntervalSinceReferenceDate];
+    self.lapAlareadyRunSecs = 0.0;
+    self.lapStartDate = [[NSDate alloc]init];
+    [self updateTime];
+    NSLog(@"%@", self.lapTimeMutableArray);
 }
 
 
 
-- (void)labtimeIncrement {
-    if (self.running == NO)
-        return;
-        
-    int labMins;
-    int labSecs;
-    int labFraction;
-    
-    if (self.resetLab == YES){
-        self.labInitTime = [NSDate timeIntervalSinceReferenceDate];
-        self.resetLab = NO;
-    }
-    
-    self.lapCurrentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval lapElapsed = self.secondsAlreadyRunLap + self.lapCurrentTime - self.labInitTime;
-    
-
-    labMins = (int) (lapElapsed / 60.0);
-    lapElapsed -= labMins * 60;
-    labSecs = (int) (lapElapsed);
-    lapElapsed -= labSecs;
-    labFraction = lapElapsed * 100.0;
-    
-    self.labTimeLabel.text = [NSString stringWithFormat:@"%02u:%02u.%02u", labMins, labSecs, labFraction];
-    
-    [self performSelector:@selector(labtimeIncrement) withObject:self afterDelay:0.01];
+- (IBAction)resetUIButton:(UIButton *)sender {
+    [self resetTimeMode];
 }
 
 
-- (void)timeIncrement {
+#pragma mark TimeMethods
+
+
+-(void)updateTime{
     if (self.running == NO) return;
     
-    self.currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = self.secondsAlreadyRun + self.currentTime - self.startTime;
+    [self timeIncrement:self.startTime :self.timeAlreadyRunSecs];
+    [self lapTimeIncrement:self.lapStartTime :self.lapAlareadyRunSecs];
     
-    int mins = (int) (elapsed / 60.0);
-    elapsed -= mins * 60;
-    int secs = (int) (elapsed);
-    elapsed -= secs;
-    int fraction = elapsed * 100.0;
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
+}
+
+//TIME
+-(void)timeIncrement: (NSTimeInterval)initTime : (NSTimeInterval)alreadyRunSecs {
     
-    self.timerLabel.text = [NSString stringWithFormat:@"%02u:%02u.%02u", mins, secs, fraction];
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
     
-    [self performSelector:@selector(timeIncrement) withObject:self afterDelay:0.01];
+    self.elapsed = alreadyRunSecs + currentTime - initTime;
+    
+    int mins = (int) (self.elapsed / 60.0);
+    self.elapsed -= mins * 60;
+    int secs = (int) (self.elapsed);
+    self.elapsed -= secs;
+    int fraction = self.elapsed * 100.0;
+    
+    self.timeLabel.text = [self timeString:mins :secs :fraction];
+}
+
+
+//LAP TIME
+
+-(void)lapTimeIncrement: (NSTimeInterval)initTime : (NSTimeInterval)alreadyRunSecs {
+    
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    
+    self.lapElapsed = alreadyRunSecs + currentTime - initTime;
+    
+    int mins = (int) (self.lapElapsed / 60.0);
+    self.lapElapsed -= mins * 60;
+    int secs = (int) (self.lapElapsed);
+    self.lapElapsed -= secs;
+    int fraction = self.lapElapsed * 100.0;
+    
+    self.lapTimeLabel.text = [self timeString:mins :secs :fraction];
+}
+
+-(NSString *)timeString: (int)mins : (int)second : (int)fraction {
+    
+    return [NSString stringWithFormat:@"%02u:%02u.%02u", mins, second, fraction];
 }
 
 
 
+#pragma mark TableView
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.labsTimes.count;
+    return self.lapTimeMutableArray.count;
     
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *time = self.labsTimes[indexPath.row];
+    NSString *time = self.lapTimeMutableArray[indexPath.row];
     cell.textLabel.text = time;
     
     return cell;
