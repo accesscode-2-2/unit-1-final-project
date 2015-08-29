@@ -236,10 +236,10 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAK-wU-KG9">
-                                <rect key="frame" x="271" y="459" width="58" height="30"/>
-                                <state key="normal" title="Popcorn"/>
+                                <rect key="frame" x="268" y="459" width="65" height="30"/>
+                                <state key="normal" title="PRESETS"/>
                                 <connections>
-                                    <action selector="popcornButtonTapped:" destination="zEu-mR-zpR" eventType="touchUpInside" id="6yb-8b-8Rn"/>
+                                    <segue destination="Mp6-HC-HPV" kind="show" id="prZ-Lw-C5t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -270,6 +270,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0E-M3-VCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="645" y="-165"/>
+        </scene>
+        <!--Timer Detail Table View Controller-->
+        <scene sceneID="dCq-JZ-nAR">
+            <objects>
+                <tableViewController id="Mp6-HC-HPV" customClass="TimerDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nCn-df-qgo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="presetIdentifier" id="4Ro-kY-rt5">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ro-kY-rt5" id="jRU-Pi-2W2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Mp6-HC-HPV" id="TId-Kv-y32"/>
+                            <outlet property="delegate" destination="Mp6-HC-HPV" id="EpM-vt-mX5"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1z2-4f-5FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="-165"/>
         </scene>
         <!--Countdown-->
         <scene sceneID="7Zh-mm-RPS">

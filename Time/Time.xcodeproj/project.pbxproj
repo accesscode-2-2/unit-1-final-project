@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0765D20B1B925CD5003961EE /* TimerDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0765D20A1B925CD5003961EE /* TimerDetailTableViewController.m */; };
+		0765D20E1B925E7C003961EE /* Preset.m in Sources */ = {isa = PBXBuildFile; fileRef = 0765D20D1B925E7C003961EE /* Preset.m */; };
 		8478CE8E1B8E1D6E0045BDD7 /* WorldClockTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */; };
 		8478CE951B8F51E00045BDD7 /* WorldClockAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CE941B8F51E00045BDD7 /* WorldClockAddTableViewController.m */; };
 		8478CEF31B8FEB7C0045BDD7 /* WorldClockInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CEF21B8FEB7C0045BDD7 /* WorldClockInfo.m */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0765D2091B925CD5003961EE /* TimerDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailTableViewController.h; sourceTree = "<group>"; };
+		0765D20A1B925CD5003961EE /* TimerDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailTableViewController.m; sourceTree = "<group>"; };
+		0765D20C1B925E7C003961EE /* Preset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preset.h; sourceTree = "<group>"; };
+		0765D20D1B925E7C003961EE /* Preset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preset.m; sourceTree = "<group>"; };
 		8478CE8C1B8E1D6E0045BDD7 /* WorldClockTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClockTableViewController.h; sourceTree = "<group>"; };
 		8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldClockTableViewController.m; sourceTree = "<group>"; };
 		8478CE931B8F51E00045BDD7 /* WorldClockAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClockAddTableViewController.h; sourceTree = "<group>"; };
@@ -132,6 +138,10 @@
 				8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */,
 				8496CC9D1B8A768700FB2AAA /* TimerViewController.h */,
 				8496CC9E1B8A768700FB2AAA /* TimerViewController.m */,
+				0765D2091B925CD5003961EE /* TimerDetailTableViewController.h */,
+				0765D20A1B925CD5003961EE /* TimerDetailTableViewController.m */,
+				0765D20C1B925E7C003961EE /* Preset.h */,
+				0765D20D1B925E7C003961EE /* Preset.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8496CC3A1B86C30900FB2AAA /* StopWatchViewController.h */,
 				8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */,
@@ -276,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0765D20E1B925E7C003961EE /* Preset.m in Sources */,
 				8478CE8E1B8E1D6E0045BDD7 /* WorldClockTableViewController.m in Sources */,
 				8496CC9F1B8A768700FB2AAA /* TimerViewController.m in Sources */,
 				8496CC3C1B86C30900FB2AAA /* StopWatchViewController.m in Sources */,
@@ -284,6 +295,7 @@
 				8478CEF31B8FEB7C0045BDD7 /* WorldClockInfo.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				8478CE951B8F51E00045BDD7 /* WorldClockAddTableViewController.m in Sources */,
+				0765D20B1B925CD5003961EE /* TimerDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
