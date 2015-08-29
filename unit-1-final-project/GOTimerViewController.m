@@ -106,10 +106,6 @@
         self.currentExerciseIndex = 0;
     }
     
-<<<<<<< HEAD
-    NSInteger count = [self.currentWorkout.exercises count];
-    NSLog(@"This workout has %lu exercises", count);
-=======
     if (self.currentExerciseIndex == 0){
         [self.totalTimer invalidate];
         self.totalTimeExerciseLabel.text = @"Get ready to GO!";
@@ -117,8 +113,6 @@
     } else if (self.currentExerciseIndex >= 1){
         [self initializeTotalTimer];
     }
-    
->>>>>>> added workouts with no pics fixed timer
     
 }
 

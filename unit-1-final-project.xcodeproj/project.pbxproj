@@ -20,19 +20,14 @@
 		3D2D2F0F1B86B5A300E210BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2D2F0D1B86B5A300E210BA /* LaunchScreen.storyboard */; };
 		3D2D2F1A1B86B5A400E210BA /* unit_1_final_projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F191B86B5A400E210BA /* unit_1_final_projectTests.m */; };
 		3D2D2F251B86B5A400E210BA /* unit_1_final_projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */; };
-		3D67F60F1B8D43C4008B5E6A /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D67F60D1B8D43C4008B5E6A /* bell.mp3 */; };
-		3D67F6101B8D43C4008B5E6A /* buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D67F60E1B8D43C4008B5E6A /* buzzer.mp3 */; };
 		3D67F6161B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D67F6151B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.m */; };
 		3D67F6191B8D89FB008B5E6A /* GOCustomResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D67F6181B8D89FB008B5E6A /* GOCustomResultsViewController.m */; };
 		3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C01B893332008194DB /* WorkoutManager.m */; };
 		3DDB60C41B893413008194DB /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C31B893413008194DB /* Workout.m */; };
 		3DDB60C71B893477008194DB /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C61B893477008194DB /* Exercises.m */; };
 		3DE05A0A1B8E4C8C007A66FB /* ExerciseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE05A091B8E4C8C007A66FB /* ExerciseTableViewCell.m */; };
-		9A553E271B8CFC0700A0230B /* GOFightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A553E261B8CFC0700A0230B /* GOFightViewController.m */; };
 		9A14C4B51B9236C900212C5B /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A14C4B31B92338900212C5B /* digital.ttf */; };
-		9A14C4B71B92496500212C5B /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A14C4B61B92496500212C5B /* bell.mp3 */; };
 		9A553E271B8CFC0700A0230B /* GOFightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A553E261B8CFC0700A0230B /* GOFightViewController.m */; };
-		9A553E331B8D0D4700A0230B /* buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A553E311B8D0D4700A0230B /* buzzer.mp3 */; };
 		9A553E351B8D101B00A0230B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A553E341B8D101B00A0230B /* AVFoundation.framework */; };
 		9A7EC3D01B90DE6600D0CFB9 /* GOBuildTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7EC3CF1B90DE6600D0CFB9 /* GOBuildTableViewController.m */; };
 		9A7EC3D31B90E3E400D0CFB9 /* BuildManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7EC3D21B90E3E400D0CFB9 /* BuildManager.m */; };
@@ -89,9 +84,6 @@
 		3D2D2F201B86B5A400E210BA /* unit-1-final-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit-1-final-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unit_1_final_projectUITests.m; sourceTree = "<group>"; };
 		3D2D2F261B86B5A400E210BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D67F60C1B8D4311008B5E6A /* NikeTotal90.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NikeTotal90.ttf; path = ../../../Downloads/NikeTotal90.ttf; sourceTree = "<group>"; };
-		3D67F60D1B8D43C4008B5E6A /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bell.mp3; path = ../../../Downloads/bell.mp3; sourceTree = "<group>"; };
-		3D67F60E1B8D43C4008B5E6A /* buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = buzzer.mp3; path = ../../../Downloads/buzzer.mp3; sourceTree = "<group>"; };
 		3D67F6141B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCustomWorkoutTableViewController.h; sourceTree = "<group>"; };
 		3D67F6151B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCustomWorkoutTableViewController.m; sourceTree = "<group>"; };
 		3D67F6171B8D89FB008B5E6A /* GOCustomResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCustomResultsViewController.h; sourceTree = "<group>"; };
@@ -105,10 +97,8 @@
 		3DE05A081B8E4C8C007A66FB /* ExerciseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewCell.h; sourceTree = "<group>"; };
 		3DE05A091B8E4C8C007A66FB /* ExerciseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewCell.m; sourceTree = "<group>"; };
 		9A14C4B31B92338900212C5B /* digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital.ttf; sourceTree = "<group>"; };
-		9A14C4B61B92496500212C5B /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		9A553E251B8CFC0700A0230B /* GOFightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOFightViewController.h; sourceTree = "<group>"; };
 		9A553E261B8CFC0700A0230B /* GOFightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOFightViewController.m; sourceTree = "<group>"; };
-		9A553E311B8D0D4700A0230B /* buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = buzzer.mp3; path = ../../BoxingTimer/BoxingTimer/sounds/buzzer.mp3; sourceTree = "<group>"; };
 		9A553E341B8D101B00A0230B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A7EC3CE1B90DE6600D0CFB9 /* GOBuildTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOBuildTableViewController.h; sourceTree = "<group>"; };
 		9A7EC3CF1B90DE6600D0CFB9 /* GOBuildTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOBuildTableViewController.m; sourceTree = "<group>"; };
@@ -255,9 +245,7 @@
 		3D2D2EFF1B86B5A300E210BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A14C4B61B92496500212C5B /* bell.mp3 */,
 				9A14C4B31B92338900212C5B /* digital.ttf */,
-				9A553E311B8D0D4700A0230B /* buzzer.mp3 */,
 				9ADCAB671B8D7AC2009E6FF0 /* NikeTotal90.ttf */,
 				3D2D2F101B86B5A300E210BA /* Info.plist */,
 				3D2D2F001B86B5A300E210BA /* main.m */,
@@ -286,12 +274,6 @@
 		3DE05A0B1B8E8B48007A66FB /* Singleton & Objects */ = {
 			isa = PBXGroup;
 			children = (
-				3DDB60BF1B893332008194DB /* WorkoutManager.h */,
-				3DDB60C01B893332008194DB /* WorkoutManager.m */,
-				3DDB60C21B893413008194DB /* Workout.h */,
-				3DDB60C31B893413008194DB /* Workout.m */,
-				3DDB60C51B893477008194DB /* Exercises.h */,
-				3DDB60C61B893477008194DB /* Exercises.m */,
 				3D29C62A1B8E009F004E33EF /* BackgroundGradient.h */,
 				3D29C62B1B8E009F004E33EF /* BackgroundGradient.m */,
 			);
@@ -431,8 +413,6 @@
 				9A14C4B51B9236C900212C5B /* digital.ttf in Resources */,
 				9ADCAB681B8D7B4A009E6FF0 /* NikeTotal90.ttf in Resources */,
 				3D2D2F0F1B86B5A300E210BA /* LaunchScreen.storyboard in Resources */,
-				3D67F6101B8D43C4008B5E6A /* buzzer.mp3 in Resources */,
-				3D67F60F1B8D43C4008B5E6A /* bell.mp3 in Resources */,
 				3D2D2F0C1B86B5A300E210BA /* Assets.xcassets in Resources */,
 				3D28835E1B8D268F00DE02B8 /* Main.storyboard in Resources */,
 			);
@@ -623,7 +603,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -639,7 +619,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
