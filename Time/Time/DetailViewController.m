@@ -41,9 +41,11 @@
 //    NSLog(@"%@ %@", keys, [values objectForKey:keys]);
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setValue:@"popcorn" forKey:[NSNumber numberWithInt:5]];
+    NSString *value = [NSString stringWithFormat:self.yourTime.text];
+    [dict setValue:value forKey:self.nameYourTask.text];
     
     NSLog(@"%@", dict);
+    
     
 }
 
