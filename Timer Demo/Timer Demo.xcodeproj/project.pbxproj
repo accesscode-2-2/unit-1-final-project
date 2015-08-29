@@ -17,6 +17,8 @@
 		698173911B88EFF0000D38F2 /* Timer_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698173901B88EFF0000D38F2 /* Timer_DemoTests.swift */; };
 		6981739C1B88EFF0000D38F2 /* Timer_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981739B1B88EFF0000D38F2 /* Timer_DemoUITests.swift */; };
 		698173AA1B88F28C000D38F2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698173A91B88F28C000D38F2 /* Timer.swift */; };
+		69E810431B91FD170061915A /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E810421B91FD170061915A /* CountdownViewController.swift */; };
+		69E810471B9209790061915A /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E810461B9209790061915A /* NSObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		6981739B1B88EFF0000D38F2 /* Timer_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer_DemoUITests.swift; sourceTree = "<group>"; };
 		6981739D1B88EFF0000D38F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		698173A91B88F28C000D38F2 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		69E810421B91FD170061915A /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		69E810461B9209790061915A /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				6981737D1B88EFF0000D38F2 /* ViewController.swift */,
 				504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */,
+				69E810421B91FD170061915A /* CountdownViewController.swift */,
+				69E810461B9209790061915A /* NSObjectExtension.swift */,
 				6981737F1B88EFF0000D38F2 /* Main.storyboard */,
 				698173821B88EFF0000D38F2 /* Assets.xcassets */,
 				698173841B88EFF0000D38F2 /* LaunchScreen.storyboard */,
@@ -264,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E810471B9209790061915A /* NSObjectExtension.swift in Sources */,
+				69E810431B91FD170061915A /* CountdownViewController.swift in Sources */,
 				698173AA1B88F28C000D38F2 /* Timer.swift in Sources */,
 				5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */,
 				504DC2291B8FE3E30071A35E /* StopwatchViewController.swift in Sources */,

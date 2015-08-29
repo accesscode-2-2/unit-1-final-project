@@ -50,11 +50,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     timer.isPaused = true
                 }
             }
-            
             tableView.reloadData()
         }
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
