@@ -189,7 +189,7 @@
                     <navigationItem key="navigationItem" id="Ete-fA-fSB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="60G-pm-lud">
                             <connections>
-                                <segue destination="Xg0-Iv-xg4" kind="show" id="LUj-Xc-Uvp"/>
+                                <segue destination="Xg0-Iv-xg4" kind="show" id="TLE-mg-p4O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-674" y="243"/>
+            <point key="canvasLocation" x="-718" y="243"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8HZ-q3-7CU">
@@ -219,7 +219,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-RQ-RJR">
+
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-RQ-RJR">
                                 <rect key="frame" x="0.0" y="340" width="600" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="462557612.87828398">
                                     <!--2015-08-29 16:13:32 +0000-->
@@ -236,10 +237,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+
+                    <navigationItem key="navigationItem" id="zA9-Rh-6WN">
+                        <barButtonItem key="rightBarButtonItem" title="Add Timer" id="2NB-6k-RQg"/>
+                    </navigationItem>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="55" y="243"/>
+            <point key="canvasLocation" x="-22" y="243"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="hH8-ih-oyN">
