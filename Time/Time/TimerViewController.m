@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic) NSDate *startTime;
-@property (weak, nonatomic) IBOutlet UITableViewCell *tableCell;
 
 @end
 
