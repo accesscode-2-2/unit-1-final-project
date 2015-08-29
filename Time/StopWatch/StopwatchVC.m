@@ -109,6 +109,8 @@
         [self.lapResetButton.titleLabel.text isEqualToString:@"Reset"];
         
         [self.laps removeAllObjects];
+        [self.timerLabel setText:@"00:00:00"];
+    
         [self.lapsTableView reloadData];
     }
 }
@@ -154,10 +156,7 @@
     cell.textLabel.text = [NSString stringWithFormat:@"Laps %@", [self formattedTime:[lapDuration doubleValue]]];
 //    cell.detailTextLabel.text = self.laps[indexPath.row];
     
-    
-    
-    
-    
+
     return cell;
 }
 
