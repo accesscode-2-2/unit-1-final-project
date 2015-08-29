@@ -12,6 +12,7 @@
 
 @interface PresetsTableViewController ()
 @property (nonatomic) OrderedDictionary *presets;
+@property (nonatomic) NSMutableArray *alphabeticalKeys;
 @property (nonatomic) NSArray *selectedPreset;
 @property (nonatomic) NSUInteger chosenIndex;
 @end
@@ -43,6 +44,8 @@
     for (int i = 0; i < [keys count]; i++) {
         [self.presets setObject:values[i] forKey:keys[i]];
     }
+    
+    self.alphabeticalKeys = [NSMutableArray arrayWithArray:[self.presets allKeys]];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,8 +91,8 @@
                                reuseIdentifier:@"presetIdentifier"];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.presets keyAtIndex:indexPath.row]];
-    NSArray *presetTime = [self.presets objectForKey:[self.presets keyAtIndex:indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.alphabeticalKeys[indexPath.row]];
+    NSArray *presetTime = [self.presets objectForKey:self.alphabeticalKeys[indexPath.row]];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@:%@:%@", presetTime[0], presetTime[1], presetTime[2]];
     
     return cell;
@@ -98,6 +101,11 @@
 #pragma mark - NewPresetViewControllerDelegate implementation
 -(void)presetCreated:(NSArray *)countdownTime withName:(NSString *)timerName {
     [self.presets setObject:countdownTime forKey:timerName];
+    
+    self.alphabeticalKeys = [NSMutableArray arrayWithArray:[self.presets allKeys]];
+    NSLog(@"Alpha Keys %@", self.alphabeticalKeys);
+    NSArray* sortedArray = [self.alphabeticalKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    self.alphabeticalKeys = [NSMutableArray arrayWithArray:sortedArray];
     [self.tableView reloadData];
 }
 
