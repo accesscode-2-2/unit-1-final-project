@@ -12,10 +12,13 @@
 
 @property (nonatomic,strong) NSMutableArray *workouts;
 @property (nonatomic,strong) NSMutableDictionary *calendarDates;
+@property (nonatomic,strong) NSMutableArray *customWorkouts;
 
 + (WorkoutManager *) sharedManager;
 
 + (WorkoutManager *) calendarManager;
+
++ (WorkoutManager *) customWorkoutManager;
 
 
 @end

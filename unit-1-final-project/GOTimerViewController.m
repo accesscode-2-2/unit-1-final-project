@@ -24,6 +24,7 @@
 
     NSLog(@"Exercise Index: %lu", self.currentExerciseIndex);
 
+    // This the timer for the workout
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                   target:self
                                                 selector:@selector(updateExerciseTimer)
@@ -48,14 +49,14 @@
         self.currentExerciseIndex = 0;
     }
     
-    
+    NSInteger count = [self.currentWorkout.exercises count];
+    NSLog(@"This workout has %lu exercises", count);
     
 }
 
 - (void) updateExerciseTimer {
+    NSLog(@"%@", self.exerciseTimeLabel.text);
     NSInteger count = [self.currentWorkout.exercises count];
-    NSLog(@"%lu", count);
-    NSLog(@"%f", self.currentExerciseTime);
     NSInteger one = 1.0;
     NSInteger currentExerciseTime = [self.exerciseTimeLabel.text integerValue];
     NSInteger nextNumber = currentExerciseTime - one;

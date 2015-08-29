@@ -27,6 +27,18 @@
     
     [super viewDidLoad];
     
+    // creates a custom right bar button to segue into the results page
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(addWorkoutButton:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"Your Workouts" forState:UIControlStateNormal];
+    button.frame = CGRectMake(100.0, 0.0, 110.0, 40.0);
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+    
+    [self.tableView reloadData];
+    
     self.goHardLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
     self.goLeanLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
     
@@ -38,10 +50,17 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+}
+
+- (IBAction)addWorkoutButton:(id)sender {
+    // creates a storboard from the "Main" storboard
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-
-
-
+    // creates an instance of view controller from UI storyboard with identifier "ViewControllerIdentifier"
+    UITableViewController *vc = [sb instantiateViewControllerWithIdentifier:@"CustomWorkoutList"];
+    
+    // pushing the navigation controller on a navigation stack
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,28 +73,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return [WorkoutManager sharedManager].workouts.count;
-//}
-//
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSString *cellIdentifier = @"workoutIdentifier";
-//        
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
-//        forIndexPath:indexPath];
-//    
-//    NSMutableArray *workouts = [WorkoutManager sharedManager].workouts;
-//    Workout *workout = workouts[indexPath.row];
-//    //Exercises *exercise = [workout.exercises lastObject];
-//    cell.textLabel.text = workout.workoutName;
-//    return cell;
-//
-//    
-//    
-//    return cell;
-//}
 
 
 #pragma mark - Navigation
@@ -111,7 +108,7 @@
     {
         NSLog(@"GoFight!");
         
-        GOFightViewController *sublistVC = segue.destinationViewController;
+        //GOFightViewController *sublistVC = segue.destinationViewController;
         
 //        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 //        NSMutableArray *workouts = [WorkoutManager sharedManager].workouts;

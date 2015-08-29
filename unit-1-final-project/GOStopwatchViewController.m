@@ -12,6 +12,7 @@
 
 #import "GOStopwatchViewController.h"
 #import "LapTimerTableViewCell.h"
+#import "BackgroundGradient.h"
 
 @interface GOStopwatchViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -52,7 +53,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-        
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
     [super viewDidLoad];
     
     self.laps = [[NSMutableArray alloc]init];
@@ -68,6 +70,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+}
 
 - (IBAction)startStopwatchButton:(UIButton *)sender {
     
@@ -141,13 +149,9 @@
     
     [self.mainStopwatch invalidate];
     [self.stopwatch invalidate];
-//    self.mainStopwatch = nil;
-//    self.stopwatch = nil;
 }
 
 - (IBAction)lapStopwatchButton:(UIButton *)sender {
-    
-    
     self.lapTotalTime = 0.0;
     
     [self.laps addObject:self.stopwatchTimerLabel.text];
@@ -201,7 +205,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLap" forIndexPath:indexPath];
     
    if (!cell) {
@@ -213,6 +216,7 @@
 
     cell.detailTextLabel.text = key;
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %@",lap];
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }

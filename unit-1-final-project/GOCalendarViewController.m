@@ -20,14 +20,30 @@
 
 @implementation GOCalendarViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                     style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.leftBarButtonItem = myBackButton;
+}
+
+- (IBAction)Back
+{
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.hidesBackButton = YES;
     
     // sets the title
     self.title = @"Pick a Goal";
     
     // stores the text field into the string property
-    }
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -52,7 +68,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    
     // creates an instance of a view controller for segue
     GOCalendarResults *resultsVC = segue.destinationViewController;
     
@@ -63,13 +79,13 @@
 // Forces the text colour of the label to be white only for UIDatePicker and its components
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

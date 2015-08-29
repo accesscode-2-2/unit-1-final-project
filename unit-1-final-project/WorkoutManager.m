@@ -38,8 +38,18 @@
     return calendarMyManager;
 }
 
++ (WorkoutManager *) customWorkoutManager{
+    static WorkoutManager *customWorkoutMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        customWorkoutMyManager = [[self alloc] init];
+        customWorkoutMyManager.customWorkouts = [[NSMutableArray alloc] init];
+    });
+    return customWorkoutMyManager;
+}
+
 - (void)preLoadedWorkouts {
-//Exercise List
+    //Exercise List
     
     Exercises *exercise1 = [[Exercises alloc] init];
     exercise1.nameOfExercise = @"Push-ups";
@@ -53,7 +63,7 @@
     
     
     
-//Workout List - (Array of Exercises)
+    //Workout List - (Array of Exercises)
     
     // 1st Workout
     
@@ -76,7 +86,7 @@
     [workout2.exercises addObject:exercise2];
     
     
-// Adding Workouts to GOWorkoutViewController Array
+    // Adding Workouts to GOWorkoutViewController Array
     
     [self.workouts addObject:workout1];
     [self.workouts addObject:workout2];

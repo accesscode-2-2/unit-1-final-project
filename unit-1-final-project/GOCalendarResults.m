@@ -11,22 +11,30 @@
 @interface GOCalendarResults ()
 @property (weak, nonatomic) IBOutlet UILabel *countdownResultsLabel;
 @property (nonatomic) NSDateFormatter *formatter;
+@property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSDate *date;
 
 @end
 
 @implementation GOCalendarResults
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewWillAppear:(BOOL)animated{
     self.date = self.scheduledDate; // save in property -- this is the start date
     
     // the timer that counts down the scheduled date
-    [NSTimer scheduledTimerWithTimeInterval:1.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(refreshLabel)
                                    userInfo:nil
                                     repeats:YES];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+}
+- (IBAction)buttonTapped:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)refreshLabel
@@ -68,7 +76,7 @@
     NSString *formattedSeconds = [SecondFormatter stringFromDate:self.date];
     
     // stores all the strings in one string for the output label
-    NSString *newLabel = [NSString stringWithFormat:@"Goal Date %@ \n \n Time Left: \n \n Days: %@\n Hours %@\n Minutes %@\n Seconds%@", formattedDateString,daysLeftString, formattedHour, formattedMinute, formattedSeconds];
+    NSString *newLabel = [NSString stringWithFormat:@"Goal Date %@ \n \n Time Left \n \n Days :  %@\n Hours : %@\n Minutes : %@\n Seconds : %@", formattedDateString,daysLeftString, formattedHour, formattedMinute, formattedSeconds];
     
     // stores the countdown label into the new string
     self.countdownResultsLabel.text = newLabel;
@@ -90,14 +98,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self.timer invalidate];
 }
-*/
 
 @end
