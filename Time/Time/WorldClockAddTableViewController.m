@@ -66,8 +66,8 @@
     [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi"];
     [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
     [self.clock setObject:NYTimeString forKey:@"New York"];
-    [self.clock setObject:RomeTimeString forKey:@"Italy – Rome"];
-    [self.clock setObject:ParisTimeString forKey:@"France - Paris"];
+    [self.clock setObject:RomeTimeString forKey:@"Rome, Italy"];
+    [self.clock setObject:ParisTimeString forKey:@"Paris, France"];
 
     
         self.keyArray = [self.clock allKeys];
