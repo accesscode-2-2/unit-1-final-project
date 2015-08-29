@@ -115,8 +115,9 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dateIdentifier" forIndexPath:indexPath];
     
-//    NSString *keyAsString = ;
-    NSString *dateFromDictionary = keyAsString;
+    NSArray *keyRaw = [self.eventDates keyAtIndex:indexPath.row];
+    NSString *key = keyRaw[0];
+    NSString *dateFromDictionary = key;
     NSDate *eventDate = [self convertToNSDate:dateFromDictionary];
     NSString *countdown = [self timeToEvent:eventDate];
     
@@ -129,7 +130,8 @@
 #pragma mark - delegate Implementation
 - (void)presetCreated:(NSDate *)eventDate withName:(NSString *)eventName {
     NSString *date = [self.dateFormatter stringFromDate:eventDate];
-    [self.eventDates setObject:eventName forKey:date];
+    NSArray *key = @[date];
+    [self.eventDates setObject:eventName forKey:key];
     NSLog(@"%@",self.eventDates);
 }
 
