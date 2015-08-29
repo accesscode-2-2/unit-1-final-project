@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ModelTime.h"
 
 @interface DetailViewController : UIViewController
 

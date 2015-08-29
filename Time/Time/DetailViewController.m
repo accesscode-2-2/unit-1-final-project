@@ -43,6 +43,8 @@
     NSString *value = [NSString stringWithFormat:self.yourTime.text];
     [dict setValue:value forKey:self.nameYourTask.text];
     
+    NSLog(@"%@", dict);
+    
     
 }
 

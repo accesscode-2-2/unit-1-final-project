@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B6CAA6A1B9201B0004865B0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA691B9201B0004865B0 /* DetailViewController.m */; };
-		0B6CAA6D1B920478004865B0 /* ModelTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA6C1B920478004865B0 /* ModelTime.m */; };
 		0B6CAA6F1B920AC9004865B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA6E1B920AC9004865B0 /* Images.xcassets */; };
 		0B6CAA711B92383B004865B0 /* home-hero-10-1440-900.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */; };
 		0B761E9C1B8FE6AB006EDD4A /* PresetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */; };
@@ -37,8 +36,6 @@
 /* Begin PBXFileReference section */
 		0B6CAA681B9201B0004865B0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0B6CAA691B9201B0004865B0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		0B6CAA6B1B920478004865B0 /* ModelTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTime.h; sourceTree = "<group>"; };
-		0B6CAA6C1B920478004865B0 /* ModelTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTime.m; sourceTree = "<group>"; };
 		0B6CAA6E1B920AC9004865B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-hero-10-1440-900.jpg"; sourceTree = "<group>"; };
 		0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTableViewController.h; sourceTree = "<group>"; };
@@ -105,8 +102,6 @@
 			children = (
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
-				0B6CAA6B1B920478004865B0 /* ModelTime.h */,
-				0B6CAA6C1B920478004865B0 /* ModelTime.m */,
 				0BC2093F1B87E50B00D9FAE9 /* TimerViewController.h */,
 				0BC209401B87E50B00D9FAE9 /* TimerViewController.m */,
 				0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */,
@@ -261,7 +256,6 @@
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				0B6CAA6A1B9201B0004865B0 /* DetailViewController.m in Sources */,
-				0B6CAA6D1B920478004865B0 /* ModelTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
