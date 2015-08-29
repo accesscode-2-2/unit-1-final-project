@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Go-ZR-bnO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Go-ZR-bnO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="-718" y="243"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Timer View Controller-->
         <scene sceneID="8HZ-q3-7CU">
             <objects>
-                <viewController id="Xg0-Iv-xg4" sceneMemberID="viewController">
+                <viewController id="Xg0-Iv-xg4" customClass="AddTimerViewController" customModule="Timer_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5sE-jf-6Dl"/>
                         <viewControllerLayoutGuide type="bottom" id="pUt-L9-OQo"/>
@@ -222,12 +222,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alarm Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAc-Wi-BzM">
-                                <rect key="frame" x="250.5" y="285" width="100.5" height="30"/>
+                                <rect key="frame" x="250" y="285" width="100.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-RQ-RJR">
-                                <rect key="frame" x="0.0" y="340" width="600" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-RQ-RJR">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="462557612.87828398">
                                     <!--2015-08-29 16:13:32 +0000-->
                                 </date>
@@ -244,8 +244,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zA9-Rh-6WN">
-                        <barButtonItem key="rightBarButtonItem" title="Add Timer" id="2NB-6k-RQg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Timer" id="2NB-6k-RQg">
+                            <connections>
+                                <action selector="addTimer:" destination="Xg0-Iv-xg4" id="XhS-u7-tSv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="timerNameField" destination="OAc-Wi-BzM" id="nlw-9X-sKd"/>
+                        <outlet property="timerPicker" destination="0h0-RQ-RJR" id="pdb-oC-pTV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hU3-3e-VtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

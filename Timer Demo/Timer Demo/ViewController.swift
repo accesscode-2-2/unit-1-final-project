@@ -12,15 +12,12 @@ import AVFoundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //    @IBOutlet weak var timerLabel: UILabel!
-    //    @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
     let popcornTimer = Timer.init(timerLabel: "Popcorn", startTime: 4.000)
     let poopTimer = Timer.init(timerLabel: "Poop", startTime: 3.000)
-    
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
