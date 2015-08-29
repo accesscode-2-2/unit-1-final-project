@@ -13,6 +13,7 @@
 - (void)configureView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (nonatomic) NSTimeInterval pausedTime;
 
 
 
@@ -28,14 +29,14 @@
     self.stopwatchLabel.text = @"00.00.00";
     self.lapLabel.text =@"00.00.00";
     self.running = FALSE;
-    self.startDate = [NSDate date];
-    self.restartDate =[NSDate date];
     self.startButton.layer.cornerRadius = 37.5;
     self.startButton.clipsToBounds = YES;
     self.resetButton.layer.cornerRadius = 37.5;
     self.resetButton.clipsToBounds = YES;
     self.lapTableView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.lapTableView.layer.borderWidth = 1.0;
+    self.startDate = [NSDate date];
+    self.restartDate = [NSDate date];
     [self configureView];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:205 green:255 blue:255 alpha:1]];
     [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
@@ -71,17 +72,22 @@
                                                        selector:@selector(rememberTimer)
                                                        userInfo:nil
                                                         repeats:YES];
-           
+//            self.startDate = [NSDate date];
+//            self.restartDate = [NSDate date];
             
         }
     }else{
         self.running = FALSE;
         [sender setTitle:@"Start" forState:UIControlStateNormal];
-         [self.resetButton setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.resetButton setTitle:@"Reset" forState:UIControlStateNormal];
         [self.stopTimer invalidate];
-        self.stopTimer = nil;
+         self.stopTimer = nil;
         [self.lapTimer invalidate];
-        self.lapTimer = nil;
+         self.lapTimer = nil;
+        
+//        //added
+//         self.pausedTime = [self doubleFromTimeText:self.stopwatchLabel.text];
+        
         
     }
 
@@ -130,7 +136,8 @@
       
  
     }else{
-        
+//        //ADDED
+//        self.pausedTime = 0;
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.stopTimer invalidate];
         self.stopTimer = nil;
@@ -166,8 +173,14 @@
     
     return cell;
 }
-
-
+//added
+//- (double)doubleFromTimeText:(NSString *)timeText{
+//    
+//    NSArray *components = [timeText componentsSeparatedByString:@":"];
+//    double time = 60*[components[0] doubleValue] + [components[1] doubleValue];
+//    return time;
+//    
+//}
 
 
 

@@ -55,24 +55,29 @@
         
         [sender setTitle:@"Pause" forState: UIControlStateNormal];
         
-        self.running = TRUE;
+        self.running = YES;
         
         if (self.Remainder==-1){
             self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
             self.Remainder = self.countDownInterval;
             self.afterRemainder = self.countDownInterval - self.Remainder%60;
+            
+            
+            countdownTimer = [NSTimer timerWithTimeInterval:1
+                                                              target:self
+                                                            selector:@selector(updateTime)
+                                                            userInfo:nil
+                                                             repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:countdownTimer forMode:NSRunLoopCommonModes];
         }
         
-        countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                          target:self
-                                                        selector:@selector(updateTime)
-                                                        userInfo:nil
-                                                         repeats:YES];
  
     } else {
-        self.running = FALSE;
+        self.running = NO;
         [sender setTitle:@"Start" forState: UIControlStateNormal];
         [self invalidateTimer];
+//        [countdownTimer invalidate];
+//        countdownTimer = nil;
     }
     
 }
