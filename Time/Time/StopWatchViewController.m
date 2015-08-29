@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 //Time
 @property (nonatomic) NSDate *startDate;
@@ -84,6 +85,7 @@
     self.running = NO;
 }
 
+
 #pragma mark IBActions
 - (IBAction)startUIButton:(UIButton *)sender {
     self.startTime = [NSDate timeIntervalSinceReferenceDate];
@@ -108,13 +110,14 @@
     self.lapAlareadyRunSecs = 0.0;
     self.lapStartDate = [[NSDate alloc]init];
     [self updateTime];
-    NSLog(@"%@", self.lapTimeMutableArray);
+    [self.tableView reloadData];
 }
 
 
 
 - (IBAction)resetUIButton:(UIButton *)sender {
     [self resetTimeMode];
+    [self.tableView reloadData];
 }
 
 
