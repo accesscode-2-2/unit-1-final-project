@@ -63,7 +63,7 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    self.particleBackground.frame = self.view.bounds;
+    self.particleBackground.frame = self.contentView.bounds;
     self.contentViewWidthConstraint.constant = self.view.frame.size.width;
 }
 

@@ -16,7 +16,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [UINavigationBar appearance].translucent = NO;
+    [UITabBar appearance].translucent = NO;
+    //[UITabBar appearance].backgroundColor = [UIColor blueColor];
+    
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    UITabBarController *bc = nav.viewControllers[0];
+    bc.tabBar.barTintColor=[UIColor blackColor];
+    
+   
+    
     return YES;
 }
 

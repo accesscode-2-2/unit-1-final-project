@@ -24,7 +24,7 @@
     [self.model initializeModel];
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    self.tableView.dataSource = self;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped)];
 }
