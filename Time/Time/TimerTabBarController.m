@@ -76,8 +76,8 @@
     if (self.isTimerRunning == YES) {
         
         self.timeLabel.alpha = 0;
-        [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
-        [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
+        [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = NO;
         
         self.datePicker.hidden = NO; // bring view picker back when timer is reset
@@ -91,7 +91,7 @@
         
         self.timeLabel.alpha = 1;
         
-        [self.startCancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [self.startCancelButton setTitle:@"CANCEL" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = YES;
         
         if (self.timer == nil) {
@@ -131,7 +131,7 @@
         self.datePicker.hidden = NO;
         
         self.timeLabel.alpha = 0;
-        [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
+        [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = NO;
         
     }
