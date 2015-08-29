@@ -12,6 +12,8 @@ class AddTimerViewController: UIViewController {
 
     @IBOutlet weak var timerNameField: UITextField!
     @IBOutlet weak var timerPicker: UIDatePicker!
+    var timersArray: [Timer] = []
+    
     
     
     override func viewDidLoad() {
@@ -22,6 +24,9 @@ class AddTimerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func addTimer(timer:Timer){
+        timersArray.append(timer)
+    }
     
     func stringFromTimeInterval(interval: CFTimeInterval, withMilliseconds:Bool = true) -> String{
         let intInterval = Int(interval)
@@ -75,12 +80,16 @@ class AddTimerViewController: UIViewController {
     @IBAction func addTimer(sender: UIBarButtonItem) {
         
         
+        let timerName = timerNameField.text
+        
+        
         
         print("\(stringFromTimeInterval(timerPicker.countDownDuration, withMilliseconds: false))")
         
         self.navigationController?.popViewControllerAnimated(true)
         
     }
+    
 
     /*
     // MARK: - Navigation

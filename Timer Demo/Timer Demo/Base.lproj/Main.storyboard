@@ -197,7 +197,7 @@
                     <navigationItem key="navigationItem" id="Ete-fA-fSB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="60G-pm-lud">
                             <connections>
-                                <segue destination="Xg0-Iv-xg4" kind="show" id="TLE-mg-p4O"/>
+                                <segue destination="Xg0-Iv-xg4" kind="show" identifier="addTimerSegue" id="TLE-mg-p4O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -244,7 +244,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zA9-Rh-6WN">
-                        <barButtonItem key="rightBarButtonItem" title="Add Timer" id="2NB-6k-RQg">
+                        <barButtonItem key="rightBarButtonItem" title="Save Timer" id="2NB-6k-RQg">
                             <connections>
                                 <action selector="addTimer:" destination="Xg0-Iv-xg4" id="XhS-u7-tSv"/>
                             </connections>

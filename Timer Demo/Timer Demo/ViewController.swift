@@ -41,9 +41,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         addTimer(poopTimer)
     }
     
-    func addTimer(timer:Timer){
-        timers.append(timer)
-    }
     
     func updateTimer(timer:Timer){
         
