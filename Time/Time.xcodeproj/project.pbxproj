@@ -10,6 +10,7 @@
 		0B6CAA6A1B9201B0004865B0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA691B9201B0004865B0 /* DetailViewController.m */; };
 		0B6CAA6D1B920478004865B0 /* ModelTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA6C1B920478004865B0 /* ModelTime.m */; };
 		0B6CAA6F1B920AC9004865B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA6E1B920AC9004865B0 /* Images.xcassets */; };
+		0B6CAA711B92383B004865B0 /* home-hero-10-1440-900.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */; };
 		0B761E9C1B8FE6AB006EDD4A /* PresetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */; };
 		0BC209411B87E50B00D9FAE9 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC209401B87E50B00D9FAE9 /* TimerViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
@@ -39,6 +40,7 @@
 		0B6CAA6B1B920478004865B0 /* ModelTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTime.h; sourceTree = "<group>"; };
 		0B6CAA6C1B920478004865B0 /* ModelTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTime.m; sourceTree = "<group>"; };
 		0B6CAA6E1B920AC9004865B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-hero-10-1440-900.jpg"; sourceTree = "<group>"; };
 		0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTableViewController.h; sourceTree = "<group>"; };
 		0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTableViewController.m; sourceTree = "<group>"; };
 		0BC2093F1B87E50B00D9FAE9 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				D47FF9271B87EFA10068E9FA /* StopWatchViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				0B6CAA6E1B920AC9004865B0 /* Images.xcassets */,
+				0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
 			);
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6CAA711B92383B004865B0 /* home-hero-10-1440-900.jpg in Resources */,
 				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
 				0B6CAA6F1B920AC9004865B0 /* Images.xcassets in Resources */,
 				D419E3021B89228D004E1BD4 /* Ringtones in Resources */,

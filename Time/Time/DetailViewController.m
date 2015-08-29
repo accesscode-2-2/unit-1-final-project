@@ -11,8 +11,7 @@
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameYourTask;
 @property (weak, nonatomic) IBOutlet UITextField *yourTime;
-@property (nonatomic) NSMutableArray *keys;
-@property (nonatomic) NSMutableArray *objects;
+
 @property (nonatomic) NSMutableDictionary *values;
 
 @end
@@ -43,8 +42,6 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     NSString *value = [NSString stringWithFormat:self.yourTime.text];
     [dict setValue:value forKey:self.nameYourTask.text];
-    
-    NSLog(@"%@", dict);
     
     
 }
