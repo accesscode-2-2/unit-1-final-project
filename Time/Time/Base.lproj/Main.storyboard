@@ -222,6 +222,9 @@
                                 <state key="normal" title="PAUSE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pauseResumeButtonTapped:" destination="zEu-mR-zpR" eventType="touchUpInside" id="NaV-df-vzv"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-Py-tiL">
                                 <rect key="frame" x="40" y="30" width="520" height="173"/>

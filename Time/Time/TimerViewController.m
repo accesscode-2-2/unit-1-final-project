@@ -91,8 +91,35 @@
 	self.picker.hidden = NO;
 
 }
+
+-(void) pauseTimer {
+	[self.timer invalidate];
+	[self.pauseResumeButton setTitle:@"STOP" forState:UIControlStateNormal];
+	
+	self.timeLabel.hidden = NO;
+	self.picker.hidden = YES;
+	
+	self.timer = nil;
+	
+	self.duration = [[NSDate date] timeIntervalSinceDate:self.startTime];
+	
+	
+}
+
+
+
 - (IBAction)popcornButtonTapped:(id)sender {
 	[self startTimer:180];
+}
+- (IBAction)pauseResumeButtonTapped:(id)sender {
+	[self pauseTimer];
+	
+	
+	
+	
+	
+	
+
 }
 
 @end
