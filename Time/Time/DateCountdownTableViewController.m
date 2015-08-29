@@ -62,10 +62,7 @@
 }
 
 - (NSDate *)convertToNSDate:(NSString *)date {
-    // since we did not include hours in the formatter and strings, it will
-    // default to 12am.
     NSDate *event = [self.dateFormatter dateFromString:date];
-    
     return event;
 }
 
@@ -131,7 +128,8 @@
 - (void)presetCreated:(NSDate *)eventDate withName:(NSString *)eventName {
     NSString *date = [self.dateFormatter stringFromDate:eventDate];
     NSArray *key = @[date];
-    [self.eventDates setObject:eventName forKey:key];
+    NSString *capitalizedEventName = [eventName capitalizedString];
+    [self.eventDates setObject:capitalizedEventName forKey:key];
     NSLog(@"%@",self.eventDates);
 }
 
