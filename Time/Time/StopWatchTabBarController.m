@@ -39,10 +39,10 @@ NSTimer *timer;
     // self.savedLapTimes = [NSMutableArray arrayWithObjects:@"", nil]; // store lap times
     self.savedLapTimes = [NSMutableArray new];
     
-   
-   
-
+    // [self.tabBarController.tabBar setTintColor:[UIColor whiteColor]; // change selected button color to white
     
+    
+
     
 }
 
