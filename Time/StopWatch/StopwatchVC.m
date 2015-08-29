@@ -106,10 +106,15 @@
 
     }
     else {
+        
+        //reset everything
+        
         [self.lapResetButton.titleLabel.text isEqualToString:@"Reset"];
         
         [self.laps removeAllObjects];
         [self.timerLabel setText:@"00:00:00"];
+        self.totalTime = 0;
+        self.totalLapTime = 0;
     
         [self.lapsTableView reloadData];
     }
