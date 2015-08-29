@@ -128,21 +128,18 @@
     } //if years, months, days are 0, print out only hours, minutes,and sec
     else if (years == 0 && months ==0 && days == 0) {
         self.countdownTimerLabel.textColor = [UIColor blackColor];
-        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li H %02li min %02li sec dita", (long)hours, (long)minutes, (long)seconds];
-        NSLog(@"vit muj dit %li", (long)years);
-
+        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li H %02li min %02li sec", (long)hours, (long)minutes, (long)seconds];
+ 
     }
     else if (years == 0 && months == 0) {
         self.countdownTimerLabel.textColor = [UIColor blackColor];
-        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li D %02li H %02li min %02li sec muaji", (long)days, (long)hours, (long)minutes, (long)seconds];
-        NSLog(@"muj %li", (long)years);
-
+        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li D %02li H %02li min %02li sec", (long)days, (long)hours, (long)minutes, (long)seconds];
+ 
     }
     else if (years == 0 ){
         self.countdownTimerLabel.textColor = [UIColor blackColor];
-        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li M %02li D %02li H %02li min %02li sec viti",(long) months, (long)days, (long)hours, (long)minutes, (long)seconds];
-        NSLog(@"viti %li", (long)years);
-    }
+        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li M %02li D %02li H %02li min %02li sec",(long) months, (long)days, (long)hours, (long)minutes, (long)seconds];
+     }
     else {
         self.countdownTimerLabel.textColor = [UIColor blackColor];
         self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li Y %02li M %02li D %02li H %02li min %02li sec", (long) years, (long) months, (long)days, (long)hours, (long)minutes, (long)seconds];
