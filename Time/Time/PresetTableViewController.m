@@ -19,8 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
+//    self.values = [NSDictionary dictionaryWithObjects:value
+//                                                     forKeys:self.name.];
+//    
+//    [dict setValue:value forKey:self.nameYourTask.text];
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {

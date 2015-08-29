@@ -9,10 +9,9 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *nameYourTask;
-@property (weak, nonatomic) IBOutlet UITextField *yourTime;
 
-@property (nonatomic) NSMutableDictionary *values;
+//@property (nonatomic) NSMutableArray *key;
+//@property (nonatomic) NSMutableArray *object;
 
 @end
 

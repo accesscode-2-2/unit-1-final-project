@@ -10,4 +10,9 @@
 
 @interface DetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *nameYourTask;
+@property (weak, nonatomic) IBOutlet UITextField *yourTime;
+
+@property (nonatomic) NSMutableDictionary *values;
+
 @end
