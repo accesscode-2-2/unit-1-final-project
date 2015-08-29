@@ -321,13 +321,13 @@
                                     <constraint firstAttribute="height" constant="58" id="koG-pO-642"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 Days 00 Hours 00 Mins 00 Secs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-B1-khb">
                                 <rect key="frame" x="17" y="130" width="567" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-4I-7P7">
@@ -381,7 +381,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KpR-YR-XhH"/>
                     <connections>
-                        <outlet property="birthdayCountdownLabel" destination="UJ2-B1-khb" id="dYC-Y2-uyt"/>
+                        <outlet property="countdownLabel" destination="UJ2-B1-khb" id="bdg-eP-I3z"/>
                         <outlet property="timeTillBirthday" destination="801-NQ-tjD" id="8hH-73-bNa"/>
                     </connections>
                 </viewController>

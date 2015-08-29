@@ -15,7 +15,6 @@
 @interface TimerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, PresetsTableViewControllerDelegate>
 
 @property (nonatomic) NSTimer *timer;
-
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
