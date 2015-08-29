@@ -29,6 +29,7 @@
         <!--Countdown-->
         <scene sceneID="CfX-jj-hrz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgY-j4-gD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fv3-ti-Iiy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UBU-oO-YmV"/>
@@ -37,13 +38,20 @@
                     <view key="view" contentMode="scaleToFill" id="Q6g-GI-DQd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukV-0y-Gjb">
+                                <rect key="frame" x="279" y="33" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" id="p1p-vW-Htc"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kgY-j4-gD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2351" y="789"/>
+            <point key="canvasLocation" x="-2333" y="759"/>
         </scene>
         <!--Timer-->
         <scene sceneID="2vO-hC-wuw">
