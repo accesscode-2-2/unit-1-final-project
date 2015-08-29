@@ -229,7 +229,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KfL-fH-k2y">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MtF-5z-PRK">
@@ -519,9 +519,9 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="pl2-FH-fY9"/>
-                                                <exclude reference="Mkq-dc-GW1"/>
                                                 <exclude reference="C1R-pB-sUQ"/>
+                                                <exclude reference="Mkq-dc-GW1"/>
+                                                <exclude reference="pl2-FH-fY9"/>
                                                 <exclude reference="wVo-vn-nEQ"/>
                                             </mask>
                                         </variation>
@@ -573,7 +573,6 @@
         <!--World Clock-->
         <scene sceneID="uoY-Sj-K7G">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ka-rC-oyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gdX-V3-MO9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8sE-MN-SAZ"/>
@@ -586,6 +585,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="World Clock" id="5DL-Uv-wdS"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ka-rC-oyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="262" y="968"/>
         </scene>
