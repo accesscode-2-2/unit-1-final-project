@@ -127,6 +127,8 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done!" message:[NSString stringWithFormat:@""] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         
         [alert show];
+        [self.animatedPicture stopAnimating];
+        self.datePicker.hidden = NO;
         
         self.timeLabel.alpha = 0;
         [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
