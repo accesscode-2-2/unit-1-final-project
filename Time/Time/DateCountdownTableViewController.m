@@ -18,53 +18,101 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupDefaultPresets];
+    
+    // This is here just in case the screen stays active on the user's phone for a bit.
+    // Refreshes every 5 minutes.
+    [NSTimer scheduledTimerWithTimeInterval:300.0
+                                     target:self
+                                   selector:@selector(reloadCountdown)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+- (void)reloadCountdown {
+    [self.tableView reloadData];
 }
 
 - (void)setupDefaultPresets {
     self.specialDates = [[OrderedDictionary alloc] init];
     
-    NSArray *keys = @[@"CD Player Day",
+    NSArray *description = @[@"CD Player Day",
                       @"International Day for Failure",
                       @"Push-Button Phone Day",
                       @"International Shareware Day",
                       @"International Programmer's Day",
                       @"Macintosh Computer Day"];
     
-    NSArray *values = @[@[@"10 01 2015"],
-                        @[@"10 13 2015"],
-                        @[@"11 18 2015"],
-                        @[@"12 13 2015"],
-                        @[@"01 07 2016"],
-                        @[@"01 24 2016"]];
+    NSArray *keys = @[@[@"2015 10 01"],
+                        @[@"2015 10 13"],
+                        @[@"2015 11 18"],
+                        @[@"2015 12 13"],
+                        @[@"2016 01 07"],
+                        @[@"2016 01 24"]];
     
+    [self.specialDates setDictionary:[NSDictionary dictionaryWithObjects:description forKeys:keys]];
+    
+    //NSLog(@"%@", self.specialDates);
+    
+}
+
+- (NSDate *)convertToNSDate:(NSString *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MM dd yyyy"];
+    [formatter setDateFormat:@"yyyy MM dd"];
     
-    for (int i = 0; i < [keys count]; i++) {
-        NSDate *event = [formatter dateFromString:values[i]];
-        [self.specialDates setObject:event forKey:keys[i]];
-    }
+    // since we did not include hours in the formatter and strings, it will
+    // default to 12am.
+    NSDate *event = [formatter dateFromString:date];
     
-    NSLog(@"%@", self.specialDates);
+    return event;
+}
+
+- (NSString *)timeToEvent:(NSDate *)event {
+    NSDate *now = [NSDate new];
     
+    // These next two lines are just for debugging and can be deleted before submission
+    NSTimeInterval timeLeft = [event timeIntervalSinceDate:now];
+    NSLog(@"%f", timeLeft);
+    
+    // Get our computer's local calendar
+    NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+    
+    // Create the calendar unit flags we want to use (minutes are included for debugging, to
+    // check that the timer is firing every 5 minutes).
+    NSCalendarUnit unitFlags = NSCalendarUnitMinute | NSCalendarUnitHour | NSCalendarUnitDay | NSCalendarUnitMonth;
+    
+    // Create the date components using our unit flags, the difference between the two dates,
+    // and the local calendar which will automatically compensate for any time difference from
+    // GMT.
+    NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:now  toDate:event  options:0];
+    NSLog(@"Break down: %lu minutes : %lu hours : %lu days : %lu months", [breakdownInfo minute], [breakdownInfo hour], [breakdownInfo day], [breakdownInfo month]);
+    
+    NSString *timeToEvent = [NSString stringWithFormat:@"%02lumo %02lud %02luh", [breakdownInfo month], [breakdownInfo day], [breakdownInfo hour]];
+    
+    return timeToEvent;
 }
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [self.specialDates count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dateIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.specialDates keyAtIndex:indexPath.row]];
+    NSArray *keyRaw = [self.specialDates keyAtIndex:indexPath.row];
+    NSString *keyAsString = keyRaw[0];
+    NSString *dateFromDictionary = keyAsString;
+    NSDate *eventDate = [self convertToNSDate:dateFromDictionary];
+    NSString *countdown = [self timeToEvent:eventDate];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.specialDates objectForKey:keyRaw]];
+    cell.detailTextLabel.text = countdown;
+    
     return cell;
 }
 

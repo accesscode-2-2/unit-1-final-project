@@ -77,7 +77,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"presetIdentifier" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"presetIdentifier"];
+    
+    if (cell == nil) {
+        cell =
+        [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                               reuseIdentifier:@"presetIdentifier"];
+    }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.presets keyAtIndex:indexPath.row]];
     NSArray *presetTime = [self.presets objectForKey:[self.presets keyAtIndex:indexPath.row]];
