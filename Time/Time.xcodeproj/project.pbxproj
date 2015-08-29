@@ -30,6 +30,8 @@
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
 		D9E4BBD11B9243760001CC08 /* PresetTimerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD01B9243760001CC08 /* PresetTimerDetailViewController.m */; };
 		D9E4BBD41B9243C20001CC08 /* PresetTimerAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD31B9243C20001CC08 /* PresetTimerAddViewController.m */; };
+		D9E4BBD71B924DC10001CC08 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD61B924DC10001CC08 /* Timer.m */; };
+		D9E4BBDA1B924DE10001CC08 /* TimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD91B924DE10001CC08 /* TimerModel.m */; };
 		D9F01CF81B88C4C3000B02E1 /* StopWatchTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F01CF71B88C4C3000B02E1 /* StopWatchTabBarController.m */; };
 		D9F01CFB1B88C4DD000B02E1 /* TimerTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F01CFA1B88C4DD000B02E1 /* TimerTabBarController.m */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,10 @@
 		D9E4BBD01B9243760001CC08 /* PresetTimerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimerDetailViewController.m; sourceTree = "<group>"; };
 		D9E4BBD21B9243C20001CC08 /* PresetTimerAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimerAddViewController.h; sourceTree = "<group>"; };
 		D9E4BBD31B9243C20001CC08 /* PresetTimerAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimerAddViewController.m; sourceTree = "<group>"; };
+		D9E4BBD51B924DC10001CC08 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		D9E4BBD61B924DC10001CC08 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		D9E4BBD81B924DE10001CC08 /* TimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerModel.h; sourceTree = "<group>"; };
+		D9E4BBD91B924DE10001CC08 /* TimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerModel.m; sourceTree = "<group>"; };
 		D9F01CF61B88C4C3000B02E1 /* StopWatchTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchTabBarController.h; sourceTree = "<group>"; };
 		D9F01CF71B88C4C3000B02E1 /* StopWatchTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchTabBarController.m; sourceTree = "<group>"; };
 		D9F01CF91B88C4DD000B02E1 /* TimerTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerTabBarController.h; sourceTree = "<group>"; };
@@ -125,6 +131,10 @@
 			children = (
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
+				D9E4BBD51B924DC10001CC08 /* Timer.h */,
+				D9E4BBD61B924DC10001CC08 /* Timer.m */,
+				D9E4BBD81B924DE10001CC08 /* TimerModel.h */,
+				D9E4BBD91B924DE10001CC08 /* TimerModel.m */,
 				D9F01CF61B88C4C3000B02E1 /* StopWatchTabBarController.h */,
 				D9F01CF71B88C4C3000B02E1 /* StopWatchTabBarController.m */,
 				D9F01CF91B88C4DD000B02E1 /* TimerTabBarController.h */,
@@ -302,9 +312,11 @@
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				D9E4BBD41B9243C20001CC08 /* PresetTimerAddViewController.m in Sources */,
+				D9E4BBD71B924DC10001CC08 /* Timer.m in Sources */,
 				4DD581551B8A316E006FE339 /* PresetTimerViewController.m in Sources */,
 				D9F01CF81B88C4C3000B02E1 /* StopWatchTabBarController.m in Sources */,
 				D9E4BBD11B9243760001CC08 /* PresetTimerDetailViewController.m in Sources */,
+				D9E4BBDA1B924DE10001CC08 /* TimerModel.m in Sources */,
 				D9F01CFB1B88C4DD000B02E1 /* TimerTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

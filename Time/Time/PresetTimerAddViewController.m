@@ -7,8 +7,11 @@
 //
 
 #import "PresetTimerAddViewController.h"
+#import "TimerModel.h"
 
 @interface PresetTimerAddViewController ()
+
+@property (nonatomic) TimerModel *model;
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectTime;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UITextField *timerName;
@@ -22,6 +25,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.model = [[TimerModel alloc] init];
+    [self.model initializeModel];
+    
+}
+
+- (void)saveNewTimer{
+    
+    Timer *newTimer = [[Timer alloc] init];
+    
+    newTimer.timerName = self.timerName.text;
+    
+    newTimer.countDownDuration = self.selectTime.countDownDuration;
+    
+    [self.timerViewController.model.timers insertObject:newTimer atIndex:0];
+    
+}
+
+- (IBAction)dismissModalView:(id)sender {
+    
+    [self saveNewTimer];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+- (IBAction)cancelButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

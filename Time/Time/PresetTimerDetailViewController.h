@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Timer.m"
 
 @interface PresetTimerDetailViewController : UIViewController
+
+@property (nonatomic) Timer *currentTimer;
 
 @end
