@@ -10,7 +10,10 @@ import UIKit
 import QuartzCore
 import AVFoundation
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController,
+    UITableViewDataSource,
+    UITableViewDelegate,
+    AddTimerViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,8 +40,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         displayLink = CADisplayLink(target: self, selector: Selector("update"))
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         
-        addTimer(popcornTimer)
-        addTimer(poopTimer)
+//        addTimer(popcornTimer)
+//        addTimer(poopTimer)
     }
     
     
@@ -61,6 +64,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
             tableView.reloadData()
+        }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let viewController = segue.destinationViewController as? AddTimerViewController {
+            viewController.delegate = self
         }
     }
     
@@ -120,6 +130,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 cell.timer.isPaused = !cell.timer.isPaused
             }
         }
+    }
+    
+    // MARK: add timer view controller delegate
+    
+    func addTimerViewController(viewController: AddTimerViewController, didCreateNewTimer timer: Timer) {
+        timers.append(timer)
+        tableView.reloadData()
     }
     
     

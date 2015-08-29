@@ -246,7 +246,7 @@
                     <navigationItem key="navigationItem" id="zA9-Rh-6WN">
                         <barButtonItem key="rightBarButtonItem" title="Save Timer" id="2NB-6k-RQg">
                             <connections>
-                                <action selector="addTimer:" destination="Xg0-Iv-xg4" id="XhS-u7-tSv"/>
+                                <action selector="saveTimerButtonTapped:" destination="Xg0-Iv-xg4" id="DQg-M7-OOb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

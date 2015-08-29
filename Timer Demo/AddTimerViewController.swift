@@ -8,25 +8,32 @@
 
 import UIKit
 
+protocol AddTimerViewControllerDelegate {
+    func addTimerViewController(viewController: AddTimerViewController, didCreateNewTimer timer:Timer)
+}
+
 class AddTimerViewController: UIViewController {
 
     @IBOutlet weak var timerNameField: UITextField!
     @IBOutlet weak var timerPicker: UIDatePicker!
-    var timersArray: [Timer] = []
     
-    
+    var delegate: AddTimerViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        
         // Do any additional setup after loading the view.
     }
     
-    func addTimer(timer:Timer){
-        timersArray.append(timer)
+    @IBAction func saveTimerButtonTapped(sender: AnyObject) {
+        let newTimer = Timer(timerLabel: timerNameField.text!, startTime: timerPicker.countDownDuration)
+        delegate?.addTimerViewController(self, didCreateNewTimer: newTimer)
+        self.navigationController?.popViewControllerAnimated(true)
+        
+
     }
+
     
     func stringFromTimeInterval(interval: CFTimeInterval, withMilliseconds:Bool = true) -> String{
         let intInterval = Int(interval)
@@ -77,28 +84,19 @@ class AddTimerViewController: UIViewController {
         return timeString
     }
 
-    @IBAction func addTimer(sender: UIBarButtonItem) {
-        
-        
-        let timerName = timerNameField.text
-        
-        
-        
-        print("\(stringFromTimeInterval(timerPicker.countDownDuration, withMilliseconds: false))")
-        
-        self.navigationController?.popViewControllerAnimated(true)
-        
-    }
+//    @IBAction func addTimer(sender: UIBarButtonItem) {
+//        
+//        
+//        
+//        
+//        print("\(stringFromTimeInterval(timerPicker.countDownDuration, withMilliseconds: false))")
+//        
+//        self.navigationController?.popViewControllerAnimated(true)
+//        
+//    }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
