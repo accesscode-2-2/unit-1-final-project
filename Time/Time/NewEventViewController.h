@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "NewEventViewControllerDelegate.h"
 
-@interface NewEventViewController : UIViewController
+@interface NewEventViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic) id<NewEventViewControllerDelegate> delegate;
 @end

@@ -503,6 +503,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="60A-Hj-v3W" id="RFb-P0-6HS"/>
                         <outlet property="eventDatePicker" destination="30n-Ao-t3c" id="z8A-Jb-ddm"/>
                         <outlet property="eventTextField" destination="A22-qy-8Dz" id="8Dd-Oj-pHW"/>
                     </connections>

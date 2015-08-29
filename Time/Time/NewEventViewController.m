@@ -11,6 +11,9 @@
 @interface NewEventViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *eventTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+
+
 @end
 
 @implementation NewEventViewController
@@ -19,6 +22,8 @@
     [super viewDidLoad];
     [self setupDatePicker];
     [self.eventTextField setPlaceholder:@"Event Name"];
+    self.doneButton.enabled = NO;
+    self.eventTextField.delegate = self;
 }
 
 - (void)setupDatePicker {
@@ -33,6 +38,21 @@
     
     self.eventDatePicker.minimumDate = minDate;
     self.eventDatePicker.maximumDate = maxDate;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSString *testString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    testString = [testString stringByTrimmingCharactersInSet:
+                  [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if(testString.length){
+      return  self.doneButton.enabled = YES;
+    }
+    else{
+     return self.doneButton.enabled = NO;
+    }
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
