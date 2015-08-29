@@ -28,6 +28,8 @@
 @property (nonatomic) NSInteger component;
 @property (nonatomic) NSInteger row;
 
+@property (nonatomic) BOOL isStarted;
+
 @end
 
 @implementation TimerViewController
@@ -40,11 +42,14 @@
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
     self.timerName.text = @"";
+    
+    self.isStarted = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [self.timer invalidate];
+    self.timer = nil;
     if(self.presetTime.count !=0){
         [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
         [self.timerPickerView setUserInteractionEnabled:NO];
@@ -117,23 +122,28 @@
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
     
-    if([self.startButton.titleLabel.text isEqualToString:@"Start"]){
+    if(!self.isStarted) {
         for(int i=0;i<3;i++){
             if([self.timerPickerView selectedRowInComponent:i] != 00){
+                NSLog(@"Started timer");
+                self.isStarted = YES;
                 [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
                 [self.timerPickerView setUserInteractionEnabled:NO];
                 self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
                 [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+                
                 break;
             }
         }
     }else{
+        NSLog(@"Paused timer");
         [self freeze];
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
 }
 
 -(void)freeze{
+    self.isStarted = NO;
     [self.timer invalidate];
     self.timer = nil;
 }
@@ -195,6 +205,7 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
+    self.timerName.text = @"";
     if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
