@@ -10,7 +10,7 @@
 		5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5016E10B1B89209300C5EFFD /* TableViewCell.swift */; };
 		504DC2291B8FE3E30071A35E /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */; };
 		504DC22B1B91FD8A0071A35E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504DC22A1B91FD8A0071A35E /* AVFoundation.framework */; };
-
+		504DC2311B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 504DC2301B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 */; };
 		6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737B1B88EFF0000D38F2 /* AppDelegate.swift */; };
 		6981737E1B88EFF0000D38F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737D1B88EFF0000D38F2 /* ViewController.swift */; };
 		698173811B88EFF0000D38F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981737F1B88EFF0000D38F2 /* Main.storyboard */; };
@@ -43,7 +43,7 @@
 		5016E10B1B89209300C5EFFD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		504DC22A1B91FD8A0071A35E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-
+		504DC2301B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LoudAlarmClockBuzzer.mp3; sourceTree = "<group>"; };
 		698173781B88EFF0000D38F2 /* Timer Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timer Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981737B1B88EFF0000D38F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6981737D1B88EFF0000D38F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,11 +113,11 @@
 			children = (
 				6981737B1B88EFF0000D38F2 /* AppDelegate.swift */,
 				698173A91B88F28C000D38F2 /* Timer.swift */,
-				504DC22E1B920D210071A35E /* LoudAlarmClockBuzzer.mp3 */,
 				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				6981737D1B88EFF0000D38F2 /* ViewController.swift */,
 				504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */,
 				69E810421B91FD170061915A /* CountdownViewController.swift */,
+				504DC2301B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 */,
 				6981737F1B88EFF0000D38F2 /* Main.storyboard */,
 				698173821B88EFF0000D38F2 /* Assets.xcassets */,
 				698173841B88EFF0000D38F2 /* LaunchScreen.storyboard */,
@@ -248,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698173861B88EFF0000D38F2 /* LaunchScreen.storyboard in Resources */,
+				504DC2311B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 in Resources */,
 				698173831B88EFF0000D38F2 /* Assets.xcassets in Resources */,
 				698173811B88EFF0000D38F2 /* Main.storyboard in Resources */,
 			);

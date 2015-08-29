@@ -26,13 +26,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LoudAlarmClockBuzzer", ofType: "mp3")!)
-//        
-//        do {
-//            try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
-//        }   catch {
-//            print("Error")
-//        }
+        let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LoudAlarmClockBuzzer", ofType: "mp3")!)
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
+        }   catch {
+            print("Error")
+        }
         
         audioPlayer.numberOfLoops = -1
         audioPlayer.prepareToPlay()
