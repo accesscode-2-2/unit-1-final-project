@@ -29,7 +29,6 @@
         <!--Countdown-->
         <scene sceneID="CfX-jj-hrz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kgY-j4-gD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fv3-ti-Iiy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UBU-oO-YmV"/>
@@ -50,6 +49,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" id="p1p-vW-Htc"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgY-j4-gD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2333" y="759"/>
         </scene>

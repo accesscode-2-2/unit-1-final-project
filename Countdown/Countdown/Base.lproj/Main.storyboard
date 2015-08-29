@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X06-fz-1Pu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Countdown View Controller-->
+        <scene sceneID="cHO-uU-vgV">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X06-fz-1Pu" customClass="CountdownViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="tIx-nQ-FGU"/>
+                        <viewControllerLayoutGuide type="bottom" id="GeW-qj-DVQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="qGk-Ew-IjQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-R5-pkh">
+                                <rect key="frame" x="0.0" y="380" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="462565078.76656699">
+                                    <!--2015-08-29 18:17:58 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="X06-fz-1Pu" eventType="valueChanged" id="DHm-NS-9Lg"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBD-0E-o4s">
+                                <rect key="frame" x="266" y="283.5" width="68" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UBD-0E-o4s" firstAttribute="centerX" secondItem="qGk-Ew-IjQ" secondAttribute="centerX" id="ZFI-eR-s2i"/>
+                            <constraint firstAttribute="trailing" secondItem="7Oa-R5-pkh" secondAttribute="trailing" id="gii-uc-ldW"/>
+                            <constraint firstItem="UBD-0E-o4s" firstAttribute="centerY" secondItem="qGk-Ew-IjQ" secondAttribute="centerY" id="llD-QS-6L5"/>
+                            <constraint firstItem="GeW-qj-DVQ" firstAttribute="top" secondItem="7Oa-R5-pkh" secondAttribute="bottom" constant="4" id="oXh-Ra-9HZ"/>
+                            <constraint firstItem="7Oa-R5-pkh" firstAttribute="leading" secondItem="qGk-Ew-IjQ" secondAttribute="leading" id="qVj-qX-fyr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="7Oa-R5-pkh" id="biY-un-7pw"/>
+                        <outlet property="timeToTargetDateLabel" destination="UBD-0E-o4s" id="NhF-dh-R7m"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aP1-BG-gil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="199" y="267"/>
         </scene>
     </scenes>
 </document>
