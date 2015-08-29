@@ -364,21 +364,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SC-IG-RWa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="276"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hde-Pu-daR">
-                                        <rect key="frame" x="0.0" y="106" width="600" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Gsv-tP-fp4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="64"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZn-gq-riW">
                                         <rect key="frame" x="0.0" y="39" width="600" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Twm-ka-xOn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="34"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hde-Pu-daR">
+                                        <rect key="frame" x="0.0" y="106" width="600" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Gsv-tP-fp4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="64"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -414,7 +414,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="startButtonAction:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="qBG-ku-4ps"/>
+                                            <action selector="startUIButton:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="K7v-Qs-MXV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19F-jv-nJH">
@@ -447,26 +447,9 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="labResetButtonAction:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="tt1-hL-mqC"/>
+                                            <action selector="lapUIButton:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="OtS-XW-Mcf"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="el0-SB-FiT">
-                                        <rect key="frame" x="0.0" y="118" width="583" height="182"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="sbA-VK-3pD">
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbA-VK-3pD" id="veM-dB-PVa">
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <sections/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="2jZ-NM-XSr" id="iIS-8x-KKL"/>
-                                            <outlet property="delegate" destination="2jZ-NM-XSr" id="TVs-45-t6u"/>
-                                        </connections>
-                                    </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwS-tn-8e4">
                                         <rect key="frame" x="140" y="40" width="70" height="70"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -493,7 +476,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="startButtonAction:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="HbM-N5-TfV"/>
+                                            <action selector="stopUIButton:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="7Az-PU-kGA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEm-oW-Uej">
@@ -526,9 +509,26 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="labResetButtonAction:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="oXh-Vo-9pv"/>
+                                            <action selector="resetUIButton:" destination="2jZ-NM-XSr" eventType="touchUpInside" id="n0U-y9-IUt"/>
                                         </connections>
                                     </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="el0-SB-FiT">
+                                        <rect key="frame" x="0.0" y="118" width="583" height="182"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="sbA-VK-3pD">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbA-VK-3pD" id="veM-dB-PVa">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2jZ-NM-XSr" id="gS4-FG-S5k"/>
+                                            <outlet property="delegate" destination="2jZ-NM-XSr" id="DyC-t3-qqZ"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -559,11 +559,13 @@
                     <tabBarItem key="tabBarItem" title="Stopwatch" id="Eqk-pv-6U7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="labResetButton" destination="19F-jv-nJH" id="jac-yG-bgA"/>
-                        <outlet property="labTimeLabel" destination="LZn-gq-riW" id="hMn-0E-OUD"/>
-                        <outlet property="startStopButton" destination="ms7-QF-qVt" id="ETP-mF-8zT"/>
-                        <outlet property="tableView" destination="el0-SB-FiT" id="VId-Fs-m4V"/>
-                        <outlet property="timerLabel" destination="hde-Pu-daR" id="qzz-EJ-2Hy"/>
+                        <outlet property="lapButton" destination="19F-jv-nJH" id="KTF-4x-qHZ"/>
+                        <outlet property="lapTimeLabel" destination="LZn-gq-riW" id="gWP-Xo-THE"/>
+                        <outlet property="resetButton" destination="aEm-oW-Uej" id="yNq-6D-Ytv"/>
+                        <outlet property="startButton" destination="ms7-QF-qVt" id="DXL-vY-02O"/>
+                        <outlet property="stopButton" destination="fwS-tn-8e4" id="fao-z8-FQz"/>
+                        <outlet property="tableView" destination="el0-SB-FiT" id="o1Z-DL-IPm"/>
+                        <outlet property="timeLabel" destination="hde-Pu-daR" id="Ft5-hJ-q66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9H8-C1-GBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
