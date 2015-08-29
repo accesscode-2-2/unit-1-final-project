@@ -97,13 +97,13 @@
 
 - (void)presetTimerButtonTapped:(UIBarButtonItem *)button {
     NSLog(@"charles");
-
-    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"newPresetController"];
-//    newPresetIdentifier.delegate = self;
     
-//    NewPresetsViewController *viewController = [[NewPresetsViewController alloc] init];
-//    UINavigationController *controller = [[UINavigationController alloc] init];
-//    controller.viewControllers = @[viewController];
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"newPresetController"];
+    //    newPresetIdentifier.delegate = self;
+    
+    //    NewPresetsViewController *viewController = [[NewPresetsViewController alloc] init];
+    //    UINavigationController *controller = [[UINavigationController alloc] init];
+    //    controller.viewControllers = @[viewController];
     [self presentViewController:navigationController animated:YES completion:nil];
     
 }

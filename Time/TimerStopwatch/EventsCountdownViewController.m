@@ -26,25 +26,19 @@
     // Do any additional setup after loading the view.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 - (IBAction)startCountdown:(id)sender {
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    
+    [formatter setDateFormat:@"yyy-MM-dd"];
     NSDate *birthday = [formatter dateFromString:@"2016-02-21"];
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    
+    [self.timeTillBirthday setDate:birthday animated:NO];
+    
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitDay | NSCalendarUnitDay);
-    self.timeTillBirthday.date = birthday;
+    self.timeTillBirthday.date = birthday; //[calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.timeTillBirthday.date]];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
 }
 
@@ -56,10 +50,11 @@
     NSInteger hours = (time / 3600) % 24;
     NSInteger days = (time / 86400);
     
-    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02u : %02u : %02u", days, hours, minutes, seconds];
-    
-    self.countdownLabel.text = [NSString stringWithFormat:@"%0.2ld", (long)time];
     NSLog(@"%ld", (long)time);
+    NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long)
+                             seconds];
+    
     self.countdownLabel.text = timeDisplay;
 }
 

@@ -335,11 +335,20 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="MHU-ws-CIq"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Start Countdown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startCountdown:" destination="p74-F3-gK7" eventType="touchUpInside" id="8AY-lk-Vz2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wy-S5-6jq">
+                                <rect key="frame" x="16" y="273" width="567" height="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseCountdown:" destination="p74-F3-gK7" eventType="touchUpInside" id="Zif-K0-ydn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -351,6 +360,7 @@
                             <constraint firstAttribute="trailing" secondItem="DDm-ug-IjK" secondAttribute="trailing" constant="17" id="7OX-fr-Kn0"/>
                             <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="40" id="EaH-bl-KyC"/>
                             <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="40" id="GdS-16-BAM"/>
+                            <constraint firstItem="0wy-S5-6jq" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="8" id="KP2-Pe-gXZ"/>
                             <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="97" id="RX0-ry-VTR"/>
                             <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="40" id="VhK-yo-tue"/>
                             <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" id="WEz-qz-7PF"/>
@@ -361,8 +371,10 @@
                             <constraint firstItem="DDm-ug-IjK" firstAttribute="top" secondItem="zZg-ih-0rI" secondAttribute="bottom" constant="15" id="kSl-vJ-ZzK"/>
                             <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="51" id="kgw-cB-VmM"/>
                             <constraint firstItem="0mQ-mJ-WOp" firstAttribute="top" secondItem="801-NQ-tjD" secondAttribute="bottom" id="mAN-43-8g0"/>
+                            <constraint firstAttribute="trailing" secondItem="0wy-S5-6jq" secondAttribute="trailing" constant="17" id="osF-GO-Shv"/>
                             <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="DDm-ug-IjK" secondAttribute="bottom" constant="33" id="pZW-eg-uC6"/>
                             <constraint firstAttribute="trailing" secondItem="801-NQ-tjD" secondAttribute="trailing" id="qg3-Ud-F3K"/>
+                            <constraint firstItem="0wy-S5-6jq" firstAttribute="leading" secondItem="lYV-lD-uAC" secondAttribute="leading" constant="16" id="qyc-Vc-9Xo"/>
                             <constraint firstAttribute="trailing" secondItem="UJ2-B1-khb" secondAttribute="trailing" constant="16" id="wsL-4t-hB1"/>
                             <constraint firstAttribute="trailing" secondItem="DDm-ug-IjK" secondAttribute="trailing" constant="17" id="zvu-JS-qNU"/>
                         </constraints>
