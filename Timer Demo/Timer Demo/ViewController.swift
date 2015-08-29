@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -18,10 +19,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
     let popcornTimer = Timer.init(startTime: 5.000)
-    let poopTimer = Timer.init(startTime: 45.000)
+    let poopTimer = Timer.init(startTime: 3.000)
+    
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LoudAlarmClockBuzzer", ofType: "mp3")!)
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
+        }   catch {
+            print("Error")
+        }
+        
+        audioPlayer.numberOfLoops = -1
+        audioPlayer.prepareToPlay()
         
         displayLink = CADisplayLink(target: self, selector: Selector("update"))
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
@@ -47,11 +61,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if timer.isPaused == false{
                 updateTimer(timer)
                 if (timer.remainingTime < 0.0){
+                    audioPlayer.play()
+                    displayAlert()
+                    
                     timer.isPaused = true
                 }
             }
             tableView.reloadData()
         }
+    }
+    
+    func displayAlert(){
+        let alertController = UIAlertController(title: "Time's up!", message: nil, preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+            self.audioPlayer.stop()
+        }
+        
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
