@@ -16,6 +16,8 @@
 @property (nonatomic) NSMutableArray *pickerViewNumbers;
 @property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *timerNameTextField;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+
 @end
 
 @implementation NewPresetViewController
@@ -80,6 +82,27 @@
 #pragma mark - New Data
 - (IBAction)doneButtonTapped:(id)sender {
     
+    if(self.timerNameTextField.text.length == 0 ||
+       ([self.timerPickerView selectedRowInComponent:0] == 00 &&
+        [self.timerPickerView selectedRowInComponent:1] == 00 &&
+        [self.timerPickerView selectedRowInComponent:2] == 00)){
+           
+           UIAlertController * alert=   [UIAlertController
+                                         alertControllerWithTitle:@"Error"
+                                         message:@"Either the timer name or the actual value is missing, Please fill out those fields before progressing."
+                                         preferredStyle:UIAlertControllerStyleAlert];
+           
+           UIAlertAction* ok = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [alert dismissViewControllerAnimated:YES completion:nil];
+                                }];
+           [alert addAction:ok];
+           [self presentViewController:alert animated:YES completion:nil];
+       }else{
+    
     NSArray *countdownTime = @[
                                self.pickerViewNumbers[0][[self.timerPickerView selectedRowInComponent:0]],
                                self.pickerViewNumbers[1][[self.timerPickerView selectedRowInComponent:1]],
@@ -91,7 +114,8 @@
     NSLog(@"%@", timerName);
     
     [self.delegate presetCreated:countdownTime withName:timerName];
-    [self dismissViewControllerAnimated:YES completion:^{}];
+           [self dismissViewControllerAnimated:YES completion:^{}];
+       }
 
 }
 

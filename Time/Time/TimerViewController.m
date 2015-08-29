@@ -17,6 +17,7 @@
 @property (nonatomic) NSMutableArray *pickerViewNumbers;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UILabel *timerName;
 
 //For use with UIPickerView
 @property (nonatomic) NSTimer *timer;
@@ -38,6 +39,7 @@
     
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
+    self.timerName.text = @"";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -146,9 +148,6 @@
         [self.timer invalidate];
     }
     else{
-//        if( (hourIndex == 00) && (minuteIndex == 00) && (secondIndex == 00) ){
-//            [self.timer invalidate];
-//        }
          if(secondIndex % 60 == 00){
             
             self.row = secondIndex + 59;
@@ -238,9 +237,10 @@
 }
 
 #pragma mark - PresetsTableViewControllerDelegate implementation
-- (void)presetTime:(NSArray *)presetTime {
+- (void)presetTime:(NSArray *)presetTime withName:(NSString *)name {
     self.presetTime = presetTime;
-    NSLog(@"%@", self.presetTime);
+    self.timerName.text = name;
+    NSLog(@"Timer name: %@ and value: %@",self.timerName.text, self.presetTime);
 }
 
 @end
