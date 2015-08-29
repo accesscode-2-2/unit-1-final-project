@@ -45,6 +45,9 @@
     //self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timer) userInfo:nil repeats:YES];
     
     self.customTimersDictionary = [[NSMutableDictionary alloc] init];
+//    
+//    self.alarmNameLabel.text = @"";
+//    self.timeEndingLabel.text = @"";
     
     
     
