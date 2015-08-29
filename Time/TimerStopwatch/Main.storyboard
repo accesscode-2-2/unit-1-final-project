@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gravity-Book.ttf">
+            <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
+            <string>Gravity-Book</string>
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
             <string>Gravity-Book</string>
@@ -52,7 +56,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-4D-LIh">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-4D-LIh">
                                 <rect key="frame" x="16" y="182" width="189" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="d17-Qg-t8g"/>
@@ -71,7 +75,7 @@
                                     <action selector="pauseTimer:" destination="pzV-SG-jHg" eventType="touchUpInside" id="7FJ-dO-qWX"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nQ5-9V-n3s">
                                 <rect key="frame" x="0.0" y="367" width="600" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="189" id="ULg-PK-chG"/>
@@ -80,7 +84,7 @@
                                     <!--2015-08-22 19:34:33 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRl-cz-v6d">
                                 <rect key="frame" x="395" y="182" width="189" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="Tmb-57-svZ"/>
@@ -105,7 +109,7 @@
                                 <color key="textColor" red="0.18823529411764706" green="0.27058823529411763" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.98883551431362504" green="0.70222294690605858" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6j-xf-S9n">
                                 <rect key="frame" x="205" y="182" width="190" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="aFZ-g7-FrP"/>
@@ -344,7 +348,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-4I-7P7" userLabel="Start Birthday">
-                                        <rect key="frame" x="40" y="70" width="520" height="36"/>
+                                        <rect key="frame" x="40" y="74" width="520" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="MHU-ws-CIq"/>
                                         </constraints>
@@ -363,7 +367,7 @@
                                         <color key="textColor" red="0.12549019607843137" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.094117647058823528" green="0.12941176470588237" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="801-NQ-tjD">
+                                    <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="801-NQ-tjD">
                                         <rect key="frame" x="0.0" y="322" width="600" height="162"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="600" id="5EJ-6T-NZM"/>
@@ -389,7 +393,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrD-Gy-aHm" userLabel="Start Christmas">
-                                        <rect key="frame" x="0.0" y="173" width="600" height="31"/>
+                                        <rect key="frame" x="0.0" y="178" width="600" height="31"/>
                                         <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="20"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" red="0.86274509803921573" green="0.20000000000000001" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>
@@ -399,30 +403,86 @@
                                             <action selector="startChristmasCountdown:" destination="p74-F3-gK7" eventType="touchUpInside" id="G3A-eC-WuD"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access Code 2.2 is over in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNl-mY-nbx">
+                                        <rect key="frame" x="0.0" y="232" width="600" height="19"/>
+                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="20"/>
+                                        <color key="textColor" red="0.12549019610000001" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.094117647060000004" green="0.12941176469999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 d 00 h 00 m 00 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbv-iV-9MB">
+                                        <rect key="frame" x="0.0" y="259" width="600" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="bpu-rh-DSe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="21"/>
+                                        <color key="textColor" red="0.12549019610000001" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="bpu-rh-DSe"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqs-0i-GYo" userLabel="Start Access Code">
+                                        <rect key="frame" x="0.0" y="283" width="600" height="31"/>
+                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" red="0.86274509799999999" green="0.20000000000000001" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startACCountdown:" destination="p74-F3-gK7" eventType="touchUpInside" id="ZMB-qU-2mG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="sWU-OE-vrb" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="22" id="09A-Kf-vgk"/>
+                                    <constraint firstItem="sWU-OE-vrb" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="18" id="09A-Kf-vgk"/>
                                     <constraint firstAttribute="trailing" secondItem="801-NQ-tjD" secondAttribute="trailing" id="45c-Hr-eWb"/>
-                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="49" id="86c-jI-Qbu"/>
+                                    <constraint firstAttribute="trailing" secondItem="fNl-mY-nbx" secondAttribute="trailing" constant="11" id="4xC-LJ-i4f"/>
+                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="45" id="86c-jI-Qbu"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="C26-hZ-a1q"/>
                                     <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="40" id="CAF-7r-dcj"/>
                                     <constraint firstAttribute="bottom" secondItem="801-NQ-tjD" secondAttribute="bottom" constant="122" id="FJI-IY-juS"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" id="IJ4-FE-bqO"/>
                                     <constraint firstItem="sWU-OE-vrb" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="11" id="IWl-Cu-M3H"/>
-                                    <constraint firstItem="YrD-Gy-aHm" firstAttribute="top" secondItem="sWU-OE-vrb" secondAttribute="bottom" constant="26" id="Tdv-zD-kp3"/>
+                                    <constraint firstAttribute="trailing" secondItem="zbv-iV-9MB" secondAttribute="trailing" id="JFQ-n0-t1A"/>
+                                    <constraint firstItem="fNl-mY-nbx" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="11" id="Kt7-S4-7nj"/>
+                                    <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="jqs-0i-GYo" secondAttribute="bottom" constant="8" id="Nvi-3W-QEf"/>
+                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="QGc-El-Cfi"/>
+                                    <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="T6L-ZQ-M17"/>
+                                    <constraint firstItem="YrD-Gy-aHm" firstAttribute="top" secondItem="sWU-OE-vrb" secondAttribute="bottom" constant="31" id="Tdv-zD-kp3"/>
+                                    <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="XKG-Ql-5r9"/>
+                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="XYV-k3-mLV"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="293" id="a4Y-5Z-Owh"/>
+                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="top" secondItem="zbv-iV-9MB" secondAttribute="bottom" constant="4" id="aBU-pa-eip"/>
+                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="26" id="avZ-vd-hnN"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="centerX" secondItem="Hmi-4I-7P7" secondAttribute="centerX" id="c5g-Mm-aD0"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="dDr-jn-Jxq"/>
+                                    <constraint firstItem="fNl-mY-nbx" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="fJE-7F-jvz"/>
                                     <constraint firstItem="YrD-Gy-aHm" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="heu-xH-xJd"/>
                                     <constraint firstAttribute="trailing" secondItem="oi6-7O-PhH" secondAttribute="trailing" constant="16" id="lcD-j2-SFj"/>
-                                    <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="70" id="qPs-AO-Say"/>
+                                    <constraint firstAttribute="trailing" secondItem="fNl-mY-nbx" secondAttribute="trailing" id="n5c-xD-v0X"/>
+                                    <constraint firstItem="zbv-iV-9MB" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="qC5-fx-HWB"/>
+                                    <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="74" id="qPs-AO-Say"/>
                                     <constraint firstItem="oi6-7O-PhH" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="17" id="qau-iw-ID7"/>
+                                    <constraint firstItem="fNl-mY-nbx" firstAttribute="top" secondItem="YrD-Gy-aHm" secondAttribute="bottom" constant="23" id="r2R-jg-iWr"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" id="tQe-YZ-EIv"/>
                                     <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="40" id="ucN-OL-zNc"/>
                                     <constraint firstAttribute="trailing" secondItem="sWU-OE-vrb" secondAttribute="trailing" constant="11" id="viH-9C-VcW"/>
+                                    <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="wEy-da-iLx"/>
                                     <constraint firstAttribute="trailing" secondItem="YrD-Gy-aHm" secondAttribute="trailing" id="yc6-w6-jvW"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="4xC-LJ-i4f"/>
+                                        <exclude reference="Kt7-S4-7nj"/>
+                                        <exclude reference="T6L-ZQ-M17"/>
+                                        <exclude reference="XKG-Ql-5r9"/>
+                                        <exclude reference="IJ4-FE-bqO"/>
+                                        <exclude reference="QGc-El-Cfi"/>
+                                        <exclude reference="avZ-vd-hnN"/>
+                                        <exclude reference="Nvi-3W-QEf"/>
                                         <exclude reference="a4Y-5Z-Owh"/>
                                         <exclude reference="c5g-Mm-aD0"/>
                                         <exclude reference="dDr-jn-Jxq"/>
@@ -472,6 +532,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KpR-YR-XhH"/>
                     <connections>
+                        <outlet property="accessCodeCountdownLabel" destination="zbv-iV-9MB" id="L1G-kT-Df6"/>
                         <outlet property="birthdayCountdownLabel" destination="UJ2-B1-khb" id="OTW-El-eH1"/>
                         <outlet property="christmasCountdownLabel" destination="oi6-7O-PhH" id="dKf-8c-T7p"/>
                         <outlet property="datePicker" destination="801-NQ-tjD" id="fIE-VD-9zT"/>

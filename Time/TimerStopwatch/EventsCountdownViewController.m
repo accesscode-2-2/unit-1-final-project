@@ -12,14 +12,14 @@
 @interface EventsCountdownViewController ()
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 @property (strong, nonatomic) IBOutlet UILabel *birthdayCountdownLabel;
 @property (strong, nonatomic) IBOutlet UILabel *christmasCountdownLabel;
+@property (strong, nonatomic) IBOutlet UILabel *accessCodeCountdownLabel;
 
 @property (nonatomic) NSDate *birthday;
 @property (nonatomic) NSDate *christmas;
-
-
-- (IBAction)startCountdown:(id)sender;
+@property (nonatomic) NSDate *accessCode;
 
 @end
 
@@ -47,6 +47,7 @@
 }
 
 - (IBAction)startChristmasCountdown:(id)sender {
+    
     NSDateFormatter *christmasFormatter = [[NSDateFormatter alloc] init];
     [christmasFormatter setDateFormat:@"yyy-MM-dd"];
     self.christmas = [christmasFormatter dateFromString:@"2015-12-25"];
@@ -59,6 +60,22 @@
     NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitDay | NSCalendarUnitDay);
     self.datePicker.date = self.christmas;
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateChristmasTime) userInfo:nil repeats:YES];
+}
+
+- (IBAction)startACCountdown:(id)sender {
+    
+    NSDateFormatter *accessCodeFormatter = [[NSDateFormatter alloc] init];
+    [accessCodeFormatter setDateFormat:@"yyy-MM-dd"];
+    self.accessCode = [accessCodeFormatter dateFromString:@"2016-02-28"];
+    [accessCodeFormatter setDateStyle:NSDateFormatterLongStyle];
+    [accessCodeFormatter setTimeStyle:NSDateFormatterLongStyle];
+    
+    [self.datePicker setDate:self.accessCode animated:NO];
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitDay | NSCalendarUnitDay);
+    self.datePicker.date = self.accessCode;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateAccessCodeTime) userInfo:nil repeats:YES];
 }
 
 -(void)updateBirthdayTime
@@ -93,5 +110,20 @@
     self.christmasCountdownLabel.text = timeDisplay;
 }
 
+-(void)updateAccessCodeTime
+
+{
+    NSInteger time = ((NSInteger)[self.accessCode timeIntervalSinceNow]);
+    NSInteger seconds = time % 60;
+    NSInteger minutes = (time / 60) % 60;
+    NSInteger hours = (time / 3600) % 24;
+    NSInteger days = (time / 86400);
+    
+    NSLog(@"%ld", (long)time);
+    NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
+    
+    self.accessCodeCountdownLabel.text = timeDisplay;
+}
 
 @end
