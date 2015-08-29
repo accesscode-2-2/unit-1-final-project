@@ -18,8 +18,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
-    let popcornTimer = Timer.init(startTime: 5.000)
-    let poopTimer = Timer.init(startTime: 3.000)
+    let popcornTimer = Timer.init(timerLabel: "Popcorn", startTime: 4.000)
+    let poopTimer = Timer.init(timerLabel: "Poop", startTime: 3.000)
     
     var audioPlayer = AVAudioPlayer()
     
@@ -91,7 +91,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.timer = timer
         
+        cell.timerName.text = cell.timer.timerName
         cell.timerLabel.text = String(cell.timer.stringFromTimeInterval(cell.timer.remainingTime))
+        
         
         if timer.isPaused {
             cell.startPauseButton.setImage(UIImage(named: "Start-50.png"), forState: .Normal)
