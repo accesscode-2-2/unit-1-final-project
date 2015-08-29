@@ -26,14 +26,43 @@
     [self.navigationItem setTitle:@"Add City"];
     
     
-    
-    
     self.clock = [[NSMutableDictionary alloc] init];
 
     
-    [self.clock setObject:@"10:50" forKey:@"NY"];
-    [self.clock setObject:@"10:40" forKey:@"NJ"];
-    [self.clock setObject:@"10:30" forKey:@"Paris"];
+    ////// trying to get current time
+    NSDate * now = [NSDate date];
+  
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"HH:mm"];
+   
+    NSString *NYTimeString = [outputFormatter stringFromDate:now];
+    
+    NSDate *parisTime = [now addTimeInterval:21600]; // Add XXX seconds to *now
+    NSString *ParisTimeString = [outputFormatter stringFromDate:parisTime];
+    
+    
+    NSDate *RomeTime = [now addTimeInterval:21600];
+    NSString *RomeTimeString = [outputFormatter stringFromDate:RomeTime];
+    
+    
+    NSDate *MexicoCity = [now addTimeInterval:-3600];
+    NSString *MexicoCityTimeString = [outputFormatter stringFromDate:MexicoCity];
+    
+    
+    
+    NSDate *NewDelhi = [now addTimeInterval:34200];
+    NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
+ 
+    
+    
+    
+    
+    
+    [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi"];
+    [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
+    [self.clock setObject:NYTimeString forKey:@"New York"];
+    [self.clock setObject:RomeTimeString forKey:@"Rome, Italy"];
+    [self.clock setObject:ParisTimeString forKey:@"Paris, France"];
 
     
         self.keyArray = [self.clock allKeys];
@@ -42,14 +71,6 @@
     
     
     
-    for ( NSString *key in self.clock) {
-        NSString *value = [self.clock objectForKey:key];
-        
- 
-        NSLog(@"key: %@, value: %@", key, value);
-        
-        
-    }
  }
 
 - (void)didReceiveMemoryWarning {
