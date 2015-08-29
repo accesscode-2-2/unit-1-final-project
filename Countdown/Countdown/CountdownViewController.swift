@@ -13,13 +13,10 @@ class CountdownViewController: UIViewController {
 
     @IBOutlet weak var timeToTargetDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    var displayLink : CADisplayLink!
+
     var targetDate = NSDate()
 
     override func viewDidLoad() {
-        displayLink = CADisplayLink(target: self, selector: Selector("updateTimeToTargetDate"))
-        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
     }
 
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
@@ -32,7 +29,6 @@ class CountdownViewController: UIViewController {
         let timeToTargetDate = targetDate.timeIntervalSinceDate(currentDate)
         timeToTargetDateLabel.text = timeToTargetDate.stringFromTimeInterval(false)
     }
-
 
     /*
     // MARK: - Navigation

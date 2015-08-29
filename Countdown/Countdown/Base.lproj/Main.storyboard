@@ -16,33 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-R5-pkh">
-                                <rect key="frame" x="0.0" y="380" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="462565078.76656699">
-                                    <!--2015-08-29 18:17:58 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="datePickerValueChanged:" destination="X06-fz-1Pu" eventType="valueChanged" id="DHm-NS-9Lg"/>
-                                </connections>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBD-0E-o4s">
                                 <rect key="frame" x="266" y="283.5" width="68" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UBD-0E-o4s" firstAttribute="centerX" secondItem="qGk-Ew-IjQ" secondAttribute="centerX" id="ZFI-eR-s2i"/>
-                            <constraint firstAttribute="trailing" secondItem="7Oa-R5-pkh" secondAttribute="trailing" id="gii-uc-ldW"/>
                             <constraint firstItem="UBD-0E-o4s" firstAttribute="centerY" secondItem="qGk-Ew-IjQ" secondAttribute="centerY" id="llD-QS-6L5"/>
-                            <constraint firstItem="GeW-qj-DVQ" firstAttribute="top" secondItem="7Oa-R5-pkh" secondAttribute="bottom" constant="4" id="oXh-Ra-9HZ"/>
-                            <constraint firstItem="7Oa-R5-pkh" firstAttribute="leading" secondItem="qGk-Ew-IjQ" secondAttribute="leading" id="qVj-qX-fyr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="datePicker" destination="7Oa-R5-pkh" id="biY-un-7pw"/>
                         <outlet property="timeToTargetDateLabel" destination="UBD-0E-o4s" id="NhF-dh-R7m"/>
                     </connections>
                 </viewController>
