@@ -22,50 +22,53 @@ class Timer: NSObject {
         self.timerName = timerLabel
     }
     
-    func stringFromTimeInterval(interval: CFTimeInterval) -> String{
+    func stringFromTimeInterval(interval: CFTimeInterval, withMilliseconds:Bool = true) -> String{
         let intInterval = Int(interval)
+        
+        let years = (intInterval / 31556900)
+        let months = (intInterval / 2629740) % 12
+        let days = (intInterval / (3600 * 24)) % 365
+        let hours = (intInterval / 3600) % 24
         let minutes = (intInterval / 60) % 60
         let seconds = intInterval % 60
         let milliseconds = Int(floor(((interval - floor(interval)) * 100)))
         
-        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        let millisecondsString = milliseconds > 9 ? "\(milliseconds)" : "0\(milliseconds)"
+        let timeUnits = [years, months, days, hours, minutes, seconds, milliseconds]
         
-<<<<<<< HEAD
+        var foundFirstNonzero = false
         var timeString = ""
-        for unit in timeUnits{
-            let unitString = unit > 9 ? "\(unit)" : "0\(unit)"
-            if unit > 0 {
-                timeString = timeString + unitString + ":"
+        
+        // remove leading 0s
+        for (idx, unit) in timeUnits.enumerate() {
+            if unit == 0 && !foundFirstNonzero {
+                continue
             }
+            foundFirstNonzero = true
+            let unitString = unit > 9 ? "\(unit)" : "0\(unit)"
+            
+            if (withMilliseconds == true){
+                if idx == timeUnits.count - 1 {
+                    timeString = timeString + unitString
+                }
+                else if (idx == timeUnits.count - 2){
+                    timeString = timeString + unitString + "."
+                }else{
+                    timeString = timeString + unitString + ":"
+                }
+            }else{
+                if idx == timeUnits.count - 1 {
+                    //do nothing
+                }
+                else if (idx == timeUnits.count - 2){
+                    timeString = timeString + unitString
+                }else{
+                    timeString = timeString + unitString + ":"
+                }
+            }
+            
         }
-=======
-        let timeString = minutesString + ":" + secondsString + "." + millisecondsString
->>>>>>> bca8192be3c7dd10ecfa16c74dcae720746f49dd
         
         return timeString
     }
     
-//    func stringFromTimeInterval(interval: CFTimeInterval) -> String{
-//        let intInterval = Int(interval)
-//        
-//        let years = (intInterval / 31556900)
-//        let months = (intInterval / 2629740) % 12
-//        let days = (intInterval / (3600 * 24)) % 365
-//        let hours = (intInterval / 3600) % 24
-//        let minutes = (intInterval / 60) % 60
-//        let seconds = intInterval % 60
-//        let milliseconds = Int(floor(((interval - floor(interval)) * 100)))
-//        
-//        let timeUnits = [years, months, days, hours, minutes, seconds, milliseconds]
-//        
-//        var timeString = ""
-//        for unit in timeUnits{
-//            let unitString = unit > 9 ? "\(unit)" : "0\(unit)"
-//                timeString = timeString + unitString + ":"
-//        }
-//        
-//      return timeString
-//    }
 }
