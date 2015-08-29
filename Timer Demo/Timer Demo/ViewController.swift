@@ -52,7 +52,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         timer.remainingTime = timer.remainingTime - displayLink.duration
         print("Remaining time: \(timer.remainingTime)")
-        
     }
     
     func update(){
