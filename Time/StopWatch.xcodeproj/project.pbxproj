@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1803F34C1B90174300B99F89 /* TimedLaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803F34B1B90174300B99F89 /* TimedLaps.m */; };
+		1803F3831B90845300B99F89 /* TimerVCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803F3821B90845300B99F89 /* TimerVCTableViewController.m */; };
+		181132C11B8D7C6900115557 /* fe_runningLap.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132BD1B8D7C6900115557 /* fe_runningLap.png */; };
+		181132C21B8D7C6900115557 /* fe_runningReset.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132BE1B8D7C6900115557 /* fe_runningReset.png */; };
+		181132C31B8D7C6900115557 /* fe_runningStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132BF1B8D7C6900115557 /* fe_runningStart.png */; };
+		181132C41B8D7C6900115557 /* fe_runningStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132C01B8D7C6900115557 /* fe_runningStop.png */; };
+		181132CA1B8DC50B00115557 /* stopwatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181132C91B8DC50B00115557 /* stopwatchVC.m */; };
 		186A1C631B86D19500668F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C621B86D19500668F10 /* main.m */; };
 		186A1C661B86D19500668F10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C651B86D19500668F10 /* AppDelegate.m */; };
 		186A1C6C1B86D19500668F10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186A1C6A1B86D19500668F10 /* Main.storyboard */; };
@@ -26,6 +33,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1803F34A1B90174300B99F89 /* TimedLaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimedLaps.h; path = ../StopWatch/TimedLaps.h; sourceTree = "<group>"; };
+		1803F34B1B90174300B99F89 /* TimedLaps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimedLaps.m; path = ../StopWatch/TimedLaps.m; sourceTree = "<group>"; };
+		1803F3811B90845300B99F89 /* TimerVCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVCTableViewController.h; sourceTree = "<group>"; };
+		1803F3821B90845300B99F89 /* TimerVCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerVCTableViewController.m; sourceTree = "<group>"; };
+		181132BD1B8D7C6900115557 /* fe_runningLap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningLap.png; sourceTree = "<group>"; };
+		181132BE1B8D7C6900115557 /* fe_runningReset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningReset.png; sourceTree = "<group>"; };
+		181132BF1B8D7C6900115557 /* fe_runningStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningStart.png; sourceTree = "<group>"; };
+		181132C01B8D7C6900115557 /* fe_runningStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningStop.png; sourceTree = "<group>"; };
+		181132C81B8DC50B00115557 /* stopwatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stopwatchVC.h; sourceTree = "<group>"; };
+		181132C91B8DC50B00115557 /* stopwatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stopwatchVC.m; sourceTree = "<group>"; };
 		186A1C5D1B86D19500668F10 /* StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186A1C611B86D19500668F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186A1C621B86D19500668F10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +74,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1803F37F1B90833A00B99F89 /* preDefined */ = {
+			isa = PBXGroup;
+			children = (
+				186A1C651B86D19500668F10 /* AppDelegate.m */,
+				186A1C641B86D19500668F10 /* AppDelegate.h */,
+			);
+			name = preDefined;
+			sourceTree = "<group>";
+		};
+		1803F3801B90838900B99F89 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				181132C81B8DC50B00115557 /* stopwatchVC.h */,
+				181132C91B8DC50B00115557 /* stopwatchVC.m */,
+				1803F3811B90845300B99F89 /* TimerVCTableViewController.h */,
+				1803F3821B90845300B99F89 /* TimerVCTableViewController.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		181132BC1B8D7C5900115557 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				181132BD1B8D7C6900115557 /* fe_runningLap.png */,
+				181132BE1B8D7C6900115557 /* fe_runningReset.png */,
+				181132BF1B8D7C6900115557 /* fe_runningStart.png */,
+				181132C01B8D7C6900115557 /* fe_runningStop.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		186A1C541B86D19500668F10 = {
 			isa = PBXGroup;
 			children = (
@@ -78,12 +126,13 @@
 		186A1C5F1B86D19500668F10 /* StopWatch */ = {
 			isa = PBXGroup;
 			children = (
-				186A1C641B86D19500668F10 /* AppDelegate.h */,
-				186A1C651B86D19500668F10 /* AppDelegate.m */,
+				1803F3801B90838900B99F89 /* model */,
+				181132BC1B8D7C5900115557 /* images */,
+				1803F37F1B90833A00B99F89 /* preDefined */,
+				186A1C601B86D19500668F10 /* Supporting Files */,
 				186A1C6A1B86D19500668F10 /* Main.storyboard */,
 				186A1C6D1B86D19500668F10 /* Images.xcassets */,
 				186A1C6F1B86D19500668F10 /* LaunchScreen.xib */,
-				186A1C601B86D19500668F10 /* Supporting Files */,
 			);
 			path = StopWatch;
 			sourceTree = "<group>";
@@ -100,6 +149,8 @@
 		186A1C791B86D19500668F10 /* StopWatchTests */ = {
 			isa = PBXGroup;
 			children = (
+				1803F34A1B90174300B99F89 /* TimedLaps.h */,
+				1803F34B1B90174300B99F89 /* TimedLaps.m */,
 				186A1C7C1B86D19500668F10 /* StopWatchTests.m */,
 				186A1C7A1B86D19500668F10 /* Supporting Files */,
 			);
@@ -194,6 +245,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181132C21B8D7C6900115557 /* fe_runningReset.png in Resources */,
+				181132C31B8D7C6900115557 /* fe_runningStart.png in Resources */,
+				181132C41B8D7C6900115557 /* fe_runningStop.png in Resources */,
+				181132C11B8D7C6900115557 /* fe_runningLap.png in Resources */,
 				186A1C6C1B86D19500668F10 /* Main.storyboard in Resources */,
 				186A1C711B86D19500668F10 /* LaunchScreen.xib in Resources */,
 				186A1C6E1B86D19500668F10 /* Images.xcassets in Resources */,
@@ -214,7 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1803F3831B90845300B99F89 /* TimerVCTableViewController.m in Sources */,
 				186A1C661B86D19500668F10 /* AppDelegate.m in Sources */,
+				1803F34C1B90174300B99F89 /* TimedLaps.m in Sources */,
+				181132CA1B8DC50B00115557 /* stopwatchVC.m in Sources */,
 				186A1C631B86D19500668F10 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +470,7 @@
 				186A1C821B86D19500668F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		186A1C831B86D19500668F10 /* Build configuration list for PBXNativeTarget "StopWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +479,7 @@
 				186A1C851B86D19500668F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
