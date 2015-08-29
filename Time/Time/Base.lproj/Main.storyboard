@@ -435,10 +435,10 @@
             </objects>
             <point key="canvasLocation" x="875" y="1781"/>
         </scene>
-        <!--View Controller-->
+        <!--New Event View Controller-->
         <scene sceneID="GRZ-nP-oYE">
             <objects>
-                <viewController id="Frv-Rt-8ns" sceneMemberID="viewController">
+                <viewController id="Frv-Rt-8ns" customClass="NewEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xng-4b-Eea"/>
                         <viewControllerLayoutGuide type="bottom" id="9cL-mB-Ezy"/>
@@ -446,8 +446,47 @@
                     <view key="view" contentMode="scaleToFill" id="lWE-rd-8Dl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A22-qy-8Dz">
+                                <rect key="frame" x="66" y="382" width="468" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="30n-Ao-t3c">
+                                <rect key="frame" x="32" y="140" width="536" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="462552482.44793898">
+                                    <!--2015-08-29 14:48:02 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60A-Hj-v3W">
+                                <rect key="frame" x="282" y="444" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="Frv-Rt-8ns" eventType="touchUpInside" id="OtW-DW-cCi"/>
+                                    <action selector="doneButtonTapped:" destination="2CR-iz-Wp5" eventType="touchUpInside" id="PGh-wf-XSJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="30n-Ao-t3c" secondAttribute="trailing" constant="16" id="2AG-BV-akh"/>
+                            <constraint firstItem="30n-Ao-t3c" firstAttribute="leading" secondItem="lWE-rd-8Dl" secondAttribute="leadingMargin" constant="16" id="5I4-SM-DI1"/>
+                            <constraint firstAttribute="centerX" secondItem="30n-Ao-t3c" secondAttribute="centerX" id="5xo-8w-aci"/>
+                            <constraint firstAttribute="centerX" secondItem="A22-qy-8Dz" secondAttribute="centerX" id="6BQ-ET-CAV"/>
+                            <constraint firstAttribute="centerX" secondItem="60A-Hj-v3W" secondAttribute="centerX" id="J1E-25-wj2"/>
+                            <constraint firstItem="30n-Ao-t3c" firstAttribute="top" secondItem="Xng-4b-Eea" secondAttribute="bottom" constant="120" id="QJc-A7-Z0g"/>
+                            <constraint firstItem="60A-Hj-v3W" firstAttribute="top" secondItem="A22-qy-8Dz" secondAttribute="bottom" constant="32" id="fOh-J1-UDF"/>
+                            <constraint firstItem="A22-qy-8Dz" firstAttribute="top" secondItem="30n-Ao-t3c" secondAttribute="bottom" constant="80" id="mqQ-oj-Tun"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A22-qy-8Dz" secondAttribute="trailing" constant="50" id="r7d-Ym-8NK"/>
+                            <constraint firstItem="A22-qy-8Dz" firstAttribute="leading" secondItem="lWE-rd-8Dl" secondAttribute="leadingMargin" constant="50" id="s9p-ea-ovq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventDatePicker" destination="30n-Ao-t3c" id="z8A-Jb-ddm"/>
+                        <outlet property="eventTextField" destination="A22-qy-8Dz" id="8Dd-Oj-pHW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwe-Td-0mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
