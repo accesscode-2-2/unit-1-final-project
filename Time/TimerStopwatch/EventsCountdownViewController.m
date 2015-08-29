@@ -11,8 +11,12 @@
 
 @interface EventsCountdownViewController ()
 
-@property (strong, nonatomic) IBOutlet UIDatePicker *timeTillBirthday;
-@property (strong, nonatomic) IBOutlet UILabel *countdownLabel;
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic) IBOutlet UILabel *birthdayCountdownLabel;
+@property (strong, nonatomic) IBOutlet UILabel *christmasCountdownLabel;
+
+@property (nonatomic) NSDate *birthday;
+@property (nonatomic) NSDate *christmas;
 
 
 - (IBAction)startCountdown:(id)sender;
@@ -26,25 +30,41 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)startCountdown:(id)sender {
+- (IBAction)startBirthdayCountdown:(id)sender {
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyy-MM-dd"];
-    NSDate *birthday = [formatter dateFromString:@"2016-02-21"];
-    [formatter setDateStyle:NSDateFormatterLongStyle];
-    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSDateFormatter *birthdayFormatter = [[NSDateFormatter alloc] init];
+    [birthdayFormatter setDateFormat:@"yyy-MM-dd"];
+    self.birthday = [birthdayFormatter dateFromString:@"2016-02-21"];
+    [birthdayFormatter setDateStyle:NSDateFormatterLongStyle];
+    [birthdayFormatter setTimeStyle:NSDateFormatterLongStyle];
     
-    [self.timeTillBirthday setDate:birthday animated:NO];
+    [self.datePicker setDate:self.birthday animated:NO];
     
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitDay | NSCalendarUnitDay);
-    self.timeTillBirthday.date = birthday; //[calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.timeTillBirthday.date]];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+    self.datePicker.date = self.birthday;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateBirthdayTime) userInfo:nil repeats:YES];
 }
 
--(void)updateTime
+- (IBAction)startChristmasCountdown:(id)sender {
+    NSDateFormatter *christmasFormatter = [[NSDateFormatter alloc] init];
+    [christmasFormatter setDateFormat:@"yyy-MM-dd"];
+    self.christmas = [christmasFormatter dateFromString:@"2015-12-25"];
+    [christmasFormatter setDateStyle:NSDateFormatterLongStyle];
+    [christmasFormatter setTimeStyle:NSDateFormatterLongStyle];
+    
+    [self.datePicker setDate:self.christmas animated:NO];
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitDay | NSCalendarUnitDay);
+    self.datePicker.date = self.christmas;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateChristmasTime) userInfo:nil repeats:YES];
+}
+
+-(void)updateBirthdayTime
+
 {
-    NSInteger time = ((NSInteger)[self.timeTillBirthday.date timeIntervalSinceNow]);
+    NSInteger time = ((NSInteger)[self.birthday timeIntervalSinceNow]);
     NSInteger seconds = time % 60;
     NSInteger minutes = (time / 60) % 60;
     NSInteger hours = (time / 3600) % 24;
@@ -52,10 +72,26 @@
     
     NSLog(@"%ld", (long)time);
     NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
-    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long)
-                             seconds];
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
     
-    self.countdownLabel.text = timeDisplay;
+    self.birthdayCountdownLabel.text = timeDisplay;
 }
+
+-(void)updateChristmasTime
+
+{
+    NSInteger time = ((NSInteger)[self.christmas timeIntervalSinceNow]);
+    NSInteger seconds = time % 60;
+    NSInteger minutes = (time / 60) % 60;
+    NSInteger hours = (time / 3600) % 24;
+    NSInteger days = (time / 86400);
+    
+    NSLog(@"%ld", (long)time);
+    NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
+    
+    self.christmasCountdownLabel.text = timeDisplay;
+}
+
 
 @end

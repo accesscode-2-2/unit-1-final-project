@@ -18,6 +18,16 @@
 		BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5A039F1B88D49400FDF71D /* QuartzCore.framework */; };
 		BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6C16E31B8FE29F00103CC2 /* Main.storyboard */; };
 		BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */; };
+		BFE6F3FB1B92187000350E51 /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */; };
+		BFE6F3FC1B92187000350E51 /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */; };
+		BFE6F3FE1B92187F00350E51 /* LANENAR_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */; };
+		BFE6F3FF1B92187F00350E51 /* LANENAR_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */; };
+		BFE6F4011B92188900350E51 /* HYPE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4001B92188900350E51 /* HYPE.ttf */; };
+		BFE6F4021B92188900350E51 /* HYPE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4001B92188900350E51 /* HYPE.ttf */; };
+		BFE6F4041B92196D00350E51 /* LANEUP__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4031B92196D00350E51 /* LANEUP__.ttf */; };
+		BFE6F4051B92196D00350E51 /* LANEUP__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4031B92196D00350E51 /* LANEUP__.ttf */; };
+		BFE6F4071B9219BD00350E51 /* Gravity-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */; };
+		BFE6F4081B9219BD00350E51 /* Gravity-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +65,11 @@
 		BF6C16E31B8FE29F00103CC2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF6C16E51B8FEF2800103CC2 /* EventsCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCountdownViewController.h; sourceTree = "<group>"; };
 		BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCountdownViewController.m; sourceTree = "<group>"; };
+		BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Light.ttf"; sourceTree = "<group>"; };
+		BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LANENAR_.ttf; sourceTree = "<group>"; };
+		BFE6F4001B92188900350E51 /* HYPE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HYPE.ttf; sourceTree = "<group>"; };
+		BFE6F4031B92196D00350E51 /* LANEUP__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LANEUP__.ttf; sourceTree = "<group>"; };
+		BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Book.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +173,21 @@
 				BF3D67471B8E9824005D9CFA /* NewPresetsViewController.h */,
 				BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */,
 				BF3D674A1B8E9864005D9CFA /* NewPresetsViewControllerDelegate.h */,
+				BFE6F3F91B92186100350E51 /* Fonts */,
 			);
 			name = Timer;
+			sourceTree = "<group>";
+		};
+		BFE6F3F91B92186100350E51 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */,
+				BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */,
+				BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */,
+				BFE6F4031B92196D00350E51 /* LANEUP__.ttf */,
+				BFE6F4001B92188900350E51 /* HYPE.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +270,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE6F3FE1B92187F00350E51 /* LANENAR_.ttf in Resources */,
+				BFE6F4011B92188900350E51 /* HYPE.ttf in Resources */,
 				BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */,
 				BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */,
+				BFE6F4071B9219BD00350E51 /* Gravity-Book.ttf in Resources */,
+				BFE6F3FB1B92187000350E51 /* Gravity-Light.ttf in Resources */,
+				BFE6F4041B92196D00350E51 /* LANEUP__.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +284,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE6F4081B9219BD00350E51 /* Gravity-Book.ttf in Resources */,
+				BFE6F4021B92188900350E51 /* HYPE.ttf in Resources */,
+				BFE6F3FF1B92187F00350E51 /* LANENAR_.ttf in Resources */,
+				BFE6F3FC1B92187000350E51 /* Gravity-Light.ttf in Resources */,
+				BFE6F4051B92196D00350E51 /* LANEUP__.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
