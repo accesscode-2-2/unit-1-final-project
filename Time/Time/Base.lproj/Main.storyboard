@@ -425,7 +425,7 @@
                     <navigationItem key="navigationItem" title="Special Events" id="4eK-mJ-Lde">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yNS-SS-YDS">
                             <connections>
-                                <segue destination="Frv-Rt-8ns" kind="presentation" id="1bB-ss-DbA"/>
+                                <action selector="newEventButtonPressed:" destination="uCO-Gy-2wF" id="qvJ-IW-Giq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -438,7 +438,7 @@
         <!--New Event View Controller-->
         <scene sceneID="GRZ-nP-oYE">
             <objects>
-                <viewController id="Frv-Rt-8ns" customClass="NewEventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newEventVC" id="Frv-Rt-8ns" customClass="NewEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xng-4b-Eea"/>
                         <viewControllerLayoutGuide type="bottom" id="9cL-mB-Ezy"/>

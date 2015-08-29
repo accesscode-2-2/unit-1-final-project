@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewEventViewControllerDelegate.h"
 
 @interface NewEventViewController : UIViewController
-
+@property (nonatomic) id<NewEventViewControllerDelegate> delegate;
 @end

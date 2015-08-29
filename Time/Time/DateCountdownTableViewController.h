@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewEventViewControllerDelegate.h"
 
-@interface DateCountdownTableViewController : UITableViewController
+@interface DateCountdownTableViewController : UITableViewController <NewEventViewControllerDelegate>
 
 @end

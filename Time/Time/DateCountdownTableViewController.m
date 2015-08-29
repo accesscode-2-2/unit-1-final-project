@@ -8,9 +8,11 @@
 
 #import "DateCountdownTableViewController.h"
 #import "OrderedDictionary.h"
+#import "NewEventViewController.h"
 
 @interface DateCountdownTableViewController ()
-@property (nonatomic) OrderedDictionary *specialDates;
+@property (nonatomic) OrderedDictionary *eventDates;
+@property (nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation DateCountdownTableViewController
@@ -28,12 +30,16 @@
                                     repeats:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)reloadCountdown {
     [self.tableView reloadData];
 }
 
 - (void)setupDefaultPresets {
-    self.specialDates = [[OrderedDictionary alloc] init];
+    self.eventDates = [[OrderedDictionary alloc] init];
     
     NSArray *description = @[@"CD Player Day",
                       @"International Day for Failure",
@@ -49,19 +55,16 @@
                         @[@"2016 01 07"],
                         @[@"2016 01 24"]];
     
-    [self.specialDates setDictionary:[NSDictionary dictionaryWithObjects:description forKeys:keys]];
-    
-    //NSLog(@"%@", self.specialDates);
-    
+    [self.eventDates setDictionary:[NSDictionary dictionaryWithObjects:description forKeys:keys]];
+
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [self.dateFormatter setDateFormat:@"yyyy MM dd"];
 }
 
 - (NSDate *)convertToNSDate:(NSString *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy MM dd"];
-    
     // since we did not include hours in the formatter and strings, it will
     // default to 12am.
-    NSDate *event = [formatter dateFromString:date];
+    NSDate *event = [self.dateFormatter dateFromString:date];
     
     return event;
 }
@@ -91,29 +94,43 @@
     return timeToEvent;
 }
 
+- (IBAction)newEventButtonPressed:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NewEventViewController *newEventVC = [storyboard instantiateViewControllerWithIdentifier:@"newEventVC"];
+    newEventVC.delegate = self;
+    
+    [self presentViewController:newEventVC animated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.specialDates count];
+    return [self.eventDates count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dateIdentifier" forIndexPath:indexPath];
     
-    NSArray *keyRaw = [self.specialDates keyAtIndex:indexPath.row];
-    NSString *keyAsString = keyRaw[0];
+//    NSString *keyAsString = ;
     NSString *dateFromDictionary = keyAsString;
     NSDate *eventDate = [self convertToNSDate:dateFromDictionary];
     NSString *countdown = [self timeToEvent:eventDate];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.specialDates objectForKey:keyRaw]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.eventDates objectForKey:keyRaw]];
     cell.detailTextLabel.text = countdown;
     
     return cell;
+}
+
+#pragma mark - delegate Implementation
+- (void)presetCreated:(NSDate *)eventDate withName:(NSString *)eventName {
+    NSString *date = [self.dateFormatter stringFromDate:eventDate];
+    [self.eventDates setObject:eventName forKey:date];
+    NSLog(@"%@",self.eventDates);
 }
 
 @end
