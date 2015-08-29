@@ -10,6 +10,8 @@
 
 @interface PresetTimerTableViewController ()
 
+@property (nonatomic) NSMutableArray *presets;
+
 @end
 
 @implementation PresetTimerTableViewController
@@ -17,11 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.presets = [NSMutableArray arrayWithObjects: @"Cardio", @"Strength Training", @"Yoga", nil];
+    self.presets = [[NSMutableArray alloc]init];
     
-     self.clearsSelectionOnViewWillAppear = NO;
+    TimerData *cardio = [[TimerData alloc]init];
+    cardio.nameOfTimer = @"Cardio";
+    cardio.presetTime = @30.00;
     
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    TimerData *strengthTraining = [[TimerData alloc]init];
+    strengthTraining.nameOfTimer = @"Strength Training";
+    strengthTraining.presetTime = @45.00;
+    
+    TimerData *yoga = [[TimerData alloc]init];
+    yoga.nameOfTimer = @"Yoga";
+    yoga.presetTime = @90.00;
+
+    
+    
+    self.presets = [NSMutableArray arrayWithObjects: cardio, strengthTraining, yoga, nil];
+    
+    self.clearsSelectionOnViewWillAppear = NO;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,15 +59,22 @@
     return self.presets.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.selectedPreset = self.presets[indexPath.row];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresetTimerIdentifier" forIndexPath:indexPath];
    
+    NSArray *presetData = [self.presets valueForKey:@"nameOfTimer"];
+    NSString *name = presetData[indexPath.row];
     
-    cell.textLabel.text = [self.presets objectAtIndex:indexPath.row];
-    
+    cell.textLabel.text = name;
+
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -89,16 +114,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    PresetTimerTableViewController *presetTVC = self.presets[indexPath.row];
+    NSArray *presetData = [self.presets valueForKey:@"nameOfTimer"];
+    NSString *name = presetData[indexPath.row];
     
     
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    CQCategory *categoryTopic = self.categoryTopics[indexPath.row];
-//    
-//    SelectorTableViewController *vc = segue.destinationViewController;
-//    vc.optionChosen = categoryTopic;
+}
 
-    }
+- (IBAction)backButton:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 
+}
 
+- (IBAction)addButton:(id)sender {
+    
+}
 @end

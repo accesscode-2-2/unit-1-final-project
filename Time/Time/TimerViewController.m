@@ -12,8 +12,10 @@
 @interface TimerViewController ()
 
 @property (nonatomic) NSInteger afterRemainder;
-@property (nonatomic)  NSInteger Remainder;
+@property (nonatomic) NSInteger Remainder;
 @property (nonatomic) NSTimeInterval countDownInterval;
+@property (nonatomic) TimerData *presetInterval; //this is what i will pass to the preset view and then pass back once a preset timer is chosen
+
 
 @property (nonatomic) BOOL running;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
@@ -23,11 +25,15 @@
 
 @implementation TimerViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.running = NO;
     self.Remainder = -1;
     
+    self.presetInterval = [[TimerData alloc]init];
+    self.presetInterval.presetTime = @00.00;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +63,11 @@
         
         self.running = TRUE;
         
-        if (self.Remainder==-1){
+        if (![self.presetInterval.presetTime  isEqual: @00.00]) {
+            NSLog(@"preset timer running");
+        }
+        
+        else if (self.Remainder==-1){
             self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
             self.Remainder = self.countDownInterval;
             self.afterRemainder = self.countDownInterval - self.Remainder%60;
@@ -94,21 +104,18 @@
 
 - (IBAction)presetButton:(id)sender {
    
-    
-    
-//    UIStoryboard *timerStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    
-//    UINavigationController *presetNavigationController = [timerStoryboard instantiateViewControllerWithIdentifier:@"PresetTimerIdentifier"];
-//    
-//    NSArray *presetViewControllers = [presetNavigationController viewControllers];
-//    
-//    PresetTimerTableViewController *preset0 = presetViewControllers[0];
-//    
-//    preset0.presets = self.presets;
-//
-//    [self presentViewController:presetNavigationController animated:YES completion:nil];
-    
-    
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+   
+    UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+    
+    PresetTimerTableViewController *vc = (PresetTimerTableViewController *)[navController topViewController];
+    
+    vc.selectedPreset = self.presetInterval;
+
+
+}
+
 @end
 

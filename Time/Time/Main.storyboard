@@ -125,12 +125,24 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Y9R-aR-48J" id="Xcd-ni-gFC"/>
                             <outlet property="delegate" destination="Y9R-aR-48J" id="kaB-C9-EwG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Preset Timers" id="hSc-gn-ZKq"/>
+                    <navigationItem key="navigationItem" title="Preset Timers" id="hSc-gn-ZKq">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="13U-fb-eS7">
+                            <connections>
+                                <action selector="backButton:" destination="Y9R-aR-48J" id="Lng-5b-LJo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5oF-xZ-veL">
+                            <connections>
+                                <action selector="addButton:" destination="Y9R-aR-48J" id="xRf-G6-ZN7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nF3-Ln-bO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

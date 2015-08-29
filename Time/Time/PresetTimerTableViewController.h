@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimerData.h"
 
 @interface PresetTimerTableViewController : UITableViewController
 
-//@property (nonatomic) TimerViewController *timerVC;
+@property (nonatomic) TimerData *selectedPreset;
 
-@property (nonatomic) NSMutableArray *presets;
+- (IBAction)backButton:(id)sender;
+
+- (IBAction)addButton:(id)sender;
+
 
 @end
