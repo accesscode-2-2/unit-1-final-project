@@ -11,7 +11,7 @@
 #import "PresetTimerDetailViewController.h"
 
 @interface PresetTimerViewController ()<UITableViewDataSource, UITabBarDelegate>
-@property (nonatomic) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation PresetTimerViewController
@@ -31,7 +31,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.view reloadInputViews];
+    [self.tableView reloadData];
 }
 
 

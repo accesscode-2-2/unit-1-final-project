@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Timer.m"
+#import "Timer.h"
 
 @interface PresetTimerDetailViewController : UIViewController
 

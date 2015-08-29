@@ -41,16 +41,15 @@
     [self.timerViewController.model.timers insertObject:newTimer atIndex:0];
     
 }
-
-- (IBAction)dismissModalView:(id)sender {
+- (IBAction)saveButtonTapped:(id)sender {
     
     [self saveNewTimer];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-
 - (IBAction)cancelButtonTapped:(id)sender {
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
