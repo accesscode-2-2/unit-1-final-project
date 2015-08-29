@@ -7,6 +7,7 @@
 //
 
 #import "PresetTimerViewController.h"
+#import "PresetTimerAddViewController.h"
 
 @interface PresetTimerViewController ()
 
@@ -16,7 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // [self.navigationController setNavigationBarHidden:YES]; // hide navigation bar that pops up automatically w swipe recognizer
+    // [self.navigationController setNavigationBarHidden:YES]; // hide navigation bar that pops up automatically w swipe recognizer
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped)];
+}
+
+- (void)addButtonTapped {
+    // initialize view controller
+    
+    PresetTimerAddViewController *myNewVC = [[PresetTimerAddViewController alloc] init];
+    
+    [self presentViewController:myNewVC animated:YES completion:nil];
+ 
+    
+    // modal
+    // self presentViewController
+    
+    // push
+    // self.navigationController push
 }
 
 - (void)didReceiveMemoryWarning {
