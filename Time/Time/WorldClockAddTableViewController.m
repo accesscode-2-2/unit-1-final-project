@@ -36,28 +36,23 @@
     [outputFormatter setDateFormat:@"HH:mm"];
    
     NSString *NYTimeString = [outputFormatter stringFromDate:now];
-    NSLog(@"NYDateString %@", NYTimeString);
     
     NSDate *parisTime = [now addTimeInterval:21600]; // Add XXX seconds to *now
     NSString *ParisTimeString = [outputFormatter stringFromDate:parisTime];
-    NSLog(@"ParisDateString %@", ParisTimeString);
     
     
     NSDate *RomeTime = [now addTimeInterval:21600];
     NSString *RomeTimeString = [outputFormatter stringFromDate:RomeTime];
-    NSLog(@"RomeTimeString %@", RomeTimeString);
     
     
     NSDate *MexicoCity = [now addTimeInterval:-3600];
     NSString *MexicoCityTimeString = [outputFormatter stringFromDate:MexicoCity];
-    NSLog(@"MexicoCityTimeString %@", MexicoCityTimeString);
     
     
     
     NSDate *NewDelhi = [now addTimeInterval:34200];
     NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
-    NSLog(@"NewDelhiTimeString %@", NewDelhiTimeString);
-
+ 
     
     
     
@@ -76,20 +71,6 @@
     
     
     
-    for ( NSString *key in self.clock) {
-        NSString *value = [self.clock objectForKey:key];
-        
- 
-        //NSLog(@"key: %@, value: %@", key, value);
-        
-       
-        
-    
-        
-        
-        
-        
-    }
  }
 
 - (void)didReceiveMemoryWarning {
