@@ -111,10 +111,10 @@
 				D47FF9261B87EFA10068E9FA /* StopWatchViewController.h */,
 				D47FF9271B87EFA10068E9FA /* StopWatchViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
+				D45C0E601B9240E000B5BCB7 /* Images.xcassets */,
 				0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
-				D45C0E601B9240E000B5BCB7 /* Images.xcassets */,
 			);
 			path = Time;
 			sourceTree = "<group>";
