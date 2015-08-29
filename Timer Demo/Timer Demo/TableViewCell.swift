@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var timerName: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!

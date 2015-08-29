@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func stringFromTimeInterval(interval: CFTimeInterval) -> String{
+    func stringFromTimeInterval(interval: CFTimeInterval, withMilliseconds:Bool = true) -> String{
         let intInterval = Int(interval)
         
         let years = (intInterval / 31556900)
@@ -49,11 +49,27 @@ class ViewController: UIViewController {
             }
             foundFirstNonzero = true
             let unitString = unit > 9 ? "\(unit)" : "0\(unit)"
-            if idx == timeUnits.count - 1 {
-                timeString = timeString + unitString
-            } else {
-                timeString = timeString + unitString + ":"
+            
+            if (withMilliseconds == true){
+                if idx == timeUnits.count - 1 {
+                    timeString = timeString + unitString
+                }
+                else if (idx == timeUnits.count - 2){
+                    timeString = timeString + unitString + "."
+                }else{
+                    timeString = timeString + unitString + ":"
+                }
+            }else{
+                if idx == timeUnits.count - 1 {
+                    //do nothing
+                }
+                else if (idx == timeUnits.count - 2){
+                    timeString = timeString + unitString
+                }else{
+                    timeString = timeString + unitString + ":"
+                }
             }
+
         }
         
         return timeString
