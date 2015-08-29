@@ -19,8 +19,9 @@ class ViewController: UIViewController,
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
-    let popcornTimer = Timer.init(timerLabel: "Popcorn", startTime: 4.000)
-    let poopTimer = Timer.init(timerLabel: "Poop", startTime: 3.000)
+    let popcornTimer = Timer.init(timerLabel: "Popcorn", startTime: 180.000)
+    let setRestTimer = Timer.init(timerLabel: "In Between Sets Rest", startTime: 90.000)
+    let workBreakTimer = Timer.init(timerLabel: "Break", startTime: 60.000*30.000)
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
@@ -40,8 +41,10 @@ class ViewController: UIViewController,
         displayLink = CADisplayLink(target: self, selector: Selector("update"))
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         
-//        addTimer(popcornTimer)
-//        addTimer(poopTimer)
+        timers.append(popcornTimer)
+        timers.append(setRestTimer)
+        timers.append(workBreakTimer)
+
     }
     
     
@@ -120,6 +123,9 @@ class ViewController: UIViewController,
         
         return timers.count
     }
+    
+    
+
     
     @IBAction func startPause(startPauseButton: UIButton){
         

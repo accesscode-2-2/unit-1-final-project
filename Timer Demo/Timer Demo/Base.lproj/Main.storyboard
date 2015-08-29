@@ -17,9 +17,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fv3-ti-Iiy" kind="relationship" relationship="viewControllers" id="W3X-8S-RLY"/>
                         <segue destination="NqJ-nq-shR" kind="relationship" relationship="viewControllers" id="QLk-Vy-yqa"/>
                         <segue destination="Tsg-tD-bF2" kind="relationship" relationship="viewControllers" id="jvS-EX-tc8"/>
+                        <segue destination="fv3-ti-Iiy" kind="relationship" relationship="viewControllers" id="W3X-8S-RLY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8r-YM-E7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +47,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Countdown" id="p1p-vW-Htc"/>
+                    <tabBarItem key="tabBarItem" title="Countdown" image="Calendar" selectedImage="CalendarFilled" id="p1p-vW-Htc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgY-j4-gD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,7 +57,7 @@
         <scene sceneID="2vO-hC-wuw">
             <objects>
                 <navigationController id="Tsg-tD-bF2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timer" id="AQP-k9-VIA"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="AlarmClock" selectedImage="AlarmClockFilled" id="AQP-k9-VIA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFc-Bh-rvG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="-1460" y="243"/>
         </scene>
-        <!--View Controller-->
+        <!--Timers-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Timers" customClass="ViewController" customModule="Timer_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -85,15 +85,9 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="II4-n6-3wV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="c9h-4r-FbD"/>
+                                    <navigationItem id="c9h-4r-FbD"/>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PDn-1w-7mj">
-                                <rect key="frame" x="0.0" y="401" width="600" height="150"/>
-                                <date key="date" timeIntervalSinceReferenceDate="461962646.51289499">
-                                    <!--2015-08-22 18:57:26 +0000-->
-                                </date>
-                            </datePicker>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-ek-J1U">
                                 <rect key="frame" x="0.0" y="64" width="600" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,7 +96,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJA-dx-xVF" id="n3K-8r-1fX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="57.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7K-xy-XuY">
@@ -120,13 +114,13 @@
                                                     <state key="normal" image="Start-50"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hG-1R-5Y3">
-                                                    <rect key="frame" x="8" y="3" width="27.5" height="15"/>
+                                                    <rect key="frame" x="8" y="3" width="28" height="15"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-5O-jOx">
-                                                    <rect key="frame" x="60" y="28" width="360" height="2.5"/>
+                                                    <rect key="frame" x="60" y="28" width="360" height="3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="259" id="Mc6-mC-tsU"/>
                                                     </constraints>
@@ -175,24 +169,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PDn-1w-7mj" firstAttribute="top" secondItem="II4-n6-3wV" secondAttribute="bottom" id="5dy-FH-fQj"/>
-                            <constraint firstItem="PDn-1w-7mj" firstAttribute="top" secondItem="3Tj-ek-J1U" secondAttribute="bottom" id="6PQ-GN-PDE"/>
                             <constraint firstAttribute="trailing" secondItem="II4-n6-3wV" secondAttribute="trailing" id="8Sa-gG-o97"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PDn-1w-7mj" secondAttribute="bottom" id="AIA-xc-mJa"/>
                             <constraint firstItem="3Tj-ek-J1U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PfB-mW-ntv"/>
                             <constraint firstItem="II4-n6-3wV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="R62-9V-87I"/>
                             <constraint firstItem="II4-n6-3wV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SUl-jl-m0G"/>
-                            <constraint firstItem="PDn-1w-7mj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="d7g-0k-cMA"/>
-                            <constraint firstItem="PDn-1w-7mj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fQC-3Q-7rf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3Tj-ek-J1U" secondAttribute="bottom" constant="150" id="bJS-aG-MaX"/>
                             <constraint firstAttribute="trailing" secondItem="3Tj-ek-J1U" secondAttribute="trailing" id="uG5-Ya-2Ln"/>
                             <constraint firstItem="3Tj-ek-J1U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vaA-WD-6PO"/>
-                            <constraint firstAttribute="trailing" secondItem="PDn-1w-7mj" secondAttribute="trailing" id="wjY-As-GkU"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5dy-FH-fQj"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Ete-fA-fSB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="60G-pm-lud">
@@ -271,13 +255,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NY-t3-cwC">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Stopwatch" id="FAs-QJ-gUL"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:04.22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSE-AB-fmB">
                                 <rect key="frame" x="0.0" y="64" width="600" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -354,6 +331,13 @@
                                     <constraint firstAttribute="bottom" secondItem="Brp-SB-3Qg" secondAttribute="bottom" id="z35-mU-Slo"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NY-t3-cwC">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.91473327019999995" green="0.0" blue="0.14425834900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="FAs-QJ-gUL"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -397,7 +381,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" id="ycx-84-cH5"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Clock" selectedImage="ClockFilled" id="ycx-84-cH5"/>
                     <connections>
                         <outlet property="lapsResetButton" destination="8IJ-yj-Aao" id="8uh-gT-yBk"/>
                         <outlet property="lapsTableView" destination="0jT-sW-Usb" id="6ZQ-g3-zKB"/>
@@ -411,6 +395,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AlarmClock" width="32" height="32"/>
+        <image name="AlarmClockFilled" width="32" height="32"/>
+        <image name="Calendar" width="32" height="32"/>
+        <image name="CalendarFilled" width="32" height="32"/>
+        <image name="Clock" width="32" height="32"/>
+        <image name="ClockFilled" width="32" height="32"/>
         <image name="Start-50" width="50" height="50"/>
         <image name="lap" width="72" height="72"/>
         <image name="start" width="72" height="72"/>
