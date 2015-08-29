@@ -62,10 +62,10 @@
     
     [self.timer1 invalidate];
     
-    self.timer1 = [NSTimer scheduledTimerWithTimeInterval:0.00001 target:self selector:@selector(startButtonTapped:) userInfo:nil repeats:NO];
+    self.timer1 = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(startButtonTapped:) userInfo:nil repeats:NO];
     
     float currentNumber = [self.stopwatchTimerLabel.text floatValue];
-    self.nextNumber = currentNumber + 0.000001;
+    self.nextNumber = currentNumber + 0.001;
     self.stopwatchTimerLabel.text = [NSString stringWithFormat:@"%lf", self.nextNumber];
     
 }

@@ -111,19 +111,47 @@
     return timeFormatDisplay;
 }
 
-
-
 - (IBAction)startButtonTapped:(id)sender {
     
+    NSString *firstKey = [self.customTimersDictionary allKeys][0];
+    NSTimeInterval duration = [self.customTimersDictionary[firstKey] doubleValue];
+    self.totalSeconds = duration;
+    
+    [self startTimer];
+}
+
+-(void) startTimer {
     [self.countDownTimer invalidate];
     
-    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startButtonTapped:) userInfo:nil repeats:NO];
+    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     
-    float currentNumber = [self.timeEndingLabel.text floatValue];
-    self.totalSeconds = currentNumber - 1;
-    self.timeEndingLabel.text = [NSString stringWithFormat:@"%ld", (long)self.totalSeconds];
+    self.timeEndingLabel.text = [self timeFormatted:self.totalSeconds ];
+}
+
+- (void)timerFired:(NSTimer *)timer {
+    self.totalSeconds--;
+    self.timeEndingLabel.text = [self timeFormatted:self.totalSeconds];
     
-    
+    if (self.totalSeconds == 0) {
+        [self.countDownTimer invalidate];
+        
+//        UIAlertView *alert = [[UIAlertView] alloc] initWithTitle:@"Alarm"
+//                                                          message: @"Your time is up"
+//                                                         delegate: self
+//                                                cancelButtonTitle: @"OK"
+//                                                otherButtonTitles:nil];
+//        
+//        [alert show];
+//
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alarm"
+                                                         message:@"Your time is up"
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        //[alert addButtonWithTitle:@"GOO"];
+        [alert show];
+    }
+
 }
 
 
@@ -163,28 +191,18 @@
     
     self.alarmNameLabel.text = [NSString stringWithFormat:@"%@", key];
     
-    
-////    // CONVERTING TO READABLE SECONDS / HOURS
-////    
-//    self.seconds = self.totalSeconds % 60;
-//    self.minutes = (self.totalSeconds / 60) % 60;
-//    self.hours = self.totalSeconds / 3600;
-////    NSString *timeFormatDisplay = [NSString stringWithFormat:@"%02d:%02d:%02d",self.hours, self.minutes, self.seconds];
-//
-//    
-//    
-//    self.timeEndingLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",self.hours, self.minutes, self.seconds];
-
-    
-self.timeEndingLabel.text = [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
+    self.timeEndingLabel.text = [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
     
     
     
 //
 //    self.timeEndingLabel.text = timeFormatDisplay;
-    
-    [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
+//    
+//    
+//    [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
     NSLog(@"%@", [self.customTimersDictionary objectForKey:key]);
+//    
+//    NSLog(@"%@", [self.customTimersDictionary allKeys]);
     
     return cell;
     

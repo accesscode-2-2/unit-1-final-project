@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.timePickerView.countDownDuration = 60.0;
 //    [self.customTimersDictionary setObject:@"TIME is the value" forKey:@"birthday is the KEY"];
     
 //    NSLog(@"%@ - printing self.customTimersDictionary here", self.customTimersDictionary);
