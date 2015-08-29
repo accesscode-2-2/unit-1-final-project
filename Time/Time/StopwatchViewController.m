@@ -78,8 +78,6 @@ NSTimeInterval startTime;
     //new line added thursday 8-27
     self.previousLapTime = self.totalTime;
 //    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.previousLapTime];
-    
-    
 
 }
 

@@ -4,25 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="2vo-9j-8Qh">
-            <objects>
-                <viewController id="YGP-7g-6KV" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NbU-Pw-yx5"/>
-                        <viewControllerLayoutGuide type="bottom" id="DRS-nt-H2l"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xWj-2k-aeS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="op1-WR-uzG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HsY-Mp-uQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-805" y="-377"/>
-        </scene>
         <!--Item 1-->
         <scene sceneID="29z-YT-jM5">
             <objects>
@@ -173,12 +154,110 @@
                     </tabBar>
                     <connections>
                         <segue destination="eeN-hb-HVz" kind="relationship" relationship="viewControllers" id="FZ0-ol-twv"/>
-                        <segue destination="YGP-7g-6KV" kind="relationship" relationship="viewControllers" id="DQj-cl-Nng"/>
+                        <segue destination="5sS-NF-q4c" kind="relationship" relationship="viewControllers" id="y5i-zw-duD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUi-9A-lQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1625" y="-707"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="N1M-ZK-0yS">
+            <objects>
+                <viewController id="5sS-NF-q4c" customClass="TimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eLT-YW-tUw"/>
+                        <viewControllerLayoutGuide type="bottom" id="OC0-pv-120"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CeG-aR-8X4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvR-Sb-iSl">
+                                <rect key="frame" x="140" y="30" width="320" height="162"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOi-te-aCX">
+                                <rect key="frame" x="140" y="393" width="320" height="162"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lp0-vK-GSi">
+                                <rect key="frame" x="203" y="275" width="195" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ne2-9T-cOe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq0-0e-BhD">
+                                <rect key="frame" x="527" y="272" width="48" height="63"/>
+                                <state key="normal" title="RESET">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jC-8t-8po">
+                                <rect key="frame" x="25" y="272" width="47" height="63"/>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bOi-te-aCX" firstAttribute="top" secondItem="Lp0-vK-GSi" secondAttribute="bottom" constant="80" id="49G-i2-U0K"/>
+                            <constraint firstItem="8jC-8t-8po" firstAttribute="leading" secondItem="CeG-aR-8X4" secondAttribute="leading" constant="25" id="7D4-7h-klU"/>
+                            <constraint firstAttribute="trailing" secondItem="bOi-te-aCX" secondAttribute="trailing" constant="9" id="8Sf-0z-8fK"/>
+                            <constraint firstItem="bOi-te-aCX" firstAttribute="top" secondItem="Vq0-0e-BhD" secondAttribute="bottom" constant="70" id="Bu3-qe-8dK"/>
+                            <constraint firstItem="Vq0-0e-BhD" firstAttribute="top" secondItem="EvR-Sb-iSl" secondAttribute="bottom" constant="77" id="G4X-Vz-2yO"/>
+                            <constraint firstAttribute="centerX" secondItem="bOi-te-aCX" secondAttribute="centerX" id="Gds-5t-UH0"/>
+                            <constraint firstItem="OC0-pv-120" firstAttribute="top" secondItem="bOi-te-aCX" secondAttribute="bottom" constant="30" id="HEj-bN-eUb"/>
+                            <constraint firstItem="EvR-Sb-iSl" firstAttribute="leading" secondItem="CeG-aR-8X4" secondAttribute="leading" constant="9" id="IMq-NM-f04"/>
+                            <constraint firstAttribute="trailing" secondItem="Lp0-vK-GSi" secondAttribute="trailing" constant="279" id="Jbw-yT-3St"/>
+                            <constraint firstAttribute="trailing" secondItem="8jC-8t-8po" secondAttribute="trailing" constant="320" id="K8V-Lu-NMC"/>
+                            <constraint firstItem="Lp0-vK-GSi" firstAttribute="top" secondItem="EvR-Sb-iSl" secondAttribute="bottom" constant="70" id="Kmp-st-Fgt"/>
+                            <constraint firstAttribute="trailing" secondItem="Vq0-0e-BhD" secondAttribute="trailing" constant="25" id="NIG-6h-bka"/>
+                            <constraint firstItem="EvR-Sb-iSl" firstAttribute="top" secondItem="eLT-YW-tUw" secondAttribute="bottom" constant="28" id="R3c-AR-hm8"/>
+                            <constraint firstAttribute="centerX" secondItem="8jC-8t-8po" secondAttribute="centerX" id="Tox-zH-GpY"/>
+                            <constraint firstAttribute="centerY" secondItem="Lp0-vK-GSi" secondAttribute="centerY" id="WLa-Fb-tZo"/>
+                            <constraint firstAttribute="trailing" secondItem="EvR-Sb-iSl" secondAttribute="trailing" constant="9" id="XjG-JB-Mjt"/>
+                            <constraint firstItem="Lp0-vK-GSi" firstAttribute="top" secondItem="EvR-Sb-iSl" secondAttribute="bottom" constant="70" id="Z90-Vy-lcm"/>
+                            <constraint firstItem="Lp0-vK-GSi" firstAttribute="top" secondItem="EvR-Sb-iSl" secondAttribute="bottom" constant="80" id="a9t-iu-h8N"/>
+                            <constraint firstAttribute="centerX" secondItem="Vq0-0e-BhD" secondAttribute="centerX" id="dfS-0S-c0s"/>
+                            <constraint firstItem="bOi-te-aCX" firstAttribute="top" secondItem="Lp0-vK-GSi" secondAttribute="bottom" constant="80" id="e9H-F4-duY"/>
+                            <constraint firstAttribute="centerX" secondItem="Lp0-vK-GSi" secondAttribute="centerX" id="gMn-1M-kHq"/>
+                            <constraint firstItem="8jC-8t-8po" firstAttribute="top" secondItem="EvR-Sb-iSl" secondAttribute="bottom" constant="77" id="i45-wh-VwZ"/>
+                            <constraint firstAttribute="centerX" secondItem="EvR-Sb-iSl" secondAttribute="centerX" id="iNW-Ia-gCK"/>
+                            <constraint firstItem="OC0-pv-120" firstAttribute="top" secondItem="bOi-te-aCX" secondAttribute="bottom" constant="8" id="j1V-HZ-6WR"/>
+                            <constraint firstItem="bOi-te-aCX" firstAttribute="top" secondItem="Lp0-vK-GSi" secondAttribute="bottom" constant="80" id="k7i-pM-0gh"/>
+                            <constraint firstItem="bOi-te-aCX" firstAttribute="top" secondItem="8jC-8t-8po" secondAttribute="bottom" constant="70" id="ryE-nx-L0e"/>
+                            <constraint firstItem="bOi-te-aCX" firstAttribute="leading" secondItem="CeG-aR-8X4" secondAttribute="leading" constant="9" id="sFW-fV-0Zg"/>
+                            <constraint firstItem="EvR-Sb-iSl" firstAttribute="top" secondItem="eLT-YW-tUw" secondAttribute="bottom" constant="8" id="t39-UM-Hha"/>
+                            <constraint firstItem="Lp0-vK-GSi" firstAttribute="leading" secondItem="CeG-aR-8X4" secondAttribute="leading" constant="279" id="uH6-m7-nFW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IMq-NM-f04"/>
+                                <exclude reference="R3c-AR-hm8"/>
+                                <exclude reference="XjG-JB-Mjt"/>
+                                <exclude reference="K8V-Lu-NMC"/>
+                                <exclude reference="Tox-zH-GpY"/>
+                                <exclude reference="dfS-0S-c0s"/>
+                                <exclude reference="Jbw-yT-3St"/>
+                                <exclude reference="Kmp-st-Fgt"/>
+                                <exclude reference="Z90-Vy-lcm"/>
+                                <exclude reference="uH6-m7-nFW"/>
+                                <exclude reference="49G-i2-U0K"/>
+                                <exclude reference="8Sf-0z-8fK"/>
+                                <exclude reference="e9H-F4-duY"/>
+                                <exclude reference="sFW-fV-0Zg"/>
+                                <exclude reference="HEj-bN-eUb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="NHG-iB-6US"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ol1-gL-DrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-805" y="-350"/>
         </scene>
     </scenes>
 </document>
