@@ -17,11 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.presets = [NSMutableArray arrayWithObjects: @"Cardio", @"Strength Training", @"Yoga", nil];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.clearsSelectionOnViewWillAppear = NO;
+    
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,8 +44,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresetTimerIdentifier" forIndexPath:indexPath];
+   
     
-    // Configure the cell...
+    cell.textLabel.text = [self.presets objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -84,14 +85,20 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    PresetTimerTableViewController *presetTVC = self.presets[indexPath.row];
+    
+    
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    CQCategory *categoryTopic = self.categoryTopics[indexPath.row];
+//    
+//    SelectorTableViewController *vc = segue.destinationViewController;
+//    vc.optionChosen = categoryTopic;
+
+    }
+
 
 @end

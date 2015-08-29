@@ -10,7 +10,7 @@
 
 @interface PresetTimerTableViewController : UITableViewController
 
-@property (nonatomic) TimerViewController *timerVC;
+//@property (nonatomic) TimerViewController *timerVC;
 
 @property (nonatomic) NSMutableArray *presets;
 
