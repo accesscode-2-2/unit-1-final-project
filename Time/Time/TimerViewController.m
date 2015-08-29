@@ -7,6 +7,7 @@
 //
 
 #import "TimerViewController.h"
+#import "PresetTimerTableViewController.h"
 
 @interface TimerViewController ()
 
@@ -88,6 +89,25 @@
     [countdownTimer invalidate];
     countdownTimer = nil;
     self.countdownLabel.text = @"00.00.00";
+    
+}
+
+- (IBAction)presetButton:(id)sender {
+   
+    
+    
+//    UIStoryboard *timerStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    
+//    UINavigationController *presetNavigationController = [timerStoryboard instantiateViewControllerWithIdentifier:@"PresetTimerIdentifier"];
+//    
+//    NSArray *presetViewControllers = [presetNavigationController viewControllers];
+//    
+//    PresetTimerTableViewController *preset0 = presetViewControllers[0];
+//    
+//    preset0.presets = self.presets;
+//
+//    [self presentViewController:presetNavigationController animated:YES completion:nil];
+    
     
 }
 @end
