@@ -54,6 +54,12 @@ NSString *DescriptionForObject(NSObject *object, id locale, NSUInteger indent) {
     [dictionary setObject:anObject forKey:aKey];
 }
 
+-(NSString *)getKeyForObject:(id)anObject{
+    NSArray *keysArray = [dictionary allKeysForObject:anObject];
+    NSString *key = keysArray[0];
+    return key;
+}
+
 - (void)removeObjectForKey:(id)aKey {
     [dictionary removeObjectForKey:aKey];
     [array removeObject:aKey];

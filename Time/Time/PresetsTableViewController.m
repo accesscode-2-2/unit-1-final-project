@@ -53,7 +53,10 @@
 }
 
 - (void)didSelectTimer {
-    [self.delegate presetTime:self.selectedPreset];
+    
+    NSString *key = [self.presets getKeyForObject:self.selectedPreset];
+    
+    [self.delegate presetTime:self.selectedPreset withName:key];
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
