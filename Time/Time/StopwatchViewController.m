@@ -35,7 +35,7 @@
     self.resetButton.layer.cornerRadius = 37.5;
     self.resetButton.clipsToBounds = YES;
     self.lapTableView.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.lapTableView.layer.borderWidth = 2.0;
+    self.lapTableView.layer.borderWidth = 1.0;
     [self configureView];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:205 green:255 blue:255 alpha:1]];
     [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
