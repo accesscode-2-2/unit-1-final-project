@@ -7,13 +7,14 @@
 //
 
 #import "NewCustomTimerViewController.h"
+#import "PresetTimersViewController.h"
 
 @interface NewCustomTimerViewController ()
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePickerView;
 @property (weak, nonatomic) IBOutlet UITextField *alarmNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
-
+@property (nonatomic) NSDate *chosenDate;
 
 @end
 
@@ -22,25 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.customTimersDictionary setObject:@"time" forKey:@"birthday"];
+//    [self.customTimersDictionary setObject:@"TIME is the value" forKey:@"birthday is the KEY"];
     
-    NSLog(@"%@", self.customTimersDictionary);
+//    NSLog(@"%@ - printing self.customTimersDictionary here", self.customTimersDictionary);
     
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
     NSString *alarmName = self.alarmNameLabel.text;
-    NSLog(@"%@ dookie",alarmName);
+    
+//   add object to dictionary
+//    [self.customTimersDictionary setObject:alarmName
+    
+    NSLog(@"%@ is the current alarm name", alarmName);
+    
     NSTimeInterval timeInterval = self.timePickerView.countDownDuration;
-    NSLog(@"%f poopy", timeInterval);
+
+    NSLog(@"%f is the current time interval", timeInterval);
+    
+    [self.customTimersDictionary setObject:@(timeInterval) forKey:alarmName];
     
     // something like [self.timerViewController doSomethingWithThisNewTimer]
     
@@ -72,6 +77,10 @@
 }
 
 - (IBAction)timePickerView:(id)sender {
+    
+//    NSDate *chosenDate = [self.timePickerView date];
+//    NSLog(@"%@ is my chosen date",chosenDate);
+    
 }
 
 
@@ -85,5 +94,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+//    
+//    NSString *selected = [self.category.options objectAtIndex:indexPath.row];
+//    
+//    self.category.selection = selected;
+//
+
+
 
 @end

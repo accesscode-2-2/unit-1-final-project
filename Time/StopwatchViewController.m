@@ -95,7 +95,9 @@
     
     
 - (IBAction)resetButtonTapped:(id)sender {
+    
     self.currentNumber = 0;
+    
     self.stopwatchTimerLabel.text = [NSString stringWithFormat:@"0"];
 
 }

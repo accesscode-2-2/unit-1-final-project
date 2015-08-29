@@ -10,17 +10,7 @@
 #import "NewCustomTimerViewController.h"
 
 
-@protocol ViewControllerDelegate
-
-- (void) updateAlarmLabel;
-
-@end
-
-
-@interface PresetTimersViewController : UIViewController
-
-@property (nonatomic, retain) id <ViewControllerDelegate> ViewControllerDelegate;
-
+@interface PresetTimersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
