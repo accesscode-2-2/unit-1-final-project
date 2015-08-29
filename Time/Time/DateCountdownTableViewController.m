@@ -12,6 +12,7 @@
 
 @interface DateCountdownTableViewController ()
 @property (nonatomic) OrderedDictionary *eventDates;
+@property (nonatomic) NSMutableArray *chronologicalKeys;
 @property (nonatomic) NSDateFormatter *dateFormatter;
 @end
 
@@ -48,17 +49,20 @@
                       @"International Programmer's Day",
                       @"Macintosh Computer Day"];
     
-    NSArray *keys = @[@[@"2015 10 01"],
-                        @[@"2015 10 13"],
-                        @[@"2015 11 18"],
-                        @[@"2015 12 13"],
-                        @[@"2016 01 07"],
-                        @[@"2016 01 24"]];
+    NSArray *keys = @[@"2015 10 01",
+                        @"2015 10 13",
+                        @"2015 11 18",
+                        @"2015 12 13",
+                        @"2016 01 07",
+                        @"2016 01 24"];
     
     [self.eventDates setDictionary:[NSDictionary dictionaryWithObjects:description forKeys:keys]];
 
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy MM dd"];
+    
+    self.chronologicalKeys = [NSMutableArray arrayWithArray:[self.eventDates allKeys]];
+    NSLog(@"Chrono Keys %@", self.chronologicalKeys);
 }
 
 - (NSDate *)convertToNSDate:(NSString *)date {
@@ -112,13 +116,11 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dateIdentifier" forIndexPath:indexPath];
     
-    NSArray *keyRaw = [self.eventDates keyAtIndex:indexPath.row];
-    NSString *key = keyRaw[0];
-    NSString *dateFromDictionary = key;
-    NSDate *eventDate = [self convertToNSDate:dateFromDictionary];
+    NSString *key = self.chronologicalKeys[indexPath.row];
+    NSDate *eventDate = [self convertToNSDate:key];
     NSString *countdown = [self timeToEvent:eventDate];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.eventDates objectForKey:keyRaw]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.eventDates objectForKey:key]];
     cell.detailTextLabel.text = countdown;
     
     return cell;
@@ -127,10 +129,12 @@
 #pragma mark - delegate Implementation
 - (void)presetCreated:(NSDate *)eventDate withName:(NSString *)eventName {
     NSString *date = [self.dateFormatter stringFromDate:eventDate];
-    NSArray *key = @[date];
     NSString *capitalizedEventName = [eventName capitalizedString];
-    [self.eventDates setObject:capitalizedEventName forKey:key];
-    NSLog(@"%@",self.eventDates);
+    [self.eventDates setObject:capitalizedEventName forKey:date];
+    
+    self.chronologicalKeys = [NSMutableArray arrayWithArray:[self.eventDates allKeys]];
+    NSArray* sortedArray = [self.chronologicalKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    self.chronologicalKeys = [NSMutableArray arrayWithArray:sortedArray];
 }
 
 @end

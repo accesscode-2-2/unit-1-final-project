@@ -101,7 +101,9 @@
 #pragma mark - NewPresetViewControllerDelegate implementation
 -(void)presetCreated:(NSArray *)countdownTime withName:(NSString *)timerName {
     [self.presets setObject:countdownTime forKey:timerName];
+    
     self.alphabeticalKeys = [NSMutableArray arrayWithArray:[self.presets allKeys]];
+    NSLog(@"Alpha Keys %@", self.alphabeticalKeys);
     NSArray* sortedArray = [self.alphabeticalKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     self.alphabeticalKeys = [NSMutableArray arrayWithArray:sortedArray];
     [self.tableView reloadData];
