@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface StopwatchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

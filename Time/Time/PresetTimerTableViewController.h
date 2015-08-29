@@ -11,11 +11,15 @@
 
 @interface PresetTimerTableViewController : UITableViewController
 
+
 @property (nonatomic) TimerData *selectedPreset;
 
 - (IBAction)backButton:(id)sender;
 
 - (IBAction)addButton:(id)sender;
+
+@property (nonatomic) UIViewController *timerVC;
+
 
 
 @end
