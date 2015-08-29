@@ -10,6 +10,6 @@
 
 @interface PresetTableViewController : UITableViewController
 
-@property (nonatomic) NSMutableArray *presetTime;
+@property (nonatomic) NSMutableDictionary *personalTimer;
 
 @end

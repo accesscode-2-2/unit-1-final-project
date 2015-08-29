@@ -18,11 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    
 //    self.values = [NSDictionary dictionaryWithObjects:value
 //                                                     forKeys:self.name.];
-//    
-//    [dict setValue:value forKey:self.nameYourTask.text];
+    
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
@@ -36,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.presetTime.count;
+    return self.personalTimer.count;
 }
 
 /*

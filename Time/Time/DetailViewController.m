@@ -10,9 +10,6 @@
 
 @interface DetailViewController ()
 
-//@property (nonatomic) NSMutableArray *key;
-//@property (nonatomic) NSMutableArray *object;
-
 @end
 
 @implementation DetailViewController
@@ -29,20 +26,12 @@
 
 
 - (IBAction)saveButton:(UIButton *)sender {
-//    ModelTime *timer = [[ModelTime alloc] init];
-//    NSString *task = self.nameYourTask.text;
     
-//    NSMutableArray *keys = [NSMutableArray arrayWithObject:self.nameYourTask.text];
-//    NSMutableArray *objects = [NSMutableArray arrayWithObject:self.yourTime.text];
-//    NSMutableDictionary *values = [NSMutableDictionary dictionaryWithObjects:keys forKeys:objects];
-//    
-//    NSLog(@"%@ %@", keys, [values objectForKey:keys]);
-    
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *values = [[NSMutableDictionary alloc] init];
     NSString *value = [NSString stringWithFormat:self.yourTime.text];
-    [dict setValue:value forKey:self.nameYourTask.text];
+    [values setValue:value forKey:self.nameYourTask.text];
     
-    NSLog(@"%@", dict);
+    NSLog(@"%@", values);
     
     
 }

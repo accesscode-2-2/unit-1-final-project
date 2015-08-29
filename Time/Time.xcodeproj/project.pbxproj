@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B6CAA6A1B9201B0004865B0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA691B9201B0004865B0 /* DetailViewController.m */; };
 		0B6CAA711B92383B004865B0 /* home-hero-10-1440-900.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */; };
+		0B6CAA741B9249B6004865B0 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA731B9249B6004865B0 /* TimeManager.m */; };
 		0B761E9C1B8FE6AB006EDD4A /* PresetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */; };
 		0BC209411B87E50B00D9FAE9 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC209401B87E50B00D9FAE9 /* TimerViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
@@ -37,6 +38,8 @@
 		0B6CAA681B9201B0004865B0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0B6CAA691B9201B0004865B0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		0B6CAA701B92383B004865B0 /* home-hero-10-1440-900.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-hero-10-1440-900.jpg"; sourceTree = "<group>"; };
+		0B6CAA721B9249B6004865B0 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
+		0B6CAA731B9249B6004865B0 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
 		0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTableViewController.h; sourceTree = "<group>"; };
 		0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTableViewController.m; sourceTree = "<group>"; };
 		0BC2093F1B87E50B00D9FAE9 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 			children = (
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
+				0B6CAA721B9249B6004865B0 /* TimeManager.h */,
+				0B6CAA731B9249B6004865B0 /* TimeManager.m */,
 				0BC2093F1B87E50B00D9FAE9 /* TimerViewController.h */,
 				0BC209401B87E50B00D9FAE9 /* TimerViewController.m */,
 				0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */,
@@ -254,6 +259,7 @@
 				0B761E9C1B8FE6AB006EDD4A /* PresetTableViewController.m in Sources */,
 				0BC209411B87E50B00D9FAE9 /* TimerViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
+				0B6CAA741B9249B6004865B0 /* TimeManager.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				0B6CAA6A1B9201B0004865B0 /* DetailViewController.m in Sources */,
 			);
