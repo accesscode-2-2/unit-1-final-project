@@ -6,15 +6,16 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Digire__.ttf">
-            <string>DigitalReadoutExpanded</string>
-        </mutableArray>
         <mutableArray key="Digireu_.ttf">
             <string>DigitalReadoutExpUpright</string>
             <string>DigitalReadoutExpUpright</string>
             <string>DigitalReadoutExpUpright</string>
         </mutableArray>
         <mutableArray key="Orbitron-Regular.ttf">
+            <string>Orbitron-Regular</string>
+            <string>Orbitron-Regular</string>
+            <string>Orbitron-Regular</string>
+            <string>Orbitron-Regular</string>
             <string>Orbitron-Regular</string>
             <string>Orbitron-Regular</string>
         </mutableArray>
@@ -146,7 +147,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="V5g-Rq-mlZ"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" id="V5g-Rq-mlZ"/>
                     <connections>
                         <outlet property="lapButton" destination="X9t-kZ-G2c" id="Myu-Bu-os2"/>
                         <outlet property="lapLabel" destination="hHr-rR-NAK" id="SGg-hO-A7F"/>
@@ -198,27 +199,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pah-Du-ieJ">
-                                <rect key="frame" x="36" y="491" width="33" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pah-Du-ieJ">
+                                <rect key="frame" x="36" y="453" width="63" height="34"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="22"/>
                                 <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="0.1135505265" blue="0.1243430306" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="itK-ui-6Sm" eventType="touchUpInside" id="fRX-eg-LYi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-Ih-xLb">
-                                <rect key="frame" x="524" y="491" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-Ih-xLb">
+                                <rect key="frame" x="491" y="453" width="73" height="34"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="22"/>
                                 <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="0.1135505265" blue="0.1243430306" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="resetButtonTapped:" destination="itK-ui-6Sm" eventType="touchUpInside" id="bi0-Ig-kG5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN0-yO-Wol">
-                                <rect key="frame" x="253" y="491" width="95" height="30"/>
-                                <state key="normal" title="Preset Timers">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eN0-yO-Wol">
+                                <rect key="frame" x="251" y="453" width="98" height="34"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="22"/>
+                                <state key="normal" title="Presets">
+                                    <color key="titleColor" red="1" green="0.1135505265" blue="0.1243430306" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -226,27 +233,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htx-Af-LLq">
-                                <rect key="frame" x="258" y="36" width="85" height="22"/>
-                                <fontDescription key="fontDescription" name="DigitalReadoutExpanded" family="Digital Readout Expanded" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="246" y="84" width="109" height="35"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="35"/>
+                                <color key="textColor" red="1" green="0.1135505265" blue="0.1243430306" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iio-Lt-iJ8">
-                                <rect key="frame" x="32" y="219" width="536" height="162"/>
+                                <rect key="frame" x="32" y="194" width="536" height="162"/>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="eN0-yO-Wol" secondAttribute="centerX" id="4ro-31-bXt"/>
                             <constraint firstItem="Htx-Af-LLq" firstAttribute="top" secondItem="nU7-yT-epB" secondAttribute="bottom" constant="16" id="EFf-x8-V5Q"/>
                             <constraint firstItem="pah-Du-ieJ" firstAttribute="leading" secondItem="gEn-en-CSI" secondAttribute="leadingMargin" constant="20" id="LcV-KF-p9V"/>
-                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="pah-Du-ieJ" secondAttribute="bottom" constant="30" id="MHA-4n-4J1"/>
-                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="eN0-yO-Wol" secondAttribute="bottom" constant="30" id="Obc-wb-JKE"/>
+                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="pah-Du-ieJ" secondAttribute="bottom" constant="64" id="MHA-4n-4J1"/>
+                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="eN0-yO-Wol" secondAttribute="bottom" constant="64" id="Obc-wb-JKE"/>
                             <constraint firstAttribute="centerX" secondItem="iio-Lt-iJ8" secondAttribute="centerX" id="Odq-mh-faJ"/>
-                            <constraint firstAttribute="centerY" secondItem="iio-Lt-iJ8" secondAttribute="centerY" id="Ow6-jq-KEd"/>
-                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="d5i-Ih-xLb" secondAttribute="bottom" constant="30" id="U7R-Bo-kBd"/>
+                            <constraint firstAttribute="centerY" secondItem="iio-Lt-iJ8" secondAttribute="centerY" constant="25" id="Ow6-jq-KEd"/>
+                            <constraint firstItem="ONy-8e-2bi" firstAttribute="top" secondItem="d5i-Ih-xLb" secondAttribute="bottom" constant="64" id="U7R-Bo-kBd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iio-Lt-iJ8" secondAttribute="trailing" constant="16" id="YF7-xN-91I"/>
-                            <constraint firstItem="Htx-Af-LLq" firstAttribute="top" secondItem="nU7-yT-epB" secondAttribute="bottom" constant="16" id="dit-Ou-fIq"/>
+                            <constraint firstItem="Htx-Af-LLq" firstAttribute="top" secondItem="nU7-yT-epB" secondAttribute="bottom" constant="64" id="dit-Ou-fIq"/>
                             <constraint firstAttribute="centerX" secondItem="Htx-Af-LLq" secondAttribute="centerX" id="mCz-yU-uhS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d5i-Ih-xLb" secondAttribute="trailing" constant="20" id="pGQ-OT-LXI"/>
                             <constraint firstItem="iio-Lt-iJ8" firstAttribute="leading" secondItem="gEn-en-CSI" secondAttribute="leadingMargin" constant="16" id="vtD-ja-Agw"/>
@@ -257,7 +264,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Tuj-kJ-qKb"/>
+                    <tabBarItem key="tabBarItem" title="Timer" id="Tuj-kJ-qKb"/>
                     <connections>
                         <outlet property="resetButton" destination="d5i-Ih-xLb" id="UmW-LH-ffg"/>
                         <outlet property="startButton" destination="pah-Du-ieJ" id="Ni7-OJ-0MW"/>
@@ -452,7 +459,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ba-4I-Xhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="1781"/>
+            <point key="canvasLocation" x="875" y="1786"/>
         </scene>
         <!--New Event View Controller-->
         <scene sceneID="GRZ-nP-oYE">
@@ -512,11 +519,11 @@
             </objects>
             <point key="canvasLocation" x="875" y="2517"/>
         </scene>
-        <!--Item 3-->
+        <!--Event Countdown-->
         <scene sceneID="Svz-BX-A1p">
             <objects>
                 <navigationController id="2yI-Ph-liK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 3" id="U5Y-lq-vUl"/>
+                    <tabBarItem key="tabBarItem" title="Event Countdown" id="U5Y-lq-vUl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MiW-AW-5au">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

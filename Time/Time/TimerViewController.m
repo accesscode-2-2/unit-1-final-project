@@ -41,7 +41,7 @@
     
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
-    self.timerName.text = @"";
+    self.timerName.text = @"Timer";
     
     self.isStarted = NO;
 }
@@ -205,7 +205,7 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
-    self.timerName.text = @"";
+    self.timerName.text = @"Timer";
     if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
@@ -245,6 +245,33 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return self.pickerViewNumbers[component][row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    UILabel *viewAsLabel = (UILabel *)view;
+    
+    if(!viewAsLabel) {
+        viewAsLabel = [[UILabel alloc] init];
+        [viewAsLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:50]];
+        [viewAsLabel setTextAlignment:NSTextAlignmentCenter];
+        [viewAsLabel setBackgroundColor:[UIColor orangeColor]];
+        [viewAsLabel setTextColor:[UIColor whiteColor]];
+    }
+    
+    if (component == 0) {
+        viewAsLabel.text = [self.hours objectAtIndex:row];
+    } else if (component == 1) {
+        viewAsLabel.text = [self.minutes objectAtIndex:row];
+    } else {
+        viewAsLabel.text = [self.seconds objectAtIndex:row];
+    }
+ 
+    return viewAsLabel;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 80;
 }
 
 #pragma mark - PresetsTableViewControllerDelegate implementation
