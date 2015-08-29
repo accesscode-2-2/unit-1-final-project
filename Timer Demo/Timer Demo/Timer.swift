@@ -51,7 +51,9 @@ class Timer: NSObject {
         var timeString = ""
         for unit in timeUnits{
             let unitString = unit > 9 ? "\(unit)" : "0\(unit)"
+            if unit > 0 {
                 timeString = timeString + unitString + ":"
+            }
         }
         
       return timeString
