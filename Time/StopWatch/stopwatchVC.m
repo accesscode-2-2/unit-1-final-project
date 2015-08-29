@@ -24,7 +24,7 @@
 
 -(NSTimer *) createTimer {
     
-    return [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timerCount) userInfo:nil repeats:YES];
+    return [NSTimer scheduledTimerWithTimeInterval:1.0/5000 target:self selector:@selector(timerCount) userInfo:nil repeats:YES];
 }
 
 -(void)timerCount{
@@ -34,7 +34,7 @@
     _timerDisplay0.text = [NSString stringWithFormat:@"%i",countNumber0];
     
     //if miliseconds == 100 reset milisecond count and start counting seconds
-    if (countNumber0 == 100) {
+    if (countNumber0 == 10) {
         countNumber1 = countNumber1 +1 ;
         _timerDisplay1.text = [NSString stringWithFormat:@"%i",countNumber1];
         

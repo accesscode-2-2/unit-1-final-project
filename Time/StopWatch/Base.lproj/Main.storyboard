@@ -4,6 +4,45 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="HxO-ej-8pC">
+            <objects>
+                <tableViewController id="Sf5-QO-mwn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7Wv-yQ-vZL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="r53-4m-BEM">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RlK-Ue-2hy">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RlK-Ue-2hy" id="jYK-Hc-BPk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twl-mI-me0">
+                                                    <rect key="frame" x="22" y="7" width="370" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Sf5-QO-mwn" id="IuN-Aa-dI6"/>
+                            <outlet property="delegate" destination="Sf5-QO-mwn" id="qOc-oE-Mpt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="TPK-Cj-gBd"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xDG-hZ-iGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-796" y="-875"/>
+        </scene>
         <!--Timer-->
         <scene sceneID="afe-lt-dMp">
             <objects>
@@ -468,7 +507,7 @@
             </objects>
             <point key="canvasLocation" x="-1900" y="-875"/>
         </scene>
-        <!--StopwatchVC-->
+        <!--Don't STOP Watch-->
         <scene sceneID="oGf-Tl-Jvy">
             <objects>
                 <viewController storyboardIdentifier="StopwatchSB" id="p74-bG-tRn" customClass="stopwatchVC" sceneMemberID="viewController">
@@ -493,7 +532,7 @@
                                 <rect key="frame" x="16" y="337" width="382" height="342"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lapTableViewCellID" textLabel="05F-U0-O44" style="IBUITableViewCellStyleDefault" id="aVK-Ic-VP7">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lapTableViewCellID" textLabel="05F-U0-O44" style="IBUITableViewCellStyleDefault" id="aVK-Ic-VP7">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aVK-Ic-VP7" id="2tZ-eS-RYl">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -506,6 +545,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Sf5-QO-mwn" kind="push" id="gIJ-uT-ST3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -544,7 +586,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kBz-Pb-WvQ"/>
+                    <navigationItem key="navigationItem" title="Don't STOP Watch" id="kBz-Pb-WvQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="lapResetButton" destination="ING-7o-H2P" id="LQB-QJ-Whq"/>

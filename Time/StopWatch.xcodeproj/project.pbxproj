@@ -14,6 +14,7 @@
 		181132C31B8D7C6900115557 /* fe_runningStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132BF1B8D7C6900115557 /* fe_runningStart.png */; };
 		181132C41B8D7C6900115557 /* fe_runningStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132C01B8D7C6900115557 /* fe_runningStop.png */; };
 		181132CA1B8DC50B00115557 /* stopwatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181132C91B8DC50B00115557 /* stopwatchVC.m */; };
+		186388461B91E2F200ACDA00 /* dontstopWatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 186388451B91E2F200ACDA00 /* dontstopWatch.png */; };
 		186A1C631B86D19500668F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C621B86D19500668F10 /* main.m */; };
 		186A1C661B86D19500668F10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C651B86D19500668F10 /* AppDelegate.m */; };
 		186A1C6C1B86D19500668F10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186A1C6A1B86D19500668F10 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		181132C01B8D7C6900115557 /* fe_runningStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningStop.png; sourceTree = "<group>"; };
 		181132C81B8DC50B00115557 /* stopwatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stopwatchVC.h; sourceTree = "<group>"; };
 		181132C91B8DC50B00115557 /* stopwatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stopwatchVC.m; sourceTree = "<group>"; };
+		186388451B91E2F200ACDA00 /* dontstopWatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dontstopWatch.png; sourceTree = "<group>"; };
 		186A1C5D1B86D19500668F10 /* StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186A1C611B86D19500668F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186A1C621B86D19500668F10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				181132BD1B8D7C6900115557 /* fe_runningLap.png */,
 				181132BE1B8D7C6900115557 /* fe_runningReset.png */,
+				186388451B91E2F200ACDA00 /* dontstopWatch.png */,
 				181132BF1B8D7C6900115557 /* fe_runningStart.png */,
 				181132C01B8D7C6900115557 /* fe_runningStop.png */,
 			);
@@ -251,6 +254,7 @@
 				181132C11B8D7C6900115557 /* fe_runningLap.png in Resources */,
 				186A1C6C1B86D19500668F10 /* Main.storyboard in Resources */,
 				186A1C711B86D19500668F10 /* LaunchScreen.xib in Resources */,
+				186388461B91E2F200ACDA00 /* dontstopWatch.png in Resources */,
 				186A1C6E1B86D19500668F10 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
