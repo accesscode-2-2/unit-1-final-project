@@ -26,14 +26,48 @@
     [self.navigationItem setTitle:@"Add City"];
     
     
-    
-    
     self.clock = [[NSMutableDictionary alloc] init];
 
     
-    [self.clock setObject:@"10:50" forKey:@"NY"];
-    [self.clock setObject:@"10:40" forKey:@"NJ"];
-    [self.clock setObject:@"10:30" forKey:@"Paris"];
+    ////// trying to get current time
+    NSDate * now = [NSDate date];
+  
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"HH:mm"];
+   
+    NSString *NYTimeString = [outputFormatter stringFromDate:now];
+    NSLog(@"NYDateString %@", NYTimeString);
+    
+    NSDate *parisTime = [now addTimeInterval:21600]; // Add XXX seconds to *now
+    NSString *ParisTimeString = [outputFormatter stringFromDate:parisTime];
+    NSLog(@"ParisDateString %@", ParisTimeString);
+    
+    
+    NSDate *RomeTime = [now addTimeInterval:21600];
+    NSString *RomeTimeString = [outputFormatter stringFromDate:RomeTime];
+    NSLog(@"RomeTimeString %@", RomeTimeString);
+    
+    
+    NSDate *MexicoCity = [now addTimeInterval:-3600];
+    NSString *MexicoCityTimeString = [outputFormatter stringFromDate:MexicoCity];
+    NSLog(@"MexicoCityTimeString %@", MexicoCityTimeString);
+    
+    
+    
+    NSDate *NewDelhi = [now addTimeInterval:34200];
+    NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
+    NSLog(@"NewDelhiTimeString %@", NewDelhiTimeString);
+
+    
+    
+    
+    
+    
+    [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi"];
+    [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
+    [self.clock setObject:NYTimeString forKey:@"New York"];
+    [self.clock setObject:RomeTimeString forKey:@"Italy – Rome"];
+    [self.clock setObject:ParisTimeString forKey:@"France - Paris"];
 
     
         self.keyArray = [self.clock allKeys];
@@ -46,7 +80,13 @@
         NSString *value = [self.clock objectForKey:key];
         
  
-        NSLog(@"key: %@, value: %@", key, value);
+        //NSLog(@"key: %@, value: %@", key, value);
+        
+       
+        
+    
+        
+        
         
         
     }
