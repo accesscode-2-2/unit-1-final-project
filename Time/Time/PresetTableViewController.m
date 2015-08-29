@@ -7,6 +7,7 @@
 //
 
 #import "PresetTableViewController.h"
+#import "DetailViewController.h"
 
 @interface PresetTableViewController ()
 
@@ -16,7 +17,9 @@
 @implementation PresetTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
+    
     
 }
 
