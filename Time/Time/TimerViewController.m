@@ -29,6 +29,7 @@
 @property (nonatomic) NSInteger row;
 
 @property (nonatomic) BOOL isStarted;
+@property (nonatomic) BOOL isInitial;
 
 @end
 
@@ -44,11 +45,15 @@
     self.timerName.text = @"Timer";
     
     self.isStarted = NO;
+    self.isInitial = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if(self.presetTime.count !=0){
+    
+    NSLog(@"Begining %d",[self.timer isValid]);
+    if(self.presetTime.count !=0 && self.timer == nil){
+        NSLog(@"Preset Timer here!");
         [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
         [self.timerPickerView setUserInteractionEnabled:NO];
 
@@ -56,9 +61,14 @@
         [self.timerPickerView selectRow:[self.presetTime[1] intValue] inComponent:1 animated:YES];
         [self.timerPickerView selectRow:[self.presetTime[2] intValue] inComponent:2 animated:YES];
     }
-    if(![self.timer isValid]){
+    NSLog(@"Before second if statement timer is %d",[self.timer isValid]);
+    if(self.timer == nil && !self.isInitial){
+        NSLog(@"%d",[self.timer isValid]);
+        NSLog(@"%d",self.isInitial);
+        NSLog(@"Timer is not valid, so this is a new one!");
         self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+            [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+        
     }
 }
 
@@ -154,6 +164,8 @@
     
     if ( (hourIndex  == 00) && (minuteIndex % 60 == 00) && (secondIndex % 60 == 00) ) {
         [self.timer invalidate];
+        self.timer = nil;
+        
     }
     else{
          if(secondIndex % 60 == 00){
@@ -217,6 +229,7 @@
 }
 
 - (IBAction)presetButtonTapped:(id)sender {
+    self.isInitial = NO;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *presetsNC = [storyboard  instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
     NSArray *viewControllers = [presetsNC viewControllers];
@@ -253,7 +266,7 @@
         viewAsLabel = [[UILabel alloc] init];
         [viewAsLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:50]];
         [viewAsLabel setTextAlignment:NSTextAlignmentCenter];
-        [viewAsLabel setBackgroundColor:[UIColor orangeColor]];
+        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:0/255 green:128.0/255 blue:255/255 alpha:1]];
         [viewAsLabel setTextColor:[UIColor whiteColor]];
     }
     
@@ -267,6 +280,7 @@
  
     return viewAsLabel;
 }
+
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
     return 80;

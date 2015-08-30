@@ -244,9 +244,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iio-Lt-iJ8">
                                 <rect key="frame" x="32" y="194" width="536" height="162"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="eN0-yO-Wol" secondAttribute="centerX" id="4ro-31-bXt"/>
                             <constraint firstItem="Htx-Af-LLq" firstAttribute="top" secondItem="nU7-yT-epB" secondAttribute="bottom" constant="16" id="EFf-x8-V5Q"/>
