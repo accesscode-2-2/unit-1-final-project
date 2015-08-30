@@ -11,8 +11,8 @@
 @interface PresetTimerDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
+//@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *startCancelButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;
@@ -41,9 +41,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     self.nameLabel.text = self.currentTimer.timerName;
-    
     self.imageView.image = [UIImage imageNamed:self.currentTimer.timerName];
     
     self.hours = self.currentTimer.countDownDuration/3600;
@@ -56,7 +54,11 @@
     self.isPaused = NO;
     self.pauseResumeButton.enabled = NO;
     
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.view reloadInputViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,23 +68,15 @@
 
 - (IBAction)startCancelButton:(id)sender {
     
-    NSTimeInterval duration = self.datePicker.countDownDuration;
-    
-    self.seconds = 0;
-    self.hours = (int)(duration/3600.0f);
-    self.minutes = ((int)duration - (self.hours * 3600))/60;
-    
-    self.secondsCount = ((self.hours * 3600) + (self.minutes * 60));
+    self.secondsCount = self.currentTimer.countDownDuration;
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
-    
-    
     
     if (self.isTimerRunning == YES) {
         
         self.timeLabel.alpha = 0;
-        [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
-        [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
+        [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = NO;
         
         [self.timer invalidate];
@@ -92,7 +86,7 @@
         
         self.timeLabel.alpha = 1;
         
-        [self.startCancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [self.startCancelButton setTitle:@"CANCEL" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = YES;
         
         if (self.timer == nil) {
@@ -126,25 +120,24 @@
         [self.timer invalidate];
         self.timer = nil;
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done!" message:[NSString stringWithFormat:@""] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done" message:[NSString stringWithFormat:@"%@ Is Ready",self.currentTimer.timerName] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         
         [alert show];
         
         self.timeLabel.alpha = 0;
-        [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
+        [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
         self.pauseResumeButton.enabled = NO;
         
     }
     
 }
 
-
 - (IBAction)pauseResumeButton:(id)sender {
     if (self.isPaused == NO) {
         [self.timer invalidate];
         self.timer = nil;
         
-        [self.pauseResumeButton setTitle:@"Resume" forState:UIControlStateNormal];
+        [self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
         
     } else {
         if (self.timer) {
@@ -157,7 +150,7 @@
                                                     userInfo:nil
                                                      repeats:YES];
         
-        [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
     }
     
     self.isPaused = !self.isPaused;

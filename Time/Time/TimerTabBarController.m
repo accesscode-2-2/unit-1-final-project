@@ -124,7 +124,7 @@
         [self.timer invalidate];
         self.timer = nil;
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done!" message:[NSString stringWithFormat:@""] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done" message:[NSString stringWithFormat:@""] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         
         [alert show];
         [self.animatedPicture stopAnimating];
@@ -145,7 +145,7 @@
         
         [self.animatedPicture stopAnimating]; // stop animation
         
-        [self.pauseResumeButton setTitle:@"Resume" forState:UIControlStateNormal];
+        [self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
         
     } else {
         if (self.timer) {
@@ -159,7 +159,7 @@
                                                     userInfo:nil
                                                      repeats:YES];
         
-        [self.pauseResumeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
         [self.animatedPicture startAnimating]; // start animation
     }
     

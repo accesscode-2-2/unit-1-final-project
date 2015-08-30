@@ -36,19 +36,11 @@
 
 
 - (void)addButtonTapped {
-    // initialize view controller
-    
-//    PresetTimerAddViewController *myNewVC = [[PresetTimerAddViewController alloc] init];
+
     PresetTimerAddViewController *myNewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"showAdd"];
     
     [self presentViewController:myNewVC animated:YES completion:nil];
- 
-    
-    // modal
-    // self presentViewController
-    
-    // push
-    // self.navigationController push
+
 }
 
 - (void)didReceiveMemoryWarning {
