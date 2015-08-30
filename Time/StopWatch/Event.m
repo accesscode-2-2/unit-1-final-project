@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 MacManApp. All rights reserved.
 //
 
-#import "eventObject.h"
+#import "Event.h"
 
-@implementation eventObject
+@implementation Event
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface eventObject : NSObject
+@interface Event : NSObject
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSDate *endTime;
 

@@ -9,9 +9,9 @@
 #import "EventCountdownViewController.h"
 
 @interface EventCountdownViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
-@property (nonatomic) NSDate *demoDay;
 
+@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -19,20 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.countdownLabel.text = [self.obj name];
-    
-    //start timer and display in label
+    self.nameLabel.text = [self.event name];
     
     
-    // create a date formatter so that you can create an NSDate
-    // object from a string
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy MM dd"];
-    
-    // set the demo day property (NSDate) to the date "2015 09 03"
-    self.demoDay = [formatter dateFromString:@"2015 09 03"];
-    
-//    self.countdownLabel.text = @"0";
     
     // create a new instance of NSTimer
     // equivalent of running [self timerFired] every 1.0 seconds
@@ -42,46 +31,40 @@
     // executes
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     
-    
-    // set up a timer to fire once ever second
-    NSTimer *demoDayTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(fireDemoDayTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)fireDemoDayTimer:(NSTimer *)timer {
-    
-    // get the current day and time
-    NSDate *now = [[NSDate alloc] init];
-    
-    // calculate the amount of time between now and self.demoDay
-    // in seconds
-    NSTimeInterval timeLeft = [self.demoDay timeIntervalSinceDate:now];
-    
-    // this is where you would format the time and display it on
-    // the screen
-    NSLog(@"%f", timeLeft);
-}
+
 
 - (void)timerFired:(NSTimer *)timer {
     
-    // get the current number from out text label
-    NSInteger currentNumber = [self.countdownLabel.text integerValue];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    // create a variable that's pointing to the current number + 1
-    NSInteger nextNumber = currentNumber - 1;
+    NSCalendarUnit unitFlag = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     
-    // update the text label
-    self.countdownLabel.text = [NSString stringWithFormat:@"%lu", nextNumber];
+   
+    NSDate *fromDate = [NSDate date];
+    NSDate *toDate = self.event.endTime;
     
-    // if the number is 10, invalidate the timer
-    if (nextNumber == 0) {
+    NSDateComponents *components = [calendar components:unitFlag
+                                               fromDate:[NSDate date]
+                                                 toDate:self.event.endTime
+                                                options:0];
+    
+    self.countdownLabel.text = [NSString stringWithFormat:@"Years:%@ Months:%@ Days:%@\nHours:%@ Minuets:%@ Seconds:%@ ", @(components.year), @(components.month), @(components.day), @(components.hour), @(components.minute), @(components.second)];
+    
+//    if ([fromDate timeIntervalSinceDate:toDate] ) {
+//        
+//    }
+//
+    
+    if ([fromDate earlierDate:toDate] == toDate ) {
         [timer invalidate];
+        self.countdownLabel.text = @"You're all set";
     }
-    
-    NSLog(@"timer fired");
 }
 
 @end

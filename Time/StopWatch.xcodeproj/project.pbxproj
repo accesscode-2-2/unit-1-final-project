@@ -15,7 +15,7 @@
 		186A1C7D1B86D19500668F10 /* StopWatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C7C1B86D19500668F10 /* StopWatchTests.m */; };
 		511D2C5D1B8981DE000FB312 /* StopwatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 511D2C5C1B8981DE000FB312 /* StopwatchVC.m */; };
 		515E1FCE1B921338005EEC90 /* SpecialEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FCD1B921338005EEC90 /* SpecialEventsTableViewController.m */; };
-		515E1FD41B9250D5005EEC90 /* eventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FD31B9250D5005EEC90 /* eventObject.m */; };
+		515E1FD41B9250D5005EEC90 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FD31B9250D5005EEC90 /* Event.m */; };
 		515E1FD71B9251BC005EEC90 /* EventCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FD61B9251BC005EEC90 /* EventCountdownViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +45,8 @@
 		511D2C5C1B8981DE000FB312 /* StopwatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchVC.m; sourceTree = "<group>"; };
 		515E1FCC1B921338005EEC90 /* SpecialEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialEventsTableViewController.h; sourceTree = "<group>"; };
 		515E1FCD1B921338005EEC90 /* SpecialEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialEventsTableViewController.m; sourceTree = "<group>"; };
-		515E1FD21B9250D5005EEC90 /* eventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObject.h; sourceTree = "<group>"; };
-		515E1FD31B9250D5005EEC90 /* eventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventObject.m; sourceTree = "<group>"; };
+		515E1FD21B9250D5005EEC90 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		515E1FD31B9250D5005EEC90 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		515E1FD51B9251BC005EEC90 /* EventCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCountdownViewController.h; sourceTree = "<group>"; };
 		515E1FD61B9251BC005EEC90 /* EventCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCountdownViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,8 +94,8 @@
 				186A1C651B86D19500668F10 /* AppDelegate.m */,
 				511D2C5B1B8981DE000FB312 /* StopwatchVC.h */,
 				511D2C5C1B8981DE000FB312 /* StopwatchVC.m */,
-				515E1FD21B9250D5005EEC90 /* eventObject.h */,
-				515E1FD31B9250D5005EEC90 /* eventObject.m */,
+				515E1FD21B9250D5005EEC90 /* Event.h */,
+				515E1FD31B9250D5005EEC90 /* Event.m */,
 				515E1FCC1B921338005EEC90 /* SpecialEventsTableViewController.h */,
 				515E1FCD1B921338005EEC90 /* SpecialEventsTableViewController.m */,
 				515E1FD51B9251BC005EEC90 /* EventCountdownViewController.h */,
@@ -239,7 +239,7 @@
 				186A1C661B86D19500668F10 /* AppDelegate.m in Sources */,
 				515E1FCE1B921338005EEC90 /* SpecialEventsTableViewController.m in Sources */,
 				186A1C631B86D19500668F10 /* main.m in Sources */,
-				515E1FD41B9250D5005EEC90 /* eventObject.m in Sources */,
+				515E1FD41B9250D5005EEC90 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

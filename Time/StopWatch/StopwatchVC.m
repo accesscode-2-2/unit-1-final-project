@@ -14,7 +14,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
-@property (nonatomic) NSMutableArray *laps; 
+@property (nonatomic) NSMutableArray *laps;
+
+//Alpha: Step 2
+@property (nonatomic) NSTimeInterval maxLapTimeInterval;
 
 
 
@@ -100,6 +103,8 @@
         
         //insert in the middle of the Array // addObject goes at the end of the array
         //adding the current time into lap
+//Alpha: Step 3
+        self.maxLapTimeInterval = MAX(self.maxLapTimeInterval, timeSinceLastLap);
         [self.laps addObject:@(timeSinceLastLap)];
         
         [self.lapsTableView reloadData];
@@ -115,6 +120,8 @@
         [self.timerLabel setText:@"00:00:00"];
         self.totalTime = 0;
         self.totalLapTime = 0;
+        
+        self.maxLapTimeInterval = 0;
     
         [self.lapsTableView reloadData];
     }
@@ -160,6 +167,21 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"Laps %@", [self formattedTime:[lapDuration doubleValue]]];
 //    cell.detailTextLabel.text = self.laps[indexPath.row];
+    
+//Alpha: Step 4
+    CGFloat alpha = 0;
+
+//Alpha: Step 5: Becuase rockets have exploded because of this. 
+
+    if (self.maxLapTimeInterval > 0) {
+        alpha = lapDuration.doubleValue / self.maxLapTimeInterval;
+    }
+//Alpha: Step 1
+    
+    cell.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:alpha];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+                                    
+    
     
 
     return cell;

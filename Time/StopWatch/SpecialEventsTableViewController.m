@@ -7,12 +7,14 @@
 //
 
 #import "SpecialEventsTableViewController.h"
-#import "eventObject.h"
+#import "Event.h"
 #import "EventCountdownViewController.h"
 
 
 
 @interface SpecialEventsTableViewController ()
+
+@property (nonatomic) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -20,17 +22,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    self.dateFormatter = dateFormatter;
+    [dateFormatter setDateFormat:@"MM/dd/yyyy 'at' HH:mm:ss"];
+    
     self.specialEventsList = [[NSMutableArray alloc]init];
-    eventObject *object = [[eventObject alloc]init];
-    object.name =@"Hello";
-    object.endTime = [NSDate date];
-    [self.specialEventsList addObject: object];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    Event *event = [[Event alloc] init];
+    event.name = @"Jesus's Birthday";
+    event.endTime = [dateFormatter dateFromString:@"12/25/2015 at 07:00:00"];
+    [self.specialEventsList addObject:event];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    event = [[Event alloc] init];
+    event.name = @"Project Due";
+    event.endTime = [dateFormatter dateFromString:@"09/01/2015 at 00:00:00"];
+    [self.specialEventsList addObject:event];
+    
+    event = [[Event alloc] init];
+    event.name = @"Lease Due Date";
+    event.endTime = [dateFormatter dateFromString:@"11/01/2015 at 07:00:00"];
+    [self.specialEventsList addObject:event];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,7 +86,8 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
     EventCountdownViewController *destination = [segue destinationViewController];
-    destination.obj = [self.specialEventsList objectAtIndex:indexPath.row];
+    destination.dateFormatter = self.dateFormatter;
+    destination.event = [self.specialEventsList objectAtIndex:indexPath.row];
     
 //    detailVC.eventDatePicked = cell.detailTextLabel.text;
 //    detailVC.eventDatePicked = [NSString stringWithFormat:@"%@", cell.detailTextLabel.text ];

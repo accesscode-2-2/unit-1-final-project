@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "eventObject.h"
+#import "Event.h"
 
 @interface EventCountdownViewController : UIViewController
-@property(nonatomic) eventObject *obj;
+
+@property (nonatomic) Event *event;
+@property (nonatomic) NSDateFormatter *dateFormatter;
+
 @end

@@ -303,8 +303,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFz-Nu-6fU">
-                                <rect key="frame" x="186" y="191" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCf-n9-Y4A">
+                                <rect key="frame" x="184" y="114" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFz-Nu-6fU">
+                                <rect key="frame" x="50" y="357" width="314" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -312,12 +318,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DCf-n9-Y4A" firstAttribute="top" secondItem="4Sk-fK-Be3" secondAttribute="bottom" constant="50" id="Lu8-a6-YI6"/>
+                            <constraint firstAttribute="trailing" secondItem="WFz-Nu-6fU" secondAttribute="trailing" constant="50" id="VvM-cd-jNb"/>
                             <constraint firstAttribute="centerX" secondItem="WFz-Nu-6fU" secondAttribute="centerX" id="WI2-fG-8lB"/>
+                            <constraint firstItem="DCf-n9-Y4A" firstAttribute="top" secondItem="WFz-Nu-6fU" secondAttribute="bottom" constant="50" id="XHJ-kD-lvO"/>
+                            <constraint firstItem="WFz-Nu-6fU" firstAttribute="leading" secondItem="FmJ-9q-WnY" secondAttribute="leading" constant="50" id="bGh-4U-6zf"/>
                             <constraint firstAttribute="centerY" secondItem="WFz-Nu-6fU" secondAttribute="centerY" id="hYc-GQ-5t2"/>
+                            <constraint firstAttribute="centerX" secondItem="DCf-n9-Y4A" secondAttribute="centerX" id="ppk-xS-TVL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XHJ-kD-lvO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="countdownLabel" destination="WFz-Nu-6fU" id="BEK-UO-e7d"/>
+                        <outlet property="nameLabel" destination="DCf-n9-Y4A" id="MCd-EF-U2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqt-mD-Jbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
