@@ -1,3 +1,5 @@
+
+
 //
 //  WorldClockAddTableViewController.m
 //  Time
@@ -136,10 +138,12 @@
     city.cityName = self.keyArray[indexPath.row];
     city.cityTime = self.valueArray[indexPath.row];
     
-    
+    WorldClockInfo *citySelected = [[WorldClockInfo alloc] init];
+    city.cityName = self.searchResults[indexPath.row];
+
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        [self.selectedCitiesArray  addObject: city];
+        [self.selectedCitiesArray  addObject: citySelected];
         
     }
     else {
