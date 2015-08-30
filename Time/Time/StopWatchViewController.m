@@ -57,6 +57,7 @@
 #pragma mark StateView
 -(void)resetTimeMode{
     self.lapButton.enabled = NO;
+    [self.lapButton setTitleColor: [UIColor lightGrayColor]forState:UIControlStateNormal];
     [self.lapButton setHidden:NO];
     [self.stopButton setHidden:YES];
     [self.resetButton setHidden:YES];
@@ -88,6 +89,7 @@
 
 #pragma mark IBActions
 - (IBAction)startUIButton:(UIButton *)sender {
+    [self.lapButton setTitleColor: [UIColor blackColor]forState:UIControlStateNormal];
     self.startTime = [NSDate timeIntervalSinceReferenceDate];
     self.startDate = [[NSDate alloc] init];
     self.lapStartTime = [NSDate timeIntervalSinceReferenceDate];
@@ -186,6 +188,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSString *time = self.lapTimeMutableArray[indexPath.row];
     cell.textLabel.text = time;
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld", [self.lapTimeMutableArray count] - (long)indexPath.row];
+    cell.detailTextLabel.text = time;
     
     return cell;
     
