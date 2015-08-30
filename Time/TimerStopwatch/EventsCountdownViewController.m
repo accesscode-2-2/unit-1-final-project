@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *christmasCountdownLabel;
 @property (strong, nonatomic) IBOutlet UILabel *accessCodeCountdownLabel;
 
+// add labels for rounded views here
+
 @property (nonatomic) NSDate *birthday;
 @property (nonatomic) NSDate *christmas;
 @property (nonatomic) NSDate *accessCode;
@@ -27,7 +29,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    // first label here
+    self.roundedButtonView1.layer.cornerRadius = 6.0;
+    self.roundedButtonView1.layer.borderWidth = 3.0f;
 }
 
 - (IBAction)startBirthdayCountdown:(id)sender {
