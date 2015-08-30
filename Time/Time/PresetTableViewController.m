@@ -8,6 +8,7 @@
 
 #import "PresetTableViewController.h"
 #import "DetailViewController.h"
+#import "PresetTime.h"
 
 @interface PresetTableViewController ()
 
@@ -18,10 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    
-//    self.values = [NSDictionary dictionaryWithObjects:value
-//                                                     forKeys:self.name.];
     
+    // alloc init self.timers
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
@@ -35,7 +34,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.personalTimer.count;
+    return self.timers.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DetailViewController *detailViewController = segue.destinationViewController;
 }
 
 /*

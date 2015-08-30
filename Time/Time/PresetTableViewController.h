@@ -11,5 +11,8 @@
 @interface PresetTableViewController : UITableViewController
 
 @property (nonatomic) NSMutableDictionary *personalTimer;
+//@property (nonatomic) PresetTime * thisPreset;
+
+@property (nonatomic) NSMutableArray *timers;
 
 @end

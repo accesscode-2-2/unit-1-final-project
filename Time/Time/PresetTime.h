@@ -1,5 +1,5 @@
 //
-//  TimeManager.h
+//  PresetTime.h
 //  Time
 //
 //  Created by Artur Lan on 8/29/15.
@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TimeManager : NSObject
+@interface PresetTime : NSObject
 
-@property (nonatomic) NSMutableDictionary *personalTimer;
-
-+(TimeManager *)shared;
+@property (nonatomic) NSString * nameOfTask;
+@property (nonatomic) NSTimeInterval timeOfTask;
 
 @end

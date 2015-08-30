@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "PresetTime.h"
 
 @interface DetailViewController ()
 
@@ -27,12 +28,11 @@
 
 - (IBAction)saveButton:(UIButton *)sender {
     
-    NSMutableDictionary *values = [[NSMutableDictionary alloc] init];
-    NSString *value = [NSString stringWithFormat:self.yourTime.text];
-    [values setValue:value forKey:self.nameYourTask.text];
+    PresetTime *time = [[PresetTime alloc] init];
+    time.nameOfTask = self.nameYourTask.text;
+    time.timeOfTask = [self.yourTime.text doubleValue];
     
-    NSLog(@"%@", values);
-    
+    [self.presentingViewController.timers addObject:time];
     
 }
 
