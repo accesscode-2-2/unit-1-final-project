@@ -41,6 +41,8 @@
 @property (nonatomic) NSDate *saveDate;
 @property (nonatomic) NSDate *lapSaveDate;
 
+@property (nonatomic) NSInteger fastestLapIndex;
+
 @end
 
 @implementation StopWatchViewController
@@ -96,7 +98,7 @@ NSInteger miliseconds;
     _elapsed -= seconds;
     miliseconds = _elapsed * 100.0;
     
-    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%02ld:%02ld.%02ld", (long)minutes, (long)seconds, (long)miliseconds];
+    self.StopwatchRunningLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)minutes, (long)seconds, (long)miliseconds];
     //call it after delay
     [self performSelector:@selector(StopwatchTimer) withObject:self afterDelay:0.01];
 }
@@ -118,7 +120,7 @@ NSInteger miliseconds;
     _lapElapsed -= seconds;
     miliseconds = _lapElapsed * 100.0;
     
-    self.recentLapRunning.text = [NSString stringWithFormat:@"%02ld:%02ld.%02ld", (long)minutes, (long)seconds, (long)miliseconds];
+    self.recentLapRunning.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)minutes, (long)seconds, (long)miliseconds];
     
     [self performSelector:@selector(LapTimer) withObject:self afterDelay:0.01];
 }
@@ -183,6 +185,7 @@ NSInteger miliseconds;
         [self LapTimer]; //call Lap Timer
         [self.LapTableView reloadData];
         
+        [self evaluateFastestLap];
         
     } else {//reset tapped
         //reset stopwatch info
@@ -193,6 +196,12 @@ NSInteger miliseconds;
         [self.LapTableView reloadData];// reload table view
         self.StopwatchRunningLabel.text = initialTime; //change label text
         self.recentLapRunning.text = initialTime; //change label text
+    }
+}
+
+- (void)evaluateFastestLap {
+    if (self.fastestLapIndex) {
+        NSLog(@"still working on it");
     }
 }
 
@@ -215,26 +224,35 @@ NSInteger miliseconds;
     
     
     
-    //NSLog(@"%lu", self.LapArray.count);
     
-       if (self.LapArray.count == 1) {
-        cell.textLabel.textColor = [UIColor redColor];
-        cell.detailTextLabel.textColor = [UIColor redColor];
-            NSLog(@"aa");
+    
+//  NSArray *components = [@"01:01:00" componentsSeparatedByString:@":"];
+    NSArray *components = [self.LapArray[indexPath.row] componentsSeparatedByString:@":"];
+
+    NSInteger hours   = [[components objectAtIndex:0] integerValue];
+    NSInteger minutes = [[components objectAtIndex:1] integerValue];
+    NSInteger seconds = [[components objectAtIndex:2] integerValue];
+    
+    NSInteger numberWithInteger = (hours * 60 * 60) + (minutes * 60) + seconds;
+    
+    NSLog(@" %ld ", (long)numberWithInteger);
+    
+    if (indexPath.row == self.fastestLapIndex) {
+        // set the color to red
+    }
+    
+    
+    
+    if (self.LapArray.count > 1) {
+        if ([self.LapArray objectAtIndex:0] < [self.LapArray objectAtIndex:1]) {
+            cell.textLabel.textColor = [UIColor redColor];
+            cell.detailTextLabel.textColor = [UIColor redColor];
         }
-    //    if (([self.LapArray objectAtIndex:1] != nil) && ([self.LapArray objectAtIndex:0] < [self.LapArray objectAtIndex:1])) {
-    //
-    //        cell.textLabel.textColor = [UIColor blueColor];
-    //        cell.detailTextLabel.textColor = [UIColor blueColor];
-    //    }
-    
-    
-    
+    }
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.LapArray count] - indexPath.row];
     
     cell.detailTextLabel.text = self.LapArray[indexPath.row];
-    //cell.textLabel.text = self.LapArray[indexPath.row];
     
     return cell;
 }

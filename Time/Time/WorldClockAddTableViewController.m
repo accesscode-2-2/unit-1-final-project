@@ -60,16 +60,18 @@
     NSDate *NewDelhi = [now dateByAddingTimeInterval:34200];
     NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
  
+    NSDate *RioDeJaneiro = [now dateByAddingTimeInterval:3600];
+    NSString *RioDeJaneiroTimeString = [outputFormatter stringFromDate:RioDeJaneiro];
     
-    
-    
-    
+ 
     
     [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi"];
     [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
     [self.clock setObject:NYTimeString forKey:@"New York"];
     [self.clock setObject:RomeTimeString forKey:@"Rome, Italy"];
     [self.clock setObject:ParisTimeString forKey:@"Paris, France"];
+    [self.clock setObject:RioDeJaneiroTimeString forKey:@"Rio de Janeiro"];
+    [self.clock setObject:NYTimeString forKey:@"Philadelphia"];
 
     
         self.keyArray = [self.clock allKeys];
@@ -121,7 +123,7 @@
     }
     else {
     [cell.textLabel setText:[self.keyArray objectAtIndex:indexPath.row]];
-//    [cell.detailTextLabel setText:[self.valueArray objectAtIndex:indexPath.row]];
+ 
     }
     
     return cell;
@@ -133,24 +135,19 @@
 {
     NSLog(@"%@ %@", self.keyArray[(long)indexPath.row], self.valueArray[(long)indexPath.row] ); // you can see
     
-    
     WorldClockInfo *city = [[WorldClockInfo alloc] init];
-    city.cityName = self.keyArray[indexPath.row];
-    city.cityTime = self.valueArray[indexPath.row];
-    
-    WorldClockInfo *citySelected = [[WorldClockInfo alloc] init];
-    city.cityName = self.searchResults[indexPath.row];
-
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        [self.selectedCitiesArray  addObject: citySelected];
-        
-    }
-    else {
-    [self.selectedCitiesArray addObject:city ];
-    // [self.clock removeObjectForKey:city.cityName];
+        city.cityName = self.searchResults[indexPath.row];
+        city.cityTime = self.clock[city.cityName];
+    } else {
+        city.cityName = self.keyArray[indexPath.row];
+        city.cityTime = self.valueArray[indexPath.row];
+
     }
     
+    [self.selectedCitiesArray  addObject: city];
+ 
     [[self navigationController] popViewControllerAnimated:YES];
     [self.tableView reloadData];
 
