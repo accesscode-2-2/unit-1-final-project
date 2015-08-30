@@ -7,6 +7,7 @@
 //
 
 #import "GOFightViewController.h"
+#import "BackgroundGradient.h"
 
 @interface GOFightViewController ()
 @property (weak, nonatomic) IBOutlet UISlider *roundSlider;
@@ -34,6 +35,17 @@
 
 @implementation GOFightViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
+}
 - (void)viewDidLoad {
    // self.counterLabel.font = [UIFont fontWithName:@"digital" size:60];
    // self.restLabel.font = [UIFont fontWithName:@"digital" size:25];

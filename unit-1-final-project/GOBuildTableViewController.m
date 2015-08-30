@@ -7,6 +7,7 @@
 //
 
 #import "GOBuildTableViewController.h"
+#import "BackgroundGradient.h"
 
 @interface GOBuildTableViewController ()<UITabBarControllerDelegate>
 
@@ -63,7 +64,7 @@
     cell.setLabel.text = [NSString stringWithFormat:@"%ld sets",(long)thisWorkout.sets];
     cell.repLabel.text = [NSString stringWithFormat:@"%ld reps",(long)thisWorkout.reps];
     cell.weightLabel.text = [NSString stringWithFormat:@"%ld lbs",(long)thisWorkout.weight];
-    
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
@@ -71,7 +72,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete && !self.isSelected){
         [self.workoutsData.workoutList removeObjectAtIndex:indexPath.row];
-    
+        
         UITableViewCell *tableCell = [tableView cellForRowAtIndexPath:indexPath];
         tableCell.accessoryType = UITableViewCellAccessoryNone;
         
@@ -120,20 +121,28 @@
     [self.tableView reloadData];
 }
 - (void) viewWillAppear:(BOOL)animated{
+    
+    
+    [super viewWillAppear:animated];
+    
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
     [self.navigationController setNavigationBarHidden:NO];
     
     self.tabBarController.tabBar.hidden = NO;
 }
 
 - (IBAction)finishWorkoutPressed:(UIButton *)sender {
-
+    
     [self clearAccessoryMarks];
     self.workoutsData.workoutList = nil;
     self.finishWorkoutButton.hidden = YES;
     self.checkedWorkouts = 0;
     
     [self.tableView reloadData];
-   
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
     
     NSLog(@"checked workouts: %d", self.checkedWorkouts);
@@ -144,7 +153,7 @@
     
     NSInteger count = self.workoutsData.workoutList.count;
     
-  //  UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:indexPath];
+    //  UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:indexPath];
     
     for (int i = 0; i < count; i++){
         

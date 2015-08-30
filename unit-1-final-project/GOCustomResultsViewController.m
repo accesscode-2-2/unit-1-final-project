@@ -17,6 +17,9 @@
 @property (nonatomic) NSInteger totalTime;
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) Exercises *exercise;
+@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIButton *endButton;
 
 @end
 
@@ -24,12 +27,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
    [self.navigationController setNavigationBarHidden:YES];
+    NSUInteger seconds = (NSUInteger)(self.totalTime % 60);
+    NSUInteger minutes = (NSUInteger)(self.totalTime / 60) % 60;
+    self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", minutes, seconds];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.timer invalidate];
-
+- (void) initializeMainTimer {
     // timer for the workout to go down
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                   target:self
@@ -37,11 +40,20 @@
                                                 userInfo:nil
                                                  repeats:YES];
     
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.timer invalidate];
+
+    [self initializeMainTimer];
+    
 
     // Creates an index for the number of exercises in the workout
     if (self.currentExerciseIndex == (NSInteger)nil){
         self.currentExerciseIndex = 0;
     }
+    
     
     self.exercise = [self.resultsWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];
     
@@ -69,11 +81,9 @@
     NSInteger nextNumber = currentExerciseTime - one;
     self.totalTime = nextNumber;
     NSLog(@"%lu", nextNumber);
-    NSInteger seconds = nextNumber % 60;
-    NSInteger minutes = (nextNumber / 60) % 60;
-    NSString *secondsString = @(seconds).stringValue;
-    NSString *minutesString = @(minutes).stringValue;
-    self.totalTimeLabel.text = [NSString stringWithFormat:@" %@  : %@", minutesString, secondsString];
+    NSUInteger seconds = (NSUInteger)(nextNumber % 60);
+    NSUInteger minutes = (NSUInteger)(nextNumber / 60) % 60;
+    self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", minutes, seconds];
     if (self.totalTime == 0 && self.currentExerciseIndex < numberOfExercises - 1){
         NSLog(@"Total exercises: %lu", numberOfExercises);
         NSLog(@"Current exercise index: %lu", self.currentExerciseIndex);
@@ -100,5 +110,29 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)pauseButton:(UIButton *)sender {
+    [self.timer invalidate];
+    self.continueButton.hidden = NO;
+    self.pauseButton.hidden = YES;
+    
+}
+
+- (IBAction)continueButton:(UIButton *)sender {
+    self.pauseButton.hidden = NO;
+    self.continueButton.hidden = YES;
+    [self initializeMainTimer];
+    
+}
+
+- (IBAction)stopButton:(UIButton *)sender {
+    [self.timer invalidate];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [self.timer invalidate];
+}
+
 
 @end

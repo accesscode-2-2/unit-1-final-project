@@ -25,9 +25,9 @@
 @property (nonatomic) BOOL isRunning;
 @property (nonatomic) BOOL isPause;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *stopwatchTimerLabel;
+
 @property (nonatomic) NSTimer *mainStopwatch;
-@property (weak, nonatomic) IBOutlet UILabel *mainStopwatchLabel;
+
 @property (nonatomic, assign) NSTimeInterval pauseTime;
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
@@ -41,6 +41,8 @@
 @property (nonatomic) NSDate *mainPreviousTime;
 @property (nonatomic,retain) NSDate *lapPreviousTime;
 
+@property (weak, nonatomic) IBOutlet UILabel *stopwatchTimerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mainStopwatchLabel;
 
 
 @end
@@ -84,6 +86,9 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     
     [super viewDidLoad];
+    
+    self.stopwatchTimerLabel.font = [UIFont fontWithName:@"Kenzo" size:25.0];
+    self.mainStopwatchLabel.font = [UIFont fontWithName:@"Kenzo" size:50.0];
     
     self.laps = [[NSMutableArray alloc]init];
     
@@ -185,17 +190,17 @@
 - (IBAction)lapStopwatchButton:(UIButton *)sender {
     self.lapTotalTime = 0.0;
     
-    [self.laps addObject:self.stopwatchTimerLabel.text];
+    [self.laps insertObject:self.stopwatchTimerLabel.text atIndex:0];
     
     [self.tableView reloadData];
     
     
     NSIndexPath* ipath = [NSIndexPath indexPathForRow:[self.laps count]-1 inSection:0];
-    [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    //[self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
     
     self.lapNumber = ipath.row + 1;
     
-    [self.numberOfLaps addObject: [NSNumber numberWithInteger:self.lapNumber]];
+    [self.numberOfLaps insertObject: [NSNumber numberWithInteger:self.lapNumber] atIndex:0];
 }
 - (IBAction)resetStopwatchButton:(UIButton *)sender {
     
