@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-int countNumber0;
-int countNumber1;
-int countNumber2;
+int countUpNumber0;
+int countUpNumber1;
+int countUpNumber2;
 
 
 @interface stopwatchVC : UIViewController

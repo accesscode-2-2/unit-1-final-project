@@ -24,32 +24,35 @@
 
 -(NSTimer *) createTimer {
     
-    return [NSTimer scheduledTimerWithTimeInterval:1.0/5000 target:self selector:@selector(timerCount) userInfo:nil repeats:YES];
+    return [NSTimer scheduledTimerWithTimeInterval:1.0/100 target:self selector:@selector(timerCount) userInfo:nil repeats:YES];
 }
+
 
 -(void)timerCount{
     
     //count out miliseconds
-    countNumber0 = countNumber0 +1;
-    _timerDisplay0.text = [NSString stringWithFormat:@"%i",countNumber0];
+    countUpNumber0 = countUpNumber0 +1;
+    _timerDisplay0.text = [NSString stringWithFormat:@"%i",countUpNumber0];
     
     //if miliseconds == 100 reset milisecond count and start counting seconds
-    if (countNumber0 == 10) {
-        countNumber1 = countNumber1 +1 ;
-        _timerDisplay1.text = [NSString stringWithFormat:@"%i",countNumber1];
+    if (countUpNumber0 == 10)
+    
+    {
+        countUpNumber1 = countUpNumber1 +1 ;
+        _timerDisplay1.text = [NSString stringWithFormat:@"%i",countUpNumber1];
         
-        countNumber0 = 0;
+        countUpNumber0 = 0;
     }
         //if seconds == 60 reset seconds counter and start counting minutes
-        if (countNumber1 ==60){
-            
-            countNumber2 = countNumber2 + 1;
-            _timerDisplay2.text = [NSString stringWithFormat:@"%i",countNumber2];
-            countNumber1 = 0;
+        if (countUpNumber1 ==60)
+        
+        {
+            countUpNumber2 = countUpNumber2 + 1;
+            _timerDisplay2.text = [NSString stringWithFormat:@"%i",countUpNumber2];
+            countUpNumber1 = 0;
         }
-        _displayTime = [NSString stringWithFormat:@"%02d:%02d:%02d",countNumber2,countNumber1,countNumber0];
+        _displayTime = [NSString stringWithFormat:@"%02d:%02d:%02d",countUpNumber2,countUpNumber1,countUpNumber0];
     }
-
 
 
 - (void)viewDidLoad {
@@ -156,9 +159,9 @@
         [_KNTimer invalidate];
          self.laps = [[NSMutableArray alloc] init];
         [self.lapTableView reloadData];
-        countNumber2 = 0;
-        countNumber1 = 0;
-        countNumber0 = 0;
+        countUpNumber2 = 0;
+        countUpNumber1 = 0;
+        countUpNumber0 = 0;
 
         _timerDisplay0.text = [NSString stringWithFormat :@"00"];
         _timerDisplay1.text = [NSString stringWithFormat :@"00"];
