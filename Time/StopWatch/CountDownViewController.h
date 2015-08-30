@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-int  = 99;
-int countDownNumber1 = 99;
-int countDownNumber2 = 99;
+int days = 365.242;
+int hours = 24;
+int minutes= 60;
+int seconds = 60;
+int millisecond = 1000;
 
 
 @interface CountDownViewController : UIViewController

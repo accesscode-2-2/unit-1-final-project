@@ -31,28 +31,7 @@
 
 -(void)countDownTimerCount{
     
-    //count out miliseconds
-    countDownNumber0 = countDownNumber0 ;
-    _countDownDisplayLabel0.text = [NSString stringWithFormat:@"%i",countDownNumber0];
-    
-    //if miliseconds == 100 reset milisecond count and start counting seconds
-    if (countDownNumber0 > 0 ) {
-        countDownNumber0 = countDownNumber0-1;
-        _countDownDisplayLabel1.text = [NSString stringWithFormat:@"%i",countDownNumber1];
-    
-        countDownNumber0 = 100;
-    }
-    
-    
-    
-    //if seconds == 60 reset seconds counter and start counting minutes
-    if (countDownNumber1 > 0){
-        
-        countDownNumber2 = countDownNumber2 - 1;
-        _countDownDisplayLabel2.text = [NSString stringWithFormat:@"%i",countDownNumber2];
-        countDownNumber1 = 0;
-
-    }
+   
     
     
     
