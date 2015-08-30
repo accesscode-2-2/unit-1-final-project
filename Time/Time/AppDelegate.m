@@ -17,14 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // remove translucent layer
     [UINavigationBar appearance].translucent = NO;
     [UITabBar appearance].translucent = NO;
+    
     //[UITabBar appearance].backgroundColor = [UIColor blueColor];
     
+    // change tab bar controller background color
     UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
     UITabBarController *bc = nav.viewControllers[0];
-    bc.tabBar.barTintColor=[UIColor blackColor];
-    
+    bc.tabBar.barTintColor = [UIColor colorWithRed:235/256.0 green:235/256.0 blue:241/256.0 alpha:1.0];
+    // change header navigation bar background color
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:235/256.0 green:235/256.0 blue:241/256.0 alpha:1.0];
    
     
     return YES;

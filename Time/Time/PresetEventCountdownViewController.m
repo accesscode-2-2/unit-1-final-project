@@ -47,7 +47,7 @@
     
     self.destinationDate1 = [NSDate dateWithTimeIntervalSince1970:1446508801]; // epoch time conversion for Nov 3, 2015, National Sandwich Day
     self.destinationDate2 = [NSDate dateWithTimeIntervalSince1970:1454630401]; // nutella day, feb 5
-    self.destinationDate3 = [NSDate dateWithTimeIntervalSince1970:1441411201]; // cheese pizza day, sep 5
+    self.destinationDate3 = [NSDate dateWithTimeIntervalSince1970:1454976001]; // international pizza with everything (except anchovies) day, feb 9
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
     
