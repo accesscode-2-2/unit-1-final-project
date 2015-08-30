@@ -30,7 +30,11 @@
         <scene sceneID="2vO-hC-wuw">
             <objects>
                 <navigationController id="Tsg-tD-bF2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timer" image="AlarmClock" selectedImage="AlarmClockFilled" id="AQP-k9-VIA"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="AlarmClock" selectedImage="AlarmClockFilled" id="AQP-k9-VIA">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="AlarmClockFilled"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFc-Bh-rvG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -151,7 +155,7 @@
                             <constraint firstItem="3Tj-ek-J1U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vaA-WD-6PO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ete-fA-fSB">
+                    <navigationItem key="navigationItem" title="Timer" id="Ete-fA-fSB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="60G-pm-lud">
                             <connections>
                                 <segue destination="Xg0-Iv-xg4" kind="show" identifier="addTimerSegue" id="TLE-mg-p4O"/>
@@ -228,15 +232,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:04.22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSE-AB-fmB">
-                                <rect key="frame" x="0.0" y="64" width="600" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="65"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jT-sW-Usb">
-                                <rect key="frame" x="0.0" y="301" width="600" height="250"/>
+                                <rect key="frame" x="0.0" y="326" width="600" height="225"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CqA-Os-aFl">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
@@ -253,7 +250,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wle-Xl-jcZ" userLabel="fat view">
-                                <rect key="frame" x="0.0" y="139" width="600" height="162"/>
+                                <rect key="frame" x="0.0" y="164" width="600" height="162"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrJ-WK-Yab">
                                         <rect key="frame" x="300" y="0.0" width="300" height="162"/>
@@ -311,19 +308,44 @@
                                     <navigationItem id="FAs-QJ-gUL"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcZ-Hv-eKX">
+                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34:23.19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22c-7E-ZFh">
+                                        <rect key="frame" x="181" y="19" width="238" height="78"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="65"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:12.43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3n-5f-5kH">
+                                        <rect key="frame" x="507.5" y="4" width="72.5" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="22c-7E-ZFh" firstAttribute="centerX" secondItem="vcZ-Hv-eKX" secondAttribute="centerX" id="NnW-Fb-6iV"/>
+                                    <constraint firstAttribute="height" constant="100" id="QQJ-LA-qgB"/>
+                                    <constraint firstAttribute="trailing" secondItem="t3n-5f-5kH" secondAttribute="trailing" constant="20" id="bBH-7i-nhx"/>
+                                    <constraint firstItem="22c-7E-ZFh" firstAttribute="centerY" secondItem="vcZ-Hv-eKX" secondAttribute="centerY" constant="8" id="i5b-hb-xac"/>
+                                    <constraint firstItem="t3n-5f-5kH" firstAttribute="top" secondItem="vcZ-Hv-eKX" secondAttribute="top" constant="4" id="nlT-n1-3re"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wle-Xl-jcZ" firstAttribute="top" secondItem="wSE-AB-fmB" secondAttribute="bottom" id="3FS-sm-PXz"/>
+                            <constraint firstItem="vcZ-Hv-eKX" firstAttribute="leading" secondItem="kOv-Ft-xX6" secondAttribute="leading" id="2MR-ef-PCO"/>
                             <constraint firstAttribute="bottom" secondItem="0jT-sW-Usb" secondAttribute="bottom" constant="49" id="59o-kw-Ix4"/>
                             <constraint firstItem="WE0-Qm-1ap" firstAttribute="top" secondItem="0jT-sW-Usb" secondAttribute="bottom" id="6Xh-5s-EOt"/>
                             <constraint firstItem="wle-Xl-jcZ" firstAttribute="leading" secondItem="kOv-Ft-xX6" secondAttribute="leading" id="AeN-EN-NTS"/>
-                            <constraint firstItem="wSE-AB-fmB" firstAttribute="leading" secondItem="kOv-Ft-xX6" secondAttribute="leading" id="DES-oR-ns4"/>
                             <constraint firstItem="WE0-Qm-1ap" firstAttribute="top" secondItem="0jT-sW-Usb" secondAttribute="bottom" id="Eah-QA-3Fh"/>
-                            <constraint firstAttribute="trailing" secondItem="wSE-AB-fmB" secondAttribute="trailing" id="FXp-ti-9Jj"/>
-                            <constraint firstItem="wSE-AB-fmB" firstAttribute="top" secondItem="3NY-t3-cwC" secondAttribute="bottom" id="I5e-Hs-v8V"/>
+                            <constraint firstItem="vcZ-Hv-eKX" firstAttribute="top" secondItem="3NY-t3-cwC" secondAttribute="bottom" id="H9g-4y-v6z"/>
                             <constraint firstItem="3NY-t3-cwC" firstAttribute="top" secondItem="f6M-bl-l9l" secondAttribute="bottom" id="V49-My-wbC"/>
+                            <constraint firstAttribute="trailing" secondItem="vcZ-Hv-eKX" secondAttribute="trailing" id="XHw-ft-tB8"/>
                             <constraint firstItem="WE0-Qm-1ap" firstAttribute="top" secondItem="0jT-sW-Usb" secondAttribute="bottom" id="a7L-js-ifa"/>
+                            <constraint firstItem="wle-Xl-jcZ" firstAttribute="top" secondItem="vcZ-Hv-eKX" secondAttribute="bottom" id="a8i-MH-UaW"/>
                             <constraint firstAttribute="trailing" secondItem="3NY-t3-cwC" secondAttribute="trailing" id="aeH-5G-TBk"/>
                             <constraint firstAttribute="trailing" secondItem="wle-Xl-jcZ" secondAttribute="trailing" id="atX-Lc-P9o"/>
                             <constraint firstItem="wle-Xl-jcZ" firstAttribute="leading" secondItem="kOv-Ft-xX6" secondAttribute="leading" id="cNu-rf-drE"/>
@@ -331,10 +353,8 @@
                             <constraint firstItem="0jT-sW-Usb" firstAttribute="top" secondItem="wle-Xl-jcZ" secondAttribute="bottom" id="jtx-ik-6kU"/>
                             <constraint firstAttribute="trailing" secondItem="0jT-sW-Usb" secondAttribute="trailing" id="l0H-bN-9Xi"/>
                             <constraint firstItem="3NY-t3-cwC" firstAttribute="leading" secondItem="kOv-Ft-xX6" secondAttribute="leading" id="m6n-ON-YQ8"/>
-                            <constraint firstItem="wle-Xl-jcZ" firstAttribute="top" secondItem="wSE-AB-fmB" secondAttribute="bottom" id="nMB-H5-AlJ"/>
                             <constraint firstItem="0jT-sW-Usb" firstAttribute="leading" secondItem="kOv-Ft-xX6" secondAttribute="leading" id="o1M-8n-Oxy"/>
                             <constraint firstItem="0jT-sW-Usb" firstAttribute="height" secondItem="kOv-Ft-xX6" secondAttribute="height" multiplier="0.45" id="pFh-Da-jwH"/>
-                            <constraint firstItem="wle-Xl-jcZ" firstAttribute="top" secondItem="wSE-AB-fmB" secondAttribute="bottom" id="xqa-qu-sFy"/>
                             <constraint firstItem="wle-Xl-jcZ" firstAttribute="height" secondItem="kOv-Ft-xX6" secondAttribute="height" multiplier="0.27" id="yPA-Eb-XBs"/>
                             <constraint firstAttribute="trailing" secondItem="wle-Xl-jcZ" secondAttribute="trailing" id="yQZ-Qk-fnD"/>
                             <constraint firstItem="0jT-sW-Usb" firstAttribute="top" secondItem="wle-Xl-jcZ" secondAttribute="bottom" id="ytt-TU-RJh"/>
@@ -343,8 +363,6 @@
                             <mask key="constraints">
                                 <exclude reference="atX-Lc-P9o"/>
                                 <exclude reference="cNu-rf-drE"/>
-                                <exclude reference="nMB-H5-AlJ"/>
-                                <exclude reference="xqa-qu-sFy"/>
                                 <exclude reference="eOY-Hb-hpn"/>
                                 <exclude reference="pFh-Da-jwH"/>
                                 <exclude reference="ytt-TU-RJh"/>
@@ -354,22 +372,27 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Clock" selectedImage="ClockFilled" id="ycx-84-cH5"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Clock" selectedImage="ClockFilled" id="ycx-84-cH5">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="ClockFilled"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
+                        <outlet property="lapLabel" destination="t3n-5f-5kH" id="Yff-gS-ksl"/>
                         <outlet property="lapsResetButton" destination="8IJ-yj-Aao" id="8uh-gT-yBk"/>
                         <outlet property="lapsTableView" destination="0jT-sW-Usb" id="6ZQ-g3-zKB"/>
                         <outlet property="startStopButton" destination="Q34-2R-dJJ" id="2bh-t5-BAE"/>
-                        <outlet property="stopwatchLabel" destination="wSE-AB-fmB" id="1Pb-Ss-Esb"/>
+                        <outlet property="stopwatchLabel" destination="22c-7E-ZFh" id="DJR-vn-sOq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eeq-Ed-Wfj" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1452" y="-676"/>
         </scene>
-        <!--Item-->
+        <!--Countdown-->
         <scene sceneID="Qsq-bL-Qpb">
             <objects>
-                <viewController id="NwH-NQ-Apj" customClass="CountdownViewController" customModule="Timer_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NwH-NQ-Apj" userLabel="Countdown" customClass="CountdownViewController" customModule="Timer_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Sl-mN-bkn"/>
                         <viewControllerLayoutGuide type="bottom" id="HQH-Ye-VP6"/>
@@ -378,8 +401,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RH-52-KIB">
-                                <rect key="frame" x="266" y="283" width="68" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RH-52-KIB">
+                                <rect key="frame" x="220" y="283" width="160.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -415,7 +438,11 @@
                             <constraint firstItem="gZ5-pn-hqT" firstAttribute="leading" secondItem="6H5-YZ-MSc" secondAttribute="leading" id="uOR-Ot-Tvv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="L0I-eL-eNy"/>
+                    <tabBarItem key="tabBarItem" title="Countdown" image="Calendar" selectedImage="CalendarFilled" id="L0I-eL-eNy">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="CalendarFilled"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="ZSr-iq-LFm"/>
                     <connections>
                         <outlet property="navigationBar" destination="QjK-7o-FDK" id="5Cv-e2-Sg9"/>
@@ -585,8 +612,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="5dl-Nc-9P8"/>
                                 <exclude reference="4pq-p7-PxU"/>
+                                <exclude reference="5dl-Nc-9P8"/>
                                 <exclude reference="oaU-cA-ZvC"/>
                             </mask>
                         </variation>
@@ -607,6 +634,8 @@
     <resources>
         <image name="AlarmClock" width="32" height="32"/>
         <image name="AlarmClockFilled" width="32" height="32"/>
+        <image name="Calendar" width="32" height="32"/>
+        <image name="CalendarFilled" width="32" height="32"/>
         <image name="Clock" width="32" height="32"/>
         <image name="ClockFilled" width="32" height="32"/>
         <image name="Start-50" width="50" height="50"/>

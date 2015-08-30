@@ -30,6 +30,10 @@ class StopwatchViewController: UIViewController {
     var totalTime : CFAbsoluteTime = 0
 
     @IBOutlet weak var stopwatchLabel: UILabel!
+    
+    @IBOutlet weak var lapLabel: UILabel!
+    
+    
     @IBOutlet weak var lapsTableView: UITableView!
     
     @IBOutlet weak var startStopButton: UIButton!
@@ -42,6 +46,7 @@ class StopwatchViewController: UIViewController {
         
         //the stopwatchLabel is set to 00:00.00
         stopwatchLabel.text = "00:00.00"
+        lapLabel.text = "00:00.00"
     }
     
     //MARK: Actions
@@ -120,14 +125,14 @@ class StopwatchViewController: UIViewController {
             //change reset button to lap button
             lapsResetButton.setImage(UIImage(named: "lap.png"), forState: .Normal)
             
+            stopwatchString = "00:00.00"
             lapString = "00:00.00"
             lapElapsedTime = 0
-            
             totalTime = 0
             
-            //reset the stopwatchString (just the string) back to 0.
-            stopwatchString = "00:00.00"
+            //reset labels
             stopwatchLabel.text = stopwatchString
+            lapLabel.text = lapString
         }
     }
     
@@ -142,6 +147,7 @@ class StopwatchViewController: UIViewController {
     func updateLap(){
         lapElapsedTime += lapTimer.duration
         lapString = stopwatchStringFromTimeInterval(lapElapsedTime)
+        lapLabel.text = lapString
     }
     
     func stopwatchStringFromTimeInterval(interval: CFTimeInterval) -> String {
