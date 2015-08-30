@@ -17,7 +17,7 @@ class CountdownViewController: UIViewController,
     @IBOutlet weak var tableView: UITableView!
     
     var displayLink : CADisplayLink!
-    var targetDates : [NSDate] = []
+    var countdowns : [Countdown] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,24 +33,27 @@ class CountdownViewController: UIViewController,
     
     //MARK: TableView methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return targetDates.count
+        return countdowns.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownTableViewCell
         
-        cell.targetDate = targetDates[indexPath.row]
-        cell.countdownLabel.text = timeToTargetDate(cell.targetDate!).stringFromTimeInterval(false)
+        cell.countdown = countdowns[indexPath.row]
+        
+        cell.countdownLabel.text = timeToTargetDate(cell.countdown.targetDate).stringFromTimeInterval(false)
+        cell.countdownNameLabel.text = cell.countdown.name
         cell.updateLabelVisibilities()
         
         return cell
     }
     
     //MARK: AddCountdownViewControllerDelegate method
-    func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown targetDate: NSDate, name: String) {
-        targetDates.append(targetDate)
+    func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown countdown: Countdown) {
+        countdowns.append(countdown)
     }
+
     
     //MARK: Segue methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

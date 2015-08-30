@@ -13,6 +13,7 @@
 		504DC2311B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 504DC2301B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 */; };
 		504DC2331B922CF30071A35E /* AddTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DC2321B922CF30071A35E /* AddTimerViewController.swift */; };
 		691BEA121B935EBF000CF91E /* CountdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691BEA111B935EBF000CF91E /* CountdownTableViewCell.swift */; };
+		693E17541B93AF2800CCC1EE /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E17531B93AF2800CCC1EE /* Countdown.swift */; };
 		6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737B1B88EFF0000D38F2 /* AppDelegate.swift */; };
 		6981737E1B88EFF0000D38F2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737D1B88EFF0000D38F2 /* TimerViewController.swift */; };
 		698173811B88EFF0000D38F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981737F1B88EFF0000D38F2 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		504DC2301B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LoudAlarmClockBuzzer.mp3; sourceTree = "<group>"; };
 		504DC2321B922CF30071A35E /* AddTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTimerViewController.swift; path = ../AddTimerViewController.swift; sourceTree = "<group>"; };
 		691BEA111B935EBF000CF91E /* CountdownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableViewCell.swift; sourceTree = "<group>"; };
+		693E17531B93AF2800CCC1EE /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		698173781B88EFF0000D38F2 /* Timer Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timer Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981737B1B88EFF0000D38F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6981737D1B88EFF0000D38F2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				6981737D1B88EFF0000D38F2 /* TimerViewController.swift */,
 				504DC2321B922CF30071A35E /* AddTimerViewController.swift */,
 				504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */,
+				693E17531B93AF2800CCC1EE /* Countdown.swift */,
 				691BEA111B935EBF000CF91E /* CountdownTableViewCell.swift */,
 				69B738361B92B07B00390657 /* CountdownViewController.swift */,
 				69B738371B92B07B00390657 /* AddCountdownViewController.swift */,
@@ -294,6 +297,7 @@
 				5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */,
 				504DC2291B8FE3E30071A35E /* StopwatchViewController.swift in Sources */,
 				69B738391B92B07B00390657 /* AddCountdownViewController.swift in Sources */,
+				693E17541B93AF2800CCC1EE /* Countdown.swift in Sources */,
 				6981737E1B88EFF0000D38F2 /* TimerViewController.swift in Sources */,
 				6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */,
 				504DC2331B922CF30071A35E /* AddTimerViewController.swift in Sources */,

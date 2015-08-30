@@ -11,6 +11,7 @@ import UIKit
 class CountdownTableViewCell: UITableViewCell {
     
     @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var countdownNameLabel: UILabel!
     
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
@@ -20,7 +21,7 @@ class CountdownTableViewCell: UITableViewCell {
     @IBOutlet weak var yearsLabel: UILabel!
     
     var unitLabels = []
-    var targetDate : NSDate?
+    var countdown: Countdown!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +37,7 @@ class CountdownTableViewCell: UITableViewCell {
     }
     
     func updateLabelVisibilities() {
-        guard let date = self.targetDate where self.targetDate != nil else { return }
+        guard let date = self.countdown.targetDate where (!self.countdown.targetDate) else { return }
         
         let largestTimeUnit = timeToTargetDate(date).largestTimeUnit()
         

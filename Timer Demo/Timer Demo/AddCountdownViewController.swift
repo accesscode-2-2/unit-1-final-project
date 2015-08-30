@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddCountdownViewControllerDelegate {
-    func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown targetDate:NSDate, name:String)
+    func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown countdown:Countdown)
 }
 
 class AddCountdownViewController: UIViewController {
@@ -38,17 +38,20 @@ class AddCountdownViewController: UIViewController {
     }
     
     @IBAction func setCountdownButtonTapped(sender: UIButton) {
-        if datePicker.date.timeIntervalSinceNow > 0 { //makes sure that target date is in the future
+        if (datePicker.date.timeIntervalSinceNow > 0) && (timerNameTextField.text != nil){
             let newTargetDate = datePicker.date
-            delegate?.addCountdownViewController(self, didCreateNewCountdown: newTargetDate, name:timerNameTextField.text!)
-            self.dismissViewControllerAnimated(false, completion: nil)
+            let newName = timerNameTextField.text
+            let newCountdown = Countdown(name: newName!, targetDate: newTargetDate)
+            
+            delegate?.addCountdownViewController(self, didCreateNewCountdown: newCountdown)
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     func dateAndTimeStringsfromDate(date:NSDate) -> ([String]){
         let formatter = NSDateFormatter()
         formatter.dateStyle = .LongStyle
-        formatter.timeStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
         let fullString = formatter.stringFromDate(datePicker.date)
         return (fullString.componentsSeparatedByString(" at "))
     }
