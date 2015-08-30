@@ -20,8 +20,9 @@
 		698173911B88EFF0000D38F2 /* Timer_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698173901B88EFF0000D38F2 /* Timer_DemoTests.swift */; };
 		6981739C1B88EFF0000D38F2 /* Timer_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981739B1B88EFF0000D38F2 /* Timer_DemoUITests.swift */; };
 		698173AA1B88F28C000D38F2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698173A91B88F28C000D38F2 /* Timer.swift */; };
-		69E810431B91FD170061915A /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E810421B91FD170061915A /* CountdownViewController.swift */; };
-		69EC94251B924F8600FC026D /* NSTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC94241B924F8600FC026D /* NSTimeIntervalExtension.swift */; };
+		69B738381B92B07B00390657 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B738361B92B07B00390657 /* CountdownViewController.swift */; };
+		69B738391B92B07B00390657 /* AddCountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B738371B92B07B00390657 /* AddCountdownViewController.swift */; };
+		69F51D721B92AA4D004F3874 /* TimeUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F51D711B92AA4D004F3874 /* TimeUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		6981739B1B88EFF0000D38F2 /* Timer_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer_DemoUITests.swift; sourceTree = "<group>"; };
 		6981739D1B88EFF0000D38F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		698173A91B88F28C000D38F2 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		69E810421B91FD170061915A /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
-		69EC94241B924F8600FC026D /* NSTimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeIntervalExtension.swift; sourceTree = "<group>"; };
+		69B738361B92B07B00390657 /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		69B738371B92B07B00390657 /* AddCountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCountdownViewController.swift; sourceTree = "<group>"; };
+		69F51D711B92AA4D004F3874 /* TimeUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,13 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				6981737B1B88EFF0000D38F2 /* AppDelegate.swift */,
-				69EC94241B924F8600FC026D /* NSTimeIntervalExtension.swift */,
+				69F51D711B92AA4D004F3874 /* TimeUtilities.swift */,
 				698173A91B88F28C000D38F2 /* Timer.swift */,
 				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
 				6981737D1B88EFF0000D38F2 /* TimerViewController.swift */,
 				504DC2321B922CF30071A35E /* AddTimerViewController.swift */,
 				504DC2281B8FE3E30071A35E /* StopwatchViewController.swift */,
-				69E810421B91FD170061915A /* CountdownViewController.swift */,
+				69B738361B92B07B00390657 /* CountdownViewController.swift */,
+				69B738371B92B07B00390657 /* AddCountdownViewController.swift */,
 				504DC2301B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 */,
 				6981737F1B88EFF0000D38F2 /* Main.storyboard */,
 				698173821B88EFF0000D38F2 /* Assets.xcassets */,
@@ -281,11 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E810431B91FD170061915A /* CountdownViewController.swift in Sources */,
+				69B738381B92B07B00390657 /* CountdownViewController.swift in Sources */,
+				69F51D721B92AA4D004F3874 /* TimeUtilities.swift in Sources */,
 				698173AA1B88F28C000D38F2 /* Timer.swift in Sources */,
-				69EC94251B924F8600FC026D /* NSTimeIntervalExtension.swift in Sources */,
 				5016E10C1B89209300C5EFFD /* TableViewCell.swift in Sources */,
 				504DC2291B8FE3E30071A35E /* StopwatchViewController.swift in Sources */,
+				69B738391B92B07B00390657 /* AddCountdownViewController.swift in Sources */,
 				6981737E1B88EFF0000D38F2 /* TimerViewController.swift in Sources */,
 				6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */,
 				504DC2331B922CF30071A35E /* AddTimerViewController.swift in Sources */,

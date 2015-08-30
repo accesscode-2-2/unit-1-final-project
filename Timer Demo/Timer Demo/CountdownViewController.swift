@@ -1,6 +1,6 @@
 //
 //  CountdownViewController.swift
-//  Timer Demo
+//  Countdown
 //
 //  Created by Z on 8/29/15.
 //  Copyright © 2015 dereknetto. All rights reserved.
@@ -8,20 +8,38 @@
 
 import UIKit
 
-class CountdownViewController: UIViewController {
-
+class CountdownViewController: UIViewController, AddCountdownViewControllerDelegate {
+    
+    @IBOutlet weak var timeToTargetDateLabel: UILabel!
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    var targetDate : NSDate?
+    var displayLink : CADisplayLink!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayLink = CADisplayLink(target: self, selector: Selector("updateTimeToTargetDate"))
+        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    func updateTimeToTargetDate(){
+        if let setTargetDate = targetDate{
+            let currentDate = NSDate()
+            let timeToTargetDate = setTargetDate.timeIntervalSinceDate(currentDate)
+            timeToTargetDateLabel.text = timeToTargetDate.stringFromTimeInterval(false)
+        }
+    }
+    
+    //MARK: AddCountdownViewControllerDelegate method
+    func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown targetDate: NSDate, name: String) {
+        self.targetDate = targetDate
+        navigationBar.prompt = name
+    }
+    
+    //MARK: Segue methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let viewController = segue.destinationViewController as? AddCountdownViewController {
+            viewController.delegate = self
+        }
     }
-    */
-
+    
 }

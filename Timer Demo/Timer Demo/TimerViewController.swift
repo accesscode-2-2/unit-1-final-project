@@ -18,19 +18,18 @@ class ViewController: UIViewController,
     @IBOutlet weak var tableView: UITableView!
     
     var displayLink : CADisplayLink!
+    var audioPlayer = AVAudioPlayer()
     var timers: [Timer] = [];
     
-    let popcornTimer = Timer.init(timerLabel: "Popcorn", startTime: 180.000)
-    let setRestTimer = Timer.init(timerLabel: "In Between Sets Rest", startTime: 90.000)
-    let workBreakTimer = Timer.init(timerLabel: "Break", startTime: 60.000*30.000)
-
-    var audioPlayer = AVAudioPlayer()
+    //default timers
+    let popcornTimer = Timer(name: "Popcorn", startTime: 180.000)
+    let setRestTimer = Timer(name: "In Between Sets Rest", startTime: 90.000)
+    let workBreakTimer = Timer(name: "Break", startTime: 60.000*30.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LoudAlarmClockBuzzer", ofType: "mp3")!)
-        
         do {
             try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
         }   catch {
@@ -46,13 +45,10 @@ class ViewController: UIViewController,
         timers.append(popcornTimer)
         timers.append(setRestTimer)
         timers.append(workBreakTimer)
-
-
     }
     
     
     func updateTimer(timer:Timer){
-        
         timer.remainingTime = timer.remainingTime - displayLink.duration
         print("Remaining time: \(timer.remainingTime)")
     }
@@ -126,9 +122,6 @@ class ViewController: UIViewController,
         
         return timers.count
     }
-    
-    
-
     
     @IBAction func startPause(startPauseButton: UIButton){
         

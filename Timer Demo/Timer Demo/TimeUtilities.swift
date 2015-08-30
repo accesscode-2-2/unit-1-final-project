@@ -11,16 +11,17 @@ import UIKit
 extension NSTimeInterval{
     
     func stringFromTimeInterval(withMilliseconds:Bool) -> String{
+        let intInterval = Int(self)
         
-        let years = (self / 31556900)
-        let months = (self / 2629740) % 12
-        let days = (self / (3600 * 24)) % 365
-        let hours = (self / 3600) % 24
-        let minutes = (self / 60) % 60
-        let seconds = self % 60
-        let milliseconds = Double(Int(floor(((self - floor(self)) * 100))))
+        let years = (intInterval / 31556900)
+        let months = (intInterval / 2629740) % 12
+        let days = (intInterval / (3600 * 24)) % 365
+        let hours = (intInterval / 3600) % 24
+        let minutes = (intInterval / 60) % 60
+        let seconds = intInterval % 60
+        let milliseconds = Int(floor(((self - floor(self)) * 100)))
         
-        let timeUnits: [NSTimeInterval] = [years, months, days, hours, minutes, seconds, milliseconds]
+        let timeUnits = [years, months, days, hours, minutes, seconds, milliseconds]
         
         var foundFirstNonzero = false
         var timeString = ""

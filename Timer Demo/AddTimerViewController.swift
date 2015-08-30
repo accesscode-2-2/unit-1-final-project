@@ -22,18 +22,15 @@ class AddTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         timerPicker.countDownDuration = 60
         
         // Do any additional setup after loading the view.
-
     }
     
     @IBAction func saveTimerButtonTapped(sender: AnyObject) {
         let newTimer = Timer(name: timerNameField.text!, startTime: timerPicker.countDownDuration)
         delegate?.addTimerViewController(self, didCreateNewTimer: newTimer)
         self.navigationController?.popViewControllerAnimated(true)
-
     }
 
 }

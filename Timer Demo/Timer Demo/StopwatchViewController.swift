@@ -134,18 +134,17 @@ class StopwatchViewController: UIViewController {
     //MARK: Update methods
     func updateStopwatch() {
         totalTime += timer.duration
-        stopwatchString = stringFromTimeInterval(totalTime)
-        
+        stopwatchString = stopwatchStringFromTimeInterval(totalTime)
         stopwatchLabel.text = stopwatchString
         
     }
     
     func updateLap(){
         lapElapsedTime += lapTimer.duration
-        lapString = stringFromTimeInterval(lapElapsedTime)
+        lapString = stopwatchStringFromTimeInterval(lapElapsedTime)
     }
     
-    func stringFromTimeInterval(interval: CFTimeInterval) -> String {
+    func stopwatchStringFromTimeInterval(interval: CFTimeInterval) -> String {
         let intInterval = Int(interval)
         let minutes = (intInterval / 60) % 60
         let seconds = intInterval % 60
