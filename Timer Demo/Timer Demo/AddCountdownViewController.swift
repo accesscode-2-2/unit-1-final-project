@@ -52,5 +52,4 @@ class AddCountdownViewController: UIViewController {
         let fullString = formatter.stringFromDate(datePicker.date)
         return (fullString.componentsSeparatedByString(" at "))
     }
-
 }

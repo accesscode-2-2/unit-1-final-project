@@ -8,31 +8,53 @@
 
 import UIKit
 
-class CountdownViewController: UIViewController, AddCountdownViewControllerDelegate {
+class CountdownViewController: UIViewController,
+    UITableViewDataSource,
+    UITableViewDelegate,
+    AddCountdownViewControllerDelegate {
     
-    @IBOutlet weak var timeToTargetDateLabel: UILabel!
     @IBOutlet weak var navigationBar: UINavigationItem!
-    var targetDate : NSDate?
-    var displayLink : CADisplayLink!
+    @IBOutlet weak var tableView: UITableView!
     
+    var displayLink : CADisplayLink!
+    var targetDates : [NSDate] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayLink = CADisplayLink(target: self, selector: Selector("updateTimeToTargetDate"))
+        displayLink = CADisplayLink(target: self, selector: Selector("update"))
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-    func updateTimeToTargetDate(){
-        if let setTargetDate = targetDate{
+    func update(){
+        tableView.reloadData()
+    }
+    
+    func timeToTargetDate(targetDate: NSDate) -> NSTimeInterval{
             let currentDate = NSDate()
-            let timeToTargetDate = setTargetDate.timeIntervalSinceDate(currentDate)
-            timeToTargetDateLabel.text = timeToTargetDate.stringFromTimeInterval(false)
-        }
+            let timeToTargetDate = targetDate.timeIntervalSinceDate(currentDate)
+            return timeToTargetDate
+    }
+    
+    //MARK: TableView methods
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return targetDates.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownTableViewCell
+        
+        cell.targetDate = targetDates[indexPath.row]
+        cell.textLabel?.text = timeToTargetDate(cell.targetDate).stringFromTimeInterval(false)
+        
+        return cell
     }
     
     //MARK: AddCountdownViewControllerDelegate method
     func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown targetDate: NSDate, name: String) {
-        self.targetDate = targetDate
-        navigationBar.prompt = name
+        targetDates.append(targetDate)
     }
     
     //MARK: Segue methods

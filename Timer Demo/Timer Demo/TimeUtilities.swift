@@ -58,4 +58,8 @@ extension NSTimeInterval{
         return timeString
     }
     
+    func largestTimeUnit(){
+        
+    }
+    
 }
