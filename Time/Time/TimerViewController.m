@@ -2,13 +2,17 @@
 //  TimerViewController.m
 //  Time
 //
-//  Created by Umar on 8/29/15.
+//  Created by Eric Sze on 8/29/15.
 //  Copyright (c) 2015 Mike Kavouras. All rights reserved.
 //
 
 #import "TimerViewController.h"
 
 @interface TimerViewController ()
+@property (weak, nonatomic) IBOutlet UIView *leftCircle;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 
 @end
 
@@ -17,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.leftCircle.layer.cornerRadius = 34.5;
+    self.leftCircle.layer.masksToBounds = YES;
+    self.leftCircle.clipsToBounds = YES;
+    
+    [self.datePicker setDatePickerMode:UIDatePickerModeCountDownTimer];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,90 +7,98 @@
 //
 
 #import "StopwatchViewController.h"
-//@import QuartzCore.CADisplayLink;
+#import <QuartzCore/QuartzCore.h>
+
 @import QuartzCore;
+
 
 @interface StopwatchViewController ()
 
-@property (nonatomic) NSMutableArray *laps;
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (nonatomic) CADisplayLink *displayLink;
-
-@property(readonly, nonatomic) CFTimeInterval duration;
-@property(nonatomic) NSInteger frameInterval;
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *start;
-//new addition
-@property (nonatomic) NSTimeInterval totalTime;
 
+
+// Lap Time Properties
 @property (weak, nonatomic) IBOutlet UILabel *lapTimeLabel;
 
+@property (nonatomic) NSMutableArray *laps;
+
+
+@property (nonatomic) NSTimeInterval startTime;
+@property (nonatomic) NSTimeInterval totalTime;
+@property (nonatomic) NSTimeInterval currentTime;
+@property (nonatomic) NSTimeInterval elapsed;
+@property (nonatomic) NSDate *startTimeCount;
+@property (nonatomic) NSTimeInterval previousTimeCount;
+
+
+@property (nonatomic) NSTimeInterval startLapTime;
 @property (nonatomic) NSTimeInterval elapsedLapTime;
-
 @property (nonatomic) NSTimeInterval previousLapTime;
-
 @property (nonatomic) NSTimeInterval lapTime;
+@property (nonatomic) NSDate *startLapCount;
+@property (nonatomic) NSTimeInterval previousLapCount;
 
+@property (weak, nonatomic) IBOutlet UIView *leftCircle;
+@property (weak, nonatomic) IBOutlet UIView *rightCircle;
 
 @end
 
 @implementation StopwatchViewController
 
 BOOL running;
-NSTimeInterval startTime;
-//NSTimeInterval startTimeNow;
-
-- (IBAction)lapButton:(id)sender {
-    
-    //NSTimeInterval totalTime - ;
-    
-//    NSTimeInterval currentTimeNow = [NSDate timeIntervalSinceReferenceDate];
-//    NSTimeInterval elapsedTimeNow;
-//    NSTimeInterval lapTimeNow = currentTimeNow - elapsedTimeNow;
-//    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f",lapTimeNow];
-//
-//    NSString *lap = self.lapTimeLabel.text;
-//
-//        [self.laps addObject:lap];
-//
-    
-    
-    
-    //NSString *currentLapTime = self.timerLabel.text;
-    // lap = current time - previousLapTime
-    
-    //new line added thursday 8-27
-    NSLog(@"%f", self.totalTime - self.previousLapTime);
-    
-    self.lapTime = self.totalTime - self.previousLapTime;
-    
-    ///////
- //   self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.lapTime];
-
-    NSString *correctLap = self.lapTimeLabel.text;
-    [self.laps addObject:correctLap];
-
-    [self.tableView reloadData];
-    
-    //new line added thursday 8-27
-    self.previousLapTime = self.totalTime;
-//    self.lapTimeLabel.text = [NSString stringWithFormat:@"%f", self.previousLapTime];
-
-}
 
 - (void)viewDidLoad {
     
-    
     [super viewDidLoad];
-
+    
+    [self.lapButton setEnabled:NO];
+    [self.resetButton setHidden:YES];
+    
     self.laps = [[NSMutableArray alloc] init];
     
-    self.timerLabel.text = @"00:00:00";
+    self.timerLabel.text = @"00:00.00";
+    self.lapTimeLabel.text = @"00:00.00";
     
-    self.lapTimeLabel.text = @"00:00:00";
+    self.leftCircle.layer.cornerRadius = 34.5;
+    self.leftCircle.layer.masksToBounds = YES;
+    self.rightCircle.layer.cornerRadius = 34.5;
+    self.rightCircle.layer.masksToBounds = YES;
+}
+
+- (IBAction)lapButton:(id)sender {
+    
+    [self.laps addObject:self.lapTimeLabel.text];
+    self.lapTimeLabel.text = @"00:00.00";
+    self.startLapTime = [NSDate timeIntervalSinceReferenceDate];
+    self.previousLapCount = 0.0;
+    self.startLapCount = [[NSDate alloc]init];
+    [self updateLapTime];
+    [self.tableView reloadData];
+
+    
+
+}
+
+- (IBAction)resetButton:(UIButton *)sender {
+    
+    
+    [self.resetButton setHidden:YES];
+    [self.lapButton setHidden:NO];
+    [self.lapButton setEnabled:NO];
+    [self.laps removeAllObjects];
+    [self.tableView reloadData];
+    
+    self.timerLabel.text = @"00:00.00";
+    self.lapTimeLabel.text = @"00:00.00";
+    
+    self.previousTimeCount = 0.0;
+    self.previousLapCount = 0.0;
 }
 
 - (IBAction)start:(UIButton *)sender {
@@ -99,13 +107,29 @@ NSTimeInterval startTime;
     if (running == false) {
         // start timer
         running = true;
-        startTime = [NSDate timeIntervalSinceReferenceDate];
-        [sender setTitle:@"STOP" forState:UIControlStateNormal];
+        self.lapButton.enabled = YES;
+        self.startTime = [NSDate timeIntervalSinceReferenceDate];
+        self.startTimeCount = [[NSDate alloc]init];
+        self.startLapTime = [NSDate timeIntervalSinceReferenceDate];
+        self.startLapCount = [[NSDate alloc]init];
+        [sender setTitle:@"Stop" forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self updateTime];
+        [self updateLapTime];
+        
+        [self.resetButton setHidden:YES];
+        [self.lapButton setHidden:NO];
+        
     } else {
         // stop timer
-        [sender setTitle:@"START" forState:UIControlStateNormal];
+        self.previousTimeCount += [[NSDate date]timeIntervalSinceDate:self.startTimeCount];
+        self.previousLapCount += [[NSDate date]timeIntervalSinceDate:self.startLapCount];
+        [sender setTitle:@"Start" forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
         running = false;
+        
+        [self.lapButton setHidden:YES];
+        [self.resetButton setHidden:NO];
     }
     
 }
@@ -114,32 +138,47 @@ NSTimeInterval startTime;
     if (running == false) return;
     
     // calculate elapsed time
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsed = + currentTime - startTime;
+    self.currentTime = [NSDate timeIntervalSinceReferenceDate];
+    self.elapsed = self.previousTimeCount + self.currentTime - self.startTime;
     
-    self.totalTime += elapsed;
-    startTime = currentTime;
-    
+
     // extract out the minutes, seconds, and fraction of seconds from elapsed time:
-    int mins = (int) (elapsed / 60.0);
-    elapsed -= mins * 60;
-    int secs = (int) (elapsed);
-    elapsed -= secs;
-    int fraction = elapsed * 100.0;
-    //////
-    self.elapsedLapTime = currentTime - startTime;
-    //////
-    //Work at end of thursday class
-    self.lapTimeLabel.text = [NSString stringWithFormat:@"%02d:%f",secs, self.totalTime - self.previousLapTime];
-    
-    self.timerLabel.text = [NSString stringWithFormat:@"%f", self.totalTime];
+    int mins = (int) (self.elapsed / 60.0);
+    self.elapsed -= mins * 60;
+    int secs = (int) (self.elapsed);
+    self.elapsed -= secs;
+    int fraction = self.elapsed * 100.0;
     
     // update our label using a format of 0:00.0
-//    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u:%02u", mins, secs, fraction];
-    
+    self.timerLabel.text = [NSString stringWithFormat: @"%02u:%02u.%02u", mins, secs, fraction];
     // call updateTime again after 0.1 seconds
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.01];
 }
+
+- (void)updateLapTime {
+    if (running == false) return;
+    
+    // calculate elapsed time
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    self.elapsedLapTime = self.previousLapCount + currentTime - self.startLapTime;
+
+    
+    // extract out the minutes, seconds, and fraction of seconds from elapsed time:
+    int mins = (int) (self.elapsedLapTime / 60.0);
+    self.elapsedLapTime -= mins * 60;
+    int secs = (int) (self.elapsedLapTime);
+    self.elapsedLapTime -= secs;
+    int fraction = self.elapsedLapTime * 100.0;
+
+    self.lapTimeLabel.text =  [NSString stringWithFormat: @"%02u:%02u.%02u", mins, secs, fraction];
+
+    
+
+    // call updateTime again after 0.1 seconds
+    [self performSelector:@selector(updateLapTime) withObject:self afterDelay:0.01];
+}
+
+
 
 #pragma mark - tableview
 

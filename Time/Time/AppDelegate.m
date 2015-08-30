@@ -15,8 +15,11 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [[UITabBar appearance] setTintColor:[UIColor redColor]];
+
+    //[[UITabBarItem appearance] tintColor:[UIColor redColor]];
     return YES;
 }
 
