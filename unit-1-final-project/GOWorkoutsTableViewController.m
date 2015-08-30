@@ -60,6 +60,9 @@
     CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
     bgLayer.frame = self.view.bounds;
     [self.tableView.layer insertSublayer:bgLayer atIndex:0];
+    
+    self.tabBarController.tabBar.hidden = NO;
+    
     [self.tableView reloadData];
 }
 
@@ -165,7 +168,10 @@
     {
         NSLog(@"GoBuild!");
         
+        self.hidesBottomBarWhenPushed = NO;
+        
         GOFightViewController *sublistVC = segue.destinationViewController;
+        [self.navigationController pushViewController:sublistVC animated:YES];
     }
 
 }

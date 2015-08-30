@@ -21,15 +21,12 @@
 @implementation GOCalendarViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                                                     style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.leftBarButtonItem = myBackButton;
+
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (IBAction)Back
-{
-    
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidLoad {

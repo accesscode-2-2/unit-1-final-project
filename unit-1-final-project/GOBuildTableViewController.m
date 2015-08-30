@@ -120,19 +120,11 @@
     [self.tableView reloadData];
 }
 - (void) viewWillAppear:(BOOL)animated{
-//provides a back button
     [self.navigationController setNavigationBarHidden:NO];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                                                   style: UIBarButtonItemStyleBordered
-                                                                  target:self
-                                                                  action:@selector(Back)];
-    self.navigationItem.leftBarButtonItem = backButton;
+    self.tabBarController.tabBar.hidden = NO;
 }
-- (IBAction)Back{
- //action for Back button
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 - (IBAction)finishWorkoutPressed:(UIButton *)sender {
 
     [self clearAccessoryMarks];
@@ -142,7 +134,7 @@
     
     [self.tableView reloadData];
    
-    [self Back];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
     NSLog(@"checked workouts: %d", self.checkedWorkouts);
 }

@@ -73,7 +73,7 @@
     NSInteger minutes = (nextNumber / 60) % 60;
     NSString *secondsString = @(seconds).stringValue;
     NSString *minutesString = @(minutes).stringValue;
-    self.totalTimeLabel.text = [NSString stringWithFormat:@"minutes: %@   seconds: %@", minutesString, secondsString];
+    self.totalTimeLabel.text = [NSString stringWithFormat:@" %@  : %@", minutesString, secondsString];
     if (self.totalTime == 0 && self.currentExerciseIndex < numberOfExercises - 1){
         NSLog(@"Total exercises: %lu", numberOfExercises);
         NSLog(@"Current exercise index: %lu", self.currentExerciseIndex);
