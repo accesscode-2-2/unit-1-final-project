@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Kenzo Regular.otf</string>
 		<string>NikeTotal90.ttf</string>
 	</array>
 	<key>LSApplicationCategoryType</key>

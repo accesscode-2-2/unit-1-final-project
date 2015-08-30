@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,17 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="Rqy-hJ-Nvq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="UTw-9o-69X">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glogo" translatesAutoresizingMaskIntoConstraints="NO" id="qeG-71-Syz">
+                                <rect key="frame" x="125" y="160" width="350" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="GGR-o5-MMO"/>
+                                    <constraint firstAttribute="height" constant="280" id="hHK-ri-8sv"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rqy-hJ-Nvq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="4EK-jP-JRc"/>
-                            <constraint firstAttribute="trailing" secondItem="Rqy-hJ-Nvq" secondAttribute="trailing" id="63I-YR-2ft"/>
-                            <constraint firstItem="Rqy-hJ-Nvq" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="Txh-En-XSY"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Rqy-hJ-Nvq" secondAttribute="bottom" id="tjX-4b-HKF"/>
+                            <constraint firstAttribute="trailing" secondItem="UTw-9o-69X" secondAttribute="trailing" id="4ZI-43-DPZ"/>
+                            <constraint firstItem="qeG-71-Syz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Twq-jm-IZR"/>
+                            <constraint firstItem="UTw-9o-69X" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Ud7-Au-4up"/>
+                            <constraint firstItem="UTw-9o-69X" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fe2-3l-aIm"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UTw-9o-69X" secondAttribute="bottom" id="nDo-jr-oPC"/>
+                            <constraint firstItem="qeG-71-Syz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rRK-Bc-78y"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +46,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="glogo" width="512" height="384"/>
         <image name="whitebg" width="2000" height="1343"/>
     </resources>
 </document>

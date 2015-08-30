@@ -22,6 +22,10 @@
 
 @implementation GOCustomResultsViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+   [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.timer invalidate];
@@ -38,8 +42,6 @@
     if (self.currentExerciseIndex == (NSInteger)nil){
         self.currentExerciseIndex = 0;
     }
-//    self.exercise = [self.resultsWorkout.exercises objectAtIndex: 0];
-//    NSLog(@"%@", self.exercise);
     
     self.exercise = [self.resultsWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];
     
@@ -98,15 +100,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -57,8 +57,8 @@
 
 + (CAGradientLayer*) greenGradient {
     
-    UIColor *colorOne = [UIColor colorWithRed:(120/255.0) green:(150/255.0) blue:(120/255.0) alpha:1.0];
-    UIColor *colorTwo = [UIColor colorWithRed:(57/255.0)  green:(96/255.0)  blue:(79/255.0)  alpha:1.0];
+    UIColor *colorOne = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1.0];
+    UIColor *colorTwo = [UIColor colorWithRed:(50/255.0)  green:(150/255.0)  blue:(110/255.0)  alpha:1.0];
     
     NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
     NSNumber *stopOne = [NSNumber numberWithFloat:0.0];

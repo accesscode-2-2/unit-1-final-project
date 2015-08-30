@@ -8,7 +8,7 @@
 
 #import "GOBuildTableViewController.h"
 
-@interface GOBuildTableViewController ()
+@interface GOBuildTableViewController ()<UITabBarControllerDelegate>
 
 @property (nonatomic) BuildManager * workoutsData;
 @property (weak, nonatomic) IBOutlet UIButton *finishWorkoutButton;
@@ -19,6 +19,7 @@
 @end
 
 @implementation GOBuildTableViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -120,6 +121,7 @@
 }
 - (void) viewWillAppear:(BOOL)animated{
 //provides a back button
+    [self.navigationController setNavigationBarHidden:NO];
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                    style: UIBarButtonItemStyleBordered
@@ -163,7 +165,6 @@
     }
     
 }
-
 
 
 @end

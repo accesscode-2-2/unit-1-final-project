@@ -58,9 +58,9 @@
     
 //setting fonts
     
-    self.totalTimeExerciseLabel.font = [UIFont fontWithName:@"NikeTotal90" size:15.0];
-    self.exerciseNameLabel.font = [UIFont fontWithName:@"NikeTotal90" size:15.0];
-    self.exerciseTimeLabel.font = [UIFont fontWithName:@"NikeTotal90" size:15.0];
+    self.totalTimeExerciseLabel.font = [UIFont fontWithName:@"Kenzo" size:20.0];
+    self.exerciseNameLabel.font = [UIFont fontWithName:@"Kenzo" size:20.0];
+    self.exerciseTimeLabel.font = [UIFont fontWithName:@"Kenzon" size:20.0];
 
     
     self.thisExercise = [self.currentWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];

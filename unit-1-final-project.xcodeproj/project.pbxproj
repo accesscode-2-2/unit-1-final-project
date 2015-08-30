@@ -26,6 +26,7 @@
 		3DDB60C41B893413008194DB /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C31B893413008194DB /* Workout.m */; };
 		3DDB60C71B893477008194DB /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C61B893477008194DB /* Exercises.m */; };
 		3DE05A0A1B8E4C8C007A66FB /* ExerciseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE05A091B8E4C8C007A66FB /* ExerciseTableViewCell.m */; };
+		3DF0972D1B936EC6003408E8 /* Kenzo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DF0972C1B936EC6003408E8 /* Kenzo Regular.otf */; };
 		9A041C231B92786000755002 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A041C221B92786000755002 /* bell.mp3 */; };
 		9A14C4B51B9236C900212C5B /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A14C4B31B92338900212C5B /* digital.ttf */; };
 		9A553E271B8CFC0700A0230B /* GOFightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A553E261B8CFC0700A0230B /* GOFightViewController.m */; };
@@ -97,6 +98,7 @@
 		3DDB60C61B893477008194DB /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		3DE05A081B8E4C8C007A66FB /* ExerciseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewCell.h; sourceTree = "<group>"; };
 		3DE05A091B8E4C8C007A66FB /* ExerciseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewCell.m; sourceTree = "<group>"; };
+		3DF0972C1B936EC6003408E8 /* Kenzo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Kenzo Regular.otf"; path = "../../../Downloads/kenzo/Kenzo Regular.otf"; sourceTree = "<group>"; };
 		9A041C221B92786000755002 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		9A14C4B31B92338900212C5B /* digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital.ttf; sourceTree = "<group>"; };
 		9A553E251B8CFC0700A0230B /* GOFightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOFightViewController.h; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		3D2D2EFF1B86B5A300E210BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3DF0972C1B936EC6003408E8 /* Kenzo Regular.otf */,
 				9A041C221B92786000755002 /* bell.mp3 */,
 				9A14C4B31B92338900212C5B /* digital.ttf */,
 				9ADCAB671B8D7AC2009E6FF0 /* NikeTotal90.ttf */,
@@ -419,6 +422,7 @@
 				3D2D2F0C1B86B5A300E210BA /* Assets.xcassets in Resources */,
 				3D28835E1B8D268F00DE02B8 /* Main.storyboard in Resources */,
 				9A041C231B92786000755002 /* bell.mp3 in Resources */,
+				3DF0972D1B936EC6003408E8 /* Kenzo Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

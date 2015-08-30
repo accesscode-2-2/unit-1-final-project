@@ -11,6 +11,7 @@
 #import "WorkoutManager.h"
 #import "Workout.h"
 #import "GOFightViewController.h"
+#import "BackgroundGradient.h"
 
 @interface GOWorkoutsTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -23,9 +24,59 @@
 
 @implementation GOWorkoutsTableViewController
 
+
+// In each tabbed view controller
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        
+        self.title = @"Go";
+        
+        // non-selected tab bar image
+        UIImage *defaultImage = [[UIImage imageNamed:@"goIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        // selected tab bar image
+        UIImage *selectedImage = [[UIImage imageNamed:@"goIconSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        // set the tab bar item with a title and both images
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                        image:defaultImage
+                                                selectedImage:selectedImage];
+        
+        self.tabBarItem.title = nil;
+        
+        self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+        
+        self.tabBarItem.titlePositionAdjustment = UIOffsetMake(0.f, 50.f);
+        
+        return self;
+    }
+    return nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.tableView.layer insertSublayer:bgLayer atIndex:0];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    for (NSString* family in [[UIFont familyNames] sortedArrayUsingSelector:@selector(compare:)])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [[UIFont fontNamesForFamilyName:family] sortedArrayUsingSelector:@selector(compare:)])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+
     
     // creates a custom right bar button to segue into the results page
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -46,10 +97,11 @@
     
     self.goDeepLabel.font = [UIFont fontWithName:@"NikeTotal90" size:80.0];
     
-    self.title = @"Go";
+    
     
     self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    
+    self.tableView.separatorColor = [UIColor clearColor];
 }
 
 - (IBAction)addWorkoutButton:(id)sender {
@@ -108,17 +160,6 @@
     {
         NSLog(@"GoFight!");
         
-        //GOFightViewController *sublistVC = segue.destinationViewController;
-        
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSMutableArray *workouts = [WorkoutManager sharedManager].workouts;
-//        Workout *workout = workouts[indexPath.row];
-//        
-//        GOTimerViewController *sublistVC = segue.destinationViewController;
-//        sublistVC.currentWorkout = [workouts objectAtIndex:1];
-//        
-//        NSLog(@"%@", sublistVC.currentWorkout);
-//        NSLog(@"%@", workout.workoutName);
     }
     if([segue.identifier isEqualToString:@"timerSegueFour"])
     {

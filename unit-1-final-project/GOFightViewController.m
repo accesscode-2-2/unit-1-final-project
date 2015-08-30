@@ -146,6 +146,8 @@
 
 
 - (IBAction)startPressed:(UIButton *)sender {
+    self.startButton.hidden = YES;
+    self.stopButton.hidden = NO;
     
     if (self.mainTimer == nil && !self.isAtRest){
         [self initializeMainTimer];
@@ -164,6 +166,8 @@
 
 - (IBAction)stopPressed:(UIButton *)sender {
     
+    self.startButton.hidden = NO;
+    self.stopButton.hidden = YES;
     self.startButton.userInteractionEnabled = YES;
     self.resetButton.userInteractionEnabled = YES;
     self.stopButton.userInteractionEnabled = NO;

@@ -17,6 +17,33 @@
 
 @implementation GOCalendarTableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        
+        self.title = @"Go Goals";
+        
+        // non-selected tab bar image
+        UIImage *defaultImage = [[UIImage imageNamed:@"calendarIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        // selected tab bar image
+        UIImage *selectedImage = [[UIImage imageNamed:@"calendarIconSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        // set the tab bar item with a title and both images
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                        image:defaultImage
+                                                selectedImage:selectedImage];
+        
+        self.tabBarItem.title = nil;
+        
+        self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+        
+        self.tabBarItem.titlePositionAdjustment = UIOffsetMake(0.f, 50.f);
+        
+        return self;
+    }
+    return nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -79,6 +106,14 @@
         
     }
     
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSMutableDictionary *calendarDates = [WorkoutManager calendarManager].calendarDates;
+    NSArray *keys = [calendarDates allKeys];
+    NSString *key = keys[indexPath.row];
+    [calendarDates removeObjectForKey:key];
+    [self.tableView reloadData];
 }
 
 @end
