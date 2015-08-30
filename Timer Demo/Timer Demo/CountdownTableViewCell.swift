@@ -21,7 +21,7 @@ class CountdownTableViewCell: UITableViewCell {
     @IBOutlet weak var yearsLabel: UILabel!
     
     var unitLabels = []
-    var countdown: Countdown!
+    var countdown: Countdown?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,17 +37,18 @@ class CountdownTableViewCell: UITableViewCell {
     }
     
     func updateLabelVisibilities() {
-        guard let date = self.countdown.targetDate where (!self.countdown.targetDate) else { return }
+        if let countdown = countdown {
         
-        let largestTimeUnit = timeToTargetDate(date).largestTimeUnit()
-        
-        for (idx,label) in unitLabels.enumerate(){
-            let mapIdx = idx + 1 //since no ms label
-            if (mapIdx > largestTimeUnit.rawValue){ //raw value for years is 0
-                (label as! UILabel).hidden = false
-            }
-            else{
-                (label as! UILabel).hidden = true
+            let largestTimeUnit = timeToTargetDate(countdown.targetDate).largestTimeUnit()
+            
+            for (idx,label) in unitLabels.enumerate(){
+                let mapIdx = idx + 1 //since no ms label
+                if (mapIdx > largestTimeUnit.rawValue){ //raw value for years is 0
+                    (label as! UILabel).hidden = false
+                }
+                else{
+                    (label as! UILabel).hidden = true
+                }
             }
         }
     }

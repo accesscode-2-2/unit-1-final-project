@@ -42,8 +42,8 @@ class CountdownViewController: UIViewController,
         
         cell.countdown = countdowns[indexPath.row]
         
-        cell.countdownLabel.text = timeToTargetDate(cell.countdown.targetDate).stringFromTimeInterval(false)
-        cell.countdownNameLabel.text = cell.countdown.name
+        cell.countdownLabel.text = timeToTargetDate(cell.countdown!.targetDate).stringFromTimeInterval(false)
+        cell.countdownNameLabel.text = cell.countdown!.name
         cell.updateLabelVisibilities()
         
         return cell
