@@ -7,6 +7,7 @@
 //
 
 #import "TimerViewController.h"
+#import "TimerDetailTableViewController.h"
 
 @interface TimerViewController ()
 
@@ -17,16 +18,24 @@
 @property (nonatomic) NSDate *startTime;  //
 @property (nonatomic) NSInteger duration;
 @property (nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL isPaused;
+
+@property (nonatomic) NSInteger elapsedTime;
+
 
 @end
 
 @implementation TimerViewController
+
+
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.picker.hidden = NO;
 	self.timeLabel.hidden = YES;
 	self.picker.countDownDuration = 60;
+	
+	self.isPaused = NO;
 	
 	/******  Interface layout *****/
 	[self.startStopButton.titleLabel  isEqual: @"START"];
@@ -43,15 +52,15 @@
 - (void)timerFired:(NSTimer *)timer {
 	NSLog(@"hi hi");
 	NSDate *now = [[NSDate alloc] init];
-	NSInteger elapsedTime = [now timeIntervalSinceDate:self.startTime];
+	self.elapsedTime = [now timeIntervalSinceDate:self.startTime];
 	
 	
-	self.timeLabel.text = [NSString stringWithFormat:@"%lu", self.duration - elapsedTime];
+	self.timeLabel.text = [NSString stringWithFormat:@"%lu", self.duration - self.elapsedTime];
 }
 
 - (IBAction)startStopButton:(id)sender {
-
-//	self.duration = self.picker.countDownDuration;
+	
+	//	self.duration = self.picker.countDownDuration;
 	
 	NSLog(@"i clicked start");
 	NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
@@ -64,7 +73,7 @@
 		[self stopTimer];
 		
 	}
-
+	
 }
 
 -(void)startTimer:(NSInteger) duration {
@@ -89,37 +98,50 @@
 	
 	self.timeLabel.hidden = YES;
 	self.picker.hidden = NO;
-
+	
 }
 
 -(void) pauseTimer {
 	[self.timer invalidate];
-	[self.pauseResumeButton setTitle:@"STOP" forState:UIControlStateNormal];
+	[self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
+}
 	
-	self.timeLabel.hidden = NO;
-	self.picker.hidden = YES;
+
+
+//-(void) resumeTimer {
+//	[self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
+//	self.timeLabel.hidden = NO;
+//	self.picker.hidden = YES;
+//	self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:[self pauseTimer] userInfo:nil repeats:NO];
+//	}
+
 	
-	self.timer = nil;
-	
-	self.duration = [[NSDate date] timeIntervalSinceDate:self.startTime];
-	
-	
+
+- (void) resumeTimer; {
+	[self startTimer:self.duration - self.elapsedTime];
+	[self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
 }
 
 
 
-- (IBAction)popcornButtonTapped:(id)sender {
-	[self startTimer:180];
-}
 - (IBAction)pauseResumeButtonTapped:(id)sender {
-	[self pauseTimer];
 	
 	
-	
-	
+	if (self.isPaused == NO) {
+		[self pauseTimer];
+		self.isPaused = YES;
+		
+	} else{
+		[self resumeTimer];
+		self.isPaused = NO;
+	}
 	
 	
 
+	
+	
+	
+	
 }
 
 @end
