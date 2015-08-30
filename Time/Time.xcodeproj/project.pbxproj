@@ -24,6 +24,8 @@
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
+		DC256CD91B92560000EC60C6 /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = DC256CD81B92560000EC60C6 /* timer.png */; };
+		DC256CDD1B92561300EC60C6 /* event_countdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DC256CDC1B92561300EC60C6 /* event_countdown.png */; };
 		DC7C33FF1B88C2B40051C061 /* StopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */; };
 		DC7C34111B8905950051C061 /* Digir___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C34091B8905950051C061 /* Digir___.ttf */; };
 		DC7C34121B8905950051C061 /* Digirc__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7C340A1B8905950051C061 /* Digirc__.ttf */; };
@@ -79,6 +81,8 @@
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
 		DC256CD41B8EB50E00EC60C6 /* StopWatchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewControllerDelegate.h; sourceTree = "<group>"; };
+		DC256CD81B92560000EC60C6 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timer.png; path = ../../../../../../../Downloads/timer.png; sourceTree = "<group>"; };
+		DC256CDC1B92561300EC60C6 /* event_countdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event_countdown.png; path = ../../../../../../../Downloads/event_countdown.png; sourceTree = "<group>"; };
 		DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchViewController.h; sourceTree = "<group>"; };
 		DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchViewController.m; sourceTree = "<group>"; };
 		DC7C34091B8905950051C061 /* Digir___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Digir___.ttf"; path = "../../../../../../../Downloads/digreadout/Digir___.ttf"; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				3B6AD09E1B8A22CB0091587F /* OrderedDictionary.h */,
 				3B6AD09F1B8A22CB0091587F /* OrderedDictionary.m */,
+				DC256CD71B9255C900EC60C6 /* Images */,
 				3B6AD1BF1B8D52BC0091587F /* DateCountdown */,
 				3B6AD1BC1B8D47A80091587F /* StopWatch */,
 				3B6AD1BE1B8D47ED0091587F /* Timer */,
@@ -209,6 +214,15 @@
 				8D0537761B86687C00588318 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC256CD71B9255C900EC60C6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DC256CDC1B92561300EC60C6 /* event_countdown.png */,
+				DC256CD81B92560000EC60C6 /* timer.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		DC7C34001B8904400051C061 /* Fonts */ = {
@@ -323,7 +337,9 @@
 				DC7C34181B8905950051C061 /* DIGIRU__.TTF in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
 				3B6AD0921B8916510091587F /* Orbitron-Bold.ttf in Resources */,
+				DC256CDD1B92561300EC60C6 /* event_countdown.png in Resources */,
 				3B6AD0941B8916510091587F /* Orbitron-Regular.ttf in Resources */,
+				DC256CD91B92560000EC60C6 /* timer.png in Resources */,
 				3B6AD0931B8916510091587F /* Orbitron-Medium.ttf in Resources */,
 				8D0537691B86687C00588318 /* Images.xcassets in Resources */,
 			);

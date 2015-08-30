@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.lapTimes = [[NSMutableArray alloc]init];
+    
+    self.tableView.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +54,12 @@
         
     }
     
+    UIView *selectionColor = [[UIView alloc] init];
+    selectionColor.backgroundColor = [UIColor orangeColor];
+    cell.selectedBackgroundView = selectionColor;
+    
+    
+    
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
     cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];
     
@@ -61,9 +69,13 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //    cell.backgroundColor = [UIColor blackColor];
     //    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.font = [UIFont fontWithName:@"Orbitron-Regular" size:15];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"DigitalReadoutExpUpright" size:19];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor redColor];
+    
+    [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:20]];
+    [cell.detailTextLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:20]];
 }
 
 @end

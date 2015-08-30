@@ -41,6 +41,8 @@
     
     [self embedTableView];
     
+    
+    
   //  self.lapTableView.dataSource = self.ltvc;
   //  self.lapTableView.delegate = self.ltvc;
     

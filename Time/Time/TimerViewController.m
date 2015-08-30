@@ -48,8 +48,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.timer invalidate];
-    self.timer = nil;
     if(self.presetTime.count !=0){
         [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
         [self.timerPickerView setUserInteractionEnabled:NO];
