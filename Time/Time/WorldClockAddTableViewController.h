@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorldClockAddTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface WorldClockAddTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
 @property (nonatomic) NSMutableArray *selectedCitiesArray;
 
 @end

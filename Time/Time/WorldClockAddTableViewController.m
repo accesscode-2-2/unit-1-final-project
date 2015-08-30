@@ -11,12 +11,15 @@
 #import "WorldClockInfo.h"
 
 @interface WorldClockAddTableViewController ()
-@property (nonatomic) NSMutableDictionary *clock;
 @property (nonatomic) NSArray *keyArray;
 @property (nonatomic) NSArray *valueArray;
 
 @property (nonatomic) NSString* city ;
 @property (nonatomic) NSString* time;
+
+@property (nonatomic) NSMutableDictionary *clock;
+@property (strong, nonatomic) NSArray *searchResults;
+
 @end
 
 @implementation WorldClockAddTableViewController
@@ -27,6 +30,8 @@
     
     
     self.clock = [[NSMutableDictionary alloc] init];
+    self.searchResults = [[NSArray alloc] init];
+    self.keyArray = [[NSArray alloc] init];
 
     
     ////// trying to get current time
@@ -37,20 +42,20 @@
    
     NSString *NYTimeString = [outputFormatter stringFromDate:now];
     
-    NSDate *parisTime = [now addTimeInterval:21600]; // Add XXX seconds to *now
+    NSDate *parisTime = [now dateByAddingTimeInterval:21600]; // Add XXX seconds to *now
     NSString *ParisTimeString = [outputFormatter stringFromDate:parisTime];
     
     
-    NSDate *RomeTime = [now addTimeInterval:21600];
+    NSDate *RomeTime = [now dateByAddingTimeInterval:21600];
     NSString *RomeTimeString = [outputFormatter stringFromDate:RomeTime];
     
     
-    NSDate *MexicoCity = [now addTimeInterval:-3600];
+    NSDate *MexicoCity = [now dateByAddingTimeInterval:-3600];
     NSString *MexicoCityTimeString = [outputFormatter stringFromDate:MexicoCity];
     
     
     
-    NSDate *NewDelhi = [now addTimeInterval:34200];
+    NSDate *NewDelhi = [now dateByAddingTimeInterval:34200];
     NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
  
     
@@ -68,7 +73,7 @@
         self.keyArray = [self.clock allKeys];
         self.valueArray = [self.clock allValues];
 
-    
+ 
     
     
  }
@@ -87,17 +92,35 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
      // Return the number of rows in the section.
-    return self.keyArray.count;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.searchResults count];
+    }
+    else
+        return [self.keyArray count];
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WorldClockAddIdentifier" forIndexPath:indexPath];
+    
+    static NSString *cellID = @"WorldClockAddIdentifier";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID ];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        
+    }
     
     
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = [self.searchResults objectAtIndex:indexPath.row];
+    
+    }
+    else {
     [cell.textLabel setText:[self.keyArray objectAtIndex:indexPath.row]];
-    [cell.detailTextLabel setText:[self.valueArray objectAtIndex:indexPath.row]];
-    
+//    [cell.detailTextLabel setText:[self.valueArray objectAtIndex:indexPath.row]];
+    }
     
     return cell;
 }
@@ -114,55 +137,39 @@
     city.cityTime = self.valueArray[indexPath.row];
     
     
-    [self.selectedCitiesArray addObject:city ];
-
     
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        [self.selectedCitiesArray  addObject: city];
+        
+    }
+    else {
+    [self.selectedCitiesArray addObject:city ];
+    // [self.clock removeObjectForKey:city.cityName];
+    }
     
     [[self navigationController] popViewControllerAnimated:YES];
+    [self.tableView reloadData];
+
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+
+#pragma Search Methods
+
+-(void) filterContentForSearchText: (NSString *)searchText scope:(NSString *)scope{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@",searchText];
+    
+    self.searchResults = [self.keyArray filteredArrayUsingPredicate:predicate];
+}
+
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
     return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

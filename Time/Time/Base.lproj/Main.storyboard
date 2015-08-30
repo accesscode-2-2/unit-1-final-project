@@ -360,44 +360,20 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="B5L-cb-sPM" secondAttribute="centerX" id="32w-xD-gpz"/>
                             <constraint firstItem="fKe-75-4nA" firstAttribute="top" secondItem="8FT-0I-ecR" secondAttribute="bottom" constant="30" id="5I8-OR-QEG"/>
-                            <constraint firstItem="Q5n-UJ-fBY" firstAttribute="top" secondItem="fKe-75-4nA" secondAttribute="bottom" constant="120" id="6SK-EQ-8wH"/>
                             <constraint firstAttribute="centerX" secondItem="wUF-bt-zhW" secondAttribute="centerX" id="7TV-hu-uj6"/>
                             <constraint firstItem="Q5n-UJ-fBY" firstAttribute="top" secondItem="B5L-cb-sPM" secondAttribute="bottom" constant="10" id="99G-D2-ERA"/>
-                            <constraint firstItem="B5L-cb-sPM" firstAttribute="top" secondItem="C5r-qI-59K" secondAttribute="bottom" constant="100" id="Crs-7Y-x7P"/>
-                            <constraint firstItem="Q5n-UJ-fBY" firstAttribute="top" secondItem="fKe-75-4nA" secondAttribute="bottom" constant="-9" id="ENk-Kj-Ke0"/>
-                            <constraint firstAttribute="centerX" secondItem="B5L-cb-sPM" secondAttribute="centerX" id="GDs-LH-5cx"/>
-                            <constraint firstItem="B5L-cb-sPM" firstAttribute="leading" secondItem="aGP-hQ-1Hi" secondAttribute="trailing" constant="55" id="Gtq-H2-0q0"/>
-                            <constraint firstItem="wUF-bt-zhW" firstAttribute="top" secondItem="B5L-cb-sPM" secondAttribute="bottom" constant="10" id="VFp-0Y-Ysc"/>
                             <constraint firstItem="C5r-qI-59K" firstAttribute="leading" secondItem="GIH-Jj-MBR" secondAttribute="leading" id="WkJ-M0-sN1"/>
-                            <constraint firstItem="wUF-bt-zhW" firstAttribute="top" secondItem="Q5n-UJ-fBY" secondAttribute="bottom" constant="110" id="ZAV-WF-3Yl"/>
                             <constraint firstItem="aGP-hQ-1Hi" firstAttribute="leading" secondItem="GIH-Jj-MBR" secondAttribute="leading" constant="100" id="a3q-PG-C6o"/>
                             <constraint firstItem="8FT-0I-ecR" firstAttribute="top" secondItem="C5r-qI-59K" secondAttribute="bottom" constant="20" id="amy-pN-Ame"/>
                             <constraint firstItem="B5L-cb-sPM" firstAttribute="top" secondItem="aGP-hQ-1Hi" secondAttribute="bottom" id="cdo-fb-MKe"/>
-                            <constraint firstAttribute="centerX" secondItem="Q5n-UJ-fBY" secondAttribute="centerX" constant="-163" id="dJ9-Mm-avM"/>
                             <constraint firstItem="C5r-qI-59K" firstAttribute="top" secondItem="Xh9-gH-fbA" secondAttribute="bottom" constant="20" id="eii-dh-bhX"/>
                             <constraint firstItem="wUF-bt-zhW" firstAttribute="top" secondItem="Q5n-UJ-fBY" secondAttribute="bottom" constant="10" id="h7x-Tn-J1r"/>
-                            <constraint firstItem="B5L-cb-sPM" firstAttribute="leading" secondItem="GIH-Jj-MBR" secondAttribute="leadingMargin" constant="15" id="jsM-Pi-oWY"/>
                             <constraint firstAttribute="centerX" secondItem="Q5n-UJ-fBY" secondAttribute="centerX" id="m0Y-4k-BEl"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="wUF-bt-zhW" secondAttribute="bottom" constant="20" id="mZa-Y0-HWH"/>
                             <constraint firstAttribute="trailing" secondItem="C5r-qI-59K" secondAttribute="trailing" id="o7u-ow-uWI"/>
                             <constraint firstItem="aGP-hQ-1Hi" firstAttribute="top" secondItem="C5r-qI-59K" secondAttribute="bottom" constant="20" id="rQU-uX-cvn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8FT-0I-ecR" secondAttribute="trailing" constant="100" id="v8e-pY-UyV"/>
                             <constraint firstAttribute="centerX" secondItem="fKe-75-4nA" secondAttribute="centerX" id="vKR-io-53f"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Crs-7Y-x7P"/>
-                                <exclude reference="GDs-LH-5cx"/>
-                                <exclude reference="Gtq-H2-0q0"/>
-                                <exclude reference="jsM-Pi-oWY"/>
-                                <exclude reference="6SK-EQ-8wH"/>
-                                <exclude reference="ENk-Kj-Ke0"/>
-                                <exclude reference="dJ9-Mm-avM"/>
-                                <exclude reference="VFp-0Y-Ysc"/>
-                                <exclude reference="ZAV-WF-3Yl"/>
-                                <exclude reference="mZa-Y0-HWH"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" image="countdown" id="SQY-si-udJ"/>
                     <connections>
@@ -431,7 +407,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3d-iT-bSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="238"/>
+            <point key="canvasLocation" x="-171" y="-238"/>
         </scene>
         <!--WorldClock Root View Controller-->
         <scene sceneID="xDs-hY-Pj9">
@@ -494,10 +470,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Gee-Tf-md3">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ra5-x7-rE1">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Rff-dz-3jO" id="HZr-d2-cLM"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorldClockAddIdentifier" textLabel="g9I-lk-rly" detailTextLabel="82C-Dg-h3j" style="IBUITableViewCellStyleValue1" id="1Pp-Nl-VE3">
@@ -530,10 +509,22 @@
                             <outlet property="delegate" destination="Rff-dz-3jO" id="W1v-sy-eIf"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="966-YO-CiK" id="cc7-K4-RQa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cs8-l8-epu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="966-YO-CiK">
+                    <connections>
+                        <outlet property="delegate" destination="Rff-dz-3jO" id="MDf-O4-0d4"/>
+                        <outlet property="searchBar" destination="ra5-x7-rE1" id="Yas-Dc-H35"/>
+                        <outlet property="searchContentsController" destination="Rff-dz-3jO" id="UT6-Gr-EJ5"/>
+                        <outlet property="searchResultsDataSource" destination="Rff-dz-3jO" id="P50-gQ-Tcz"/>
+                        <outlet property="searchResultsDelegate" destination="Rff-dz-3jO" id="j0M-4s-UMJ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1035" y="1387"/>
+            <point key="canvasLocation" x="1173" y="1439"/>
         </scene>
         <!--World Clock Navigation-->
         <scene sceneID="03T-Dg-l6e">
@@ -543,6 +534,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="irW-gV-dUz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.54962677920000003" blue="0.55632691320000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="alQ-c6-rTU" kind="relationship" relationship="rootViewController" id="OCQ-Ev-uGN"/>
