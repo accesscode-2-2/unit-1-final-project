@@ -30,7 +30,7 @@
     
 }
 
-// need to ask about this too...
+
 - (void)saveNewTimer{
     
     Timer *newTimer = [[Timer alloc] init];
