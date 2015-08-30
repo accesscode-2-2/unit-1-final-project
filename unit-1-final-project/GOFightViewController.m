@@ -59,7 +59,6 @@
 
 // Create audio player object and initialize with URL to sound
     NSError *error;
-   // NSError *error2;
     NSData *songFile = [[NSData alloc] initWithContentsOfURL:soundUrl options:NSDataReadingMappedIfSafe error:&error];
     self.bellPlayer = [[AVAudioPlayer alloc] initWithData:songFile error:&error];
     
@@ -232,7 +231,7 @@
     
 }
 - (void) playBellAtRoundStart {
-    [self.bellPlayer play];
+//    [self.bellPlayer play];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [self.mainTimer invalidate];

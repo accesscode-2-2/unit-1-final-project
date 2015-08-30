@@ -47,12 +47,6 @@
 
     NSLog(@"Exercise Index: %lu", self.currentExerciseIndex);
 
-    // This the timer for the workout
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                  target:self
-                                                selector:@selector(updateExerciseTimer)
-                                                userInfo:nil
-                                                 repeats:YES];
     
 //timer starts when viewLoads
     [self initializeTimer];
