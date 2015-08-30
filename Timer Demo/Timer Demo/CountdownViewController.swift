@@ -31,12 +31,6 @@ class CountdownViewController: UIViewController,
         tableView.reloadData()
     }
     
-    func timeToTargetDate(targetDate: NSDate) -> NSTimeInterval{
-            let currentDate = NSDate()
-            let timeToTargetDate = targetDate.timeIntervalSinceDate(currentDate)
-            return timeToTargetDate
-    }
-    
     //MARK: TableView methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return targetDates.count
@@ -47,7 +41,7 @@ class CountdownViewController: UIViewController,
         let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownTableViewCell
         
         cell.targetDate = targetDates[indexPath.row]
-        cell.textLabel?.text = timeToTargetDate(cell.targetDate).stringFromTimeInterval(false)
+        cell.countdownLabel.text = timeToTargetDate(cell.targetDate!).stringFromTimeInterval(false)
         
         return cell
     }

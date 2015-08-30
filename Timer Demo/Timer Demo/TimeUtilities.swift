@@ -8,11 +8,20 @@
 
 import UIKit
 
+func timeToTargetDate(targetDate: NSDate) -> NSTimeInterval{
+    let currentDate = NSDate()
+    let timeToTargetDate = targetDate.timeIntervalSinceDate(currentDate)
+    return timeToTargetDate
+}
+
+enum unit: Int {
+    case Millisecond, Second, Minute, Hour, Day, Month, Year
+}
+
 extension NSTimeInterval{
     
-    func stringFromTimeInterval(withMilliseconds:Bool) -> String{
+    func timeUnits() -> [Int]{
         let intInterval = Int(self)
-        
         let years = (intInterval / 31556900)
         let months = (intInterval / 2629740) % 12
         let days = (intInterval / (3600 * 24)) % 365
@@ -21,7 +30,11 @@ extension NSTimeInterval{
         let seconds = intInterval % 60
         let milliseconds = Int(floor(((self - floor(self)) * 100)))
         
-        let timeUnits = [years, months, days, hours, minutes, seconds, milliseconds]
+        return [years, months, days, hours, minutes, seconds, milliseconds]
+    }
+    
+    func stringFromTimeInterval(withMilliseconds:Bool) -> String{
+        let timeUnits = self.timeUnits()
         
         var foundFirstNonzero = false
         var timeString = ""
@@ -58,8 +71,31 @@ extension NSTimeInterval{
         return timeString
     }
     
-    func largestTimeUnit(){
-        
+    func largestTimeUnit() -> unit{        
+        var unitID = 0
+        for (idx, unit) in self.timeUnits().enumerate() {
+            if unit > 0{
+                unitID = idx
+                break
+            }
+        }
+        switch unitID{
+        case 0:
+            return .Year
+        case 1:
+            return .Month
+        case 2:
+            return .Day
+        case 3:
+            return .Hour
+        case 4:
+            return .Minute
+        case 5:
+            return .Second
+        case 6:
+            return .Millisecond
+        default:
+            return .Day
+        }
     }
-    
 }

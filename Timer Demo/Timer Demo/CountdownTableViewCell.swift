@@ -20,18 +20,33 @@ class CountdownTableViewCell: UITableViewCell {
     @IBOutlet weak var yearsLabel: UILabel!
     
     var unitLabels = []
-    var targetDate = NSDate()
+    var targetDate : NSDate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        unitLabels = [yearsLabel, monthsLabel, daysLabel, hoursLabel, minutesLabel, secondsLabel]
         
-        
+        countdownLabel.adjustsFontSizeToFitWidth = true;
+        unitLabels = [secondsLabel, minutesLabel, hoursLabel, daysLabel, monthsLabel, yearsLabel]
+        setLabelVisibilities()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
+    
+    func setLabelVisibilities() {
+        guard let date = self.targetDate where self.targetDate != nil else { return }
+        
+        let largestTimeUnit = timeToTargetDate(date).largestTimeUnit()
+        
+        for (idx, unitLabel) in unitLabels.enumerate() {
+            if (idx < largestTimeUnit.rawValue - 1){ //Year.rawVale = 6
+                (unitLabel as! UILabel).hidden = false
+            }
+            else{
+                (unitLabel as! UILabel).hidden = true
+            }
+        }
+    }
 }
