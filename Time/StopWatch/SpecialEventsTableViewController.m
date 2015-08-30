@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter = dateFormatter;
@@ -41,9 +43,20 @@
     
     event = [[Event alloc] init];
     event.name = @"Lease Due Date";
-    event.endTime = [dateFormatter dateFromString:@"11/01/2015 at 07:00:00"];
+    event.endTime = [dateFormatter dateFromString:@"08/30/2015 at 01:46:20"];
     [self.specialEventsList addObject:event];
     
+    for (Event *event in self.specialEventsList) {
+        
+        //Local Notif: Step 1
+        UILocalNotification* localNotification =[[UILocalNotification alloc] init];
+        localNotification.fireDate = event.endTime;
+        localNotification.alertBody = [NSString stringWithFormat:@"Hope you're ready for %@", event.name];
+        localNotification.timeZone = nil;
+//        localNotification.soundName = @"";
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
+    }
     
     
 }

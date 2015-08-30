@@ -64,6 +64,7 @@
     if ([fromDate earlierDate:toDate] == toDate ) {
         [timer invalidate];
         self.countdownLabel.text = @"You're all set";
+        
     }
 }
 
