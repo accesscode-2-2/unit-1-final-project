@@ -230,6 +230,8 @@
 
 - (IBAction)presetButtonTapped:(id)sender {
     self.isInitial = NO;
+    [self.timer invalidate];
+    self.timer = nil;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *presetsNC = [storyboard  instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
     NSArray *viewControllers = [presetsNC viewControllers];
@@ -266,8 +268,8 @@
         viewAsLabel = [[UILabel alloc] init];
         [viewAsLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:50]];
         [viewAsLabel setTextAlignment:NSTextAlignmentCenter];
-        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:0/255 green:128.0/255 blue:255/255 alpha:1]];
-        [viewAsLabel setTextColor:[UIColor whiteColor]];
+        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1]];
+        [viewAsLabel setTextColor:[UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0]];
     }
     
     if (component == 0) {

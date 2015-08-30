@@ -119,5 +119,33 @@
 
 }
 
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    UILabel *viewAsLabel = (UILabel *)view;
+    
+    if(!viewAsLabel) {
+        viewAsLabel = [[UILabel alloc] init];
+        [viewAsLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:50]];
+        [viewAsLabel setTextAlignment:NSTextAlignmentCenter];
+        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1]];
+        [viewAsLabel setTextColor:[UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0]];
+    }
+    
+    if (component == 0) {
+        viewAsLabel.text = [self.hours objectAtIndex:row];
+    } else if (component == 1) {
+        viewAsLabel.text = [self.minutes objectAtIndex:row];
+    } else {
+        viewAsLabel.text = [self.seconds objectAtIndex:row];
+    }
+    
+    return viewAsLabel;
+}
+
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 80;
+}
+
 
 @end

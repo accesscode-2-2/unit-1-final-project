@@ -121,10 +121,26 @@
     NSDate *eventDate = [self convertToNSDate:key];
     NSString *countdown = [self timeToEvent:eventDate];
     
+    UIView *selectionColor = [[UIView alloc] init];
+    selectionColor.backgroundColor = [UIColor colorWithRed:198.0/255 green:230.0/255 blue:204.0/255 alpha:1.0];
+    cell.selectedBackgroundView = selectionColor;
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.eventDates objectForKey:key]];
     cell.detailTextLabel.text = countdown;
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    cell.backgroundColor = [UIColor blackColor];
+    //    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    cell.textLabel.highlightedTextColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    cell.detailTextLabel.textColor =  [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    
+    [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:12]];
+    [cell.detailTextLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:13]];
 }
 
 #pragma mark - delegate Implementation

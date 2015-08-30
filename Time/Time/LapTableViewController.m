@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.lapTimes = [[NSMutableArray alloc]init];
     
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +55,7 @@
     }
     
     UIView *selectionColor = [[UIView alloc] init];
-    selectionColor.backgroundColor = [UIColor orangeColor];
+    selectionColor.backgroundColor = [UIColor colorWithRed:198.0/255 green:230.0/255 blue:204.0/255 alpha:1.0];
     cell.selectedBackgroundView = selectionColor;
     
     
@@ -66,13 +66,30 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier"];
+    
+    if (cell == nil) {
+        
+        cell =
+        [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                               reuseIdentifier:@"lapIdentifier"];
+        
+    }
+    
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.highlightedTextColor = [UIColor whiteColor] ;
+    
+}
+
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //    cell.backgroundColor = [UIColor blackColor];
     //    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.highlightedTextColor = [UIColor whiteColor];
-    cell.detailTextLabel.textColor = [UIColor redColor];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    cell.textLabel.highlightedTextColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    cell.detailTextLabel.textColor =  [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
     
     [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:20]];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:20]];
