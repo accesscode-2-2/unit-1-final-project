@@ -15,7 +15,7 @@ func timeToTargetDate(targetDate: NSDate) -> NSTimeInterval{
 }
 
 enum unit: Int {
-    case Millisecond, Second, Minute, Hour, Day, Month, Year
+    case Year, Month, Day, Hour, Minute, Second, Millisecond, Poop
 }
 
 extension NSTimeInterval{
@@ -24,7 +24,7 @@ extension NSTimeInterval{
         let intInterval = Int(self)
         let years = (intInterval / 31556900)
         let months = (intInterval / 2629740) % 12
-        let days = (intInterval / (3600 * 24)) % 365
+        let days = Int(floor((self / (3600 * 24)) % 30.4368))
         let hours = (intInterval / 3600) % 24
         let minutes = (intInterval / 60) % 60
         let seconds = intInterval % 60
@@ -95,7 +95,7 @@ extension NSTimeInterval{
         case 6:
             return .Millisecond
         default:
-            return .Day
+            return .Poop
         }
     }
 }
