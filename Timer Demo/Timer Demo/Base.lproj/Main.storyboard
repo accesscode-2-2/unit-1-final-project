@@ -165,6 +165,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-xG-cuJ">
                                 <rect key="frame" x="0.0" y="338" width="600" height="149"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbJ-ZI-WvY">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="40.5"/>
+                                        <color key="backgroundColor" red="0.77258245439999995" green="1" blue="0.74357697349999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="35"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZl-fi-lup" userLabel="3MinContainer">
                                         <rect key="frame" x="200" y="40" width="200" height="109"/>
                                         <subviews>
@@ -213,13 +220,6 @@
                                             <constraint firstItem="cJQ-HK-vSG" firstAttribute="centerY" secondItem="lxx-UP-ERE" secondAttribute="centerY" id="Oky-yA-JlQ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbJ-ZI-WvY">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="40.5"/>
-                                        <color key="backgroundColor" red="0.77258245439999995" green="1" blue="0.74357697349999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="35"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.65156431479999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
