@@ -32,8 +32,8 @@
     
     
     // first label here
-    self.roundedButtonView1.layer.cornerRadius = 6.0;
-    self.roundedButtonView1.layer.borderWidth = 3.0f;
+//    self.roundedButtonView1.layer.cornerRadius = 6.0;
+//    self.roundedButtonView1.layer.borderWidth = 3.0f;
 }
 
 - (IBAction)startBirthdayCountdown:(id)sender {
