@@ -1121,6 +1121,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="totalTimeLabel" destination="r6y-1d-t7W" id="x01-iu-i1N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hH3-Tr-qbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
