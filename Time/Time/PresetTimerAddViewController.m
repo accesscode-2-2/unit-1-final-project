@@ -30,6 +30,7 @@
     
 }
 
+// need to ask about this too...
 - (void)saveNewTimer{
     
     Timer *newTimer = [[Timer alloc] init];
@@ -40,7 +41,10 @@
     
     [self.timerViewController.model.timers insertObject:newTimer atIndex:0];
     
+    
 }
+
+
 - (IBAction)saveButtonTapped:(id)sender {
     
     [self saveNewTimer];
