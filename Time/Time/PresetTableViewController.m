@@ -23,6 +23,11 @@
     // alloc init self.timers
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -38,18 +43,20 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     DetailViewController *detailViewController = segue.destinationViewController;
+    detailViewController.previousViewController = self;
+    
+    
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"preset" forIndexPath:indexPath];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

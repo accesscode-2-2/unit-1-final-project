@@ -18,7 +18,7 @@
 
 @property (nonatomic) NSMutableDictionary *personalTimer;
 
-@property (nonatomic, weak) PresetTableViewController *presentingViewController;
+@property (nonatomic, weak) PresetTableViewController *previousViewController;
 
 
 @end

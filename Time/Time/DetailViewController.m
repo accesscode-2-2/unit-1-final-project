@@ -15,25 +15,15 @@
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 - (IBAction)saveButton:(UIButton *)sender {
     
     PresetTime *time = [[PresetTime alloc] init];
     time.nameOfTask = self.nameYourTask.text;
     time.timeOfTask = [self.yourTime.text doubleValue];
     
-    [self.presentingViewController.timers addObject:time];
+    [self.previousViewController.timers addObject:time];
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
