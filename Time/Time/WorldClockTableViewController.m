@@ -9,28 +9,22 @@
 #import "WorldClockTableViewController.h"
 
 @interface WorldClockTableViewController ()
-
+@property (nonatomic) NSMutableArray *selectedCitiesArray;
 @end
 
 @implementation WorldClockTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     [self.navigationItem setTitle:@"World Clock"];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor redColor] forKey:UITextAttributeTextColor]];
-     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    [self.navigationController.editButtonItem setTintColor:[UIColor whiteColor]];
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                               initWithTitle:@"+"
-                               style:UIBarButtonItemStyleBordered
-                               target:nil
-                               action:nil];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    
+    self.selectedCitiesArray = [[NSMutableArray alloc] init];
+    
+    //it changes the color only on second click
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]}];
+    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 
@@ -44,13 +38,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return 0;
+   return self.selectedCitiesArray.count;
 }
 
 /*
@@ -61,7 +55,7 @@
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
