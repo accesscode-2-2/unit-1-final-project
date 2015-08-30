@@ -9,10 +9,10 @@
 #import "PresetsTableViewController.h"
 #import "NewPresetViewController.h"
 #import "OrderedDictionary.h"
+#import "DataSingleton.h"
 
 @interface PresetsTableViewController ()
-@property (nonatomic) OrderedDictionary *presets;
-@property (nonatomic) NSMutableArray *alphabeticalKeys;
+@property (nonatomic) DataSingleton *sharedSingleton;
 @property (nonatomic) NSArray *selectedPreset;
 @property (nonatomic) NSUInteger chosenIndex;
 @end
@@ -21,7 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupDefaultPresets];
+    
+    self.sharedSingleton = [DataSingleton sharedDataSingleton];
+    
     [self.navigationItem setTitle:@"Select Presets"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didSelectTimer)];
@@ -30,36 +32,21 @@
     self.tableView.backgroundColor = [UIColor blackColor];
 }
 
-- (void)setupDefaultPresets {
-    self.presets = [[OrderedDictionary alloc] init];
-    
-    NSArray *keys = @[@"Commercials", @"Dryer",  @"Morning Meditation",
-                      @"Popcorn", @"Quick Jog", @"Washing Machine"];
-    
-    NSArray *values = @[@[@"00", @"01", @"00"],
-                        @[@"00", @"45", @"00"],
-                        @[@"00", @"05", @"00"],
-                        @[@"00", @"03", @"30"],
-                        @[@"00", @"25", @"00"],
-                        @[@"00", @"35", @"00"]];
-    
-    for (int i = 0; i < [keys count]; i++) {
-        [self.presets setObject:values[i] forKey:keys[i]];
-    }
-    
-    self.alphabeticalKeys = [NSMutableArray arrayWithArray:[self.presets allKeys]];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.navigationItem.leftBarButtonItem.enabled == NO) {
         [self.navigationItem.leftBarButtonItem setEnabled:YES];
     }
-    self.selectedPreset = [self.presets objectForKey:[self.presets keyAtIndex:indexPath.row]];
+    self.selectedPreset = [self.sharedSingleton.presetTimers objectForKey:[self.sharedSingleton.presetTimers keyAtIndex:indexPath.row]];
 }
 
 - (void)didSelectTimer {
     
-    NSString *key = [self.presets getKeyForObject:self.selectedPreset];
+    NSString *key = [self.sharedSingleton.presetTimers getKeyForObject:self.selectedPreset];
     
     [self.delegate presetTime:self.selectedPreset withName:key];
     [self dismissViewControllerAnimated:YES completion:^{}];
@@ -80,7 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.presets count];
+    return [self.sharedSingleton.presetTimers count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60.0;
@@ -106,8 +93,8 @@
     [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:20]];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:20]];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.alphabeticalKeys[indexPath.row]];
-    NSArray *presetTime = [self.presets objectForKey:self.alphabeticalKeys[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.sharedSingleton.alphabeticalKeys[indexPath.row]];
+    NSArray *presetTime = [self.sharedSingleton.presetTimers objectForKey:self.sharedSingleton.alphabeticalKeys[indexPath.row]];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@:%@:%@", presetTime[0], presetTime[1], presetTime[2]];
     
     return cell;
@@ -115,13 +102,7 @@
 
 #pragma mark - NewPresetViewControllerDelegate implementation
 -(void)presetCreated:(NSArray *)countdownTime withName:(NSString *)timerName {
-    [self.presets setObject:countdownTime forKey:timerName];
-    
-    self.alphabeticalKeys = [NSMutableArray arrayWithArray:[self.presets allKeys]];
-    NSLog(@"Alpha Keys %@", self.alphabeticalKeys);
-    NSArray* sortedArray = [self.alphabeticalKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    self.alphabeticalKeys = [NSMutableArray arrayWithArray:sortedArray];
-    [self.tableView reloadData];
+    [self.sharedSingleton setTimer:countdownTime withName:timerName];
 }
 
 @end
