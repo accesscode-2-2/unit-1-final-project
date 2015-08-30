@@ -19,9 +19,11 @@ class ViewController: UIViewController,
     
     var displayLink : CADisplayLink!
     var timers: [Timer] = [];
+    
     let popcornTimer = Timer.init(timerLabel: "Popcorn", startTime: 180.000)
     let setRestTimer = Timer.init(timerLabel: "In Between Sets Rest", startTime: 90.000)
     let workBreakTimer = Timer.init(timerLabel: "Break", startTime: 60.000*30.000)
+
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
@@ -44,6 +46,7 @@ class ViewController: UIViewController,
         timers.append(popcornTimer)
         timers.append(setRestTimer)
         timers.append(workBreakTimer)
+
 
     }
     
@@ -98,7 +101,7 @@ class ViewController: UIViewController,
         cell.timer = timer
         
         cell.timerName.text = cell.timer.timerName
-        cell.timerLabel.text = String(cell.timer.stringFromTimeInterval(cell.timer.remainingTime))
+        cell.timerLabel.text = cell.timer.remainingTime.stringFromTimeInterval(false)
         
         
         if timer.isPaused {

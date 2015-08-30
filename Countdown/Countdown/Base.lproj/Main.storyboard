@@ -29,9 +29,6 @@
                             <constraint firstItem="UBD-0E-o4s" firstAttribute="centerY" secondItem="qGk-Ew-IjQ" secondAttribute="centerY" id="llD-QS-6L5"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="timeToTargetDateLabel" destination="UBD-0E-o4s" id="NhF-dh-R7m"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aP1-BG-gil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

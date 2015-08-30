@@ -15,6 +15,7 @@
 		69E8101F1B91F6B30061915A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E8101D1B91F6B30061915A /* LaunchScreen.storyboard */; };
 		69E8102A1B91F6B30061915A /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E810291B91F6B30061915A /* CountdownTests.swift */; };
 		69E810351B91F6B30061915A /* CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E810341B91F6B30061915A /* CountdownUITests.swift */; };
+		69EC94271B92548B00FC026D /* AddCountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC94261B92548B00FC026D /* AddCountdownViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		69E810301B91F6B30061915A /* CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E810341B91F6B30061915A /* CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITests.swift; sourceTree = "<group>"; };
 		69E810361B91F6B30061915A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69EC94261B92548B00FC026D /* AddCountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCountdownViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				69E810141B91F6B30061915A /* AppDelegate.swift */,
 				69713F421B923F8E00FCEA28 /* TimeUtilities.swift */,
 				69713F401B922D2E00FCEA28 /* CountdownViewController.swift */,
+				69EC94261B92548B00FC026D /* AddCountdownViewController.swift */,
 				69E810181B91F6B30061915A /* Main.storyboard */,
 				69E8101B1B91F6B30061915A /* Assets.xcassets */,
 				69E8101D1B91F6B30061915A /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69EC94271B92548B00FC026D /* AddCountdownViewController.swift in Sources */,
 				69713F411B922D2E00FCEA28 /* CountdownViewController.swift in Sources */,
 				69713F431B923F8E00FCEA28 /* TimeUtilities.swift in Sources */,
 				69E810151B91F6B30061915A /* AppDelegate.swift in Sources */,
