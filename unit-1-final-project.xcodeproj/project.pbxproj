@@ -174,12 +174,8 @@
 		3D2883551B8C02B400DE02B8 /* GOWorkout */ = {
 			isa = PBXGroup;
 			children = (
-				3DDB60BF1B893332008194DB /* WorkoutManager.h */,
-				3DDB60C01B893332008194DB /* WorkoutManager.m */,
-				3DDB60C21B893413008194DB /* Workout.h */,
-				3DDB60C31B893413008194DB /* Workout.m */,
-				3DDB60C51B893477008194DB /* Exercises.h */,
-				3DDB60C61B893477008194DB /* Exercises.m */,
+				9ACCFF3B1B8B991000F1693C /* GOWorkoutsTableViewController.h */,
+				9ACCFF3C1B8B991000F1693C /* GOWorkoutsTableViewController.m */,
 				9AD5F5761B8A27B3004F25D6 /* GOTimerViewController.h */,
 				9AD5F5771B8A27B3004F25D6 /* GOTimerViewController.m */,
 			);
@@ -231,8 +227,6 @@
 				3D2D2F021B86B5A300E210BA /* AppDelegate.h */,
 				3D2D2F031B86B5A300E210BA /* AppDelegate.m */,
 				3DE05A0B1B8E8B48007A66FB /* Singleton & Objects */,
-				9ACCFF3B1B8B991000F1693C /* GOWorkoutsTableViewController.h */,
-				9ACCFF3C1B8B991000F1693C /* GOWorkoutsTableViewController.m */,
 				9A7EC3CD1B90DE3400D0CFB9 /* GOBuild */,
 				3D2883561B8C02BA00DE02B8 /* GOCustomWorkout */,
 				3D2883551B8C02B400DE02B8 /* GOWorkout */,
@@ -277,6 +271,12 @@
 		3DE05A0B1B8E8B48007A66FB /* Singleton & Objects */ = {
 			isa = PBXGroup;
 			children = (
+				3DDB60BF1B893332008194DB /* WorkoutManager.h */,
+				3DDB60C01B893332008194DB /* WorkoutManager.m */,
+				3DDB60C21B893413008194DB /* Workout.h */,
+				3DDB60C31B893413008194DB /* Workout.m */,
+				3DDB60C51B893477008194DB /* Exercises.h */,
+				3DDB60C61B893477008194DB /* Exercises.m */,
 				3D29C62A1B8E009F004E33EF /* BackgroundGradient.h */,
 				3D29C62B1B8E009F004E33EF /* BackgroundGradient.m */,
 			);
