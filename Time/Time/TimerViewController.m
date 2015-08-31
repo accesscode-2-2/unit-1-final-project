@@ -110,273 +110,129 @@
         [_timerIsOver stop];
         [self stopTimer];
     }
-    
-    
 }
-
-
-
-
-
 
 - (IBAction)pauseResumeButtonTapped:(id)sender {
     
-    
     if (self.isPaused == NO) {
-        
         [self pauseTimer];
-        
         self.isPaused = YES;
-        
         [_clock stop];
-        
-        
-        
+    
     } else{
-        
         [self resumeTimer];
-        
         self.isPaused = NO;
-        
         if (self.muteSound == NO) {
-            
             [_clock play];
-            
         }
-        
         else if (self.muteSound == YES) {
-            
             [_clock stop];
-            
         }
-        
-        
-        
     }
-    
-    
-    
 }
 
 
 #pragma mark - Timers
 
-
 - (void)spinit:(NSTimer *)timer
-
 {
-    
     static float prog = 0.0;
-    
-    
-    
     prog +=  (0.1/self.duration);
     
     if(prog >= 1.0) {
-        
         prog = 1.0;
-        
         [timer invalidate];
-        
     }
-    
     [[self spinnerView] setProgress:prog animated:YES];
-    
 }
-
-
-
 
 
 - (void)timerFired:(NSTimer *)timer {
     
     NSInteger hours, minutes, seconds ;
-    
-    
-    
-    NSLog(@"hi hi");
-    
     NSDate *now = [[NSDate alloc] init];
-    
-    NSLog(@"self.elapsedTime %lu",self.elapsedTime);
-    
-    NSLog(@"self.duration %lu",self.duration);
-    
-    
-    
-    
-    
     self.elapsedTime = [now timeIntervalSinceDate:self.startTime];
     
-    
-    
-    
     seconds = (self.duration - self.elapsedTime) % 60;
-    
     minutes = ((self.duration - self.elapsedTime) / 60) % 60;
-    
     hours = ((self.duration - self.elapsedTime) / 3600) % 24;
-    
-    
-    
+
     self.timeLabel.text = [NSString stringWithFormat:@"%02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
     
-    
-    
     if (self.elapsedTime == self.duration) {
-        
         [_timerIsOver play];
-        
         [self alertView];
-        
         [timer invalidate];
-        
     }
-    
 }
 
-
-
-
 #pragma mark - Time methods
-
-
-
 
 -(void)startTimer:(NSInteger) duration {
     
     // set self.startTime to now
-    
-    
     self.duration = duration;
-    
     self.startTime = [[NSDate alloc] init];
     
-    
-    
     self.StopwatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-    
     
     self.circularTimerProgress = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(spinit:) userInfo:nil repeats:YES];
     
     
-    
-    
-    
-    // change the button label to "Stop" so we know it's running
-    
-    
-    
     [self.startStopButton setTitle:@"STOP" forState:UIControlStateNormal];
-    
     self.pauseResumeButton.enabled = YES;
-    
     self.pauseResumeButton.backgroundColor = [UIColor colorWithRed:0.93 green:0.91 blue:0.23 alpha:1.0];
-    
-    
-    
     self.startStopButton.backgroundColor = [UIColor redColor];
-    
     self.timeLabel.hidden = NO;
-    
     self.picker.hidden = YES;
-    
     self.spinnerView.hidden = NO;
-    
-    
-    
 }
-
-
 
 -(void) stopTimer {
     
     [self.StopwatchTimer invalidate];
-    
     [self.circularTimerProgress invalidate];
-    
     self.circularTimerProgress = nil; //i need to stop thisssssssssss :@@@@@
     
-    
-    
-    
-    
     [self.startStopButton setTitle:@"START" forState:UIControlStateNormal];
-    
     self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
-    
     self.pauseResumeButton.enabled = NO;
-    
     self.pauseResumeButton.backgroundColor = [UIColor grayColor];
-    
-    
-    
     self.timeLabel.hidden = YES;
-    
     self.picker.hidden = NO;
-    
     self.spinnerView.hidden = YES;
-    
 }
-
-
 
 -(void) pauseTimer {
     
     [self.StopwatchTimer invalidate];
-    
     [self.circularTimerProgress invalidate];
-    
-    
-    
     [self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
-    
 }
-
-
 
 - (void) resumeTimer; {
     
-    
-    
     [self startTimer:self.duration - self.elapsedTime];
-    
     [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
-    
 }
-
 
 #pragma mark - Alert View
 
 -(void) alertView{
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"TIMER!!" message:@"Time is up!" delegate:self cancelButtonTitle:@"Stop" otherButtonTitles: nil];
-    
     [alert show];
-    
 }
-
-
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
     if (buttonIndex == 0)
-        
     {
-        
         [ _timerIsOver stop];
-        
         self.timeLabel.hidden = YES;
-        
         self.picker.hidden = NO;
-        
         self.spinnerView.hidden = YES;
-        
     }
-    
 }
-
-
 
 @end
 
