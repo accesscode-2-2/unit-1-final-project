@@ -6,6 +6,7 @@
 //  Copyright © 2015 apps. All rights reserved.
 //
 
+#import "BackgroundGradient.h"
 #import "GOCalendarViewController.h"
 #import "GOCalendarResults.h"
 #import "WorkoutManager.h"
@@ -15,14 +16,20 @@
 @property (weak, nonatomic) IBOutlet UITextField *goCalendarTextField;
 @property (nonatomic) NSString *calendarGoalsString;
 @property (nonatomic) NSDateFormatter *formatter;
+@property (weak, nonatomic) IBOutlet UIButton *addGoalButton;
 @property (nonatomic) NSDate *date;
 @end
 
 @implementation GOCalendarViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.addGoalButton.userInteractionEnabled = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -62,6 +69,16 @@
     [calendarDates setObject:self.date forKey:self.calendarGoalsString];
     
     NSLog(@"%@", calendarDates);
+}
+- (IBAction)editingChanged:(UITextField *)sender {
+    BOOL hasGoal = (![self.goCalendarTextField.text isEqualToString:@""]);
+    
+    if (hasGoal){
+        self.addGoalButton.userInteractionEnabled = YES;
+    } else {
+        self.addGoalButton.userInteractionEnabled = NO;
+        NSLog(@"Add a goal!");
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

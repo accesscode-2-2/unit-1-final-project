@@ -6,6 +6,7 @@
 //  Copyright © 2015 apps. All rights reserved.
 //
 
+#import "BackgroundGradient.h"
 #import "CreateWorkoutViewController.h"
 
 @interface CreateWorkoutViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
@@ -37,6 +38,12 @@
 
 @implementation CreateWorkoutViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    self.navigationController.navigationBar.hidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -96,31 +103,26 @@
         self.exerciseNameString = [[self.model.exercises objectForKey:allExercisesType]objectAtIndex:row];
         self.exerciseNameLabel.text = self.exerciseNameString;
         self.model.exerciseName = self.exerciseNameString;
-        
+
+
         return [[self.model.exercises objectForKey:allExercisesType]objectAtIndex:row];
         
     }
     
     return @"";
 }
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     if ([pickerView isEqual:self.picker]){
         [self.pickerTwo reloadAllComponents];
         
-    } //else if ([pickerView isEqual:self.pickerTwo]){
-    
- //   NSInteger typeWorkoutRow = [self.picker selectedRowInComponent:0];
-    
-  //  NSArray *allExercises = [self.model.exercises allKeys];
-    //   NSString *allExercisesType = [allExercises objectAtIndex:typeWorkoutRow];
-    
+    }
 }
 - (IBAction)setsValueChanged:(UIStepper *)sender {
     self.setsNumber = [sender value];
     self.model.sets = self.setsNumber;
     [self.setsLabel setText:[NSString stringWithFormat:@"%d", (int)[sender value]]];
-    
 }
 
 - (IBAction)repsValueChanged:(UIStepper *)sender {
@@ -144,9 +146,14 @@
     
     [self.existingData.workoutList addObject:self.model];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
     
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
     
+
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = NO;
 }
 @end

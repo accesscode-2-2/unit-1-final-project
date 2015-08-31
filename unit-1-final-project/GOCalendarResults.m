@@ -6,6 +6,7 @@
 //  Copyright © 2015 apps. All rights reserved.
 //
 
+#import "BackgroundGradient.h"
 #import "GOCalendarResults.h"
 
 @interface GOCalendarResults ()
@@ -19,6 +20,11 @@
 @implementation GOCalendarResults
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
     self.date = self.scheduledDate; // save in property -- this is the start date
     
     // the timer that counts down the scheduled date
@@ -82,7 +88,7 @@
     NSString *formattedSeconds = [SecondFormatter stringFromDate:self.date];
     
     // stores all the strings in one string for the output label
-    NSString *newLabel = [NSString stringWithFormat:@"Goal Date %@ \n \n Time Left \n \n Days :  %@\n Hours : %@\n Minutes : %@\n Seconds : %@", formattedDateString,daysLeftString, formattedHour, formattedMinute, formattedSeconds];
+    NSString *newLabel = [NSString stringWithFormat:@"%@ \n \n Time Left \n \n Days :  %@\n Hours : %@\n Minutes : %@\n Seconds : %@", formattedDateString,daysLeftString, formattedHour, formattedMinute, formattedSeconds];
     
     // stores the countdown label into the new string
     self.countdownResultsLabel.text = newLabel;

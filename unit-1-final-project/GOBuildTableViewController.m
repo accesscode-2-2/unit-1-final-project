@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.hidesBackButton = YES;
+    
     self.checkedWorkouts = 0;
     
     if ((self.workoutsData.workoutList.count == 0)||(self.workoutsData.workoutList.count != self.checkedWorkouts)){
@@ -138,6 +140,8 @@
     [self.navigationController setNavigationBarHidden:NO];
     
     self.tabBarController.tabBar.hidden = NO;
+    
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (IBAction)finishWorkoutPressed:(UIButton *)sender {
@@ -149,7 +153,8 @@
     
     [self.tableView reloadData];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
+
     
     NSLog(@"checked workouts: %d", self.checkedWorkouts);
 }
