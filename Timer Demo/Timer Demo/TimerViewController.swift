@@ -16,6 +16,11 @@ class ViewController: UIViewController,
     AddTimerViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var oneMinuteButton: UIButton!
+    @IBOutlet weak var threeMinuteButton: UIButton!
+    @IBOutlet weak var fiveMinuteButton: UIButton!
+    @IBOutlet weak var quickTimerLabel: UILabel!
+    @IBOutlet weak var quickTimerTextField: UITextField!
     
     var displayLink : CADisplayLink!
     var audioPlayer = AVAudioPlayer()
@@ -133,6 +138,30 @@ class ViewController: UIViewController,
             }
         }
     }
+    
+
+    @IBAction func oneMinuteTimer(sender: UIButton) {
+        
+        let quickTimer = Timer(name: quickTimerTextField.text!, startTime: 60.000)
+        timers.append(quickTimer)
+        tableView.reloadData()
+        
+        
+    }
+    
+    @IBAction func threeMinuteTimer(sender: UIButton) {
+        let quickTimer = Timer(name: quickTimerTextField.text!, startTime: 180.000)
+        timers.append(quickTimer)
+        tableView.reloadData()
+        
+    }
+    
+    @IBAction func fiveMinuteTimer(sender: UIButton) {
+        let quickTimer = Timer(name: quickTimerTextField.text!, startTime: 300.000)
+        timers.append(quickTimer)
+        tableView.reloadData()
+    }
+    
     
     // MARK: add timer view controller delegate
     

@@ -81,7 +81,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-ek-J1U">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="321.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="338" id="oTk-Mi-CRv"/>
@@ -169,7 +169,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKH-qX-tB2" userLabel="Quick Timer Container">
-                                <rect key="frame" x="0.0" y="321" width="600" height="165.5"/>
+                                <rect key="frame" x="0.0" y="267.5" width="600" height="219"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXY-bQ-gH3">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
@@ -178,11 +178,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXB-dT-UK2" userLabel="1MinContainer">
-                                        <rect key="frame" x="0.0" y="29" width="200" height="136.5"/>
+                                        <rect key="frame" x="0.0" y="29" width="200" height="190"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-GJ-crR">
-                                                <rect key="frame" x="75" y="43.5" width="50" height="50"/>
+                                                <rect key="frame" x="75" y="70" width="50" height="50"/>
                                                 <state key="normal" image="Circled1"/>
+                                                <connections>
+                                                    <action selector="oneMinuteTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTf-Ti-vwN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -190,12 +193,57 @@
                                             <constraint firstItem="vIx-GJ-crR" firstAttribute="centerY" secondItem="vXB-dT-UK2" secondAttribute="centerY" id="8lV-e1-Y9B"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOx-2b-jUP" userLabel="3MinContainer">
+                                        <rect key="frame" x="200" y="29" width="200" height="190"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-2J-brf">
+                                                <rect key="frame" x="75" y="70" width="50" height="50"/>
+                                                <state key="normal" image="Circled3"/>
+                                                <connections>
+                                                    <action selector="threeMinuteTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3UQ-KP-Ley"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Title" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="dXD-KV-bOx">
+                                                <rect key="frame" x="8" y="0.0" width="184" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="G3h-SU-fPh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="U7g-2J-brf" secondAttribute="trailing" id="4sJ-ka-Gev"/>
+                                            <constraint firstItem="dXD-KV-bOx" firstAttribute="centerX" secondItem="TOx-2b-jUP" secondAttribute="centerX" id="CDY-cM-bKd"/>
+                                            <constraint firstItem="U7g-2J-brf" firstAttribute="top" secondItem="TOx-2b-jUP" secondAttribute="top" id="GaD-T2-51g"/>
+                                            <constraint firstItem="dXD-KV-bOx" firstAttribute="top" secondItem="TOx-2b-jUP" secondAttribute="top" id="Lnv-3I-uiO"/>
+                                            <constraint firstAttribute="trailing" secondItem="dXD-KV-bOx" secondAttribute="trailing" constant="8" id="MUC-jT-yUl"/>
+                                            <constraint firstItem="dXD-KV-bOx" firstAttribute="leading" secondItem="TOx-2b-jUP" secondAttribute="leading" constant="8" id="ajc-bH-sRc"/>
+                                            <constraint firstItem="U7g-2J-brf" firstAttribute="centerY" secondItem="TOx-2b-jUP" secondAttribute="centerY" id="kmC-4A-BWY"/>
+                                            <constraint firstItem="U7g-2J-brf" firstAttribute="centerX" secondItem="TOx-2b-jUP" secondAttribute="centerX" id="r4c-LT-Zxu"/>
+                                            <constraint firstItem="U7g-2J-brf" firstAttribute="leading" secondItem="TOx-2b-jUP" secondAttribute="leading" id="sVs-AT-Gzb"/>
+                                            <constraint firstAttribute="bottom" secondItem="U7g-2J-brf" secondAttribute="bottom" id="x3T-eR-1uS"/>
+                                            <constraint firstItem="U7g-2J-brf" firstAttribute="top" secondItem="dXD-KV-bOx" secondAttribute="bottom" constant="8" id="zrg-Co-6t9"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4sJ-ka-Gev"/>
+                                                <exclude reference="GaD-T2-51g"/>
+                                                <exclude reference="sVs-AT-Gzb"/>
+                                                <exclude reference="x3T-eR-1uS"/>
+                                                <exclude reference="zrg-Co-6t9"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-Ir-31W" userLabel="5MinContainer">
-                                        <rect key="frame" x="400" y="29" width="200" height="136.5"/>
+                                        <rect key="frame" x="400" y="29" width="200" height="190"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cq-lj-41W">
-                                                <rect key="frame" x="75" y="43.5" width="50" height="50"/>
+                                                <rect key="frame" x="75" y="70" width="50" height="50"/>
                                                 <state key="normal" image="Circled5"/>
+                                                <connections>
+                                                    <action selector="fiveMinuteTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sp3-7f-aNI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -212,31 +260,6 @@
                                                 <exclude reference="Vzn-Mf-uWT"/>
                                                 <exclude reference="pae-DT-zVj"/>
                                                 <exclude reference="w9K-0j-zji"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOx-2b-jUP" userLabel="3MinContainer">
-                                        <rect key="frame" x="200" y="29" width="200" height="136.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-2J-brf">
-                                                <rect key="frame" x="75" y="43.5" width="50" height="50"/>
-                                                <state key="normal" image="Circled3"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="U7g-2J-brf" secondAttribute="trailing" id="4sJ-ka-Gev"/>
-                                            <constraint firstItem="U7g-2J-brf" firstAttribute="top" secondItem="TOx-2b-jUP" secondAttribute="top" id="GaD-T2-51g"/>
-                                            <constraint firstItem="U7g-2J-brf" firstAttribute="centerY" secondItem="TOx-2b-jUP" secondAttribute="centerY" id="kmC-4A-BWY"/>
-                                            <constraint firstItem="U7g-2J-brf" firstAttribute="centerX" secondItem="TOx-2b-jUP" secondAttribute="centerX" id="r4c-LT-Zxu"/>
-                                            <constraint firstItem="U7g-2J-brf" firstAttribute="leading" secondItem="TOx-2b-jUP" secondAttribute="leading" id="sVs-AT-Gzb"/>
-                                            <constraint firstAttribute="bottom" secondItem="U7g-2J-brf" secondAttribute="bottom" id="x3T-eR-1uS"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="4sJ-ka-Gev"/>
-                                                <exclude reference="GaD-T2-51g"/>
-                                                <exclude reference="sVs-AT-Gzb"/>
-                                                <exclude reference="x3T-eR-1uS"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -271,7 +294,7 @@
                             <constraint firstItem="3Tj-ek-J1U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PfB-mW-ntv"/>
                             <constraint firstItem="II4-n6-3wV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="R62-9V-87I"/>
                             <constraint firstItem="II4-n6-3wV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SUl-jl-m0G"/>
-                            <constraint firstItem="3Tj-ek-J1U" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="U4h-VS-bHz"/>
+                            <constraint firstItem="3Tj-ek-J1U" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="U4h-VS-bHz"/>
                             <constraint firstItem="dKH-qX-tB2" firstAttribute="top" secondItem="3Tj-ek-J1U" secondAttribute="bottom" id="Uvv-y8-S1T"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3Tj-ek-J1U" secondAttribute="bottom" constant="150" id="bJS-aG-MaX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dKH-qX-tB2" secondAttribute="bottom" id="lwl-57-ngA"/>
@@ -292,7 +315,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fiveMinuteButton" destination="1Cq-lj-41W" id="Gp7-45-l5p"/>
+                        <outlet property="oneMinuteButton" destination="vIx-GJ-crR" id="God-6x-mPJ"/>
+                        <outlet property="quickTimerLabel" destination="xXY-bQ-gH3" id="RrD-yS-xVw"/>
+                        <outlet property="quickTimerTextField" destination="dXD-KV-bOx" id="Y3h-RR-s6F"/>
                         <outlet property="tableView" destination="3Tj-ek-J1U" id="PpB-nk-oqG"/>
+                        <outlet property="threeMinuteButton" destination="U7g-2J-brf" id="zSI-nt-epY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
