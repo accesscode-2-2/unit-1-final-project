@@ -55,15 +55,19 @@ class CountdownViewController: UIViewController,
             cell.hideAllLabelView()
         }
         
-        let sgr = UISwipeGestureRecognizer(target: self, action: cellSwiped:)
-//        [cell addGestureRecognizer:sgr];
-//        [sgr release];
+        //swipe left
+        cell.tag = indexPath.row
+        let sgr = UISwipeGestureRecognizer(target: self, action: "cellSwiped")
+        sgr.direction = UISwipeGestureRecognizerDirection.Left
+        cell.addGestureRecognizer(sgr)
         
         return cell
     }
     
     func cellSwiped(){
-        
+        for path in tableView.indexPathsForVisibleRows! {
+            let cell = tableView.cellForRowAtIndexPath(path) as! CountdownTableViewCell
+
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
