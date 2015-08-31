@@ -23,9 +23,14 @@
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UIButton *pauseResumeButton;
 @property (strong, nonatomic) IBOutlet UIDatePicker *picker;
+@property (strong, nonatomic) IBOutlet UIButton *muteButton;
+@property (strong, nonatomic) IBOutlet UIImageView *muteImageView;
+
+@property (nonatomic) BOOL muteSound;
+
 @property (nonatomic) NSDate *startTime;  //
 @property (nonatomic) NSInteger duration;
-@property (nonatomic) NSTimer *timer;
+@property (nonatomic) NSTimer *StopwatchTimer;
 @property (nonatomic) NSTimer *circularTimerProgress;
 
 @property (nonatomic) BOOL isPaused;
@@ -44,7 +49,7 @@
 	self.picker.hidden = NO;
 	self.timeLabel.hidden = YES;
 	self.picker.countDownDuration = 60;
-	
+    self.muteSound = NO;
 	self.isPaused = NO;
 	
 	/******  Interface layout *****/
@@ -58,15 +63,13 @@
 	self.pauseResumeButton.clipsToBounds = YES;
 	self.pauseResumeButton.backgroundColor = [UIColor grayColor];
     self.pauseResumeButton.enabled = NO;
-    
     self.spinnerView.hidden = YES;
-    
-    
+    self.muteImageView.image = [UIImage imageNamed: @"SoundOn"];
     
 #pragma mark - Ringtones
     
     // this adds ringtone sound
-    NSString *path = [NSString stringWithFormat:@"%@/clock-ticking-5.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSString *path = [NSString stringWithFormat:@"%@/Clock-Ticking(1minute).mp3", [[NSBundle mainBundle] resourcePath]];
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
     // Create audio player object and initialize with URL to sound
     _clock = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
@@ -79,6 +82,17 @@
 
 
 
+- (IBAction)muteButton:(id)sender {
+    if (self.muteSound == YES) {
+        self.muteSound = NO;
+        self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
+    }
+    else {
+        self.muteSound = YES;
+        self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
+
+    }
+}
 
 
 - (void)spinit:(NSTimer *)timer
@@ -97,11 +111,14 @@
     //prog += 0.01;    1 sec            100   .. 0.01
     //
     
-   
+//   prog 0.1 * 10 sec = 1 shpejtsi
+//    prog 0.1 * 1 sec = 0.1 shpejtsi
+//    prog  0.005  * 20 = 0.1 shpejtsi
+    // prog 0.00166    * 60 sec = 0.1 shpejtsi
     
     
     
-    prog += 0.01;
+    prog +=  (0.1/self.duration);
     if(prog >= 1.0) {
         prog = 1.0;
         [timer invalidate];
@@ -115,27 +132,31 @@
 
 	NSLog(@"hi hi");
 	NSDate *now = [[NSDate alloc] init];
+    NSLog(@"self.elapsedTime %lu",self.elapsedTime);
+    NSLog(@"self.duration %lu",self.duration);
     
-    if (self.duration != self.elapsedTime) {
+//    if ((self.duration != self.elapsedTime) && (self.elapsedTime == self.duration/2)) {
 
 	self.elapsedTime = [now timeIntervalSinceDate:self.startTime];
 	
-    NSLog(@"self.elapsedTime %lu",self.elapsedTime);
-    NSLog(@"self.duration %lu",self.duration);
-     
+    
     seconds = (self.duration - self.elapsedTime) % 60;
     minutes = ((self.duration - self.elapsedTime) / 60) % 60;
     hours = ((self.duration - self.elapsedTime) / 3600) % 24;
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
-    }
-    else {
- //        self.timeLabel.hidden = YES;
-//        self.picker.hidden = NO;
-//        self.spinnerView.hidden = YES;
+//    }
+//    else {
+//        [_timerIsOver play];
+//        [self alertView];
+//        [timer invalidate];
+//    }
+    
+    if (self.elapsedTime == self.duration) {
         [_timerIsOver play];
-        
+        [self alertView];
         [timer invalidate];
+        
     }
  }
 
@@ -150,16 +171,19 @@
 
         
 		[self startTimer:self.picker.countDownDuration];
-       // while (true) {
-            [_clock play];
-      //  }
+        if (self.muteSound == NO) {
+        [_clock play];
+        }
+        else if (self.muteSound == YES) {
+            [_clock stop];
+        }
+
     } else      // STOP button tapped
 
     {
         self.pauseResumeButton.enabled = YES;
         self.pauseResumeButton.backgroundColor = [UIColor colorWithRed:0.93 green:0.91 blue:0.23 alpha:1.0];
-
-		NSLog(@"else");
+        
         [_clock stop];
         [_timerIsOver stop];
         
@@ -176,7 +200,7 @@
 	self.startTime = [[NSDate alloc] init];
     
 	
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    self.StopwatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
 	
     self.circularTimerProgress = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(spinit:) userInfo:nil repeats:YES];
     
@@ -197,9 +221,9 @@
       }
 
 -(void) stopTimer {
-	[self.timer invalidate];
+	[self.StopwatchTimer invalidate];
     [self.circularTimerProgress invalidate];
-    self.circularTimerProgress = nil; //stop thisssssssssss :@@@@@
+    self.circularTimerProgress = nil; //i need to stop thisssssssssss :@@@@@
     
     
     
@@ -217,7 +241,7 @@
 }
 
 -(void) pauseTimer {
-	[self.timer invalidate];
+	[self.StopwatchTimer invalidate];
     [self.circularTimerProgress invalidate];
     
     
@@ -255,11 +279,45 @@
 	} else{
 		[self resumeTimer];
 		self.isPaused = NO;
-      //  while (true) {
-            [_clock play];
-      //  }
+        if (self.muteSound == NO) {
+            
+        [_clock play];
+        }
+        else if (self.muteSound == YES) {
+            [_clock stop];
+        }
+
 	}
 	 
+}
+
+
+-(void) alertView{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"TIMER!!" message:@"Time is up!" delegate:self cancelButtonTitle:@"Stop" otherButtonTitles: nil];
+    [alert show];
+    
+    
+}
+
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0)
+    {
+        NSLog(@"cancel");
+        [ _timerIsOver stop];
+                self.timeLabel.hidden = YES;
+                self.picker.hidden = NO;
+                self.spinnerView.hidden = YES;
+
+    }
+    else
+    {
+        
+        NSLog(@"ok");
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OK works" message:@"no error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alert show];
+     }
 }
 
 @end

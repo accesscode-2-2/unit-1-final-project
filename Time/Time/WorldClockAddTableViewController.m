@@ -14,6 +14,7 @@
 
 @interface WorldClockAddTableViewController ()
 @property (nonatomic) NSArray *keyArray;
+@property (nonatomic) NSArray *unsortedKeyArray;
 @property (nonatomic) NSArray *valueArray;
 
 @property (nonatomic) NSString* city ;
@@ -34,6 +35,7 @@
     self.clock = [[NSMutableDictionary alloc] init];
     self.searchResults = [[NSArray alloc] init];
     self.keyArray = [[NSArray alloc] init];
+    self.unsortedKeyArray = [[NSArray alloc] init];
 
     
     ////// trying to get current time
@@ -74,8 +76,10 @@
     [self.clock setObject:NYTimeString forKey:@"Philadelphia"];
 
     
-        self.keyArray = [self.clock allKeys];
-        self.valueArray = [self.clock allValues];
+    
+    self.unsortedKeyArray = [self.clock allKeys];
+    self.keyArray = [self.unsortedKeyArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    self.valueArray = [self.clock allValues];
 
  
     
