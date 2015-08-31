@@ -62,13 +62,10 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSMutableArray *workouts = [WorkoutManager customWorkoutManager].customWorkouts;
     return workouts.count;
 }
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomWorkoutIdentifier" forIndexPath:indexPath];
     NSMutableArray *workouts = [WorkoutManager customWorkoutManager].customWorkouts;

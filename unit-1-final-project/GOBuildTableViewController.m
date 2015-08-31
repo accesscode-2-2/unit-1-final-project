@@ -90,10 +90,13 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+     [self.tableView reloadData];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *tableCell = [tableView cellForRowAtIndexPath:indexPath];
     self.isSelected = (tableCell.accessoryType == UITableViewCellAccessoryCheckmark);
+   
     
     if (self.isSelected) {
         tableCell.accessoryType = UITableViewCellAccessoryNone;
@@ -109,9 +112,12 @@
     if (self.checkedWorkouts == self.workoutsData.workoutList.count){
         self.finishWorkoutButton.hidden = NO;
         NSLog(@"YES!");
+         NSLog(@"checked workouts: %d", self.checkedWorkouts);
     } else {
         self.finishWorkoutButton.hidden = YES;
     }
+    
+    [self.tableView reloadData];
     
 }
 - (void) viewDidAppear:(BOOL)animated{

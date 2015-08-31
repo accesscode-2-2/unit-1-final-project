@@ -134,7 +134,7 @@
     
     NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:self.restTime];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@":ss"];
+    [dateFormatter setDateFormat:@"ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     self.restString = [dateFormatter stringFromDate:timeDate];
     self.restLabel.text = self.restString;
