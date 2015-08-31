@@ -87,20 +87,21 @@
     //tjetra 0.1
     //prog += 0.001;  100 sec     100,000 .. 0.00001
      //prog += 0.01;  10 sec        1000  .. 0.001
-     //prog += 0.1;  1 sec          10    .. 0.01
+     //prog += 0.1;  1 sec          10    .. 0.1
     
     
     //tjetra 0.01
+    
     //prog += 0.0001; 100sec        1.000.000 .. 0.000001
-    //prog += 0.001;  10 sec            10000 ..
-    //prog += 0.01;    1 sec
+    //prog += 0.001;  10 sec            10000 .. 0.0001
+    //prog += 0.01;    1 sec            100   .. 0.01
     //
     
+   
     
     
     
-    
-    prog += 0.0001;
+    prog += 0.01;
     if(prog >= 1.0) {
         prog = 1.0;
         [timer invalidate];
@@ -133,6 +134,7 @@
 //        self.picker.hidden = NO;
 //        self.spinnerView.hidden = YES;
         [_timerIsOver play];
+        
         [timer invalidate];
     }
  }
@@ -160,7 +162,9 @@
 		NSLog(@"else");
         [_clock stop];
         [_timerIsOver stop];
+        
 		[self stopTimer];
+        
 	}
 	
 }
@@ -174,7 +178,7 @@
 	
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
 	
-    self.circularTimerProgress = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(spinit:) userInfo:nil repeats:YES];
+    self.circularTimerProgress = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(spinit:) userInfo:nil repeats:YES];
     
     
     
@@ -195,6 +199,8 @@
 -(void) stopTimer {
 	[self.timer invalidate];
     [self.circularTimerProgress invalidate];
+    self.circularTimerProgress = nil; //stop thisssssssssss :@@@@@
+    
     
     
 	[self.startStopButton setTitle:@"START" forState:UIControlStateNormal];
@@ -202,7 +208,6 @@
     self.pauseResumeButton.enabled = NO;
     self.pauseResumeButton.backgroundColor = [UIColor grayColor];
 
-    
 	self.timeLabel.hidden = YES;
 	self.picker.hidden = NO;
     self.spinnerView.hidden = YES;

@@ -171,6 +171,15 @@
 }
 
 
-
+#pragma mark Cells color
+- (void)tableView: (UITableView*)tableView
+  willDisplayCell: (UITableViewCell*)cell
+forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    cell.backgroundColor = indexPath.row % 2
+    ? [UIColor colorWithRed:0.87 green:0.93 blue:0.98 alpha:1.0]
+    : [UIColor whiteColor];
+    
+}
 
 @end
