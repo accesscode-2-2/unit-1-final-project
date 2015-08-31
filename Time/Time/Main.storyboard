@@ -347,7 +347,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="muteButton:" destination="zEu-mR-zpR" eventType="touchUpInside" id="1oO-6k-2Lq"/>
+                                            <action selector="muteButton:" destination="zEu-mR-zpR" eventType="touchUpInside" id="Swr-N2-1lp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -464,8 +464,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="TimerIcon" id="Cl9-3q-4Vu"/>
                     <connections>
-                        <outlet property="muteButton" destination="IRN-cY-xFo" id="B1I-FI-Rcf"/>
-                        <outlet property="muteImageView" destination="tLA-vy-0I2" id="GwJ-CK-DpW"/>
+                        <outlet property="muteButton" destination="IRN-cY-xFo" id="7Eo-Jo-HB4"/>
+                        <outlet property="muteImageView" destination="tLA-vy-0I2" id="w1h-0O-PnJ"/>
                         <outlet property="pauseResumeButton" destination="vqr-kA-nXV" id="OIO-dp-JzO"/>
                         <outlet property="picker" destination="xcn-Py-tiL" id="olR-ot-1J7"/>
                         <outlet property="spinnerView" destination="8Jn-Zz-yze" id="ZDz-lC-AOd"/>
