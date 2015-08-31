@@ -19,6 +19,10 @@ class CountdownViewController: UIViewController,
     var displayLink : CADisplayLink!
     var countdowns : [Countdown] = []
 
+    @IBOutlet weak var dateForCountdownLabel: UILabel!
+    @IBOutlet weak var timeForCountdownLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayLink = CADisplayLink(target: self, selector: Selector("update"))
@@ -49,11 +53,23 @@ class CountdownViewController: UIViewController,
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownTableViewCell
+        
+        let countdown = countdowns[indexPath.row] as Countdown
+        
+        let dateAndTime = dateAndTimeStringsfromDate(countdown.targetDate)
+        
+        dateForCountdownLabel.text = (dateAndTime as NSArray).objectAtIndex(0) as? String
+        timeForCountdownLabel.text = (dateAndTime as NSArray).objectAtIndex(1)as? String
+        print("row selected at path \(indexPath)")
+        
+    }
+    
     //MARK: AddCountdownViewControllerDelegate method
     func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown countdown: Countdown) {
         countdowns.append(countdown)
     }
-
     
     //MARK: Segue methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,5 +77,4 @@ class CountdownViewController: UIViewController,
             viewController.delegate = self
         }
     }
-    
 }

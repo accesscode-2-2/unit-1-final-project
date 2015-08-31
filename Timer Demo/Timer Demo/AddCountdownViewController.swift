@@ -12,7 +12,7 @@ protocol AddCountdownViewControllerDelegate {
     func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown countdown:Countdown)
 }
 
-class AddCountdownViewController: UIViewController {
+class AddCountdownViewController: UIViewController, UITextFieldDelegate {
     
     var delegate: AddCountdownViewControllerDelegate?
     
@@ -24,6 +24,9 @@ class AddCountdownViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timerNameTextField.delegate = self
+        
         updateDateAndTimeLabel()
     }
     
@@ -48,11 +51,9 @@ class AddCountdownViewController: UIViewController {
         }
     }
     
-    func dateAndTimeStringsfromDate(date:NSDate) -> ([String]){
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .LongStyle
-        formatter.timeStyle = .ShortStyle
-        let fullString = formatter.stringFromDate(datePicker.date)
-        return (fullString.componentsSeparatedByString(" at "))
+    //MARK: Textfield methods
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
 }

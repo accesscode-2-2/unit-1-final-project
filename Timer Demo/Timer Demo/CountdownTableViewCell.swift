@@ -37,18 +37,18 @@ class CountdownTableViewCell: UITableViewCell {
     }
     
     func updateLabelVisibilities() {
-        if let countdown = countdown {
         
-            let largestTimeUnit = timeToTargetDate(countdown.targetDate).largestTimeUnit()
-            
-            for (idx,label) in unitLabels.enumerate(){
-                let mapIdx = idx + 1 //since no ms label
-                if (mapIdx > largestTimeUnit.rawValue){ //raw value for years is 0
-                    (label as! UILabel).hidden = false
-                }
-                else{
-                    (label as! UILabel).hidden = true
-                }
+        guard let countdown = self.countdown else {return}
+        
+        let largestTimeUnit = timeToTargetDate(countdown.targetDate).largestTimeUnit()
+        
+        for (idx,label) in unitLabels.enumerate(){
+            let mapIdx = idx + 1 //since no ms label
+            if (mapIdx > largestTimeUnit.rawValue){ //raw value for years is 0
+                (label as! UILabel).hidden = false
+            }
+            else{
+                (label as! UILabel).hidden = true
             }
         }
     }

@@ -14,6 +14,14 @@ func timeToTargetDate(targetDate: NSDate) -> NSTimeInterval{
     return timeToTargetDate
 }
 
+func dateAndTimeStringsfromDate(date:NSDate) -> ([String]){
+    let formatter = NSDateFormatter()
+    formatter.dateStyle = .LongStyle
+    formatter.timeStyle = .ShortStyle
+    let fullString = formatter.stringFromDate(date)
+    return (fullString.componentsSeparatedByString(" at "))
+}
+
 enum unit: Int {
     case Year, Month, Day, Hour, Minute, Second, Millisecond, Poop
 }
