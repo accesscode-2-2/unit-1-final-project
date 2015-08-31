@@ -17,7 +17,9 @@ int countUpNumber2;
 
 @property (strong,nonatomic)NSMutableArray *laps;
 @property (weak,nonatomic) NSTimer *KNTimer;
-@property int currentTimeInSeconds;
+//@property int currentTimeInSeconds;
+@property (weak,nonatomic) NSDate *startDate;
+
 
 @property (weak, nonatomic) IBOutlet UITableView *lapTableView;
 

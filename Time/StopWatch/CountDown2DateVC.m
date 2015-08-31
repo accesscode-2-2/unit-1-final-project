@@ -19,40 +19,40 @@
 @synthesize fromDate,toDate;
 
 
-//-(NSTimer *) countDownTimer {
-//    
-//    return [NSTimer scheduledTimerWithTimeInterval:1.0/100 target:self selector:@selector(timerCountDown) userInfo:nil repeats:YES];
-//}
-//
-//
-//
-//-(void)timerCountDown{
-//    
-//    //count out miliseconds
-//    milliseconds= milliseconds -1;
-//    _milliSecDisplayLabel.text = [NSString stringWithFormat:@"%i",milliseconds];
-//    
-//    //if miliseconds == 100 reset milisecond count and start counting seconds
-//    if (milliseconds == 0)
-//        
-//    {
-//        seconds = seconds -1 ;
-//        _secondsDisplayLabel.text = [NSString stringWithFormat:@"%i",seconds];
-//        
-//        milliseconds = 0;
-//    }
-//    //if seconds == 60 reset seconds counter and start counting minutes
-//    if (seconds ==0)
-//        
-//    {
-//        hour = hour - 1;
-//        _hoursDisplayLabel.text = [NSString stringWithFormat:@"%i",hour];
-//        seconds = 60;
-//    }
-//    countDownDisplayTimer = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,seconds,milliseconds];
-//}
-//
-//
+-(NSTimer *) countDownTimer {
+    
+    return [NSTimer scheduledTimerWithTimeInterval:1.0/100 target:self selector:@selector(timerCountDown) userInfo:nil repeats:YES];
+}
+
+
+
+-(void)timerCountDown{
+    
+    //count out miliseconds
+    milliseconds= milliseconds -1;
+    _milliSecDisplayLabel.text = [NSString stringWithFormat:@"%i",milliseconds];
+    
+    //if miliseconds == 100 reset milisecond count and start counting seconds
+    if (milliseconds == 0)
+        
+    {
+        seconds = seconds -1 ;
+        _secondsDisplayLabel.text = [NSString stringWithFormat:@"%i",seconds];
+        
+        milliseconds = 0;
+    }
+    //if seconds == 60 reset seconds counter and start counting minutes
+    if (seconds ==0)
+        
+    {
+        hour = hour - 1;
+        _hoursDisplayLabel.text = [NSString stringWithFormat:@"%i",hour];
+        seconds = 60;
+    }
+    countDownDisplayTimer = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,seconds,milliseconds];
+}
+
+
 
 
 
@@ -131,27 +131,6 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

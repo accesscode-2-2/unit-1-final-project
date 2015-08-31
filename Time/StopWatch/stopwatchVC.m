@@ -35,7 +35,7 @@
     _timerDisplay0.text = [NSString stringWithFormat:@"%i",countUpNumber0];
     
     //if miliseconds == 100 reset milisecond count and start counting seconds
-    if (countUpNumber0 == 10)
+    if (countUpNumber0 == 100)
     
     {
         countUpNumber1 = countUpNumber1 +1 ;
@@ -104,7 +104,7 @@
     
     if (!_KNTimer){
 
-            //create timer object that fires off every 0.01th of a second
+            //create timer object that fires off every 0.001th of a second
         _KNTimer = [self createTimer];
         
         UIImage *startStopImage = [UIImage imageNamed:@"fe_runningStop.png"];
@@ -147,6 +147,7 @@
         
         
             [self.laps addObject:_displayTime];
+        
             [self.lapTableView reloadData];
         
         return   NSLog(@"%@",_displayTime);
@@ -157,11 +158,11 @@
     if(!_KNTimer){
         
         [_KNTimer invalidate];
-         self.laps = [[NSMutableArray alloc] init];
+         self.laps = [NSMutableArray array];
         [self.lapTableView reloadData];
-        countUpNumber2 = 0;
-        countUpNumber1 = 0;
-        countUpNumber0 = 0;
+//        countUpNumber2 = 0;
+//        countUpNumber1 = 0;
+//        countUpNumber0 = 0;
 
         _timerDisplay0.text = [NSString stringWithFormat :@"00"];
         _timerDisplay1.text = [NSString stringWithFormat :@"00"];
@@ -172,30 +173,5 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

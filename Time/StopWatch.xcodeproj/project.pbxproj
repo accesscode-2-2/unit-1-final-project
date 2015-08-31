@@ -19,7 +19,12 @@
 		186A1C6E1B86D19500668F10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186A1C6D1B86D19500668F10 /* Images.xcassets */; };
 		186A1C711B86D19500668F10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186A1C6F1B86D19500668F10 /* LaunchScreen.xib */; };
 		186A1C7D1B86D19500668F10 /* StopWatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C7C1B86D19500668F10 /* StopWatchTests.m */; };
-		E217E6F51B92291B00C6BCBF /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E217E6F41B92291B00C6BCBF /* CountDownViewController.m */; };
+		18E4F5E91B9462F000C35133 /* man_standingStartSilhouette.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E4F5E71B9462F000C35133 /* man_standingStartSilhouette.png */; };
+		18E4F5EA1B9462F000C35133 /* man_standingStopSilhouette.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E4F5E81B9462F000C35133 /* man_standingStopSilhouette.png */; };
+		18E4F5EC1B94667F00C35133 /* man_standingResetSilhouette.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E4F5EB1B94667F00C35133 /* man_standingResetSilhouette.png */; };
+		18E4F5EE1B94690700C35133 /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18E4F5ED1B94690700C35133 /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg */; };
+		18E4F5F41B94B78C00C35133 /* DatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4F5F31B94B78C00C35133 /* DatePickerVC.m */; };
+		18E4F5F61B94BF7E00C35133 /* digitalDashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E4F5F51B94BF7E00C35133 /* digitalDashboard.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +56,13 @@
 		186A1C761B86D19500668F10 /* StopWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		186A1C7B1B86D19500668F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186A1C7C1B86D19500668F10 /* StopWatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopWatchTests.m; sourceTree = "<group>"; };
-		E217E6F31B92291B00C6BCBF /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
-		E217E6F41B92291B00C6BCBF /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownViewController.m; sourceTree = "<group>"; };
+		18E4F5E71B9462F000C35133 /* man_standingStartSilhouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man_standingStartSilhouette.png; sourceTree = "<group>"; };
+		18E4F5E81B9462F000C35133 /* man_standingStopSilhouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man_standingStopSilhouette.png; sourceTree = "<group>"; };
+		18E4F5EB1B94667F00C35133 /* man_standingResetSilhouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man_standingResetSilhouette.png; sourceTree = "<group>"; };
+		18E4F5ED1B94690700C35133 /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg"; sourceTree = "<group>"; };
+		18E4F5F21B94B78C00C35133 /* DatePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerVC.h; sourceTree = "<group>"; };
+		18E4F5F31B94B78C00C35133 /* DatePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerVC.m; sourceTree = "<group>"; };
+		18E4F5F51B94BF7E00C35133 /* digitalDashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = digitalDashboard.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +97,8 @@
 			children = (
 				181132C81B8DC50B00115557 /* stopwatchVC.h */,
 				181132C91B8DC50B00115557 /* stopwatchVC.m */,
-				E217E6F31B92291B00C6BCBF /* CountDownViewController.h */,
-				E217E6F41B92291B00C6BCBF /* CountDownViewController.m */,
+				18E4F5F21B94B78C00C35133 /* DatePickerVC.h */,
+				18E4F5F31B94B78C00C35133 /* DatePickerVC.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -96,8 +106,13 @@
 		181132BC1B8D7C5900115557 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18E4F5F51B94BF7E00C35133 /* digitalDashboard.png */,
 				181132BD1B8D7C6900115557 /* fe_runningLap.png */,
+				18E4F5E71B9462F000C35133 /* man_standingStartSilhouette.png */,
+				18E4F5E81B9462F000C35133 /* man_standingStopSilhouette.png */,
+				18E4F5ED1B94690700C35133 /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg */,
 				181132BE1B8D7C6900115557 /* fe_runningReset.png */,
+				18E4F5EB1B94667F00C35133 /* man_standingResetSilhouette.png */,
 				186388451B91E2F200ACDA00 /* dontstopWatch.png */,
 				181132BF1B8D7C6900115557 /* fe_runningStart.png */,
 				181132C01B8D7C6900115557 /* fe_runningStop.png */,
@@ -126,11 +141,11 @@
 		186A1C5F1B86D19500668F10 /* StopWatch */ = {
 			isa = PBXGroup;
 			children = (
+				186A1C6A1B86D19500668F10 /* Main.storyboard */,
 				1803F3801B90838900B99F89 /* model */,
 				181132BC1B8D7C5900115557 /* images */,
 				1803F37F1B90833A00B99F89 /* preDefined */,
 				186A1C601B86D19500668F10 /* Supporting Files */,
-				186A1C6A1B86D19500668F10 /* Main.storyboard */,
 				186A1C6D1B86D19500668F10 /* Images.xcassets */,
 				186A1C6F1B86D19500668F10 /* LaunchScreen.xib */,
 			);
@@ -247,9 +262,14 @@
 				181132C31B8D7C6900115557 /* fe_runningStart.png in Resources */,
 				181132C41B8D7C6900115557 /* fe_runningStop.png in Resources */,
 				181132C11B8D7C6900115557 /* fe_runningLap.png in Resources */,
+				18E4F5EE1B94690700C35133 /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg in Resources */,
+				18E4F5EA1B9462F000C35133 /* man_standingStopSilhouette.png in Resources */,
+				18E4F5F61B94BF7E00C35133 /* digitalDashboard.png in Resources */,
 				186A1C6C1B86D19500668F10 /* Main.storyboard in Resources */,
+				18E4F5E91B9462F000C35133 /* man_standingStartSilhouette.png in Resources */,
 				186A1C711B86D19500668F10 /* LaunchScreen.xib in Resources */,
 				186388461B91E2F200ACDA00 /* dontstopWatch.png in Resources */,
+				18E4F5EC1B94667F00C35133 /* man_standingResetSilhouette.png in Resources */,
 				186A1C6E1B86D19500668F10 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E4F5F41B94B78C00C35133 /* DatePickerVC.m in Sources */,
 				186A1C661B86D19500668F10 /* AppDelegate.m in Sources */,
-				E217E6F51B92291B00C6BCBF /* CountDownViewController.m in Sources */,
 				181132CA1B8DC50B00115557 /* stopwatchVC.m in Sources */,
 				186A1C631B86D19500668F10 /* main.m in Sources */,
 			);
