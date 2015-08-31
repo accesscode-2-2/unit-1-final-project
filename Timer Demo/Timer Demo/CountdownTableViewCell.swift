@@ -19,6 +19,7 @@ class CountdownTableViewCell: UITableViewCell {
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var monthsLabel: UILabel!
     @IBOutlet weak var yearsLabel: UILabel!
+    @IBOutlet weak var unitLabelBoxView: UIView!
     
     var unitLabels = []
     var countdown: Countdown?
@@ -51,5 +52,9 @@ class CountdownTableViewCell: UITableViewCell {
                 (label as! UILabel).hidden = true
             }
         }
+    }
+    
+    func hideAllLabelView(){
+        unitLabelBoxView.hidden = true
     }
 }

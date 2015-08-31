@@ -45,26 +45,44 @@ class CountdownViewController: UIViewController,
         let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownTableViewCell
         
         cell.countdown = countdowns[indexPath.row]
-        
-        cell.countdownLabel.text = timeToTargetDate(cell.countdown!.targetDate).stringFromTimeInterval(false)
         cell.countdownNameLabel.text = cell.countdown!.name
-        cell.updateLabelVisibilities()
+        
+        if timeToTargetDate(cell.countdown!.targetDate) > 0 {
+            cell.countdownLabel.text = timeToTargetDate(cell.countdown!.targetDate).stringFromTimeInterval(false)
+            cell.updateLabelVisibilities()
+        } else{
+            cell.countdownLabel.text = cell.countdown!.targetDate.timeAgo
+            cell.hideAllLabelView()
+        }
+        
+        let sgr = UISwipeGestureRecognizer(target: self, action: cellSwiped:)
+//        [cell addGestureRecognizer:sgr];
+//        [sgr release];
         
         return cell
     }
     
+    func cellSwiped(){
+        
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownTableViewCell
-        
         let countdown = countdowns[indexPath.row] as Countdown
-        
         let dateAndTime = dateAndTimeStringsfromDate(countdown.targetDate)
         
         dateForCountdownLabel.text = (dateAndTime as NSArray).objectAtIndex(0) as? String
         timeForCountdownLabel.text = (dateAndTime as NSArray).objectAtIndex(1)as? String
-        print("row selected at path \(indexPath)")
-        
     }
+    
+    //need to fix delete method
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.beginUpdates()
+        countdowns.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Bottom)
+        tableView.endUpdates()
+    }
+    
     
     //MARK: AddCountdownViewControllerDelegate method
     func addCountdownViewController(viewController: AddCountdownViewController, didCreateNewCountdown countdown: Countdown) {

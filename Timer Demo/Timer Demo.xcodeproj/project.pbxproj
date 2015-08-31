@@ -14,6 +14,8 @@
 		504DC2331B922CF30071A35E /* AddTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DC2321B922CF30071A35E /* AddTimerViewController.swift */; };
 		691BEA121B935EBF000CF91E /* CountdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691BEA111B935EBF000CF91E /* CountdownTableViewCell.swift */; };
 		693E17541B93AF2800CCC1EE /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E17531B93AF2800CCC1EE /* Countdown.swift */; };
+		693E17561B93F43900CCC1EE /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E17551B93F43900CCC1EE /* NSDate+Extension.swift */; };
+		693E17581B93F5B500CCC1EE /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 693E17571B93F5B500CCC1EE /* NSDateTimeAgo.bundle */; };
 		6981737C1B88EFF0000D38F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737B1B88EFF0000D38F2 /* AppDelegate.swift */; };
 		6981737E1B88EFF0000D38F2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981737D1B88EFF0000D38F2 /* TimerViewController.swift */; };
 		698173811B88EFF0000D38F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981737F1B88EFF0000D38F2 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		504DC2321B922CF30071A35E /* AddTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTimerViewController.swift; path = ../AddTimerViewController.swift; sourceTree = "<group>"; };
 		691BEA111B935EBF000CF91E /* CountdownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableViewCell.swift; sourceTree = "<group>"; };
 		693E17531B93AF2800CCC1EE /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		693E17551B93F43900CCC1EE /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		693E17571B93F5B500CCC1EE /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
 		698173781B88EFF0000D38F2 /* Timer Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timer Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981737B1B88EFF0000D38F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6981737D1B88EFF0000D38F2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +125,9 @@
 		6981737A1B88EFF0000D38F2 /* Timer Demo */ = {
 			isa = PBXGroup;
 			children = (
+				693E17571B93F5B500CCC1EE /* NSDateTimeAgo.bundle */,
 				6981737B1B88EFF0000D38F2 /* AppDelegate.swift */,
+				693E17551B93F43900CCC1EE /* NSDate+Extension.swift */,
 				69F51D711B92AA4D004F3874 /* TimeUtilities.swift */,
 				698173A91B88F28C000D38F2 /* Timer.swift */,
 				5016E10B1B89209300C5EFFD /* TableViewCell.swift */,
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698173861B88EFF0000D38F2 /* LaunchScreen.storyboard in Resources */,
+				693E17581B93F5B500CCC1EE /* NSDateTimeAgo.bundle in Resources */,
 				504DC2311B922AB60071A35E /* LoudAlarmClockBuzzer.mp3 in Resources */,
 				698173831B88EFF0000D38F2 /* Assets.xcassets in Resources */,
 				698173811B88EFF0000D38F2 /* Main.storyboard in Resources */,
@@ -291,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693E17561B93F43900CCC1EE /* NSDate+Extension.swift in Sources */,
 				69B738381B92B07B00390657 /* CountdownViewController.swift in Sources */,
 				691BEA121B935EBF000CF91E /* CountdownTableViewCell.swift in Sources */,
 				69F51D721B92AA4D004F3874 /* TimeUtilities.swift in Sources */,

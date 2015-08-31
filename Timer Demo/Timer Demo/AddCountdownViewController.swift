@@ -47,7 +47,8 @@ class AddCountdownViewController: UIViewController, UITextFieldDelegate {
             let newCountdown = Countdown(name: newName!, targetDate: newTargetDate)
             
             delegate?.addCountdownViewController(self, didCreateNewCountdown: newCountdown)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
+            
         }
     }
     
