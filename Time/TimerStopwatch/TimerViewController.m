@@ -20,6 +20,7 @@
 @property (nonatomic) int remainder;
 
 
+
 // FYI, pressing "create preset timer" will cause app to crash
 //- (IBAction)createPresetButtonPressed:(id)sender;
 
@@ -87,33 +88,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     self.countDownTimer.datePickerMode = UIDatePickerModeCountDownTimer;
     self.countDownTimer.countDownDuration = 60;
     self.navigationItem.title = @"Timer";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(presetTimerButtonTapped:)];
-    
 }
 
 - (void)presetTimerButtonTapped:(UIBarButtonItem *)button {
     NSLog(@"charles");
     
     UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"newPresetController"];
-    //    newPresetIdentifier.delegate = self;
-    
-    //    NewPresetsViewController *viewController = [[NewPresetsViewController alloc] init];
-    //    UINavigationController *controller = [[UINavigationController alloc] init];
-    //    controller.viewControllers = @[viewController];
     [self presentViewController:navigationController animated:YES completion:nil];
     
 }
-
-//- (IBAction)createPresetButtonPressed:(id)sender {
-//
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    NewPresetsViewController *newPresetIdentifier = [storyboard instantiateViewControllerWithIdentifier:@"newPresetIdentifier"];
-//    newPresetIdentifier.delegate = self;
-//
-//    [self presentViewController:newPresetVC animated:YES completion:nil];
-//}
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextAddEllipseInRect(ctx, rect);
+    CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor blueColor] CGColor]));
+    CGContextFillPath(ctx);
+}
 @end
