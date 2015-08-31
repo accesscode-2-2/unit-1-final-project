@@ -42,7 +42,7 @@
     
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
-    self.timerName.text = @"Timer";
+    self.timerName.text = @" ";
     
     self.isStarted = NO;
     self.isInitial = YES;
@@ -215,7 +215,7 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
-    self.timerName.text = @"Timer";
+    self.timerName.text = @" ";
     if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
