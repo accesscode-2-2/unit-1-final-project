@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89060FBB1B94B04E005C707A /* UpcomingEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */; };
+		89060FBE1B94B47C005C707A /* UpcomingEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 89060FBD1B94B47C005C707A /* UpcomingEvents.m */; };
 		89C909871B88DB5800216084 /* StopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C909861B88DB5800216084 /* StopwatchViewController.m */; };
 		89FD9A441B86AC7500D7A645 /* TimerUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FD9A431B86AC7500D7A645 /* TimerUITabBarController.m */; };
 		89FD9A471B86B55600D7A645 /* PresetTimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FD9A461B86B55600D7A645 /* PresetTimersViewController.m */; };
@@ -31,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89060FB91B94B04E005C707A /* UpcomingEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingEventsTableViewController.h; sourceTree = "<group>"; };
+		89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEventsTableViewController.m; sourceTree = "<group>"; };
+		89060FBC1B94B47C005C707A /* UpcomingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingEvents.h; sourceTree = "<group>"; };
+		89060FBD1B94B47C005C707A /* UpcomingEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEvents.m; sourceTree = "<group>"; };
 		89C909851B88DB5800216084 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopwatchViewController.h; path = ../StopwatchViewController.h; sourceTree = "<group>"; };
 		89C909861B88DB5800216084 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopwatchViewController.m; path = ../StopwatchViewController.m; sourceTree = "<group>"; };
 		89FD9A421B86AC7500D7A645 /* TimerUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUITabBarController.h; sourceTree = SOURCE_ROOT; };
@@ -72,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89060FB81B94B028005C707A /* OLD */ = {
+			isa = PBXGroup;
+			children = (
+				89FD9A4B1B86B58900D7A645 /* SpecialEventsViewController.h */,
+				89FD9A4C1B86B58900D7A645 /* SpecialEventsViewController.m */,
+			);
+			name = OLD;
+			sourceTree = "<group>";
+		};
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +119,11 @@
 				EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */,
 				89C909851B88DB5800216084 /* StopwatchViewController.h */,
 				89C909861B88DB5800216084 /* StopwatchViewController.m */,
-				89FD9A4B1B86B58900D7A645 /* SpecialEventsViewController.h */,
-				89FD9A4C1B86B58900D7A645 /* SpecialEventsViewController.m */,
+				89060FB91B94B04E005C707A /* UpcomingEventsTableViewController.h */,
+				89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */,
+				89060FBC1B94B47C005C707A /* UpcomingEvents.h */,
+				89060FBD1B94B47C005C707A /* UpcomingEvents.m */,
+				89060FB81B94B028005C707A /* OLD */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
@@ -243,9 +261,11 @@
 				EB9EE0951B8E803500DB27D1 /* NewCustomTimerViewController.m in Sources */,
 				89FD9A471B86B55600D7A645 /* PresetTimersViewController.m in Sources */,
 				89C909871B88DB5800216084 /* StopwatchViewController.m in Sources */,
+				89060FBB1B94B04E005C707A /* UpcomingEventsTableViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				89FD9A4D1B86B58900D7A645 /* SpecialEventsViewController.m in Sources */,
+				89060FBE1B94B47C005C707A /* UpcomingEvents.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -191,6 +191,47 @@
             </objects>
             <point key="canvasLocation" x="-811" y="-429"/>
         </scene>
+        <!--Upcoming Events-->
+        <scene sceneID="myS-cq-vH2">
+            <objects>
+                <tableViewController id="5hN-A0-ShT" userLabel="Upcoming Events" customClass="UpcomingEventsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H20-l6-GsJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="W4S-8e-VAs" detailTextLabel="gdR-Fw-rTt" style="IBUITableViewCellStyleValue1" id="TCW-zt-3fN">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TCW-zt-3fN" id="BEI-dH-3he">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W4S-8e-VAs">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gdR-Fw-rTt">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5hN-A0-ShT" id="b6l-oV-7vQ"/>
+                            <outlet property="delegate" destination="5hN-A0-ShT" id="vk3-HX-Zbh"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="ysx-Ou-v7N"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSv-WU-kLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71" y="-429"/>
+        </scene>
         <!--Special Event Timer-->
         <scene sceneID="VVo-YH-kNE">
             <objects>
@@ -254,8 +295,8 @@
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="N8w-lZ-mHD"/>
                                                 <exclude reference="MbX-7a-05h"/>
+                                                <exclude reference="N8w-lZ-mHD"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -276,8 +317,8 @@
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="w0X-wK-ucK"/>
                                                 <exclude reference="Ztg-Zn-Uc1"/>
+                                                <exclude reference="w0X-wK-ucK"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -343,14 +384,14 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="G7M-VU-3Z6"/>
-                                        <exclude reference="xyc-q1-6fs"/>
-                                        <exclude reference="bXx-oo-6gh"/>
-                                        <exclude reference="XNB-I6-qhY"/>
                                         <exclude reference="MJZ-yP-z32"/>
+                                        <exclude reference="XNB-I6-qhY"/>
+                                        <exclude reference="bXx-oo-6gh"/>
+                                        <exclude reference="xyc-q1-6fs"/>
                                         <exclude reference="Jfb-Dc-kLG"/>
-                                        <exclude reference="lwa-yM-Pwn"/>
-                                        <exclude reference="Y4s-6g-NTj"/>
                                         <exclude reference="Uxn-bh-XhU"/>
+                                        <exclude reference="Y4s-6g-NTj"/>
+                                        <exclude reference="lwa-yM-Pwn"/>
                                         <exclude reference="sz5-Bk-pw9"/>
                                     </mask>
                                 </variation>
@@ -380,7 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbz-M8-YkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="-429"/>
+            <point key="canvasLocation" x="681" y="-853"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xrx-Rv-NjB">
@@ -730,7 +771,7 @@
                     <connections>
                         <segue destination="5xI-rK-Qas" kind="relationship" relationship="viewControllers" id="eMX-ks-EQy"/>
                         <segue destination="DZY-HL-0vH" kind="relationship" relationship="viewControllers" id="qRM-3d-CBx"/>
-                        <segue destination="SHi-rs-Ysr" kind="relationship" relationship="viewControllers" id="QNo-q3-9tc"/>
+                        <segue destination="5hN-A0-ShT" kind="relationship" relationship="viewControllers" id="UP9-NY-30L"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeC-tt-tRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
