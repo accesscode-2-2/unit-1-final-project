@@ -41,16 +41,8 @@
     
     self.customTimersTableViewList.dataSource = self;
     
-    //self.totalSeconds = 120;
-    //self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timer) userInfo:nil repeats:YES];
-    
     self.customTimersDictionary = [[NSMutableDictionary alloc] init];
-//    
-//    self.alarmNameLabel.text = @"";
-//    self.timeEndingLabel.text = @"";
-    
-    
-    
+
     
 }
 
@@ -60,8 +52,6 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     NSLog(@"viewwillappear%@", self.customTimersDictionary);
-//    
-//    [self.view setNeedsDisplay];
 
     [self.customTimersTableViewList reloadData];
 
@@ -81,25 +71,15 @@
     
 }
 
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // set the timerViewController property on the destination view controller to be self
-//    
-//}
 
 - (void) timer {
+    
     self.totalSeconds = self.totalSeconds - 1;
     NSLog(@"%ld", (long)self.totalSeconds);
-//    timerLabel.text = [self timeFormatted:totalSeconds];
     if (self.totalSeconds == 0) {
         [self.countDownTimer invalidate];
     }
 }
-
-//- (void) newCustomTimeViewController:(NewCustomViewController *)customVC didAddTimerWithHours:(NSInteger)hours minutes:(NSInteger)minutes name:(NSString *)alarmName {
-    
-//}
-
 
 
 - (NSString *)timeFormatted:(int)totalSeconds
@@ -114,6 +94,7 @@
     return timeFormatDisplay;
 }
 
+
 - (IBAction)startButtonTapped:(id)sender {
     
     NSString *firstKey = [self.customTimersDictionary allKeys][0];
@@ -123,13 +104,15 @@
     [self startTimer];
 }
 
+
 -(void) startTimer {
     [self.countDownTimer invalidate];
     
     self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     
-    self.timeEndingLabel.text = [self timeFormatted:self.totalSeconds ];
+    self.timeEndingLabel.text = [self timeFormatted:self.totalSeconds];
 }
+
 
 - (void)timerFired:(NSTimer *)timer {
     self.totalSeconds--;
@@ -138,20 +121,11 @@
     if (self.totalSeconds == 0) {
         [self.countDownTimer invalidate];
         
-//        UIAlertView *alert = [[UIAlertView] alloc] initWithTitle:@"Alarm"
-//                                                          message: @"Your time is up"
-//                                                         delegate: self
-//                                                cancelButtonTitle: @"OK"
-//                                                otherButtonTitles:nil];
-//        
-//        [alert show];
-//
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alarm"
                                                          message:@"Your time is up"
                                                         delegate:self
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles: nil];
-        //[alert addButtonWithTitle:@"GOO"];
         [alert show];
     }
 
@@ -190,7 +164,7 @@
     
     cell.textLabel.text = key;
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ seconds", [self.customTimersDictionary objectForKey:key]];
     
     self.alarmNameLabel.text = [NSString stringWithFormat:@"%@", key];
     

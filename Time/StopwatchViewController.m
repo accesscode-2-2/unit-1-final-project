@@ -97,8 +97,10 @@
 - (IBAction)resetButtonTapped:(id)sender {
     
     self.currentNumber = 0;
+    self.stopwatchTimerLabel.text = [NSString stringWithFormat:@"--"];
     
-    self.stopwatchTimerLabel.text = [NSString stringWithFormat:@"0"];
+    [self.laps removeAllObjects];
+    [self.lapsTableView reloadData];
 
 }
 
