@@ -19,15 +19,15 @@
     [super viewDidLoad];
 	
 	Preset *popcorn = [[Preset alloc] init];
-	popcorn.name = @"POPCORN";
+	popcorn.name = @"Popcorn";
 	popcorn.time = 3.5f;
 	
 	Preset *meatloaf = [[Preset alloc] init];
-	meatloaf.name = @"MEATLOAF";
+	meatloaf.name = @"Meatloaf";
 	meatloaf.time = 3.5f;
 	
 	Preset *fish = [[Preset alloc] init];
-	fish.name = @"FISH";
+	fish.name = @"fish";
 	fish.time = 3.5f;
    self.presets = @[popcorn, meatloaf, fish];
    }
@@ -57,5 +57,10 @@
     cell.textLabel.text = names[indexPath.row];
     return cell;
 }
+
+
+
+
+
 
 @end

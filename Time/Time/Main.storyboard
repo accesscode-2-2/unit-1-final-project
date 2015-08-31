@@ -177,6 +177,23 @@
             </objects>
             <point key="canvasLocation" x="-807" y="571.5"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="ltx-fe-9Y4">
+            <objects>
+                <navigationController id="ZEv-SV-IUA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Vh9-WY-7hL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uzi-yS-lLg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zEu-mR-zpR" kind="relationship" relationship="rootViewController" id="WUQ-an-VzQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPt-c5-75v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1748" y="436.5"/>
+        </scene>
         <!--Timer-->
         <scene sceneID="dg4-of-HQh">
             <objects>
@@ -202,6 +219,9 @@
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="55"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="210" y="90" width="180" height="80"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqE-Ab-HXJ">
                                 <rect key="frame" x="50" y="296" width="120" height="120"/>
@@ -213,6 +233,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="46" y="310" width="120" height="120"/>
+                                </variation>
                                 <connections>
                                     <action selector="startStopButton:" destination="zEu-mR-zpR" eventType="touchUpInside" id="jmc-HO-rbp"/>
                                 </connections>
@@ -227,6 +250,9 @@
                                 <state key="normal" title="PAUSE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="434" y="310" width="120" height="120"/>
+                                </variation>
                                 <connections>
                                     <action selector="pauseResumeButtonTapped:" destination="zEu-mR-zpR" eventType="touchUpInside" id="NaV-df-vzv"/>
                                 </connections>
@@ -239,6 +265,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="462242531.05124497">
                                     <!--2015-08-26 00:42:11 +0000-->
                                 </date>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="36" y="35" width="528" height="162"/>
+                                </variation>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAK-wU-KG9">
                                 <rect key="frame" x="268" y="459" width="65" height="30"/>
@@ -268,30 +297,6 @@
                                     <segue destination="7pc-LB-Fd1" kind="show" id="JRc-OL-Fey"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jn-Zz-yze" customClass="STKSpinnerView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.92684659089999999" green="0.92684659089999999" blue="0.92684659089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="kwX-vx-3Dh">
-                                        <variation key="heightClass=regular" constant="220"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="250" id="uvR-wc-B7Q">
-                                        <variation key="heightClass=regular" constant="220"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="kwX-vx-3Dh"/>
-                                        <exclude reference="uvR-wc-B7Q"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="kwX-vx-3Dh"/>
-                                        <include reference="uvR-wc-B7Q"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-QZ-mXe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -376,17 +381,18 @@
                                     <mask key="constraints">
                                         <exclude reference="CxA-Wa-Nlt"/>
                                         <exclude reference="YXf-Dt-aIF"/>
-                                        <exclude reference="7kI-Jm-eDp"/>
-                                        <exclude reference="CiJ-Ap-PGM"/>
-                                        <exclude reference="Vsa-sz-Bga"/>
-                                        <exclude reference="iB6-Wv-5Ux"/>
                                         <exclude reference="5pl-QP-K0c"/>
                                         <exclude reference="9yX-65-RLU"/>
                                         <exclude reference="On1-oS-XP7"/>
                                         <exclude reference="mTM-d9-qJC"/>
+                                        <exclude reference="7kI-Jm-eDp"/>
+                                        <exclude reference="CiJ-Ap-PGM"/>
+                                        <exclude reference="Vsa-sz-Bga"/>
+                                        <exclude reference="iB6-Wv-5Ux"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="10" y="25" width="40" height="40"/>
                                     <mask key="subviews">
                                         <include reference="tLA-vy-0I2"/>
                                         <include reference="IRN-cY-xFo"/>
@@ -394,14 +400,39 @@
                                     <mask key="constraints">
                                         <include reference="CxA-Wa-Nlt"/>
                                         <include reference="YXf-Dt-aIF"/>
-                                        <include reference="7kI-Jm-eDp"/>
-                                        <include reference="CiJ-Ap-PGM"/>
-                                        <include reference="Vsa-sz-Bga"/>
-                                        <include reference="iB6-Wv-5Ux"/>
                                         <include reference="5pl-QP-K0c"/>
                                         <include reference="9yX-65-RLU"/>
                                         <include reference="On1-oS-XP7"/>
                                         <include reference="mTM-d9-qJC"/>
+                                        <include reference="7kI-Jm-eDp"/>
+                                        <include reference="CiJ-Ap-PGM"/>
+                                        <include reference="Vsa-sz-Bga"/>
+                                        <include reference="iB6-Wv-5Ux"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jn-Zz-yze" customClass="STKSpinnerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.92684659089999999" green="0.92684659089999999" blue="0.92684659089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="kwX-vx-3Dh">
+                                        <variation key="heightClass=regular" constant="220"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="250" id="uvR-wc-B7Q">
+                                        <variation key="heightClass=regular" constant="220"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kwX-vx-3Dh"/>
+                                        <exclude reference="uvR-wc-B7Q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="190" y="20" width="220" height="220"/>
+                                    <mask key="constraints">
+                                        <include reference="kwX-vx-3Dh"/>
+                                        <include reference="uvR-wc-B7Q"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -433,36 +464,37 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="8Jn-Zz-yze"/>
                                 <exclude reference="HEI-QZ-mXe"/>
                                 <exclude reference="Zo3-a5-TM4"/>
+                                <exclude reference="8Jn-Zz-yze"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Q3-1T-Ir0"/>
-                                <exclude reference="3dg-nW-1gq"/>
+                                <exclude reference="RCm-Wg-acb"/>
                                 <exclude reference="Kod-d8-rzK"/>
                                 <exclude reference="rm4-wD-4cs"/>
-                                <exclude reference="RCm-Wg-acb"/>
+                                <exclude reference="0Q3-1T-Ir0"/>
+                                <exclude reference="3dg-nW-1gq"/>
                                 <exclude reference="1ec-mp-w4m"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="8Jn-Zz-yze"/>
                                 <include reference="HEI-QZ-mXe"/>
                                 <include reference="Zo3-a5-TM4"/>
+                                <include reference="8Jn-Zz-yze"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0Q3-1T-Ir0"/>
-                                <include reference="3dg-nW-1gq"/>
+                                <include reference="RCm-Wg-acb"/>
                                 <include reference="Kod-d8-rzK"/>
                                 <include reference="rm4-wD-4cs"/>
-                                <include reference="RCm-Wg-acb"/>
+                                <include reference="0Q3-1T-Ir0"/>
+                                <include reference="3dg-nW-1gq"/>
                                 <include reference="1ec-mp-w4m"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="TimerIcon" id="Cl9-3q-4Vu"/>
+                    <navigationItem key="navigationItem" id="2QP-Cg-Pa1"/>
                     <connections>
                         <outlet property="muteButton" destination="IRN-cY-xFo" id="7Eo-Jo-HB4"/>
                         <outlet property="muteImageView" destination="tLA-vy-0I2" id="w1h-0O-PnJ"/>
@@ -475,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0E-M3-VCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="571.5"/>
+            <point key="canvasLocation" x="-1748" y="1179"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="nRW-Hp-i4q">
@@ -493,6 +525,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bZ4-Xj-wMA" kind="show" id="im6-dd-MeZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -504,12 +539,50 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkU-xM-KCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="2058"/>
+            <point key="canvasLocation" x="-1748" y="2694"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Timer Preset Countdown View Controller-->
+        <scene sceneID="v0m-Ji-95d">
+            <objects>
+                <viewController id="bZ4-Xj-wMA" customClass="TimerPresetCountdownViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G0c-Gm-8ZS"/>
+                        <viewControllerLayoutGuide type="bottom" id="oNm-Ib-j1b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kWH-R7-mG0">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="haha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTm-Kb-Q9L">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="219" y="148" width="38" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="GTm-Kb-Q9L"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="GTm-Kb-Q9L"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtW-gR-jaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1748" y="3448.5"/>
+        </scene>
+        <!--Timer Preset Navigation Controller-->
         <scene sceneID="bnx-Xf-xrK">
             <objects>
-                <navigationController id="7pc-LB-Fd1" sceneMemberID="viewController">
+                <navigationController id="7pc-LB-Fd1" customClass="TimerPresetNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YYl-Od-LmY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -520,7 +593,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnD-Q4-Tye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="1314"/>
+            <point key="canvasLocation" x="-1748" y="1908"/>
         </scene>
         <!--Countdown-->
         <scene sceneID="7Zh-mm-RPS">
@@ -651,10 +724,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zEu-mR-zpR" kind="relationship" relationship="viewControllers" id="0ro-Wo-fwG"/>
                         <segue destination="dfO-4W-KWV" kind="relationship" relationship="viewControllers" id="Lyf-B0-l25"/>
                         <segue destination="4zF-0i-edz" kind="relationship" relationship="viewControllers" id="sdt-dR-QI3"/>
                         <segue destination="kGW-uJ-VSs" kind="relationship" relationship="viewControllers" id="i8o-Ya-3TZ"/>
+                        <segue destination="ZEv-SV-IUA" kind="relationship" relationship="viewControllers" id="gcG-ei-yTl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3d-iT-bSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
