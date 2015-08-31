@@ -37,6 +37,7 @@ class AddCountdownViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
+        datePicker.minimumDate = NSDate()
         updateDateAndTimeLabel()
     }
     

@@ -1069,19 +1069,19 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3g-Hn-QtI">
-                                <rect key="frame" x="0.0" y="150" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="150" width="600" height="97"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTa-f7-NVa">
-                                        <rect key="frame" x="60" y="0.0" width="480" height="100"/>
+                                        <rect key="frame" x="60" y="0.0" width="480" height="97"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uy-NR-k6O">
-                                                <rect key="frame" x="180.5" y="30" width="119.5" height="30"/>
+                                                <rect key="frame" x="180" y="28" width="119.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Labl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQa-hG-9TL">
-                                                <rect key="frame" x="186" y="61" width="108.5" height="30"/>
+                                                <rect key="frame" x="186" y="59" width="108.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1113,6 +1113,11 @@
                                     <constraint firstItem="gTa-f7-NVa" firstAttribute="width" secondItem="e3g-Hn-QtI" secondAttribute="width" multiplier="0.8" id="o62-cG-tq3"/>
                                     <constraint firstAttribute="height" constant="100" id="wSf-6B-ojj"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wSf-6B-ojj"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="394-fM-mIi">
                                 <rect key="frame" x="0.0" y="427" width="600" height="60"/>
@@ -1139,9 +1144,10 @@
                                 </constraints>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ohk-zt-hQQ">
-                                <rect key="frame" x="0.0" y="250" width="600" height="177"/>
+                                <rect key="frame" x="0.0" y="247" width="600" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="8EE-5b-wV0"/>
+                                    <constraint firstAttribute="height" constant="180" id="Scv-GB-cDp"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="462575643.29755598">
                                     <!--2015-08-29 21:14:03 +0000-->
