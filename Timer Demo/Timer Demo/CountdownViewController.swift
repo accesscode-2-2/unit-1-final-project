@@ -55,7 +55,7 @@ class CountdownViewController: UIViewController,
             cell.hideAllLabelView()
         }
         
-        //swipe left
+        //swipe left gesture
         cell.tag = indexPath.row
         let sgr = UISwipeGestureRecognizer(target: self, action: "cellSwiped")
         sgr.direction = UISwipeGestureRecognizerDirection.Left
@@ -65,10 +65,14 @@ class CountdownViewController: UIViewController,
     }
     
     func cellSwiped(){
-        for path in tableView.indexPathsForVisibleRows! {
-            let cell = tableView.cellForRowAtIndexPath(path) as! CountdownTableViewCell
-
+        guard let indexPathForSelectedRow = tableView.indexPathForSelectedRow else{return}
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CountdownCell", forIndexPath: indexPathForSelectedRow) as! CountdownTableViewCell
+        
+        cell.isBeingEdited = true
+        print("cell swiped left")
     }
+        
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let countdown = countdowns[indexPath.row] as Countdown

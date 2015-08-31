@@ -24,6 +24,8 @@ class CountdownTableViewCell: UITableViewCell {
     var unitLabels = []
     var countdown: Countdown?
     
+    var isBeingEdited = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
