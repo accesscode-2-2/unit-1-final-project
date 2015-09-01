@@ -33,7 +33,6 @@
 
 - (IBAction)startTimer:(id)sender {
     if(!self.timer){
-        
         self.countDownInterval = (NSTimeInterval)self.countDownTimer.countDownDuration;
         self.remainder = self.countDownInterval;
         self.afterRemainder = self.countDownInterval - self.remainder%60;
@@ -44,6 +43,7 @@
         
         self.afterRemainder++;
         [self updateCountDown];
+        [self.countDownTimer setHidden:YES];
         
         [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
         
@@ -61,6 +61,7 @@
     if (sender == self.resetButton) {
         self.timerLabel.text = @"0:00:00";
         [self.timer invalidate];
+        [self.countDownTimer setHidden:NO];
     }
 }
 
@@ -99,16 +100,20 @@
     self.startButton.layer.borderWidth = 3.0;
     self.startButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.startButton.layer.cornerRadius = self.startButton.bounds.size.width/2;
+    self.startButton.layer.borderColor = [UIColor colorWithRed:47/255.0 green:68/255.0 blue:80/255.0 alpha: 1].CGColor;
+
     [self.startButton setClipsToBounds:YES];
     
     self.pauseButton.layer.borderWidth = 3.0;
     self.pauseButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.pauseButton.layer.cornerRadius = self.pauseButton.bounds.size.width/2;
+    self.pauseButton.layer.borderColor = [UIColor colorWithRed:47/255.0 green:68/255.0 blue:80/255.0 alpha: 1].CGColor;
     [self.pauseButton setClipsToBounds:YES];
     
     self.resetButton.layer.borderWidth = 3.0;
     self.resetButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.resetButton.layer.cornerRadius = self.resetButton.bounds.size.width/2;
+    self.resetButton.layer.borderColor = [UIColor colorWithRed:47/255.0 green:68/255.0 blue:80/255.0 alpha: 1].CGColor;
     [self.resetButton setClipsToBounds:YES];
     
 }
