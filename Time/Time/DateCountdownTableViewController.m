@@ -133,6 +133,8 @@
     selectionColor.backgroundColor = [UIColor colorWithRed:198.0/255 green:230.0/255 blue:204.0/255 alpha:1.0];
     cell.selectedBackgroundView = selectionColor;
     
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.eventDates objectForKey:key]];
     cell.detailTextLabel.text = countdown;
     
@@ -140,16 +142,16 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60.0;
+    return 80.0;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.textColor = self.pink;
-    cell.textLabel.highlightedTextColor = self.pink;
+    cell.textLabel.textColor = [UIColor colorWithRed:115.0/255 green:115.0/255 blue:115.0/255 alpha:1];
+    cell.textLabel.highlightedTextColor = [UIColor colorWithRed:66.0/255 green:66.0/255 blue:66.0/255 alpha:1];
     cell.detailTextLabel.textColor = self.pink;
     
-    [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:12]];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:17]];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:13]];
 }
 
