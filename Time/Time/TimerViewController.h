@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerViewController : UIViewController {
+@interface TimerViewController : UIViewController
+{
     
     NSTimer *countdownTimer;
+    double timerInterval;
+    double timerElapsed;
+    NSDate *timerStarted;
 
 }
     
