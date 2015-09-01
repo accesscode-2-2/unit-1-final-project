@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */; };
+		AB5791F91B955DB500F4EBAB /* PresetTimersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */; };
+		AB5791FC1B955DF300F4EBAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5791FB1B955DF300F4EBAB /* ViewController.m */; };
 		BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */; };
 		BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */; };
 		BF5A03731B88C0AD00FDF71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A03721B88C0AD00FDF71D /* main.m */; };
@@ -43,6 +45,10 @@
 /* Begin PBXFileReference section */
 		AB31A5E11B8E7BC800F63EBE /* StopWatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewController.h; sourceTree = "<group>"; };
 		AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; };
+		AB5791F71B955DB500F4EBAB /* PresetTimersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimersTableViewController.h; sourceTree = "<group>"; };
+		AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimersTableViewController.m; sourceTree = "<group>"; };
+		AB5791FA1B955DF300F4EBAB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AB5791FB1B955DF300F4EBAB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF3D673F1B8E7A72005D9CFA /* PresetsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetsTableViewController.h; sourceTree = "<group>"; };
 		BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetsTableViewController.m; sourceTree = "<group>"; };
 		BF3D67471B8E9824005D9CFA /* NewPresetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPresetsViewController.h; sourceTree = "<group>"; };
@@ -173,6 +179,10 @@
 				BF3D67471B8E9824005D9CFA /* NewPresetsViewController.h */,
 				BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */,
 				BF3D674A1B8E9864005D9CFA /* NewPresetsViewControllerDelegate.h */,
+				AB5791F71B955DB500F4EBAB /* PresetTimersTableViewController.h */,
+				AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */,
+				AB5791FA1B955DF300F4EBAB /* ViewController.h */,
+				AB5791FB1B955DF300F4EBAB /* ViewController.m */,
 				BFE6F3F91B92186100350E51 /* Fonts */,
 			);
 			name = Timer;
@@ -300,12 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5791FC1B955DF300F4EBAB /* ViewController.m in Sources */,
 				BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */,
 				BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */,
 				BF5A03761B88C0AD00FDF71D /* AppDelegate.m in Sources */,
 				AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */,
 				BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */,
 				BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */,
+				AB5791F91B955DB500F4EBAB /* PresetTimersTableViewController.m in Sources */,
 				BF5A03731B88C0AD00FDF71D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
