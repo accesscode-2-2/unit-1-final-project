@@ -37,6 +37,8 @@
     [self.workoutsData initializeModel];
     
     [self.tableView reloadData];
+    
+    NSLog(@"%@", self.workoutsData.workoutList);
 }
 
 #pragma mark - Table view data source
@@ -80,16 +82,35 @@
         
         self.checkedWorkouts -= 1;
         NSLog(@"checked deleted");
+        
+        [self countCheck];
+        
         [tableView reloadData];
         
     } else if (editingStyle == UITableViewCellEditingStyleDelete && self.isSelected){
         [self.workoutsData.workoutList removeObjectAtIndex:indexPath.row];
         NSLog(@"un-checked deleted");
+        
+        [self countCheck];
+        
         [tableView reloadData];
     }
     
     NSLog(@"%lu", (unsigned long)self.workoutsData.workoutList.count);
 }
+- (void) countCheck {
+    
+    if (self.workoutsData.workoutList.count == self.checkedWorkouts){
+        self.finishWorkoutButton.hidden = NO;
+    } else {
+        self.finishWorkoutButton.hidden = YES;
+    }
+    
+    
+}
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
      [self.tableView reloadData];

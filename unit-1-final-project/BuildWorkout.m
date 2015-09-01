@@ -13,8 +13,15 @@
 -(void) initializeData{
     self.exercises = [[NSDictionary alloc]init];
     
+    NSArray *legs = [[NSArray alloc]init];
+    NSArray *chest = [[NSArray alloc]init];
+    NSArray *back = [[NSArray alloc]init];
+    NSArray *arms = [[NSArray alloc]init];
+    NSArray *shoulders = [[NSArray alloc]init];
+
     
-    NSArray *legs = @[@"squat",
+            legs = @[
+                      @"squat",
                       @"leg press",
                       @"leg curls",
                       @"calf raises",
@@ -22,7 +29,7 @@
                       @"box jumps"
                       ];
     
-    NSArray *chest = @[@"bench press",
+            chest = @[@"bench press",
                        @"chest fly",
                        @"incline dumbell press",
                        @"push-ups",
@@ -31,8 +38,7 @@
                        ];
     
     
-    
-    NSArray *back = @[@"dumbell rows",
+            back = @[@"dumbell rows",
                       @"lat pulldown",
                       @"deadlifts",
                       @"barbell rows",
@@ -40,13 +46,32 @@
                       @"pull-ups"
                       ];
     
+            arms = @[
+                      @"dumbell curls",
+                      @"barbell curls",
+                      @"tricep pushdown",
+                      @"tricep extension",
+                      @"tricep kickback",
+                      @"hammer curls",
+                      @"forearm curls"
+                      ];
+    
+            shoulders = @[
+                           @"barbell press",
+                           @"arnold press",
+                           @"reverse fly",
+                           @"side laterals",
+                           @"front plate raise"
+                           ];
+
+    
     self.exercises = @{
-                       @"Legs": legs,
+                        @"Legs": legs,
                        @"Chest": chest,
                        @"Back" : back,
-                       };
-    
-    
+                       @"Arms" : arms,
+                  @"Shoulders" : shoulders,
+                        };
     
 }
 

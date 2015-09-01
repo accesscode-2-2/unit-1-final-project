@@ -63,6 +63,8 @@
     self.model.reps = 10;
     self.model.sets = 3;
     self.model.weight = 200;
+    
+    NSLog(@"%@", self.model.exercises);
 }
 
 //Picker View
@@ -78,10 +80,11 @@
         return workoutTypes.count;
     }
     else if ([pickerView isEqual:self.pickerTwo]){
-        NSIndexPath *indexPath;
-        NSArray *workoutTypes = [self.model.exercises allKeys];
-        NSString *workoutType = [workoutTypes objectAtIndex:indexPath.row];
-        NSArray *workoutsForType = [self.model.exercises objectForKey:workoutType];
+//        NSIndexPath *indexPath;
+//       NSArray *workoutTypes = [self.model.exercises allKeys];
+//       NSString *workoutType = [workoutTypes objectAtIndex:indexPath.row];
+//        NSArray *workoutsForType = [self.model.exercises objectForKey:workoutType];
+       NSArray *workoutsForType = [self.model.exercises allValues];
         return workoutsForType.count;
     }
     return 1;
@@ -89,23 +92,48 @@
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     if ([pickerView isEqual:self.picker]){
+        
+        [self.pickerTwo reloadAllComponents];
+        
         return [[self.model.exercises allKeys] objectAtIndex:row];
-    }
+        }
     else if ([pickerView isEqual:self.pickerTwo]){
-        //        NSIndexPath *indexPath;
-        //        NSArray *workoutTypes = [self.model.exercises allKeys];
-        //        NSString *workoutType = [workoutTypes objectAtIndex:indexPath.row];
-        //        return [[self.model.exercises objectForKey:workoutType] objectAtIndex:row];
+//               NSIndexPath *indexPath;
+//                NSArray *workoutTypes = [self.model.exercises allKeys];
+//                NSString *workoutType = [workoutTypes objectAtIndex:indexPath.row];
+//                return [[self.model.exercises objectForKey:workoutType] objectAtIndex:row];
+        
         NSInteger typeWorkoutRow = [self.picker selectedRowInComponent:0];
-        NSArray *allExercises = [self.model.exercises allKeys];
-        NSString *allExercisesType = [allExercises objectAtIndex:typeWorkoutRow];
-        // self.exerciseNameLabel.text = [[self.model.exercises objectForKey:allExercisesType]objectAtIndex:row];
-        self.exerciseNameString = [[self.model.exercises objectForKey:allExercisesType]objectAtIndex:row];
+//        NSArray *allExercises = [self.model.exercises allKeys];
+//        NSString *allExercisesType = [allExercises objectAtIndex:typeWorkoutRow];
+        
+//        NSString *bodyPartKey = [[self.model.exercises allKeys] objectAtIndex:indexPath.row];
+//        NSArray *allExercisesForPart = [self.model.exercises objectForKey:bodyPartKey];
+//        NSString *exerciseSelected = [allExercisesForPart objectAtIndex:typeWorkoutRow];
+        NSInteger selectedExercise = [self.pickerTwo selectedRowInComponent:0];
+        
+//get key in string
+//get all values of key in array
+//get the string of the value selected in the picker
+       
+        NSString *keyString = [[self.model.exercises allKeys] objectAtIndex:typeWorkoutRow];
+        NSArray *arrayOfValuesFromKey = [self.model.exercises valueForKey:keyString];
+        NSString *stringFromArray = [arrayOfValuesFromKey objectAtIndex:selectedExercise];
+        
+        
+      //  NSLog(@"This is key: %@", keyString);
+        
+       // NSLog (@"This is exercise: %@",stringFromArray);
+        
+        //NSLog(@"%@", workoutsForType);
+                                    
+         self.exerciseNameLabel.text = [[self.model.exercises objectForKey:keyString]objectAtIndex:row];
+        self.exerciseNameString = stringFromArray;
         self.exerciseNameLabel.text = self.exerciseNameString;
         self.model.exerciseName = self.exerciseNameString;
-
-
-        return [[self.model.exercises objectForKey:allExercisesType]objectAtIndex:row];
+//
+       // return stringFromArray;
+       return [[self.model.exercises objectForKey:keyString]objectAtIndex:row];
         
     }
     
@@ -146,13 +174,9 @@
     
     [self.existingData.workoutList addObject:self.model];
     
-    
-        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
-    
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
 
-    
 }
-
 - (void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = NO;
 }
