@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Naf-OP-4Rq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -242,10 +242,10 @@
             </objects>
             <point key="canvasLocation" x="2601" y="-70"/>
         </scene>
-        <!--View Controller-->
+        <!--Stop Watch View Controller-->
         <scene sceneID="TpN-gz-kDw">
             <objects>
-                <viewController id="GaP-br-qKn" sceneMemberID="viewController">
+                <viewController id="GaP-br-qKn" customClass="StopWatchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a3a-hs-aPj"/>
                         <viewControllerLayoutGuide type="bottom" id="9yc-jr-OQf"/>
@@ -260,22 +260,83 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zOM-gs-iRl">
                                         <rect key="frame" x="0.0" y="292" width="600" height="195"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lapsIdentifier" id="czf-aZ-Ybn">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czf-aZ-Ybn" id="Wep-kv-4kA">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euz-4d-YC9">
+                                        <rect key="frame" x="24" y="24" width="47" height="30"/>
+                                        <state key="normal" title="START">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="GaP-br-qKn" eventType="touchUpInside" id="iYt-UC-zDa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-gn-ru2">
+                                        <rect key="frame" x="527" y="24" width="49" height="30"/>
+                                        <state key="normal" title="PAUSE">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="GaP-br-qKn" eventType="touchUpInside" id="Ucg-c2-leV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKT-1h-kZz">
+                                        <rect key="frame" x="24" y="238" width="48" height="30"/>
+                                        <state key="normal" title="RESET">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="GaP-br-qKn" eventType="touchUpInside" id="jtZ-Q5-5jf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-4K-J3G">
+                                        <rect key="frame" x="512" y="238" width="64" height="30"/>
+                                        <state key="normal" title="ADD LAP">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="GaP-br-qKn" eventType="touchUpInside" id="vQJ-3c-KFy"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lk-Tk-tDo">
+                                        <rect key="frame" x="272" y="132" width="57" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69019607843137254" green="0.792156862745098" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="zOM-gs-iRl" firstAttribute="leading" secondItem="y3u-xp-xxo" secondAttribute="leading" id="3TD-6F-Skn"/>
                                     <constraint firstAttribute="height" secondItem="zOM-gs-iRl" secondAttribute="height" multiplier="0.4" id="3Wn-IL-KH4"/>
                                     <constraint firstAttribute="trailing" secondItem="zOM-gs-iRl" secondAttribute="trailing" id="4gC-fI-B8f"/>
+                                    <constraint firstItem="Je0-gn-ru2" firstAttribute="top" secondItem="y3u-xp-xxo" secondAttribute="top" constant="24" id="5rv-CO-EkM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Je0-gn-ru2" secondAttribute="trailing" constant="24" id="72m-pp-z31"/>
                                     <constraint firstItem="zOM-gs-iRl" firstAttribute="leading" secondItem="y3u-xp-xxo" secondAttribute="leading" id="9aF-fE-r6g"/>
+                                    <constraint firstItem="zOM-gs-iRl" firstAttribute="top" secondItem="QuE-4K-J3G" secondAttribute="bottom" constant="24" id="BWA-t6-9P0"/>
+                                    <constraint firstAttribute="trailing" secondItem="QuE-4K-J3G" secondAttribute="trailing" constant="24" id="GoR-i9-wFB"/>
                                     <constraint firstItem="zOM-gs-iRl" firstAttribute="top" secondItem="y3u-xp-xxo" secondAttribute="top" constant="39" id="Gu0-lp-am0"/>
                                     <constraint firstAttribute="bottom" secondItem="zOM-gs-iRl" secondAttribute="bottom" id="QXE-kj-SY3"/>
                                     <constraint firstAttribute="bottom" secondItem="zOM-gs-iRl" secondAttribute="bottom" id="RAX-hJ-qSE"/>
+                                    <constraint firstItem="zOM-gs-iRl" firstAttribute="top" secondItem="dKT-1h-kZz" secondAttribute="bottom" constant="24" id="RdK-X8-tpd"/>
+                                    <constraint firstItem="dKT-1h-kZz" firstAttribute="leading" secondItem="y3u-xp-xxo" secondAttribute="leading" constant="24" id="RpZ-fO-s1z"/>
                                     <constraint firstAttribute="trailing" secondItem="zOM-gs-iRl" secondAttribute="trailing" id="RyZ-Cn-wRF"/>
                                     <constraint firstItem="zOM-gs-iRl" firstAttribute="leading" secondItem="y3u-xp-xxo" secondAttribute="leading" id="Tr4-hJ-zVk"/>
+                                    <constraint firstItem="euz-4d-YC9" firstAttribute="leading" secondItem="y3u-xp-xxo" secondAttribute="leading" constant="24" id="Y2D-ug-sb1"/>
+                                    <constraint firstItem="euz-4d-YC9" firstAttribute="top" secondItem="y3u-xp-xxo" secondAttribute="top" constant="24" id="lDR-sL-hyV"/>
                                     <constraint firstAttribute="bottom" secondItem="zOM-gs-iRl" secondAttribute="bottom" constant="113" id="n8N-yB-1Xk"/>
+                                    <constraint firstAttribute="centerX" secondItem="2Lk-Tk-tDo" secondAttribute="centerX" id="sNL-QN-2Bw"/>
                                     <constraint firstAttribute="height" secondItem="zOM-gs-iRl" secondAttribute="height" multiplier="2.5" constant="112.5" id="sU4-Jc-r2v"/>
                                     <constraint firstAttribute="trailing" secondItem="zOM-gs-iRl" secondAttribute="trailing" id="wMP-Fm-V3Y"/>
+                                    <constraint firstAttribute="centerY" secondItem="2Lk-Tk-tDo" secondAttribute="centerY" multiplier="2" id="yR8-K2-GCS"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -300,6 +361,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IJZ-Nv-7zp"/>
+                    <connections>
+                        <outlet property="addLapToTableView" destination="QuE-4K-J3G" id="UUY-ey-4QE"/>
+                        <outlet property="lapsTableView" destination="zOM-gs-iRl" id="9AE-9H-284"/>
+                        <outlet property="pauseTime" destination="Je0-gn-ru2" id="ydX-Wv-6S5"/>
+                        <outlet property="resetTime" destination="dKT-1h-kZz" id="Cdw-6Z-0hy"/>
+                        <outlet property="startTime" destination="euz-4d-YC9" id="s4h-aF-Syo"/>
+                        <outlet property="timeLabel" destination="2Lk-Tk-tDo" id="l4X-WD-NoZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AqM-ug-ddX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
