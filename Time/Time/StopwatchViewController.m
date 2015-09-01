@@ -207,10 +207,10 @@
 
 
 - (IBAction)resetButton:(id)sender {
-    
     // set totalElapsedTime = 0
     // invalidate all timers
     // reload lap table view with empty array
+
     
 
 
@@ -235,6 +235,7 @@
         [self.lapTableView reloadData];
         
     }
+
 }
 
 
