@@ -17,6 +17,7 @@
     AVAudioPlayer *_timerIsOver;
 }
 
+@property (strong, nonatomic) IBOutlet UIButton *presetsButton;
 @property (weak, nonatomic) IBOutlet STKSpinnerView *spinnerView;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
@@ -38,6 +39,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
+    [self.presetsButton setBackgroundImage:[UIImage imageNamed:@"krig_Aqua_button"] forState:UIControlStateNormal];
+    
+ 
     
     self.picker.hidden = NO;
     self.timeLabel.hidden = YES;
@@ -49,11 +54,20 @@
     [self.startStopButton.titleLabel  isEqual: @"START"];
     self.startStopButton.layer.cornerRadius = 60;
     self.startStopButton.clipsToBounds = YES;
-    self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
+//    self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
+ 
+    
+     [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
+    
+    
+    
+    
     [self.pauseResumeButton.titleLabel  isEqual: @"PAUSE"];
     self.pauseResumeButton.layer.cornerRadius = 60;
     self.pauseResumeButton.clipsToBounds = YES;
-    self.pauseResumeButton.backgroundColor = [UIColor grayColor];
+    
+    [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
+//    self.pauseResumeButton.backgroundColor = [UIColor grayColor];
     self.pauseResumeButton.enabled = NO;
     self.spinnerView.hidden = YES;
     self.muteImageView.image = [UIImage imageNamed: @"SoundOn"];
@@ -90,11 +104,10 @@
 
     NSString *startStopActualLabel =  self.startStopButton.titleLabel.text;
     
-    // START button tapped
+    // start button tapped
     if ([startStopActualLabel isEqualToString:@"START"] ) {
-        self.pauseResumeButton.enabled = NO;
-        self.pauseResumeButton.backgroundColor = [UIColor grayColor];
-        [self startTimer:self.picker.countDownDuration];
+    [self startTimer:self.picker.countDownDuration];
+        
             if (self.muteSound == NO) {
                 [_clock play];
             }
@@ -102,10 +115,10 @@
                 [_clock stop];
             }
         }
-    else      // STOP button tapped
+    else      // stop button tapped
     {
         self.pauseResumeButton.enabled = YES;
-        self.pauseResumeButton.backgroundColor = [UIColor colorWithRed:0.93 green:0.91 blue:0.23 alpha:1.0];
+        NSLog(@"stop pressed");
         [_clock stop];
         [_timerIsOver stop];
         [self stopTimer];
@@ -178,11 +191,12 @@
     
     self.circularTimerProgress = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(spinit:) userInfo:nil repeats:YES];
     
-    
+    [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"redDrop"] forState:UIControlStateNormal];
     [self.startStopButton setTitle:@"STOP" forState:UIControlStateNormal];
+    
     self.pauseResumeButton.enabled = YES;
-    self.pauseResumeButton.backgroundColor = [UIColor colorWithRed:0.93 green:0.91 blue:0.23 alpha:1.0];
-    self.startStopButton.backgroundColor = [UIColor redColor];
+    [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"YellowDrop"] forState:UIControlStateNormal];
+    
     self.timeLabel.hidden = NO;
     self.picker.hidden = YES;
     self.spinnerView.hidden = NO;
@@ -195,12 +209,16 @@
     self.circularTimerProgress = nil; //i need to stop thisssssssssss :@@@@@
     
     [self.startStopButton setTitle:@"START" forState:UIControlStateNormal];
-    self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
+    [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
+
     self.pauseResumeButton.enabled = NO;
-    self.pauseResumeButton.backgroundColor = [UIColor grayColor];
+    [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
+
+//    self.pauseResumeButton.backgroundColor = [UIColor grayColor];
     self.timeLabel.hidden = YES;
     self.picker.hidden = NO;
     self.spinnerView.hidden = YES;
+ 
 }
 
 -(void) pauseTimer {
@@ -208,12 +226,16 @@
     [self.StopwatchTimer invalidate];
     [self.circularTimerProgress invalidate];
     [self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
+    [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
+
 }
 
 - (void) resumeTimer; {
     
     [self startTimer:self.duration - self.elapsedTime];
     [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
+    [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"YellowDrop"] forState:UIControlStateNormal];
+
 }
 
 #pragma mark - Alert View

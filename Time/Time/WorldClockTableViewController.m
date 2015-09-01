@@ -39,15 +39,17 @@
  
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
+//    
+//    self.tableView.backgroundColor = [UIColor clearColor];
+//    self.tableView.opaque = NO;
+//    self.tableView.backgroundView = nil;
+//    self.tableView.backgroundView
     
- 
-    
-    
-    
+    self.navigationController.view.backgroundColor =
+    [UIColor colorWithPatternImage:[UIImage imageNamed:@"clockImage"]];
+    self.tableView.backgroundColor = [UIColor clearColor];
         
-    
-    
-    
+  
     
     
  }
@@ -84,7 +86,16 @@
     cell.textLabel.text = city.cityName;
     
     cell.detailTextLabel.text = city.cityTime;
+   
+    
+    
+    
+    
+    
+    
+    
     return cell;
+    
 }
 
 
@@ -105,44 +116,18 @@
     }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+
+#pragma mark Cells color
+- (void)tableView: (UITableView*)tableView
+  willDisplayCell: (UITableViewCell*)cell
+forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    cell.backgroundColor = indexPath.row % 2
+    ? [UIColor colorWithRed:0.87 green:0.93 blue:0.98 alpha:1.0]
+    : [UIColor whiteColor];
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 
 #pragma mark - Navigation
 

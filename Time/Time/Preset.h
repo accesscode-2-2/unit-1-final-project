@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Preset : NSObject
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSTimeInterval time;
+@property (nonatomic) NSString *presetName;
+@property (nonatomic) NSString* presetTime;
 
 
 

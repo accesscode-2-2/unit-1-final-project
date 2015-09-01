@@ -1,18 +1,18 @@
 //
-//  TimerPresetCountdownViewController.m
+//  PresetAddViewController.m
 //  Time
 //
 //  Created by Diana Elezaj on 8/31/15.
 //  Copyright (c) 2015 Mike Kavouras. All rights reserved.
 //
 
-#import "TimerPresetCountdownViewController.h"
+#import "PresetAddViewController.h"
 
-@interface TimerPresetCountdownViewController ()
+@interface PresetAddViewController ()
 
 @end
 
-@implementation TimerPresetCountdownViewController
+@implementation PresetAddViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

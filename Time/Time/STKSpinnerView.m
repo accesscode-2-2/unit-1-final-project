@@ -29,7 +29,7 @@
     
     CAShapeLayer *w = [CAShapeLayer layer];
     [[self layer] addSublayer:w];
-    [w setStrokeColor:[[UIColor colorWithRed:0.15 green:0.45 blue:0.96 alpha:1.0] CGColor]];
+    [w setStrokeColor:[[UIColor colorWithRed:0.10 green:0.41 blue:0.48 alpha:1.0] CGColor]];
     [w setFillColor:[[UIColor clearColor] CGColor]];
     [w setShadowColor:[[UIColor blackColor] CGColor]];
     [w setShadowRadius:2];

@@ -17,26 +17,26 @@
     AVAudioPlayer *_clock;
     AVAudioPlayer *_LapSound;
 }
-@property (strong, nonatomic) IBOutlet UITableView *LapTableView; //stopWatchTableView
-@property (nonatomic) NSMutableArray *LapArray; //data
+@property (strong, nonatomic) IBOutlet UITableView *LapTableView;
+@property (nonatomic) NSMutableArray *LapArray;
 
-@property (nonatomic) BOOL firstTimeRunning; //
+@property (nonatomic) BOOL firstTimeRunning;
 
 @property (nonatomic) BOOL running;
 @property (nonatomic) BOOL LapTapped;
 
-@property (nonatomic) NSInteger timeMilliSec;  ///
-@property (nonatomic) NSInteger lapMilliSec; ///
+@property (nonatomic) NSInteger timeMilliSec;
+@property (nonatomic) NSInteger lapMilliSec;
 
 
-@property (strong, nonatomic) NSTimer *StopwatchTimer; //
-@property (strong, nonatomic) NSTimer *lapTimer; ///
+@property (strong, nonatomic) NSTimer *StopwatchTimer; 
+@property (strong, nonatomic) NSTimer *lapTimer;
 
-@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel; //stopwatchLabel
-@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning; //lapLabel
+@property (strong, nonatomic) IBOutlet UILabel *StopwatchRunningLabel;
+@property (strong, nonatomic) IBOutlet UILabel *recentLapRunning;
 
-@property (strong, nonatomic) IBOutlet UIButton *startStopButton; //startButton
-@property (strong, nonatomic) IBOutlet UIButton *resetLapButton; //lapButton
+@property (strong, nonatomic) IBOutlet UIButton *startStopButton;
+@property (strong, nonatomic) IBOutlet UIButton *resetLapButton;
 
  @property (nonatomic) NSInteger fastestLapIndex;
 

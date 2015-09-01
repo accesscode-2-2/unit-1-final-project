@@ -102,7 +102,7 @@
 	NSString *AbuDhabiString = [outputFormatter stringFromDate:AbuDhabi];
 	
 	NSDate *Montreal = [now dateByAddingTimeInterval:46800];
-	NSString *MontrealString = [outputFormatter stringFromDate:now];
+	NSString *MontrealString = [outputFormatter stringFromDate:Montreal];
 	
 	NSDate *Vancouver = [now dateByAddingTimeInterval:-10800];
 	NSString *VancouverString = [outputFormatter stringFromDate:Vancouver];
@@ -206,6 +206,9 @@
  
     }
     
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectZero];
+    backView.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = backView;
     return cell;
 }
 
@@ -230,6 +233,8 @@
  
     [[self navigationController] popViewControllerAnimated:YES];
     [self.tableView reloadData];
+    
+    
 
 }
 

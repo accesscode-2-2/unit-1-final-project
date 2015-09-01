@@ -1,5 +1,5 @@
 //
-//  TimerPresetNavigationController.h
+//  PresetAddViewController.h
 //  Time
 //
 //  Created by Diana Elezaj on 8/31/15.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimerPresetNavigationController : UINavigationController
+@interface PresetAddViewController : UIViewController
+
+//<UIPickerViewDataSource, UIPickerViewDelegate>
+
 
 @end
