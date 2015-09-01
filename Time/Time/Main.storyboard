@@ -47,8 +47,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHm-g1-0tt" userLabel="Restart Button">
-                                <rect key="frame" x="275" y="359" width="50" height="30"/>
-                                <state key="normal" title="Restart">
+                                <rect key="frame" x="280" y="359" width="40" height="30"/>
+                                <state key="normal" title="Reset">
                                     <color key="titleColor" red="1" green="0.090645954010000002" blue="0.11139939710000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

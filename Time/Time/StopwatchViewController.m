@@ -71,14 +71,24 @@
 
     [self configureView];
     
-    // Scroll Image in background 
-  
+    // Scroll Image in background
+    
     UIImage *backgroundImage = [UIImage imageNamed:@"Rain"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
     self.scrollView.contentSize = backgroundImage.size;
     [self.scrollView addSubview:backgroundImageView];
 
+    backgroundImageView.center = self.view.center;
+    
+    
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
+    //   [UITabBar]
+    //
+
+
    [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
+
 }
 
 - (void)configureView
@@ -120,6 +130,40 @@
 
 - (void)pauseTimer {
     
+
+    if(!self.running){
+        self.running = TRUE;
+  
+        [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
+        
+        if (self.stopTimer == nil && self.lapTimer == nil) {
+            self.stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+                                                              target:self
+                                                            selector:@selector(updateTimer)
+                                                            userInfo:nil
+                                                             repeats:YES];
+            self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+                                                             target:self
+                                                           selector:@selector(rememberTimer)
+                                                           userInfo:nil
+                                                            repeats:YES];
+            
+        }
+    }else{
+        self.running = FALSE;
+       
+        [self.resetButton setTitle:@"Reset" forState:UIControlStateNormal];
+        [self.stopTimer invalidate];
+        self.stopTimer = nil;
+        [self.lapTimer invalidate];
+        self.lapTimer = nil;
+        
+        
+        
+        
+    }
+    
+
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     [self.resetButton setTitle:@"Reset" forState:UIControlStateNormal];
     
@@ -128,6 +172,7 @@
     
     self.stopTimer = nil;
     self.lapTimer = nil;
+
 }
 
 -(void)updateTimer{
@@ -168,7 +213,7 @@
     // reload lap table view with empty array
     
 
-  
+
     if (self.running) {
         
         [self.dataArray addObject:[NSString stringWithFormat:@"%.02f", self.totalLapTime]];
@@ -180,6 +225,7 @@
     }else{
         self.totalElapsedTime = 0;
         self.totalLapTime = 0;
+
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.stopTimer invalidate];
         [self.lapTimer invalidate];
