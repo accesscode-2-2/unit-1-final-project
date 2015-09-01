@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *eventTextField;
 - (IBAction)startButton:(id)sender;
 - (IBAction)stopButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *DaysHMS;
 @property (strong, nonatomic) IBOutlet UIImageView *eventImage;
 
 @end
@@ -25,8 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"eventBackground7"]];
+
     self.eventLabel.hidden = YES;
     self.countdownTimerLabel.hidden = YES;
+    self.DaysHMS.hidden = YES;
     self.countdownTimerLabel.text = @"";
     self.eventLabel.text = @"";
     self.eventImage.hidden = YES;
@@ -44,6 +48,7 @@
     
     /***** interface ***/
     self.countdownTimerLabel.hidden = NO;
+    
     self.eventTextField.hidden = YES;
      
     
@@ -123,8 +128,9 @@
 
         
     }
+    self.DaysHMS.hidden = NO;
         self.countdownTimerLabel.textColor = [UIColor blackColor];
-        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li D %02li H %02li min %02li sec", (long)days, (long)hours, (long)minutes, (long)seconds];
+        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li  %02li  %02li  %02li", (long)days, (long)hours, (long)minutes, (long)seconds];
  }
 
 - (void)didReceiveMemoryWarning {

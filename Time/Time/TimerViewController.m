@@ -33,6 +33,8 @@
 @property (nonatomic) BOOL isPaused;
 @property (nonatomic) NSInteger elapsedTime;
 
+@property (nonatomic) float progress;
+
 @end
 
 @implementation TimerViewController
@@ -59,7 +61,7 @@
     
      [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
     
-    
+        self.progress = 0.0;
     
     
     [self.pauseResumeButton.titleLabel  isEqual: @"PAUSE"];
@@ -114,7 +116,10 @@
             else if (self.muteSound == YES) {
                 [_clock stop];
             }
+        self.progress = 0.0;
+
         }
+    
     else      // stop button tapped
     {
         self.pauseResumeButton.enabled = YES;
@@ -149,14 +154,14 @@
 
 - (void)spinit:(NSTimer *)timer
 {
-    static float prog = 0.0;
-    prog +=  (0.1/self.duration);
+    self.progress +=  (0.1/self.duration);
     
-    if(prog >= 1.0) {
-        prog = 1.0;
+    
+    if(self.progress >= 1.0) {
+        self.progress = 1.0;
         [timer invalidate];
     }
-    [[self spinnerView] setProgress:prog animated:YES];
+    [[self spinnerView] setProgress:self.progress animated:YES];
 }
 
 
