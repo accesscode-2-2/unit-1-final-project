@@ -16,6 +16,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    self.lapsTableView.delegate = self;
+    self.lapsTableView.dataSource=self;
     self.heldLapsForTableView = [[NSMutableArray alloc] init];
 }
 
@@ -65,8 +67,13 @@
     }
 
     else if (sender == self.addLapToTableView){
+        
         [self.heldLapsForTableView addObject:self.timeLabel.text];
-        [self.lapsTableView reloadData];
+        
+        
+       [self.lapsTableView reloadData];
+        
+        NSLog(@"added lap");
     }
 }
 - (void)timerFired:(NSTimer*)timer {
