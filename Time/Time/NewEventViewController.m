@@ -22,7 +22,7 @@
     [super viewDidLoad];
     [self setupDatePicker];
     [self.eventTextField setPlaceholder:@"Event Name"];
-    self.doneButton.enabled = NO;
+    self.doneButton.enabled = YES;
     self.eventTextField.delegate = self;
 }
 
@@ -44,31 +44,31 @@
     self.eventPicker.cellHeight = 50.0;
     [self.eventPicker reloadAllComponents];
     NSLog(@"DEFAULT ROW HEIGHT: %@", NSStringFromCGSize([self.eventPicker.pickerView rowSizeForComponent:0]));
-   
+    
 }
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
-    NSString *testString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    
-    testString = [testString stringByTrimmingCharactersInSet:
-                  [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    if(testString.length){
-      return  self.doneButton.enabled = YES;
-    }
-    else{
-     return self.doneButton.enabled = NO;
-    }
-}
-
 
 - (IBAction)doneButtonTapped:(id)sender {
-    [self.delegate presetCreated:self.eventPicker.date withName:self.eventTextField.text];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if(self.eventTextField.text.length == 0){
+        
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Error"
+                                      message:@"Either the timer name or the actual value is missing, Please fill out those fields before progressing."
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else{
+        [self.delegate presetCreated:self.eventPicker.date withName:self.eventTextField.text];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
-
-
-
 
 @end
