@@ -10,5 +10,4 @@
 #import "NewEventViewControllerDelegate.h"
 
 @interface DateCountdownTableViewController : UITableViewController <NewEventViewControllerDelegate>
-
 @end
