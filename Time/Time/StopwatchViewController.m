@@ -67,6 +67,10 @@
     
     self.lapTableView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.lapTableView.layer.borderWidth = 0.5;
+   [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+    self.scrollView.contentInset = UIEdgeInsetsZero;
+   
     
     // Initialize Date
     [self configureView];
