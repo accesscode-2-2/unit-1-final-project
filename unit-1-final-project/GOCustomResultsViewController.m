@@ -9,6 +9,7 @@
 #import "GOCustomResultsViewController.h"
 #import "Workout.h"
 #import "WorkoutManager.h"
+#import "BackgroundGradient.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface GOCustomResultsViewController ()
@@ -26,8 +27,15 @@
 
 @implementation GOCustomResultsViewController
 
+-(void)backgroundSetup{
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
-   [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self backgroundSetup];
     NSInteger seconds = (self.totalTime % 60);
     NSInteger minutes = (self.totalTime / 60) % 60;
     self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", (long)minutes, (long)seconds];
@@ -62,9 +70,9 @@
     [super viewDidLoad];
     
     [self.timer invalidate];
-
+    
     [self initializeMainTimer];
-
+    
     [self setUpOfCustomResults];
 }
 
