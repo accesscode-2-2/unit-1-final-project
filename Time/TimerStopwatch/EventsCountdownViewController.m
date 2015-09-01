@@ -33,11 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.roundedStartButton2.layer.cornerRadius = 6.0;
-    self.roundedStartButton2.layer.borderWidth = 2.0f;
-    
-    self.roundedStartButton3.layer.cornerRadius = 6.0;
-    self.roundedStartButton3.layer.borderWidth = 2.0f;
     
 }
 

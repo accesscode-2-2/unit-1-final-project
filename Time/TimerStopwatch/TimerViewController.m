@@ -59,7 +59,7 @@
 
 - (IBAction)resetTimer:(id)sender {
     if (sender == self.resetButton) {
-        self.timerLabel.text = @"00:00:00";
+        self.timerLabel.text = @"0:00:00";
         [self.timer invalidate];
     }
 }
@@ -70,7 +70,7 @@
     int hours = (int)(self.afterRemainder/(60*60));
     int mins = (int)(((int)self.afterRemainder/60) - (hours * 60));
     int secs = (int)(((int)self.afterRemainder - (60 *mins) - (60 * hours * 60)));
-    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02u : %02u : %02u", hours, mins, secs];
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02u:%02u:%02u", hours, mins, secs];
     
     self.timerLabel.text = timeDisplay;
 }
@@ -95,6 +95,22 @@
     self.navigationItem.title = @"Timer";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(presetTimerButtonTapped:)];
+    
+    self.startButton.layer.borderWidth = 3.0;
+    self.startButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.startButton.layer.cornerRadius = self.startButton.bounds.size.width/2;
+    [self.startButton setClipsToBounds:YES];
+    
+    self.pauseButton.layer.borderWidth = 3.0;
+    self.pauseButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.pauseButton.layer.cornerRadius = self.pauseButton.bounds.size.width/2;
+    [self.pauseButton setClipsToBounds:YES];
+    
+    self.resetButton.layer.borderWidth = 3.0;
+    self.resetButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.resetButton.layer.cornerRadius = self.resetButton.bounds.size.width/2;
+    [self.resetButton setClipsToBounds:YES];
+    
 }
 
 - (void)presetTimerButtonTapped:(UIBarButtonItem *)button {
@@ -104,11 +120,5 @@
     [self presentViewController:navigationController animated:YES completion:nil];
     
 }
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextAddEllipseInRect(ctx, rect);
-    CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor blueColor] CGColor]));
-    CGContextFillPath(ctx);
-}
+
 @end
