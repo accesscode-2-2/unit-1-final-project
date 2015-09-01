@@ -62,8 +62,8 @@
     self.restartDate = [NSDate date];
     [self configureView];
     
-    // Scroll Image in background 
-  
+    // Scroll Image in background
+    
     UIImage *backgroundImage = [UIImage imageNamed:@"Rain"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
     self.scrollView.contentSize = backgroundImage.size;
@@ -71,10 +71,10 @@
     backgroundImageView.center = self.view.center;
     
     
-
-   [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
-//   [UITabBar]
-//    
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
+    //   [UITabBar]
+    //
 }
 
 - (void)configureView
@@ -91,37 +91,37 @@
 - (IBAction)startButton:(id)sender {
     
     if(!self.running){
-       self.running = TRUE;
+        self.running = TRUE;
         [sender setTitle:@"Pause" forState:UIControlStateNormal];
         [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
         
         if (self.stopTimer == nil && self.lapTimer == nil) {
             self.stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-                                                         target:self
-                                                       selector:@selector(updateTimer)
-                                                       userInfo:nil
-                                                        repeats:YES];
+                                                              target:self
+                                                            selector:@selector(updateTimer)
+                                                            userInfo:nil
+                                                             repeats:YES];
             self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-                                                         target:self
-                                                       selector:@selector(rememberTimer)
-                                                       userInfo:nil
-                                                        repeats:YES];
-           
+                                                             target:self
+                                                           selector:@selector(rememberTimer)
+                                                           userInfo:nil
+                                                            repeats:YES];
+            
         }
     }else{
         self.running = FALSE;
         [sender setTitle:@"Start" forState:UIControlStateNormal];
         [self.resetButton setTitle:@"Reset" forState:UIControlStateNormal];
         [self.stopTimer invalidate];
-         self.stopTimer = nil;
+        self.stopTimer = nil;
         [self.lapTimer invalidate];
-         self.lapTimer = nil;
+        self.lapTimer = nil;
         
-    
+        
         
         
     }
-
+    
 }
 
 -(void)updateTimer{
@@ -160,14 +160,14 @@
         self.restartDate = [NSDate date];
         [self lapTimer];
         self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-                                                    target:self
-                                                  selector:@selector(rememberTimer)
-                                                  userInfo:nil
-                                                   repeats:YES];
-      
- 
+                                                         target:self
+                                                       selector:@selector(rememberTimer)
+                                                       userInfo:nil
+                                                        repeats:YES];
+        
+        
     }else{
-
+        
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.stopTimer invalidate];
         self.stopTimer = nil;

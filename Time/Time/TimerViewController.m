@@ -43,7 +43,7 @@
 -(void)updateTime {
     self.afterRemainder --;
     
-    if (self.afterRemainder <=0) {
+    if (self.afterRemainder == -1) {
         [self invalidateTimer];
         
     }
@@ -52,7 +52,11 @@
     NSInteger minutes = (((NSInteger)self.afterRemainder/60) - (hours *60));
     NSInteger seconds = (((NSInteger)self.afterRemainder - (60 * minutes) - (60 * hours *60)));
     NSString *displayText = [[NSString alloc] initWithFormat: @"%02ld : %02ld : %02ld", (long)hours, (long)minutes, (long)seconds];
-    
+    //    countdownTimer = [NSTimer timerWithTimeInterval:1
+    //                                             target:self
+    //                                           selector:@selector(updateTime)
+    //                                           userInfo:nil
+    //                                            repeats:YES];
     self.countdownLabel.text = displayText;
 }
 
@@ -62,35 +66,38 @@
         [sender setTitle:@"Pause" forState: UIControlStateNormal];
         
         self.running = YES;
+        NSLog(@"start button hit");
         
         if (![self.presetInterval.presetTime  isEqual: @00.00]) {
             NSLog(@"preset timer running");
-        }
-        
-        else if (self.Remainder==-1){
+            
+        } else if (self.Remainder == -1) {
+            NSLog(@"preset timer NOT running");
             self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
             self.Remainder = self.countDownInterval;
             self.afterRemainder = self.countDownInterval - self.Remainder%60;
             
-            
             countdownTimer = [NSTimer timerWithTimeInterval:1
-                                                              target:self
-                                                            selector:@selector(updateTime)
-                                                            userInfo:nil
-                                                             repeats:YES];
+                                                     target:self
+                                                   selector:@selector(updateTime)
+                                                   userInfo:nil
+                                                    repeats:YES];
             [[NSRunLoop currentRunLoop] addTimer:countdownTimer forMode:NSRunLoopCommonModes];
+            
+        } else {
+            //resume timer
+            NSLog(@"something else is suppose to be happening.");
         }
         
- 
     } else {
         self.running = NO;
         [sender setTitle:@"Start" forState: UIControlStateNormal];
         [self invalidateTimer];
-//        [countdownTimer invalidate];
-//        countdownTimer = nil;
+        NSLog(@"pause button hit");
     }
     
 }
+
 
 - (void) invalidateTimer{
     if (countdownTimer != nil) {
@@ -98,8 +105,9 @@
         countdownTimer = nil;
     }
 }
+//reset not restart
 - (IBAction)restartButton:(id)sender {
-    self.running = FALSE; 
+    self.running = NO;
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     [countdownTimer invalidate];
     countdownTimer = nil;
@@ -108,18 +116,18 @@
 }
 
 - (IBAction)presetButton:(id)sender {
-   
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
+    
     UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
     
     PresetTimerTableViewController *vc = (PresetTimerTableViewController *)[navController topViewController];
     
     vc.selectedPreset = self.presetInterval;
-
-
+    
+    
 }
 
 @end
