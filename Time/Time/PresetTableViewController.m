@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // alloc init self.timers
+    self.timers = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,6 +53,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"preset" forIndexPath:indexPath];
+    
+    PresetTime *time;
+    
+    time = [self.timers objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = time.nameOfTask;
     
     return cell;
 }
