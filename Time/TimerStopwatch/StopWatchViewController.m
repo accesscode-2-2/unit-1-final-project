@@ -35,6 +35,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:lapsCell forIndexPath:(indexPath)];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", self.heldLapsForTableView[indexPath.row]];
+    
+    return cell;
 }
 
 
