@@ -20,6 +20,15 @@
 @property (nonatomic) NSArray *timerPickerArray;
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSInteger seconds;
+
+@property (nonatomic, strong) IBOutlet UILabel *progressLabel;
+@property (nonatomic, strong) UIProgressView *progressView;
+//@property (strong, nonatomic) NSTimer *progressTimer; //
+@property (nonatomic, strong) NSTimer *progressTimer;
+
+
+
+
 @end
 
 @implementation PresetViewController
@@ -66,6 +75,7 @@
 
 - (IBAction)stopButtonTapped:(UIButton *)sender {
     [self.timer invalidate];
+    [self.progressTimer invalidate];
 }
 
 
@@ -76,6 +86,22 @@
 
 
 
+
+
+- (void)updateUI:(NSTimer *)timer
+{
+    static int count =0; count++;
+    
+    if (count <=100)
+    {
+        self.progressLabel.text = [NSString stringWithFormat:@"%d %%",count*100];
+        self.progressView.progress = (float)count/100.0f;
+    } else
+    {
+        [self.progressTimer invalidate];
+        self.progressTimer = nil;
+    }
+}
 
 
 
@@ -95,6 +121,12 @@
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
    
+    
+    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
+    
+    
+    
+    
         [self updatePresetLabel];
         [self runTimer];
  }

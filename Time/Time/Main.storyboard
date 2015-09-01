@@ -667,13 +667,22 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="100" y="367" width="401" height="16"/>
+                                    <rect key="frame" x="36" y="367" width="528" height="16"/>
                                     <mask key="constraints">
-                                        <include reference="fDm-mx-GIq"/>
+                                        <exclude reference="fDm-mx-GIq"/>
                                         <include reference="syP-Cq-yE3"/>
                                     </mask>
                                 </variation>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqJ-xg-iJ7">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="275" width="42" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -681,6 +690,7 @@
                             <constraint firstItem="uvl-w4-R6I" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="80" id="DmG-fJ-0sa"/>
                             <constraint firstAttribute="centerX" secondItem="Wyk-VY-I4X" secondAttribute="centerX" id="E3h-i5-seZ"/>
                             <constraint firstAttribute="centerX" secondItem="icR-R9-wDf" secondAttribute="centerX" id="LFr-2D-yIx"/>
+                            <constraint firstItem="Wyk-VY-I4X" firstAttribute="leading" secondItem="CX9-WJ-tug" secondAttribute="leadingMargin" constant="20" id="NDM-Bv-kx1"/>
                             <constraint firstAttribute="centerX" secondItem="IcP-e8-wP8" secondAttribute="centerX" id="Ogz-IA-As8"/>
                             <constraint firstItem="NAw-ZZ-cd3" firstAttribute="top" secondItem="R3m-fL-GgO" secondAttribute="bottom" constant="40" id="SjM-Pv-eYg"/>
                             <constraint firstItem="icR-R9-wDf" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="80" id="UZr-gF-X6F"/>
@@ -689,6 +699,7 @@
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="1Sw-Rg-CHo" secondAttribute="centerX" id="eDF-zu-4ZK"/>
                             <constraint firstItem="uvl-w4-R6I" firstAttribute="leading" secondItem="icR-R9-wDf" secondAttribute="trailing" constant="45" id="eZa-dG-9C5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wyk-VY-I4X" secondAttribute="trailing" constant="20" id="hAr-O4-0Tc"/>
                             <constraint firstItem="Wyk-VY-I4X" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="20" id="ikr-lv-yin"/>
                             <constraint firstAttribute="centerX" secondItem="NAw-ZZ-cd3" secondAttribute="centerX" id="jTo-Ma-cpE"/>
                             <constraint firstItem="icR-R9-wDf" firstAttribute="leading" secondItem="g2Z-HY-fTE" secondAttribute="trailing" constant="70" id="lJJ-GZ-ORH">
@@ -705,6 +716,7 @@
                                 <exclude reference="icR-R9-wDf"/>
                                 <exclude reference="IcP-e8-wP8"/>
                                 <exclude reference="Wyk-VY-I4X"/>
+                                <exclude reference="SqJ-xg-iJ7"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="SjM-Pv-eYg"/>
@@ -712,6 +724,8 @@
                                 <exclude reference="ZGB-te-iZl"/>
                                 <exclude reference="eDF-zu-4ZK"/>
                                 <exclude reference="E3h-i5-seZ"/>
+                                <exclude reference="NDM-Bv-kx1"/>
+                                <exclude reference="hAr-O4-0Tc"/>
                                 <exclude reference="ikr-lv-yin"/>
                                 <exclude reference="nV1-JQ-87S"/>
                                 <exclude reference="LFr-2D-yIx"/>
@@ -732,13 +746,16 @@
                                 <include reference="icR-R9-wDf"/>
                                 <include reference="IcP-e8-wP8"/>
                                 <include reference="Wyk-VY-I4X"/>
+                                <include reference="SqJ-xg-iJ7"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="SjM-Pv-eYg"/>
                                 <include reference="jTo-Ma-cpE"/>
                                 <include reference="ZGB-te-iZl"/>
                                 <include reference="eDF-zu-4ZK"/>
-                                <include reference="E3h-i5-seZ"/>
+                                <exclude reference="E3h-i5-seZ"/>
+                                <include reference="NDM-Bv-kx1"/>
+                                <include reference="hAr-O4-0Tc"/>
                                 <include reference="ikr-lv-yin"/>
                                 <include reference="nV1-JQ-87S"/>
                                 <include reference="LFr-2D-yIx"/>
@@ -753,6 +770,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="klT-Ad-eY3"/>
                     <connections>
+                        <outlet property="progressLabel" destination="SqJ-xg-iJ7" id="WJv-W5-URz"/>
                         <outlet property="progressView" destination="Wyk-VY-I4X" id="b1n-Zh-kFH"/>
                         <outlet property="resetButton" destination="uvl-w4-R6I" id="x2z-Fr-20T"/>
                         <outlet property="startButton" destination="g2Z-HY-fTE" id="Hxv-Hv-Tqh"/>
