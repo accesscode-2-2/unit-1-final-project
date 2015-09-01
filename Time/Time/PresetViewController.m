@@ -63,6 +63,7 @@
     return pickerLabel;
 }
 
+
 - (IBAction)stopButtonTapped:(UIButton *)sender {
     [self.timer invalidate];
 }
@@ -72,6 +73,26 @@
     [self updatePresetLabel];
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (IBAction)startButtonTapped:(UIButton *)sender {
    
         [self updatePresetLabel];
