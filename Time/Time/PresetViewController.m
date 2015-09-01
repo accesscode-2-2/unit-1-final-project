@@ -92,10 +92,10 @@
 {
     static int count =0; count++;
     
-    if (count <=100)
+    if (count <=self.seconds)
     {
-        self.progressLabel.text = [NSString stringWithFormat:@"%d %%",count*100];
-        self.progressView.progress = (float)count/100.0f;
+        self.progressLabel.text = [NSString stringWithFormat:@"%ld %%",count*self.seconds];
+        self.progressView.progress = (float)count/self.seconds;
     } else
     {
         [self.progressTimer invalidate];
