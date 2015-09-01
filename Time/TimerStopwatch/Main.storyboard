@@ -7,15 +7,6 @@
     <customFonts key="customFonts">
         <mutableArray key="Gravity-Book.ttf">
             <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
-            <string>Gravity-Book</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -386,12 +377,12 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 d 00 h 00 m 00 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-B1-khb">
-                                        <rect key="frame" x="16" y="43" width="570" height="24"/>
+                                        <rect key="frame" x="0.0" y="42" width="600" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6rK-U5-MbV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="25"/>
-                                        <color key="textColor" red="0.12549019607843137" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -400,13 +391,13 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-4I-7P7" userLabel="Start Birthday">
-                                        <rect key="frame" x="40" y="69" width="520" height="36"/>
+                                        <rect key="frame" x="40" y="81" width="520" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="MHU-ws-CIq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Start">
-                                            <color key="titleColor" red="0.78823529411764703" green="0.10980392156862745" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.792156862745098" green="0.20392156862745098" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.69019607843137254" green="0.792156862745098" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -414,29 +405,16 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christmas is in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWU-OE-vrb">
-                                        <rect key="frame" x="11" y="113" width="578" height="22"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="23"/>
-                                        <color key="textColor" red="0.12549019607843137" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="11" y="150" width="578" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.21176470588235294" green="0.29019607843137257" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.094117647058823528" green="0.12941176470588237" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ue-eI-OBu" userLabel="start button view 2">
-                                        <rect key="frame" x="136" y="165" width="104" height="39"/>
-                                        <color key="backgroundColor" red="0.8666666666666667" green="0.76094169156124991" blue="0.49171428810292184" alpha="0.37" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 d 00 h 00 m 00 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-7O-PhH">
-                                        <rect key="frame" x="17" y="190" width="567" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="l57-x7-pR4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="25"/>
-                                        <color key="textColor" red="0.12549019610000001" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrD-Gy-aHm" userLabel="Start Christmas">
-                                        <rect key="frame" x="0.0" y="169" width="600" height="35"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="24"/>
+                                        <rect key="frame" x="0.0" y="219" width="600" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Start">
-                                            <color key="titleColor" red="0.86274509803921573" green="0.20000000000000001" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.79607843137254897" green="0.20392156862745098" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -444,9 +422,9 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access Code 2.2 is over in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNl-mY-nbx">
-                                        <rect key="frame" x="0.0" y="268" width="600" height="22"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="23"/>
-                                        <color key="textColor" red="0.12549019610000001" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="312" width="600" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.094117647060000004" green="0.12941176469999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54X-6H-hJm" userLabel="start button view 3">
@@ -454,12 +432,12 @@
                                         <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="0.01" colorSpace="calibratedRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 d 00 h 00 m 00 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbv-iV-9MB">
-                                        <rect key="frame" x="0.0" y="298" width="600" height="24"/>
+                                        <rect key="frame" x="0.0" y="345" width="600" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="bpu-rh-DSe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="25"/>
-                                        <color key="textColor" red="0.12549019610000001" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" red="0.21176470588235294" green="0.29019607843137257" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -468,10 +446,10 @@
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqs-0i-GYo" userLabel="Start Access Code">
-                                        <rect key="frame" x="0.0" y="334" width="600" height="35"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="24"/>
+                                        <rect key="frame" x="1" y="382" width="600" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Start">
-                                            <color key="titleColor" red="0.86274509799999999" green="0.20000000000000001" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.79607843137254897" green="0.20392156862745098" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -479,12 +457,12 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles turns 21 in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDm-ug-IjK">
-                                        <rect key="frame" x="18" y="0.0" width="566" height="51"/>
+                                        <rect key="frame" x="18" y="0.0" width="566" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="koG-pO-642"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Gravity-Book" family="Gravity" pointSize="23"/>
-                                        <color key="textColor" red="0.12549019607843137" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.21176470588235294" green="0.29019607843137257" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -493,10 +471,10 @@
                                         </variation>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="801-NQ-tjD">
-                                        <rect key="frame" x="0.0" y="394.5" width="600" height="162"/>
+                                        <rect key="frame" x="1" y="426" width="600" height="162"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="600" id="5EJ-6T-NZM"/>
-                                            <constraint firstAttribute="height" constant="127" id="8LN-He-QqW"/>
+                                            <constraint firstAttribute="height" constant="162" id="8LN-He-QqW"/>
                                             <constraint firstAttribute="height" constant="190" id="Ye5-6E-OYd"/>
                                         </constraints>
                                         <date key="date" timeIntervalSinceReferenceDate="462418370.35022497">
@@ -508,20 +486,29 @@
                                             </mask>
                                         </variation>
                                     </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 d 00 h 00 m 00 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-7O-PhH">
+                                        <rect key="frame" x="0.0" y="188" width="600" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="l57-x7-pR4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.21176470588235294" green="0.29019607843137257" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.83137254901960789" green="0.83529411764705885" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="sWU-OE-vrb" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="8" id="09A-Kf-vgk"/>
-                                    <constraint firstAttribute="trailing" secondItem="801-NQ-tjD" secondAttribute="trailing" id="45c-Hr-eWb"/>
+                                    <constraint firstItem="sWU-OE-vrb" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="33" id="09A-Kf-vgk"/>
+                                    <constraint firstAttribute="trailing" secondItem="801-NQ-tjD" secondAttribute="trailing" constant="-1" id="45c-Hr-eWb"/>
                                     <constraint firstAttribute="trailing" secondItem="fNl-mY-nbx" secondAttribute="trailing" constant="11" id="4xC-LJ-i4f"/>
                                     <constraint firstAttribute="trailing" secondItem="DDm-ug-IjK" secondAttribute="trailing" constant="16" id="7C8-tv-LEL"/>
-                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="85" id="86c-jI-Qbu"/>
-                                    <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="DDm-ug-IjK" secondAttribute="bottom" constant="18" id="9AI-G7-vd8"/>
-                                    <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="C26-hZ-a1q"/>
+                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="71" id="86c-jI-Qbu"/>
+                                    <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="DDm-ug-IjK" secondAttribute="bottom" constant="29" id="9AI-G7-vd8"/>
+                                    <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="1" id="C26-hZ-a1q"/>
                                     <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="40" id="CAF-7r-dcj"/>
-                                    <constraint firstItem="UJ2-B1-khb" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="43" id="Cfn-cU-tYG"/>
+                                    <constraint firstItem="UJ2-B1-khb" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="42" id="Cfn-cU-tYG"/>
                                     <constraint firstAttribute="bottom" secondItem="801-NQ-tjD" secondAttribute="bottom" constant="139" id="Ept-xE-IWT"/>
-                                    <constraint firstItem="UJ2-B1-khb" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="16" id="Et7-L8-n1e"/>
+                                    <constraint firstItem="UJ2-B1-khb" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="Et7-L8-n1e"/>
                                     <constraint firstAttribute="bottom" secondItem="801-NQ-tjD" secondAttribute="bottom" constant="139" id="FJI-IY-juS"/>
                                     <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" id="IJ4-FE-bqO"/>
                                     <constraint firstItem="DDm-ug-IjK" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="18" id="IUk-mI-OK6"/>
@@ -529,32 +516,32 @@
                                     <constraint firstAttribute="trailing" secondItem="zbv-iV-9MB" secondAttribute="trailing" id="JFQ-n0-t1A"/>
                                     <constraint firstItem="fNl-mY-nbx" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="11" id="Kt7-S4-7nj"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="jqs-0i-GYo" secondAttribute="bottom" constant="8" id="Nvi-3W-QEf"/>
-                                    <constraint firstAttribute="trailing" secondItem="UJ2-B1-khb" secondAttribute="trailing" constant="14" id="O0t-h1-WAN"/>
+                                    <constraint firstAttribute="trailing" secondItem="UJ2-B1-khb" secondAttribute="trailing" id="O0t-h1-WAN"/>
                                     <constraint firstItem="jqs-0i-GYo" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="QGc-El-Cfi"/>
                                     <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="T6L-ZQ-M17"/>
-                                    <constraint firstItem="YrD-Gy-aHm" firstAttribute="top" secondItem="sWU-OE-vrb" secondAttribute="bottom" constant="34" id="Tdv-zD-kp3"/>
+                                    <constraint firstItem="YrD-Gy-aHm" firstAttribute="top" secondItem="sWU-OE-vrb" secondAttribute="bottom" constant="39" id="Tdv-zD-kp3"/>
                                     <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="XKG-Ql-5r9"/>
-                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="XYV-k3-mLV"/>
+                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="1" id="XYV-k3-mLV"/>
                                     <constraint firstAttribute="bottom" secondItem="801-NQ-tjD" secondAttribute="bottom" constant="122" id="ZBm-uw-wtp"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="293" id="a4Y-5Z-Owh"/>
-                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="top" secondItem="zbv-iV-9MB" secondAttribute="bottom" constant="12" id="aBU-pa-eip"/>
-                                    <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="zbv-iV-9MB" secondAttribute="bottom" constant="90" id="aXd-q6-XDA"/>
+                                    <constraint firstItem="jqs-0i-GYo" firstAttribute="top" secondItem="zbv-iV-9MB" secondAttribute="bottom" constant="-5" id="aBU-pa-eip"/>
+                                    <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="zbv-iV-9MB" secondAttribute="bottom" constant="39" id="aXd-q6-XDA"/>
                                     <constraint firstItem="jqs-0i-GYo" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="26" id="avZ-vd-hnN"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="centerX" secondItem="Hmi-4I-7P7" secondAttribute="centerX" id="c5g-Mm-aD0"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="dDr-jn-Jxq"/>
                                     <constraint firstItem="fNl-mY-nbx" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="fJE-7F-jvz"/>
                                     <constraint firstItem="YrD-Gy-aHm" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="heu-xH-xJd"/>
                                     <constraint firstItem="DDm-ug-IjK" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" id="kBH-yO-jlr"/>
-                                    <constraint firstAttribute="trailing" secondItem="oi6-7O-PhH" secondAttribute="trailing" constant="16" id="lcD-j2-SFj"/>
+                                    <constraint firstAttribute="trailing" secondItem="oi6-7O-PhH" secondAttribute="trailing" id="lcD-j2-SFj"/>
                                     <constraint firstAttribute="trailing" secondItem="fNl-mY-nbx" secondAttribute="trailing" id="n5c-xD-v0X"/>
                                     <constraint firstItem="zbv-iV-9MB" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="qC5-fx-HWB"/>
-                                    <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="69" id="qPs-AO-Say"/>
-                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="17" id="qau-iw-ID7"/>
-                                    <constraint firstItem="fNl-mY-nbx" firstAttribute="top" secondItem="YrD-Gy-aHm" secondAttribute="bottom" constant="64" id="r2R-jg-iWr"/>
-                                    <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" id="tQe-YZ-EIv"/>
+                                    <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="81" id="qPs-AO-Say"/>
+                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="qau-iw-ID7"/>
+                                    <constraint firstItem="fNl-mY-nbx" firstAttribute="top" secondItem="YrD-Gy-aHm" secondAttribute="bottom" constant="51" id="r2R-jg-iWr"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" constant="-1" id="tQe-YZ-EIv"/>
                                     <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="40" id="ucN-OL-zNc"/>
                                     <constraint firstAttribute="trailing" secondItem="sWU-OE-vrb" secondAttribute="trailing" constant="11" id="viH-9C-VcW"/>
-                                    <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="wEy-da-iLx"/>
+                                    <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="3" id="wEy-da-iLx"/>
                                     <constraint firstAttribute="trailing" secondItem="YrD-Gy-aHm" secondAttribute="trailing" id="yc6-w6-jvW"/>
                                 </constraints>
                                 <variation key="default">
@@ -591,7 +578,6 @@
                         <outlet property="birthdayCountdownLabel" destination="UJ2-B1-khb" id="OTW-El-eH1"/>
                         <outlet property="christmasCountdownLabel" destination="oi6-7O-PhH" id="dKf-8c-T7p"/>
                         <outlet property="datePicker" destination="801-NQ-tjD" id="fIE-VD-9zT"/>
-                        <outlet property="roundedStartButton2" destination="7ue-eI-OBu" id="s69-Xa-gJc"/>
                         <outlet property="roundedStartButton3" destination="54X-6H-hJm" id="igE-Oc-pi9"/>
                     </connections>
                 </viewController>
