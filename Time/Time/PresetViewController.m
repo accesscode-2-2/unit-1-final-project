@@ -23,7 +23,6 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *progressLabel;
 @property (nonatomic, strong) UIProgressView *progressView;
-//@property (strong, nonatomic) NSTimer *progressTimer; //
 @property (nonatomic, strong) NSTimer *progressTimer;
 
 
@@ -94,7 +93,7 @@
     
     if (count <=self.seconds)
     {
-        self.progressLabel.text = [NSString stringWithFormat:@"%ld %%",count*self.seconds];
+        self.progressLabel.text = [NSString stringWithFormat:@"%ld %%",count*100/self.seconds];
         self.progressView.progress = (float)count/self.seconds;
     } else
     {

@@ -669,20 +669,33 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="36" y="367" width="528" height="16"/>
+                                    <rect key="frame" x="36" y="367" width="478" height="16"/>
                                     <mask key="constraints">
                                         <exclude reference="fDm-mx-GIq"/>
                                         <include reference="syP-Cq-yE3"/>
                                     </mask>
                                 </variation>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqJ-xg-iJ7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqJ-xg-iJ7">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="5a0-Ed-9w5"/>
+                                    <constraint firstAttribute="height" constant="21" id="h1M-2m-VQg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="208" y="275" width="105" height="21"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5a0-Ed-9w5"/>
+                                        <exclude reference="h1M-2m-VQg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="5a0-Ed-9w5"/>
+                                        <include reference="h1M-2m-VQg"/>
+                                    </mask>
                                 </variation>
                             </label>
                         </subviews>
@@ -695,19 +708,23 @@
                             <constraint firstItem="Wyk-VY-I4X" firstAttribute="leading" secondItem="CX9-WJ-tug" secondAttribute="leadingMargin" constant="20" id="NDM-Bv-kx1"/>
                             <constraint firstAttribute="centerX" secondItem="IcP-e8-wP8" secondAttribute="centerX" id="Ogz-IA-As8"/>
                             <constraint firstItem="NAw-ZZ-cd3" firstAttribute="top" secondItem="R3m-fL-GgO" secondAttribute="bottom" constant="40" id="SjM-Pv-eYg"/>
+                            <constraint firstItem="SqJ-xg-iJ7" firstAttribute="leading" secondItem="Wyk-VY-I4X" secondAttribute="trailing" constant="8" id="Tu9-zj-n9M"/>
                             <constraint firstItem="icR-R9-wDf" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="80" id="UZr-gF-X6F"/>
                             <constraint firstItem="1Sw-Rg-CHo" firstAttribute="top" secondItem="NAw-ZZ-cd3" secondAttribute="bottom" constant="60" id="ZGB-te-iZl">
                                 <variation key="heightClass=regular" constant="40"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="1Sw-Rg-CHo" secondAttribute="centerX" id="eDF-zu-4ZK"/>
                             <constraint firstItem="uvl-w4-R6I" firstAttribute="leading" secondItem="icR-R9-wDf" secondAttribute="trailing" constant="45" id="eZa-dG-9C5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wyk-VY-I4X" secondAttribute="trailing" constant="20" id="hAr-O4-0Tc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wyk-VY-I4X" secondAttribute="trailing" constant="20" id="hAr-O4-0Tc">
+                                <variation key="heightClass=regular" constant="70"/>
+                            </constraint>
                             <constraint firstItem="Wyk-VY-I4X" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="20" id="ikr-lv-yin"/>
                             <constraint firstAttribute="centerX" secondItem="NAw-ZZ-cd3" secondAttribute="centerX" id="jTo-Ma-cpE"/>
                             <constraint firstItem="icR-R9-wDf" firstAttribute="leading" secondItem="g2Z-HY-fTE" secondAttribute="trailing" constant="70" id="lJJ-GZ-ORH">
                                 <variation key="heightClass=regular" constant="45"/>
                             </constraint>
                             <constraint firstItem="g2Z-HY-fTE" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="80" id="nV1-JQ-87S"/>
+                            <constraint firstItem="SqJ-xg-iJ7" firstAttribute="top" secondItem="NAw-ZZ-cd3" secondAttribute="bottom" constant="97" id="oDm-Vt-6zq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -723,12 +740,12 @@
                             <mask key="constraints">
                                 <exclude reference="SjM-Pv-eYg"/>
                                 <exclude reference="jTo-Ma-cpE"/>
-                                <exclude reference="ZGB-te-iZl"/>
-                                <exclude reference="eDF-zu-4ZK"/>
                                 <exclude reference="E3h-i5-seZ"/>
                                 <exclude reference="NDM-Bv-kx1"/>
                                 <exclude reference="hAr-O4-0Tc"/>
                                 <exclude reference="ikr-lv-yin"/>
+                                <exclude reference="ZGB-te-iZl"/>
+                                <exclude reference="eDF-zu-4ZK"/>
                                 <exclude reference="nV1-JQ-87S"/>
                                 <exclude reference="LFr-2D-yIx"/>
                                 <exclude reference="UZr-gF-X6F"/>
@@ -737,6 +754,8 @@
                                 <exclude reference="Ogz-IA-As8"/>
                                 <exclude reference="DmG-fJ-0sa"/>
                                 <exclude reference="eZa-dG-9C5"/>
+                                <exclude reference="Tu9-zj-n9M"/>
+                                <exclude reference="oDm-Vt-6zq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -753,12 +772,12 @@
                             <mask key="constraints">
                                 <include reference="SjM-Pv-eYg"/>
                                 <include reference="jTo-Ma-cpE"/>
-                                <include reference="ZGB-te-iZl"/>
-                                <include reference="eDF-zu-4ZK"/>
                                 <exclude reference="E3h-i5-seZ"/>
                                 <include reference="NDM-Bv-kx1"/>
                                 <include reference="hAr-O4-0Tc"/>
                                 <include reference="ikr-lv-yin"/>
+                                <include reference="ZGB-te-iZl"/>
+                                <include reference="eDF-zu-4ZK"/>
                                 <include reference="nV1-JQ-87S"/>
                                 <include reference="LFr-2D-yIx"/>
                                 <include reference="UZr-gF-X6F"/>
@@ -767,6 +786,8 @@
                                 <include reference="Ogz-IA-As8"/>
                                 <include reference="DmG-fJ-0sa"/>
                                 <include reference="eZa-dG-9C5"/>
+                                <include reference="Tu9-zj-n9M"/>
+                                <include reference="oDm-Vt-6zq"/>
                             </mask>
                         </variation>
                     </view>
