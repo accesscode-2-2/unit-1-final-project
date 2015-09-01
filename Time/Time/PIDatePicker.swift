@@ -104,14 +104,8 @@ public class PIDatePicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         
+        self.pickerView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
         self.addSubview(self.pickerView)
-        
-        let topConstraint = NSLayoutConstraint(item: self.pickerView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: self.pickerView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
-        let leftConstraint = NSLayoutConstraint(item: self.pickerView, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: self.pickerView, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
-        
-        self.addConstraints([topConstraint, bottomConstraint, leftConstraint, rightConstraint])
     }
     
     // MARK: -
@@ -537,7 +531,7 @@ public class PIDatePicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
             size = Double(dayComponentSizingString.sizeWithAttributes(stringSizingAttributes).width)
         } else if calendarComponent == .Year  {
             // Pad the year string to four digits.
-            let yearComponentSizingString = NSString(string: "00")
+            let yearComponentSizingString = NSString(string: "0000")
             size = Double(yearComponentSizingString.sizeWithAttributes(stringSizingAttributes).width)
         }
         
