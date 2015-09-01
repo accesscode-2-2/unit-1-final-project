@@ -268,7 +268,7 @@
         viewAsLabel = [[UILabel alloc] init];
         [viewAsLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:50]];
         [viewAsLabel setTextAlignment:NSTextAlignmentCenter];
-        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1]];
+        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:206.0/255 green:230.0/255 blue:213.0/255 alpha:1]];
         [viewAsLabel setTextColor:[UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0]];
     }
     

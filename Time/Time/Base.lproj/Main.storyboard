@@ -243,7 +243,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="pah-Du-ieJ" firstAttribute="top" secondItem="sz6-ZH-fma" secondAttribute="top" constant="32" id="08g-i3-E2W"/>
                                             <constraint firstAttribute="centerX" secondItem="pah-Du-ieJ" secondAttribute="centerX" id="U7k-3j-Qta"/>
@@ -270,7 +269,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="d5i-Ih-xLb" secondAttribute="centerX" id="6Mx-i9-2kU"/>
                                             <constraint firstAttribute="centerY" secondItem="d5i-Ih-xLb" secondAttribute="centerY" id="IGd-8N-ZxP"/>
@@ -302,7 +300,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="eN0-yO-Wol" secondAttribute="centerY" id="Asa-sE-RSh"/>
                                             <constraint firstItem="eN0-yO-Wol" firstAttribute="top" secondItem="QBd-e4-aO4" secondAttribute="top" constant="32" id="mJX-mL-1zs"/>
@@ -315,7 +312,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="QBd-e4-aO4" secondAttribute="bottom" id="020-Yt-m2w"/>
                                     <constraint firstAttribute="bottom" secondItem="sz6-ZH-fma" secondAttribute="bottom" id="5zA-z1-IRp"/>
@@ -339,7 +336,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                     </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="iio-Lt-iJ8" secondAttribute="bottom" constant="16" id="Ybv-lt-kJP"/>
                                     <constraint firstAttribute="centerX" secondItem="iio-Lt-iJ8" secondAttribute="centerX" id="fdH-vP-hEU"/>
@@ -605,18 +602,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A22-qy-8Dz">
-                                <rect key="frame" x="66" y="382" width="468" height="30"/>
+                                <rect key="frame" x="66" y="412" width="468" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="30n-Ao-t3c">
-                                <rect key="frame" x="32" y="140" width="536" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="462552482.44793898">
-                                    <!--2015-08-29 14:48:02 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60A-Hj-v3W">
-                                <rect key="frame" x="282" y="444" width="37" height="30"/>
+                                <rect key="frame" x="282" y="474" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -625,24 +616,30 @@
                                     <action selector="doneButtonTapped:" destination="2CR-iz-Wp5" eventType="touchUpInside" id="PGh-wf-XSJ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spz-qW-1NU" customClass="PIDatePicker" customModule="Time" customModuleProvider="target">
+                                <rect key="frame" x="32" y="120" width="536" height="212"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="t3t-cT-72H"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="30n-Ao-t3c" secondAttribute="trailing" constant="16" id="2AG-BV-akh"/>
-                            <constraint firstItem="30n-Ao-t3c" firstAttribute="leading" secondItem="lWE-rd-8Dl" secondAttribute="leadingMargin" constant="16" id="5I4-SM-DI1"/>
-                            <constraint firstAttribute="centerX" secondItem="30n-Ao-t3c" secondAttribute="centerX" id="5xo-8w-aci"/>
+                            <constraint firstItem="spz-qW-1NU" firstAttribute="top" secondItem="lWE-rd-8Dl" secondAttribute="top" constant="120" id="4qS-7l-Ttf"/>
                             <constraint firstAttribute="centerX" secondItem="A22-qy-8Dz" secondAttribute="centerX" id="6BQ-ET-CAV"/>
+                            <constraint firstAttribute="trailing" secondItem="spz-qW-1NU" secondAttribute="trailing" constant="32" id="GmA-z4-gWz"/>
                             <constraint firstAttribute="centerX" secondItem="60A-Hj-v3W" secondAttribute="centerX" id="J1E-25-wj2"/>
-                            <constraint firstItem="30n-Ao-t3c" firstAttribute="top" secondItem="Xng-4b-Eea" secondAttribute="bottom" constant="120" id="QJc-A7-Z0g"/>
+                            <constraint firstItem="A22-qy-8Dz" firstAttribute="top" secondItem="spz-qW-1NU" secondAttribute="bottom" constant="80" id="eOH-02-FKQ"/>
                             <constraint firstItem="60A-Hj-v3W" firstAttribute="top" secondItem="A22-qy-8Dz" secondAttribute="bottom" constant="32" id="fOh-J1-UDF"/>
-                            <constraint firstItem="A22-qy-8Dz" firstAttribute="top" secondItem="30n-Ao-t3c" secondAttribute="bottom" constant="80" id="mqQ-oj-Tun"/>
+                            <constraint firstItem="spz-qW-1NU" firstAttribute="leading" secondItem="lWE-rd-8Dl" secondAttribute="leading" constant="32" id="nbd-5M-yjW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A22-qy-8Dz" secondAttribute="trailing" constant="50" id="r7d-Ym-8NK"/>
                             <constraint firstItem="A22-qy-8Dz" firstAttribute="leading" secondItem="lWE-rd-8Dl" secondAttribute="leadingMargin" constant="50" id="s9p-ea-ovq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="60A-Hj-v3W" id="RFb-P0-6HS"/>
-                        <outlet property="eventDatePicker" destination="30n-Ao-t3c" id="z8A-Jb-ddm"/>
+                        <outlet property="eventPicker" destination="spz-qW-1NU" id="dy3-YQ-9hO"/>
                         <outlet property="eventTextField" destination="A22-qy-8Dz" id="8Dd-Oj-pHW"/>
                     </connections>
                 </viewController>
