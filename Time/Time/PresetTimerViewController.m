@@ -12,6 +12,7 @@
 
 @interface PresetTimerViewController ()<UITableViewDataSource, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation PresetTimerViewController
@@ -86,8 +87,10 @@
     return [self.model.timers count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"presetTimerIdentifier" forIndexPath:indexPath];
+    
     
     Timer *timer = [self.model.timers objectAtIndex:indexPath.row];
     
@@ -97,11 +100,11 @@
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%i Mins", minutes];
     cell.imageView.image = [UIImage imageNamed:timer.timerName];
-    
     [cell layoutIfNeeded];
     return cell;
     
 }
+
 
 
 #pragma mark - Navigation

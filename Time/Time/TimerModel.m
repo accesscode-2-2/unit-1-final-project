@@ -32,30 +32,31 @@
     pizza.countDownDuration = 60;
     [self.timers addObject:pizza];
     
-    Timer *cake = [[Timer alloc] init];
-    cake.timerName = @"Cake";
-    cake.countDownDuration = 120;
-    [self.timers addObject:cake];
+    Timer *fish = [[Timer alloc] init];
+    fish.timerName = @"Fish";
+    fish.countDownDuration = 120;
+    [self.timers addObject:fish];
     
     Timer *cupcake = [[Timer alloc] init];
     cupcake.timerName = @"Cupcake";
     cupcake.countDownDuration = 120;
     [self.timers addObject:cupcake];
     
-    Timer *cookie = [[Timer alloc] init];
-    cookie.timerName = @"Cookie";
-    cookie.countDownDuration = 130;
-    [self.timers addObject:cookie];
-    
     Timer *eggs = [[Timer alloc] init];
     eggs.timerName = @"Eggs";
     eggs.countDownDuration = 180;
     [self.timers addObject:eggs];
     
-    Timer *fish = [[Timer alloc] init];
-    fish.timerName = @"Fish";
-    fish.countDownDuration = 300;
-    [self.timers addObject:fish];
+    Timer *cookie = [[Timer alloc] init];
+    cookie.timerName = @"Cookie";
+    cookie.countDownDuration = 240;
+    [self.timers addObject:cookie];
+    
+    Timer *cake = [[Timer alloc] init];
+    cake.timerName = @"Cake";
+    cake.countDownDuration = 300;
+    [self.timers addObject:cake];
+    
     
     
 }
