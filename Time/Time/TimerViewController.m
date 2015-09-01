@@ -30,8 +30,6 @@
 
 @property (nonatomic) BOOL isStarted;
 @property (nonatomic) BOOL isInitial;
-@property (nonatomic) BOOL isPaused;
-@property (nonatomic) BOOL isPreset;
 
 
 @end
@@ -45,12 +43,12 @@
     
     self.timerPickerView.delegate = self;
     self.timerPickerView.dataSource = self;
-    self.timerName.text = @"Timer";
+    self.timerName.text = @" ";
     
     self.isStarted = NO;
     self.isInitial = YES;
-    self.isPaused = NO;
-    self.isPreset = NO;
+    //self.isPaused = NO;
+    //self.isPreset = NO;
     
 }
 
@@ -71,26 +69,6 @@
             [self.timerPickerView setUserInteractionEnabled:YES];
         }
     }
-    //            NSInteger hourIndex = [self.timerPickerView selectedRowInComponent:0];
-    //            NSInteger minuteIndex = [self.timerPickerView selectedRowInComponent:1];
-    //            NSInteger secondIndex = [self.timerPickerView selectedRowInComponent:2];
-    //
-    //            //set timer pickerview components only if all components are zero
-    //            if(hourIndex == 0 && minuteIndex == 0 && secondIndex == 0){
-    //                [self.timerPickerView selectRow:[self.presetTime[0] intValue] inComponent:0 animated:YES];
-    //                [self.timerPickerView selectRow:[self.presetTime[1] intValue] inComponent:1 animated:YES];
-    //                [self.timerPickerView selectRow:[self.presetTime[2] intValue] inComponent:2 animated:YES];
-    //            }
-    //        }
-    //        if(self.timer == nil && !self.isInitial){
-    //            NSLog(@"%d",[self.timer isValid]);
-    //            NSLog(@"%d",self.isInitial);
-    //            NSLog(@"Timer is not valid, so this is a new one!");
-    //            self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
-    //            [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
-    //            self.isStarted = YES;
-    //
-    //        }
 }
 
 - (void)setupHours {
@@ -167,7 +145,7 @@
     }else{
         NSLog(@"Paused timer");
         [self freeze];
-        self.isPaused = YES;
+        //self.isPaused = YES;
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
     
@@ -239,7 +217,7 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
-    self.timerName.text = @"Timer";
+    self.timerName.text = @" ";
     self.isStarted = NO;
     if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -258,7 +236,7 @@
     self.isInitial = NO;
     [self.timer invalidate];
     self.timer = nil;
-    self.isPreset = YES;
+    //self.isPreset = YES;
     self.isStarted = NO;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *presetsNC = [storyboard  instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
@@ -296,7 +274,7 @@
         viewAsLabel = [[UILabel alloc] init];
         [viewAsLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:50]];
         [viewAsLabel setTextAlignment:NSTextAlignmentCenter];
-        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1]];
+        [viewAsLabel setBackgroundColor:[UIColor colorWithRed:206.0/255 green:230.0/255 blue:213.0/255 alpha:1]];
         [viewAsLabel setTextColor:[UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0]];
     }
     

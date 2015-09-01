@@ -7,12 +7,12 @@
 //
 
 #import "NewEventViewController.h"
+#import "Time-Swift.h"
 
 @interface NewEventViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *eventTextField;
-@property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
-
+@property (weak, nonatomic) IBOutlet PIDatePicker *eventPicker;
 
 @end
 
@@ -27,7 +27,7 @@
 }
 
 - (void)setupDatePicker {
-    [self.eventDatePicker setDatePickerMode:UIDatePickerModeDate];
+    //[self.eventDatePicker setDatePickerMode:UIDatePickerModeDate];
     NSCalendar *sysCalendar = [NSCalendar currentCalendar];
     NSDate *currentDate = [NSDate date];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
@@ -36,8 +36,15 @@
     [comps setYear:+ 85];
     NSDate *maxDate = [sysCalendar dateByAddingComponents:comps toDate:currentDate options:0];
     
-    self.eventDatePicker.minimumDate = minDate;
-    self.eventDatePicker.maximumDate = maxDate;
+    self.eventPicker.minimumDate = minDate;
+    self.eventPicker.maximumDate = maxDate;
+    self.eventPicker.font = [UIFont fontWithName:@"DigitalReadoutExpUpright" size:24];
+    self.eventPicker.textColor = [UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0];
+    self.eventPicker.cellColor = [UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1];
+    self.eventPicker.cellHeight = 50.0;
+    [self.eventPicker reloadAllComponents];
+    NSLog(@"DEFAULT ROW HEIGHT: %@", NSStringFromCGSize([self.eventPicker.pickerView rowSizeForComponent:0]));
+   
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -57,7 +64,7 @@
 
 
 - (IBAction)doneButtonTapped:(id)sender {
-    [self.delegate presetCreated:self.eventDatePicker.date withName:self.eventTextField.text];
+    [self.delegate presetCreated:self.eventPicker.date withName:self.eventTextField.text];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

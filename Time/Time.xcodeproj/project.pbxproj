@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1CB4F71B956659001E2475 /* PIDatePickerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CB4F61B956659001E2475 /* PIDatePickerComponents.swift */; };
+		3B1CB4F91B956664001E2475 /* PIDatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CB4F81B956664001E2475 /* PIDatePickerDelegate.swift */; };
+		3B1CB5051B95DC4C001E2475 /* PIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CB5041B95DC4C001E2475 /* PIDatePicker.swift */; };
 		3B6AD0911B8916510091587F /* Orbitron-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AD08D1B8916510091587F /* Orbitron-Black.ttf */; };
 		3B6AD0921B8916510091587F /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AD08E1B8916510091587F /* Orbitron-Bold.ttf */; };
 		3B6AD0931B8916510091587F /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AD08F1B8916510091587F /* Orbitron-Medium.ttf */; };
@@ -47,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B1CB4F31B95664F001E2475 /* Time-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Time-Bridging-Header.h"; sourceTree = "<group>"; };
+		3B1CB4F61B956659001E2475 /* PIDatePickerComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIDatePickerComponents.swift; sourceTree = "<group>"; };
+		3B1CB4F81B956664001E2475 /* PIDatePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIDatePickerDelegate.swift; sourceTree = "<group>"; };
+		3B1CB5041B95DC4C001E2475 /* PIDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIDatePicker.swift; sourceTree = "<group>"; };
 		3B6AD08D1B8916510091587F /* Orbitron-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Black.ttf"; sourceTree = "<group>"; };
 		3B6AD08E1B8916510091587F /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
 		3B6AD08F1B8916510091587F /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
@@ -82,8 +89,6 @@
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
 		DC256CD41B8EB50E00EC60C6 /* StopWatchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewControllerDelegate.h; sourceTree = "<group>"; };
-		DC256CD81B92560000EC60C6 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timer.png; path = ../../../../../../../Downloads/timer.png; sourceTree = "<group>"; };
-		DC256CDC1B92561300EC60C6 /* event_countdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event_countdown.png; path = ../../../../../../../Downloads/event_countdown.png; sourceTree = "<group>"; };
 		DC7C33FD1B88C2B40051C061 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchViewController.h; sourceTree = "<group>"; };
 		DC7C33FE1B88C2B40051C061 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchViewController.m; sourceTree = "<group>"; };
 		DC7C34091B8905950051C061 /* Digir___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Digir___.ttf"; path = "../../../../../../../Downloads/digreadout/Digir___.ttf"; sourceTree = "<group>"; };
@@ -178,9 +183,11 @@
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				3B6AD09E1B8A22CB0091587F /* OrderedDictionary.h */,
 				3B6AD09F1B8A22CB0091587F /* OrderedDictionary.m */,
+				3B1CB5041B95DC4C001E2475 /* PIDatePicker.swift */,
+				3B1CB4F81B956664001E2475 /* PIDatePickerDelegate.swift */,
+				3B1CB4F61B956659001E2475 /* PIDatePickerComponents.swift */,
 				3B6AD2101B938E4F0091587F /* DataSingleton.h */,
 				3B6AD2111B938E4F0091587F /* DataSingleton.m */,
-				DC256CD71B9255C900EC60C6 /* Images */,
 				3B6AD1BF1B8D52BC0091587F /* DateCountdown */,
 				3B6AD1BC1B8D47A80091587F /* StopWatch */,
 				3B6AD1BE1B8D47ED0091587F /* Timer */,
@@ -189,6 +196,7 @@
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				8D05375B1B86687B00588318 /* Supporting Files */,
+				3B1CB4F31B95664F001E2475 /* Time-Bridging-Header.h */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -217,15 +225,6 @@
 				8D0537761B86687C00588318 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DC256CD71B9255C900EC60C6 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				DC256CDC1B92561300EC60C6 /* event_countdown.png */,
-				DC256CD81B92560000EC60C6 /* timer.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		DC7C34001B8904400051C061 /* Fonts */ = {
@@ -360,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1CB5051B95DC4C001E2475 /* PIDatePicker.swift in Sources */,
 				3B6AD0971B891F7A0091587F /* TimerViewController.m in Sources */,
 				3B6AD2121B938E4F0091587F /* DataSingleton.m in Sources */,
 				3B6AD1C21B8FD48A0091587F /* DateCountdownTableViewController.m in Sources */,
@@ -368,7 +368,9 @@
 				3B6AD0A01B8A22CB0091587F /* OrderedDictionary.m in Sources */,
 				DC7C33FF1B88C2B40051C061 /* StopwatchViewController.m in Sources */,
 				3B6AD1C51B91FB7D0091587F /* NewEventViewController.m in Sources */,
+				3B1CB4F71B956659001E2475 /* PIDatePickerComponents.swift in Sources */,
 				3B6AD0A71B8A5A970091587F /* NewPresetViewController.m in Sources */,
+				3B1CB4F91B956664001E2475 /* PIDatePickerDelegate.swift in Sources */,
 				3B6AD09A1B8A1CC40091587F /* PresetsTableViewController.m in Sources */,
 				3B6AD18B1B8D2F9F0091587F /* LapTableViewController.m in Sources */,
 			);
@@ -498,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Time/Info.plist;
@@ -505,6 +508,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Time/Time-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -512,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Time/Info.plist;
@@ -519,6 +525,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Time/Time-Bridging-Header.h";
 			};
 			name = Release;
 		};
