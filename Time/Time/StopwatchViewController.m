@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+- (IBAction)soundButton:(id)sender;
+
 @property (nonatomic) NSTimer *stopTimer;
 @property (nonatomic) NSTimer *lapTimer;
 @property (nonatomic) NSDate *startDate;
@@ -278,4 +280,9 @@
 
 
 
+- (IBAction)soundButton:(id)sender {
+    if ([self.myMusic play]) {
+         self.myMusic.volume = 0;
+    }
+}
 @end

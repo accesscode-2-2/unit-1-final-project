@@ -44,8 +44,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
+
 -(void)updateTime {
     self.afterRemainder --;
     

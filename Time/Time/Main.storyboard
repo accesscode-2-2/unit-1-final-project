@@ -341,7 +341,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jVO-TM-0rl" kind="show" id="Ajs-l8-ics"/>
+                                    <segue destination="jVO-TM-0rl" kind="show" id="ECw-mO-UcG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -380,7 +380,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHd-VY-khk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="1571"/>
+            <point key="canvasLocation" x="1905" y="1655"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="jck-tK-RkW">
@@ -665,6 +665,16 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-R7-iEr">
+                                        <rect key="frame" x="10" y="10" width="36" height="36"/>
+                                        <state key="normal" image="Speaker">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="soundButton:" destination="YIE-n8-cpU" eventType="touchUpInside" id="W0c-bO-WdP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2go-1O-yYQ" secondAttribute="bottom" id="6FX-HL-VnB"/>
@@ -672,9 +682,11 @@
                                     <constraint firstItem="60G-nq-zQF" firstAttribute="top" secondItem="pHy-8n-1rd" secondAttribute="top" constant="5" id="CM9-OU-VGg"/>
                                     <constraint firstItem="2go-1O-yYQ" firstAttribute="top" secondItem="pHy-8n-1rd" secondAttribute="top" constant="80" id="CdJ-KU-IAz"/>
                                     <constraint firstAttribute="trailing" secondItem="60G-nq-zQF" secondAttribute="trailing" constant="5" id="KZt-ev-pgo"/>
+                                    <constraint firstItem="OcR-R7-iEr" firstAttribute="leading" secondItem="pHy-8n-1rd" secondAttribute="leading" constant="10" id="bCO-16-vKY"/>
                                     <constraint firstAttribute="trailing" secondItem="2go-1O-yYQ" secondAttribute="trailing" constant="100" id="d4M-Y1-xVe"/>
                                     <constraint firstAttribute="height" constant="140" id="e1n-17-8PU"/>
                                     <constraint firstAttribute="centerX" secondItem="2go-1O-yYQ" secondAttribute="centerX" id="xlS-su-aDJ"/>
+                                    <constraint firstItem="OcR-R7-iEr" firstAttribute="top" secondItem="pHy-8n-1rd" secondAttribute="top" constant="10" id="yr2-cy-HcZ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -795,6 +807,7 @@
     </scenes>
     <resources>
         <image name="Countdown" width="29" height="29"/>
+        <image name="Speaker" width="36" height="36"/>
         <image name="StopWatch" width="29" height="29"/>
         <image name="Timer" width="29" height="29"/>
         <image name="Timer-25" width="25" height="25"/>
