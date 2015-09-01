@@ -559,20 +559,13 @@
                                 <rect key="frame" x="0.0" y="416" width="600" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO1-eg-ha4">
-                                        <rect key="frame" x="154" y="17" width="121" height="21"/>
+                                        <rect key="frame" x="50" y="17" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbE-td-J84">
-                                        <rect key="frame" x="295" y="0.0" width="10" height="55"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="10" id="snv-n4-Vzv"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLO-tX-HpD">
-                                        <rect key="frame" x="325" y="17" width="107" height="21"/>
+                                        <rect key="frame" x="443" y="17" width="107" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -582,17 +575,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="1xu-vb-qrJ"/>
                                     <constraint firstItem="PLO-tX-HpD" firstAttribute="centerY" secondItem="csD-ER-cG0" secondAttribute="centerY" id="2hS-LK-vAo"/>
-                                    <constraint firstItem="gbE-td-J84" firstAttribute="centerY" secondItem="csD-ER-cG0" secondAttribute="centerY" id="3Zh-LP-xTQ"/>
-                                    <constraint firstItem="gbE-td-J84" firstAttribute="centerX" secondItem="csD-ER-cG0" secondAttribute="centerX" id="BuH-Ab-H8Y"/>
-                                    <constraint firstItem="gbE-td-J84" firstAttribute="leading" secondItem="vO1-eg-ha4" secondAttribute="trailing" constant="20" id="WIQ-Ua-uEJ"/>
+                                    <constraint firstItem="PLO-tX-HpD" firstAttribute="top" secondItem="csD-ER-cG0" secondAttribute="top" constant="17" id="Bll-g4-ctj"/>
+                                    <constraint firstAttribute="bottom" secondItem="vO1-eg-ha4" secondAttribute="bottom" constant="17" id="Cn1-j5-vwY"/>
+                                    <constraint firstItem="vO1-eg-ha4" firstAttribute="leading" secondItem="csD-ER-cG0" secondAttribute="leading" constant="50" id="Deu-xb-ghT"/>
+                                    <constraint firstAttribute="trailing" secondItem="PLO-tX-HpD" secondAttribute="trailing" constant="50" id="G71-aa-xL1"/>
                                     <constraint firstItem="PLO-tX-HpD" firstAttribute="leading" secondItem="vO1-eg-ha4" secondAttribute="trailing" constant="20" id="Yyq-Cl-hqm"/>
-                                    <constraint firstAttribute="bottom" secondItem="gbE-td-J84" secondAttribute="bottom" id="ZNI-Zp-gUq"/>
-                                    <constraint firstItem="PLO-tX-HpD" firstAttribute="leading" secondItem="gbE-td-J84" secondAttribute="trailing" constant="20" id="ZTg-ie-jgP"/>
-                                    <constraint firstItem="gbE-td-J84" firstAttribute="top" secondItem="csD-ER-cG0" secondAttribute="top" id="bZJ-eC-qCW"/>
                                     <constraint firstItem="vO1-eg-ha4" firstAttribute="centerY" secondItem="csD-ER-cG0" secondAttribute="centerY" id="joj-bJ-MjR"/>
-                                    <constraint firstItem="PLO-tX-HpD" firstAttribute="centerY" secondItem="gbE-td-J84" secondAttribute="centerY" id="otI-OE-AkH"/>
-                                    <constraint firstItem="vO1-eg-ha4" firstAttribute="centerY" secondItem="gbE-td-J84" secondAttribute="centerY" id="sDO-yR-2gP"/>
                                     <constraint firstItem="vO1-eg-ha4" firstAttribute="centerX" secondItem="csD-ER-cG0" secondAttribute="centerX" id="w4s-6f-C4g"/>
+                                    <constraint firstItem="vO1-eg-ha4" firstAttribute="top" secondItem="csD-ER-cG0" secondAttribute="top" constant="17" id="zIG-R1-mfp"/>
+                                    <constraint firstAttribute="bottom" secondItem="PLO-tX-HpD" secondAttribute="bottom" constant="17" id="zba-Rs-Vsk"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
