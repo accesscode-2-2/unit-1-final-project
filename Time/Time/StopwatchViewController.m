@@ -78,7 +78,7 @@
     self.scrollView.contentSize = backgroundImage.size;
     [self.scrollView addSubview:backgroundImageView];
 
-    backgroundImageView.center = self.view.center;
+
     
     
     
