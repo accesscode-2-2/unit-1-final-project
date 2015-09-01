@@ -74,6 +74,8 @@
     [self initializeMainTimer];
     
     [self setUpOfCustomResults];
+    
+    [self voiceSpeak: @"Begin Exercise"];
 }
 
 - (void)updateExerciseTimer{
@@ -85,6 +87,24 @@
     NSInteger seconds = (nextNumber % 60);
     NSInteger minutes = (nextNumber / 60) % 60;
     self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", (long)minutes, (long)seconds];
+    if (self.totalTime == 7){
+        [self voiceSpeak: @"Exercise Ends in 5 Seconds"];
+    }
+    if (self.totalTime == 5){
+        [self voiceSpeak: @"5"];
+    }
+    if (self.totalTime == 4){
+        [self voiceSpeak: @"4"];
+    }
+    if (self.totalTime == 3){
+        [self voiceSpeak: @"3"];
+    }
+    if (self.totalTime == 2){
+        [self voiceSpeak: @"2"];
+    }
+    if (self.totalTime == 1){
+        [self voiceSpeak: @"1"];
+    }
     if (self.totalTime == 0 && self.currentExerciseIndex < numberOfExercises - 1){
         GOCustomResultsViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomWorkoutView"];
         nextViewController.resultsWorkout = self.resultsWorkout;
@@ -125,9 +145,9 @@
     [self.timer invalidate];
 }
 
-- (void)voiceSpeak {
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"hi"];
-    utterance.rate = AVSpeechUtteranceMinimumSpeechRate*( 10.0);
+- (void)voiceSpeak: (NSString *)textToSpeech {
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:textToSpeech];
+    utterance.rate = 0.09;
     utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-au"];
     [self.synthesizer speakUtterance:utterance];
 }
