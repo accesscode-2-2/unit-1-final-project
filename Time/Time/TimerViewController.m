@@ -47,8 +47,8 @@
     
     self.isStarted = NO;
     self.isInitial = YES;
-    self.isPaused = NO;
-    self.isPreset = NO;
+    //self.isPaused = NO;
+    //self.isPreset = NO;
     
 }
 
@@ -69,26 +69,6 @@
             [self.timerPickerView setUserInteractionEnabled:YES];
         }
     }
-    //            NSInteger hourIndex = [self.timerPickerView selectedRowInComponent:0];
-    //            NSInteger minuteIndex = [self.timerPickerView selectedRowInComponent:1];
-    //            NSInteger secondIndex = [self.timerPickerView selectedRowInComponent:2];
-    //
-    //            //set timer pickerview components only if all components are zero
-    //            if(hourIndex == 0 && minuteIndex == 0 && secondIndex == 0){
-    //                [self.timerPickerView selectRow:[self.presetTime[0] intValue] inComponent:0 animated:YES];
-    //                [self.timerPickerView selectRow:[self.presetTime[1] intValue] inComponent:1 animated:YES];
-    //                [self.timerPickerView selectRow:[self.presetTime[2] intValue] inComponent:2 animated:YES];
-    //            }
-    //        }
-    //        if(self.timer == nil && !self.isInitial){
-    //            NSLog(@"%d",[self.timer isValid]);
-    //            NSLog(@"%d",self.isInitial);
-    //            NSLog(@"Timer is not valid, so this is a new one!");
-    //            self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(animate) userInfo:nil repeats:YES];
-    //            [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
-    //            self.isStarted = YES;
-    //
-    //        }
 }
 
 - (void)setupHours {
@@ -165,7 +145,7 @@
     }else{
         NSLog(@"Paused timer");
         [self freeze];
-        self.isPaused = YES;
+        //self.isPaused = YES;
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     }
     
@@ -237,7 +217,7 @@
 
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
-    self.timerName.text = @"Timer";
+    self.timerName.text = @" ";
     self.isStarted = NO;
     if(![self.startButton.titleLabel.text isEqualToString:@"Start"]){
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
@@ -256,7 +236,7 @@
     self.isInitial = NO;
     [self.timer invalidate];
     self.timer = nil;
-    self.isPreset = YES;
+    //self.isPreset = YES;
     self.isStarted = NO;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *presetsNC = [storyboard  instantiateViewControllerWithIdentifier:@"presetsNavigationController"];
