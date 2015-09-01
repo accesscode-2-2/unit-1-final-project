@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Exercises.h"
 #import "Workout.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GOTimerViewController : UIViewController
 
@@ -28,6 +29,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *exerciseTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
 
-
+@property (strong, nonatomic) AVSpeechSynthesizer *synthesizer;
 
 @end

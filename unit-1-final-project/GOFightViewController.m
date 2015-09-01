@@ -247,7 +247,7 @@
     
 }
 - (void) playBellAtRoundStart {
-//    [self.bellPlayer play];
+    [self.bellPlayer play];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [self.mainTimer invalidate];

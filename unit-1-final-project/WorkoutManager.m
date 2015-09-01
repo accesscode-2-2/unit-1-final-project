@@ -54,24 +54,24 @@
 
     
     Exercises *warmup = [[Exercises alloc] init];
-    warmup.nameOfExercise = @"Exercise Will Begin In:";
-    warmup.exerciseTime = 5.0;
+    warmup.nameOfExercise = @"Warm-Up";
+    warmup.exerciseTime = 10.0;
     warmup.exerciseImageString = @"warmup";
     
     
     Exercises *gohard1 = [[Exercises alloc] init];
     gohard1.nameOfExercise = @"Push-ups";
-    gohard1.exerciseTime = 5.0;
+    gohard1.exerciseTime = 15.0;
     gohard1.exerciseImageString = @"pushup";
     
     Exercises *gohard2 = [[Exercises alloc] init];
     gohard2.nameOfExercise = @"Pull-ups";
-    gohard2.exerciseTime = 7.0;
+    gohard2.exerciseTime = 15.0;
     gohard2.exerciseImageString = @"pullup";
     
     Exercises *gohard3 = [[Exercises alloc] init];
     gohard3.nameOfExercise = @"Sit-ups";
-    gohard3.exerciseTime = 10.0;
+    gohard3.exerciseTime = 15.0;
     gohard3.exerciseImageString = @"situp";
     
     Exercises *gohard4 = [[Exercises alloc] init];
@@ -100,7 +100,7 @@
     
     Exercises *golean1 = [[Exercises alloc]init];
     golean1.nameOfExercise = @"Jog";
-    golean1.exerciseTime = 10.0;
+    golean1.exerciseTime = 15.0;
     golean1.exerciseImageString = @"jog";
     
     Exercises *golean2 = [[Exercises alloc]init];

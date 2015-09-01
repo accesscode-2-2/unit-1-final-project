@@ -8,6 +8,7 @@
 
 #import "GOTimerViewController.h"
 #import "Exercises.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GOTimerViewController ()
 
@@ -35,37 +36,37 @@
 
 @implementation GOTimerViewController
 
+- (void)voiceSpeak: (NSString *)textToSpeech {
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:textToSpeech];
+    utterance.rate = 0.09;
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-au"];
+    [self.synthesizer speakUtterance:utterance];
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.synthesizer = [[AVSpeechSynthesizer alloc]init];
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     
     self.continueButton.hidden = YES;
-    
-//timer starts when viewLoads
+
     [self initializeTimer];
     
-    
     NSLog(@"previous total time: %f", self.previousMainTotalTime);
-    
-    
-    
-//setting fonts
     
     self.totalTimeExerciseLabel.font = [UIFont fontWithName:@"Kenzo" size:20.0];
     self.exerciseNameLabel.font = [UIFont fontWithName:@"Kenzo" size:20.0];
     self.exerciseTimeLabel.font = [UIFont fontWithName:@"Kenzon" size:20.0];
 
-    
     self.thisExercise = [self.currentWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];
     self.currentExerciseName = self.thisExercise.nameOfExercise;
     self.currentExerciseTime = self.thisExercise.exerciseTime;
    
-  // Updates based on exercise
-   // self.exerciseTimeLabel.text = [NSString stringWithFormat:@"%f",self.currentExerciseTime];
+    [self voiceSpeak:self.currentExerciseName];
     
     self.timerDate = [NSDate dateWithTimeIntervalSince1970:self.currentExerciseTime];
     
@@ -153,12 +154,7 @@
     
 }
 - (void) updateExerciseTimer {
-    
-//    NSDate *currentTimer = [[NSDate alloc] init];
-//    
-//    NSTimeInterval elapsedTime = [currentTimer timeIntervalSinceDate:self.timerMainPreviousTime];
-//    self.timerMainPreviousTime = currentTimer;
-    
+
     double one = 1.0;
     
     self.currentExerciseTime -= one;
@@ -172,6 +168,26 @@
     self.exerciseTimeLabel.text = timerString;
 
     NSInteger count = [self.currentWorkout.exercises count];
+    
+    if (self.currentExerciseTime == 7 && count > 0){
+        [self voiceSpeak: @"Exercise Ends in 5 Seconds"];
+    }
+    if (self.currentExerciseTime == 5){
+        [self voiceSpeak: @"5"];
+    }
+    if (self.currentExerciseTime == 4){
+        [self voiceSpeak: @"4"];
+    }
+    if (self.currentExerciseTime == 3){
+        [self voiceSpeak: @"3"];
+    }
+    if (self.currentExerciseTime == 2){
+        [self voiceSpeak: @"2"];
+    }
+    if (self.currentExerciseTime == 1){
+        [self voiceSpeak: @"1"];
+    }
+
     
     if (self.currentExerciseTime == 0 && self.currentExerciseIndex < count - 1) {
         NSLog(@"Next exercise");
