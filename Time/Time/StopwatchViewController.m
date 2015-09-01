@@ -207,52 +207,27 @@
 
 
 - (IBAction)resetButton:(id)sender {
-    
     // set totalElapsedTime = 0
     // invalidate all timers
     // reload lap table view with empty array
-    
-
-    [self.lapTableView reloadData];
-
-    if (self.running ) {
-        [self.dataArray addObject:self.lapLabel.text];
-        [self.lapTableView reloadData];
-        [self.lapTimer invalidate];
-        self.lapTimer = nil;
-        self.restartDate = [NSDate date];
-        [self lapTimer];
-        self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-                                                         target:self
-                                                       selector:@selector(rememberTimer)
-                                                       userInfo:nil
-                                                        repeats:YES];
-        
-        
-    }else{
-        
-
     if (self.running) {
-        
-        [self.dataArray addObject:[NSString stringWithFormat:@"%.02f", self.totalLapTime]];
-        self.totalLapTime = 0;
-        self.previousLapTime = [NSDate date];
-        
-   
- 
-    }else{
-        self.totalElapsedTime = 0;
-        self.totalLapTime = 0;
+            [self.dataArray addObject:[NSString stringWithFormat:@"%.02f", self.totalLapTime]];
+            self.totalLapTime = 0;
+            self.previousLapTime = [NSDate date];
+            
+        } else {
+            self.totalElapsedTime = 0;
+            self.totalLapTime = 0;
 
-        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
-        [self.stopTimer invalidate];
-        [self.lapTimer invalidate];
-        self.stopwatchLabel.text = @"00.00.00";
-        self.lapLabel.text = @"00.00.00";
-        [self.dataArray removeAllObjects];
-        [self.lapTableView reloadData];
-        
-    }
+            [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+            [self.stopTimer invalidate];
+            [self.lapTimer invalidate];
+            self.stopwatchLabel.text = @"00.00.00";
+            self.lapLabel.text = @"00.00.00";
+            [self.dataArray removeAllObjects];
+            [self.lapTableView reloadData];
+            
+        }
 }
 
 
