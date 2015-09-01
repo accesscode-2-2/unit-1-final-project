@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *timerPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *timerNameTextField;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
-
 @end
 
 @implementation NewPresetViewController

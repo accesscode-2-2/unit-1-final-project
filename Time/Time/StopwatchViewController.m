@@ -8,7 +8,6 @@
 
 #import "StopwatchViewController.h"
 #import "LapTableViewController.h"
-//@import QuartzCore;
 
 @interface StopwatchViewController ()
 @property (weak, nonatomic) IBOutlet UIView *timerView;
@@ -40,20 +39,6 @@
     [self.stopwatchTimer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     
     [self embedTableView];
-    
-  //  self.lapTableView.dataSource = self.ltvc;
-  //  self.lapTableView.delegate = self.ltvc;
-    
-   // self.lapTableView.delegate = self;
-    
-    //self.lapTableView.backgroundColor = [UIColor blackColor];
-    
-//    for (NSString* family in [UIFont familyNames]) {
-//        NSLog(@"%@", family);
-//        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
-//            NSLog(@"  %@", name);
-//        }
-//    }
 }
 
 - (void)embedTableView {
@@ -98,7 +83,6 @@
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.lapButton setTitle:@"Reset" forState:UIControlStateNormal];
     }
-    
 }
 
 - (IBAction)lapButtonTapped:(UIButton *)sender {
@@ -110,14 +94,10 @@
         self.currentLapTime = self.lapLabel.text;
         NSLog(@"%@",self.currentLapTime);
         [self.ltvc currentLapTime:self.currentLapTime];
-//        NSLog(@"%@ HI I am delegate",[self.ltvc currentLapTime:self.currentLapTime]);
-     //   [self.lapTableView reloadData];
-        //NSLog(@"%@", self.lapTimes);
+
     } else {
         [self.ltvc.lapTimes removeAllObjects];
         [self.ltvc.tableView reloadData];
-       // [self.lapTimes removeAllObjects];
-        //[self.lapTableView reloadData];
         self.lapLabel.text = @"00:00.000";
         self.timerLabel.text = @"00:00.000";
     }

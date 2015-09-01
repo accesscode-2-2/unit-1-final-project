@@ -31,7 +31,7 @@
     NSCalendar *sysCalendar = [NSCalendar currentCalendar];
     NSDate *currentDate = [NSDate date];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setDay:+ 1];
+    [comps setDay: + 1];
     NSDate *minDate = [sysCalendar dateByAddingComponents:comps toDate:currentDate options:0];
     [comps setYear:+ 85];
     NSDate *maxDate = [sysCalendar dateByAddingComponents:comps toDate:currentDate options:0];
@@ -42,6 +42,7 @@
     self.eventPicker.textColor = [UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0];
     self.eventPicker.cellColor = [UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1];
     self.eventPicker.cellHeight = 50.0;
+    [self.eventPicker setDate:minDate animated:YES];
     [self.eventPicker reloadAllComponents];
     NSLog(@"DEFAULT ROW HEIGHT: %@", NSStringFromCGSize([self.eventPicker.pickerView rowSizeForComponent:0]));
    

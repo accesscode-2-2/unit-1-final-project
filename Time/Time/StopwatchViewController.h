@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "StopWatchViewControllerDelegate.h"
 
-@interface StopwatchViewController : UIViewController //<UITableViewDelegate, UITableViewDataSource>
-
+@interface StopwatchViewController : UIViewController
 @property (nonatomic) id<StopWatchViewControllerDelegate> delegate;
-
 @end

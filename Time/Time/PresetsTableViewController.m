@@ -15,6 +15,7 @@
 @property (nonatomic) DataSingleton *sharedSingleton;
 @property (nonatomic) NSArray *selectedPreset;
 @property (nonatomic) NSUInteger chosenIndex;
+@property (nonatomic) UIColor *pink;
 @end
 
 @implementation PresetsTableViewController
@@ -30,6 +31,7 @@
     [self.navigationItem.leftBarButtonItem setEnabled:NO];
     
     self.tableView.backgroundColor = [UIColor whiteColor];
+    self.pink = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,12 +68,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [self.sharedSingleton.presetTimers count];
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60.0;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"presetIdentifier"];
@@ -86,9 +89,9 @@
     cell.selectedBackgroundView = selectionColor;
     
     cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.textColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
-    cell.textLabel.highlightedTextColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
-    cell.detailTextLabel.textColor =  [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    cell.textLabel.textColor = self.pink;
+    cell.textLabel.highlightedTextColor = self.pink;
+    cell.detailTextLabel.textColor = self.pink;
     
     [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:20]];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:20]];

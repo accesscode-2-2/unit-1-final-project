@@ -31,14 +31,12 @@
 @property (nonatomic) BOOL isStarted;
 @property (nonatomic) BOOL isInitial;
 
-
 @end
 
 @implementation TimerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupPickerViewNumbers];
     
     self.timerPickerView.delegate = self;
@@ -49,15 +47,14 @@
     self.isInitial = YES;
     //self.isPaused = NO;
     //self.isPreset = NO;
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-        [super viewWillAppear:animated];
-    if(!self.isInitial){
-        if(self.isStarted){
+    [super viewWillAppear:animated];
+    if (!self.isInitial) {
+        if (self.isStarted) {
             [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
-        }else{
+        } else {
             [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         }
         
@@ -128,9 +125,9 @@
 }
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
-    if(!self.isStarted) {
-        for(int i=0;i<3;i++){
-            if([self.timerPickerView selectedRowInComponent:i] != 00){
+    if (!self.isStarted) {
+        for (int i = 0; i < 3; i++) {
+            if ([self.timerPickerView selectedRowInComponent:i] != 00){
                 NSLog(@"Started timer");
                 self.isStarted = YES;
                 self.isInitial = NO;
@@ -142,7 +139,7 @@
                 break;
             }
         }
-    }else{
+    } else {
         NSLog(@"Paused timer");
         [self freeze];
         //self.isPaused = YES;
@@ -151,7 +148,7 @@
     
 }
 
--(void)freeze{
+- (void)freeze {
     self.isStarted = NO;
     [self.timer invalidate];
     self.timer = nil;
@@ -167,10 +164,8 @@
     if ( (hourIndex  == 00) && (minuteIndex % 60 == 00) && (secondIndex % 60 == 00) ) {
         [self.timer invalidate];
         self.timer = nil;
-        
-    }
-    else{
-        if(secondIndex % 60 == 00){
+    } else {
+        if (secondIndex % 60 == 00) {
             
             self.row = secondIndex + 59;
             [self.timerPickerView selectRow:self.row inComponent:2 animated:YES];
@@ -179,7 +174,7 @@
                 self.row = minuteIndex -1;
                 [self.timerPickerView selectRow:self.row inComponent:1 animated:YES];
                 
-            }else if (hourIndex != 00) {
+            } else if (hourIndex != 00) {
                 
                 //hour
                 self.row = hourIndex - 1;
@@ -214,7 +209,6 @@
 - (void)reloadComponent:(NSInteger)component{
     [self.timerPickerView selectRow:self.row inComponent:self.component animated:YES];
 }
-
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
     self.timerName.text = @" ";

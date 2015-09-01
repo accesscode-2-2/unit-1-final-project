@@ -9,7 +9,8 @@
 #import "LapTableViewController.h"
 
 @interface LapTableViewController ()
-
+@property (nonatomic) UIColor *pink;
+@property (nonatomic) UIColor *green;
 @end
 
 @implementation LapTableViewController
@@ -17,8 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.lapTimes = [[NSMutableArray alloc]init];
-    
+    self.pink = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0];
+    self.green = [UIColor colorWithRed:198.0/255 green:230.0/255 blue:204.0/255 alpha:1.0];
     self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.allowsSelection = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,22 +46,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier"];//] forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier"];
     
     if (cell == nil) {
-        
         cell =
         [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                reuseIdentifier:@"lapIdentifier"];
-        
     }
-    
-    UIView *selectionColor = [[UIView alloc] init];
-    selectionColor.backgroundColor = [UIColor colorWithRed:198.0/255 green:230.0/255 blue:204.0/255 alpha:1.0];
-    cell.selectedBackgroundView = selectionColor;
-    
-    
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.lapTimes count] - indexPath.row];
     cell.detailTextLabel.text = self.lapTimes[[self.lapTimes count] - 1 - indexPath.row];
@@ -66,30 +60,17 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lapIdentifier"];
-    
-    if (cell == nil) {
-        
-        cell =
-        [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                               reuseIdentifier:@"lapIdentifier"];
-        
-    }
-    
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.detailTextLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.highlightedTextColor = [UIColor whiteColor] ;
-    
-}
-
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    cell.backgroundColor = [UIColor blackColor];
-    //    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.textColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
-    cell.textLabel.highlightedTextColor = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
-    cell.detailTextLabel.textColor =  [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0 ];
+    
+    if (indexPath.row % 2 == 0) {
+        cell.backgroundColor = self.green;
+    } else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+
+    cell.textLabel.textColor = self.pink;
+    cell.textLabel.highlightedTextColor = self.pink;
+    cell.detailTextLabel.textColor = self.pink;
     
     [cell.textLabel setFont:[UIFont fontWithName:@"Orbitron-Regular" size:20]];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"DigitalReadoutExpUpright" size:20]];
