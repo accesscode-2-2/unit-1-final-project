@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface EventsCountdownViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *birthdayStartButton;
+@property (strong, nonatomic) IBOutlet UIButton *christmasStartButton;
+@property (strong, nonatomic) IBOutlet UIButton *ACStartButton;
 
 @end

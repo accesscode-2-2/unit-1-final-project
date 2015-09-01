@@ -26,12 +26,5 @@
 @property (nonatomic) NSTimeInterval totalTime;
 @property (nonatomic) NSInteger *secondsLeft;
 
-- (IBAction)startTimer:(id)sender;
-- (IBAction)pauseTimer:(id)sender;
-- (IBAction)resetTimer:(id)sender;
-
-
-
-
 @end
 

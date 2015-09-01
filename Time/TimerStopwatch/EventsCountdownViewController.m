@@ -17,11 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *christmasCountdownLabel;
 @property (strong, nonatomic) IBOutlet UILabel *accessCodeCountdownLabel;
 
-// add labels for rounded views here
-@property (strong, nonatomic) IBOutlet UIView *roundedStartButton2;
-@property (strong, nonatomic) IBOutlet UIView *roundedStartButton3;
-
-
 @property (nonatomic) NSDate *birthday;
 @property (nonatomic) NSDate *christmas;
 @property (nonatomic) NSDate *accessCode;
@@ -32,6 +27,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.birthdayStartButton.layer.borderWidth = 2.0;
+    self.birthdayStartButton.layer.cornerRadius = 11.0;
+    self.birthdayStartButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self.birthdayStartButton setClipsToBounds:YES];
+    
+    self.christmasStartButton.layer.borderWidth = 2.0;
+    self.christmasStartButton.layer.cornerRadius = 11.0;
+    self.christmasStartButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self.christmasStartButton setClipsToBounds:YES];
+    
+    self.ACStartButton.layer.borderWidth = 2.0;
+    self.ACStartButton.layer.cornerRadius = 11.0;
+    self.ACStartButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self.ACStartButton setClipsToBounds:YES];
     
     
 }
