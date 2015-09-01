@@ -23,6 +23,11 @@
     [super viewDidLoad];
     [self setupDefaultPresets];
     
+    [[self.navigationController navigationBar] setBarTintColor:[UIColor colorWithRed:63.0/255 green:81.0/255 blue:181.0/255 alpha:1.0]];
+    
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     // This is here just in case the screen stays active on the user's phone for a bit.
     // Refreshes every 5 minutes.
     [NSTimer scheduledTimerWithTimeInterval:300.0
@@ -132,6 +137,10 @@
     cell.detailTextLabel.text = countdown;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60.0;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

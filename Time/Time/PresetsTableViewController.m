@@ -28,10 +28,16 @@
     [self.navigationItem setTitle:@"Select Presets"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didSelectTimer)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     [self.navigationItem.leftBarButtonItem setEnabled:NO];
     
     self.tableView.backgroundColor = [UIColor whiteColor];
-    self.pink = [UIColor colorWithRed:255.0/255 green:128.0/255 blue:169.0/255 alpha:1.0];
+    
+    [[self.navigationController navigationBar] setBarTintColor:[UIColor colorWithRed:63.0/255 green:81.0/255 blue:181.0/255 alpha:1.0]];
+    
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

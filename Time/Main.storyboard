@@ -407,6 +407,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ht6-6u-JlO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sGD-C3-eX4">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="newPresetButtonPressed:" destination="9AT-PO-o7q" id="5IM-bd-e5H"/>
                             </connections>
@@ -553,6 +554,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Special Events" id="4eK-mJ-Lde">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yNS-SS-YDS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="newEventButtonPressed:" destination="uCO-Gy-2wF" id="qvJ-IW-Giq"/>
                             </connections>
