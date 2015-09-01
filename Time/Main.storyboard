@@ -179,7 +179,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htx-Af-LLq">
-                                        <rect key="frame" x="32" y="178" width="56" height="18"/>
+                                        <rect key="frame" x="43" y="178" width="56" height="18"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                     <constraint firstItem="8vb-Qq-pvm" firstAttribute="leading" secondItem="hAC-OS-k0G" secondAttribute="leading" constant="32" id="8RN-5N-Edl"/>
                                     <constraint firstItem="Htx-Af-LLq" firstAttribute="top" secondItem="8vb-Qq-pvm" secondAttribute="bottom" constant="8" id="JN5-8p-ze1"/>
                                     <constraint firstAttribute="bottom" secondItem="Htx-Af-LLq" secondAttribute="bottom" constant="24" id="d6J-CZ-pAB"/>
-                                    <constraint firstItem="Htx-Af-LLq" firstAttribute="leading" secondItem="hAC-OS-k0G" secondAttribute="leading" constant="32" id="mRJ-vg-79Y"/>
+                                    <constraint firstItem="Htx-Af-LLq" firstAttribute="leading" secondItem="hAC-OS-k0G" secondAttribute="leading" constant="43" id="mRJ-vg-79Y"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aQ-1x-vSP">
@@ -579,6 +579,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A22-qy-8Dz">
                                 <rect key="frame" x="66" y="452" width="468" height="30"/>
+                                <color key="textColor" red="1" green="0.25098039215686274" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

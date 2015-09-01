@@ -43,8 +43,8 @@
     self.eventPicker.maximumDate = maxDate;
     [self.eventPicker setDate:initialDisplayDate animated:YES];
     self.eventPicker.font = [UIFont fontWithName:@"DigitalReadoutExpUpright" size:24];
-    self.eventPicker.textColor = [UIColor colorWithRed:255/255 green:62.0/255 blue:127.0/255 alpha:1.0];
-    self.eventPicker.cellColor = [UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1];
+    self.eventPicker.textColor = [UIColor colorWithRed:255.0/255 green:62.0/255 blue:127.0/255 alpha:1.0];
+    self.eventPicker.cellColor = [UIColor colorWithRed:206.0/255 green:230.0/255 blue:213.0/255 alpha:1];
     self.eventPicker.cellHeight = 50.0;
     [self.eventPicker reloadAllComponents];
     NSLog(@"DEFAULT ROW HEIGHT: %@", NSStringFromCGSize([self.eventPicker.pickerView rowSizeForComponent:0]));
