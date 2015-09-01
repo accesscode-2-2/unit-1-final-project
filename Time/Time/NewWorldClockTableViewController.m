@@ -49,21 +49,21 @@
     NSString *RomeTimeString = [outputFormatter stringFromDate:RomeTime];
     
     
-    NSDate *MexicoCity = [now dateByAddingTimeInterval:-3600];
-    NSString *MexicoCityTimeString = [outputFormatter stringFromDate:MexicoCity];
+    NSDate *Seattle = [now dateByAddingTimeInterval:-3600];
+    NSString *SeattleTimeString = [outputFormatter stringFromDate:Seattle];
     
     
     
-    NSDate *NewDelhi = [now dateByAddingTimeInterval:34200];
-    NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
+    NSDate *NewJersey = [now dateByAddingTimeInterval:34200];
+    NSString *NewJerseyTimeString = [outputFormatter stringFromDate:NewJersey];
     
     
     
     
     
     
-    [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi"];
-    [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
+    [self.clock setObject:NewJerseyTimeString forKey:@"New Jersey"];
+    [self.clock setObject:SeattleTimeString forKey:@"Seattle"];
     [self.clock setObject:NYTimeString forKey:@"New York"];
     [self.clock setObject:RomeTimeString forKey:@"Rome, Italy"];
     [self.clock setObject:ParisTimeString forKey:@"Paris, France"];
