@@ -669,7 +669,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="36" y="367" width="478" height="16"/>
+                                    <rect key="frame" x="36" y="367" width="488" height="16"/>
                                     <mask key="constraints">
                                         <exclude reference="fDm-mx-GIq"/>
                                         <include reference="syP-Cq-yE3"/>
@@ -679,7 +679,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqJ-xg-iJ7">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="5a0-Ed-9w5"/>
+                                    <constraint firstAttribute="width" constant="78" id="5a0-Ed-9w5">
+                                        <variation key="heightClass=regular" constant="60"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="21" id="h1M-2m-VQg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -716,7 +718,7 @@
                             <constraint firstAttribute="centerX" secondItem="1Sw-Rg-CHo" secondAttribute="centerX" id="eDF-zu-4ZK"/>
                             <constraint firstItem="uvl-w4-R6I" firstAttribute="leading" secondItem="icR-R9-wDf" secondAttribute="trailing" constant="45" id="eZa-dG-9C5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wyk-VY-I4X" secondAttribute="trailing" constant="20" id="hAr-O4-0Tc">
-                                <variation key="heightClass=regular" constant="70"/>
+                                <variation key="heightClass=regular" constant="60"/>
                             </constraint>
                             <constraint firstItem="Wyk-VY-I4X" firstAttribute="top" secondItem="1Sw-Rg-CHo" secondAttribute="bottom" constant="20" id="ikr-lv-yin"/>
                             <constraint firstAttribute="centerX" secondItem="NAw-ZZ-cd3" secondAttribute="centerX" id="jTo-Ma-cpE"/>

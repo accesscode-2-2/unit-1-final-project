@@ -25,6 +25,7 @@
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) NSTimer *progressTimer;
 
+@property (nonatomic) int count;
 
 
 
@@ -80,6 +81,7 @@
 
 - (IBAction)resetButtonTapped:(UIButton *)sender {
     [self updatePresetLabel];
+    self.progressLabel.text = @"0 %";
 
 }
 
