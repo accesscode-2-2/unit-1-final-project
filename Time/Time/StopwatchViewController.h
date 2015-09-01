@@ -13,11 +13,7 @@
 @interface StopwatchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
-@property (nonatomic) NSTimer *stopTimer;
-@property (nonatomic) NSTimer *lapTimer;
-@property (nonatomic) NSDate *startDate;
-@property (nonatomic) NSDate *restartDate;
-@property (nonatomic) BOOL running;
+
     
 @property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lapLabel;

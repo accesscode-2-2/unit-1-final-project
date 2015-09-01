@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorldClockTableViewController : UITableViewController
+@interface WorldClockTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
