@@ -58,11 +58,6 @@
     NSInteger minutes = (((NSInteger)self.afterRemainder/60) - (hours *60));
     NSInteger seconds = (((NSInteger)self.afterRemainder - (60 * minutes) - (60 * hours *60)));
     NSString *displayText = [[NSString alloc] initWithFormat: @"%02ld : %02ld : %02ld", (long)hours, (long)minutes, (long)seconds];
-    //    countdownTimer = [NSTimer timerWithTimeInterval:1
-    //                                             target:self
-    //                                           selector:@selector(updateTime)
-    //                                           userInfo:nil
-    //                                            repeats:YES];
     self.countdownLabel.text = displayText;
 }
 

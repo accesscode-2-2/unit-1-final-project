@@ -8,9 +8,11 @@
 
 #import "StopwatchViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface StopwatchViewController ()
 - (void)configureView;
+@property (nonatomic)AVAudioPlayer *myMusic;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
@@ -67,27 +69,22 @@
     self.lapTableView.layer.borderWidth = 0.5;
     
     // Initialize Date
-    
-
     [self configureView];
     
     // Scroll Image in background
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"Rain"];
+    UIImage *backgroundImage = [UIImage imageNamed:@"track"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
     self.scrollView.contentSize = backgroundImage.size;
     [self.scrollView addSubview:backgroundImageView];
-
-    backgroundImageView.center = self.view.center;
     
+    // Music
+    // Construct URL to sound file
+    NSString *path = [NSString stringWithFormat:@"%@/Wat.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
     
-    
-    [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
-    //   [UITabBar]
-    //
-
-
-   [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
+    // Create audio player object and initialize with URL to sound
+    self.myMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 
 }
 
@@ -97,15 +94,17 @@
 }
 
 - (IBAction)startButton:(id)sender {
+   
     if(!self.running) {
         self.previousTime = [NSDate date];
         self.previousLapTime = [NSDate date];
-
+       [self.myMusic play];
         [self startTimer];
         self.running = TRUE;
     } else{
         [self pauseTimer];
         self.running = NO;
+        [self.myMusic pause];
     }
 
 }
@@ -114,7 +113,7 @@
 
     [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
     [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
-    
+   
     self.stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                       target:self
                                                     selector:@selector(updateTimer)
@@ -125,7 +124,8 @@
                                                    selector:@selector(rememberTimer)
                                                    userInfo:nil
                                                     repeats:YES];
-
+   
+    
 }
 
 - (void)pauseTimer {
@@ -188,7 +188,7 @@
     
     self.lapLabel.text = [self formattedTime:self.totalLapTime];
     self.stopwatchLabel.text = [self formattedTime:self.totalElapsedTime];
-    
+
 
 }
 
@@ -233,6 +233,7 @@
         self.lapLabel.text = @"00.00.00";
         [self.dataArray removeAllObjects];
         [self.lapTableView reloadData];
+        self.myMusic.currentTime = 0;
         
     }
 
