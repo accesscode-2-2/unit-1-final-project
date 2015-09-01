@@ -168,13 +168,13 @@
     // reload lap table view with empty array
     
 
-    [self.lapTableView reloadData];
+  
     if (self.running) {
         
         [self.dataArray addObject:[NSString stringWithFormat:@"%.02f", self.totalLapTime]];
         self.totalLapTime = 0;
         self.previousLapTime = [NSDate date];
-        
+         [self.lapTableView reloadData];
    
  
     }else{
