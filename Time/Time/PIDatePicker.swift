@@ -281,6 +281,7 @@ public class PIDatePicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     private func isRowEnabled(row: Int, forComponent component : PIDatePickerComponents) -> Bool {
         
         let rawValue = self.rawValueForRow(row, inComponent: component)
+        NSLog("Row: %d, Raw Value: %d", row, rawValue)
         
         let components = NSDateComponents()
         components.year = self.currentCalendarComponents.year
@@ -296,6 +297,7 @@ public class PIDatePicker: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         }
         
         let dateForRow = self.calendar.dateFromComponents(components)!
+        NSLog("Date for Row: %@", dateForRow)
         
         return self.dateIsInRange(dateForRow)
     }
