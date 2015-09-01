@@ -64,17 +64,93 @@
  
     NSDate *RioDeJaneiro = [now dateByAddingTimeInterval:3600];
     NSString *RioDeJaneiroTimeString = [outputFormatter stringFromDate:RioDeJaneiro];
-    
+	
+	NSDate *Tokyo = [now dateByAddingTimeInterval:46800];
+	NSString *TokyoString = [outputFormatter stringFromDate:Tokyo];
+	
+	NSDate *Delhi = [now dateByAddingTimeInterval:27000];
+	NSString *DelhiString = [outputFormatter stringFromDate:Delhi];
+	
+	NSDate *Winnipeg = [now dateByAddingTimeInterval:3600];
+	NSString *WinnipegString = [outputFormatter stringFromDate:Winnipeg];
+	
+	NSDate *Berlin = [now dateByAddingTimeInterval:46800];
+	NSString *BerlinString = [outputFormatter stringFromDate:Berlin];
+	
+	NSDate *Kyoto = [now dateByAddingTimeInterval:46800];
+	NSString *KyotoString = [outputFormatter stringFromDate:Kyoto];
+	
+	NSDate *Mogadishu = [now dateByAddingTimeInterval:25200];
+	NSString *MogadishuString = [outputFormatter stringFromDate:Mogadishu];
+	
+	NSDate *Copenhagen = [now dateByAddingTimeInterval:21600];
+	NSString *CopenhagenString = [outputFormatter stringFromDate:Copenhagen];
+	
+	NSDate *TheMoon = [now dateByAddingTimeInterval:14400];
+	NSString *TheMoonString = [outputFormatter stringFromDate:TheMoon];
+	
+	NSDate *Lincoln = [now dateByAddingTimeInterval:-3600];
+	NSString *lincolnString = [outputFormatter stringFromDate:Lincoln];
+	
+	NSDate *Hanoi = [now dateByAddingTimeInterval:39600];
+	NSString *HanoiString = [outputFormatter stringFromDate:Hanoi];
+	
+	NSDate *Halifax = [now dateByAddingTimeInterval:3600];
+	NSString *HalifaxString = [outputFormatter stringFromDate:Halifax];
+	
+	NSDate *AbuDhabi = [now dateByAddingTimeInterval:28800];
+	NSString *AbuDhabiString = [outputFormatter stringFromDate:AbuDhabi];
+	
+	NSDate *Montreal = [now dateByAddingTimeInterval:46800];
+	NSString *MontrealString = [outputFormatter stringFromDate:now];
+	
+	NSDate *Vancouver = [now dateByAddingTimeInterval:-10800];
+	NSString *VancouverString = [outputFormatter stringFromDate:Vancouver];
+	
+	NSDate *Stockholm = [now dateByAddingTimeInterval:21600];
+	NSString *StockholmString = [outputFormatter stringFromDate:Stockholm];
+	
+	NSDate *London = [now dateByAddingTimeInterval:18000];
+	NSString *LondonString = [outputFormatter stringFromDate:London];
+	
+	
+	
+	
  
     
-    [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi"];
+    [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi, India"];
     [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
-    [self.clock setObject:NYTimeString forKey:@"New York"];
+    [self.clock setObject:NYTimeString forKey:@"New York, NY"];
     [self.clock setObject:RomeTimeString forKey:@"Rome, Italy"];
     [self.clock setObject:ParisTimeString forKey:@"Paris, France"];
-    [self.clock setObject:RioDeJaneiroTimeString forKey:@"Rio de Janeiro"];
+    [self.clock setObject:RioDeJaneiroTimeString forKey:@"Rio de Janeiro, Brazil"];
     [self.clock setObject:NYTimeString forKey:@"Philadelphia"];
-
+	[self.clock setObject:TokyoString forKey:@"Tokyo, Japan"];
+	[self.clock setObject:DelhiString forKey:@"Delhi, India"];
+	[self.clock setObject:WinnipegString forKey:@"Winnipeg, Canada"];
+	[self.clock setObject:BerlinString forKey:@"Berlin, Germany"];
+	[self.clock setObject:KyotoString forKey:@"Kyoto, Japan"];
+	[self.clock setObject:MogadishuString forKey:@"Mogadishu,Somalia"];
+	[self.clock setObject:CopenhagenString forKey:@"Copenhagen, Denmark"];
+	[self.clock setObject:TheMoonString forKey:@"The Moon"];
+	[self.clock setObject:lincolnString forKey:@"Lincoln, Nebraska"];
+	[self.clock setObject:HanoiString forKey:@"Hanoi, Vietnam"];
+	[self.clock setObject:HalifaxString forKey:@"Halifax, Nova Scotia"];
+	[self.clock setObject:AbuDhabiString forKey:@"Abu Dhabi, U.A.E"];
+	[self.clock setObject:MontrealString forKey:@"Montreal, Québec"];
+	[self.clock setObject:VancouverString forKey:@"Vancouver, Canada"];
+	[self.clock setObject:StockholmString forKey:@"Stockholm, Sweden"];
+	[self.clock setObject:LondonString forKey:@"London, England"];
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     
     
     self.unsortedKeyArray = [self.clock allKeys];
