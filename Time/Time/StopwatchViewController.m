@@ -104,9 +104,6 @@
 
     [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
     [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
-
-//    self.startDate = [self.startDate dateByAddingTimeInterval:((-1)*(self.pauseTimeInterval))];
-//    self.restartDate = [self.startDate dateByAddingTimeInterval:((-1)*(self.pauseTimeInterval))];
     
     self.stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                       target:self
@@ -147,13 +144,7 @@
     self.lapLabel.text = [self formattedTime:self.totalLapTime];
     self.stopwatchLabel.text = [self formattedTime:self.totalElapsedTime];
     
-//    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:self.totalElapsedTime];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"mm:ss.SS"];
-//    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-//    NSString *timeString=[dateFormatter stringFromDate:timerDate];
-//    self.stopwatchLabel.text = timeString;
-//    self.pauseTimeInterval = timeInterval;
+
 }
 
 - (NSString *)formattedTime:(NSTimeInterval)time {
@@ -161,22 +152,12 @@
     NSTimeInterval minutes = floor(time / 60);
    
 
-    return [NSString stringWithFormat:@"%02ld:%02ld.%2ld", (long)minutes, (long)wrappedSeconds];
+    return [NSString stringWithFormat:@"%0.2f:%0.2f",minutes, time];
 }
 
 -(void)rememberTimer{
     
-//    NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:self.previousTime];
-    
-//    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.restartDate];
-//    
-//    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"mm:ss.SS"];
-//    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-//    NSString *timeString=[dateFormatter stringFromDate:timerDate];
-//    self.lapLabel.text = timeString;
-//    self.pauseTimeInterval = timeInterval;
+
 }
 
 
@@ -194,17 +175,7 @@
         self.totalLapTime = 0;
         self.previousLapTime = [NSDate date];
         
-//        [self.dataArray addObject:self.lapLabel.text];
-//        [self.lapTableView reloadData];
-//        [self.lapTimer invalidate];
-//        self.lapTimer = nil;
-//        [self lapTimer];
-//        self.lapTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-//                                                    target:self
-//                                                  selector:@selector(rememberTimer)
-//                                                  userInfo:nil
-//                                                   repeats:YES];
-      
+   
  
     }else{
         self.totalElapsedTime = 0;

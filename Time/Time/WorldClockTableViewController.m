@@ -7,6 +7,8 @@
 //
 
 #import "WorldClockTableViewController.h"
+#import "WorldClockInfo.h"
+#import "NewWorldClockTableViewController.h"
 
 @interface WorldClockTableViewController ()
 @property (nonatomic) NSMutableArray *selectedCitiesArray;
@@ -47,58 +49,48 @@
    return self.selectedCitiesArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"worldClockIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
     
+    WorldClockInfo *city = self.selectedCitiesArray[indexPath.row];
+    cell.textLabel.text = city.cityName;
+    
+    cell.detailTextLabel.text = city.cityTime;
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+//delegate method that allows for editing when the edit button is clicked
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        
+        [self.selectedCitiesArray removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        
+        //entry removed from data source now reload
+        [self.tableView reloadData];
+        
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NewWorldClockTableViewController *vc = segue.destinationViewController;
+    
+    //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    //    CQCategory *newCategory = [self.allCategories objectAtIndex:indexPath.row];
+    //vc.category = newCategory;
+    
+    vc.selectedCitiesArray = self.selectedCitiesArray;
+    
 }
-*/
+
 
 @end
