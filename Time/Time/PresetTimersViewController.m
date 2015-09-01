@@ -46,6 +46,23 @@
     
 }
 
+- (void)tableView:(UITableView * )tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"selected index path %@",indexPath);
+    NSArray *keys = [self.customTimersDictionary allKeys];
+    NSString *key = [keys objectAtIndex:indexPath.row];
+    NSArray *value = [self.customTimersDictionary objectForKey:key];
+
+    self.alarmNameLabel.text = [NSString stringWithFormat:@"%@", key];
+    
+    self.timeEndingLabel.text = [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
+
+    NSTimeInterval duration = [[self.customTimersDictionary objectForKey:key] doubleValue];
+    NSLog(@"setting duration to %f", duration);
+    self.totalSeconds = duration;
+
+    
+}
 
 
 
@@ -96,11 +113,22 @@
 
 
 - (IBAction)startButtonTapped:(id)sender {
+    // keep track of the key, say self.currentKey
+    // if current key is nil, and there is at least one key
+    // then you can set currentKey to allKeys[0]
     
-    NSString *firstKey = [self.customTimersDictionary allKeys][0];
-    NSTimeInterval duration = [self.customTimersDictionary[firstKey] doubleValue];
-    self.totalSeconds = duration;
+    // if there are no keys at all, don't start the time / crash!
     
+    NSLog(@"%@",self.customTimersDictionary);
+//
+//    NSString *firstKey = [self.customTimersDictionary allKeys][0];
+//    NSTimeInterval duration = [self.customTimersDictionary[firstKey] doubleValue];
+//    self.totalSeconds = duration;
+//
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
+//    
     [self startTimer];
 }
 
