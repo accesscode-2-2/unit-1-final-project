@@ -66,9 +66,17 @@
         [self.heldLapsForTableView addObject:self.timeLabel.text];
         [self.lapsTableView reloadData];
     }
-    
+}
 - (void)timerFired:(NSTimer*)timer {
-        
+    
+    NSDate *now = [[NSDate alloc] init];
+    
+    self.totalSessonTime = [now timeIntervalSinceDate:self.beginTime];
+    NSTimeInterval distance =  self.totalTime + self.totalSessonTime;
+    
+    self.timeLabel.text = [NSString stringWithFormat:@"%0.2f", distance];
+    NSLog(@"%f", distance);
+
     }
     
     - (void)didReceiveMemoryWarning {
