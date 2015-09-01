@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // remove translucent layer
+    // remove translucent layer on navigation items
     [UINavigationBar appearance].translucent = NO;
     [UITabBar appearance].translucent = NO;
     
