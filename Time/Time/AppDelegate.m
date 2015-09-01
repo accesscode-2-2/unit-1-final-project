@@ -19,6 +19,7 @@
     // Override point for customization after application launch.
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:213.0/255 green:58.0/255 blue:43.0/255 alpha:1]];
     [[UITabBar appearance] setAlpha:1];
+    sleep(2);
     return YES;
 }
 
