@@ -27,36 +27,35 @@
     
     self.timers = [[NSMutableArray alloc] init];
     
-    Timer *pizza = [[Timer alloc] init];
-    pizza.timerName = @"Pizza";
-    pizza.countDownDuration = 60;
-    [self.timers addObject:pizza];
-    
-    Timer *fish = [[Timer alloc] init];
-    fish.timerName = @"Fish";
-    fish.countDownDuration = 120;
-    [self.timers addObject:fish];
-    
-    Timer *cupcake = [[Timer alloc] init];
-    cupcake.timerName = @"Cupcake";
-    cupcake.countDownDuration = 120;
-    [self.timers addObject:cupcake];
-    
     Timer *eggs = [[Timer alloc] init];
-    eggs.timerName = @"Eggs";
+    eggs.timerName = @"Poached Eggs";
     eggs.countDownDuration = 180;
     [self.timers addObject:eggs];
     
     Timer *cookie = [[Timer alloc] init];
-    cookie.timerName = @"Cookie";
-    cookie.countDownDuration = 240;
+    cookie.timerName = @"Chocolate Chip Cookies";
+    cookie.countDownDuration = 600;
     [self.timers addObject:cookie];
     
-    Timer *cake = [[Timer alloc] init];
-    cake.timerName = @"Cake";
-    cake.countDownDuration = 300;
-    [self.timers addObject:cake];
+    Timer *fish = [[Timer alloc] init];
+    fish.timerName = @"Teriyaki Salmon";
+    fish.countDownDuration = 1020;
+    [self.timers addObject:fish];
     
+    Timer *cupcake = [[Timer alloc] init];
+    cupcake.timerName = @"Banana Cupcakes";
+    cupcake.countDownDuration = 1200;
+    [self.timers addObject:cupcake];
+    
+    Timer *pizza = [[Timer alloc] init];
+    pizza.timerName = @"Frozen Pizza";
+    pizza.countDownDuration = 1500;
+    [self.timers addObject:pizza];
+    
+    Timer *cake = [[Timer alloc] init];
+    cake.timerName = @"Birthday Cake";
+    cake.countDownDuration = 1800;
+    [self.timers addObject:cake];
     
     
 }
