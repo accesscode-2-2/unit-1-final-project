@@ -130,7 +130,7 @@
     }
     self.DaysHMS.hidden = NO;
         self.countdownTimerLabel.textColor = [UIColor blackColor];
-        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li  %02li  %02li  %02li", (long)days, (long)hours, (long)minutes, (long)seconds];
+        self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li   %02li   %02li   %02li", (long)days, (long)hours, (long)minutes, (long)seconds];
  }
 
 - (void)didReceiveMemoryWarning {

@@ -961,10 +961,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days   Hours   Minutes   Seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urM-GO-SIB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days     Hours     Minutes     Seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urM-GO-SIB">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="361" id="qWb-ZT-HnR"/>
+                                    <constraint firstAttribute="width" constant="361" id="qWb-ZT-HnR">
+                                        <variation key="heightClass=regular" constant="260"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="37" id="wyL-au-4Hu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="17"/>
@@ -989,7 +991,7 @@
                             <constraint firstAttribute="centerX" secondItem="B5L-cb-sPM" secondAttribute="centerX" id="32w-xD-gpz"/>
                             <constraint firstItem="fKe-75-4nA" firstAttribute="top" secondItem="8FT-0I-ecR" secondAttribute="bottom" constant="15" id="5I8-OR-QEG"/>
                             <constraint firstAttribute="centerX" secondItem="wUF-bt-zhW" secondAttribute="centerX" id="7TV-hu-uj6">
-                                <variation key="heightClass=regular" constant="19.5"/>
+                                <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="Q5n-UJ-fBY" firstAttribute="top" secondItem="B5L-cb-sPM" secondAttribute="bottom" constant="10" id="99G-D2-ERA"/>
                             <constraint firstItem="urM-GO-SIB" firstAttribute="top" secondItem="wUF-bt-zhW" secondAttribute="bottom" constant="15" id="Qad-DK-4xx">
