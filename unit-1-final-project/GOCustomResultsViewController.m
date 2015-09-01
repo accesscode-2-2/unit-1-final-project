@@ -9,6 +9,7 @@
 #import "GOCustomResultsViewController.h"
 #import "Workout.h"
 #import "WorkoutManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GOCustomResultsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeLabel;
@@ -27,51 +28,44 @@
 
 - (void)viewWillAppear:(BOOL)animated{
    [self.navigationController setNavigationBarHidden:YES];
-    NSUInteger seconds = (NSUInteger)(self.totalTime % 60);
-    NSUInteger minutes = (NSUInteger)(self.totalTime / 60) % 60;
-    self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", minutes, seconds];
+    NSInteger seconds = (self.totalTime % 60);
+    NSInteger minutes = (self.totalTime / 60) % 60;
+    self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", (long)minutes, (long)seconds];
 }
 
 - (void) initializeMainTimer {
-    // timer for the workout to go down
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                   target:self
                                                 selector:@selector(updateExerciseTimer)
                                                 userInfo:nil
                                                  repeats:YES];
-    
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.timer invalidate];
-
-    [self initializeMainTimer];
-    
-
-    // Creates an index for the number of exercises in the workout
+- (void)setUpOfCustomResults {
     if (self.currentExerciseIndex == (NSInteger)nil){
         self.currentExerciseIndex = 0;
     }
     
-    
-    self.exercise = [self.resultsWorkout.exercises objectAtIndex: (NSUInteger)self.currentExerciseIndex];
-    
-    // Time of exercises
-    NSLog(@"exercse time%f", self.exercise.exerciseTime);
+    self.exercise = [self.resultsWorkout.exercises objectAtIndex: self.currentExerciseIndex];
     
     int totalTime = self.exercise.exerciseTime;
     self.totalTime = totalTime;
-    
-    // Exercise names
-    NSString *nameOfExercise = self.exercise.nameOfExercise;
-
-    // Sets the name and time to labels
     self.totalTimeLabel.text = @(self.totalTime).stringValue;
+    
+    NSString *nameOfExercise = self.exercise.nameOfExercise;
     self.exerciseNameLabel.text = nameOfExercise;
     
     self.synthesizer = [[AVSpeechSynthesizer alloc]init];
+}
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.timer invalidate];
+
+    [self initializeMainTimer];
+
+    [self setUpOfCustomResults];
 }
 
 - (void)updateExerciseTimer{
@@ -80,24 +74,14 @@
     NSInteger currentExerciseTime =  self.totalTime;
     NSInteger nextNumber = currentExerciseTime - one;
     self.totalTime = nextNumber;
-    NSLog(@"%lu", nextNumber);
-    NSUInteger seconds = (NSUInteger)(nextNumber % 60);
-    NSUInteger minutes = (NSUInteger)(nextNumber / 60) % 60;
-    self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", minutes, seconds];
+    NSInteger seconds = (nextNumber % 60);
+    NSInteger minutes = (nextNumber / 60) % 60;
+    self.totalTimeLabel.text = [NSString stringWithFormat:@" %02lu : %02lu", (long)minutes, (long)seconds];
     if (self.totalTime == 0 && self.currentExerciseIndex < numberOfExercises - 1){
-        NSLog(@"Total exercises: %lu", numberOfExercises);
-        NSLog(@"Current exercise index: %lu", self.currentExerciseIndex);
-        
-        NSLog(@"Next exercise");
         GOCustomResultsViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomWorkoutView"];
         nextViewController.resultsWorkout = self.resultsWorkout;
         nextViewController.currentExerciseIndex = self.currentExerciseIndex+1;
-        NSLog(@"%@", nextViewController.resultsWorkout.exercises);
-        NSLog(@"Next exercise index: %lu", nextViewController.currentExerciseIndex);
-        
         [self.timer invalidate];
-        
-        NSLog(@"Still working here");
         [self.navigationController pushViewController:nextViewController animated:YES];
     }
     else if (nextNumber == 0 && self.currentExerciseIndex == numberOfExercises - 1) {
@@ -108,7 +92,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)pauseButton:(UIButton *)sender {
@@ -132,6 +115,13 @@
 
 - (void)viewDidDisappear:(BOOL)animated{
     [self.timer invalidate];
+}
+
+- (void)voiceSpeak {
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"hi"];
+    utterance.rate = AVSpeechUtteranceMinimumSpeechRate*( 10.0);
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-au"];
+    [self.synthesizer speakUtterance:utterance];
 }
 
 

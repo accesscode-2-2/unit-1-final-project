@@ -894,7 +894,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="editingChanged:" destination="N11-Jn-Wv1" eventType="editingDidEnd" id="DLs-MQ-tFD"/>
+                                            <action selector="editingChanged:" destination="N11-Jn-Wv1" eventType="editingChanged" id="d2O-rd-Nwr"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB3-sr-DzN">
@@ -997,7 +997,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="editingChanged:" destination="N11-Jn-Wv1" eventType="editingDidEnd" id="AGs-yb-rIJ"/>
+                                    <action selector="editingChanged:" destination="N11-Jn-Wv1" eventType="editingChanged" id="aoY-CH-F1v"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Exercise" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DvM-QR-4Hp">
@@ -1005,7 +1005,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="editingChanged:" destination="N11-Jn-Wv1" eventType="editingDidEnd" id="uix-oI-6K3"/>
+                                    <action selector="editingChanged:" destination="N11-Jn-Wv1" eventType="editingChanged" id="Boh-yO-gNV"/>
                                 </connections>
                             </textField>
                         </subviews>

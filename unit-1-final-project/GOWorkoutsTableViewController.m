@@ -70,17 +70,6 @@
     
     [super viewDidLoad];
     
-    for (NSString* family in [[UIFont familyNames] sortedArrayUsingSelector:@selector(compare:)])
-    {
-       // NSLog(@"%@", family);
-        
-        for (NSString* name in [[UIFont fontNamesForFamilyName:family] sortedArrayUsingSelector:@selector(compare:)])
-        {
-           // NSLog(@"  %@", name);
-        }
-    }
-
-    
     // creates a custom right bar button to segue into the results page
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self

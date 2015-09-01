@@ -44,9 +44,6 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     self.continueButton.hidden = YES;
-
-    NSLog(@"Exercise Index: %lu", self.currentExerciseIndex);
-
     
 //timer starts when viewLoads
     [self initializeTimer];

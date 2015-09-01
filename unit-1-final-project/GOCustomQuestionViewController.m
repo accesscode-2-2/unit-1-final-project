@@ -31,27 +31,27 @@
 
 #pragma mark - Setup
 
-- (void)viewWillAppear:(BOOL)animated { // sets the background of the VC
-    [super viewWillAppear:animated];
-    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
-    bgLayer.frame = self.view.bounds;
-    [self.view.layer insertSublayer:bgLayer atIndex:0];
-    
-    // Buttons Disable
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    self.addExerciseButton.userInteractionEnabled = NO;
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.tableView reloadData];
-    
+- (void)delegateSetup {
+//    self.addExerciseNameField.delegate = self;
+//    self.enterWorkoutNameField.delegate = self;
     self.minutesField.delegate = self;
     self.secondsField.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    
-    // creates a custom right bar button to segue into the results page
+}
+
+- (void)backgroundSetup {
+    CAGradientLayer *bgLayer = [BackgroundGradient greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+}
+
+- (void)disableInitialButtons{
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    self.addExerciseButton.userInteractionEnabled = NO;
+}
+
+- (void)creatingACustomRightBarButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self
                action:@selector(addWorkoutButton:)
@@ -60,6 +60,26 @@
     button.frame = CGRectMake(100.0, 0.0, 90.0, 30.0);
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self backgroundSetup];
+    
+    [self disableInitialButtons];
+
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.tableView reloadData];
+    
+    [self delegateSetup];
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    [self creatingACustomRightBarButton];
     
     // alloc init workout
     self.workout = [[Workout alloc]init];
@@ -83,6 +103,12 @@
     return newLength <= 2;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (IBAction)editingChanged:(UITextField *)sender {
     BOOL hasMinutes = ![self.minutesField.text isEqualToString:@""];
     BOOL hasSeconds = ![self.secondsField.text isEqualToString:@""];
@@ -97,6 +123,8 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
     }
 }
+
+
 
 #pragma mark - Buttons
 

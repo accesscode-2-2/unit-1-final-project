@@ -11,7 +11,7 @@
 #import "GOCalendarResults.h"
 #import "WorkoutManager.h"
 
-@interface GOCalendarViewController ()
+@interface GOCalendarViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIDatePicker *goCalendarDatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *goCalendarTextField;
 @property (nonatomic) NSString *calendarGoalsString;
@@ -46,7 +46,14 @@
     
     // stores the text field into the string property
     
+    self.goCalendarTextField.delegate = self;
     
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
