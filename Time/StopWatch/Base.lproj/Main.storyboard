@@ -22,7 +22,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyI-8h-nSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2929" y="-715"/>
+            <point key="canvasLocation" x="-3566" y="-741"/>
         </scene>
         <!--Stop Watch-->
         <scene sceneID="zcr-0B-2jh">
@@ -41,7 +41,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gi8-Ph-XyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2403" y="-1215"/>
+            <point key="canvasLocation" x="-3109" y="-1231"/>
         </scene>
         <!--Don't STOP Watch-->
         <scene sceneID="oGf-Tl-Jvy">
@@ -81,6 +81,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yVx-Rh-F85" kind="show" identifier="startStopSegue2Notes" id="k8P-Sp-6GB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -132,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XR3-9z-uXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1850" y="-1215"/>
+            <point key="canvasLocation" x="-2622" y="-1221"/>
         </scene>
         <!--Special Events-->
         <scene sceneID="LVg-Ux-ZiV">
@@ -151,7 +154,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eag-JA-6vb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2403" y="-282"/>
+            <point key="canvasLocation" x="-3101" y="-268"/>
         </scene>
         <!--Custom Date Coundown-->
         <scene sceneID="91b-F5-Vd1">
@@ -260,7 +263,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6I-5R-F5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1892" y="-282"/>
+            <point key="canvasLocation" x="-2536" y="-268"/>
+        </scene>
+        <!--Lap NotesTVC-->
+        <scene sceneID="wIS-NM-nje">
+            <objects>
+                <tableViewController id="yVx-Rh-F85" customClass="LapNotesTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bRq-89-AGM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lapsEditTextField" id="Eir-hh-Q2C">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eir-hh-Q2C" id="iEb-se-PWO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WyE-Xm-r2r">
+                                            <rect key="frame" x="54" y="7" width="301" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="yVx-Rh-F85" id="45H-Zo-EPb"/>
+                            <outlet property="delegate" destination="yVx-Rh-F85" id="CfN-rR-pQb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="oT3-Eq-YlI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTP-vq-V1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2060" y="-1244"/>
         </scene>
     </scenes>
     <resources>

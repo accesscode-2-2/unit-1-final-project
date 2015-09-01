@@ -16,72 +16,64 @@
 @property (nonatomic,strong)NSDate *fromDate;
 @property (nonatomic,strong)NSDate *toDate;
 
-
 @end
 
 @implementation DatePickerVC
 
 @synthesize fromDate,toDate;
 
-//-(NSTimer *) countDownTimer {
-//    
-//    return [NSTimer scheduledTimerWithTimeInterval:1.0/100 target:self selector:@selector(countDownTimerMethod) userInfo:nil repeats:YES];
-//}
-//
-//
-//-(void) countDownTimerMethod{
-//    
-//    //count out miliseconds
-//    milliseconds = milliseconds -1;
-//    _milliSecDisplayLabel.text = [NSString stringWithFormat:@"%i",milliseconds];
-//    
-//    //if miliseconds == 1000 reset milisecond count and start counting down seconds
-//    
-//    if (milliseconds == 0)
-//        
-//    {
-//        seconds = seconds -1;
-//        _secondsDisplayLabel.text = [NSString stringWithFormat:@"%i",seconds];
-//        
-//        milliseconds = 100;
-//    }
-//    //if seconds == 60 reset seconds counter and start counting minutes
-//    
-//    if (seconds == 0)
-//        
-//    {
-//        minutes = minutes -1;
-//        _minutesDisplayLabel.text = [NSString stringWithFormat:@"%i",minutes];
-//        
-//        seconds = 60;
-//    }
-//    
-//    if (minutes == 0)
-//        
-//    {
-//        hours = hours -1;
-//        _hoursDisplayLabel.text = [NSString stringWithFormat:@"%i",hours];
-//        
-//        minutes = 60;
-//    }
-//    
-//    if (hours == 0)
-//        
-//    {
-//        days = days -1;
-//        _daysDisplayLabel.text = [NSString stringWithFormat:@"%i",days];
-//        
-//        hours = 24;
-//    }
-//    
-//    _displayTime = [NSString stringWithFormat:@"%02d:%02d:%02d:%02d",days,hours,minutes,seconds];
-//    
-//}
-//
-//
-//
-//
+-(NSTimer *) countDownTimer {
+    
+    return [NSTimer scheduledTimerWithTimeInterval:1.0/100 target:self selector:@selector(countDownTimerMethod) userInfo:nil repeats:YES];
+}
 
+-(void) countDownTimerMethod{
+    
+    //count out miliseconds
+    milliseconds = milliseconds -1;
+    _milliSecDisplayLabel.text = [NSString stringWithFormat:@"%i",milliseconds];
+    
+    //if miliseconds == 1000 reset milisecond count and start counting down seconds
+    
+    if (milliseconds == 0)
+        
+    {
+        seconds = seconds -1;
+        _secondsDisplayLabel.text = [NSString stringWithFormat:@"%i",seconds];
+        
+        milliseconds = 100;
+    }
+    //if seconds == 60 reset seconds counter and start counting minutes
+    
+    if (seconds == 0)
+        
+    {
+        minutes = minutes -1;
+        _minutesDisplayLabel.text = [NSString stringWithFormat:@"%i",minutes];
+        
+        seconds = 60;
+    }
+    
+    if (minutes == 0)
+        
+    {
+        hours = hours -1;
+        _hoursDisplayLabel.text = [NSString stringWithFormat:@"%i",hours];
+        
+        minutes = 60;
+    }
+    
+    if (hours == 0)
+        
+    {
+        days = days -1;
+        _daysDisplayLabel.text = [NSString stringWithFormat:@"%i",days];
+        
+        hours = 24;
+    }
+        _displayTime = [NSString stringWithFormat:@"%02d:%02d:%02d:%02d",days,hours,minutes,seconds];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -137,9 +129,6 @@
         default:
             break;
     }
-    
-    
-    
 }
 
 - (IBAction)calculateButtonAction:(UIButton *)sender {

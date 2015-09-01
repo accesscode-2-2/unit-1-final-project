@@ -12,6 +12,7 @@
 		181132C31B8D7C6900115557 /* fe_runningStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132BF1B8D7C6900115557 /* fe_runningStart.png */; };
 		181132C41B8D7C6900115557 /* fe_runningStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 181132C01B8D7C6900115557 /* fe_runningStop.png */; };
 		181132CA1B8DC50B00115557 /* stopwatchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181132C91B8DC50B00115557 /* stopwatchVC.m */; };
+		1815F9F21B960972001531AB /* LapNotesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815F9F11B960972001531AB /* LapNotesTVC.m */; };
 		186388461B91E2F200ACDA00 /* dontstopWatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 186388451B91E2F200ACDA00 /* dontstopWatch.png */; };
 		186A1C631B86D19500668F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C621B86D19500668F10 /* main.m */; };
 		186A1C661B86D19500668F10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A1C651B86D19500668F10 /* AppDelegate.m */; };
@@ -44,6 +45,8 @@
 		181132C01B8D7C6900115557 /* fe_runningStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningStop.png; sourceTree = "<group>"; };
 		181132C81B8DC50B00115557 /* stopwatchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stopwatchVC.h; sourceTree = "<group>"; };
 		181132C91B8DC50B00115557 /* stopwatchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stopwatchVC.m; sourceTree = "<group>"; };
+		1815F9F01B960972001531AB /* LapNotesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapNotesTVC.h; sourceTree = "<group>"; };
+		1815F9F11B960972001531AB /* LapNotesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapNotesTVC.m; sourceTree = "<group>"; };
 		186388451B91E2F200ACDA00 /* dontstopWatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dontstopWatch.png; sourceTree = "<group>"; };
 		186A1C5D1B86D19500668F10 /* StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186A1C611B86D19500668F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 			children = (
 				181132C81B8DC50B00115557 /* stopwatchVC.h */,
 				181132C91B8DC50B00115557 /* stopwatchVC.m */,
+				1815F9F01B960972001531AB /* LapNotesTVC.h */,
+				1815F9F11B960972001531AB /* LapNotesTVC.m */,
 				18E4F5F21B94B78C00C35133 /* DatePickerVC.h */,
 				18E4F5F31B94B78C00C35133 /* DatePickerVC.m */,
 			);
@@ -141,8 +146,8 @@
 		186A1C5F1B86D19500668F10 /* StopWatch */ = {
 			isa = PBXGroup;
 			children = (
-				186A1C6A1B86D19500668F10 /* Main.storyboard */,
 				1803F3801B90838900B99F89 /* model */,
+				186A1C6A1B86D19500668F10 /* Main.storyboard */,
 				181132BC1B8D7C5900115557 /* images */,
 				1803F37F1B90833A00B99F89 /* preDefined */,
 				186A1C601B86D19500668F10 /* Supporting Files */,
@@ -289,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E4F5F41B94B78C00C35133 /* DatePickerVC.m in Sources */,
+				1815F9F21B960972001531AB /* LapNotesTVC.m in Sources */,
 				186A1C661B86D19500668F10 /* AppDelegate.m in Sources */,
 				181132CA1B8DC50B00115557 /* stopwatchVC.m in Sources */,
 				186A1C631B86D19500668F10 /* main.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "stopwatchVC.h"
-
+#import "LapNotesTVC.h"
 @interface stopwatchVC ()
 
 
@@ -54,12 +54,43 @@
         _displayTime = [NSString stringWithFormat:@"%02d:%02d:%02d",countUpNumber2,countUpNumber1,countUpNumber0];
     }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.laps = [[NSMutableArray alloc] init];
  }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"startStopSegue2Notes" sender:self];
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    // Make sure your segue name in storyboard is the same as this line
+//    if ([[segue identifier] isEqualToString:@"startStopSegue2Notes"])
+//    {
+//        
+//
+//    }
+//}
+
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if([segue.identifier isEqualToString:@"startStopSegue2Notes"]){
+//        LapNotesTVC *controller = (LapNotesTVC *)segue.destinationViewController;
+//        controller.dataPassing = YES;
+//    }
+//}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showDetailSegue"]){
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        LapNotesTVC *controller = (LapNotesTVC *)navController.topViewController;
+        controller.dataPassing = YES;
+    }
+}
+
 
 
 #pragma mark - Table view data source
@@ -77,9 +108,9 @@
 //create a cell and fill it with info
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *SimpleIdentifier = @"SimpleIdentifier";
+    NSString *SimpleIdentifier = @"tytyty";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleIdentifier];
-    if (cell ==nil)
+     if (cell ==nil)
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleIdentifier];
     }
@@ -141,9 +172,9 @@
 - (IBAction)lapResetButtonAction:(id)sender {
     
     if(_KNTimer){
-        
-        UIImage *lapReStartImage2 = [UIImage imageNamed:@"fe_runningLap.png"];
-        [_lapResetButton setImage:lapReStartImage2 forState:UIControlStateNormal];
+//        
+//        UIImage *lapReStartImage2 = [UIImage imageNamed:@"fe_runningLap.png"];
+//        [_lapResetButton setImage:lapReStartImage2 forState:UIControlStateNormal];
         
         
             [self.laps addObject:_displayTime];
@@ -153,23 +184,29 @@
         return   NSLog(@"%@",_displayTime);
        
     }
-    
-    
+//
+//    
     if(!_KNTimer){
         
         [_KNTimer invalidate];
-         self.laps = [NSMutableArray array];
+        //reset laps to empty array
+        self.laps = [NSMutableArray array];
+        
+        //remove data on screen (refresh
         [self.lapTableView reloadData];
-//        countUpNumber2 = 0;
-//        countUpNumber1 = 0;
-//        countUpNumber0 = 0;
-
+////        countUpNumber2 = 0;
+////        countUpNumber1 = 0;
+////        countUpNumber0 = 0;
+        
+        
+        
+        //display 0's after reset
         _timerDisplay0.text = [NSString stringWithFormat :@"00"];
         _timerDisplay1.text = [NSString stringWithFormat :@"00"];
         _timerDisplay2.text = [NSString stringWithFormat :@"00"];
            }
 }
-
+//
 
 
 @end

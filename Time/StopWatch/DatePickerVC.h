@@ -14,17 +14,11 @@ int minutes= 60;
 int seconds = 60;
 int milliseconds = 100;
 
-
-
-
-
 @interface DatePickerVC : UIViewController
 
 @property (strong,nonatomic)NSMutableArray *countDownArray;
 
 @property (weak,nonatomic) NSTimer *countDownTimer;
-
-
 
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
