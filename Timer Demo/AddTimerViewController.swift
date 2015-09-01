@@ -23,6 +23,7 @@ class AddTimerViewController: UIViewController {
         super.viewDidLoad()
 
         timerPicker.countDownDuration = 60
+
         
         // Do any additional setup after loading the view.
     }

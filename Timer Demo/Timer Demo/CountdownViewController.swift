@@ -29,6 +29,11 @@ class CountdownViewController: UIViewController,
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         tableView.delegate = self
         tableView.dataSource = self
+        
+                
+        
+        
+        
     }
     
     func update(){

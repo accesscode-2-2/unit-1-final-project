@@ -25,6 +25,8 @@ class AddCountdownViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        datePicker.backgroundColor = UIColor.groupTableViewBackgroundColor()
         timerNameTextField.delegate = self
         
         updateDateAndTimeLabel()
@@ -46,6 +48,8 @@ class AddCountdownViewController: UIViewController, UITextFieldDelegate {
             let newTargetDate = datePicker.date
             let newName = timerNameTextField.text
             let newCountdown = Countdown(name: newName!, targetDate: newTargetDate)
+            
+            print(newTargetDate)
             
             delegate?.addCountdownViewController(self, didCreateNewCountdown: newCountdown)
             self.navigationController?.popViewControllerAnimated(true)
