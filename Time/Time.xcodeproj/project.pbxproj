@@ -28,6 +28,8 @@
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
+		D9DEC6221B97293400DDE698 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DEC6211B97293400DDE698 /* AVFoundation.framework */; };
+		D9DEC6241B97295F00DDE698 /* ping-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9DEC6231B97295F00DDE698 /* ping-sound.mp3 */; };
 		D9E4BBD11B9243760001CC08 /* PresetTimerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD01B9243760001CC08 /* PresetTimerDetailViewController.m */; };
 		D9E4BBD41B9243C20001CC08 /* PresetTimerAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD31B9243C20001CC08 /* PresetTimerAddViewController.m */; };
 		D9E4BBD71B924DC10001CC08 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4BBD61B924DC10001CC08 /* Timer.m */; };
@@ -76,6 +78,8 @@
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
+		D9DEC6211B97293400DDE698 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D9DEC6231B97295F00DDE698 /* ping-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ping-sound.mp3"; sourceTree = "<group>"; };
 		D9E4BBCF1B9243760001CC08 /* PresetTimerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimerDetailViewController.h; sourceTree = "<group>"; };
 		D9E4BBD01B9243760001CC08 /* PresetTimerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimerDetailViewController.m; sourceTree = "<group>"; };
 		D9E4BBD21B9243C20001CC08 /* PresetTimerAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimerAddViewController.h; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DEC6221B97293400DDE698 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,7 @@
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
+				D9DEC6211B97293400DDE698 /* AVFoundation.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,
@@ -129,6 +135,7 @@
 		8D05375A1B86687B00588318 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				D9DEC6231B97295F00DDE698 /* ping-sound.mp3 */,
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				D9E4BBD51B924DC10001CC08 /* Timer.h */,
@@ -276,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DEC6241B97295F00DDE698 /* ping-sound.mp3 in Resources */,
 				4D5C83D11B90EE7B0021A55C /* bokeh.png in Resources */,
 				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
 				4D5C83DE1B9104930021A55C /* ticker2.png in Resources */,

@@ -25,9 +25,24 @@
 
 @property (nonatomic) NSTimer *timer;
 
+@property AVAudioPlayer *timeEnds;
+
+
 @end
 
 @implementation TimerTabBarController
+
+- (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type {
+    NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    NSError *error;
+    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (!audioPlayer) {
+        NSLog(@"%@", [error description]);
+    }
+    return audioPlayer;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +50,7 @@
     self.isTimerRunning = NO;
     self.isPaused = NO;
     self.pauseResumeButton.enabled = NO;
+    self.timeEnds = [self setupAudioPlayerWithFile:@"ping-sound" type:@"mp3"];
 }
 
 - (void)animationSetup { // added method so you can start/stop animation anywhere in timer state
@@ -127,6 +143,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done" message:[NSString stringWithFormat:@""] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         
         [alert show];
+        [self.timeEnds play];
         [self.animatedPicture stopAnimating];
         self.datePicker.hidden = NO;
         
