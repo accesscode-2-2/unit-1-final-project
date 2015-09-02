@@ -43,7 +43,7 @@
     [self.timers addObject:fish];
     
     Timer *cookie = [[Timer alloc] init];
-    cookie.timerName = @"Chocolate Chip Cookies";
+    cookie.timerName = @"Chocolate Cookies";
     cookie.countDownDuration = 720;
     [self.timers addObject:cookie];
     

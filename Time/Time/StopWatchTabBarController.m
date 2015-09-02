@@ -86,8 +86,8 @@ NSTimer *timer;
         [self.savedLapTimes insertObject:self.lapTimerLabel.text atIndex:0]; // add new item to the top of the list
        
         
-        NSLog(@"savedLapTimes = %@", self.lapTimerLabel.text); // log text to test
-        NSLog(@"%@", self.savedLapTimes);
+//        NSLog(@"savedLapTimes = %@", self.lapTimerLabel.text); // log text to test
+//        NSLog(@"%@", self.savedLapTimes);
         
         [self.lapsTableView reloadData]; // reload view with new values added
         
