@@ -29,7 +29,7 @@
                         @"Roast Turkey      03:00:00",
                         @"Lounchtime     00:30:00",
                         @"Reheat pizza    00:01:00",
-//                        @"Workout      00:20:00",
+                        @"Workout      00:20:00",
                         @"Sitting Meditation      00:45:00"
                         ].mutableCopy;
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0765D20B1B925CD5003961EE /* TimerDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0765D20A1B925CD5003961EE /* TimerDetailTableViewController.m */; };
 		0765D20E1B925E7C003961EE /* Preset.m in Sources */ = {isa = PBXBuildFile; fileRef = 0765D20D1B925E7C003961EE /* Preset.m */; };
 		0765D2101B9265B2003961EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0765D20F1B9265B2003961EE /* Main.storyboard */; };
 		8478CE8E1B8E1D6E0045BDD7 /* WorldClockTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */; };
@@ -47,8 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0765D2091B925CD5003961EE /* TimerDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailTableViewController.h; sourceTree = "<group>"; };
-		0765D20A1B925CD5003961EE /* TimerDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailTableViewController.m; sourceTree = "<group>"; };
 		0765D20C1B925E7C003961EE /* Preset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preset.h; sourceTree = "<group>"; };
 		0765D20D1B925E7C003961EE /* Preset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preset.m; sourceTree = "<group>"; };
 		0765D20F1B9265B2003961EE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -162,8 +159,6 @@
 				8499D3D31B94F00300A434C9 /* PressetData.m */,
 				8499D3D81B9549F100A434C9 /* PresetViewController.h */,
 				8499D3D91B9549F100A434C9 /* PresetViewController.m */,
-				0765D2091B925CD5003961EE /* TimerDetailTableViewController.h */,
-				0765D20A1B925CD5003961EE /* TimerDetailTableViewController.m */,
 				8499D3D51B950C5C00A434C9 /* PresetAddViewController.h */,
 				8499D3D61B950C5C00A434C9 /* PresetAddViewController.m */,
 				0765D20F1B9265B2003961EE /* Main.storyboard */,
@@ -331,7 +326,6 @@
 				8478CE951B8F51E00045BDD7 /* WorldClockAddTableViewController.m in Sources */,
 				8499D3DA1B9549F100A434C9 /* PresetViewController.m in Sources */,
 				8499D3D71B950C5C00A434C9 /* PresetAddViewController.m in Sources */,
-				0765D20B1B925CD5003961EE /* TimerDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@
 @interface PresetViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>  {
     
     IBOutlet UIProgressView *progressView;
-    //    NSTimer *timer;
 }
 
  - (IBAction)stopButtonTapped:(UIButton *)sender;

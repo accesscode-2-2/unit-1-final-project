@@ -7,7 +7,6 @@
 //
 
 #import "TimerViewController.h"
-#import "TimerDetailTableViewController.h"
 #import "STKSpinnerView.h"
 #import <AVFoundation/AVFoundation.h> // this allows us to include sounds!
 

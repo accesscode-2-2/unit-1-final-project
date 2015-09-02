@@ -23,7 +23,6 @@
 
 @implementation CountdownEventViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"eventBackground7"]];
@@ -34,7 +33,18 @@
     self.countdownTimerLabel.text = @"";
     self.eventLabel.text = @"";
     self.eventImage.hidden = YES;
-   
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDate *currentDate = [NSDate date];
+    
+    NSDateComponents *dateLimit = [[NSDateComponents alloc] init];
+    
+    [dateLimit setDay:0];
+    [dateLimit setHour:0];
+    [dateLimit setMinute:0];
+    NSDate *minimumDate = [calendar dateByAddingComponents:dateLimit toDate:currentDate options:0];
+    
+    [self.eventPicker setMinimumDate:minimumDate];
     
 }
 - (IBAction)startButton:(id)sender {
@@ -48,21 +58,15 @@
     
     /***** interface ***/
     self.countdownTimerLabel.hidden = NO;
-    
     self.eventTextField.hidden = YES;
-     
     
     self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                            target:self
                                                          selector:@selector(updateTime)
-                                                         userInfo:nil
+                                                        userInfo:nil
                                                           repeats:YES];
     if ([self.countdownTimerLabel.text isEqualToString:@"This date has already passed"]) {
-        
-
-        
     }
-
     else {
         
         self.eventImage.hidden = NO;
@@ -76,7 +80,7 @@
         NSLog(@"There is a weddin comming up");
     } else if (([stringEvent rangeOfString:@"Graduation"].location != NSNotFound) || ([stringEvent rangeOfString:@"graduation"].location != NSNotFound)) {
         self.eventImage.image = [UIImage imageNamed:@"graduation"];
-        NSLog(@"There is a weddin comming up");
+        NSLog(@"There is a wedding comming up");
     }
     
     else
@@ -95,11 +99,8 @@
     //get current time on your computer/phone
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     
-    //object that describes the calendrical components required for the computation.
     NSUInteger preservedComponents = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay);
-    //calculate the time distance between selected date, and current date
-    self.eventPicker.date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.eventPicker.date]];
-    //start countdown timer
+     self.eventPicker.date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:self.eventPicker.date]];
     
 }
 
@@ -132,16 +133,6 @@
     NSLog (@"seconds %02li ",seconds);
 
 
-    
-    //if seconds is a negative number, it means that the selected date has already passed
-    if (timeLeft <= 0) {
-        self.countdownTimerLabel.textColor = [UIColor redColor];
-        self.countdownTimerLabel.text = @"This date has already passed";
-        self.eventImage.hidden = YES;
-        self.eventLabel.hidden = YES;
-
-        
-    }
     self.DaysHMS.hidden = NO;
         self.countdownTimerLabel.textColor = [UIColor blackColor];
         self.countdownTimerLabel.text = [NSString stringWithFormat:@"%02li   %02li   %02li   %02li", (long)days, (long)hours, (long)minutes, (long)seconds];

@@ -76,6 +76,7 @@
 - (IBAction)stopButtonTapped:(UIButton *)sender {
     [self.timer invalidate];
     [self.progressTimer invalidate];
+ 
 }
 
 
@@ -86,10 +87,6 @@
 
 
 }
-
-
-
-
 
 - (void)updateUI:(NSTimer *)timer
 {
@@ -107,44 +104,13 @@
 }
 
 
-//- (void)updateUI:(NSTimer *)timer
-//{
-//    self.count =0; self.count++;
-//    
-//    if (self.count <=self.seconds)
-//    {
-//        self.progressLabel.text = [NSString stringWithFormat:@"%ld %%",self.count*100/self.seconds];
-//        self.progressView.progress = (float)self.count/self.seconds;
-//    } else
-//    {
-//        [self.progressTimer invalidate];
-//        self.progressTimer = nil;
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
    
     
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
-    
-    
-    
-    
+
         [self updatePresetLabel];
         [self runTimer];
  }
