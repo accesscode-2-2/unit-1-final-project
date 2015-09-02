@@ -33,9 +33,23 @@
 
 @property (nonatomic) NSTimer *timer;
 
+@property AVAudioPlayer *timeEnds;
+
 @end
 
 @implementation PresetTimerDetailViewController
+
+- (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type {
+    NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    NSError *error;
+    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (!audioPlayer) {
+        NSLog(@"%@", [error description]);
+    }
+    return audioPlayer;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,6 +67,7 @@
     self.isTimerRunning = NO;
     self.isPaused = NO;
     self.pauseResumeButton.enabled = NO;
+    self.timeEnds = [self setupAudioPlayerWithFile:@"ping-sound" type:@"mp3"];
     
 }
 
@@ -123,6 +138,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done" message:[NSString stringWithFormat:@"%@ Is Ready",self.currentTimer.timerName] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         
         [alert show];
+        [self.timeEnds play];
         
         self.timeLabel.alpha = 0;
         [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
