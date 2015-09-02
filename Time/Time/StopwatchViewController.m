@@ -58,6 +58,7 @@ BOOL running;
     [super viewDidLoad];
     
     [self.lapButton setEnabled:NO];
+    [self.lapButton setTitleColor: [UIColor lightGrayColor]forState:UIControlStateNormal];
     [self.resetButton setHidden:YES];
     
     self.laps = [[NSMutableArray alloc] init];
@@ -91,6 +92,7 @@ BOOL running;
     [self.resetButton setHidden:YES];
     [self.lapButton setHidden:NO];
     [self.lapButton setEnabled:NO];
+    [self.lapButton setTitleColor: [UIColor lightGrayColor]forState:UIControlStateNormal];
     [self.laps removeAllObjects];
     [self.tableView reloadData];
     
@@ -107,7 +109,10 @@ BOOL running;
     if (running == false) {
         // start timer
         running = true;
+        
         self.lapButton.enabled = YES;
+        [self.lapButton setTitleColor: [UIColor blackColor]forState:UIControlStateNormal];
+        
         self.startTime = [NSDate timeIntervalSinceReferenceDate];
         self.startTimeCount = [[NSDate alloc]init];
         self.startLapTime = [NSDate timeIntervalSinceReferenceDate];
