@@ -135,7 +135,6 @@
 		8D05375A1B86687B00588318 /* Time */ = {
 			isa = PBXGroup;
 			children = (
-				D9DEC6231B97295F00DDE698 /* ping-sound.mp3 */,
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
 				D9E4BBD51B924DC10001CC08 /* Timer.h */,
@@ -158,8 +157,6 @@
 				4D5C83D31B90EF620021A55C /* BokehScene.m */,
 				4D5C83CE1B90EE7B0021A55C /* Bokeh.sks */,
 				4D5C83CF1B90EE7B0021A55C /* bokeh.png */,
-				4D5C83E71B91117A0021A55C /* Akkurat Regular.otf */,
-				4D5C83E91B9112E50021A55C /* Akkurat Bold.otf */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -171,6 +168,9 @@
 		8D05375B1B86687B00588318 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9DEC6231B97295F00DDE698 /* ping-sound.mp3 */,
+				4D5C83E71B91117A0021A55C /* Akkurat Regular.otf */,
+				4D5C83E91B9112E50021A55C /* Akkurat Bold.otf */,
 				4D5C83D51B9104930021A55C /* ticker1.png */,
 				4D5C83D61B9104930021A55C /* ticker2.png */,
 				4D5C83D71B9104930021A55C /* ticker3.png */,
@@ -251,7 +251,7 @@
 				TargetAttributes = {
 					8D0537571B86687B00588318 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 5F2A5ZZ575;
+						DevelopmentTeam = 85VFEKU7M5;
 					};
 					8D0537701B86687C00588318 = {
 						CreatedOnToolsVersion = 6.4;
