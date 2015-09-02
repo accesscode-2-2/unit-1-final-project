@@ -242,9 +242,6 @@
                                                 <exclude reference="MeH-Uo-Jzt"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <action selector="pickerAction:" destination="xl3-dn-KUD" eventType="valueChanged" id="o5l-D9-HHI"/>
-                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -426,7 +423,7 @@
                         <outlet property="resumeButton" destination="tZe-lr-01J" id="DH1-St-ypE"/>
                         <outlet property="rightCircle" destination="Iym-SQ-ZU5" id="RYR-eH-nw5"/>
                         <outlet property="startButton" destination="vdm-cq-HTx" id="QBq-Iy-rai"/>
-                        <outlet property="timerLabel" destination="EF5-LQ-yqr" id="gxG-Xv-aJA"/>
+                        <outlet property="timerLabel" destination="EF5-LQ-yqr" id="2gL-4J-sZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQx-zm-ItF" userLabel="First Responder" sceneMemberID="firstResponder"/>
