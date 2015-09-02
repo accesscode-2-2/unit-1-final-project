@@ -26,15 +26,18 @@
     // change tab bar controller background color
     UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
     UITabBarController *bc = nav.viewControllers[0];
-    bc.tabBar.barTintColor = [UIColor colorWithRed:235/256.0 green:235/256.0 blue:241/256.0 alpha:1.0];
+    //bc.tabBar.barTintColor = [UIColor colorWithRed:235/256.0 green:235/256.0 blue:241/256.0 alpha:1.0]; // grey
+    bc.tabBar.barTintColor = [UIColor colorWithRed:249/256.0 green:205/256.0 blue:78/256.0 alpha:1.0]; // yellow
     
     // change header navigation bar background color
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:235/256.0 green:235/256.0 blue:241/256.0 alpha:1.0];
+    //[UINavigationBar appearance].barTintColor = [UIColor colorWithRed:235/256.0 green:235/256.0 blue:241/256.0 alpha:1.0]; // grey
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:249/256.0 green:205/256.0 blue:78/256.0 alpha:1.0]; // yellow
    
     // change top navigation bar button color
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     
     self.window.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
     
     return YES;
 }

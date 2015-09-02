@@ -41,9 +41,6 @@ NSTimer *timer;
     
     [self.tabBarController.tabBar setTintColor:[UIColor blackColor]]; // change selected button color to white
     
-    
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
