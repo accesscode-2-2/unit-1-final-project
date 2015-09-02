@@ -36,6 +36,9 @@
 
 @property (nonatomic) int secondsCount;
 
+@property (nonatomic) int weight;
+@property (nonatomic) int newTime;
+
 @property (nonatomic) NSTimer *timer;
 
 @property AVAudioPlayer *timeEnds;
@@ -43,9 +46,6 @@
 @end
 
 @implementation PresetTimerDetailViewController
-
-int weight = 5;
-int newTime = 3900;
 
 
 - (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type {
@@ -72,6 +72,8 @@ int newTime = 3900;
         self.add.hidden = NO;
         self.subtract.hidden = NO;
         self.weightText.hidden = NO;
+        self.weight = self.currentTimer.countDownDuration/60/13;
+        self.newTime = self.currentTimer.countDownDuration;
     }
     else {
     self.weightLabel.hidden = YES;
@@ -95,25 +97,25 @@ int newTime = 3900;
 }
 
 - (IBAction)addButtonTapped:(id)sender {
-    weight ++;
-    self.weightLabel.text = [NSString stringWithFormat:@"%i", weight];
-    newTime = weight * 13 * 60;
+    self.weight ++;
+    self.weightLabel.text = [NSString stringWithFormat:@"%i", self.weight];
+    self.newTime = self.weight * 13 * 60;
     
-    self.hours = newTime/3600;
-    self.minutes = (newTime % 3600)/60;
-    self.seconds = newTime - (self.hours * 3600) - (self.minutes * 60);
+    self.hours = self.newTime/3600;
+    self.minutes = (self.newTime % 3600)/60;
+    self.seconds = self.newTime - (self.hours * 3600) - (self.minutes * 60);
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     
 }
 - (IBAction)subtractButtonTapped:(id)sender {
-    weight --;
-    self.weightLabel.text = [NSString stringWithFormat:@"%i", weight];
-    newTime = weight * 13 * 60;
+    self.weight --;
+    self.weightLabel.text = [NSString stringWithFormat:@"%i", self.weight];
+    self.newTime = self.weight * 13 * 60;
     
-    self.hours = newTime/3600;
-    self.minutes = (newTime % 3600)/60;
-    self.seconds = newTime - (self.hours * 3600) - (self.minutes * 60);
+    self.hours = self.newTime/3600;
+    self.minutes = (self.newTime % 3600)/60;
+    self.seconds = self.newTime - (self.hours * 3600) - (self.minutes * 60);
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];}
 
@@ -130,7 +132,7 @@ int newTime = 3900;
 - (IBAction)startCancelButton:(id)sender {
     
     if ([self.nameLabel.text isEqualToString:@"Roast Turkey"]) {
-        self.secondsCount = newTime;
+        self.secondsCount = self.newTime;
     }
     else
     {
