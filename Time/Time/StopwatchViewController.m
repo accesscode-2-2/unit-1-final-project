@@ -299,8 +299,8 @@
 
 
 - (IBAction)soundButton:(id)sender {
-    if ([self.myMusic play]) {
+    
          self.myMusic.volume = 0;
-    }
+    
 }
 @end
