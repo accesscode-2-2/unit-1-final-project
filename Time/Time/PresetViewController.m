@@ -46,7 +46,7 @@
     [self.resetButton setBackgroundImage:[UIImage imageNamed:@"1reset"] forState:UIControlStateNormal];
     [self.stopButton setBackgroundImage:[UIImage imageNamed:@"1stop"] forState:UIControlStateNormal];
 
-    
+    self.count = 0;
     
     
 }
@@ -82,6 +82,8 @@
 - (IBAction)resetButtonTapped:(UIButton *)sender {
     [self updatePresetLabel];
     self.progressLabel.text = @"0 %";
+    self.count = 0;
+
 
 }
 
@@ -104,6 +106,21 @@
     }
 }
 
+
+//- (void)updateUI:(NSTimer *)timer
+//{
+//    self.count =0; self.count++;
+//    
+//    if (self.count <=self.seconds)
+//    {
+//        self.progressLabel.text = [NSString stringWithFormat:@"%ld %%",self.count*100/self.seconds];
+//        self.progressView.progress = (float)self.count/self.seconds;
+//    } else
+//    {
+//        [self.progressTimer invalidate];
+//        self.progressTimer = nil;
+//    }
+//}
 
 
 
