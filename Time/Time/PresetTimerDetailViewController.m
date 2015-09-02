@@ -5,11 +5,16 @@
 //  Created by Xiulan Shi on 8/29/15.
 //  Copyright (c) 2015 Mike Kavouras. All rights reserved.
 //
-
 #import "PresetTimerDetailViewController.h"
 
 @interface PresetTimerDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property (weak, nonatomic) IBOutlet UIButton *add;
+@property (weak, nonatomic) IBOutlet UIButton *subtract;
+
+@property (weak, nonatomic) IBOutlet UILabel *weightText;
 
 //@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
@@ -38,6 +43,10 @@
 @end
 
 @implementation PresetTimerDetailViewController
+
+int weight = 5;
+int newTime;
+
 
 - (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type {
     NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
@@ -69,12 +78,48 @@
     self.pauseResumeButton.enabled = NO;
     self.timeEnds = [self setupAudioPlayerWithFile:@"ping-sound" type:@"mp3"];
     
+    if ([self.nameLabel.text isEqualToString:@"Roast Turkey"]) {
+        self.weightLabel.hidden = NO;
+        self.add.hidden = NO;
+        self.subtract.hidden = NO;
+        self.weightText.hidden = NO;
+    }
+    else {
+    self.weightLabel.hidden = YES;
+    self.add.hidden = YES;
+    self.subtract.hidden = YES;
+    self.weightText.hidden = YES;
+    }
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    [self.view reloadInputViews];
+- (IBAction)addButtonTapped:(id)sender {
+    weight ++;
+    self.weightLabel.text = [NSString stringWithFormat:@"%i", weight];
+    newTime = weight * 13 * 60;
+    
+    self.hours = newTime/3600;
+    self.minutes = (newTime % 3600)/60;
+    self.seconds = newTime - (self.hours * 3600) - (self.minutes * 60);
+    
+    self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    
 }
+- (IBAction)subtractButtonTapped:(id)sender {
+    weight --;
+    self.weightLabel.text = [NSString stringWithFormat:@"%i", weight];
+    newTime = weight * 13 * 60;
+    
+    self.hours = newTime/3600;
+    self.minutes = (newTime % 3600)/60;
+    self.seconds = newTime - (self.hours * 3600) - (self.minutes * 60);
+    
+    self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];}
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:YES];
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -83,6 +128,43 @@
 
 - (IBAction)startCancelButton:(id)sender {
     
+    if ([self.nameLabel.text isEqualToString:@"Roast Turkey"]) {
+        self.secondsCount = newTime;
+        self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+        
+        if (self.isTimerRunning == YES) {
+            
+            self.timeLabel.alpha = 0;
+            [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
+            [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
+            self.pauseResumeButton.enabled = NO;
+            
+            [self.timer invalidate];
+            self.timer = nil;
+            
+        } else {
+            
+            self.timeLabel.alpha = 1;
+            
+            [self.startCancelButton setTitle:@"CANCEL" forState:UIControlStateNormal];
+            self.pauseResumeButton.enabled = YES;
+            
+            if (self.timer == nil) {
+                self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                              target:self
+                                                            selector:@selector(updateTimer)
+                                                            userInfo:nil
+                                                             repeats:YES];
+            }
+            
+        }
+        
+        self.isTimerRunning = !self.isTimerRunning;
+        
+
+    }
+    else
+    {
     self.secondsCount = self.currentTimer.countDownDuration;
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
@@ -118,6 +200,7 @@
     
     
 }
+}
 
 - (void) updateTimer {
     
@@ -130,7 +213,7 @@
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     
     
-    if (self.secondsCount <= 0) {
+    if (self.secondsCount == 0) {
         
         [self.timer invalidate];
         self.timer = nil;
