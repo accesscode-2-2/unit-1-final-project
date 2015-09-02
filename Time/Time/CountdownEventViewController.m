@@ -114,10 +114,24 @@
     NSInteger timeLeft, days, hours, minutes, seconds ;
     
     timeLeft = ((NSInteger)[self.eventPicker.date timeIntervalSinceNow]);
-    seconds = timeLeft % 60;
-    minutes = (timeLeft / 60) % 60;
-    hours = (timeLeft / 3600) % 24;
-    days = (timeLeft / 86400) % 30;
+ 
+    days = (timeLeft / 86400) ;
+    timeLeft-= days * 86400;
+    NSLog (@"days %02li ",days);
+ 
+    
+    hours = (timeLeft / 3600) ;
+    timeLeft -= hours * 3600;
+    NSLog (@"hours %02li ",hours);
+    
+    minutes = (timeLeft / 60) ;
+    timeLeft -= minutes * 60;
+    NSLog (@"minutes %02li ",minutes);
+    
+   seconds = timeLeft;
+    NSLog (@"seconds %02li ",seconds);
+
+
     
     //if seconds is a negative number, it means that the selected date has already passed
     if (timeLeft <= 0) {

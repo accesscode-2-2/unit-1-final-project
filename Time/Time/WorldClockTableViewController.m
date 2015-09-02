@@ -48,8 +48,11 @@
     self.navigationController.view.backgroundColor =
     [UIColor colorWithPatternImage:[UIImage imageNamed:@"clockImage"]];
     self.tableView.backgroundColor = [UIColor clearColor];
-        
-  
+    
+  //  self.navigationController.view.backgroundColor =
+    //[UIColor colorWithPatternImage:[UIImage imageNamed:@"worldclockImage88"]];
+   // self.tableView.backgroundColor = [UIColor clearColor];
+
     
     
  }
