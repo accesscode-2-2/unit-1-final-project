@@ -666,6 +666,16 @@
                                             </mask>
                                         </variation>
                                     </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTP-hC-WSb">
+                                        <rect key="frame" x="236" y="91" width="129" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" red="0.094117647058823528" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopBirthdayLabel:" destination="p74-F3-gK7" eventType="touchUpInside" id="sGO-GJ-Wy0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63529411764705879" green="0.74509803921568629" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -674,13 +684,17 @@
                                     <constraint firstAttribute="trailing" secondItem="fNl-mY-nbx" secondAttribute="trailing" constant="11" id="4xC-LJ-i4f"/>
                                     <constraint firstAttribute="trailing" secondItem="DDm-ug-IjK" secondAttribute="trailing" constant="16" id="7C8-tv-LEL"/>
                                     <constraint firstItem="oi6-7O-PhH" firstAttribute="top" secondItem="Hmi-4I-7P7" secondAttribute="bottom" constant="61" id="86c-jI-Qbu"/>
+                                    <constraint firstItem="sWU-OE-vrb" firstAttribute="top" secondItem="iTP-hC-WSb" secondAttribute="bottom" constant="19" id="94X-WG-5XJ"/>
                                     <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="DDm-ug-IjK" secondAttribute="bottom" constant="47" id="9AI-G7-vd8"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="1" id="C26-hZ-a1q"/>
                                     <constraint firstAttribute="trailing" secondItem="Hmi-4I-7P7" secondAttribute="trailing" constant="150" id="CAF-7r-dcj"/>
+                                    <constraint firstAttribute="trailing" secondItem="oi6-7O-PhH" secondAttribute="trailing" id="CDp-3E-tyf"/>
                                     <constraint firstItem="UJ2-B1-khb" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="44" id="Cfn-cU-tYG"/>
                                     <constraint firstAttribute="bottom" secondItem="801-NQ-tjD" secondAttribute="bottom" constant="139" id="Ept-xE-IWT"/>
                                     <constraint firstItem="UJ2-B1-khb" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="Et7-L8-n1e"/>
                                     <constraint firstAttribute="bottom" secondItem="801-NQ-tjD" secondAttribute="bottom" constant="139" id="FJI-IY-juS"/>
+                                    <constraint firstAttribute="trailing" secondItem="iTP-hC-WSb" secondAttribute="trailing" constant="235" id="GPu-Pa-4Bp"/>
+                                    <constraint firstItem="iTP-hC-WSb" firstAttribute="top" secondItem="DDm-ug-IjK" secondAttribute="bottom" constant="47" id="HTp-9V-A6M"/>
                                     <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" id="IJ4-FE-bqO"/>
                                     <constraint firstItem="DDm-ug-IjK" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="18" id="IUk-mI-OK6"/>
                                     <constraint firstItem="sWU-OE-vrb" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="11" id="IWl-Cu-M3H"/>
@@ -688,6 +702,7 @@
                                     <constraint firstItem="fNl-mY-nbx" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="11" id="Kt7-S4-7nj"/>
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="top" secondItem="jqs-0i-GYo" secondAttribute="bottom" constant="8" id="Nvi-3W-QEf"/>
                                     <constraint firstAttribute="trailing" secondItem="UJ2-B1-khb" secondAttribute="trailing" id="O0t-h1-WAN"/>
+                                    <constraint firstItem="iTP-hC-WSb" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="236" id="PsR-9N-wIe"/>
                                     <constraint firstItem="jqs-0i-GYo" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="QGc-El-Cfi"/>
                                     <constraint firstItem="zbv-iV-9MB" firstAttribute="top" secondItem="fNl-mY-nbx" secondAttribute="bottom" constant="8" id="T6L-ZQ-M17"/>
                                     <constraint firstItem="YrD-Gy-aHm" firstAttribute="top" secondItem="sWU-OE-vrb" secondAttribute="bottom" constant="47" id="Tdv-zD-kp3"/>
@@ -702,13 +717,16 @@
                                     <constraint firstItem="801-NQ-tjD" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="dDr-jn-Jxq"/>
                                     <constraint firstItem="fNl-mY-nbx" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="1" id="fJE-7F-jvz"/>
                                     <constraint firstItem="YrD-Gy-aHm" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="151" id="heu-xH-xJd"/>
+                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="top" secondItem="sWU-OE-vrb" secondAttribute="bottom" constant="8" id="jbV-Ep-UVi"/>
                                     <constraint firstItem="DDm-ug-IjK" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" id="kBH-yO-jlr"/>
                                     <constraint firstAttribute="trailing" secondItem="oi6-7O-PhH" secondAttribute="trailing" id="lcD-j2-SFj"/>
+                                    <constraint firstItem="oi6-7O-PhH" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="m8x-bi-bWy"/>
                                     <constraint firstAttribute="trailing" secondItem="fNl-mY-nbx" secondAttribute="trailing" constant="-1" id="n5c-xD-v0X"/>
                                     <constraint firstItem="zbv-iV-9MB" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="1" id="qC5-fx-HWB"/>
                                     <constraint firstItem="Hmi-4I-7P7" firstAttribute="top" secondItem="T9o-yf-HaW" secondAttribute="top" constant="91" id="qPs-AO-Say"/>
                                     <constraint firstItem="oi6-7O-PhH" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" id="qau-iw-ID7"/>
                                     <constraint firstItem="fNl-mY-nbx" firstAttribute="top" secondItem="YrD-Gy-aHm" secondAttribute="bottom" constant="23" id="r2R-jg-iWr"/>
+                                    <constraint firstItem="YrD-Gy-aHm" firstAttribute="top" secondItem="oi6-7O-PhH" secondAttribute="bottom" constant="8" id="si2-bj-VOj"/>
                                     <constraint firstAttribute="trailing" secondItem="jqs-0i-GYo" secondAttribute="trailing" constant="149" id="tQe-YZ-EIv"/>
                                     <constraint firstItem="Hmi-4I-7P7" firstAttribute="leading" secondItem="T9o-yf-HaW" secondAttribute="leading" constant="150" id="ucN-OL-zNc"/>
                                     <constraint firstAttribute="trailing" secondItem="sWU-OE-vrb" secondAttribute="trailing" constant="11" id="viH-9C-VcW"/>
@@ -752,6 +770,7 @@
                         <outlet property="christmasCountdownLabel" destination="oi6-7O-PhH" id="dKf-8c-T7p"/>
                         <outlet property="christmasStartButton" destination="YrD-Gy-aHm" id="GzU-Gv-4oL"/>
                         <outlet property="datePicker" destination="801-NQ-tjD" id="fIE-VD-9zT"/>
+                        <outlet property="stopBirthdayLabelButton" destination="iTP-hC-WSb" id="gV5-Y0-fPn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZJ-pa-gCn" userLabel="First Responder" sceneMemberID="firstResponder"/>

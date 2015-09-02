@@ -31,7 +31,8 @@
     [self.birthdayCountdownLabel setHidden:YES];
     [self.christmasCountdownLabel setHidden:YES];
     [self.accessCodeCountdownLabel setHidden:YES];
-//    [self.stopBirthdayButton setHidden:YES];
+    
+    [self.stopBirthdayLabelButton setHidden:YES];
     
     self.birthdayStartButton.layer.borderWidth = 2.0;
     self.birthdayStartButton.layer.cornerRadius = 11.0;
@@ -51,7 +52,8 @@
 - (IBAction)startBirthdayCountdown:(id)sender {
     
     [self.birthdayCountdownLabel setHidden:NO];
-    [self.birthdayStartButton setHidden:YES];
+    [self.birthdayStartButton setHidden:YES];    
+    [self.stopBirthdayLabelButton setHidden:NO];
     
     NSDateFormatter *birthdayFormatter = [[NSDateFormatter alloc] init];
     [birthdayFormatter setDateFormat:@"yyy-MM-dd"];
@@ -151,6 +153,8 @@
     NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02ldd: %02ldh: %02ldm: %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
     
     self.accessCodeCountdownLabel.text = timeDisplay;
+}
+- (IBAction)stopBirthdayLabel:(id)sender {
 }
 
 @end
