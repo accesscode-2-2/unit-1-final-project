@@ -34,6 +34,8 @@
     // change top navigation bar button color
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     
+    self.window.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
     return YES;
 }
 

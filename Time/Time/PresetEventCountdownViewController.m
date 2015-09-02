@@ -35,7 +35,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController setNavigationBarHidden:YES]; // hide navigation bar that pops up automatically w swipe recognizer
     
     self.particleBackground = [[SKView alloc] init];
     BokehScene * scene = [BokehScene sceneWithSize:self.view.bounds.size]; // add spritekit animated images to background!
@@ -54,10 +53,25 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES]; // hide navigation bar that pops up automatically w swipe recognizer
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
     self.particleBackground = nil;
     // self.particleBack
     [self.particleBackground presentScene:nil];
+
 }
 
 - (void)viewWillLayoutSubviews {
