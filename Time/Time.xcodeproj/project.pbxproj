@@ -21,6 +21,8 @@
 		45C9BBB11B938E28009001E2 /* NewWorldClockTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C9BBB01B938E28009001E2 /* NewWorldClockTableViewController.m */; };
 		45C9BBE51B95379D009001E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C9BBE41B95379D009001E2 /* AVFoundation.framework */; };
 		45E331B41B968923005D6871 /* Wat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E331B31B968923005D6871 /* Wat.mp3 */; };
+		45E331B61B969774005D6871 /* Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 45E331B51B969774005D6871 /* Video.mp4 */; };
+		45E331F01B96A2BF005D6871 /* Video.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 45E331B51B969774005D6871 /* Video.mp4 */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
@@ -60,6 +62,7 @@
 		45C9BBB01B938E28009001E2 /* NewWorldClockTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewWorldClockTableViewController.m; sourceTree = "<group>"; };
 		45C9BBE41B95379D009001E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		45E331B31B968923005D6871 /* Wat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Wat.mp3; path = Time/Wat.mp3; sourceTree = "<group>"; };
+		45E331B51B969774005D6871 /* Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video.mp4; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		45C9BBED1B954B6A009001E2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				45E331B51B969774005D6871 /* Video.mp4 */,
 				45E331B31B968923005D6871 /* Wat.mp3 */,
 			);
 			name = Sounds;
@@ -257,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E331B61B969774005D6871 /* Video.mp4 in Resources */,
 				003B48381B88CEC8004C430A /* Main.storyboard in Resources */,
 				45E331B41B968923005D6871 /* Wat.mp3 in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
@@ -278,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E331F01B96A2BF005D6871 /* Video.mp4 in Sources */,
 				45C9BBB11B938E28009001E2 /* NewWorldClockTableViewController.m in Sources */,
 				45855BB11B86A2BB008B61B8 /* TimerViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,

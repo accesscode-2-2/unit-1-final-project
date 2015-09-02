@@ -9,10 +9,13 @@
 #import "StopwatchViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface StopwatchViewController ()
 - (void)configureView;
 @property (nonatomic)AVAudioPlayer *myMusic;
+@property (nonatomic)MPMoviePlayerController *myPlayer;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
@@ -24,8 +27,9 @@
 @property (nonatomic) NSDate *previousFireDate;
 @property (nonatomic) NSDate *restartDate;
 @property (nonatomic) BOOL running;
-@property (nonatomic) NSTimeInterval pauseTimeInterval;
 
+
+@property (nonatomic) NSTimeInterval pauseTimeInterval;
 @property (nonatomic) NSTimeInterval totalElapsedTime;
 @property (nonatomic) NSTimeInterval totalLapTime;
 
@@ -79,19 +83,25 @@
     
     // Scroll Image in background
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"track"];
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-    self.scrollView.contentSize = backgroundImage.size;
-    [self.scrollView addSubview:backgroundImageView];
-    
+//    UIImage *backgroundImage = [UIImage imageNamed:@"track"];
+//    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+//    self.scrollView.contentSize = backgroundImage.size;
+//    [self.scrollView addSubview:backgroundImageView];
+//    
     // Music
     // Construct URL to sound file
     NSString *path = [NSString stringWithFormat:@"%@/Wat.mp3", [[NSBundle mainBundle] resourcePath]];
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    // Create audio player object and initialize with URL to sound
     self.myMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 
+    //Video
+    NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"Video" withExtension:@"mp4"];
+    self.myPlayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
+    self.myPlayer.controlStyle = MPMovieControlStyleNone;
+    //[self.myPlayer prepareToPlay];
+    [self.myPlayer.view setFrame: CGRectMake(0, -500, 2000, 1600)];
+    [self.view addSubview:self.myPlayer.view];
+    [self.view sendSubviewToBack:self.myPlayer.view];
 }
 
 - (void)configureView
@@ -104,13 +114,20 @@
     if(!self.running) {
         self.previousTime = [NSDate date];
         self.previousLapTime = [NSDate date];
+        
        [self.myMusic play];
+[self.myPlayer prepareToPlay];
+        [self.myPlayer play];
+       
+        
         [self startTimer];
         self.running = TRUE;
     } else{
         [self pauseTimer];
         self.running = NO;
+        
         [self.myMusic pause];
+        [self.myPlayer pause];
     }
 
 }
@@ -240,6 +257,7 @@
         [self.dataArray removeAllObjects];
         [self.lapTableView reloadData];
         self.myMusic.currentTime = 0;
+          self.myPlayer.currentPlaybackTime = 0;
         
     }
 
