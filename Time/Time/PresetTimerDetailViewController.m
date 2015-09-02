@@ -45,7 +45,7 @@
 @implementation PresetTimerDetailViewController
 
 int weight = 5;
-int newTime;
+int newTime = 3900;
 
 
 - (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type {
@@ -67,17 +67,6 @@ int newTime;
     self.nameLabel.text = self.currentTimer.timerName;
     self.imageView.image = [UIImage imageNamed:self.currentTimer.timerName];
     
-    self.hours = self.currentTimer.countDownDuration/3600;
-    self.minutes = (self.currentTimer.countDownDuration % 3600)/60;
-    self.seconds = self.currentTimer.countDownDuration - (self.hours * 3600) - (self.minutes * 60);
-    
-    self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
-    
-    self.isTimerRunning = NO;
-    self.isPaused = NO;
-    self.pauseResumeButton.enabled = NO;
-    self.timeEnds = [self setupAudioPlayerWithFile:@"ping-sound" type:@"mp3"];
-    
     if ([self.nameLabel.text isEqualToString:@"Roast Turkey"]) {
         self.weightLabel.hidden = NO;
         self.add.hidden = NO;
@@ -90,6 +79,18 @@ int newTime;
     self.subtract.hidden = YES;
     self.weightText.hidden = YES;
     }
+    
+    self.hours = self.currentTimer.countDownDuration/3600;
+    self.minutes = (self.currentTimer.countDownDuration % 3600)/60;
+    self.seconds = self.currentTimer.countDownDuration - (self.hours * 3600) - (self.minutes * 60);
+    
+    self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
+    
+    self.isTimerRunning = NO;
+    self.isPaused = NO;
+    self.pauseResumeButton.enabled = NO;
+    self.timeEnds = [self setupAudioPlayerWithFile:@"ping-sound" type:@"mp3"];
+
     
 }
 
@@ -130,42 +131,11 @@ int newTime;
     
     if ([self.nameLabel.text isEqualToString:@"Roast Turkey"]) {
         self.secondsCount = newTime;
-        self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
-        
-        if (self.isTimerRunning == YES) {
-            
-            self.timeLabel.alpha = 0;
-            [self.startCancelButton setTitle:@"START" forState:UIControlStateNormal];
-            [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
-            self.pauseResumeButton.enabled = NO;
-            
-            [self.timer invalidate];
-            self.timer = nil;
-            
-        } else {
-            
-            self.timeLabel.alpha = 1;
-            
-            [self.startCancelButton setTitle:@"CANCEL" forState:UIControlStateNormal];
-            self.pauseResumeButton.enabled = YES;
-            
-            if (self.timer == nil) {
-                self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                              target:self
-                                                            selector:@selector(updateTimer)
-                                                            userInfo:nil
-                                                             repeats:YES];
-            }
-            
-        }
-        
-        self.isTimerRunning = !self.isTimerRunning;
-        
-
     }
     else
     {
-    self.secondsCount = self.currentTimer.countDownDuration;
+        self.secondsCount = self.currentTimer.countDownDuration;
+    }
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     
@@ -197,9 +167,7 @@ int newTime;
     }
     
     self.isTimerRunning = !self.isTimerRunning;
-    
-    
-}
+
 }
 
 - (void) updateTimer {
@@ -213,7 +181,7 @@ int newTime;
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];
     
     
-    if (self.secondsCount == 0) {
+    if (self.secondsCount <= 0) {
         
         [self.timer invalidate];
         self.timer = nil;

@@ -39,12 +39,12 @@
     
     Timer *fish = [[Timer alloc] init];
     fish.timerName = @"Teriyaki Salmon";
-    fish.countDownDuration = 1020;
+    fish.countDownDuration = 600;
     [self.timers addObject:fish];
     
     Timer *cookie = [[Timer alloc] init];
     cookie.timerName = @"Chocolate Chip Cookies";
-    cookie.countDownDuration = 600;
+    cookie.countDownDuration = 720;
     [self.timers addObject:cookie];
     
     Timer *turkey = [[Timer alloc] init];
