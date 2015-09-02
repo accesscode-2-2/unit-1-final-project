@@ -10,6 +10,11 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "PresetTime.h"
 
-@interface TimerViewController : UIViewController 
+@interface TimerViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic) NSMutableArray *timers;
+
+@property(nonatomic,retain) UITableView *tableView;
+
 
 @end

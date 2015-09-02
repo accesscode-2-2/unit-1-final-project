@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PresetTableViewController.h"
 #import "PresetTime.h"
+#import "TimerViewController.h"
 
 @interface DetailViewController : UIViewController
 
@@ -18,7 +19,8 @@
 
 @property (nonatomic) NSMutableDictionary *personalTimer;
 
-@property (nonatomic, weak) PresetTableViewController *previousViewController;
+//@property (nonatomic, weak) PresetTableViewController *previousViewController;
 
+@property (nonatomic, weak) TimerViewController *previousViewController;
 
 @end

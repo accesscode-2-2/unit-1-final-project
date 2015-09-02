@@ -52,13 +52,15 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"preset" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"preset2" forIndexPath:indexPath];
     
     PresetTime *time;
     
     time = [self.timers objectAtIndex:indexPath.row];
     
     cell.textLabel.text = time.nameOfTask;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lg", time.timeOfTask];
+    
     
     return cell;
 }

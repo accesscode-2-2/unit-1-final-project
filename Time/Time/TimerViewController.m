@@ -7,6 +7,8 @@
 //
 
 #import "TimerViewController.h"
+#import "DetailViewController.h"
+
 
 @interface TimerViewController () 
 
@@ -31,6 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.timers = [[NSMutableArray alloc] init];
+
     
     [self.startButton setHidden:NO];
     
@@ -105,7 +109,36 @@
     self.timer.text = [NSString stringWithFormat:@"%02u:%02u", minutes, seconds];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.timers.count;
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"preset" forIndexPath:indexPath];
+    
+    PresetTime *time;
+    
+    time = [self.timers objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = time.nameOfTask;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lg", time.timeOfTask];
+    
+    
+    return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    DetailViewController *detailViewController = segue.destinationViewController;
+    detailViewController.previousViewController = self;
+    
+    
+}
 
 /*
  #pragma mark - Navigation

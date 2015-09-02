@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "PresetTime.h"
+#import "TimerViewController.h"
 
 @interface DetailViewController ()
 
@@ -22,6 +23,7 @@
     time.timeOfTask = [self.yourTime.text doubleValue];
     
     [self.previousViewController.timers addObject:time];
+    
     
     [self.navigationController popViewControllerAnimated:YES];
 }
