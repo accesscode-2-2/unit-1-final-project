@@ -13,4 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *christmasStartButton;
 @property (strong, nonatomic) IBOutlet UIButton *ACStartButton;
 
+
+//@property (strong, nonatomic) IBOutlet UIButton *stopBirthdayButton;
+
 @end

@@ -28,25 +28,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.birthdayCountdownLabel setHidden:YES];
+    [self.christmasCountdownLabel setHidden:YES];
+    [self.accessCodeCountdownLabel setHidden:YES];
+//    [self.stopBirthdayButton setHidden:YES];
+    
     self.birthdayStartButton.layer.borderWidth = 2.0;
     self.birthdayStartButton.layer.cornerRadius = 11.0;
-    self.birthdayStartButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.birthdayStartButton.layer.borderColor = [UIColor colorWithRed:32/255.0 green:44/255.0 blue:49/255.0 alpha: 1].CGColor;
     [self.birthdayStartButton setClipsToBounds:YES];
     
     self.christmasStartButton.layer.borderWidth = 2.0;
     self.christmasStartButton.layer.cornerRadius = 11.0;
-    self.christmasStartButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    [self.christmasStartButton setClipsToBounds:YES];
+    self.christmasStartButton.layer.borderColor = [UIColor colorWithRed:32/255.0 green:44/255.0 blue:49/255.0 alpha: 1].CGColor;[self.christmasStartButton setClipsToBounds:YES];
     
     self.ACStartButton.layer.borderWidth = 2.0;
     self.ACStartButton.layer.cornerRadius = 11.0;
-    self.ACStartButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.ACStartButton.layer.borderColor = [UIColor colorWithRed:32/255.0 green:44/255.0 blue:49/255.0 alpha: 1].CGColor;
     [self.ACStartButton setClipsToBounds:YES];
-    
-    
 }
 
 - (IBAction)startBirthdayCountdown:(id)sender {
+    
+    [self.birthdayCountdownLabel setHidden:NO];
+    [self.birthdayStartButton setHidden:YES];
     
     NSDateFormatter *birthdayFormatter = [[NSDateFormatter alloc] init];
     [birthdayFormatter setDateFormat:@"yyy-MM-dd"];
@@ -64,6 +69,9 @@
 
 - (IBAction)startChristmasCountdown:(id)sender {
     
+    [self.christmasCountdownLabel setHidden:NO];
+    [self.christmasStartButton setHidden:YES];
+    
     NSDateFormatter *christmasFormatter = [[NSDateFormatter alloc] init];
     [christmasFormatter setDateFormat:@"yyy-MM-dd"];
     self.christmas = [christmasFormatter dateFromString:@"2015-12-25"];
@@ -79,6 +87,9 @@
 }
 
 - (IBAction)startACCountdown:(id)sender {
+    
+    [self.accessCodeCountdownLabel setHidden:NO];
+    [self.ACStartButton setHidden:YES];
     
     NSDateFormatter *accessCodeFormatter = [[NSDateFormatter alloc] init];
     [accessCodeFormatter setDateFormat:@"yyy-MM-dd"];
@@ -105,7 +116,7 @@
     
     NSLog(@"%ld", (long)time);
     NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
-    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02ldd: %02ldh: %02ldm: %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
     
     self.birthdayCountdownLabel.text = timeDisplay;
 }
@@ -121,7 +132,7 @@
     
     NSLog(@"%ld", (long)time);
     NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
-    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02ldd: %02ldh: %02ldm: %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
     
     self.christmasCountdownLabel.text = timeDisplay;
 }
@@ -137,7 +148,7 @@
     
     NSLog(@"%ld", (long)time);
     NSLog(@"%ld, %ld, %ld, %ld", days, hours, minutes, seconds);
-    NSString *timeDisplay = [[NSString alloc] initWithFormat:@" %02ldd  : %02ldh : %02ldm : %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
+    NSString *timeDisplay = [[NSString alloc] initWithFormat:@"%02ldd: %02ldh: %02ldm: %02lds", (long)days, (long)hours, (long)minutes, (long) seconds];
     
     self.accessCodeCountdownLabel.text = timeDisplay;
 }
