@@ -56,7 +56,7 @@
     Exercises *warmup = [[Exercises alloc] init];
     warmup.nameOfExercise = @"Warm-Up";
     warmup.exerciseTime = 10.0;
-    warmup.exerciseImageString = @"warmup";
+    warmup.exerciseImageString = @"glogo";
     
     
     Exercises *gohard1 = [[Exercises alloc] init];
@@ -67,7 +67,7 @@
     Exercises *gohard2 = [[Exercises alloc] init];
     gohard2.nameOfExercise = @"Pull-ups";
     gohard2.exerciseTime = 15.0;
-    gohard2.exerciseImageString = @"pullup";
+    gohard2.exerciseImageString = @"pullups";
     
     Exercises *gohard3 = [[Exercises alloc] init];
     gohard3.nameOfExercise = @"Sit-ups";
@@ -93,7 +93,7 @@
     gohard7.nameOfExercise = @"Dips";
     gohard7.exerciseTime = 10.0;
     gohard7.exerciseImageString = @"dips";
-    
+
     
     
 //Exercise List - GO LEAN
@@ -109,9 +109,9 @@
     golean2.exerciseImageString = @"jumprope";
     
     Exercises *golean3 = [[Exercises alloc]init];
-    golean3.nameOfExercise = @"Jumping Jacks";
+    golean3.nameOfExercise = @"Jump-squat";
     golean3.exerciseTime = 10.0;
-    golean3.exerciseImageString = @"jumpingjacks";
+    golean3.exerciseImageString = @"jumpsquats";
 
     Exercises *golean4 = [[Exercises alloc]init];
     golean4.nameOfExercise = @"Plank";
@@ -121,17 +121,17 @@
     Exercises *golean5 = [[Exercises alloc]init];
     golean5.nameOfExercise = @"Mountain-Climbers";
     golean5.exerciseTime = 10.0;
-    golean5.exerciseImageString = @"mountainclimber";
+    golean5.exerciseImageString = @"mountainclimbers";
     
     Exercises *golean6 = [[Exercises alloc]init];
     golean6.nameOfExercise = @"Sprints";
     golean6.exerciseTime = 10.0;
-    golean6.exerciseImageString = @"sprints";
+    golean6.exerciseImageString = @"sprint";
 
     Exercises *golean7 = [[Exercises alloc]init];
     golean7.nameOfExercise = @"Step Runs";
     golean7.exerciseTime = 10.0;
-    golean7.exerciseImageString = @"steprun";
+    golean7.exerciseImageString = @"runstairs";
 
 //Workout List - (Array of Exercises)
     
