@@ -20,6 +20,7 @@
 
 @property (nonatomic) NSTimer *countDownTimer;
 @property (nonatomic) NSInteger totalSeconds;
+@property (nonatomic) NSInteger unformattedSeconds;
 
 @property (nonatomic) int hours;
 @property (nonatomic) int minutes;
@@ -32,6 +33,7 @@
 
 @end
 
+
 @implementation PresetTimersViewController
 
 - (void)viewDidLoad {
@@ -42,33 +44,37 @@
     self.customTimersTableViewList.dataSource = self;
     
     self.customTimersDictionary = [[NSMutableDictionary alloc] init];
+    
+    self.timeEndingLabel.hidden = YES;
+    self.alarmNameLabel.hidden = YES;
 
     
 }
 
 - (void)tableView:(UITableView * )tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"selected index path %@",indexPath);
+    
+    [self.countDownTimer invalidate];
+
     NSArray *keys = [self.customTimersDictionary allKeys];
     NSString *key = [keys objectAtIndex:indexPath.row];
     NSArray *value = [self.customTimersDictionary objectForKey:key];
 
     self.alarmNameLabel.text = [NSString stringWithFormat:@"%@", key];
     
-    self.timeEndingLabel.text = [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
+    self.timeEndingLabel.text = [NSString stringWithFormat:@"%@ seconds", [self.customTimersDictionary objectForKey:key]];
 
     NSTimeInterval duration = [[self.customTimersDictionary objectForKey:key] doubleValue];
-    NSLog(@"setting duration to %f", duration);
     self.totalSeconds = duration;
 
+    self.alarmNameLabel.hidden = NO;
+    self.timeEndingLabel.hidden = NO;
     
 }
 
 
 
 -(void)viewWillAppear:(BOOL)animated {
-    
-    NSLog(@"viewwillappear%@", self.customTimersDictionary);
 
     [self.customTimersTableViewList reloadData];
 
@@ -113,23 +119,25 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)startButtonTapped:(id)sender {
-    // keep track of the key, say self.currentKey
-    // if current key is nil, and there is at least one key
-    // then you can set currentKey to allKeys[0]
+
+    if([self.customTimersDictionary count] == 0) {
+
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Warning"
+                                                    message:@"You must add a new timer first."
+                                                    delegate:self
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [alert show];
+        
+    } else {
+        
+        [self startTimer];
+        
+    }
+
     
-    // if there are no keys at all, don't start the time / crash!
-    
-    NSLog(@"%@",self.customTimersDictionary);
-//
-//    NSString *firstKey = [self.customTimersDictionary allKeys][0];
-//    NSTimeInterval duration = [self.customTimersDictionary[firstKey] doubleValue];
-//    self.totalSeconds = duration;
-//
-//    if (<#condition#>) {
-//        <#statements#>
-//    }
-//    
-    [self startTimer];
+   //
 }
 
 
@@ -139,6 +147,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     
     self.timeEndingLabel.text = [self timeFormatted:self.totalSeconds];
+    
+    
+    
 }
 
 
@@ -168,6 +179,28 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //remove the deleted object from your data source.
+        //If your data source is an NSMutableArray, do this
+        
+        NSArray *keys = [self.customTimersDictionary allKeys];
+        
+        NSString *key = keys[indexPath.row];
+        
+        [self.customTimersDictionary removeObjectForKey:key];
+        
+        self.alarmNameLabel.hidden = YES;
+        self.timeEndingLabel.hidden = YES;
+        
+        [tableView reloadData]; // tell table to refresh now
+    }
+}
 
 
 
@@ -187,41 +220,34 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customTimersCellIdentifier" forIndexPath:indexPath];
 
     NSArray *keys = [self.customTimersDictionary allKeys];
-    
     NSString *key = keys[indexPath.row];
     
-    cell.textLabel.text = key;
+    //ALARM NAME LABEL TEXT
+    if ([key isEqual: @""]) {
+        self.alarmNameLabel.text = @"Untitled";
+    } else {
+        self.alarmNameLabel.text = [NSString stringWithFormat:@"%@", key];
+    }
     
+    //CELL - ALARM LABEL TEXT
+    if ([key isEqual: @""]) {
+        cell.textLabel.text = @"Untitled";
+    } else {
+        cell.textLabel.text = key;
+    }
+    
+    //CELL - TIME ENDING DETAIL TEXT
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ seconds", [self.customTimersDictionary objectForKey:key]];
+
     
-    self.alarmNameLabel.text = [NSString stringWithFormat:@"%@", key];
-    
-    self.timeEndingLabel.text = [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
-    
-    
-    
-//
-//    self.timeEndingLabel.text = timeFormatDisplay;
-//    
-//    
-//    [NSString stringWithFormat:@"%@", [self.customTimersDictionary objectForKey:key]];
-    NSLog(@"%@", [self.customTimersDictionary objectForKey:key]);
-//    
-//    NSLog(@"%@", [self.customTimersDictionary allKeys]);
+    //TIME ENDING LABEL TEXT
+    self.timeEndingLabel.text = [NSString stringWithFormat:@"%@ seconds", [self.customTimersDictionary objectForKey:key]];
     
     return cell;
     
     
 }
 
-//#pragma mark - Table view delegate
-//
-//
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-//    
-//}
 
 
 @end

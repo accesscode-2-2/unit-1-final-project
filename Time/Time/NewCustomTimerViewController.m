@@ -24,11 +24,6 @@
     [super viewDidLoad];
     
     self.timePickerView.countDownDuration = 60.0;
-//    [self.customTimersDictionary setObject:@"TIME is the value" forKey:@"birthday is the KEY"];
-    
-//    NSLog(@"%@ - printing self.customTimersDictionary here", self.customTimersDictionary);
-    
-    // Do any additional setup after loading the view.
 }
 
 
@@ -37,8 +32,6 @@
     
     NSString *alarmName = self.alarmNameLabel.text;
     
-//   add object to dictionary
-//    [self.customTimersDictionary setObject:alarmName
     
     NSLog(@"%@ is the current alarm name", alarmName);
     

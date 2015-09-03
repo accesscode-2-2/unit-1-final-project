@@ -41,6 +41,8 @@
     self.laps = [[NSMutableArray alloc] init];
     self.lapsTableView.dataSource = self;
     
+  
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,6 +97,8 @@
     
     
 - (IBAction)resetButtonTapped:(id)sender {
+    
+    [self.timer1 invalidate];
     
     self.currentNumber = 0;
     self.stopwatchTimerLabel.text = [NSString stringWithFormat:@"--"];

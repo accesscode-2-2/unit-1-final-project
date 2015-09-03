@@ -14,18 +14,21 @@
 @property (strong, nonatomic)NSDate *destinationDay;
 @property (strong, nonatomic)NSTimer *timer;
 
+
+
 @end
 
 @implementation AnotherEventViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-        self.destinationDay = [NSDate dateWithTimeIntervalSince1970:1450155600];
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLabel)userInfo:nil repeats:YES];
-    
-}
 
+    
+        self.destinationDay = [NSDate dateWithTimeIntervalSince1970:1456617600];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLabel)userInfo:nil repeats:YES];
+
+
+}
 
 
 
@@ -36,7 +39,33 @@
     NSDateComponents *components = [calendar components:units fromDate:[NSDate date] toDate: self.destinationDay options:0];
     
     self.countdownLabel.text = [NSString stringWithFormat:@"%ld%c:%ld%c:%ld%c:%ld%c", (long)[components day], 'd', (long)[components hour]+4, 'h', (long)[components minute], 'm', (long)[components second], 's'];
+    
 }
+
+
+
+-(IBAction)startFade:(id)sender{
+    
+    [self.countdownLabel setAlpha:0.0f];
+    
+    //fade in
+    [UIView animateWithDuration:2.0f animations:^{
+        
+        [self.countdownLabel setAlpha:1.0f];
+        
+    } completion:^(BOOL finished) {
+        
+        //fade out
+        [UIView animateWithDuration:2.0f animations:^{
+            
+            [self.countdownLabel setAlpha:0.0f];
+            
+        } completion:nil];
+        
+    }];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {
