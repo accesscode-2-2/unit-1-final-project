@@ -1,26 +1,42 @@
+
+//  ViewController.m
+//  PresetTimerPracticeProject
 //
-////  ViewController.m
-////  PresetTimerPracticeProject
-////
-////  Created by Bereket  on 8/29/15.
-////  Copyright (c) 2015 Bereket . All rights reserved.
-////
+//  Created by Bereket  on 8/29/15.
+//  Copyright (c) 2015 Bereket . All rights reserved.
 //
-//#import "ViewController.h"
-//#import "NSTimersForTableViews.h"
-//#import "PresetTimersTableViewController.h"
+
+#import "ViewController.h"
+#import "PresetTimersTableViewController.h"
+
+#import "PresetTimersSingleton.h"
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+
+- (IBAction)setActivityAndTime:(id)sender {
+    
+    PresetTimer* myTimer= [[PresetTimer alloc] init];
+    myTimer.timerName=self.textField.text;
+    myTimer.timeInterval= self.datePicker.countDownDuration;
+    
+    [[PresetTimersSingleton sharedInstance].presetTimersArray addObject:myTimer];
+}
+
+
 //
-//@interface ViewController ()
-//
-//@end
-//
-//@implementation ViewController
 //
 //
 //
-//
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.timeTableButton addTarget:self action:@selector(pushPresetTimersViewController:) forControlEvents:UIControlEventTouchUpInside];
+    
 //    self.arrayForTimes= [[NSMutableArray alloc] init];
 //    
 //    // Do any additional setup after loading the view, typically from a nib.
@@ -40,7 +56,7 @@
 //    
 //    
 //    self.myStoredTimeFromPickerView= [[NSMutableArray alloc] initWithObjects:@00,@00,@00, nil];
-//}
+}
 //
 ////returns the number of pickers
 //-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -260,22 +276,30 @@
 ////
 ////
 ////
-////- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-////    
-////    
-////    
-////    
-////    if ([[segue identifier] isEqualToString: @"segueToTableViewIdentifier"]) {
-////        [self.arrayForTimes addObject:self.timeString];
-////        PresetTimersTableViewController *tableViewController = (PresetTimersTableViewController *)[segue destinationViewController];
-////        tableViewController.arrayOfTimes = self.arrayForTimes;
-////        
-////        
-////        NSLog(@"%@", tableViewController.transferredTimeString);
-////    }
-////    
-////}
-//////
+
+- (void)pushPresetTimersViewController:(id)sender {
+    PresetTimersTableViewController *tableViewController = [[PresetTimersTableViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:tableViewController animated:YES];
+    
+    NSLog(@"%@", tableViewController.transferredTimeString);
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    
+    
+    if ([[segue identifier] isEqualToString: @"showPresetTimersIdentifier"]) {
+//        [self.arrayForTimes addObject:self.timeString];
+        PresetTimersTableViewController *tableViewController = (PresetTimersTableViewController *)[segue destinationViewController];
+//        tableViewController.arrayOfTimes = self.arrayForTimes;
+        
+        NSLog(@"%@", tableViewController.transferredTimeString);
+    }
+    
+}
+//
 //////    PresetTimersTableViewController* PresetTimersTableViewControllerInstance= [[PresetTimersTableViewController alloc] init];
 ////
 //////
@@ -298,5 +322,5 @@
 ////    [super didReceiveMemoryWarning];
 ////    // Dispose of any resources that can be recreated.
 ////}
-////
-////@end
+
+@end

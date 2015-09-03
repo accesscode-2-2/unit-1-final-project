@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB19AFAA1B97CFC000648DDE /* PresetTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19AFA91B97CFC000648DDE /* PresetTimer.m */; };
+		AB19AFAD1B97D3AD00648DDE /* PresetTimersSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19AFAC1B97D3AD00648DDE /* PresetTimersSingleton.m */; };
+		AB19AFB01B97D9C100648DDE /* TimerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19AFAF1B97D9C100648DDE /* TimerDetailViewController.m */; };
 		AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */; };
 		AB5791F91B955DB500F4EBAB /* PresetTimersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */; };
-		AB5791FC1B955DF300F4EBAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5791FB1B955DF300F4EBAB /* ViewController.m */; };
+		ABA086A41B97CD1500897BDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6C16E31B8FE29F00103CC2 /* Main.storyboard */; };
+		ABE0B27A1B97CDC0009224A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE0B2791B97CDC0009224A0 /* ViewController.m */; };
 		BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */; };
 		BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */; };
 		BF5A03731B88C0AD00FDF71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A03721B88C0AD00FDF71D /* main.m */; };
@@ -18,7 +22,6 @@
 		BF5A038D1B88C0AD00FDF71D /* TimerStopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A038C1B88C0AD00FDF71D /* TimerStopwatchTests.m */; };
 		BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A039D1B88CCD600FDF71D /* TimerViewController.m */; };
 		BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5A039F1B88D49400FDF71D /* QuartzCore.framework */; };
-		BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6C16E31B8FE29F00103CC2 /* Main.storyboard */; };
 		BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */; };
 		BFE6F3FB1B92187000350E51 /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */; };
 		BFE6F3FC1B92187000350E51 /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */; };
@@ -43,12 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB19AFA81B97CFC000648DDE /* PresetTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimer.h; sourceTree = "<group>"; };
+		AB19AFA91B97CFC000648DDE /* PresetTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimer.m; sourceTree = "<group>"; };
+		AB19AFAB1B97D3AD00648DDE /* PresetTimersSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimersSingleton.h; sourceTree = "<group>"; };
+		AB19AFAC1B97D3AD00648DDE /* PresetTimersSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimersSingleton.m; sourceTree = "<group>"; };
+		AB19AFAE1B97D9C100648DDE /* TimerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailViewController.h; sourceTree = "<group>"; };
+		AB19AFAF1B97D9C100648DDE /* TimerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailViewController.m; sourceTree = "<group>"; };
 		AB31A5E11B8E7BC800F63EBE /* StopWatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewController.h; sourceTree = "<group>"; };
 		AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; };
 		AB5791F71B955DB500F4EBAB /* PresetTimersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimersTableViewController.h; sourceTree = "<group>"; };
 		AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimersTableViewController.m; sourceTree = "<group>"; };
-		AB5791FA1B955DF300F4EBAB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AB5791FB1B955DF300F4EBAB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ABE0B2781B97CDC0009224A0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ABE0B2791B97CDC0009224A0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF3D673F1B8E7A72005D9CFA /* PresetsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetsTableViewController.h; sourceTree = "<group>"; };
 		BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetsTableViewController.m; sourceTree = "<group>"; };
 		BF3D67471B8E9824005D9CFA /* NewPresetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPresetsViewController.h; sourceTree = "<group>"; };
@@ -181,8 +190,14 @@
 				BF3D674A1B8E9864005D9CFA /* NewPresetsViewControllerDelegate.h */,
 				AB5791F71B955DB500F4EBAB /* PresetTimersTableViewController.h */,
 				AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */,
-				AB5791FA1B955DF300F4EBAB /* ViewController.h */,
-				AB5791FB1B955DF300F4EBAB /* ViewController.m */,
+				ABE0B2781B97CDC0009224A0 /* ViewController.h */,
+				ABE0B2791B97CDC0009224A0 /* ViewController.m */,
+				AB19AFA81B97CFC000648DDE /* PresetTimer.h */,
+				AB19AFA91B97CFC000648DDE /* PresetTimer.m */,
+				AB19AFAB1B97D3AD00648DDE /* PresetTimersSingleton.h */,
+				AB19AFAC1B97D3AD00648DDE /* PresetTimersSingleton.m */,
+				AB19AFAE1B97D9C100648DDE /* TimerDetailViewController.h */,
+				AB19AFAF1B97D9C100648DDE /* TimerDetailViewController.m */,
 				BFE6F3F91B92186100350E51 /* Fonts */,
 			);
 			name = Timer;
@@ -281,10 +296,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA086A41B97CD1500897BDD /* Main.storyboard in Resources */,
 				BFE6F3FE1B92187F00350E51 /* LANENAR_.ttf in Resources */,
 				BFE6F4011B92188900350E51 /* HYPE.ttf in Resources */,
 				BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */,
-				BF6C16E41B8FE29F00103CC2 /* Main.storyboard in Resources */,
 				BFE6F4071B9219BD00350E51 /* Gravity-Book.ttf in Resources */,
 				BFE6F3FB1B92187000350E51 /* Gravity-Light.ttf in Resources */,
 				BFE6F4041B92196D00350E51 /* LANEUP__.ttf in Resources */,
@@ -310,10 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB5791FC1B955DF300F4EBAB /* ViewController.m in Sources */,
+				ABE0B27A1B97CDC0009224A0 /* ViewController.m in Sources */,
+				AB19AFB01B97D9C100648DDE /* TimerDetailViewController.m in Sources */,
+				AB19AFAD1B97D3AD00648DDE /* PresetTimersSingleton.m in Sources */,
 				BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */,
 				BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */,
 				BF5A03761B88C0AD00FDF71D /* AppDelegate.m in Sources */,
+				AB19AFAA1B97CFC000648DDE /* PresetTimer.m in Sources */,
 				AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */,
 				BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */,
 				BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */,
