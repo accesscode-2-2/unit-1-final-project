@@ -75,10 +75,11 @@
         self.presetTimer.timer=nil;
     }
     
-    self.detailTimeLabel.text = [NSString stringWithFormat:@"%0.2ld:%0.2:%0.2ld", (long)self.presetTimer.hours, (long)self.presetTimer.minutes,(long)self.presetTimer.seconds];
+    int hours = (int)(self.self.presetTimer.timeInterval/(60*60));
+    int mins = (int)(((int)self.presetTimer.timeInterval/60) - (hours * 60));
+    int secs = (int)(((int)self.presetTimer.timeInterval - (60 *mins) - (60 * hours * 60)));
+    self.detailTimeLabel.text = [[NSString alloc] initWithFormat:@"%02u:%02u:%02u", hours, mins, secs];
     
-    NSLog(@"%f", self.presetTimer.timeInterval);
-
     // update label
 }
 
