@@ -25,9 +25,14 @@
     [self.previousViewController.timers addObject:time];
     
     
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)Cancel:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    
+}
 
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

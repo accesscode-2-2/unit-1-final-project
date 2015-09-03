@@ -14,11 +14,11 @@
 		0B6CAA7A1B925679004865B0 /* clock-alarm-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA791B925679004865B0 /* clock-alarm-7.png */; };
 		0B6CAA7C1B9256F7004865B0 /* earth-america-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B6CAA7B1B9256F7004865B0 /* earth-america-7.png */; };
 		0B6CAA7F1B925F6F004865B0 /* PresetTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CAA7E1B925F6F004865B0 /* PresetTime.m */; };
-		0B761E9C1B8FE6AB006EDD4A /* PresetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */; };
 		0BC209411B87E50B00D9FAE9 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC209401B87E50B00D9FAE9 /* TimerViewController.m */; };
 		0BC2CC371B97B11D006DC7ED /* radial-gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2CC361B97B11D006DC7ED /* radial-gradient.png */; };
 		0BC2CC391B97B27B006DC7ED /* images-5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2CC381B97B27B006DC7ED /* images-5.jpeg */; };
 		0BC2CC3B1B97B5C5006DC7ED /* gradient_series___orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2CC3A1B97B5C5006DC7ED /* gradient_series___orange.png */; };
+		0BC2CC3D1B97CB9D006DC7ED /* images-3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0BC2CC3C1B97CB9D006DC7ED /* images-3.jpeg */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
 		8D0537671B86687C00588318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537651B86687C00588318 /* Main.storyboard */; };
@@ -51,13 +51,12 @@
 		0B6CAA7B1B9256F7004865B0 /* earth-america-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth-america-7.png"; sourceTree = "<group>"; };
 		0B6CAA7D1B925F6F004865B0 /* PresetTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTime.h; sourceTree = "<group>"; };
 		0B6CAA7E1B925F6F004865B0 /* PresetTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTime.m; sourceTree = "<group>"; };
-		0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTableViewController.h; sourceTree = "<group>"; };
-		0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTableViewController.m; sourceTree = "<group>"; };
 		0BC2093F1B87E50B00D9FAE9 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		0BC209401B87E50B00D9FAE9 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		0BC2CC361B97B11D006DC7ED /* radial-gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radial-gradient.png"; sourceTree = "<group>"; };
 		0BC2CC381B97B27B006DC7ED /* images-5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-5.jpeg"; sourceTree = "<group>"; };
 		0BC2CC3A1B97B5C5006DC7ED /* gradient_series___orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient_series___orange.png"; sourceTree = "<group>"; };
+		0BC2CC3C1B97CB9D006DC7ED /* images-3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-3.jpeg"; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05375C1B86687B00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05375D1B86687C00588318 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,14 +122,13 @@
 				0B6CAA7E1B925F6F004865B0 /* PresetTime.m */,
 				0BC2093F1B87E50B00D9FAE9 /* TimerViewController.h */,
 				0BC209401B87E50B00D9FAE9 /* TimerViewController.m */,
-				0B761E9A1B8FE6AB006EDD4A /* PresetTableViewController.h */,
-				0B761E9B1B8FE6AB006EDD4A /* PresetTableViewController.m */,
 				0B6CAA681B9201B0004865B0 /* DetailViewController.h */,
 				0B6CAA691B9201B0004865B0 /* DetailViewController.m */,
 				D47FF9261B87EFA10068E9FA /* StopWatchViewController.h */,
 				D47FF9271B87EFA10068E9FA /* StopWatchViewController.m */,
 				8D0537651B86687C00588318 /* Main.storyboard */,
 				D45C0E601B9240E000B5BCB7 /* Images.xcassets */,
+				0BC2CC3C1B97CB9D006DC7ED /* images-3.jpeg */,
 				0BC2CC3A1B97B5C5006DC7ED /* gradient_series___orange.png */,
 				0BC2CC381B97B27B006DC7ED /* images-5.jpeg */,
 				0BC2CC361B97B11D006DC7ED /* radial-gradient.png */,
@@ -259,6 +257,7 @@
 				0BC2CC3B1B97B5C5006DC7ED /* gradient_series___orange.png in Resources */,
 				0B6CAA7C1B9256F7004865B0 /* earth-america-7.png in Resources */,
 				0B6CAA761B92562B004865B0 /* clock-timer-7.png in Resources */,
+				0BC2CC3D1B97CB9D006DC7ED /* images-3.jpeg in Resources */,
 				0B6CAA781B92566D004865B0 /* clock-stopwatch-7.png in Resources */,
 				8D0537671B86687C00588318 /* Main.storyboard in Resources */,
 				0BC2CC371B97B11D006DC7ED /* radial-gradient.png in Resources */,
@@ -286,7 +285,6 @@
 			files = (
 				D47FF9281B87EFA10068E9FA /* StopWatchViewController.m in Sources */,
 				0B6CAA7F1B925F6F004865B0 /* PresetTime.m in Sources */,
-				0B761E9C1B8FE6AB006EDD4A /* PresetTableViewController.m in Sources */,
 				0BC209411B87E50B00D9FAE9 /* TimerViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,

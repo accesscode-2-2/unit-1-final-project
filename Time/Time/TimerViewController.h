@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AudioToolbox/AudioToolbox.h>
-#import "PresetTime.h"
 
 @interface TimerViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic) NSMutableArray *timers;
 
-@property(nonatomic,retain) UITableView *tableView;
+@property(nonatomic,retain) IBOutlet UITableView *tableView;
 
 
 @end

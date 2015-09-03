@@ -8,6 +8,7 @@
 
 #import "TimerViewController.h"
 #import "DetailViewController.h"
+#import "PresetTime.h"
 
 
 @interface TimerViewController () 
@@ -72,6 +73,7 @@
     }
 }
 
+
 - (IBAction)cancelButton:(id)sender {
     [self.startButton setHidden:NO];
     [self.cancelButton setHidden:YES];
@@ -102,6 +104,9 @@
 }
 
 - (void)updateTimeLabel {
+    if (self.countDownDuration <= 0) {
+        [self.countdownTimer invalidate];
+    }
     int secondsCount = self.countDownDuration;
     int minutes = secondsCount / 60;
     int seconds = secondsCount - (minutes * 60);
@@ -134,8 +139,36 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    DetailViewController *detailViewController = segue.destinationViewController;
+    UINavigationController *navigationController = segue.destinationViewController;
+    DetailViewController *detailViewController = [navigationController.viewControllers objectAtIndex:0];
     detailViewController.previousViewController = self;
+    
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    PresetTime *time;
+    
+    time = [self.timers objectAtIndex:indexPath.row];
+    
+    self.pickerView.countDownDuration = time.timeOfTask * 60;
+    self.countDownDuration = time.timeOfTask * 60;
+    
+    [self.pickerView setHidden:YES];
+    [self.timer setHidden:NO];
+    [self.startButton setHidden:YES];
+    [self.cancelButton setHidden:NO];
+    self.countdownTimer = [NSTimer timerWithTimeInterval:60/60 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.countdownTimer forMode:NSRunLoopCommonModes];
+
+    
+    [self updateTimeLabel];
     
     
 }
