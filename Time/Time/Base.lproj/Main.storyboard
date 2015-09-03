@@ -516,7 +516,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="Frm-My-BDW" eventType="touchUpInside" id="OUO-ld-Yk7"/>
-                                    <action selector="pauseResumeButton:" destination="Frm-My-BDW" eventType="touchUpInside" id="GgY-5b-e88"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-86-vaj">
@@ -527,7 +526,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseResumeButton:" destination="Frm-My-BDW" eventType="touchUpInside" id="MmD-uF-sk9"/>
                                     <action selector="subtractButtonTapped:" destination="Frm-My-BDW" eventType="touchUpInside" id="7tu-uR-fPc"/>
                                 </connections>
                             </button>
