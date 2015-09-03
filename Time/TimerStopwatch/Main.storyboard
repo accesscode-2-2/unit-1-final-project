@@ -454,23 +454,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ah0-bR-snD">
-                                <rect key="frame" x="0.0" y="389" width="600" height="162"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ah0-bR-snD">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="462932103.00529999">
                                     <!--2015-09-03 00:15:03 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Jg-5R-bAo">
-                                <rect key="frame" x="250" y="179" width="101" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Jg-5R-bAo">
+                                <rect key="frame" x="193" y="200" width="215" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="h5Z-67-dS9"/>
+                                    <constraint firstAttribute="width" constant="215" id="h5Z-67-dS9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EA-cb-3Lz">
-                                <rect key="frame" x="389" y="179" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EA-cb-3Lz">
+                                <rect key="frame" x="265" y="238" width="71" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="SET">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -478,15 +480,15 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.63529411764705879" green="0.74509803921568629" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4EA-cb-3Lz" firstAttribute="leading" secondItem="8Jg-5R-bAo" secondAttribute="trailing" constant="38" id="aCN-6t-J4g"/>
+                            <constraint firstItem="4EA-cb-3Lz" firstAttribute="leading" secondItem="8Jg-5R-bAo" secondAttribute="trailing" constant="-143" id="aCN-6t-J4g"/>
                             <constraint firstItem="ah0-bR-snD" firstAttribute="leading" secondItem="G4s-ky-qbX" secondAttribute="leading" id="ceo-K2-Sxl"/>
                             <constraint firstAttribute="trailing" secondItem="ah0-bR-snD" secondAttribute="trailing" id="e9E-go-Rqx"/>
                             <constraint firstItem="8Jg-5R-bAo" firstAttribute="centerX" secondItem="ah0-bR-snD" secondAttribute="centerX" id="eAs-iX-bsB"/>
-                            <constraint firstItem="ah0-bR-snD" firstAttribute="top" secondItem="4EA-cb-3Lz" secondAttribute="bottom" constant="180" id="lIc-dB-7w9"/>
+                            <constraint firstItem="ah0-bR-snD" firstAttribute="top" secondItem="4EA-cb-3Lz" secondAttribute="bottom" constant="37" id="lIc-dB-7w9"/>
                             <constraint firstItem="nnj-hc-74Q" firstAttribute="top" secondItem="ah0-bR-snD" secondAttribute="bottom" id="rff-IY-w3X"/>
-                            <constraint firstItem="ah0-bR-snD" firstAttribute="top" secondItem="8Jg-5R-bAo" secondAttribute="bottom" constant="180" id="wVz-lr-dZR"/>
+                            <constraint firstItem="ah0-bR-snD" firstAttribute="top" secondItem="8Jg-5R-bAo" secondAttribute="bottom" constant="105" id="wVz-lr-dZR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lI9-nf-9kA">
@@ -557,32 +559,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXU-ZJ-N3J">
-                                <rect key="frame" x="152" y="262" width="47" height="30"/>
-                                <state key="normal" title="START">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="y2n-S1-GXd" eventType="touchUpInside" id="wBT-XK-IYd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAG-sC-48I">
-                                <rect key="frame" x="258" y="262" width="49" height="30"/>
+                                <rect key="frame" x="329" y="236" width="145" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="PAUSE">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.12941176470588237" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="y2n-S1-GXd" eventType="touchUpInside" id="8ME-3t-zlh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q10-8Z-W1C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q10-8Z-W1C">
                                 <rect key="frame" x="217" y="147" width="130" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXU-ZJ-N3J">
+                                <rect key="frame" x="123" y="236" width="126" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.12941176470588237" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="y2n-S1-GXd" eventType="touchUpInside" id="wBT-XK-IYd"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.63529411764705879" green="0.74509803921568629" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="detailTimeLabel" destination="Q10-8Z-W1C" id="Fve-Pl-gc4"/>
