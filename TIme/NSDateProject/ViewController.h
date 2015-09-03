@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ViewController : UIViewController
 
 
-
-
 @property (strong,nonatomic)NSMutableArray *laps;
-//@property(strong,nonatomic)ViewController *viewController;
+@property(strong,nonatomic)ViewController *viewController;
 
 @property (weak, nonatomic) IBOutlet UITableView *lapTableView;
+
+
+
 
 
 
@@ -33,13 +35,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *stopWatchLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *fBookButton;
-
-- (IBAction)fBookButtonAction:(UIButton *)sender;
-
-
-
 
 
 - (IBAction)startStopButtonAction:(id)sender;

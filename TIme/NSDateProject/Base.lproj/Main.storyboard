@@ -49,7 +49,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fBookButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="813-qX-TMW"/>
+                                    <segue destination="bF6-1e-Ggc" kind="show" identifier="facebook" id="X8C-SU-W3E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYQ-FV-DUg">
@@ -57,6 +57,9 @@
                                 <state key="normal" backgroundImage="linkedIN.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bF6-1e-Ggc" kind="show" identifier="linkedIn" id="Nt6-63-rdH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDn-ec-7n1">
                                 <rect key="frame" x="131" y="137" width="70" height="73"/>
@@ -64,7 +67,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bF6-1e-Ggc" kind="show" id="GFG-hT-DsM"/>
+                                    <segue destination="bF6-1e-Ggc" kind="show" identifier="twitter" id="vMU-7y-m3W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfG-ND-U9E">
@@ -72,6 +75,9 @@
                                 <state key="normal" image="googleHO.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bF6-1e-Ggc" kind="show" identifier="google" id="v11-U5-yzs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pn7-q5-2aL">
                                 <rect key="frame" x="229" y="236" width="150" height="134"/>
@@ -159,7 +165,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="fBookButton" destination="f9o-m3-dt4" id="vVo-g4-Jvg"/>
                         <outlet property="lapResetButton" destination="HOp-RL-e3U" id="iQM-fi-ubn"/>
                         <outlet property="lapTableView" destination="xjW-E1-ybq" id="lxv-CS-cvH"/>
                         <outlet property="startStopButton" destination="Pn7-q5-2aL" id="tNX-yU-vHX"/>
@@ -168,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714" y="-80"/>
+            <point key="canvasLocation" x="-857" y="-18"/>
         </scene>
         <!--Timer-->
         <scene sceneID="G9M-In-S0a">
@@ -266,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="-1430" y="813"/>
         </scene>
-        <!--View Controller-->
+        <!--WebVC-->
         <scene sceneID="5Fv-k3-Ql0">
             <objects>
-                <viewController id="bF6-1e-Ggc" sceneMemberID="viewController">
+                <viewController id="bF6-1e-Ggc" customClass="WebVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2va-0h-lyt"/>
                         <viewControllerLayoutGuide type="bottom" id="LAU-zD-RGE"/>
@@ -278,17 +283,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruo-gY-vrh">
-                                <rect key="frame" x="16" y="72" width="382" height="607"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hy-CZ-jIi">
+                                <rect key="frame" x="231" y="83" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DataPassed =" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwV-SM-JKU">
+                                <rect key="frame" x="65" y="84" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="DY6-pj-f2a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruo-gY-vrh">
+                                <rect key="frame" x="16" y="116" width="382" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="563" id="8Rc-kZ-Ye2"/>
+                                </constraints>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ruo-gY-vrh" firstAttribute="top" secondItem="JwV-SM-JKU" secondAttribute="bottom" constant="11" id="8Ub-bt-kif"/>
+                            <constraint firstItem="ruo-gY-vrh" firstAttribute="leading" secondItem="4S5-MI-RMg" secondAttribute="leading" constant="20" symbolic="YES" id="Jwb-DH-9bs"/>
+                            <constraint firstItem="ruo-gY-vrh" firstAttribute="trailing" secondItem="4S5-MI-RMg" secondAttribute="trailingMargin" id="KaF-CX-4HB"/>
+                            <constraint firstItem="ruo-gY-vrh" firstAttribute="leading" secondItem="4S5-MI-RMg" secondAttribute="leadingMargin" id="M1t-YZ-UvR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Hy-CZ-jIi" secondAttribute="trailing" constant="25" id="Shg-5F-KuB"/>
+                            <constraint firstItem="JwV-SM-JKU" firstAttribute="leading" secondItem="4S5-MI-RMg" secondAttribute="leadingMargin" constant="49" id="a1N-dJ-egp"/>
+                            <constraint firstItem="ruo-gY-vrh" firstAttribute="leading" secondItem="4S5-MI-RMg" secondAttribute="leadingMargin" id="dN0-am-U9z"/>
+                            <constraint firstItem="8Hy-CZ-jIi" firstAttribute="leading" secondItem="JwV-SM-JKU" secondAttribute="trailing" constant="26" id="dbj-It-mLZ"/>
+                            <constraint firstItem="LAU-zD-RGE" firstAttribute="top" secondItem="ruo-gY-vrh" secondAttribute="bottom" constant="8" id="ktU-Ja-DAd"/>
+                            <constraint firstItem="ruo-gY-vrh" firstAttribute="top" secondItem="8Hy-CZ-jIi" secondAttribute="bottom" constant="12" id="rlZ-6k-gjI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jwb-DH-9bs"/>
+                                <exclude reference="M1t-YZ-UvR"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="webSiteUrl" destination="8Hy-CZ-jIi" id="mbq-aW-45m"/>
+                        <outlet property="webView" destination="ruo-gY-vrh" id="DA2-ri-YM3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1O-eJ-87u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="-88"/>
+            <point key="canvasLocation" x="-113" y="-105"/>
         </scene>
         <!--DontStopWatch-->
         <scene sceneID="SGL-Tc-ekb">
@@ -318,4 +364,7 @@
         <image name="linkedIN.png" width="70" height="73"/>
         <image name="twitter.png" width="70" height="73"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="X8C-SU-W3E"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "WebVC.h"
+#import "ViewController.h"
 
 @interface WebVC ()
 
@@ -14,10 +15,26 @@
 
 @implementation WebVC
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
+
+    // Do any additional setup after loading the view.
+        //bind the labels to the string values
+        self.webSiteUrl.text = self.webSiteText;
+    
+    
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    NSURL *url = [NSURL URLWithString:_webSiteText];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:request];
+    
+
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

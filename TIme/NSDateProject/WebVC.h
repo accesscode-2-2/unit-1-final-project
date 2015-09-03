@@ -10,6 +10,12 @@
 
 @interface WebVC : UIViewController
 
-@property (strong,nonatomic) NSString *fnameText;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong,nonatomic) IBOutlet UILabel *webSiteUrl;
+
+@property (strong,nonatomic) NSString *webSiteText;
+
+
 
 @end

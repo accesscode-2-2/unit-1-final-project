@@ -7,17 +7,18 @@
 //
 
 #import "ViewController.h"
-#import "LapNotes.h"
 #import <AVFoundation/AVFoundation.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "WebVC.h"
 
 
 @interface ViewController ()
 @property NSString *displayTime;
 @property (strong,nonatomic)AVAudioPlayer *dontStopGetItGetIt;
 
+@property (nonatomic, assign)BOOL done;
 
 @end
 @implementation ViewController
@@ -57,15 +58,54 @@ return [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
     self.laps = [[NSMutableArray alloc] init];
     [self.lapTableView reloadData];
     
-
-    
-    
     NSString *path = [NSString stringWithFormat:@"%@/dontStop.mp3",[[NSBundle mainBundle]resourcePath]];
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
     _dontStopGetItGetIt = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-
-
+    
     }
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    WebVC* transferViewController = segue.destinationViewController;
+    //NSLog(@"prepareForSegue: %@", segue.identifier);
+    
+    if([segue.identifier isEqualToString:@"facebook"]){
+        
+        transferViewController.webSiteText = @"http://www.facebook.com";
+        
+    }
+    else if ([segue.identifier isEqualToString:@"twitter"]){
+        
+        transferViewController.webSiteText = @"http://www.twitter.com";
+        
+        
+    }
+    
+    else if ([segue.identifier isEqualToString:@"linkedIn"]){
+        
+        transferViewController.webSiteText = @"http://www.linkedin.com";
+        
+        
+    }
+
+    
+    else if ([segue.identifier isEqualToString:@"google"]){
+        
+        transferViewController.webSiteText = @"https://hangouts.google.com";
+        
+        
+    }
+
+    
+    
+    
+    
+}
+
+
+
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -109,12 +149,6 @@ return [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
     return cell;
 }
 
-- (IBAction)fBookButtonAction:(UIButton *)sender {
-    
-     NSLog(@"FBB Tapped");
-    NSString* launchUrl = @"http://facebook.com/";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
-}
 
 - (IBAction)startStopButtonAction:(id)sender {
     

@@ -15,7 +15,6 @@
 		1815F9941B9580F0001531AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1815F9921B9580F0001531AB /* LaunchScreen.xib */; };
 		1815F9A01B9580F0001531AB /* NSDateProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815F99F1B9580F0001531AB /* NSDateProjectTests.m */; };
 		1815F9B81B95C8BC001531AB /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1815F9AE1B95C8BC001531AB /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg */; };
-		1815FA421B967EDF001531AB /* LapNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815FA411B967EDF001531AB /* LapNotes.m */; };
 		1815FACE1B978EB8001531AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815FACD1B978EB8001531AB /* AVFoundation.framework */; };
 		1815FAD11B978F85001531AB /* dontSTOP.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1815FAD01B978F85001531AB /* dontSTOP.mp3 */; };
 		1815FAD41B9795EC001531AB /* DatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815FAD31B9795EC001531AB /* DatesViewController.m */; };
@@ -33,7 +32,6 @@
 		1815FB1E1B97FAB6001531AB /* fe_runningStop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1815FB1A1B97FAB6001531AB /* fe_runningStop.png */; };
 		1815FB201B981D78001531AB /* _dontstopWatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1815FB1F1B981D78001531AB /* _dontstopWatch.png */; };
 		1815FB221B98202E001531AB /* dontstopWatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1815FB211B98202E001531AB /* dontstopWatch.png */; };
-		1815FB241B986B9B001531AB /* libAWDProtobuf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815FB231B986B9A001531AB /* libAWDProtobuf.dylib */; };
 		182AB4171B98700B00B7494B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182AB4161B98700B00B7494B /* FBSDKCoreKit.framework */; };
 		182AB4191B9874B100B7494B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182AB4181B9874B100B7494B /* FBSDKLoginKit.framework */; };
 		182AB41B1B9874D200B7494B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182AB41A1B9874D200B7494B /* FBSDKShareKit.framework */; };
@@ -65,8 +63,6 @@
 		1815F99E1B9580F0001531AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1815F99F1B9580F0001531AB /* NSDateProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDateProjectTests.m; sourceTree = "<group>"; };
 		1815F9AE1B95C8BC001531AB /* nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nyc-skyline-at-night-with-new-york-skyline-2013-at-night.jpg"; sourceTree = "<group>"; };
-		1815FA401B967EDF001531AB /* LapNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapNotes.h; sourceTree = "<group>"; };
-		1815FA411B967EDF001531AB /* LapNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapNotes.m; sourceTree = "<group>"; };
 		1815FACD1B978EB8001531AB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1815FAD01B978F85001531AB /* dontSTOP.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dontSTOP.mp3; sourceTree = "<group>"; };
 		1815FAD21B9795EC001531AB /* DatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatesViewController.h; sourceTree = "<group>"; };
@@ -85,7 +81,6 @@
 		1815FB1A1B97FAB6001531AB /* fe_runningStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fe_runningStop.png; sourceTree = "<group>"; };
 		1815FB1F1B981D78001531AB /* _dontstopWatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _dontstopWatch.png; sourceTree = "<group>"; };
 		1815FB211B98202E001531AB /* dontstopWatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dontstopWatch.png; sourceTree = "<group>"; };
-		1815FB231B986B9A001531AB /* libAWDProtobuf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libAWDProtobuf.dylib; path = usr/lib/libAWDProtobuf.dylib; sourceTree = SDKROOT; };
 		182AB4161B98700B00B7494B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		182AB4181B9874B100B7494B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		182AB41A1B9874D200B7494B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -98,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1815FB241B986B9B001531AB /* libAWDProtobuf.dylib in Frameworks */,
 				182AB4171B98700B00B7494B /* FBSDKCoreKit.framework in Frameworks */,
 				182AB41B1B9874D200B7494B /* FBSDKShareKit.framework in Frameworks */,
 				182AB4191B9874B100B7494B /* FBSDKLoginKit.framework in Frameworks */,
@@ -119,7 +113,6 @@
 		1815F9771B9580F0001531AB = {
 			isa = PBXGroup;
 			children = (
-				1815FB231B986B9A001531AB /* libAWDProtobuf.dylib */,
 				182AB41A1B9874D200B7494B /* FBSDKShareKit.framework */,
 				182AB4181B9874B100B7494B /* FBSDKLoginKit.framework */,
 				182AB4161B98700B00B7494B /* FBSDKCoreKit.framework */,
@@ -153,8 +146,6 @@
 				1815F98B1B9580F0001531AB /* ViewController.m */,
 				186B1F071B98AB4200038F68 /* WebVC.h */,
 				186B1F081B98AB4200038F68 /* WebVC.m */,
-				1815FA401B967EDF001531AB /* LapNotes.h */,
-				1815FA411B967EDF001531AB /* LapNotes.m */,
 				1815F9901B9580F0001531AB /* Images.xcassets */,
 				1815F9921B9580F0001531AB /* LaunchScreen.xib */,
 				1815F9831B9580F0001531AB /* Supporting Files */,
@@ -347,7 +338,6 @@
 				1815F9891B9580F0001531AB /* AppDelegate.m in Sources */,
 				186B1F091B98AB4200038F68 /* WebVC.m in Sources */,
 				1815F9861B9580F0001531AB /* main.m in Sources */,
-				1815FA421B967EDF001531AB /* LapNotes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
