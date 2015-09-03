@@ -10,12 +10,7 @@
 
 @interface TimerViewController : UIViewController
 {
-    
     NSTimer *countdownTimer;
-    double timerInterval;
-    double timerElapsed;
-    NSDate *timerStarted;
-
 }
     
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;

@@ -66,23 +66,6 @@
                                     <segue destination="KLP-5M-Cca" kind="showDetail" id="5Ax-gM-Wxb"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8A-Fx-oHh">
-                                <rect key="frame" x="16" y="20" width="568" height="531"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locked" translatesAutoresizingMaskIntoConstraints="NO" id="njS-ng-ur1">
-                                        <rect key="frame" x="52" y="126" width="465" height="280"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="465" id="aOs-6c-j6i"/>
-                                            <constraint firstAttribute="height" constant="280" id="yE3-yZ-2G9"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="njS-ng-ur1" secondAttribute="centerY" id="eqq-S3-8e6"/>
-                                    <constraint firstAttribute="centerX" secondItem="njS-ng-ur1" secondAttribute="centerX" id="q5F-x3-ez2"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -91,15 +74,11 @@
                             <constraint firstItem="7zd-dY-kGG" firstAttribute="top" secondItem="5rB-dM-6mB" secondAttribute="bottom" constant="25" id="FgK-Ld-irP"/>
                             <constraint firstAttribute="trailing" secondItem="5rB-dM-6mB" secondAttribute="trailing" constant="15" id="GCi-fq-Rdk"/>
                             <constraint firstAttribute="centerX" secondItem="OVH-DT-5rv" secondAttribute="centerX" id="JT1-rD-HKS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r8A-Fx-oHh" secondAttribute="trailing" id="MXo-Xx-Qwr"/>
                             <constraint firstAttribute="centerX" secondItem="xHm-g1-0tt" secondAttribute="centerX" id="QSj-LL-LF1"/>
                             <constraint firstItem="OVH-DT-5rv" firstAttribute="top" secondItem="lJd-bZ-xXd" secondAttribute="top" constant="25" id="Rlh-fy-e8g"/>
                             <constraint firstAttribute="centerX" secondItem="Kvr-0N-gtQ" secondAttribute="centerX" id="Tum-DY-MZ5"/>
-                            <constraint firstItem="r8A-Fx-oHh" firstAttribute="top" secondItem="NdG-TC-js2" secondAttribute="bottom" id="UCx-YL-7q6"/>
                             <constraint firstItem="CSZ-kC-X4H" firstAttribute="top" secondItem="OVH-DT-5rv" secondAttribute="bottom" constant="30" id="UQi-IY-ZE4"/>
-                            <constraint firstItem="7zd-dY-kGG" firstAttribute="top" secondItem="r8A-Fx-oHh" secondAttribute="bottom" id="mdC-1C-KO6"/>
                             <constraint firstItem="xHm-g1-0tt" firstAttribute="top" secondItem="Kvr-0N-gtQ" secondAttribute="bottom" constant="15" id="rhT-gU-rtB"/>
-                            <constraint firstItem="r8A-Fx-oHh" firstAttribute="leading" secondItem="lJd-bZ-xXd" secondAttribute="leadingMargin" id="sue-9D-2XL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="Timer-25" id="To3-0y-HK6" userLabel="Timer"/>
@@ -181,6 +160,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okk-P7-wh2">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            </scrollView>
                             <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="538" placeholderIntrinsicHeight="180" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5e-3y-fbg">
                                 <rect key="frame" x="46" y="371" width="538" height="180"/>
                                 <constraints>
@@ -201,6 +183,7 @@
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kf-hQ-dgC" userLabel="Timer Label">
                                 <rect key="frame" x="300" y="351" width="0.0" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="YDN-PX-JcW"/>
                                 </constraints>
@@ -249,7 +232,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="186" id="4dn-kp-a0e"/>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="50" id="5f3-9e-1A0"/>
@@ -309,14 +292,14 @@
                                 <exclude reference="pb6-ZA-dmx"/>
                                 <exclude reference="qdZ-4p-WK4"/>
                                 <exclude reference="thE-1g-Qpp"/>
-                                <exclude reference="jhp-mi-LBR"/>
-                                <exclude reference="jzU-hK-l1y"/>
-                                <exclude reference="x3u-dh-YX2"/>
-                                <exclude reference="xnW-Cj-Eha"/>
                                 <exclude reference="4dn-kp-a0e"/>
                                 <exclude reference="CVl-vK-wOR"/>
                                 <exclude reference="gI6-0T-yh6"/>
                                 <exclude reference="kGp-Qh-Lox"/>
+                                <exclude reference="jhp-mi-LBR"/>
+                                <exclude reference="jzU-hK-l1y"/>
+                                <exclude reference="x3u-dh-YX2"/>
+                                <exclude reference="xnW-Cj-Eha"/>
                             </mask>
                         </variation>
                     </view>
@@ -325,13 +308,14 @@
                     <connections>
                         <outlet property="countdownLabel" destination="1kf-hQ-dgC" id="l3s-65-Uhc"/>
                         <outlet property="datePicker" destination="L5e-3y-fbg" id="z6z-cK-Xlz"/>
+                        <outlet property="scrollView" destination="okk-P7-wh2" id="N8T-YM-Zql"/>
                         <outlet property="titleLabel" destination="pNp-6G-lNB" id="Tfb-A6-V2N"/>
                         <outlet property="titleTextField" destination="8QS-tF-mcY" id="E0p-3j-rza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptL-Ti-gle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="-607"/>
+            <point key="canvasLocation" x="25" y="767"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="yoe-yV-vz4">
@@ -350,7 +334,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yRD-SO-J7W">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sBM-dY-3Bb">
@@ -831,7 +815,6 @@
         <image name="StopWatch" width="29" height="29"/>
         <image name="Timer" width="29" height="29"/>
         <image name="Timer-25" width="25" height="25"/>
-        <image name="locked" width="465" height="280"/>
         <image name="world" width="29" height="29"/>
     </resources>
 </document>

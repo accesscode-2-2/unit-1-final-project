@@ -12,6 +12,8 @@
     NSTimer *timer;
 }
 
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
