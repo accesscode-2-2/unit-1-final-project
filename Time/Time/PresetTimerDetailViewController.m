@@ -76,10 +76,10 @@
         self.newTime = self.currentTimer.countDownDuration;
     }
     else {
-    self.weightLabel.hidden = YES;
-    self.add.hidden = YES;
-    self.subtract.hidden = YES;
-    self.weightText.hidden = YES;
+        self.weightLabel.hidden = YES;
+        self.add.hidden = YES;
+        self.subtract.hidden = YES;
+        self.weightText.hidden = YES;
     }
     
     self.hours = self.currentTimer.countDownDuration/3600;
@@ -92,7 +92,7 @@
     self.isPaused = NO;
     self.pauseResumeButton.enabled = NO;
     self.timeEnds = [self setupAudioPlayerWithFile:@"ping-sound" type:@"mp3"];
-
+    
     
 }
 
@@ -167,7 +167,7 @@
     }
     
     self.isTimerRunning = !self.isTimerRunning;
-
+    
 }
 
 - (void) updateTimer {

@@ -44,7 +44,7 @@
 - (void)stopEditingButtonTapped:(UIBarButtonItem *)button {
     [self.tableView setEditing:NO animated:YES];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonTapped:)];
-
+    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,11 +62,11 @@
 
 
 - (void)addButtonTapped {
-
+    
     PresetTimerAddViewController *myNewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"showAdd"];
     myNewVC.timerViewController = self;
     [self presentViewController:myNewVC animated:YES completion:nil];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,9 +121,10 @@
         addVC.timerViewController = self;
         
     }
-    else{
+    else
+    {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-
+        
         Timer *currentTimer = [self.model.timers objectAtIndex:indexPath.row];
         PresetTimerDetailViewController *detailVC = segue.destinationViewController;
         
@@ -136,10 +137,9 @@
 
 @end
 
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
