@@ -14,9 +14,8 @@
 
 @interface TimerDetailViewController ()
 
-@property (nonatomic) int countDownDuration;
-@property (nonatomic) int afterRemainder;
-@property (nonatomic) int remainder;
+
+
 
 
 
@@ -42,11 +41,11 @@
     
     if (sender == self.startDetailTime) {
         self.startNow = [[NSDate alloc] init];
-        self.presetTimer.timer= [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        self.presetTimer.timer= [NSTimer timerWithTimeInterval:1/1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
         
         [[NSRunLoop currentRunLoop] addTimer:self.presetTimer.timer forMode: NSRunLoopCommonModes];
-        
-        
+    }
+    
         if (sender == self.pauseDetailTime) {
             
             self.totalTime =  self.totalTime - self.totalSessonTime;
@@ -55,7 +54,7 @@
 
         }
         
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +67,7 @@
     NSDate *now = [[NSDate alloc] init];
     
     self.totalSessonTime = [now timeIntervalSinceDate:self.startNow];
-    self.presetTimer.timeInterval =  self.totalTime - self.totalSessonTime;
+    self.presetTimer.timeInterval =  self.presetTimer.timeInterval - self.totalSessonTime;
     
     self.detailTimeLabel.text = [NSString stringWithFormat:@"%0.2f", self.presetTimer.timeInterval];
     NSLog(@"%f", self.presetTimer.timeInterval);

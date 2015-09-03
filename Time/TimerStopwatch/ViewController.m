@@ -22,6 +22,16 @@
     PresetTimer* myTimer= [[PresetTimer alloc] init];
     myTimer.timerName=self.textField.text;
     myTimer.timeInterval= self.datePicker.countDownDuration;
+    NSInteger hours = (myTimer.timeInterval/3600);
+    NSInteger minutes = (myTimer.timeInterval - (hours*3600))/60;
+    NSInteger seconds = minutes*60;
+   
+    myTimer.hours   = hours;
+    myTimer.minutes = minutes;
+    myTimer.seconds = seconds;
+    
+    NSLog(@"Hours:%ld and Minutes: %ld",(long)hours, (long)minutes);
+
     
     [[PresetTimersSingleton sharedInstance].presetTimersArray addObject:myTimer];
     

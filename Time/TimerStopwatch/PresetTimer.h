@@ -14,4 +14,7 @@
 @property (nonatomic) NSTimer* timer;
 @property (nonatomic) NSTimeInterval timeInterval;
 
+@property (nonatomic) NSInteger hours;
+@property (nonatomic) NSInteger minutes;
+@property (nonatomic) NSInteger seconds;
 @end
