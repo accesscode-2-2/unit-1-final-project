@@ -10,7 +10,7 @@
 
 @interface TimerDetailViewController ()
 
-@property (nonatomic) PresetTimersSingleton *arrayOfPresets;
+
 @end
 
 @implementation TimerDetailViewController
@@ -30,8 +30,9 @@
     
     if (sender == self.startDetailTime) {
         self.startNow = [[NSDate alloc] init];
-        self.presetTimer= [[NSTimer alloc]init];
-        [[NSRunLoop currentRunLoop] addTimer:self.presetTimer forMode: NSRunLoopCommonModes];
+        self.presetTimer.timer= [NSTimer timerWithTimeInterval:1/60.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        
+        [[NSRunLoop currentRunLoop] addTimer:self.presetTimer.timer forMode: NSRunLoopCommonModes];
         
     }
 }
@@ -45,7 +46,7 @@
     
     NSDate *now = [[NSDate alloc] init];
     
-    self.totalSessonTime = [now timeIntervalSinceDate:self.startDetailTime];
+    self.totalSessonTime = [now timeIntervalSinceDate:self.startNow];
     self.presetTimer.timeInterval =  self.totalTime - self.totalSessonTime;
     
     self.detailTimeLabel.text = [NSString stringWithFormat:@"%0.2f", self.presetTimer.timeInterval];
