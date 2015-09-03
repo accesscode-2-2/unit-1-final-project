@@ -10,6 +10,7 @@
 #import "PresetTimerTableViewController.h"
 
 @interface TimerViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic) NSInteger afterRemainder;
 @property (nonatomic) NSInteger Remainder;
@@ -38,8 +39,15 @@
     self.running = NO;
     self.Remainder = -1;
     
-//    self.presetInterval = [[TimerData alloc]init];
-//    self.presetInterval.presetTime = @00.00;
+    UIImage *backgroundImage = [UIImage imageNamed:@"track"];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+    self.scrollView.contentSize = backgroundImage.size;
+    [self.scrollView addSubview:backgroundImageView];
+    
+    
+    
+    //    self.presetInterval = [[TimerData alloc]init];
+    //    self.presetInterval.presetTime = @00.00;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,7 +85,7 @@
         [countdownTimer invalidate];
         countdownTimer = nil;
     }
-
+    
 }
 
 
@@ -103,7 +111,7 @@
     
     PresetTimerTableViewController *vc = (PresetTimerTableViewController *)[navController topViewController];
     
-//    vc.selectedPreset = self.presetInterval;
+    //    vc.selectedPreset = self.presetInterval;
     
     
 }

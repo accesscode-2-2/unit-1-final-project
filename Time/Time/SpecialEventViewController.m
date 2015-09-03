@@ -12,11 +12,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //set scrollable image background
     UIImage *backgroundImage = [UIImage imageNamed:@"beach"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
     self.scrollView.contentSize = backgroundImage.size;
     [self.scrollView addSubview:backgroundImageView];
+    
+    
+    //countdown label1 Custom Design
+    self.countdownLabel.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.countdownLabel.layer.borderWidth = 0.5;
+    self.countdownLabel.layer.cornerRadius = 15;
+    
+    //title label design
+    self.titleLabel.layer.cornerRadius = 37.5;
+    self.titleLabel.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.titleLabel.layer.borderWidth = 1.0;
+    self.titleLabel.clipsToBounds = YES;
+   
 }
 
 - (IBAction)titleTextFiled2:(id)sender {

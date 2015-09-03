@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="94" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-iv-ixu">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            </scrollView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-DT-5rv">
                                 <rect key="frame" x="0.0" y="35" width="600" height="180"/>
                                 <constraints>
@@ -40,6 +43,7 @@
                                 <rect key="frame" x="228" y="309" width="144" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Start Countdown">
+                                    <color key="titleColor" red="0.24442260510417721" green="0.50196081399917603" blue="0.10243335455243109" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -74,18 +78,29 @@
                             <constraint firstItem="7zd-dY-kGG" firstAttribute="top" secondItem="5rB-dM-6mB" secondAttribute="bottom" constant="25" id="FgK-Ld-irP"/>
                             <constraint firstAttribute="trailing" secondItem="5rB-dM-6mB" secondAttribute="trailing" constant="15" id="GCi-fq-Rdk"/>
                             <constraint firstAttribute="centerX" secondItem="OVH-DT-5rv" secondAttribute="centerX" id="JT1-rD-HKS"/>
+                            <constraint firstAttribute="trailing" secondItem="Rvv-iv-ixu" secondAttribute="trailing" id="NoF-0h-TBP"/>
                             <constraint firstAttribute="centerX" secondItem="xHm-g1-0tt" secondAttribute="centerX" id="QSj-LL-LF1"/>
                             <constraint firstItem="OVH-DT-5rv" firstAttribute="top" secondItem="lJd-bZ-xXd" secondAttribute="top" constant="25" id="Rlh-fy-e8g"/>
                             <constraint firstAttribute="centerX" secondItem="Kvr-0N-gtQ" secondAttribute="centerX" id="Tum-DY-MZ5"/>
                             <constraint firstItem="CSZ-kC-X4H" firstAttribute="top" secondItem="OVH-DT-5rv" secondAttribute="bottom" constant="30" id="UQi-IY-ZE4"/>
+                            <constraint firstItem="Rvv-iv-ixu" firstAttribute="leading" secondItem="lJd-bZ-xXd" secondAttribute="leading" id="V3l-Le-TaY"/>
+                            <constraint firstItem="Rvv-iv-ixu" firstAttribute="top" secondItem="OVH-DT-5rv" secondAttribute="bottom" id="paD-ot-k6l"/>
+                            <constraint firstItem="Rvv-iv-ixu" firstAttribute="top" secondItem="NdG-TC-js2" secondAttribute="bottom" id="qeH-in-oks"/>
+                            <constraint firstItem="7zd-dY-kGG" firstAttribute="top" secondItem="Rvv-iv-ixu" secondAttribute="bottom" id="rd7-3O-NNu"/>
                             <constraint firstItem="xHm-g1-0tt" firstAttribute="top" secondItem="Kvr-0N-gtQ" secondAttribute="bottom" constant="15" id="rhT-gU-rtB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="paD-ot-k6l"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="Timer-25" id="To3-0y-HK6" userLabel="Timer"/>
                     <connections>
                         <outlet property="countdownLabel" destination="CSZ-kC-X4H" id="r0e-ZI-kIN"/>
                         <outlet property="datePicker" destination="OVH-DT-5rv" id="Fue-ZP-2w3"/>
                         <outlet property="restartButton" destination="xHm-g1-0tt" id="tom-bQ-aD1"/>
+                        <outlet property="scrollView" destination="Rvv-iv-ixu" id="4dl-l9-aQ9"/>
                         <outlet property="startButton" destination="Kvr-0N-gtQ" id="k5e-65-oGU"/>
                     </connections>
                 </viewController>
@@ -160,7 +175,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okk-P7-wh2">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okk-P7-wh2">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                             </scrollView>
                             <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="538" placeholderIntrinsicHeight="180" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5e-3y-fbg">
@@ -183,12 +198,11 @@
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kf-hQ-dgC" userLabel="Timer Label">
                                 <rect key="frame" x="300" y="351" width="0.0" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="YDN-PX-JcW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="27"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of event" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8QS-tF-mcY">
@@ -232,7 +246,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="186" id="4dn-kp-a0e"/>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="50" id="5f3-9e-1A0"/>
@@ -253,16 +266,19 @@
                             <constraint firstAttribute="trailing" secondItem="pNp-6G-lNB" secondAttribute="trailing" constant="15" id="US8-je-RRI"/>
                             <constraint firstAttribute="trailing" secondItem="KqH-9v-db9" secondAttribute="trailing" constant="16" id="YH9-RI-Ur9"/>
                             <constraint firstAttribute="centerX" secondItem="8QS-tF-mcY" secondAttribute="centerX" constant="0.5" id="YOs-Nb-3IH"/>
+                            <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="okk-P7-wh2" secondAttribute="bottom" id="ZAD-ej-IOS"/>
                             <constraint firstItem="fdQ-Dh-lZE" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="545" id="cJM-iT-4iW"/>
                             <constraint firstItem="fdQ-Dh-lZE" firstAttribute="top" secondItem="3q6-z8-Zvv" secondAttribute="top" constant="20" id="d5w-mo-lH3"/>
                             <constraint firstItem="pNp-6G-lNB" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="15" id="eAZ-Ug-31Q"/>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="fdQ-Dh-lZE" secondAttribute="bottom" constant="123" id="gI6-0T-yh6"/>
+                            <constraint firstItem="okk-P7-wh2" firstAttribute="top" secondItem="2zA-ai-5x5" secondAttribute="bottom" id="hGE-7O-N58"/>
                             <constraint firstItem="KqH-9v-db9" firstAttribute="top" secondItem="2zA-ai-5x5" secondAttribute="bottom" constant="279" id="jhp-mi-LBR"/>
                             <constraint firstItem="KqH-9v-db9" firstAttribute="baseline" secondItem="fdQ-Dh-lZE" secondAttribute="baseline" id="ji8-wO-gSh"/>
                             <constraint firstAttribute="trailing" secondItem="KqH-9v-db9" secondAttribute="trailing" constant="100" id="jzU-hK-l1y"/>
                             <constraint firstItem="8QS-tF-mcY" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="15" id="kBo-67-btx"/>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="186" id="kGp-Qh-Lox"/>
                             <constraint firstItem="L5e-3y-fbg" firstAttribute="top" secondItem="KqH-9v-db9" secondAttribute="bottom" constant="50" id="nHW-Z3-Wtn"/>
+                            <constraint firstItem="okk-P7-wh2" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" id="o18-by-4tW"/>
                             <constraint firstItem="fdQ-Dh-lZE" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="100" id="o27-R4-bsA"/>
                             <constraint firstItem="1kf-hQ-dgC" firstAttribute="top" secondItem="L5e-3y-fbg" secondAttribute="bottom" constant="90" id="pb6-ZA-dmx"/>
                             <constraint firstAttribute="centerX" secondItem="1kf-hQ-dgC" secondAttribute="centerX" id="pzZ-RU-HO0"/>
@@ -271,6 +287,7 @@
                             <constraint firstItem="fdQ-Dh-lZE" firstAttribute="leading" secondItem="3q6-z8-Zvv" secondAttribute="leading" constant="16" id="seE-KE-cuS"/>
                             <constraint firstAttribute="trailing" secondItem="1kf-hQ-dgC" secondAttribute="trailing" constant="279" id="thE-1g-Qpp"/>
                             <constraint firstItem="KqH-9v-db9" firstAttribute="top" secondItem="2zA-ai-5x5" secondAttribute="bottom" constant="30" id="x3u-dh-YX2"/>
+                            <constraint firstAttribute="trailing" secondItem="okk-P7-wh2" secondAttribute="trailing" id="x7g-vt-EfJ"/>
                             <constraint firstAttribute="centerX" secondItem="pNp-6G-lNB" secondAttribute="centerX" constant="2.5" id="xiE-rg-nFR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KqH-9v-db9" secondAttribute="trailing" constant="51" id="xnW-Cj-Eha"/>
                         </constraints>
@@ -292,14 +309,14 @@
                                 <exclude reference="pb6-ZA-dmx"/>
                                 <exclude reference="qdZ-4p-WK4"/>
                                 <exclude reference="thE-1g-Qpp"/>
-                                <exclude reference="jhp-mi-LBR"/>
-                                <exclude reference="jzU-hK-l1y"/>
-                                <exclude reference="x3u-dh-YX2"/>
-                                <exclude reference="xnW-Cj-Eha"/>
                                 <exclude reference="4dn-kp-a0e"/>
                                 <exclude reference="CVl-vK-wOR"/>
                                 <exclude reference="gI6-0T-yh6"/>
                                 <exclude reference="kGp-Qh-Lox"/>
+                                <exclude reference="jhp-mi-LBR"/>
+                                <exclude reference="jzU-hK-l1y"/>
+                                <exclude reference="x3u-dh-YX2"/>
+                                <exclude reference="xnW-Cj-Eha"/>
                             </mask>
                         </variation>
                     </view>
