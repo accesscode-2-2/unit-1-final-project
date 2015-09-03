@@ -586,9 +586,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6n-1t-7B7">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obF-gb-Rt5" userLabel="Button Box View">
                                 <rect key="frame" x="200" y="240" width="200" height="75"/>
                                 <subviews>
@@ -746,17 +743,11 @@
                             <constraint firstItem="CpA-Xr-1cM" firstAttribute="leading" secondItem="JAL-Tv-fBQ" secondAttribute="leadingMargin" constant="-16" id="0xT-Ht-THq"/>
                             <constraint firstItem="xlG-PG-yBX" firstAttribute="top" secondItem="CpA-Xr-1cM" secondAttribute="bottom" id="1d9-uK-Q2M"/>
                             <constraint firstItem="fuW-lC-uOz" firstAttribute="top" secondItem="CpA-Xr-1cM" secondAttribute="bottom" id="1we-yP-RAU"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="M6n-1t-7B7" secondAttribute="bottom" id="2d9-cw-S87"/>
-                            <constraint firstItem="xlG-PG-yBX" firstAttribute="top" secondItem="M6n-1t-7B7" secondAttribute="bottom" id="3WP-Il-7eg"/>
-                            <constraint firstItem="M6n-1t-7B7" firstAttribute="top" secondItem="JAL-Tv-fBQ" secondAttribute="topMargin" id="6cf-fv-TF4"/>
-                            <constraint firstItem="M6n-1t-7B7" firstAttribute="leading" secondItem="JAL-Tv-fBQ" secondAttribute="leadingMargin" constant="-16" id="8Pj-7U-hFm"/>
                             <constraint firstItem="fuW-lC-uOz" firstAttribute="leading" secondItem="JAL-Tv-fBQ" secondAttribute="leadingMargin" constant="-16" id="AV9-FU-fP0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fuW-lC-uOz" secondAttribute="trailing" constant="-16" id="BMu-Di-Tim"/>
                             <constraint firstItem="fuW-lC-uOz" firstAttribute="top" secondItem="CpA-Xr-1cM" secondAttribute="bottom" id="I9G-4G-2cp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pHy-8n-1rd" secondAttribute="trailing" constant="-16" id="J7C-K9-Ggk"/>
                             <constraint firstAttribute="centerX" secondItem="obF-gb-Rt5" secondAttribute="centerX" id="L1P-xd-S1s"/>
-                            <constraint firstItem="M6n-1t-7B7" firstAttribute="top" secondItem="pHy-8n-1rd" secondAttribute="bottom" id="Ryc-Cb-Bm1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="M6n-1t-7B7" secondAttribute="trailing" constant="-16" id="S2t-dL-75n"/>
                             <constraint firstItem="CpA-Xr-1cM" firstAttribute="top" secondItem="CEF-tc-Vij" secondAttribute="bottom" id="SEd-Yl-3U8"/>
                             <constraint firstItem="CpA-Xr-1cM" firstAttribute="top" secondItem="pHy-8n-1rd" secondAttribute="bottom" id="apG-lI-mdM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fuW-lC-uOz" secondAttribute="bottom" id="oMK-2f-bqJ"/>
@@ -766,11 +757,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Ryc-Cb-Bm1"/>
                                 <exclude reference="SEd-Yl-3U8"/>
                                 <exclude reference="I9G-4G-2cp"/>
                                 <exclude reference="1d9-uK-Q2M"/>
-                                <exclude reference="3WP-Il-7eg"/>
                             </mask>
                         </variation>
                     </view>
@@ -779,7 +768,6 @@
                         <outlet property="lapLabel" destination="60G-nq-zQF" id="58U-c2-LrZ"/>
                         <outlet property="lapTableView" destination="fuW-lC-uOz" id="G5K-0t-tTr"/>
                         <outlet property="resetButton" destination="UK3-Jy-X20" id="v5h-0l-JT3"/>
-                        <outlet property="scrollView" destination="M6n-1t-7B7" id="ebR-se-rUD"/>
                         <outlet property="startButton" destination="wuk-RT-9px" id="aQ1-2Y-GNY"/>
                         <outlet property="stopwatchLabel" destination="2go-1O-yYQ" id="yq8-Xg-rBS"/>
                     </connections>
