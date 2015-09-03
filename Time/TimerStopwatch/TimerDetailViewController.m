@@ -11,7 +11,13 @@
 #import "TimerDetailViewController.h"
 
 
+
 @interface TimerDetailViewController ()
+
+@property (nonatomic) int countDownDuration;
+@property (nonatomic) int afterRemainder;
+@property (nonatomic) int remainder;
+
 
 
 @end
@@ -20,6 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
+
+
     // Do any additional setup after loading the view.
     
     
@@ -41,6 +51,7 @@
             
             self.totalTime =  self.totalTime - self.totalSessonTime;
             [self.presetTimer.timer invalidate];
+            self.presetTimer.timer= nil;
 
         }
         

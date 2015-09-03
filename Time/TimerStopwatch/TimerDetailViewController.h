@@ -27,4 +27,6 @@
 @property (nonatomic) NSTimeInterval totalSessonTime;  //records the time between each "Start and "Pause."
 @property (nonatomic) NSTimeInterval totalTime;        //adds the total time between all session times.
 
+
+
 @end
