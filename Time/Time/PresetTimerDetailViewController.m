@@ -186,7 +186,7 @@
         [self.timer invalidate];
         self.timer = nil;
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done" message:[NSString stringWithFormat:@"%@ Is Ready",self.currentTimer.timerName] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time Done" message:[NSString stringWithFormat:@"Your %@ Are Ready",self.currentTimer.timerName] delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil];
         
         [alert show];
         [self.timeEnds play];
