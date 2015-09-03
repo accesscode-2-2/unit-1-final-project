@@ -37,7 +37,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"presetBack"]];
     [self.navigationItem setTitle:@"Preset"];
-
+    
     self.timeLabel.text = @"00:00:00";
     self.timerPickerArray = [PressetData sharedModel].allPresets;
     self.timerPickerView.dataSource = self;
@@ -45,7 +45,7 @@
     [self.startButton setBackgroundImage:[UIImage imageNamed:@"1start"] forState:UIControlStateNormal];
     [self.resetButton setBackgroundImage:[UIImage imageNamed:@"1reset"] forState:UIControlStateNormal];
     [self.stopButton setBackgroundImage:[UIImage imageNamed:@"1stop"] forState:UIControlStateNormal];
-
+    
     self.count = 0;
     
     
@@ -55,7 +55,7 @@
     
     [self.timerPickerView reloadAllComponents];
     [self.timer invalidate];
-   }
+}
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
     
@@ -76,7 +76,7 @@
 - (IBAction)stopButtonTapped:(UIButton *)sender {
     [self.timer invalidate];
     [self.progressTimer invalidate];
- 
+    
 }
 
 
@@ -84,8 +84,8 @@
     [self updatePresetLabel];
     self.progressLabel.text = @"0 %";
     self.count = 0;
-
-
+    
+    
 }
 
 - (void)updateUI:(NSTimer *)timer
@@ -107,13 +107,13 @@
 
 
 - (IBAction)startButtonTapped:(UIButton *)sender {
-   
+    
     
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
-
-        [self updatePresetLabel];
-        [self runTimer];
- }
+    
+    [self updatePresetLabel];
+    [self runTimer];
+}
 
 -(void)convertTime: (NSString *)time{
     
@@ -149,11 +149,11 @@
     NSInteger hours, hours_rem, minutes, minutes_rem;
     self.seconds -= 1;
     
-      hours = self.seconds / 3600;
-      hours_rem = self.seconds % 3600;
+    hours = self.seconds / 3600;
+    hours_rem = self.seconds % 3600;
     
-      minutes =   hours_rem/60 ;
-      minutes_rem = hours_rem % 60;
+    minutes =   hours_rem/60 ;
+    minutes_rem = hours_rem % 60;
     
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, minutes, minutes_rem];

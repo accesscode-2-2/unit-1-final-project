@@ -22,9 +22,36 @@
 @end
 
 @implementation CountdownEventViewController
-
+@synthesize sandGlass;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSArray *imgArray = [NSArray arrayWithObjects:
+            [UIImage imageNamed:@"s1.png"],
+            [UIImage imageNamed:@"s2.png"],
+            [UIImage imageNamed:@"s3.png"],
+            [UIImage imageNamed:@"s4.png"],nil];
+    
+    sandGlass.frame = CGRectMake(0, 0, 200, 200);
+    sandGlass.animationImages = imgArray;
+    sandGlass.animationDuration = 1;
+    sandGlass.animationRepeatCount = 0;
+    
+    [sandGlass startAnimating];
+    
+    [self.view insertSubview:sandGlass atIndex:0];
+//    [sandGlass release];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"eventBackground7"]];
 
     self.eventLabel.hidden = YES;
@@ -47,6 +74,13 @@
     [self.eventPicker setMinimumDate:minimumDate];
     
 }
+
+//- (void)dealloc {
+//    [sonic release];
+//    [readOut release];
+//    [slider release];
+//    [super dealloc];
+//}
 - (IBAction)startButton:(id)sender {
     
     //this will create animation for eventLabel

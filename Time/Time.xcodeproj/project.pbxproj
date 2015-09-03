@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0765D20E1B925E7C003961EE /* Preset.m in Sources */ = {isa = PBXBuildFile; fileRef = 0765D20D1B925E7C003961EE /* Preset.m */; };
 		0765D2101B9265B2003961EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0765D20F1B9265B2003961EE /* Main.storyboard */; };
+		842BB5ED1B98EE3100D42FF1 /* 991.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842BB5E91B98EE3100D42FF1 /* 991.jpg */; };
+		842BB5EE1B98EE3100D42FF1 /* 992.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842BB5EA1B98EE3100D42FF1 /* 992.jpg */; };
+		842BB5EF1B98EE3100D42FF1 /* 993.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842BB5EB1B98EE3100D42FF1 /* 993.jpg */; };
+		842BB5F01B98EE3100D42FF1 /* 994.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842BB5EC1B98EE3100D42FF1 /* 994.jpg */; };
 		8478CE8E1B8E1D6E0045BDD7 /* WorldClockTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */; };
 		8478CE951B8F51E00045BDD7 /* WorldClockAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CE941B8F51E00045BDD7 /* WorldClockAddTableViewController.m */; };
 		8478CEF31B8FEB7C0045BDD7 /* WorldClockInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478CEF21B8FEB7C0045BDD7 /* WorldClockInfo.m */; };
@@ -49,6 +53,10 @@
 		0765D20C1B925E7C003961EE /* Preset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preset.h; sourceTree = "<group>"; };
 		0765D20D1B925E7C003961EE /* Preset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preset.m; sourceTree = "<group>"; };
 		0765D20F1B9265B2003961EE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		842BB5E91B98EE3100D42FF1 /* 991.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 991.jpg; sourceTree = "<group>"; };
+		842BB5EA1B98EE3100D42FF1 /* 992.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 992.jpg; sourceTree = "<group>"; };
+		842BB5EB1B98EE3100D42FF1 /* 993.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 993.jpg; sourceTree = "<group>"; };
+		842BB5EC1B98EE3100D42FF1 /* 994.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 994.jpg; sourceTree = "<group>"; };
 		8478CE8C1B8E1D6E0045BDD7 /* WorldClockTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClockTableViewController.h; sourceTree = "<group>"; };
 		8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldClockTableViewController.m; sourceTree = "<group>"; };
 		8478CE931B8F51E00045BDD7 /* WorldClockAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClockAddTableViewController.h; sourceTree = "<group>"; };
@@ -179,6 +187,10 @@
 		8D05375B1B86687B00588318 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				842BB5E91B98EE3100D42FF1 /* 991.jpg */,
+				842BB5EA1B98EE3100D42FF1 /* 992.jpg */,
+				842BB5EB1B98EE3100D42FF1 /* 993.jpg */,
+				842BB5EC1B98EE3100D42FF1 /* 994.jpg */,
 				847EEB7B1B93685C00C096E2 /* STKSpinnerView.h */,
 				847EEB7C1B93685C00C096E2 /* STKSpinnerView.m */,
 				8D05375C1B86687B00588318 /* Info.plist */,
@@ -287,14 +299,18 @@
 				8496CC981B8A56F600FB2AAA /* digital-7.ttf in Resources */,
 				8496CC9A1B8A5FC200FB2AAA /* digitalFont.ttf in Resources */,
 				8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */,
+				842BB5EF1B98EE3100D42FF1 /* 993.jpg in Resources */,
 				8D0537691B86687C00588318 /* Images.xcassets in Resources */,
 				8496CC9C1B8A660000FB2AAA /* clock-ticking-5.mp3 in Resources */,
 				847EEB811B93942B00C096E2 /* TimerIsOff.wav in Resources */,
 				847EEB831B949DCF00C096E2 /* Clock-Ticking(1minute).mp3 in Resources */,
 				8496CCA11B8ABA1F00FB2AAA /* ding.wav in Resources */,
+				842BB5ED1B98EE3100D42FF1 /* 991.jpg in Resources */,
 				0765D2101B9265B2003961EE /* Main.storyboard in Resources */,
 				8496CC961B8A56F600FB2AAA /* digital-7 (italic).ttf in Resources */,
+				842BB5F01B98EE3100D42FF1 /* 994.jpg in Resources */,
 				8496CC971B8A56F600FB2AAA /* digital-7 (mono).ttf in Resources */,
+				842BB5EE1B98EE3100D42FF1 /* 992.jpg in Resources */,
 				847EEB7F1B93803B00C096E2 /* clock-ticking.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
