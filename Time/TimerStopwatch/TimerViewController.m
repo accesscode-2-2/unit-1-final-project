@@ -37,7 +37,7 @@
         self.remainder = self.countDownInterval;
         self.afterRemainder = self.countDownInterval - self.remainder%60;
         
-        NSLog(@"%f", self.countDownTimer.countDownDuration);
+       
         
         self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(updateCountDown) userInfo:nil repeats:YES];
         

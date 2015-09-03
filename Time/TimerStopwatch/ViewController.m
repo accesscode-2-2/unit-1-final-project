@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "PresetTimersTableViewController.h"
-
 #import "PresetTimersSingleton.h"
 
 @interface ViewController ()
@@ -25,6 +24,8 @@
     myTimer.timeInterval= self.datePicker.countDownDuration;
     
     [[PresetTimersSingleton sharedInstance].presetTimersArray addObject:myTimer];
+    
+   NSLog(@"%f", self.datePicker.countDownDuration);
 }
 
 

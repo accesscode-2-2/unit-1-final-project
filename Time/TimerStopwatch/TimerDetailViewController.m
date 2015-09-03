@@ -37,6 +37,9 @@
         
         [[NSRunLoop currentRunLoop] addTimer:self.presetTimer.timer forMode: NSRunLoopCommonModes];
         
+        
+       
+        
     }
 }
 
