@@ -292,14 +292,14 @@
                                 <exclude reference="pb6-ZA-dmx"/>
                                 <exclude reference="qdZ-4p-WK4"/>
                                 <exclude reference="thE-1g-Qpp"/>
-                                <exclude reference="4dn-kp-a0e"/>
-                                <exclude reference="CVl-vK-wOR"/>
-                                <exclude reference="gI6-0T-yh6"/>
-                                <exclude reference="kGp-Qh-Lox"/>
                                 <exclude reference="jhp-mi-LBR"/>
                                 <exclude reference="jzU-hK-l1y"/>
                                 <exclude reference="x3u-dh-YX2"/>
                                 <exclude reference="xnW-Cj-Eha"/>
+                                <exclude reference="4dn-kp-a0e"/>
+                                <exclude reference="CVl-vK-wOR"/>
+                                <exclude reference="gI6-0T-yh6"/>
+                                <exclude reference="kGp-Qh-Lox"/>
                             </mask>
                         </variation>
                     </view>
