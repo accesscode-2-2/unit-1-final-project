@@ -67,10 +67,18 @@
     NSDate *now = [[NSDate alloc] init];
     
     self.totalSessonTime = [now timeIntervalSinceDate:self.startNow];
-    self.presetTimer.timeInterval =  self.presetTimer.timeInterval - self.totalSessonTime;
+    self.presetTimer.timeInterval =  self.presetTimer.seconds -1;
+     self.presetTimer.seconds=self.presetTimer.timeInterval;
     
-    self.detailTimeLabel.text = [NSString stringWithFormat:@"%0.2f", self.presetTimer.timeInterval];
+    if(self.presetTimer.timeInterval==0){
+        [self.presetTimer.timer invalidate];
+        self.presetTimer.timer=nil;
+    }
+    
+    self.detailTimeLabel.text = [NSString stringWithFormat:@"%0.2ld:%0.2:%0.2ld", (long)self.presetTimer.hours, (long)self.presetTimer.minutes,(long)self.presetTimer.seconds];
+    
     NSLog(@"%f", self.presetTimer.timeInterval);
+
     // update label
 }
 
