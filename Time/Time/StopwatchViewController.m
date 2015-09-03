@@ -13,14 +13,17 @@
 
 @interface StopwatchViewController ()
 - (void)configureView;
+//Music Player
 @property (nonatomic)AVAudioPlayer *myMusic;
-@property (nonatomic)MPMoviePlayerController *myPlayer;
 
+//Video Player
+@property (nonatomic)MPMoviePlayerController *myPlayer;
+//UI Buttons and Views
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 - (IBAction)soundButton:(id)sender;
-
+//Timers and stuff
 @property (nonatomic) NSTimer *stopTimer;
 @property (nonatomic) NSTimer *lapTimer;
 @property (nonatomic) NSDate *startDate;
@@ -94,7 +97,7 @@
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
     self.myMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 
-    //Video
+    //Video in Background
     NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"Video" withExtension:@"mp4"];
     self.myPlayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
     self.myPlayer.controlStyle = MPMovieControlStyleNone;
@@ -108,10 +111,11 @@
 {
     self.dataArray = [[NSMutableArray alloc] init];
 }
-
+     //WHEN START BUTTON IS TAPPED
 - (IBAction)startButton:(id)sender {
    
     if(!self.running) {
+        //When App is Not running, Run app and perform these things
         self.previousTime = [NSDate date];
         self.previousLapTime = [NSDate date];
         
@@ -133,7 +137,7 @@
 }
 
 - (void)startTimer {
-
+     // change the
     [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
     [self.resetButton setTitle:@"Lap" forState:UIControlStateNormal];
    
@@ -216,7 +220,7 @@
 }
 
 - (NSString *)formattedTime:(NSTimeInterval)time {
-    NSTimeInterval wrappedSeconds = fmod(time, 60.0);
+    //NSTimeInterval wrappedSeconds = fmod(time, 60.0);
     NSTimeInterval minutes = floor(time / 60);
    
 
