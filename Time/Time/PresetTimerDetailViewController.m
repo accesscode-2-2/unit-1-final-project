@@ -109,6 +109,9 @@
     
 }
 - (IBAction)subtractButtonTapped:(id)sender {
+    if (self.weight < 1) {
+        return;
+    }
     self.weight --;
     self.weightLabel.text = [NSString stringWithFormat:@"%i", self.weight];
     self.newTime = self.weight * 13 * 60;

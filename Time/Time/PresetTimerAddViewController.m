@@ -9,7 +9,7 @@
 #import "PresetTimerAddViewController.h"
 #import "TimerModel.h"
 
-@interface PresetTimerAddViewController ()
+@interface PresetTimerAddViewController () <UITextFieldDelegate>
 
 @property (nonatomic) TimerModel *model;
 @property (weak, nonatomic) IBOutlet UIDatePicker *selectTime;
@@ -27,6 +27,8 @@
     // Do any additional setup after loading the view.
     self.model = [[TimerModel alloc] init];
     [self.model initializeModel];
+    
+    self.timerName.delegate = self;
     
 }
 
@@ -60,6 +62,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    NSLog(@"Current text: %@", textField.text);
+    
+    return YES;
 }
 
 /*
