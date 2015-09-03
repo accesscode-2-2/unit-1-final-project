@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GbH-Mt-gtK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GbH-Mt-gtK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -56,11 +57,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Kmf-rY-zva"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MlK-BN-md6">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRT-W9-I8T">
-                                <rect key="frame" x="250" y="347" width="100" height="100"/>
+                                <rect key="frame" x="250" y="336.5" width="100" height="100"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
                                 <state key="normal" title="START" backgroundImage="new-button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,7 +89,7 @@
                                 <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZOf-et-oKh">
-                                <rect key="frame" x="275" y="163" width="50" height="50"/>
+                                <rect key="frame" x="275" y="152.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bGz-6P-RyM"/>
                                     <constraint firstAttribute="width" secondItem="ZOf-et-oKh" secondAttribute="height" multiplier="1:1" id="hH4-Cx-itv"/>
@@ -100,14 +101,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Gw-aHZ">
-                                <rect key="frame" x="0.0" y="124" width="600" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="462037736.35243899">
-                                    <!--2015-08-23 15:48:56 +0000-->
-                                </date>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-46-M0q">
-                                <rect key="frame" x="159" y="239" width="282" height="83"/>
+                                <rect key="frame" x="159" y="228" width="281.5" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="477-v9-dYn"/>
                                 </constraints>
@@ -119,6 +114,12 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <datePicker alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Gw-aHZ">
+                                <rect key="frame" x="4" y="104" width="592" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="462037736.35243899">
+                                    <!--2015-08-23 15:48:56 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -132,8 +133,8 @@
                             <constraint firstItem="8ku-46-M0q" firstAttribute="top" secondItem="NCP-93-XWZ" secondAttribute="bottom" id="DMP-CI-0iz"/>
                             <constraint firstItem="8ku-46-M0q" firstAttribute="leading" secondItem="MlK-BN-md6" secondAttribute="leading" id="Hmg-cW-AXY"/>
                             <constraint firstAttribute="centerX" secondItem="0ID-km-RMk" secondAttribute="centerX" id="IXA-hl-353"/>
-                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="top" secondItem="NCP-93-XWZ" secondAttribute="bottom" constant="60" id="IdU-m4-ag2"/>
-                            <constraint firstAttribute="centerY" secondItem="8ku-46-M0q" secondAttribute="centerY" constant="20" id="Imh-5S-Lw8"/>
+                            <constraint firstItem="4UM-Gw-aHZ" firstAttribute="top" secondItem="NCP-93-XWZ" secondAttribute="bottom" constant="40" id="IdU-m4-ag2"/>
+                            <constraint firstAttribute="centerY" secondItem="8ku-46-M0q" secondAttribute="centerY" constant="30" id="Imh-5S-Lw8"/>
                             <constraint firstItem="Z9p-gh-gdV" firstAttribute="top" secondItem="ZRT-W9-I8T" secondAttribute="bottom" constant="18" id="N2s-qb-m58"/>
                             <constraint firstItem="8ku-46-M0q" firstAttribute="leading" secondItem="ZOf-et-oKh" secondAttribute="trailing" constant="26" id="Nj4-cv-0gb"/>
                             <constraint firstItem="ZRT-W9-I8T" firstAttribute="top" secondItem="8ku-46-M0q" secondAttribute="bottom" constant="25" id="Pkh-Zb-VXj"/>
@@ -172,9 +173,9 @@
                                 <exclude reference="7Og-pA-MnI"/>
                                 <exclude reference="RMH-Yt-kGz"/>
                                 <exclude reference="v14-Kq-2zE"/>
+                                <exclude reference="j9k-cq-wpo"/>
                                 <exclude reference="N2s-qb-m58"/>
                                 <exclude reference="qsz-cJ-PCM"/>
-                                <exclude reference="j9k-cq-wpo"/>
                             </mask>
                         </variation>
                         <connections>
@@ -217,45 +218,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybq-8d-YPE">
-                                <rect key="frame" x="0.0" y="256" width="600" height="162"/>
+                            <datePicker alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybq-8d-YPE">
+                                <rect key="frame" x="4" y="183" width="592" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="462037736.35243899">
                                     <!--2015-08-23 15:48:56 +0000-->
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ITEM NAME" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nuh-q1-Scb">
-                                <rect key="frame" x="16" y="218" width="175" height="30"/>
+                                <rect key="frame" x="20" y="218" width="175" height="30"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYE-cV-6Gf">
-                                <rect key="frame" x="16" y="95" width="179" height="59"/>
+                                <rect key="frame" x="20" y="95" width="179" height="59"/>
                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="50"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-Vs-RAP">
-                                <rect key="frame" x="57" y="154" width="135" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-Vs-RAP">
+                                <rect key="frame" x="61.5" y="154" width="134.5" height="59"/>
                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="50"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4In-Qo-2dU">
-                                <rect key="frame" x="250" y="432" width="100" height="100"/>
-                                <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
-                                <state key="normal" title="SAVE" backgroundImage="grey-circle-smaller">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="bVA-8h-0j3" eventType="touchUpInside" id="L2n-tJ-IvQ"/>
-                                    <action selector="startCancelButton:" destination="hzt-ow-r01" eventType="touchUpInside" id="boP-LR-QjS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpX-X7-KyJ">
-                                <rect key="frame" x="272" y="550" width="57" height="30"/>
+                                <rect key="frame" x="272" y="530" width="57" height="30"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
                                 <state key="normal" title="CANCEL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,23 +255,35 @@
                                     <action selector="pauseResumeButton:" destination="hzt-ow-r01" eventType="touchUpInside" id="Bl2-Va-yvE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4In-Qo-2dU">
+                                <rect key="frame" x="250" y="366" width="100" height="100"/>
+                                <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
+                                <state key="normal" title="SAVE" backgroundImage="new-button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="bVA-8h-0j3" eventType="touchUpInside" id="L2n-tJ-IvQ"/>
+                                    <action selector="startCancelButton:" destination="hzt-ow-r01" eventType="touchUpInside" id="boP-LR-QjS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EYE-cV-6Gf" firstAttribute="top" secondItem="mgE-Wg-1yK" secondAttribute="bottom" constant="75" id="2c4-RI-HgH"/>
                             <constraint firstItem="Ybq-8d-YPE" firstAttribute="top" secondItem="mgE-Wg-1yK" secondAttribute="bottom" constant="50" id="39o-OB-KaL"/>
-                            <constraint firstItem="KpX-X7-KyJ" firstAttribute="top" secondItem="4In-Qo-2dU" secondAttribute="bottom" constant="18" id="7xs-Za-8gp"/>
+                            <constraint firstItem="KpX-X7-KyJ" firstAttribute="top" secondItem="4In-Qo-2dU" secondAttribute="bottom" constant="64" id="7xs-Za-8gp"/>
                             <constraint firstItem="Ybq-8d-YPE" firstAttribute="leading" secondItem="b1Y-VV-BW9" secondAttribute="leadingMargin" constant="-16" id="A7a-jZ-HHY"/>
                             <constraint firstAttribute="centerX" secondItem="4In-Qo-2dU" secondAttribute="centerX" id="JXd-dl-M9M"/>
                             <constraint firstAttribute="centerX" secondItem="KpX-X7-KyJ" secondAttribute="centerX" id="TAz-xj-jfP"/>
-                            <constraint firstItem="SKY-Vs-RAP" firstAttribute="trailing" secondItem="EYE-cV-6Gf" secondAttribute="trailing" constant="-4" id="Zen-WT-iBY"/>
+                            <constraint firstItem="SKY-Vs-RAP" firstAttribute="trailing" secondItem="EYE-cV-6Gf" secondAttribute="trailing" constant="-3" id="Zen-WT-iBY"/>
                             <constraint firstItem="EYE-cV-6Gf" firstAttribute="leading" secondItem="b1Y-VV-BW9" secondAttribute="leadingMargin" id="cqE-AD-8g2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ybq-8d-YPE" secondAttribute="trailing" constant="-16" id="dld-qP-NJs"/>
                             <constraint firstItem="Nuh-q1-Scb" firstAttribute="leading" secondItem="EYE-cV-6Gf" secondAttribute="leading" id="e35-og-C4N"/>
-                            <constraint firstItem="OFu-Q3-DVh" firstAttribute="top" secondItem="KpX-X7-KyJ" secondAttribute="bottom" constant="20" id="f2f-Tu-mj7"/>
+                            <constraint firstItem="OFu-Q3-DVh" firstAttribute="top" secondItem="KpX-X7-KyJ" secondAttribute="bottom" constant="40" id="f2f-Tu-mj7"/>
                             <constraint firstItem="SKY-Vs-RAP" firstAttribute="top" secondItem="EYE-cV-6Gf" secondAttribute="bottom" id="jHg-kJ-GxM"/>
-                            <constraint firstItem="Nuh-q1-Scb" firstAttribute="trailing" secondItem="SKY-Vs-RAP" secondAttribute="trailing" id="kgo-hk-HQq"/>
-                            <constraint firstItem="Ybq-8d-YPE" firstAttribute="top" secondItem="Nuh-q1-Scb" secondAttribute="bottom" constant="8" id="krq-lr-Fcm"/>
+                            <constraint firstItem="Nuh-q1-Scb" firstAttribute="trailing" secondItem="SKY-Vs-RAP" secondAttribute="trailing" constant="-1" id="kgo-hk-HQq"/>
+                            <constraint firstItem="Ybq-8d-YPE" firstAttribute="top" secondItem="Nuh-q1-Scb" secondAttribute="bottom" constant="-65" id="krq-lr-Fcm"/>
                             <constraint firstItem="Nuh-q1-Scb" firstAttribute="top" secondItem="SKY-Vs-RAP" secondAttribute="bottom" constant="5" id="yjf-gN-ZD4"/>
                         </constraints>
                         <variation key="default">
@@ -313,46 +314,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bp-8v-Egc" userLabel="Header View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="35P-Qi-vHz">
-                                        <rect key="frame" x="281" y="10" width="39" height="37"/>
-                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </pageControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-3X-C7H">
-                                        <rect key="frame" x="15" y="95" width="152" height="59"/>
-                                        <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="50"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfA-kE-JOo">
-                                        <rect key="frame" x="60" y="154" width="160" height="59"/>
-                                        <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="50"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="KzO-3X-C7H" secondAttribute="centerX" id="9T8-3y-icv"/>
-                                    <constraint firstAttribute="centerX" secondItem="35P-Qi-vHz" secondAttribute="centerX" id="D2h-1B-o9I"/>
-                                    <constraint firstItem="nfA-kE-JOo" firstAttribute="leading" secondItem="4Bp-8v-Egc" secondAttribute="leading" constant="60" id="Kgl-od-U6z"/>
-                                    <constraint firstItem="35P-Qi-vHz" firstAttribute="top" secondItem="4Bp-8v-Egc" secondAttribute="top" constant="10" id="R1G-Xr-2xu"/>
-                                    <constraint firstAttribute="height" constant="250" id="ZTo-mv-Z5K"/>
-                                    <constraint firstItem="nfA-kE-JOo" firstAttribute="top" secondItem="KzO-3X-C7H" secondAttribute="bottom" id="dNH-jQ-2tx"/>
-                                    <constraint firstAttribute="centerY" secondItem="KzO-3X-C7H" secondAttribute="centerY" id="mpC-VJ-OrB"/>
-                                    <constraint firstItem="KzO-3X-C7H" firstAttribute="leading" secondItem="4Bp-8v-Egc" secondAttribute="leading" constant="15" id="w7p-8C-F2O"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9T8-3y-icv"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-qN-BGZ">
-                                <rect key="frame" x="0.0" y="252" width="600" height="296"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-qN-BGZ">
+                                <rect key="frame" x="4" y="250" width="592" height="296"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="CLH-fo-4ZY"/>
@@ -363,18 +326,21 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="presetTimerIdentifier" textLabel="YwR-Sn-57h" detailTextLabel="We0-di-BkK" style="IBUITableViewCellStyleValue1" id="IX1-Jh-eTt">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IX1-Jh-eTt" id="Igk-hB-BjP">
+                                            <rect key="frame" x="0.0" y="0.0" width="592" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YwR-Sn-57h">
+                                                    <rect key="frame" x="15" y="11" width="37" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="We0-di-BkK">
+                                                    <rect key="frame" x="527.5" y="11" width="49.5" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
@@ -397,6 +363,44 @@
                                     <outlet property="dataSource" destination="wBv-Vs-8ek" id="fnb-1q-hGZ"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bp-8v-Egc" userLabel="Header View">
+                                <rect key="frame" x="4" y="0.0" width="592" height="250"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="35P-Qi-vHz">
+                                        <rect key="frame" x="277" y="10" width="39" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </pageControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-3X-C7H">
+                                        <rect key="frame" x="15" y="80.5" width="152" height="59"/>
+                                        <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfA-kE-JOo">
+                                        <rect key="frame" x="60" y="139.5" width="160" height="59"/>
+                                        <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="KzO-3X-C7H" secondAttribute="centerX" id="9T8-3y-icv"/>
+                                    <constraint firstAttribute="centerX" secondItem="35P-Qi-vHz" secondAttribute="centerX" id="D2h-1B-o9I"/>
+                                    <constraint firstItem="nfA-kE-JOo" firstAttribute="leading" secondItem="4Bp-8v-Egc" secondAttribute="leading" constant="60" id="Kgl-od-U6z"/>
+                                    <constraint firstItem="35P-Qi-vHz" firstAttribute="top" secondItem="4Bp-8v-Egc" secondAttribute="top" constant="10" id="R1G-Xr-2xu"/>
+                                    <constraint firstAttribute="height" constant="250" id="ZTo-mv-Z5K"/>
+                                    <constraint firstItem="nfA-kE-JOo" firstAttribute="top" secondItem="KzO-3X-C7H" secondAttribute="bottom" id="dNH-jQ-2tx"/>
+                                    <constraint firstAttribute="centerY" secondItem="KzO-3X-C7H" secondAttribute="centerY" constant="15" id="mpC-VJ-OrB"/>
+                                    <constraint firstItem="KzO-3X-C7H" firstAttribute="leading" secondItem="4Bp-8v-Egc" secondAttribute="leading" constant="15" id="w7p-8C-F2O"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9T8-3y-icv"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -437,10 +441,10 @@
             </objects>
             <point key="canvasLocation" x="467" y="1589"/>
         </scene>
-        <!--Detail Preset Timer-->
+        <!--Preset Timer Detail View Controller-->
         <scene sceneID="A1C-id-uQU">
             <objects>
-                <viewController title="Detail Preset Timer" id="Frm-My-BDW" customClass="PresetTimerDetailViewController" sceneMemberID="viewController">
+                <viewController id="Frm-My-BDW" customClass="PresetTimerDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D1B-vz-StM"/>
                         <viewControllerLayoutGuide type="bottom" id="xVt-kV-iJB"/>
@@ -453,26 +457,21 @@
                                 <rect key="frame" x="277" y="530" width="47" height="30"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
                                 <state key="normal" title="PAUSE">
-                                    <color key="titleColor" red="0.99215686270000003" green="0.72941176470000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pauseResumeButton:" destination="Frm-My-BDW" eventType="touchUpInside" id="fGb-eR-4Wv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcM-8b-TlG">
-                                <rect key="frame" x="161" y="258" width="278" height="83"/>
-                                <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="70"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrZ-DQ-oJY">
-                                <rect key="frame" x="161" y="240" width="278" height="24"/>
+                                <rect key="frame" x="161" y="210" width="278" height="24"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aro-0J-JMn">
-                                <rect key="frame" x="275" y="182" width="50" height="50"/>
+                                <rect key="frame" x="275" y="152" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="b2G-Aq-YRb"/>
                                     <constraint firstAttribute="height" constant="50" id="dCR-vo-ba5"/>
@@ -485,7 +484,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-Ur-Tsh">
-                                <rect key="frame" x="250" y="366" width="100" height="100"/>
+                                <rect key="frame" x="250" y="336" width="100" height="100"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
                                 <state key="normal" title="START" backgroundImage="new-button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -495,14 +494,14 @@
                                     <action selector="startCancelButton:" destination="Frm-My-BDW" eventType="touchUpInside" id="1uU-nS-z7z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weight:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-Cp-dyn">
-                                <rect key="frame" x="266" y="28" width="68" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weight in lbs:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-Cp-dyn">
+                                <rect key="frame" x="239" y="28" width="122.5" height="24"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3z-2g-3Ms">
-                                <rect key="frame" x="293" y="60" width="15" height="30"/>
+                                <rect key="frame" x="293" y="60" width="14.5" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="25"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -511,26 +510,30 @@
                                 <rect key="frame" x="243" y="57" width="30" height="36"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.99215686270000003" green="0.72941176470000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="Frm-My-BDW" eventType="touchUpInside" id="OUO-ld-Yk7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-86-vaj">
-                                <rect key="frame" x="327" y="57" width="30" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-86-vaj">
+                                <rect key="frame" x="328" y="57" width="30" height="36"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
                                 <state key="normal" title="-">
-                                    <color key="titleColor" red="0.99215686270000003" green="0.72941176470000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="subtractButtonTapped:" destination="Frm-My-BDW" eventType="touchUpInside" id="7tu-uR-fPc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcM-8b-TlG">
+                                <rect key="frame" x="161" y="228" width="278" height="83"/>
+                                <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="70"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.75294117647058822" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xVt-kV-iJB" firstAttribute="top" secondItem="rLL-Cd-0Ah" secondAttribute="bottom" constant="40" id="0gZ-fz-swo"/>
                             <constraint firstItem="qfv-86-vaj" firstAttribute="leading" secondItem="a3z-2g-3Ms" secondAttribute="trailing" constant="20" id="4ny-3z-p88"/>
@@ -538,6 +541,7 @@
                             <constraint firstItem="TcM-8b-TlG" firstAttribute="trailing" secondItem="wrZ-DQ-oJY" secondAttribute="trailing" id="BRD-of-AZP"/>
                             <constraint firstItem="TcM-8b-TlG" firstAttribute="top" secondItem="wrZ-DQ-oJY" secondAttribute="bottom" constant="-6" id="DPK-12-lzt"/>
                             <constraint firstItem="KRs-Cp-dyn" firstAttribute="top" secondItem="D1B-vz-StM" secondAttribute="bottom" constant="8" id="FRI-o9-cYN"/>
+                            <constraint firstItem="rLL-Cd-0Ah" firstAttribute="top" secondItem="Uca-Ur-Tsh" secondAttribute="bottom" constant="64" id="G6M-Ry-bcz"/>
                             <constraint firstAttribute="centerX" secondItem="a3z-2g-3Ms" secondAttribute="centerX" id="HHN-HP-bNK"/>
                             <constraint firstAttribute="centerX" secondItem="Uca-Ur-Tsh" secondAttribute="centerX" id="IDJ-FV-BF3"/>
                             <constraint firstItem="a3z-2g-3Ms" firstAttribute="top" secondItem="KRs-Cp-dyn" secondAttribute="bottom" constant="8" id="Ink-1h-2lY"/>
@@ -550,12 +554,13 @@
                             <constraint firstAttribute="centerX" secondItem="TcM-8b-TlG" secondAttribute="centerX" id="cCZ-cb-K6d"/>
                             <constraint firstItem="TcM-8b-TlG" firstAttribute="top" secondItem="aro-0J-JMn" secondAttribute="bottom" constant="26" id="iOQ-oa-O2x"/>
                             <constraint firstAttribute="centerX" secondItem="KRs-Cp-dyn" secondAttribute="centerX" id="j7D-eW-XYR"/>
-                            <constraint firstAttribute="centerY" secondItem="TcM-8b-TlG" secondAttribute="centerY" id="upM-GN-tVv"/>
+                            <constraint firstAttribute="centerY" secondItem="TcM-8b-TlG" secondAttribute="centerY" constant="30" id="upM-GN-tVv"/>
                             <constraint firstItem="TcM-8b-TlG" firstAttribute="width" secondItem="wrZ-DQ-oJY" secondAttribute="width" id="xWi-oz-kSV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="iOQ-oa-O2x"/>
+                                <exclude reference="G6M-Ry-bcz"/>
                             </mask>
                         </variation>
                     </view>
@@ -595,27 +600,27 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-6B-afN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="2000"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgH-KG-Xll" userLabel="Content View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgH-KG-Xll" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1556"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" National Sandwich Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-HN-Nfc">
-                                                <rect key="frame" x="190" y="377" width="220" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" National Sandwich Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-HN-Nfc">
+                                                <rect key="frame" x="190" y="377" width="219.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00d:00h:00m:00s " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0l-2n-NRL">
-                                                <rect key="frame" x="172" y="332" width="256" height="36"/>
+                                                <rect key="frame" x="172" y="332" width="255.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="30"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="November 3rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-21-H7K">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 3rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-21-H7K">
                                                 <rect key="frame" x="235" y="401" width="130" height="24"/>
                                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nutella-day" translatesAutoresizingMaskIntoConstraints="NO" id="wmE-eT-FDN">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nutella-day" translatesAutoresizingMaskIntoConstraints="NO" id="wmE-eT-FDN">
                                                 <rect key="frame" x="-100" y="675" width="800" height="127"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="173" id="UgS-6d-Pc0"/>
@@ -627,42 +632,36 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00d:00h:00m:00s " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xK-DC-qzS">
-                                                <rect key="frame" x="172" y="807" width="256" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00d:00h:00m:00s " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xK-DC-qzS">
+                                                <rect key="frame" x="172" y="807" width="255.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="30"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="World Nutella Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7i-P9-MP1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Nutella Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7i-P9-MP1">
                                                 <rect key="frame" x="216" y="853" width="167" height="24"/>
                                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Feb 5th" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpp-hD-auF">
-                                                <rect key="frame" x="265" y="879" width="70" height="24"/>
-                                                <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00d:00h:00m:00s " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEI-l2-nta">
-                                                <rect key="frame" x="172" y="1313" width="256" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00d:00h:00m:00s " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEI-l2-nta">
+                                                <rect key="frame" x="172" y="1312" width="255.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="30"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="International Pizza Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5w-W6-roL" userLabel="International Cheese Pizza Day">
-                                                <rect key="frame" x="192" y="1358" width="216" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="International Pizza Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5w-W6-roL" userLabel="International Cheese Pizza Day">
+                                                <rect key="frame" x="192" y="1358" width="215.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Feb 9th" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-Bm-ObA" userLabel="Sept 5th">
-                                                <rect key="frame" x="264" y="1382" width="71" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="February 9th" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-Bm-ObA" userLabel="Sept 5th">
+                                                <rect key="frame" x="240" y="1382" width="118.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pizza-day" translatesAutoresizingMaskIntoConstraints="NO" id="9PQ-L6-gHs">
-                                                <rect key="frame" x="-700" y="1203" width="2000" height="100"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza-day" translatesAutoresizingMaskIntoConstraints="NO" id="9PQ-L6-gHs">
+                                                <rect key="frame" x="-700" y="1202" width="2000" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="173" id="8Ks-dd-Ggj"/>
                                                     <constraint firstAttribute="height" constant="100" id="jt2-4w-NFP"/>
@@ -685,6 +684,12 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="February 5th" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpp-hD-auF">
+                                                <rect key="frame" x="241" y="878.5" width="118" height="24"/>
+                                                <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -798,11 +803,11 @@
                         <viewControllerLayoutGuide type="bottom" id="yWL-qa-6cu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="21H-FJ-0NB">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXj-Lc-aEq">
-                                <rect key="frame" x="387" y="225" width="52" height="24"/>
+                                <rect key="frame" x="387" y="214" width="51.5" height="24"/>
                                 <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat" pointSize="20"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -819,7 +824,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mds-qm-mlG">
-                                <rect key="frame" x="250" y="347" width="100" height="100"/>
+                                <rect key="frame" x="250" y="336" width="100" height="100"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="15"/>
                                 <state key="normal" title="Button" backgroundImage="new-button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -830,7 +835,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Puy-8O-oGY">
-                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
+                                <rect key="frame" x="4" y="64" width="592" height="140"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -841,18 +846,21 @@
                                 <color key="sectionIndexBackgroundColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="savedLapTimeIdentifier" textLabel="SlS-Ma-FgY" detailTextLabel="Ugm-Bd-leS" style="IBUITableViewCellStyleValue1" id="Z1f-jV-fgX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z1f-jV-fgX" id="NoD-tP-ebO">
+                                            <rect key="frame" x="0.0" y="0.0" width="592" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SlS-Ma-FgY">
+                                                    <rect key="frame" x="15" y="11" width="37" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ugm-Bd-leS">
+                                                    <rect key="frame" x="527.5" y="11" width="49.5" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
@@ -868,7 +876,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hY4-G5-KCi">
-                                <rect key="frame" x="161" y="239" width="278" height="83"/>
+                                <rect key="frame" x="161" y="228" width="278" height="83"/>
                                 <fontDescription key="fontDescription" name="Akkurat" family="Akkurat" pointSize="70"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -881,7 +889,7 @@
                             <constraint firstAttribute="centerX" secondItem="Mds-qm-mlG" secondAttribute="centerX" id="Lk4-Pq-tZj"/>
                             <constraint firstAttribute="centerX" secondItem="hY4-G5-KCi" secondAttribute="centerX" id="YAV-p1-WUF"/>
                             <constraint firstItem="hY4-G5-KCi" firstAttribute="top" secondItem="KXj-Lc-aEq" secondAttribute="bottom" constant="-10" id="YZm-g1-mmn"/>
-                            <constraint firstAttribute="centerY" secondItem="hY4-G5-KCi" secondAttribute="centerY" constant="20" id="Zxm-7z-vm2"/>
+                            <constraint firstAttribute="centerY" secondItem="hY4-G5-KCi" secondAttribute="centerY" constant="30" id="Zxm-7z-vm2"/>
                             <constraint firstItem="hY4-G5-KCi" firstAttribute="trailing" secondItem="KXj-Lc-aEq" secondAttribute="trailing" id="fSn-AD-TDu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Puy-8O-oGY" secondAttribute="trailing" constant="-16" id="iea-aS-vxV"/>
                             <constraint firstItem="ELg-dg-4Ie" firstAttribute="top" secondItem="Mds-qm-mlG" secondAttribute="bottom" constant="28" id="kis-zc-S5d"/>
@@ -950,7 +958,6 @@
     <resources>
         <image name="Stopwatch-icon" width="25" height="25"/>
         <image name="Timer-2-icon" width="25" height="25"/>
-        <image name="grey-circle-smaller" width="100" height="100"/>
         <image name="new-button" width="100" height="100"/>
         <image name="nutella-day" width="800" height="1056"/>
         <image name="pizza-day" width="2000" height="779"/>
