@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Charles Kang . All rights reserved.
 //
 
+
+#import "PresetTimer.h"
 #import "TimerDetailViewController.h"
+
 
 @interface TimerDetailViewController ()
 
@@ -42,7 +45,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)timerFired {
+- (void)timerFired: (NSTimer *)timer {
     
     NSDate *now = [[NSDate alloc] init];
     
