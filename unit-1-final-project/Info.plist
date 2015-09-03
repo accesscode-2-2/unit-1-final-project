@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>monofonto.ttf</string>
 		<string>Kenzo Regular.otf</string>
 		<string>NikeTotal90.ttf</string>
 	</array>

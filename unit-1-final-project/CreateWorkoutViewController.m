@@ -146,6 +146,7 @@
         [self.pickerTwo reloadAllComponents];
         
     }
+    
 }
 - (IBAction)setsValueChanged:(UIStepper *)sender {
     self.setsNumber = [sender value];

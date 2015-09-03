@@ -87,8 +87,8 @@
     
     [super viewDidLoad];
     
-    self.stopwatchTimerLabel.font = [UIFont fontWithName:@"Kenzo" size:25.0];
-    self.mainStopwatchLabel.font = [UIFont fontWithName:@"Kenzo" size:50.0];
+    self.stopwatchTimerLabel.font = [UIFont fontWithName:@"Monofonto" size:20.0];
+    self.mainStopwatchLabel.font = [UIFont fontWithName:@"Monofonto" size:30.0];
     
     self.laps = [[NSMutableArray alloc]init];
     
