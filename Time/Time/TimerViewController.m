@@ -20,8 +20,8 @@
 @property (nonatomic) NSDate *previousTime;
 
 
-@property (nonatomic) TimerData *presetInterval; //this is what i will pass to the preset view and then pass back once a preset timer is chosen
-
+//@property (nonatomic) TimerData *presetInterval; //this is what i will pass to the preset view and then pass back once a preset timer is chosen
+//
 
 @property (nonatomic) BOOL running;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
@@ -38,8 +38,8 @@
     self.running = NO;
     self.Remainder = -1;
     
-    self.presetInterval = [[TimerData alloc]init];
-    self.presetInterval.presetTime = @00.00;
+//    self.presetInterval = [[TimerData alloc]init];
+//    self.presetInterval.presetTime = @00.00;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,11 +48,6 @@
 
 -(void)updateTime {
     self.afterRemainder --;
-    
-    if (self.afterRemainder == -1) {
-        [self invalidateTimer];
-        
-    }
     
     NSInteger hours = (NSInteger)(self.afterRemainder/(60*60));
     NSInteger minutes = (((NSInteger)self.afterRemainder/60) - (hours *60));
@@ -63,114 +58,28 @@
 
 - (IBAction)startCountdown:(id)sender {
     if(!self.running) {
-        self.previousTime = [NSDate date];
         
-        [self startTimer];
-        self.running = NO;
+        self.running = YES;
         
-    } else {
+        [sender setTitle:@"Pause" forState: UIControlStateNormal];
         
-        [self pauseTimer];
-        self.running = NO;
-    }
-    //    if (!self.running) {
-    //
-    //
-    //        self.running = YES;
-    //        NSLog(@"start button hit");
-    //
-    //        [sender setTitle:@"Pause" forState: UIControlStateNormal];
-    //
-    //
-    //        if (self.Remainder == -1) {
-    //            NSLog(@"start the timer");
-    //            self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
-    //            self.Remainder = self.countDownInterval;
-    //            self.afterRemainder = self.countDownInterval - self.Remainder%60;
-    //
-    //            countdownTimer = [NSTimer timerWithTimeInterval:1
-    //                                                     target:self
-    //                                                   selector:@selector(updateTime)
-    //                                                   userInfo:nil
-    //                                                    repeats:YES];
-    //            [[NSRunLoop currentRunLoop] addTimer:countdownTimer forMode:NSRunLoopCommonModes];
-    //        }
-    //
-    //    } else {
-    //        self.running = NO;
-    //        [sender setTitle:@"Start" forState: UIControlStateNormal];
-    //        [self invalidateTimer];
-    //        NSLog(@"pause button hit");
-    //    }
-    //
-}
-
-- (void)startTimer {
-    double timerInterval = 10.0;
-    double timerElapsed = 0.0;
-    NSDate *timerStarted;
-
-    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:(timerInterval - timerElapsed) target:self selector:@selector(fired) userInfo:nil repeats:NO];
-    timerStarted = [NSDate date];
-}
-
--(void) fired {
-    [countdownTimer invalidate];
-    countdownTimer = nil;
-    timerElapsed = 0.0;
-    [self startTimer];
-    // react to timer event here
-}
-
-//    [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
-//    
-//        if (self.Remainder == -1) {
-//            NSLog(@"start the timer");
-//            self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
-//            self.Remainder = self.countDownInterval;
-//            self.afterRemainder = self.countDownInterval - self.Remainder%60;
-//    
-//    countdownTimer = [NSTimer timerWithTimeInterval:1
-//                                             target:self
-//                                           selector:@selector(updateTime)
-//                                           userInfo:nil
-//                                            repeats:YES];
-//    [[NSRunLoop currentRunLoop] addTimer:countdownTimer forMode:NSRunLoopCommonModes];
-//    
-//        }
-//}
-
-- (void)pauseTimer {
-    
-    if(!self.running){
-        self.running = TRUE;
-        
-        if (!self.running) {
-            self.pauseTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
-                                                               target:self
-                                                             selector:@selector(updateTime)
-                                                             userInfo:nil
-                                                              repeats:YES];
+        if (self.Remainder == -1) {
+            self.countDownInterval = (NSTimeInterval)_datePicker.countDownDuration;
+            self.Remainder = self.countDownInterval;
+            self.afterRemainder = self.countDownInterval - self.Remainder%60;
         }
+        
+        countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                          target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
     } else {
-        
         self.running = NO;
-        [self.pauseTimer invalidate];
-        
-        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
-        [self.restartButton setTitle:@"Reset" forState:UIControlStateNormal];
-        
-        [self.pauseTimer invalidate];
-        self.pauseTimer = nil;
-    }
-}
-- (void)invalidateTimer{
-    
-    if (countdownTimer != nil) {
+        [sender setTitle:@"Start" forState: UIControlStateNormal];
         [countdownTimer invalidate];
         countdownTimer = nil;
     }
+
 }
+
 
 
 //reset not restart
@@ -194,7 +103,7 @@
     
     PresetTimerTableViewController *vc = (PresetTimerTableViewController *)[navController topViewController];
     
-    vc.selectedPreset = self.presetInterval;
+//    vc.selectedPreset = self.presetInterval;
     
     
 }

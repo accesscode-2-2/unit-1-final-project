@@ -10,7 +10,14 @@
 
 @implementation SpecialEventViewController
 
-
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"beach"];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+    self.scrollView.contentSize = backgroundImage.size;
+    [self.scrollView addSubview:backgroundImageView];
+}
 
 - (IBAction)titleTextFiled2:(id)sender {
     
@@ -37,6 +44,12 @@
                                            selector:@selector(updateTime)
                                            userInfo:nil
                                             repeats:YES];
+
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Today is the Day!" message:@"You're countdown is complet" delegate:self cancelButtonTitle:@"Clear" otherButtonTitles: nil];
+//        [alert show];
+
+    
+    
     
 
 }

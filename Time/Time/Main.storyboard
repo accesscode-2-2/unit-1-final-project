@@ -160,6 +160,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okk-P7-wh2">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            </scrollView>
                             <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="538" placeholderIntrinsicHeight="180" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5e-3y-fbg">
                                 <rect key="frame" x="46" y="371" width="538" height="180"/>
                                 <constraints>
@@ -180,6 +183,7 @@
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kf-hQ-dgC" userLabel="Timer Label">
                                 <rect key="frame" x="300" y="351" width="0.0" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="YDN-PX-JcW"/>
                                 </constraints>
@@ -228,7 +232,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="186" id="4dn-kp-a0e"/>
                             <constraint firstItem="PMQ-wp-gVg" firstAttribute="top" secondItem="1kf-hQ-dgC" secondAttribute="bottom" constant="50" id="5f3-9e-1A0"/>
@@ -304,13 +308,14 @@
                     <connections>
                         <outlet property="countdownLabel" destination="1kf-hQ-dgC" id="l3s-65-Uhc"/>
                         <outlet property="datePicker" destination="L5e-3y-fbg" id="z6z-cK-Xlz"/>
+                        <outlet property="scrollView" destination="okk-P7-wh2" id="N8T-YM-Zql"/>
                         <outlet property="titleLabel" destination="pNp-6G-lNB" id="Tfb-A6-V2N"/>
                         <outlet property="titleTextField" destination="8QS-tF-mcY" id="E0p-3j-rza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptL-Ti-gle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="-607"/>
+            <point key="canvasLocation" x="25" y="767"/>
         </scene>
         <!--World Clock-->
         <scene sceneID="yoe-yV-vz4">
@@ -329,7 +334,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yRD-SO-J7W">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sBM-dY-3Bb">
