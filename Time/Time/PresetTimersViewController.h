@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "NewCustomTimerViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 
 @interface PresetTimersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    SystemSoundID playSoundID;
+}
+
+-(IBAction) playAudio:(id)sender;
+
 
 @end
 

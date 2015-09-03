@@ -19,7 +19,9 @@
 		8D0537691B86687C00588318 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0537681B86687C00588318 /* Images.xcassets */; };
 		8D05376C1B86687C00588318 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05376A1B86687C00588318 /* LaunchScreen.xib */; };
 		8D0537781B86687C00588318 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537771B86687C00588318 /* TimeTests.m */; };
+		EB7C5AA31B97BA5100F86122 /* AnotherEventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7C5AA21B97BA5100F86122 /* AnotherEventTableViewController.m */; };
 		EB9EE0951B8E803500DB27D1 /* NewCustomTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */; };
+		EB9EE1791B96519900DB27D1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9EE1781B96519900DB27D1 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +58,11 @@
 		8D0537711B86687C00588318 /* TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0537761B86687C00588318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D0537771B86687C00588318 /* TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTests.m; sourceTree = "<group>"; };
+		EB7C5AA11B97BA5100F86122 /* AnotherEventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherEventTableViewController.h; sourceTree = "<group>"; };
+		EB7C5AA21B97BA5100F86122 /* AnotherEventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherEventTableViewController.m; sourceTree = "<group>"; };
 		EB9EE0931B8E803500DB27D1 /* NewCustomTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCustomTimerViewController.h; sourceTree = "<group>"; };
 		EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCustomTimerViewController.m; sourceTree = "<group>"; };
+		EB9EE1781B96519900DB27D1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9EE1791B96519900DB27D1 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +96,7 @@
 		8D05374F1B86687B00588318 = {
 			isa = PBXGroup;
 			children = (
+				EB9EE1781B96519900DB27D1 /* AudioToolbox.framework */,
 				8D05375A1B86687B00588318 /* Time */,
 				8D0537741B86687C00588318 /* TimeTests */,
 				8D0537591B86687B00588318 /* Products */,
@@ -123,6 +130,8 @@
 				89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */,
 				89060FBC1B94B47C005C707A /* UpcomingEvents.h */,
 				89060FBD1B94B47C005C707A /* UpcomingEvents.m */,
+				EB7C5AA11B97BA5100F86122 /* AnotherEventTableViewController.h */,
+				EB7C5AA21B97BA5100F86122 /* AnotherEventTableViewController.m */,
 				89060FB81B94B028005C707A /* OLD */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
@@ -262,6 +271,7 @@
 				89FD9A471B86B55600D7A645 /* PresetTimersViewController.m in Sources */,
 				89C909871B88DB5800216084 /* StopwatchViewController.m in Sources */,
 				89060FBB1B94B04E005C707A /* UpcomingEventsTableViewController.m in Sources */,
+				EB7C5AA31B97BA5100F86122 /* AnotherEventTableViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				89FD9A4D1B86B58900D7A645 /* SpecialEventsViewController.m in Sources */,

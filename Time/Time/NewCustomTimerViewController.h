@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class PresetTimersViewController;
 
 @interface NewCustomTimerViewController : UIViewController
 
 @property (nonatomic, weak) PresetTimersViewController *timerViewController;
 @property (nonatomic) NSMutableDictionary *customTimersDictionary;
+
+
 
 @end
