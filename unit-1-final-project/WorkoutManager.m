@@ -77,22 +77,22 @@
     Exercises *gohard4 = [[Exercises alloc] init];
     gohard4.nameOfExercise = @"Squats";
     gohard4.exerciseTime = 20.0;
-   // gohard4.exerciseImageString = @"squats";
+    gohard4.exerciseImageString = @"squats";
     
     Exercises *gohard5 = [[Exercises alloc] init];
     gohard5.nameOfExercise = @"Burpees";
     gohard5.exerciseTime = 15.0;
-   // gohard5.exerciseImageString = @"burpees";
+    gohard5.exerciseImageString = @"burpees";
     
     Exercises *gohard6 = [[Exercises alloc] init];
     gohard6.nameOfExercise = @"Lunges";
     gohard6.exerciseTime = 12.0;
-   // gohard6.exerciseImageString = @"lunges";
+    gohard6.exerciseImageString = @"lunges";
     
     Exercises *gohard7 = [[Exercises alloc] init];
     gohard7.nameOfExercise = @"Dips";
     gohard7.exerciseTime = 10.0;
-   // gohard7.exerciseImageString = @"dips";
+    gohard7.exerciseImageString = @"dips";
     
     
     
