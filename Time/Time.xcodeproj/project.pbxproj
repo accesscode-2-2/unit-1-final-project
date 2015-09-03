@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		89060FBB1B94B04E005C707A /* UpcomingEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */; };
 		89060FBE1B94B47C005C707A /* UpcomingEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 89060FBD1B94B47C005C707A /* UpcomingEvents.m */; };
+		892D1E9D1B97D8630039EA41 /* AnotherEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 892D1E9C1B97D8630039EA41 /* AnotherEventViewController.m */; };
 		89C909871B88DB5800216084 /* StopwatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C909861B88DB5800216084 /* StopwatchViewController.m */; };
 		89FD9A441B86AC7500D7A645 /* TimerUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FD9A431B86AC7500D7A645 /* TimerUITabBarController.m */; };
 		89FD9A471B86B55600D7A645 /* PresetTimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FD9A461B86B55600D7A645 /* PresetTimersViewController.m */; };
@@ -39,6 +40,8 @@
 		89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEventsTableViewController.m; sourceTree = "<group>"; };
 		89060FBC1B94B47C005C707A /* UpcomingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingEvents.h; sourceTree = "<group>"; };
 		89060FBD1B94B47C005C707A /* UpcomingEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEvents.m; sourceTree = "<group>"; };
+		892D1E9B1B97D8630039EA41 /* AnotherEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherEventViewController.h; sourceTree = "<group>"; };
+		892D1E9C1B97D8630039EA41 /* AnotherEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherEventViewController.m; sourceTree = "<group>"; };
 		89C909851B88DB5800216084 /* StopwatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopwatchViewController.h; path = ../StopwatchViewController.h; sourceTree = "<group>"; };
 		89C909861B88DB5800216084 /* StopwatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopwatchViewController.m; path = ../StopwatchViewController.m; sourceTree = "<group>"; };
 		89FD9A421B86AC7500D7A645 /* TimerUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUITabBarController.h; sourceTree = SOURCE_ROOT; };
@@ -87,6 +90,12 @@
 		89060FB81B94B028005C707A /* OLD */ = {
 			isa = PBXGroup;
 			children = (
+				89060FB91B94B04E005C707A /* UpcomingEventsTableViewController.h */,
+				89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */,
+				89060FBC1B94B47C005C707A /* UpcomingEvents.h */,
+				892D1E9B1B97D8630039EA41 /* AnotherEventViewController.h */,
+				892D1E9C1B97D8630039EA41 /* AnotherEventViewController.m */,
+				89060FBD1B94B47C005C707A /* UpcomingEvents.m */,
 				89FD9A4B1B86B58900D7A645 /* SpecialEventsViewController.h */,
 				89FD9A4C1B86B58900D7A645 /* SpecialEventsViewController.m */,
 			);
@@ -126,10 +135,6 @@
 				EB9EE0941B8E803500DB27D1 /* NewCustomTimerViewController.m */,
 				89C909851B88DB5800216084 /* StopwatchViewController.h */,
 				89C909861B88DB5800216084 /* StopwatchViewController.m */,
-				89060FB91B94B04E005C707A /* UpcomingEventsTableViewController.h */,
-				89060FBA1B94B04E005C707A /* UpcomingEventsTableViewController.m */,
-				89060FBC1B94B47C005C707A /* UpcomingEvents.h */,
-				89060FBD1B94B47C005C707A /* UpcomingEvents.m */,
 				EB7C5AA11B97BA5100F86122 /* AnotherEventTableViewController.h */,
 				EB7C5AA21B97BA5100F86122 /* AnotherEventTableViewController.m */,
 				89060FB81B94B028005C707A /* OLD */,
@@ -273,6 +278,7 @@
 				89060FBB1B94B04E005C707A /* UpcomingEventsTableViewController.m in Sources */,
 				EB7C5AA31B97BA5100F86122 /* AnotherEventTableViewController.m in Sources */,
 				8D0537611B86687C00588318 /* AppDelegate.m in Sources */,
+				892D1E9D1B97D8630039EA41 /* AnotherEventViewController.m in Sources */,
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				89FD9A4D1B86B58900D7A645 /* SpecialEventsViewController.m in Sources */,
 				89060FBE1B94B47C005C707A /* UpcomingEvents.m in Sources */,

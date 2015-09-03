@@ -177,7 +177,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" id="rlS-YF-b4x"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="clock125" id="rlS-YF-b4x"/>
                     <connections>
                         <outlet property="lapButtonTapped" destination="hlG-1X-WjE" id="6dz-9F-8qd"/>
                         <outlet property="lapsTableView" destination="UuJ-Ol-ydb" id="fWS-Ib-cy0"/>
@@ -189,30 +189,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCK-sp-kdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="-429"/>
+            <point key="canvasLocation" x="-811" y="-211"/>
+        </scene>
+        <!--Upcoming Events-->
+        <scene sceneID="EQD-r6-z7a">
+            <objects>
+                <viewController title="Upcoming Events" id="zcm-5E-JFd" customClass="AnotherEventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="02J-TD-OkF"/>
+                        <viewControllerLayoutGuide type="bottom" id="oZo-Zb-ICS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7AB-LI-WLR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Christmas 2015" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOM-fE-voz">
+                                <rect key="frame" x="235" y="93" width="234" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="---" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKF-o1-X2W">
+                                <rect key="frame" x="0.0" y="109" width="600" height="83"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WKF-o1-X2W" firstAttribute="centerX" secondItem="HOM-fE-voz" secondAttribute="centerX" constant="4.5" id="LPn-Yl-6Ov"/>
+                            <constraint firstAttribute="centerX" secondItem="HOM-fE-voz" secondAttribute="centerX" id="R3C-82-PGL"/>
+                            <constraint firstAttribute="centerY" secondItem="WKF-o1-X2W" secondAttribute="centerY" id="Xh2-b6-2w3"/>
+                            <constraint firstItem="HOM-fE-voz" firstAttribute="top" secondItem="02J-TD-OkF" secondAttribute="bottom" constant="30" id="pdh-eD-pFv"/>
+                            <constraint firstAttribute="centerX" secondItem="WKF-o1-X2W" secondAttribute="centerX" id="sDI-a4-pCV"/>
+                            <constraint firstItem="WKF-o1-X2W" firstAttribute="top" secondItem="02J-TD-OkF" secondAttribute="bottom" constant="89" id="wHR-H0-O29"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xh2-b6-2w3"/>
+                                <exclude reference="sDI-a4-pCV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Upcoming Events" image="favourite24" id="Oat-5E-V5f"/>
+                    <connections>
+                        <outlet property="countdownLabel" destination="WKF-o1-X2W" id="DzW-Jt-8fg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd3-kN-vqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-61" y="-423"/>
         </scene>
         <!--Upcoming Events-->
         <scene sceneID="myS-cq-vH2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PSv-WU-kLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="5hN-A0-ShT" userLabel="Upcoming Events" customClass="AnotherEventTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H20-l6-GsJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GRX-1G-PtD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aPc-Xe-57p">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GRX-1G-PtD" id="8cB-vr-mJV">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aPc-Xe-57p" id="Jg4-Tw-yFg">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-Xf-zqo">
-                                            <rect key="frame" x="8" y="14" width="584" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RV5-lJ-x0d">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RV5-lJ-x0d" id="l9X-Gc-aMZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ama-S9-xFB">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ama-S9-xFB" id="FXc-Bj-cJE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -223,12 +279,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="ysx-Ou-v7N"/>
-                    <connections>
-                        <outlet property="countdownLabel" destination="aa2-Xf-zqo" id="aRB-4r-DEe"/>
-                    </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSv-WU-kLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="-429"/>
+            <point key="canvasLocation" x="617" y="-1631"/>
         </scene>
         <!--Special Event Timer-->
         <scene sceneID="VVo-YH-kNE">
@@ -419,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbz-M8-YkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="-1794"/>
+            <point key="canvasLocation" x="632" y="-2292"/>
         </scene>
         <!--Preset Timers-->
         <scene sceneID="dtG-cb-e8Z">
@@ -613,7 +667,9 @@
                             <constraint firstItem="L5z-ML-XiS" firstAttribute="leading" secondItem="ohG-Ul-CLf" secondAttribute="leading" id="iYg-49-qv1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Countdown" id="Y3A-xu-Olq"/>
+                    <tabBarItem key="tabBarItem" title="Countdown" image="clock136" id="Y3A-xu-Olq">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="alarmNameLabel" destination="x2H-ha-LV2" id="C67-5m-D09"/>
                         <outlet property="customTimersTableViewList" destination="0Qi-4j-Tym" id="Ttp-7m-SaT"/>
@@ -749,6 +805,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="pOa-Lc-nEc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeC-tt-tRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="gsC-c9-LDf" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Kpe-fs-a24">
@@ -759,12 +816,16 @@
                     <connections>
                         <segue destination="5xI-rK-Qas" kind="relationship" relationship="viewControllers" id="eMX-ks-EQy"/>
                         <segue destination="DZY-HL-0vH" kind="relationship" relationship="viewControllers" id="qRM-3d-CBx"/>
-                        <segue destination="5hN-A0-ShT" kind="relationship" relationship="viewControllers" id="UP9-NY-30L"/>
+                        <segue destination="zcm-5E-JFd" kind="relationship" relationship="viewControllers" id="R4I-Dm-GHE"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GeC-tt-tRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-811" y="-1170"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clock125" width="24" height="24"/>
+        <image name="clock136" width="24" height="24"/>
+        <image name="favourite24" width="24" height="24"/>
+    </resources>
 </document>
