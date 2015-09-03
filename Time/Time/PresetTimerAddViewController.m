@@ -39,6 +39,8 @@
     
     newTimer.timerName = self.timerName.text;
     
+    newTimer.imageName = @"default";
+    
     newTimer.countDownDuration = self.selectTime.countDownDuration;
     
     [self.timerViewController.model.timers insertObject:newTimer atIndex:0];

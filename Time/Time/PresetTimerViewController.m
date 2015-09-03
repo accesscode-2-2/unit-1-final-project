@@ -99,7 +99,7 @@
     int minutes = timer.countDownDuration/60;
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%i Mins", minutes];
-    cell.imageView.image = [UIImage imageNamed:timer.timerName];
+    cell.imageView.image = [UIImage imageNamed:timer.imageName];
     [cell layoutIfNeeded];
     return cell;
     

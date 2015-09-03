@@ -11,6 +11,7 @@
 @interface Timer : NSObject
 
 @property (nonatomic) NSString *timerName;
+@property (nonatomic) NSString *imageName;
 
 @property (nonatomic) int countDownDuration;
 @end

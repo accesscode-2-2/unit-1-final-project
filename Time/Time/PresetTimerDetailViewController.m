@@ -65,7 +65,7 @@
     // Do any additional setup after loading the view.
     
     self.nameLabel.text = self.currentTimer.timerName;
-    self.imageView.image = [UIImage imageNamed:self.currentTimer.timerName];
+    self.imageView.image = [UIImage imageNamed:self.currentTimer.imageName];
     
     if ([self.nameLabel.text isEqualToString:@"Roast Turkey"]) {
         self.weightLabel.hidden = NO;
@@ -121,11 +121,6 @@
     self.seconds = self.newTime - (self.hours * 3600) - (self.minutes * 60);
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", self.hours, self.minutes, self.seconds];}
-
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:YES];
-//
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
