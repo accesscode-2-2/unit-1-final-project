@@ -25,7 +25,7 @@
     
     [[PresetTimersSingleton sharedInstance].presetTimersArray addObject:myTimer];
     
-   NSLog(@"%f", self.datePicker.countDownDuration);
+    NSLog(@"%f", self.datePicker.countDownDuration);
 }
 
 

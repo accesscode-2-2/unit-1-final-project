@@ -22,7 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"timer: %@", self.presetTimer);
     
 //    self.presetTimer.timer = [NSTimer ...
     
@@ -38,7 +37,12 @@
         [[NSRunLoop currentRunLoop] addTimer:self.presetTimer.timer forMode: NSRunLoopCommonModes];
         
         
-       
+        if (sender == self.pauseDetailTime) {
+            
+            self.totalTime =  self.totalTime - self.totalSessonTime;
+            [self.presetTimer.timer invalidate];
+
+        }
         
     }
 }
