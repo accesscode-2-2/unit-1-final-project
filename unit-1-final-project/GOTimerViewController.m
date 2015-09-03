@@ -38,7 +38,7 @@
 
 - (void)voiceSpeak: (NSString *)textToSpeech {
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:textToSpeech];
-    utterance.rate = 0.09;
+    utterance.rate = 0.5;
     utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-au"];
     [self.synthesizer speakUtterance:utterance];
 }
