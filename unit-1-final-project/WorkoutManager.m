@@ -56,7 +56,7 @@
     Exercises *warmup = [[Exercises alloc] init];
     warmup.nameOfExercise = @"Warm-Up";
     warmup.exerciseTime = 10.0;
-    warmup.exerciseImageString = @"glogo";
+    warmup.exerciseImageString = @"warmup";
     
     
     Exercises *gohard1 = [[Exercises alloc] init];
