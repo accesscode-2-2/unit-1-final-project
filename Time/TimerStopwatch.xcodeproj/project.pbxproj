@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB19AFAA1B97CFC000648DDE /* PresetTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19AFA91B97CFC000648DDE /* PresetTimer.m */; };
+		AB19AFAD1B97D3AD00648DDE /* PresetTimersSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19AFAC1B97D3AD00648DDE /* PresetTimersSingleton.m */; };
+		AB19AFB01B97D9C100648DDE /* TimerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19AFAF1B97D9C100648DDE /* TimerDetailViewController.m */; };
+		AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */; };
+		AB5791F91B955DB500F4EBAB /* PresetTimersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */; };
+		ABA086A41B97CD1500897BDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6C16E31B8FE29F00103CC2 /* Main.storyboard */; };
+		ABE0B27A1B97CDC0009224A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE0B2791B97CDC0009224A0 /* ViewController.m */; };
+		BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */; };
+		BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */; };
+		BF5A03731B88C0AD00FDF71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A03721B88C0AD00FDF71D /* main.m */; };
+		BF5A03761B88C0AD00FDF71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A03751B88C0AD00FDF71D /* AppDelegate.m */; };
+		BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5A037D1B88C0AD00FDF71D /* Images.xcassets */; };
+		BF5A038D1B88C0AD00FDF71D /* TimerStopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A038C1B88C0AD00FDF71D /* TimerStopwatchTests.m */; };
+		BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5A039D1B88CCD600FDF71D /* TimerViewController.m */; };
+		BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5A039F1B88D49400FDF71D /* QuartzCore.framework */; };
+		BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */; };
+		BFE6F3FB1B92187000350E51 /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */; };
+		BFE6F3FC1B92187000350E51 /* Gravity-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */; };
+		BFE6F3FE1B92187F00350E51 /* LANENAR_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */; };
+		BFE6F3FF1B92187F00350E51 /* LANENAR_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */; };
+		BFE6F4011B92188900350E51 /* HYPE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4001B92188900350E51 /* HYPE.ttf */; };
+		BFE6F4021B92188900350E51 /* HYPE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4001B92188900350E51 /* HYPE.ttf */; };
+		BFE6F4041B92196D00350E51 /* LANEUP__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4031B92196D00350E51 /* LANEUP__.ttf */; };
+		BFE6F4051B92196D00350E51 /* LANEUP__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4031B92196D00350E51 /* LANEUP__.ttf */; };
+		BFE6F4071B9219BD00350E51 /* Gravity-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */; };
+		BFE6F4081B9219BD00350E51 /* Gravity-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF5A03871B88C0AD00FDF71D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5A03651B88C0AD00FDF71D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5A036C1B88C0AD00FDF71D;
+			remoteInfo = TimerStopwatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB19AFA81B97CFC000648DDE /* PresetTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimer.h; sourceTree = "<group>"; };
+		AB19AFA91B97CFC000648DDE /* PresetTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimer.m; sourceTree = "<group>"; };
+		AB19AFAB1B97D3AD00648DDE /* PresetTimersSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimersSingleton.h; sourceTree = "<group>"; };
+		AB19AFAC1B97D3AD00648DDE /* PresetTimersSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimersSingleton.m; sourceTree = "<group>"; };
+		AB19AFAE1B97D9C100648DDE /* TimerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDetailViewController.h; sourceTree = "<group>"; };
+		AB19AFAF1B97D9C100648DDE /* TimerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerDetailViewController.m; sourceTree = "<group>"; };
+		AB31A5E11B8E7BC800F63EBE /* StopWatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatchViewController.h; sourceTree = "<group>"; };
+		AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; };
+		AB5791F71B955DB500F4EBAB /* PresetTimersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetTimersTableViewController.h; sourceTree = "<group>"; };
+		AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetTimersTableViewController.m; sourceTree = "<group>"; };
+		ABE0B2781B97CDC0009224A0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ABE0B2791B97CDC0009224A0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF3D673F1B8E7A72005D9CFA /* PresetsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetsTableViewController.h; sourceTree = "<group>"; };
+		BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetsTableViewController.m; sourceTree = "<group>"; };
+		BF3D67471B8E9824005D9CFA /* NewPresetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPresetsViewController.h; sourceTree = "<group>"; };
+		BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPresetsViewController.m; sourceTree = "<group>"; };
+		BF3D674A1B8E9864005D9CFA /* NewPresetsViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewPresetsViewControllerDelegate.h; sourceTree = "<group>"; };
+		BF3D674B1B8E9879005D9CFA /* PresetsTableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresetsTableViewControllerDelegate.h; sourceTree = "<group>"; };
+		BF5A036D1B88C0AD00FDF71D /* TimerStopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerStopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5A03711B88C0AD00FDF71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5A03721B88C0AD00FDF71D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF5A03741B88C0AD00FDF71D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF5A03751B88C0AD00FDF71D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF5A037D1B88C0AD00FDF71D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BF5A03801B88C0AD00FDF71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BF5A03861B88C0AD00FDF71D /* TimerStopwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerStopwatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5A038B1B88C0AD00FDF71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5A038C1B88C0AD00FDF71D /* TimerStopwatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerStopwatchTests.m; sourceTree = "<group>"; };
+		BF5A039C1B88CCD600FDF71D /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		BF5A039D1B88CCD600FDF71D /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		BF5A039F1B88D49400FDF71D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BF6C16E31B8FE29F00103CC2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BF6C16E51B8FEF2800103CC2 /* EventsCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCountdownViewController.h; sourceTree = "<group>"; };
+		BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCountdownViewController.m; sourceTree = "<group>"; };
+		BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Light.ttf"; sourceTree = "<group>"; };
+		BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LANENAR_.ttf; sourceTree = "<group>"; };
+		BFE6F4001B92188900350E51 /* HYPE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HYPE.ttf; sourceTree = "<group>"; };
+		BFE6F4031B92196D00350E51 /* LANEUP__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LANEUP__.ttf; sourceTree = "<group>"; };
+		BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gravity-Book.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF5A036A1B88C0AD00FDF71D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5A03A01B88D49400FDF71D /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5A03831B88C0AD00FDF71D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF3D67431B8E7EB4005D9CFA /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				AB31A5E21B8E7BC800F63EBE /* StopWatchViewController.m */,
+				AB31A5E11B8E7BC800F63EBE /* StopWatchViewController.h */,
+			);
+			name = Stopwatch;
+			sourceTree = "<group>";
+		};
+		BF5A03641B88C0AD00FDF71D = {
+			isa = PBXGroup;
+			children = (
+				BF5A039F1B88D49400FDF71D /* QuartzCore.framework */,
+				BF5A036F1B88C0AD00FDF71D /* TimerStopwatch */,
+				BF5A03891B88C0AD00FDF71D /* TimerStopwatchTests */,
+				BF5A036E1B88C0AD00FDF71D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF5A036E1B88C0AD00FDF71D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A036D1B88C0AD00FDF71D /* TimerStopwatch.app */,
+				BF5A03861B88C0AD00FDF71D /* TimerStopwatchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF5A036F1B88C0AD00FDF71D /* TimerStopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A03741B88C0AD00FDF71D /* AppDelegate.h */,
+				BF5A03751B88C0AD00FDF71D /* AppDelegate.m */,
+				BF3D67431B8E7EB4005D9CFA /* Stopwatch */,
+				BFAF42A81B8CF51700772E20 /* Timer */,
+				BF5A037D1B88C0AD00FDF71D /* Images.xcassets */,
+				BF5A037F1B88C0AD00FDF71D /* LaunchScreen.xib */,
+				BF6C16E31B8FE29F00103CC2 /* Main.storyboard */,
+				BF5A03701B88C0AD00FDF71D /* Supporting Files */,
+			);
+			path = TimerStopwatch;
+			sourceTree = "<group>";
+		};
+		BF5A03701B88C0AD00FDF71D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A03711B88C0AD00FDF71D /* Info.plist */,
+				BF5A03721B88C0AD00FDF71D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF5A03891B88C0AD00FDF71D /* TimerStopwatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A038C1B88C0AD00FDF71D /* TimerStopwatchTests.m */,
+				BF5A038A1B88C0AD00FDF71D /* Supporting Files */,
+			);
+			path = TimerStopwatchTests;
+			sourceTree = "<group>";
+		};
+		BF5A038A1B88C0AD00FDF71D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A038B1B88C0AD00FDF71D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFAF42A81B8CF51700772E20 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				BF5A039C1B88CCD600FDF71D /* TimerViewController.h */,
+				BF5A039D1B88CCD600FDF71D /* TimerViewController.m */,
+				BF6C16E51B8FEF2800103CC2 /* EventsCountdownViewController.h */,
+				BF6C16E61B8FEF2800103CC2 /* EventsCountdownViewController.m */,
+				BF3D673F1B8E7A72005D9CFA /* PresetsTableViewController.h */,
+				BF3D67401B8E7A72005D9CFA /* PresetsTableViewController.m */,
+				BF3D674B1B8E9879005D9CFA /* PresetsTableViewControllerDelegate.h */,
+				BF3D67471B8E9824005D9CFA /* NewPresetsViewController.h */,
+				BF3D67481B8E9824005D9CFA /* NewPresetsViewController.m */,
+				BF3D674A1B8E9864005D9CFA /* NewPresetsViewControllerDelegate.h */,
+				AB5791F71B955DB500F4EBAB /* PresetTimersTableViewController.h */,
+				AB5791F81B955DB500F4EBAB /* PresetTimersTableViewController.m */,
+				ABE0B2781B97CDC0009224A0 /* ViewController.h */,
+				ABE0B2791B97CDC0009224A0 /* ViewController.m */,
+				AB19AFA81B97CFC000648DDE /* PresetTimer.h */,
+				AB19AFA91B97CFC000648DDE /* PresetTimer.m */,
+				AB19AFAB1B97D3AD00648DDE /* PresetTimersSingleton.h */,
+				AB19AFAC1B97D3AD00648DDE /* PresetTimersSingleton.m */,
+				AB19AFAE1B97D9C100648DDE /* TimerDetailViewController.h */,
+				AB19AFAF1B97D9C100648DDE /* TimerDetailViewController.m */,
+				BFE6F3F91B92186100350E51 /* Fonts */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		BFE6F3F91B92186100350E51 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BFE6F3FA1B92187000350E51 /* Gravity-Light.ttf */,
+				BFE6F4061B9219BD00350E51 /* Gravity-Book.ttf */,
+				BFE6F3FD1B92187F00350E51 /* LANENAR_.ttf */,
+				BFE6F4031B92196D00350E51 /* LANEUP__.ttf */,
+				BFE6F4001B92188900350E51 /* HYPE.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF5A036C1B88C0AD00FDF71D /* TimerStopwatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5A03901B88C0AD00FDF71D /* Build configuration list for PBXNativeTarget "TimerStopwatch" */;
+			buildPhases = (
+				BF5A03691B88C0AD00FDF71D /* Sources */,
+				BF5A036A1B88C0AD00FDF71D /* Frameworks */,
+				BF5A036B1B88C0AD00FDF71D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimerStopwatch;
+			productName = TimerStopwatch;
+			productReference = BF5A036D1B88C0AD00FDF71D /* TimerStopwatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF5A03851B88C0AD00FDF71D /* TimerStopwatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5A03931B88C0AD00FDF71D /* Build configuration list for PBXNativeTarget "TimerStopwatchTests" */;
+			buildPhases = (
+				BF5A03821B88C0AD00FDF71D /* Sources */,
+				BF5A03831B88C0AD00FDF71D /* Frameworks */,
+				BF5A03841B88C0AD00FDF71D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5A03881B88C0AD00FDF71D /* PBXTargetDependency */,
+			);
+			name = TimerStopwatchTests;
+			productName = TimerStopwatchTests;
+			productReference = BF5A03861B88C0AD00FDF71D /* TimerStopwatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF5A03651B88C0AD00FDF71D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Charles Kang ";
+				TargetAttributes = {
+					BF5A036C1B88C0AD00FDF71D = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = FP79X83Q3E;
+					};
+					BF5A03851B88C0AD00FDF71D = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = BF5A036C1B88C0AD00FDF71D;
+					};
+				};
+			};
+			buildConfigurationList = BF5A03681B88C0AD00FDF71D /* Build configuration list for PBXProject "TimerStopwatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF5A03641B88C0AD00FDF71D;
+			productRefGroup = BF5A036E1B88C0AD00FDF71D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF5A036C1B88C0AD00FDF71D /* TimerStopwatch */,
+				BF5A03851B88C0AD00FDF71D /* TimerStopwatchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF5A036B1B88C0AD00FDF71D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABA086A41B97CD1500897BDD /* Main.storyboard in Resources */,
+				BFE6F3FE1B92187F00350E51 /* LANENAR_.ttf in Resources */,
+				BFE6F4011B92188900350E51 /* HYPE.ttf in Resources */,
+				BF5A037E1B88C0AD00FDF71D /* Images.xcassets in Resources */,
+				BFE6F4071B9219BD00350E51 /* Gravity-Book.ttf in Resources */,
+				BFE6F3FB1B92187000350E51 /* Gravity-Light.ttf in Resources */,
+				BFE6F4041B92196D00350E51 /* LANEUP__.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5A03841B88C0AD00FDF71D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE6F4081B9219BD00350E51 /* Gravity-Book.ttf in Resources */,
+				BFE6F4021B92188900350E51 /* HYPE.ttf in Resources */,
+				BFE6F3FF1B92187F00350E51 /* LANENAR_.ttf in Resources */,
+				BFE6F3FC1B92187000350E51 /* Gravity-Light.ttf in Resources */,
+				BFE6F4051B92196D00350E51 /* LANEUP__.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF5A03691B88C0AD00FDF71D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE0B27A1B97CDC0009224A0 /* ViewController.m in Sources */,
+				AB19AFB01B97D9C100648DDE /* TimerDetailViewController.m in Sources */,
+				AB19AFAD1B97D3AD00648DDE /* PresetTimersSingleton.m in Sources */,
+				BF3D67411B8E7A72005D9CFA /* PresetsTableViewController.m in Sources */,
+				BF5A039E1B88CCD600FDF71D /* TimerViewController.m in Sources */,
+				BF5A03761B88C0AD00FDF71D /* AppDelegate.m in Sources */,
+				AB19AFAA1B97CFC000648DDE /* PresetTimer.m in Sources */,
+				AB31A5E31B8E7BC800F63EBE /* StopWatchViewController.m in Sources */,
+				BF3D67491B8E9824005D9CFA /* NewPresetsViewController.m in Sources */,
+				BF6C16E71B8FEF2800103CC2 /* EventsCountdownViewController.m in Sources */,
+				AB5791F91B955DB500F4EBAB /* PresetTimersTableViewController.m in Sources */,
+				BF5A03731B88C0AD00FDF71D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5A03821B88C0AD00FDF71D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5A038D1B88C0AD00FDF71D /* TimerStopwatchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF5A03881B88C0AD00FDF71D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5A036C1B88C0AD00FDF71D /* TimerStopwatch */;
+			targetProxy = BF5A03871B88C0AD00FDF71D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF5A037F1B88C0AD00FDF71D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF5A03801B88C0AD00FDF71D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF5A038E1B88C0AD00FDF71D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF5A038F1B88C0AD00FDF71D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF5A03911B88C0AD00FDF71D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TimerStopwatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.charleshkang.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		BF5A03921B88C0AD00FDF71D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TimerStopwatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.charleshkang.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		BF5A03941B88C0AD00FDF71D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TimerStopwatchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.charleshkang.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimerStopwatch.app/TimerStopwatch";
+			};
+			name = Debug;
+		};
+		BF5A03951B88C0AD00FDF71D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TimerStopwatchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.charleshkang.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimerStopwatch.app/TimerStopwatch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF5A03681B88C0AD00FDF71D /* Build configuration list for PBXProject "TimerStopwatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5A038E1B88C0AD00FDF71D /* Debug */,
+				BF5A038F1B88C0AD00FDF71D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5A03901B88C0AD00FDF71D /* Build configuration list for PBXNativeTarget "TimerStopwatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5A03911B88C0AD00FDF71D /* Debug */,
+				BF5A03921B88C0AD00FDF71D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5A03931B88C0AD00FDF71D /* Build configuration list for PBXNativeTarget "TimerStopwatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5A03941B88C0AD00FDF71D /* Debug */,
+				BF5A03951B88C0AD00FDF71D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF5A03651B88C0AD00FDF71D /* Project object */;
+}
