@@ -13,6 +13,7 @@
 
 
 @interface StopwatchViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
@@ -56,6 +57,11 @@ BOOL running;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"track"];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+    self.scrollView.contentSize = backgroundImage.size;
+    [self.scrollView addSubview:backgroundImageView];
     
     [self.lapButton setEnabled:NO];
     [self.lapButton setTitleColor: [UIColor lightGrayColor]forState:UIControlStateNormal];
