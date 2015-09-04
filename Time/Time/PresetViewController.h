@@ -12,6 +12,7 @@
     
     IBOutlet UIProgressView *progressView;
 }
+@property(nonatomic,retain)IBOutlet UIImageView *sandGlass;
 
  - (IBAction)stopButtonTapped:(UIButton *)sender;
 

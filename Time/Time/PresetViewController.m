@@ -48,6 +48,24 @@
     
     self.count = 0;
     
+    NSArray *imgArray = [NSArray arrayWithObjects:
+                         [UIImage imageNamed:@"111"],
+                         [UIImage imageNamed:@"112"],
+                          [UIImage imageNamed:@"113"],
+                         [UIImage imageNamed:@"114"],
+                         [UIImage imageNamed:@"115"],
+                         [UIImage imageNamed:@"116"],
+
+                         [UIImage imageNamed:@"117"],nil];
+    
+    self.sandGlass.frame = CGRectMake(0, 0, 200, 200);
+    self.sandGlass.animationImages = imgArray;
+    self.sandGlass.animationDuration = 2;
+    self.sandGlass.animationRepeatCount = 0;
+    
+    [self.sandGlass startAnimating];
+    
+    [self.view insertSubview:self.sandGlass atIndex:0];
     
 }
 
@@ -117,11 +135,11 @@
 
 -(void)convertTime: (NSString *)time{
     
-    NSArray *timeConverted = [time componentsSeparatedByString:@":"];
+    NSArray *convertedTime = [time componentsSeparatedByString:@":"];
     
-    NSInteger hours = [timeConverted[0] integerValue];
-    NSInteger minutes = [timeConverted[1] integerValue];
-    NSInteger seconds = [timeConverted[2] integerValue];
+    NSInteger hours = [convertedTime[0] integerValue];
+    NSInteger minutes = [convertedTime[1] integerValue];
+    NSInteger seconds = [convertedTime[2] integerValue];
     
     NSInteger totalTime = (hours * 3600) + (minutes * 60) + seconds;
     self.seconds = totalTime;
@@ -150,7 +168,10 @@
     self.seconds -= 1;
     
     hours = self.seconds / 3600;
+    NSLog(@"hours %ld", hours);
     hours_rem = self.seconds % 3600;
+    NSLog(@"hours_rem %ld", hours_rem);
+    
     
     minutes =   hours_rem/60 ;
     minutes_rem = hours_rem % 60;

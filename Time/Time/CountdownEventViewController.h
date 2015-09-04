@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CountdownEventViewController : UIViewController{
-UIImageView *sandGlass;
-}
+@interface CountdownEventViewController : UIViewController
 
 @property(nonatomic,retain)IBOutlet UIImageView *sandGlass;
 @end

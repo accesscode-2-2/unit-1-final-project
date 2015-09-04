@@ -45,14 +45,29 @@
 //    self.tableView.backgroundView = nil;
 //    self.tableView.backgroundView
     
+//    self.navigationController.view.backgroundColor =
+//    [UIColor colorWithPatternImage:[UIImage imageNamed:@"clockImage"]];
+//    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    
+    
     self.navigationController.view.backgroundColor =
-    [UIColor colorWithPatternImage:[UIImage imageNamed:@"clockImage"]];
+    [UIColor colorWithPatternImage:[UIImage imageNamed:@"007"]];
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    
     
   //  self.navigationController.view.backgroundColor =
     //[UIColor colorWithPatternImage:[UIImage imageNamed:@"worldclockImage88"]];
    // self.tableView.backgroundColor = [UIColor clearColor];
 
+    
+    
+    
+    
+    
+    
+    
     
     
  }

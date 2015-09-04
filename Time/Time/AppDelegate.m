@@ -7,16 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "CountdownEventViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+@synthesize window;
+@synthesize viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self.window addSubview:viewController.view];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

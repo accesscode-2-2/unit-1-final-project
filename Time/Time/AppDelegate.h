@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CountdownEventViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+//@property (strong, nonatomic) UIWindow *window;
 
-
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet CountdownEventViewController *viewController;
 @end
 

@@ -44,7 +44,7 @@
     [self.presetsButton setBackgroundImage:[UIImage imageNamed:@"krig_Aqua_button"] forState:UIControlStateNormal];
     
  
-    
+ 
     self.picker.hidden = NO;
     self.timeLabel.hidden = YES;
     self.picker.countDownDuration = 60;
@@ -89,16 +89,30 @@
 #pragma mark - Buttons
 
 - (IBAction)muteButton:(id)sender {
-    if (self.muteSound == YES) {
-        self.muteSound = NO;
+//    if (self.muteSound == YES) {
+//        self.muteSound = NO;
+//        [_clock play];
+//        self.muteImageView.image = [UIImage imageNamed: @"SoundOn"];
+//    }
+//    else  {
+//        self.muteSound = YES;
+//        [_clock stop];
+//        self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
+//    }
+
+    if (self.muteImageView.image == [UIImage imageNamed: @"SoundOn"]){
+    [_clock stop];
+        self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
+
+        NSLog(@"stop");
+    }
+    else {
+        NSLog(@"play");
+
         [_clock play];
         self.muteImageView.image = [UIImage imageNamed: @"SoundOn"];
     }
-    else  {
-        self.muteSound = YES;
-        [_clock stop];
-        self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
-    }
+
 }
 
 - (IBAction)startStopButton:(id)sender {
@@ -112,15 +126,16 @@
             if (self.muteSound == NO) {
                 [_clock play];
             }
-            else if (self.muteSound == YES) {
-                [_clock stop];
-            }
+        
         self.progress = 0.0;
 
         }
     
     else      // stop button tapped
     {
+        if (self.muteSound == YES) {
+            [_clock stop];
+        }
         self.pauseResumeButton.enabled = YES;
         NSLog(@"stop pressed");
         [_clock stop];

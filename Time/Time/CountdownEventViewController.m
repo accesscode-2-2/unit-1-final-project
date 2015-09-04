@@ -22,31 +22,24 @@
 @end
 
 @implementation CountdownEventViewController
-@synthesize sandGlass;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
     NSArray *imgArray = [NSArray arrayWithObjects:
-            [UIImage imageNamed:@"s1.png"],
-            [UIImage imageNamed:@"s2.png"],
-            [UIImage imageNamed:@"s3.png"],
-            [UIImage imageNamed:@"s4.png"],nil];
+            [UIImage imageNamed:@"991"],
+            [UIImage imageNamed:@"992"],
+            [UIImage imageNamed:@"993"],
+            [UIImage imageNamed:@"994"],nil];
     
-    sandGlass.frame = CGRectMake(0, 0, 200, 200);
-    sandGlass.animationImages = imgArray;
-    sandGlass.animationDuration = 1;
-    sandGlass.animationRepeatCount = 0;
+    self.sandGlass.frame = CGRectMake(0, 0, 200, 200);
+    self.sandGlass.animationImages = imgArray;
+    self.sandGlass.animationDuration = 2;
+    self.sandGlass.animationRepeatCount = 0;
     
-    [sandGlass startAnimating];
+    [self.sandGlass startAnimating];
     
-    [self.view insertSubview:sandGlass atIndex:0];
-//    [sandGlass release];
-    
-    
-    
-    
-    
+    [self.view insertSubview:self.sandGlass atIndex:0];
     
     
     
@@ -114,11 +107,13 @@
         NSLog(@"There is a weddin comming up");
     } else if (([stringEvent rangeOfString:@"Graduation"].location != NSNotFound) || ([stringEvent rangeOfString:@"graduation"].location != NSNotFound)) {
         self.eventImage.image = [UIImage imageNamed:@"graduation"];
-        NSLog(@"There is a wedding comming up");
+     }
+    
+    else if (([stringEvent rangeOfString:@"Halloween"].location != NSNotFound) || ([stringEvent rangeOfString:@"halloween"].location != NSNotFound)) {
+        self.eventImage.image = [UIImage imageNamed:@"halloween"];
     }
-    
+
     else
-    
     {
         NSLog(@"no weddings!");
     }
