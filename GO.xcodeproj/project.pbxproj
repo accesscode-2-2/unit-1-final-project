@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				9A553E341B8D101B00A0230B /* AVFoundation.framework */,
-				3D2D2EFE1B86B5A300E210BA /* unit-1-final-project */,
+				3D2D2EFE1B86B5A300E210BA /* go */,
 				3D2D2F181B86B5A300E210BA /* go-projectTests */,
 				3D2D2F231B86B5A400E210BA /* go-projectUITests */,
 				3D2D2EFD1B86B5A300E210BA /* Products */,
@@ -222,7 +222,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3D2D2EFE1B86B5A300E210BA /* unit-1-final-project */ = {
+		3D2D2EFE1B86B5A300E210BA /* go */ = {
 			isa = PBXGroup;
 			children = (
 				3D2D2F0B1B86B5A300E210BA /* Assets.xcassets */,
@@ -240,7 +240,7 @@
 				9A553E361B8D125800A0230B /* GOFight */,
 				3D2D2EFF1B86B5A300E210BA /* Supporting Files */,
 			);
-			path = "unit-1-final-project";
+			path = go;
 			sourceTree = "<group>";
 		};
 		3D2D2EFF1B86B5A300E210BA /* Supporting Files */ = {
@@ -264,7 +264,7 @@
 				3D2D2F1B1B86B5A400E210BA /* Info.plist */,
 			);
 			name = "go-projectTests";
-			path = "unit-1-final-projectTests";
+			path = goTests;
 			sourceTree = "<group>";
 		};
 		3D2D2F231B86B5A400E210BA /* go-projectUITests */ = {
@@ -274,7 +274,7 @@
 				3D2D2F261B86B5A400E210BA /* Info.plist */,
 			);
 			name = "go-projectUITests";
-			path = "unit-1-final-projectUITests";
+			path = goUITests;
 			sourceTree = "<group>";
 		};
 		3DE05A0B1B8E8B48007A66FB /* Singleton & Objects */ = {
@@ -616,7 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
+				INFOPLIST_FILE = go/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = c4q.accesscode.zovfreullia.go;
@@ -632,7 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
+				INFOPLIST_FILE = go/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = c4q.accesscode.zovfreullia.go;
