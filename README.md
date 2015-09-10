@@ -16,7 +16,7 @@
 ![GO](/images/goshot3.png?raw=true "Optional Title")
 
 
-<p>
+<div class="MIT">
 The MIT License (MIT)
 
 Copyright (c) 2015 Kaira Villanueva & Jamaal Sedayao
@@ -38,4 +38,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-</p>
+</div>
+
+<style>
+
+.MIT {
+	font-size: 1em;
+}
+
+</style>
