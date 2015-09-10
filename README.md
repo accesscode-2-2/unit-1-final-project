@@ -44,6 +44,7 @@ THE SOFTWARE.
 
 .MIT {
 	font-size: 8px;
+	color:red;
 }
 
 </style>
