@@ -19,7 +19,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) <2015> <copyright Kaira Villanueva & Jamaal Sedayao>
+Copyright (c) 2015 Kaira Villanueva & Jamaal Sedayao
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
