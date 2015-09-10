@@ -43,7 +43,7 @@ THE SOFTWARE.
 <style>
 
 .MIT {
-	font-size: 0.5em;
+	font-size: 8px;
 }
 
 </style>
