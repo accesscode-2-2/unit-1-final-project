@@ -8,7 +8,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Kenzo Regular.otf">
+        <mutableArray key="KenzoRegular.otf">
             <string>Kenzo</string>
             <string>Kenzo</string>
             <string>Kenzo</string>

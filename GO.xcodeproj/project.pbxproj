@@ -20,14 +20,14 @@
 		3D2D2F0F1B86B5A300E210BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2D2F0D1B86B5A300E210BA /* LaunchScreen.storyboard */; };
 		3D2D2F1A1B86B5A400E210BA /* unit_1_final_projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F191B86B5A400E210BA /* unit_1_final_projectTests.m */; };
 		3D2D2F251B86B5A400E210BA /* unit_1_final_projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */; };
+		3D65B9FE1BA2124D005B22D5 /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D65B9FD1BA2124D005B22D5 /* monofonto.ttf */; };
+		3D65BA001BA212CD005B22D5 /* KenzoRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3D65B9FF1BA212CD005B22D5 /* KenzoRegular.otf */; };
 		3D67F6161B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D67F6151B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.m */; };
 		3D67F6191B8D89FB008B5E6A /* GOCustomResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D67F6181B8D89FB008B5E6A /* GOCustomResultsViewController.m */; };
-		3D9192A11B98F8F800BC5087 /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D9192A01B98F8F800BC5087 /* monofonto.ttf */; };
 		3DDB60C11B893332008194DB /* WorkoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C01B893332008194DB /* WorkoutManager.m */; };
 		3DDB60C41B893413008194DB /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C31B893413008194DB /* Workout.m */; };
 		3DDB60C71B893477008194DB /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB60C61B893477008194DB /* Exercises.m */; };
 		3DE05A0A1B8E4C8C007A66FB /* ExerciseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE05A091B8E4C8C007A66FB /* ExerciseTableViewCell.m */; };
-		3DF0972D1B936EC6003408E8 /* Kenzo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DF0972C1B936EC6003408E8 /* Kenzo Regular.otf */; };
 		9A041C231B92786000755002 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A041C221B92786000755002 /* bell.mp3 */; };
 		9A14C4B51B9236C900212C5B /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A14C4B31B92338900212C5B /* digital.ttf */; };
 		9A553E271B8CFC0700A0230B /* GOFightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A553E261B8CFC0700A0230B /* GOFightViewController.m */; };
@@ -74,24 +74,25 @@
 		3D29C62B1B8E009F004E33EF /* BackgroundGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundGradient.m; sourceTree = "<group>"; };
 		3D29C62D1B8E154A004E33EF /* GOCustomQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCustomQuestionViewController.h; sourceTree = "<group>"; };
 		3D29C62E1B8E154A004E33EF /* GOCustomQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCustomQuestionViewController.m; sourceTree = "<group>"; };
-		3D2D2EFC1B86B5A300E210BA /* unit-1-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unit-1-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2D2EFC1B86B5A300E210BA /* GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F001B86B5A300E210BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D2D2F021B86B5A300E210BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D2D2F031B86B5A300E210BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3D2D2F0B1B86B5A300E210BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D2D2F0E1B86B5A300E210BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D2D2F101B86B5A300E210BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D2D2F151B86B5A300E210BA /* unit-1-final-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit-1-final-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2D2F151B86B5A300E210BA /* GO.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GO.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F191B86B5A400E210BA /* unit_1_final_projectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unit_1_final_projectTests.m; sourceTree = "<group>"; };
 		3D2D2F1B1B86B5A400E210BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D2D2F201B86B5A400E210BA /* unit-1-final-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "unit-1-final-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2D2F201B86B5A400E210BA /* GO.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GO.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unit_1_final_projectUITests.m; sourceTree = "<group>"; };
 		3D2D2F261B86B5A400E210BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D65B9FD1BA2124D005B22D5 /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monofonto.ttf; sourceTree = "<group>"; };
+		3D65B9FF1BA212CD005B22D5 /* KenzoRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KenzoRegular.otf; path = ../../../Downloads/kenzo/KenzoRegular.otf; sourceTree = "<group>"; };
 		3D67F6141B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCustomWorkoutTableViewController.h; sourceTree = "<group>"; };
 		3D67F6151B8D89E2008B5E6A /* GOCustomWorkoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCustomWorkoutTableViewController.m; sourceTree = "<group>"; };
 		3D67F6171B8D89FB008B5E6A /* GOCustomResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOCustomResultsViewController.h; sourceTree = "<group>"; };
 		3D67F6181B8D89FB008B5E6A /* GOCustomResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCustomResultsViewController.m; sourceTree = "<group>"; };
-		3D9192A01B98F8F800BC5087 /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = monofonto.ttf; path = ../../../Downloads/monofonto/monofonto.ttf; sourceTree = "<group>"; };
 		3DDB60BF1B893332008194DB /* WorkoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutManager.h; sourceTree = "<group>"; };
 		3DDB60C01B893332008194DB /* WorkoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutManager.m; sourceTree = "<group>"; };
 		3DDB60C21B893413008194DB /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		3DDB60C61B893477008194DB /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		3DE05A081B8E4C8C007A66FB /* ExerciseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewCell.h; sourceTree = "<group>"; };
 		3DE05A091B8E4C8C007A66FB /* ExerciseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewCell.m; sourceTree = "<group>"; };
-		3DF0972C1B936EC6003408E8 /* Kenzo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Kenzo Regular.otf"; path = "../../../Downloads/kenzo/Kenzo Regular.otf"; sourceTree = "<group>"; };
 		9A041C221B92786000755002 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		9A14C4B31B92338900212C5B /* digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital.ttf; sourceTree = "<group>"; };
 		9A553E251B8CFC0700A0230B /* GOFightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOFightViewController.h; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 			children = (
 				9A553E341B8D101B00A0230B /* AVFoundation.framework */,
 				3D2D2EFE1B86B5A300E210BA /* unit-1-final-project */,
-				3D2D2F181B86B5A300E210BA /* unit-1-final-projectTests */,
-				3D2D2F231B86B5A400E210BA /* unit-1-final-projectUITests */,
+				3D2D2F181B86B5A300E210BA /* go-projectTests */,
+				3D2D2F231B86B5A400E210BA /* go-projectUITests */,
 				3D2D2EFD1B86B5A300E210BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -215,9 +215,9 @@
 		3D2D2EFD1B86B5A300E210BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D2D2EFC1B86B5A300E210BA /* unit-1-final-project.app */,
-				3D2D2F151B86B5A300E210BA /* unit-1-final-projectTests.xctest */,
-				3D2D2F201B86B5A400E210BA /* unit-1-final-projectUITests.xctest */,
+				3D2D2EFC1B86B5A300E210BA /* GO.app */,
+				3D2D2F151B86B5A300E210BA /* GO.xctest */,
+				3D2D2F201B86B5A400E210BA /* GO.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,8 +246,8 @@
 		3D2D2EFF1B86B5A300E210BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3D9192A01B98F8F800BC5087 /* monofonto.ttf */,
-				3DF0972C1B936EC6003408E8 /* Kenzo Regular.otf */,
+				3D65B9FF1BA212CD005B22D5 /* KenzoRegular.otf */,
+				3D65B9FD1BA2124D005B22D5 /* monofonto.ttf */,
 				9A041C221B92786000755002 /* bell.mp3 */,
 				9A14C4B31B92338900212C5B /* digital.ttf */,
 				9ADCAB671B8D7AC2009E6FF0 /* NikeTotal90.ttf */,
@@ -257,21 +257,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3D2D2F181B86B5A300E210BA /* unit-1-final-projectTests */ = {
+		3D2D2F181B86B5A300E210BA /* go-projectTests */ = {
 			isa = PBXGroup;
 			children = (
 				3D2D2F191B86B5A400E210BA /* unit_1_final_projectTests.m */,
 				3D2D2F1B1B86B5A400E210BA /* Info.plist */,
 			);
+			name = "go-projectTests";
 			path = "unit-1-final-projectTests";
 			sourceTree = "<group>";
 		};
-		3D2D2F231B86B5A400E210BA /* unit-1-final-projectUITests */ = {
+		3D2D2F231B86B5A400E210BA /* go-projectUITests */ = {
 			isa = PBXGroup;
 			children = (
 				3D2D2F241B86B5A400E210BA /* unit_1_final_projectUITests.m */,
 				3D2D2F261B86B5A400E210BA /* Info.plist */,
 			);
+			name = "go-projectUITests";
 			path = "unit-1-final-projectUITests";
 			sourceTree = "<group>";
 		};
@@ -318,9 +320,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D2D2EFB1B86B5A300E210BA /* unit-1-final-project */ = {
+		3D2D2EFB1B86B5A300E210BA /* GO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D2D2F291B86B5A400E210BA /* Build configuration list for PBXNativeTarget "unit-1-final-project" */;
+			buildConfigurationList = 3D2D2F291B86B5A400E210BA /* Build configuration list for PBXNativeTarget "GO" */;
 			buildPhases = (
 				3D2D2EF81B86B5A300E210BA /* Sources */,
 				3D2D2EF91B86B5A300E210BA /* Frameworks */,
@@ -330,14 +332,14 @@
 			);
 			dependencies = (
 			);
-			name = "unit-1-final-project";
+			name = GO;
 			productName = "unit-1-final-project";
-			productReference = 3D2D2EFC1B86B5A300E210BA /* unit-1-final-project.app */;
+			productReference = 3D2D2EFC1B86B5A300E210BA /* GO.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D2D2F141B86B5A300E210BA /* unit-1-final-projectTests */ = {
+		3D2D2F141B86B5A300E210BA /* GOTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D2D2F2C1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "unit-1-final-projectTests" */;
+			buildConfigurationList = 3D2D2F2C1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "GOTests" */;
 			buildPhases = (
 				3D2D2F111B86B5A300E210BA /* Sources */,
 				3D2D2F121B86B5A300E210BA /* Frameworks */,
@@ -348,14 +350,14 @@
 			dependencies = (
 				3D2D2F171B86B5A300E210BA /* PBXTargetDependency */,
 			);
-			name = "unit-1-final-projectTests";
+			name = GOTests;
 			productName = "unit-1-final-projectTests";
-			productReference = 3D2D2F151B86B5A300E210BA /* unit-1-final-projectTests.xctest */;
+			productReference = 3D2D2F151B86B5A300E210BA /* GO.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3D2D2F1F1B86B5A400E210BA /* unit-1-final-projectUITests */ = {
+		3D2D2F1F1B86B5A400E210BA /* GOUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D2D2F2F1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "unit-1-final-projectUITests" */;
+			buildConfigurationList = 3D2D2F2F1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "GOUITests" */;
 			buildPhases = (
 				3D2D2F1C1B86B5A400E210BA /* Sources */,
 				3D2D2F1D1B86B5A400E210BA /* Frameworks */,
@@ -366,9 +368,9 @@
 			dependencies = (
 				3D2D2F221B86B5A400E210BA /* PBXTargetDependency */,
 			);
-			name = "unit-1-final-projectUITests";
+			name = GOUITests;
 			productName = "unit-1-final-projectUITests";
-			productReference = 3D2D2F201B86B5A400E210BA /* unit-1-final-projectUITests.xctest */;
+			productReference = 3D2D2F201B86B5A400E210BA /* GO.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -394,7 +396,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D2D2EF71B86B5A300E210BA /* Build configuration list for PBXProject "unit-1-final-project" */;
+			buildConfigurationList = 3D2D2EF71B86B5A300E210BA /* Build configuration list for PBXProject "GO" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -407,9 +409,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D2D2EFB1B86B5A300E210BA /* unit-1-final-project */,
-				3D2D2F141B86B5A300E210BA /* unit-1-final-projectTests */,
-				3D2D2F1F1B86B5A400E210BA /* unit-1-final-projectUITests */,
+				3D2D2EFB1B86B5A300E210BA /* GO */,
+				3D2D2F141B86B5A300E210BA /* GOTests */,
+				3D2D2F1F1B86B5A400E210BA /* GOUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -419,14 +421,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9192A11B98F8F800BC5087 /* monofonto.ttf in Resources */,
+				3D65BA001BA212CD005B22D5 /* KenzoRegular.otf in Resources */,
 				9A14C4B51B9236C900212C5B /* digital.ttf in Resources */,
 				9ADCAB681B8D7B4A009E6FF0 /* NikeTotal90.ttf in Resources */,
 				3D2D2F0F1B86B5A300E210BA /* LaunchScreen.storyboard in Resources */,
 				3D2D2F0C1B86B5A300E210BA /* Assets.xcassets in Resources */,
 				3D28835E1B8D268F00DE02B8 /* Main.storyboard in Resources */,
+				3D65B9FE1BA2124D005B22D5 /* monofonto.ttf in Resources */,
 				9A041C231B92786000755002 /* bell.mp3 in Resources */,
-				3DF0972D1B936EC6003408E8 /* Kenzo Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,12 +500,12 @@
 /* Begin PBXTargetDependency section */
 		3D2D2F171B86B5A300E210BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D2D2EFB1B86B5A300E210BA /* unit-1-final-project */;
+			target = 3D2D2EFB1B86B5A300E210BA /* GO */;
 			targetProxy = 3D2D2F161B86B5A300E210BA /* PBXContainerItemProxy */;
 		};
 		3D2D2F221B86B5A400E210BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D2D2EFB1B86B5A300E210BA /* unit-1-final-project */;
+			target = 3D2D2EFB1B86B5A300E210BA /* GO */;
 			targetProxy = 3D2D2F211B86B5A400E210BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -617,8 +619,8 @@
 				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-project";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = c4q.accesscode.zovfreullia.go;
+				PRODUCT_NAME = GO;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -633,8 +635,8 @@
 				INFOPLIST_FILE = "unit-1-final-project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-project";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = c4q.accesscode.zovfreullia.go;
+				PRODUCT_NAME = GO;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -647,8 +649,8 @@
 				INFOPLIST_FILE = "unit-1-final-projectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/unit-1-final-project.app/unit-1-final-project";
+				PRODUCT_NAME = GO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GO.app/GO";
 			};
 			name = Debug;
 		};
@@ -659,8 +661,8 @@
 				INFOPLIST_FILE = "unit-1-final-projectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/unit-1-final-project.app/unit-1-final-project";
+				PRODUCT_NAME = GO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GO.app/GO";
 			};
 			name = Release;
 		};
@@ -670,7 +672,7 @@
 				INFOPLIST_FILE = "unit-1-final-projectUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GO;
 				TEST_TARGET_NAME = "unit-1-final-project";
 				USES_XCTRUNNER = YES;
 			};
@@ -682,7 +684,7 @@
 				INFOPLIST_FILE = "unit-1-final-projectUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.accesscode.zovfreullia.unit-1-final-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GO;
 				TEST_TARGET_NAME = "unit-1-final-project";
 				USES_XCTRUNNER = YES;
 			};
@@ -691,7 +693,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D2D2EF71B86B5A300E210BA /* Build configuration list for PBXProject "unit-1-final-project" */ = {
+		3D2D2EF71B86B5A300E210BA /* Build configuration list for PBXProject "GO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2D2F271B86B5A400E210BA /* Debug */,
@@ -700,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D2D2F291B86B5A400E210BA /* Build configuration list for PBXNativeTarget "unit-1-final-project" */ = {
+		3D2D2F291B86B5A400E210BA /* Build configuration list for PBXNativeTarget "GO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2D2F2A1B86B5A400E210BA /* Debug */,
@@ -709,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D2D2F2C1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "unit-1-final-projectTests" */ = {
+		3D2D2F2C1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "GOTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2D2F2D1B86B5A400E210BA /* Debug */,
@@ -718,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D2D2F2F1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "unit-1-final-projectUITests" */ = {
+		3D2D2F2F1B86B5A400E210BA /* Build configuration list for PBXNativeTarget "GOUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2D2F301B86B5A400E210BA /* Debug */,
