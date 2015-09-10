@@ -1,6 +1,6 @@
 #GO
 
-##A workout application available for iPhones. GO is a fitness application that makes tracking time easy for you.
+####A workout application available for iPhones. GO is a fitness application that makes tracking time easy for you.
 
 ###Functionality:
 * Stopwatch with laps
