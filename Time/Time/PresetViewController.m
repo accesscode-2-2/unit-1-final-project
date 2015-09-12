@@ -47,25 +47,31 @@
     [self.stopButton setBackgroundImage:[UIImage imageNamed:@"1stop"] forState:UIControlStateNormal];
     
     self.count = 0;
+//    
+//    NSArray *imgArray = [NSArray arrayWithObjects:
+//                         [UIImage imageNamed:@"111"],
+//                         [UIImage imageNamed:@"112"],
+//                         [UIImage imageNamed:@"113"],
+//                         [UIImage imageNamed:@"114"],
+//                         [UIImage imageNamed:@"115"],
+//                         [UIImage imageNamed:@"116"],
+//
+//                         [UIImage imageNamed:@"117"],nil];
+//    
+//    self.sandGlass.frame = CGRectMake(0, 0, 200, 200);
+//    self.sandGlass.animationImages = imgArray;
+//    self.sandGlass.animationDuration = 2;
+//    self.sandGlass.animationRepeatCount = 0;
+//    
+//    [self.sandGlass startAnimating];
+//    
+//    [self.view insertSubview:self.sandGlass atIndex:0];
     
-    NSArray *imgArray = [NSArray arrayWithObjects:
-                         [UIImage imageNamed:@"111"],
-                         [UIImage imageNamed:@"112"],
-                          [UIImage imageNamed:@"113"],
-                         [UIImage imageNamed:@"114"],
-                         [UIImage imageNamed:@"115"],
-                         [UIImage imageNamed:@"116"],
+    
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
+    
 
-                         [UIImage imageNamed:@"117"],nil];
-    
-    self.sandGlass.frame = CGRectMake(0, 0, 200, 200);
-    self.sandGlass.animationImages = imgArray;
-    self.sandGlass.animationDuration = 2;
-    self.sandGlass.animationRepeatCount = 0;
-    
-    [self.sandGlass startAnimating];
-    
-    [self.view insertSubview:self.sandGlass atIndex:0];
     
 }
 

@@ -262,8 +262,10 @@
 forRowAtIndexPath: (NSIndexPath*)indexPath
 {
     cell.backgroundColor = indexPath.row % 2
-    ? [UIColor colorWithRed:0.87 green:0.93 blue:0.98 alpha:1.0]
-    : [UIColor whiteColor];
+//    ? [UIColor colorWithRed:0.87 green:0.93 blue:0.98 alpha:1.0]
+//    : [UIColor whiteColor];
+    ? [UIColor colorWithRed:0.91 green:0.95 blue:0.98 alpha:1.0]
+    : [UIColor colorWithRed:0.76 green:0.87 blue:0.98 alpha:1.0];
     
 }
 

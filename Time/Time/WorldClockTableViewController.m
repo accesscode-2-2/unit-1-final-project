@@ -52,7 +52,7 @@
     
     
     self.navigationController.view.backgroundColor =
-    [UIColor colorWithPatternImage:[UIImage imageNamed:@"007"]];
+    [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
     self.tableView.backgroundColor = [UIColor clearColor];
     
     
@@ -142,8 +142,8 @@
 forRowAtIndexPath: (NSIndexPath*)indexPath
 {
     cell.backgroundColor = indexPath.row % 2
-    ? [UIColor colorWithRed:0.97 green:0.95 blue:0.88 alpha:1.0]
-    : [UIColor colorWithRed:0.93 green:0.87 blue:0.65 alpha:1.0];
+    ? [UIColor colorWithRed:0.91 green:0.95 blue:0.98 alpha:1.0]
+    : [UIColor colorWithRed:0.76 green:0.87 blue:0.98 alpha:1.0];
     
 }
 

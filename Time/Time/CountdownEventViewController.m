@@ -45,7 +45,7 @@
     
     
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"eventBackground7"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
 
     self.eventLabel.hidden = YES;
     self.countdownTimerLabel.hidden = YES;
