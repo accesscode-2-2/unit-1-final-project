@@ -25,7 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *muteButton;
 @property (strong, nonatomic) IBOutlet UIImageView *muteImageView;
 @property (nonatomic) BOOL muteSound;
-@property (nonatomic) NSDate *startTime;  //
+@property (nonatomic) NSDate *startTime;
 @property (nonatomic) NSInteger duration;
 @property (nonatomic) NSTimer *StopwatchTimer;
 @property (nonatomic) NSTimer *circularTimerProgress;
@@ -43,8 +43,6 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
     [self.presetsButton setBackgroundImage:[UIImage imageNamed:@"krig_Aqua_button"] forState:UIControlStateNormal];
     
- 
- 
     self.picker.hidden = NO;
     self.timeLabel.hidden = YES;
     self.picker.countDownDuration = 60;
@@ -55,20 +53,16 @@
     [self.startStopButton.titleLabel  isEqual: @"START"];
     self.startStopButton.layer.cornerRadius = 60;
     self.startStopButton.clipsToBounds = YES;
-//    self.startStopButton.backgroundColor = [UIColor colorWithRed:0.31 green:0.60 blue:0.19 alpha:1.0];
- 
     
      [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
     
-        self.progress = 0.0;
-    
+    self.progress = 0.0;
     
     [self.pauseResumeButton.titleLabel  isEqual: @"PAUSE"];
     self.pauseResumeButton.layer.cornerRadius = 60;
     self.pauseResumeButton.clipsToBounds = YES;
     
     [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
-//    self.pauseResumeButton.backgroundColor = [UIColor grayColor];
     self.pauseResumeButton.enabled = NO;
     self.spinnerView.hidden = YES;
     self.muteImageView.image = [UIImage imageNamed: @"SoundOn"];
@@ -89,17 +83,7 @@
 #pragma mark - Buttons
 
 - (IBAction)muteButton:(id)sender {
-//    if (self.muteSound == YES) {
-//        self.muteSound = NO;
-//        [_clock play];
-//        self.muteImageView.image = [UIImage imageNamed: @"SoundOn"];
-//    }
-//    else  {
-//        self.muteSound = YES;
-//        [_clock stop];
-//        self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
-//    }
-
+    
     if (self.muteImageView.image == [UIImage imageNamed: @"SoundOn"]){
     [_clock stop];
         self.muteImageView.image = [UIImage imageNamed: @"SoundOff"];
@@ -126,9 +110,7 @@
             if (self.muteSound == NO) {
                 [_clock play];
             }
-        
         self.progress = 0.0;
-
         }
     
     else      // stop button tapped
@@ -169,7 +151,6 @@
 - (void)spinit:(NSTimer *)timer
 {
     self.progress +=  (0.1/self.duration);
-    
     
     if(self.progress >= 1.0) {
         self.progress = 1.0;
@@ -225,7 +206,7 @@
     
     [self.StopwatchTimer invalidate];
     [self.circularTimerProgress invalidate];
-    self.circularTimerProgress = nil; //i need to stop thisssssssssss :@@@@@
+    self.circularTimerProgress = nil;
     
     [self.startStopButton setTitle:@"START" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
@@ -233,7 +214,6 @@
     self.pauseResumeButton.enabled = NO;
     [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
 
-//    self.pauseResumeButton.backgroundColor = [UIColor grayColor];
     self.timeLabel.hidden = YES;
     self.picker.hidden = NO;
     self.spinnerView.hidden = YES;
@@ -246,7 +226,6 @@
     [self.circularTimerProgress invalidate];
     [self.pauseResumeButton setTitle:@"RESUME" forState:UIControlStateNormal];
     [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"drop"] forState:UIControlStateNormal];
-
 }
 
 - (void) resumeTimer; {
@@ -254,7 +233,6 @@
     [self startTimer:self.duration - self.elapsedTime];
     [self.pauseResumeButton setTitle:@"PAUSE" forState:UIControlStateNormal];
     [self.pauseResumeButton setBackgroundImage:[UIImage imageNamed:@"YellowDrop"] forState:UIControlStateNormal];
-
 }
 
 #pragma mark - Alert View

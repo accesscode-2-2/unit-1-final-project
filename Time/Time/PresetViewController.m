@@ -47,32 +47,8 @@
     [self.stopButton setBackgroundImage:[UIImage imageNamed:@"1stop"] forState:UIControlStateNormal];
     
     self.count = 0;
-//    
-//    NSArray *imgArray = [NSArray arrayWithObjects:
-//                         [UIImage imageNamed:@"111"],
-//                         [UIImage imageNamed:@"112"],
-//                         [UIImage imageNamed:@"113"],
-//                         [UIImage imageNamed:@"114"],
-//                         [UIImage imageNamed:@"115"],
-//                         [UIImage imageNamed:@"116"],
-//
-//                         [UIImage imageNamed:@"117"],nil];
-//    
-//    self.sandGlass.frame = CGRectMake(0, 0, 200, 200);
-//    self.sandGlass.animationImages = imgArray;
-//    self.sandGlass.animationDuration = 2;
-//    self.sandGlass.animationRepeatCount = 0;
-//    
-//    [self.sandGlass startAnimating];
-//    
-//    [self.view insertSubview:self.sandGlass atIndex:0];
-    
-    
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
-    
-
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -96,20 +72,16 @@
     return pickerLabel;
 }
 
-
 - (IBAction)stopButtonTapped:(UIButton *)sender {
     [self.timer invalidate];
     [self.progressTimer invalidate];
     
 }
 
-
 - (IBAction)resetButtonTapped:(UIButton *)sender {
     [self updatePresetLabel];
     self.progressLabel.text = @"0 %";
     self.count = 0;
-    
-    
 }
 
 - (void)updateUI:(NSTimer *)timer
@@ -127,12 +99,8 @@
     }
 }
 
-
-
-
 - (IBAction)startButtonTapped:(UIButton *)sender {
-    
-    
+
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
     
     [self updatePresetLabel];
@@ -178,10 +146,8 @@
     hours_rem = self.seconds % 3600;
     NSLog(@"hours_rem %ld", hours_rem);
     
-    
     minutes =   hours_rem/60 ;
     minutes_rem = hours_rem % 60;
-    
     
     self.timeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, minutes, minutes_rem];
     
@@ -205,12 +171,10 @@
     return 1;
 }
 
-
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
     return self.timerPickerArray.count;
 }
-
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     

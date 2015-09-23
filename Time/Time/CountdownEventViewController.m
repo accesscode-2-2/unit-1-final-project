@@ -42,9 +42,6 @@
     [self.view insertSubview:self.sandGlass atIndex:0];
     
     
-    
-    
-    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"waterRotated"]];
 
     self.eventLabel.hidden = YES;
@@ -68,12 +65,6 @@
     
 }
 
-//- (void)dealloc {
-//    [sonic release];
-//    [readOut release];
-//    [slider release];
-//    [super dealloc];
-//}
 - (IBAction)startButton:(id)sender {
     
     //this will create animation for eventLabel
@@ -170,7 +161,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end

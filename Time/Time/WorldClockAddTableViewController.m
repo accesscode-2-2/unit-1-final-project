@@ -16,10 +16,8 @@
 @property (nonatomic) NSArray *keyArray;
 @property (nonatomic) NSArray *unsortedKeyArray;
 @property (nonatomic) NSArray *valueArray;
-
 @property (nonatomic) NSString* city ;
 @property (nonatomic) NSString* time;
-
 @property (nonatomic) NSMutableDictionary *clock;
 @property (strong, nonatomic) NSArray *searchResults;
 
@@ -31,14 +29,13 @@
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Add City"];
     
-    
     self.clock = [[NSMutableDictionary alloc] init];
     self.searchResults = [[NSArray alloc] init];
     self.keyArray = [[NSArray alloc] init];
     self.unsortedKeyArray = [[NSArray alloc] init];
 
     
-    ////// trying to get current time
+    //get current time
     NSDate * now = [NSDate date];
   
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
@@ -49,15 +46,11 @@
     NSDate *parisTime = [now dateByAddingTimeInterval:21600]; // Add XXX seconds to *now
     NSString *ParisTimeString = [outputFormatter stringFromDate:parisTime];
     
-    
     NSDate *RomeTime = [now dateByAddingTimeInterval:21600];
     NSString *RomeTimeString = [outputFormatter stringFromDate:RomeTime];
     
-    
     NSDate *MexicoCity = [now dateByAddingTimeInterval:-3600];
     NSString *MexicoCityTimeString = [outputFormatter stringFromDate:MexicoCity];
-    
-    
     
     NSDate *NewDelhi = [now dateByAddingTimeInterval:34200];
     NSString *NewDelhiTimeString = [outputFormatter stringFromDate:NewDelhi];
@@ -113,10 +106,6 @@
 	NSDate *London = [now dateByAddingTimeInterval:18000];
 	NSString *LondonString = [outputFormatter stringFromDate:London];
 	
-	
-	
-	
- 
     
     [self.clock setObject:NewDelhiTimeString forKey:@"New Delhi, India"];
     [self.clock setObject:MexicoCityTimeString forKey:@"Mexico City"];
@@ -142,49 +131,28 @@
 	[self.clock setObject:StockholmString forKey:@"Stockholm, Sweden"];
 	[self.clock setObject:LondonString forKey:@"London, England"];
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    
-    
     self.unsortedKeyArray = [self.clock allKeys];
     self.keyArray = [self.unsortedKeyArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     self.valueArray = [self.clock allValues];
-
- 
-    
-    
  }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-     // Return the number of rows in the section.
-    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.searchResults count];
     }
     else
         return [self.keyArray count];
-    
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -193,13 +161,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID ];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        
     }
-    
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         cell.textLabel.text = [self.searchResults objectAtIndex:indexPath.row];
-    
     }
     else {
     [cell.textLabel setText:[self.keyArray objectAtIndex:indexPath.row]];
@@ -212,11 +177,8 @@
     return cell;
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@ %@", self.keyArray[(long)indexPath.row], self.valueArray[(long)indexPath.row] ); // you can see
     
     WorldClockInfo *city = [[WorldClockInfo alloc] init];
     
@@ -230,14 +192,10 @@
     }
     
     [self.selectedCitiesArray  addObject: city];
- 
     [[self navigationController] popViewControllerAnimated:YES];
     [self.tableView reloadData];
     
-    
-
 }
-
 
 #pragma Search Methods
 
@@ -246,7 +204,6 @@
     
     self.searchResults = [self.keyArray filteredArrayUsingPredicate:predicate];
 }
-
 
 -(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     
@@ -257,13 +214,12 @@
 
 
 #pragma mark Cells color
+
 - (void)tableView: (UITableView*)tableView
   willDisplayCell: (UITableViewCell*)cell
 forRowAtIndexPath: (NSIndexPath*)indexPath
 {
     cell.backgroundColor = indexPath.row % 2
-//    ? [UIColor colorWithRed:0.87 green:0.93 blue:0.98 alpha:1.0]
-//    : [UIColor whiteColor];
     ? [UIColor colorWithRed:0.91 green:0.95 blue:0.98 alpha:1.0]
     : [UIColor colorWithRed:0.76 green:0.87 blue:0.98 alpha:1.0];
     

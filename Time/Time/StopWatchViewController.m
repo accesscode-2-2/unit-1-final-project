@@ -114,8 +114,6 @@ NSInteger milliseconds;
 }
 
 
-
-
 #pragma mark - Buttons
 
 - (IBAction)startStopButtonTapped:(UIButton *)sender {
@@ -210,20 +208,7 @@ NSInteger milliseconds;
         NSLog(@"still working on it");
 
     }
-    
-    
-    
-        
-//    if (self.fastestLapIndex) {
-//        
-//        
-//     }
 }
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -244,41 +229,10 @@ NSInteger milliseconds;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stopwatchIdentifier" forIndexPath:indexPath];
     
     
-    
-    
-    
-//  NSArray *components = [@"01:01:00" componentsSeparatedByString:@":"];
-//    NSArray *components = [self.LapArray[indexPath.row] componentsSeparatedByString:@":"];
-//
-//    NSInteger hours   = [[components objectAtIndex:0] integerValue];
-//    NSInteger minutes = [[components objectAtIndex:1] integerValue];
-//    NSInteger seconds = [[components objectAtIndex:2] integerValue];
-//    NSInteger numberWithInteger = (hours * 60 * 60) + (minutes * 60) + seconds;
-//    NSLog(@" %ld ", (long)numberWithInteger);
-//    
-
-    
-    
     if (self.LapArray.count == 1) {
         cell.textLabel.textColor = [UIColor redColor];
         cell.detailTextLabel.textColor = [UIColor redColor];
     }
-    
-//    
-//    if (indexPath.row == self.fastestLapIndex) {
-//        // set the color to red
-//        cell.textLabel.textColor = [UIColor redColor];
-//        cell.detailTextLabel.textColor = [UIColor redColor];
-//    }
-    
-    
-    
-//    if (self.LapArray.count > 1) {
-//        if ([self.LapArray objectAtIndex:0] < [self.LapArray objectAtIndex:1]) {
-//            cell.textLabel.textColor = [UIColor redColor];
-//            cell.detailTextLabel.textColor = [UIColor redColor];
-//        }
-//    }
     
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %ld",[self.LapArray count] - indexPath.row];
     
@@ -297,7 +251,5 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     : [UIColor whiteColor];
     
 }
-
-
 
 @end

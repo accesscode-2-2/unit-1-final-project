@@ -30,7 +30,6 @@
 		8496CC9F1B8A768700FB2AAA /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8496CC9E1B8A768700FB2AAA /* TimerViewController.m */; };
 		8496CCA11B8ABA1F00FB2AAA /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8496CCA01B8ABA1F00FB2AAA /* ding.wav */; };
 		8499D3D41B94F00300A434C9 /* PressetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8499D3D31B94F00300A434C9 /* PressetData.m */; };
-		8499D3D71B950C5C00A434C9 /* PresetAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8499D3D61B950C5C00A434C9 /* PresetAddViewController.m */; };
 		8499D3DA1B9549F100A434C9 /* PresetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8499D3D91B9549F100A434C9 /* PresetViewController.m */; };
 		8D05375E1B86687C00588318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05375D1B86687C00588318 /* main.m */; };
 		8D0537611B86687C00588318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0537601B86687C00588318 /* AppDelegate.m */; };
@@ -82,8 +81,6 @@
 		8496CCA01B8ABA1F00FB2AAA /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		8499D3D21B94F00300A434C9 /* PressetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressetData.h; sourceTree = "<group>"; };
 		8499D3D31B94F00300A434C9 /* PressetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PressetData.m; sourceTree = "<group>"; };
-		8499D3D51B950C5C00A434C9 /* PresetAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetAddViewController.h; sourceTree = "<group>"; };
-		8499D3D61B950C5C00A434C9 /* PresetAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetAddViewController.m; sourceTree = "<group>"; };
 		8499D3D81B9549F100A434C9 /* PresetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetViewController.h; sourceTree = "<group>"; };
 		8499D3D91B9549F100A434C9 /* PresetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetViewController.m; sourceTree = "<group>"; };
 		8D0537581B86687B00588318 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +113,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		845884781BB252B50073CA5D /* CountdownEvent */ = {
+			isa = PBXGroup;
+			children = (
+				8478CEF41B9000FD0045BDD7 /* CountdownEventViewController.h */,
+				8478CEF51B9000FD0045BDD7 /* CountdownEventViewController.m */,
+			);
+			name = CountdownEvent;
+			sourceTree = "<group>";
+		};
+		845884791BB252CA0073CA5D /* WorldClock */ = {
+			isa = PBXGroup;
+			children = (
+				8478CE8C1B8E1D6E0045BDD7 /* WorldClockTableViewController.h */,
+				8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */,
+				8478CE931B8F51E00045BDD7 /* WorldClockAddTableViewController.h */,
+				8478CE941B8F51E00045BDD7 /* WorldClockAddTableViewController.m */,
+				8478CEF11B8FEB7C0045BDD7 /* WorldClockInfo.h */,
+				8478CEF21B8FEB7C0045BDD7 /* WorldClockInfo.m */,
+			);
+			name = WorldClock;
+			sourceTree = "<group>";
+		};
+		8458847A1BB252DD0073CA5D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				8496CC9D1B8A768700FB2AAA /* TimerViewController.h */,
+				8496CC9E1B8A768700FB2AAA /* TimerViewController.m */,
+				0765D20C1B925E7C003961EE /* Preset.h */,
+				0765D20D1B925E7C003961EE /* Preset.m */,
+				8499D3D21B94F00300A434C9 /* PressetData.h */,
+				8499D3D31B94F00300A434C9 /* PressetData.m */,
+				8499D3D81B9549F100A434C9 /* PresetViewController.h */,
+				8499D3D91B9549F100A434C9 /* PresetViewController.m */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		8458847B1BB253010073CA5D /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				8496CC3A1B86C30900FB2AAA /* StopWatchViewController.h */,
+				8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */,
+			);
+			name = Stopwatch;
+			sourceTree = "<group>";
+		};
 		8496CC811B8A565E00FB2AAA /* ds_digital */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,27 +194,11 @@
 				8496CC991B8A5FC200FB2AAA /* digitalFont.ttf */,
 				8D05375F1B86687C00588318 /* AppDelegate.h */,
 				8D0537601B86687C00588318 /* AppDelegate.m */,
-				8478CEF41B9000FD0045BDD7 /* CountdownEventViewController.h */,
-				8478CEF51B9000FD0045BDD7 /* CountdownEventViewController.m */,
-				8478CEF11B8FEB7C0045BDD7 /* WorldClockInfo.h */,
-				8478CEF21B8FEB7C0045BDD7 /* WorldClockInfo.m */,
-				8478CE8C1B8E1D6E0045BDD7 /* WorldClockTableViewController.h */,
-				8478CE8D1B8E1D6E0045BDD7 /* WorldClockTableViewController.m */,
-				8478CE931B8F51E00045BDD7 /* WorldClockAddTableViewController.h */,
-				8478CE941B8F51E00045BDD7 /* WorldClockAddTableViewController.m */,
-				8496CC9D1B8A768700FB2AAA /* TimerViewController.h */,
-				8496CC9E1B8A768700FB2AAA /* TimerViewController.m */,
-				0765D20C1B925E7C003961EE /* Preset.h */,
-				0765D20D1B925E7C003961EE /* Preset.m */,
-				8499D3D21B94F00300A434C9 /* PressetData.h */,
-				8499D3D31B94F00300A434C9 /* PressetData.m */,
-				8499D3D81B9549F100A434C9 /* PresetViewController.h */,
-				8499D3D91B9549F100A434C9 /* PresetViewController.m */,
-				8499D3D51B950C5C00A434C9 /* PresetAddViewController.h */,
-				8499D3D61B950C5C00A434C9 /* PresetAddViewController.m */,
 				0765D20F1B9265B2003961EE /* Main.storyboard */,
-				8496CC3A1B86C30900FB2AAA /* StopWatchViewController.h */,
-				8496CC3B1B86C30900FB2AAA /* StopWatchViewController.m */,
+				845884781BB252B50073CA5D /* CountdownEvent */,
+				845884791BB252CA0073CA5D /* WorldClock */,
+				8458847A1BB252DD0073CA5D /* Timer */,
+				8458847B1BB253010073CA5D /* Stopwatch */,
 				8D0537681B86687C00588318 /* Images.xcassets */,
 				8D05376A1B86687C00588318 /* LaunchScreen.xib */,
 				847EEB801B93942B00C096E2 /* TimerIsOff.wav */,
@@ -341,7 +368,6 @@
 				8D05375E1B86687C00588318 /* main.m in Sources */,
 				8478CE951B8F51E00045BDD7 /* WorldClockAddTableViewController.m in Sources */,
 				8499D3DA1B9549F100A434C9 /* PresetViewController.m in Sources */,
-				8499D3D71B950C5C00A434C9 /* PresetAddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
