@@ -27,7 +27,6 @@
     self.allPresets = @[@"Popcorn 00:03:00",
                         @"Tea      00:02:30",
                         @"Roast Turkey      03:00:00",
-                        @"Lunchtime     00:30:00",
                         @"Lunch Time     00:30:00",
                         @"Reheat pizza    00:01:00",
                         @"Workout      00:20:00",
