@@ -44,9 +44,9 @@
     [self.contentView insertSubview:self.particleBackground atIndex:0];
     
     
-    self.destinationDate1 = [NSDate dateWithTimeIntervalSince1970:1446508801]; // epoch time conversion for Nov 3, 2015, National Sandwich Day
-    self.destinationDate2 = [NSDate dateWithTimeIntervalSince1970:1454630401]; // nutella day, feb 5
-    self.destinationDate3 = [NSDate dateWithTimeIntervalSince1970:1454976001]; // international pizza with everything (except anchovies) day, feb 9
+    self.destinationDate1 = [NSDate dateWithTimeIntervalSince1970:1478131200]; // epoch time conversion for Nov 3, National Sandwich Day
+    self.destinationDate2 = [NSDate dateWithTimeIntervalSince1970:1486252800]; // nutella day, feb 5
+    self.destinationDate3 = [NSDate dateWithTimeIntervalSince1970:1486598400]; // international pizza with everything (except anchovies) day, feb 9
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
     
