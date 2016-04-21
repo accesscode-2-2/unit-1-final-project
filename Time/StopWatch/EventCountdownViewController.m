@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *emojiImage;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nameLabel.text = [self.event name];
+    self.emojiImage.image = [UIImage imageNamed:[self.event pictureName]];
     
     
     

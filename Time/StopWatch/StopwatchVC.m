@@ -37,6 +37,7 @@
     
     self.timerLabel.text = [NSString stringWithFormat:@"00:00:00"];
     
+    
     self.lapsTableView.dataSource = self;
     self.lapsTableView.delegate = self;
 }
@@ -71,8 +72,9 @@
 }
 
 - (IBAction)startStopTapped:(id)sender {
-    
+
     if ([self.startStopButton.titleLabel.text isEqualToString:@"Start"]) {
+        self.startStopButton.titleLabel.textColor = [UIColor colorWithRed:72 green:81 blue:71 alpha:0];
         [self beginStopWatch];
     }
     else {
@@ -89,6 +91,7 @@
 }
 - (IBAction)lapResetTapped:(id)sender {
     if ([self.lapResetButton.titleLabel.text isEqualToString:@"Lap"]) {
+        self.lapResetButton.titleLabel.textColor = [UIColor blackColor];
         
         NSTimeInterval timeSinceLastLap = -[self.startLapTime timeIntervalSinceNow];
 
@@ -137,9 +140,6 @@
     
     self.timerLabel.text = [NSString stringWithFormat:@"%@", [self formattedTime:distance]];
     NSLog(@"%f", distance);
-    
-//    self.timerLabel.text = [NSString stringWithFormat:@"%0.2f", [self formattedTime:distance]];
-//    NSLog(@"%f", distance);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -178,9 +178,9 @@
     }
 //Alpha: Step 1
     
-    cell.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:alpha];
+    cell.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:alpha];
     cell.textLabel.backgroundColor = [UIColor clearColor];
-                                    
+
     
     
 

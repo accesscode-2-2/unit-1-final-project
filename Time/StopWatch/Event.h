@@ -11,5 +11,6 @@
 @interface Event : NSObject
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSDate *endTime;
+@property (nonatomic) NSString *pictureName; 
 
 @end

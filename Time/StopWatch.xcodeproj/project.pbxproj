@@ -18,6 +18,9 @@
 		515E1FCE1B921338005EEC90 /* SpecialEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FCD1B921338005EEC90 /* SpecialEventsTableViewController.m */; };
 		515E1FD41B9250D5005EEC90 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FD31B9250D5005EEC90 /* Event.m */; };
 		515E1FD71B9251BC005EEC90 /* EventCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515E1FD61B9251BC005EEC90 /* EventCountdownViewController.m */; };
+		51D8EEB61B98A8AF008BC69D /* olive-toned-baby-angel.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D8EEB51B98A8AF008BC69D /* olive-toned-baby-angel.png */; };
+		51D8EEB81B98AC56008BC69D /* ios_emoji_skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D8EEB71B98AC56008BC69D /* ios_emoji_skull.png */; };
+		51D8EEBA1B98AD92008BC69D /* runner_imoji.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 51D8EEB91B98AD92008BC69D /* runner_imoji.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		515E1FD31B9250D5005EEC90 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		515E1FD51B9251BC005EEC90 /* EventCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCountdownViewController.h; sourceTree = "<group>"; };
 		515E1FD61B9251BC005EEC90 /* EventCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCountdownViewController.m; sourceTree = "<group>"; };
+		51D8EEB51B98A8AF008BC69D /* olive-toned-baby-angel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "olive-toned-baby-angel.png"; sourceTree = "<group>"; };
+		51D8EEB71B98AC56008BC69D /* ios_emoji_skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_emoji_skull.png; sourceTree = "<group>"; };
+		51D8EEB91B98AD92008BC69D /* runner_imoji.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = runner_imoji.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,9 @@
 		186A1C601B86D19500668F10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				51D8EEB91B98AD92008BC69D /* runner_imoji.jpeg */,
+				51D8EEB51B98A8AF008BC69D /* olive-toned-baby-angel.png */,
+				51D8EEB71B98AC56008BC69D /* ios_emoji_skull.png */,
 				186A1C611B86D19500668F10 /* Info.plist */,
 				186A1C621B86D19500668F10 /* main.m */,
 			);
@@ -219,9 +228,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D8EEBA1B98AD92008BC69D /* runner_imoji.jpeg in Resources */,
 				186A1C6C1B86D19500668F10 /* Main.storyboard in Resources */,
 				186A1C711B86D19500668F10 /* LaunchScreen.xib in Resources */,
+				51D8EEB61B98A8AF008BC69D /* olive-toned-baby-angel.png in Resources */,
 				186A1C6E1B86D19500668F10 /* Images.xcassets in Resources */,
+				51D8EEB81B98AC56008BC69D /* ios_emoji_skull.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

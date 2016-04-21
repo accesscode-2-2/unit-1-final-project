@@ -10,10 +10,6 @@
 
 @interface TimerViewController : UIViewController
 
-@property (nonatomic) NSTimer *timer;
-@property (nonatomic) NSDate *startTime;
-@property (nonatomic) NSTimeInterval totalSessionTime;
-@property (nonatomic) NSTimeInterval totalTime;
 
 
 

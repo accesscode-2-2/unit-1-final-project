@@ -15,47 +15,104 @@
 @property (weak, nonatomic) IBOutlet UIButton *startCancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;
 
+@property (nonatomic) NSTimer *timer;
+@property (nonatomic) NSDate *endTime;
+@property (nonatomic) NSTimeInterval totalTime;
+
+@property (nonatomic) BOOL isRunning;
+
 @end
 
 @implementation TimerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    [self.datePicker setValue:[UIColor whiteColor] forKeyPath:@"textColor"];
+    SEL selector = NSSelectorFromString( @"setHighlightsToday:" );
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature :
+                                [UIDatePicker
+                                 instanceMethodSignatureForSelector:selector]];
+    BOOL no = NO;
+    [invocation setSelector:selector];
+    [invocation setArgument:&no atIndex:2];
+    [invocation invokeWithTarget:self.datePicker];
+    
+    self.isRunning = NO;
+    
+    self.datePicker.countDownDuration = 60.0;
     self.countdownLabel.alpha = 0;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-- (IBAction)startCancelTapped:(id)sender {
-    if ([self.startCancelButton.titleLabel.text isEqualToString:@"Start"]) {
-        self.datePicker.alpha = 0;
-        self.countdownLabel.alpha = 1;
-        [self.startCancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+- (IBAction)startButtonTapped:(id)sender {
+    
+    if (!self.isRunning) {
+        self.totalTime = self.datePicker.countDownDuration;
+        [self startTimer];
     }
-    else {
-        self.datePicker.alpha = 1;
-        self.countdownLabel.alpha = 0;
-        [self.startCancelButton setTitle:@"Start" forState:UIControlStateNormal];
+    
+}
+
+- (IBAction)stopButtonTapped:(id)sender {
+    
+    if ([self isRunning]) {
+        [self stopTimer];
     }
+    
+}
+
+- (void)timerFired:(NSTimer *)timer {
+    
+    self.totalTime--;
+    
+    self.countdownLabel.text = [NSString stringWithFormat:@"%@", [self formattedTime:self.totalTime]];
+
+    if (self.totalTime == 0) {
+        
+        [self stopTimer];
+    }
+}
+
+-(void)startTimer {
+    self.isRunning = YES;
+    self.datePicker.alpha = 0;
+    self.countdownLabel.alpha = 1;
+    self.countdownLabel.textColor = [UIColor whiteColor];
+    
+//    self.countdownLabel.text = [NSString stringWithFormat:[self.datePicker date]];
+
+    
+   self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
 
 }
 
-- (IBAction)pauseResume:(id)sender {
+- (void)stopTimer {
+    
+    self.isRunning = NO;
+    self.datePicker.alpha = 1;
+    self.countdownLabel.alpha = 0;
+
+    [self.timer invalidate];
+}
+-(NSString *)formattedTime: (NSTimeInterval) timeInterval {
+    int totalHundredths = timeInterval * 100;
+    int hours = totalHundredths / 360000;
+    int minutes = (totalHundredths - (hours * 360000)) / 6000;
+    int seconds = (totalHundredths - (hours * 360000) - (minutes * 6000)) / 100;
+    int milliseconds = totalHundredths - (hours * 360000) - (minutes * 6000) - (seconds * 100);
+    
+    
+    //Potetial for creating a lap
+    NSString *displayTime = [NSString stringWithFormat:@"%02d:%02d:%02d",minutes,seconds,milliseconds];
+    return displayTime;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

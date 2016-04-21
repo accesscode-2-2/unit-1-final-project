@@ -34,16 +34,19 @@
     Event *event = [[Event alloc] init];
     event.name = @"Jesus's Birthday";
     event.endTime = [dateFormatter dateFromString:@"12/25/2015 at 07:00:00"];
+    event.pictureName = @"olive-toned-baby-angel";
     [self.specialEventsList addObject:event];
     
     event = [[Event alloc] init];
     event.name = @"Project Due";
-    event.endTime = [dateFormatter dateFromString:@"09/01/2015 at 00:00:00"];
+    event.endTime = [dateFormatter dateFromString:@"09/01/2015 at 20:18:30"];
+    event.pictureName = @"ios_emoji_skull";
     [self.specialEventsList addObject:event];
     
     event = [[Event alloc] init];
     event.name = @"Lease Due Date";
     event.endTime = [dateFormatter dateFromString:@"08/30/2015 at 01:46:20"];
+    event.pictureName = @"runner_imoji";
     [self.specialEventsList addObject:event];
     
     for (Event *event in self.specialEventsList) {
@@ -102,9 +105,7 @@
     destination.dateFormatter = self.dateFormatter;
     destination.event = [self.specialEventsList objectAtIndex:indexPath.row];
     
-//    detailVC.eventDatePicked = cell.detailTextLabel.text;
-//    detailVC.eventDatePicked = [NSString stringWithFormat:@"%@", cell.detailTextLabel.text ];
-//    
+    
     
 }
 
