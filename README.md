@@ -1,5 +1,7 @@
 #GO
 
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/mit-license-brightgreen.svg" alt="mit license"></a>
+
 ####A workout application available for iPhones. GO is a fitness application that makes tracking time easy for you.
 
 ###Functionality:
